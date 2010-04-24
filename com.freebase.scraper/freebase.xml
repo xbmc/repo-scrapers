@@ -2,10 +2,10 @@
 <scraper framework="1.1" date="2009-09-16" name="Freebase" content="albums" thumb="freebase.png" language="en">
 	<GetSettings dest="3">
 		<RegExp input="$$5" output="&lt;settings&gt;\1&lt;/settings&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;setting label=&quot;Enable Fanart&quot; type=&quot;bool&quot; id=&quot;htbfanart&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;setting label=&quot;30000&quot; type=&quot;bool&quot; id=&quot;htbfanart&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;Grab thumbs from HTBackdrops&quot; type=&quot;bool&quot; id=&quot;htbthumbs&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;setting label=&quot;30001&quot; type=&quot;bool&quot; id=&quot;htbthumbs&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
