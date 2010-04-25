@@ -13,6 +13,7 @@
   </minversion>
   <summary>7176 Movie Scraper</summary>
   <description>Download Movie information from www.7176.com</description>
+  <icon>icon.png</icon>
   <author>TAXIGPS</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>

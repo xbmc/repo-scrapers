@@ -13,6 +13,7 @@
   </minversion>
   <summary>Getlib Movie Scraper</summary>
   <description>Download Movie information from www.getlib.com</description>
+  <icon>icon.gif</icon>
   <author>TAXIGPS</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>
