@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>nl.moviemeter.scraper</id>
+  <type>scraper</type>
+  <title>MovieMeter</title>
+  <library>moviemeter.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>MovieMeter Movie Scraper</summary>
+  <description>Download Movie information from www.moviemeter.nl</description>
+  <author>The_Ghost16</author>
+  <dependencies>
+    <dependency minversion="1.0.0" maxversion="">com.imdb.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">com.movieposterdb.scraper.common</dependency>
+  </dependencies>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+</addoninfo>
