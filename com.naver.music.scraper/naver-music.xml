@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scraper framework="1.1" date="2010-04-17" name="NAVER Music" content="albums" thumb="naver.png" language="ko">
+	<GetSettings dest="3">
+		<RegExp input="$$5" output="&lt;settings&gt;\1&lt;/settings&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;setting label=&quot;출시앨범 보기&quot; type=&quot;bool&quot; id=&quot;enDiscography&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;setting label=&quot;앨범리뷰 다보기&quot; type=&quot;bool&quot; id=&quot;enFullReview&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetSettings>
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="\1" dest="3">
+			<expression>(http://music.naver.com/.*)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateAlbumSearchUrl SearchStringEncoding="EUC-KR" dest="3">
+		<RegExp input="$$1+$$2" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+	</CreateAlbumSearchUrl>
+	<GetAlbumSearchResults dest="3">
+		<RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;url&gt;http://music.naver.com/album.nhn?tubeid=\1&lt;/url&gt;&lt;/entity&gt;" dest="4">
+				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation\('([^']*)'\);" class="c u"&gt;(.*?)&lt;/a&gt;.*?&lt;span title[^&gt;]*&gt;([^&lt;]*)&lt;/span&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumSearchResults>
+	<GetAlbumDetails dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="4">
+				<expression>&lt;h2 title[^&gt;]*&gt;([^&lt;]*)&lt;/h2&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;artist&gt;\1&lt;/artist&gt;" dest="4+">
+				<expression>&lt;dt id="artistName"\s*&gt;.*?&lt;a href[^&gt;]*&gt;([^lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4+">
+				<expression trim="1">/txt_type\.gif".*?&lt;dd&gt;([^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="4+">
+				<expression>/txt_date\.gif".*?&lt;dd&gt;(\d{4})[^&lt;]*&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;releasedate&gt;\1&lt;/releasedate&gt;" dest="4+">
+				<expression>/txt_date\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;label&gt;\1&lt;/label&gt;" dest="4+">
+				<expression>/txt_company\.gif".*?&lt;dd&gt;([^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="4+">
+				<expression>&lt;div class="album_info"&gt;.*?&lt;img src="([^"]*)</expression>
+			</RegExp>
+			<RegExp conditional="!enFullReview" input="$$5" output="&lt;review&gt;\1&lt;/review&gt;" dest="4+">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div class="intro"[^&gt;]*id="albumDescSummary"&gt;([^&lt;]*)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<RegExp conditional="enFullReview" input="$$5" output="&lt;review&gt;\1&lt;/review&gt;" dest="4+">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div class="intro"[^&gt;]*id="albumDesc"&gt;(.*)&lt;a href="javascript:showDescription\('albumDesc'\);"</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="4+">
+				<expression repeat="yes">&lt;td class="num"&gt;(\d+)&lt;/td&gt;.*?&lt;a href="[^"]*" class="musicname"[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="4+">
+				<expression>&lt;span class="text_point"&gt;([^&lt;]*)&lt;/span&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumDetails>
+	<CreateArtistSearchUrl SearchStringEncoding="EUC-KR" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://music.naver.com/search.nhn?where=artist&amp;query=\1&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+	</CreateArtistSearchUrl>
+	<GetArtistSearchResults dest="3">
+		<RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;url&gt;http://music.naver.com/artist.nhn?artistid=\1&lt;/url&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/entity&gt;" dest="4">
+				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation_artist\('([^']*)'\);" class="c u b2"&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistSearchResults>
+	<GetArtistDetails dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="4">
+				<expression>&lt;h2 title[^&gt;]*&gt;(.*?)&lt;/h2&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="4+">
+				<expression>/txt_birth\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="4+">
+				<expression>/txt_death\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;formed&gt;\1&lt;/formed&gt;" dest="4+">
+				<expression>/txt_formation\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;disbanded&gt;\1&lt;/disbanded&gt;" dest="4+">
+				<expression>/txt_break\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="4+">
+				<expression>&lt;div class="albumartist_thumb"&gt;&lt;img src="(.*?)"</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4+">
+				<expression trim="1">/txt_type\.gif".*?&lt;dd&gt;(.*?)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;style&gt;\1&lt;/style&gt;" dest="4+">
+				<expression trim="1">/txt_formation2.gif".*?&lt;dd&gt;(.*?)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;yearsactive&gt;\1&lt;/yearsactive&gt;" dest="4+">
+				<expression trim="1">/txt_activity.gif".*?&lt;dd&gt;(.*?)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp conditional="enDiscography" input="$$1" output="&lt;url function=&quot;GetDiscography&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
+				<expression>&lt;a href="(/artist.nhn\?m=album&amp;artistId=\d+)"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistDetails>
+	<GetDiscography dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="5">
+				<expression noclean="1">&lt;ul class="music_list" id="mainAlbum"&gt;(.*)&lt;ul class="music_list" id="originalAlbum"&gt;</expression>
+			</RegExp>
+			<RegExp input="$$5" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/album&gt;" dest="4">
+				<expression repeat="yes">&lt;dt&gt;&lt;a href=".*?" title=".*?"&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetDiscography>
+</scraper>

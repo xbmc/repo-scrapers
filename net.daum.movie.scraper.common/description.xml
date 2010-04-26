@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>net.daum.movie.scraper.common</id>
+  <type>scraper-library</type>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+  <title>Daum Movie</title>
+  <library>daum-movie.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Library for Daum Movie Scraper</summary>
+  <description>Download movie information from movie.daum.net</description>
+  <author>xbmc-korea</author>
+  <dependencies>
+  </dependencies>
+</addoninfo>

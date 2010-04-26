@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>net.daum.music.scraper</id>
+  <type>scraper</type>
+  <title>Daum Music</title>
+  <library>daum-music.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Daum Music Scraper</summary>
+  <description>Download music information from music.daum.net</description>
+  <author>xbmc-korea</author>
+  <dependencies>
+  </dependencies>
+  <supportedcontent>
+    <content>albums</content>
+    <content>artists</content>
+  </supportedcontent>
+</addoninfo>

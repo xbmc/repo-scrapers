@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>net.daum.tv.scraper</id>
+  <type>scraper</type>
+  <title>Daum TV</title>
+  <library>daum-tv.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Daum TV Shows Scraper</summary>
+  <description>Download TV shows information from movie.daum.net</description>
+  <author>xbmc-korea</author>
+  <dependencies>
+  </dependencies>
+  <supportedcontent>
+    <content>tvshows</content>
+  </supportedcontent>
+</addoninfo>
