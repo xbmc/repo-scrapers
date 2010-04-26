@@ -13,7 +13,6 @@
   </minversion>
   <summary>Mtime Movie Scraper</summary>
   <description>Download Movie information from www.mtime.com</description>
-  <icon>icon.jpg</icon>
   <author>TAXIGPS</author>
   <supportedcontent>
     <content>movies</content>

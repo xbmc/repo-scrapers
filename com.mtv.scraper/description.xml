@@ -13,7 +13,6 @@
   </minversion>
   <summary>MTV Music Video Scraper</summary>
   <description>Download MusicVideo information</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>musicvideos</content>

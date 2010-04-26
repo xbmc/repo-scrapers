@@ -13,7 +13,6 @@
   </minversion>
   <summary>TMDB Movie Scraper</summary>
   <description>Download movie information</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>

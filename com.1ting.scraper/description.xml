@@ -13,7 +13,6 @@
   </minversion>
   <summary>1ting Scraper</summary>
   <description>Download Music information from www.1ting.com</description>
-  <icon>icon.png</icon>
   <author>TAXIGPS</author>
   <supportedcontent>
     <content>albums</content>

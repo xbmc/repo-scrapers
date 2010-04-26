@@ -13,7 +13,6 @@
   </minversion>
   <summary>Le scraper Ciné Passion du site passion-xbmc.org</summary>
   <description>Récupère les informations des films en français</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <dependencies>
   </dependencies>

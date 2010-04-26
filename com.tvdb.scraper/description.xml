@@ -13,7 +13,6 @@
   </minversion>
   <summary>TV show scraper</summary>
   <description>TheTVDB.com is a TV Scraper. The site is a massive open database that can be modified by anybody and contains full meta data for many shows in different languages.   All content and images on the site have been contributed by their users for users and have a high standard or quality.  The database schema and website are open source under the GPL</description>
-  <icon>icon.jpg</icon>
   <author>Team XBMC</author>
   <supportedcontent>
     <content>tvshows</content>

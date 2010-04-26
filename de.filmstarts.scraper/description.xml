@@ -13,7 +13,6 @@
   </minversion>
   <summary>Filmstarts.de Movie Scraper</summary>
   <description>Download Movie information from www.filmstarts.de</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>

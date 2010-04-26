@@ -13,7 +13,6 @@
   </minversion>
   <summary>Yahoo! Music Video Scraper</summary>
   <description>Download Music Video information</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>musicvideos</content>

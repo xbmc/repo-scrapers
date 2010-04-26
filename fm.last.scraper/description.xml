@@ -13,7 +13,6 @@
   </minversion>
   <summary>LastFM Music Scraper</summary>
   <description>Download Music information</description>
-  <icon>icon.png</icon>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">fm.last.scraper.common</dependency>
