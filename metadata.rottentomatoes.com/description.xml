@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>metadata.rottentomatoes.com</id>
+  <type>scraper</type>
+  <title>Rotten Tomatoes</title>
+  <library>rottentomatoes.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Rotten Tomatoes Movie Scraper</summary>
+  <description>Download Movie information from www.rottentomatoes.com
+</description>
+  <author>Redtapemedia + Team XBMC</author>
+  <dependencies>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
+  </dependencies>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+</addoninfo>
