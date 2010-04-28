@@ -1,28 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.1" date="2010-04-07" name="Daum Movie" content="movies" thumb="daum.png" language="ko">
-	<GetSettings dest="3">
-		<RegExp input="$$5" output="&lt;settings&gt;\1&lt;/settings&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;setting label=&quot;포스터&quot; type=&quot;bool&quot; id=&quot;EnableThumbs&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;팬아트&quot; type=&quot;bool&quot; id=&quot;EnableFanart&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;TMDB팬아트 우선사용&quot; type=&quot;bool&quot; id=&quot;EnableTMDBFanart&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;극작가&quot; type=&quot;bool&quot; id=&quot;EnableWriter&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;전체줄거리&quot; type=&quot;bool&quot; id=&quot;EnableFullPlot&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;배역 더보기&quot; type=&quot;bool&quot; id=&quot;EnableMoreCast&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</GetSettings>
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://movie.daum.net/moviedetail/moviedetailMain.do?movieId=\1&lt;/url&gt;" dest="3">
 			<expression>movie\.daum\.net[^\?]*\?movieId=(\d*)</expression>

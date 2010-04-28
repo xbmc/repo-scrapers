@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">포스터</string>
+    <string id="30001">팬아트</string>
+    <string id="30002">TMDB팬아트 우선사용</string>
+    <string id="30003">극작가</string>
+    <string id="30004">전체줄거리</string>
+    <string id="30005">배역 더보기</string>
+</strings>
