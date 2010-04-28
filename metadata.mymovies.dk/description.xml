@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>metadata.mymovies.dk</id>
+  <type>scraper</type>
+  <title>MyMovies.dk</title>
+  <library>mymoviesdk.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>MyMovies.dk Movie Scraper</summary>
+  <description>Download Movie information from www.mymovies.dk</description>
+  <author>UltraBrutal + bleze</author>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+</addoninfo>
