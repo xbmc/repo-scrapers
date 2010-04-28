@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting label="30000" type="labelenum" values="fr|en" id="language" default="fr"/>
+    <setting label="30001" type="labelenum" values="Ciné-Passion|Allociné|IMDB" id="rating" default="Ciné-Passion"/>
+</settings>
