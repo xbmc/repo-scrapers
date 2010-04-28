@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>fr.cine-passion.scraper</id>
+  <id>metadata.cine-passion.fr</id>
   <type>scraper</type>
   <title>Cine-Passion</title>
   <library>cine-passion.xml</library>

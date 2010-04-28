@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.movieposterdb.scraper.common</id>
+  <id>metadata.common.movieposterdb.com</id>
   <type>scraper-library</type>
   <title>MoviePostersDB</title>
   <library>movieposterdb.xml</library>

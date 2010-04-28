@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.naver.movie.scraper</id>
+  <id>metadata.movie.naver.com</id>
   <type>scraper</type>
   <title>NAVER Movie</title>
   <library>naver-movie.xml</library>
@@ -15,7 +15,7 @@
   <description>Download movie information from movie.naver.com</description>
   <author>xbmc-korea</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">net.daum.movie.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.movie.daum.net</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

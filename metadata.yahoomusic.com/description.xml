@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.yahoo.music.scraper</id>
+  <id>metadata.yahoomusic.com</id>
   <type>scraper</type>
   <title>Yahoo! Music</title>
   <library>yahoomusic.xml</library>

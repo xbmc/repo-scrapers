@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>net.daum.tv.scraper</id>
+  <id>metadata.tv.daum.net</id>
   <type>scraper</type>
   <title>Daum TV</title>
   <library>daum-tv.xml</library>

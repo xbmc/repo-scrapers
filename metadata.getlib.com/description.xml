@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.getlib.scraper</id>
+  <id>metadata.getlib.com</id>
   <type>scraper</type>
   <title>Getlib</title>
   <library>getlib.xml</library>
@@ -15,8 +15,8 @@
   <description>Download Movie information from www.getlib.com</description>
   <author>TAXIGPS</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>
-    <dependency minversion="1.0.0" maxversion="">com.movieposterdb.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.mtv.scraper</id>
+  <id>metadata.mtv.com</id>
   <type>scraper</type>
   <title>MTV</title>
   <library>mtv.xml</library>

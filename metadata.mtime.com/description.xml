@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.mtime.scraper</id>
+  <id>metadata.mtime.com</id>
   <type>scraper</type>
   <title>Mtime</title>
   <library>mtime.xml</library>

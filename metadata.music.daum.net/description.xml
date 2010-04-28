@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>net.daum.music.scraper</id>
+  <id>metadata.music.daum.net</id>
   <type>scraper</type>
   <title>Daum Music</title>
   <library>daum-music.xml</library>

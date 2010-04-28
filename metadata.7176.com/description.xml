@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.7176.scraper</id>
+  <id>metadata.7176.com</id>
   <type>scraper</type>
   <title>7176</title>
   <library>7176.xml</library>
@@ -15,8 +15,8 @@
   <description>Download Movie information from www.7176.com</description>
   <author>TAXIGPS</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>
-    <dependency minversion="1.0.0" maxversion="">com.movieposterdb.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

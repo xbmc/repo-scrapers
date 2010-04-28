@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>de.ofdb.scraper</id>
+  <id>metadata.ofdb.de</id>
   <type>scraper</type>
   <title>OFDb.de</title>
   <library>ofdb.xml</library>
@@ -15,8 +15,8 @@
   <description>Download Movie information from www.ofdb.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">org.themoviedb.scraper.common</dependency>
-    <dependency minversion="1.0.0" maxversion="">com.movieposterdb.scraper.common</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

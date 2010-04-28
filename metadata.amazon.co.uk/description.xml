@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addoninfo>
-  <id>com.amazon.scraper.uk</id>
+  <id>metadata.amazon.co.uk</id>
   <type>scraper</type>
   <title>Amazon UK</title>
   <library>amazonuk.xml</library>
