@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>metadata.filmbasen.dagbladet.no</id>
+  <type>scraper</type>
+  <title>Filmbasen.no</title>
+  <library>filmbasen.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Filmbasen Movie Scraper</summary>
+  <description>Download Movie information from filmbasen, Dagbladet's film database</description>
+  <author>spiff</author>
+  <dependencies>
+    <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>
+  </dependencies>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+</addoninfo>
