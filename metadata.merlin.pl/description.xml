@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>metadata.merlin.pl</id>
+  <type>scraper</type>
+  <title>Merlin.pl</title>
+  <library>merlin.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary>Merlin.pl Music scraper</summary>
+  <description>Merlin.pl scraper. Also uses info from last.fm and allmusic.com</description>
+  <author>Smuto</author>
+  <dependencies>
+    <dependency minversion="1.0.0">metadata.common.last.fm</dependency>
+    <dependency minversion="1.0.0">metadata.common.allmusic.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.htbackdrops.com</dependency>
+  </dependencies>
+  <supportedcontent>
+    <content>albums</content>
+    <content>artists</content>
+  </supportedcontent>
+</addoninfo>
