@@ -128,7 +128,4 @@
 			<expression noclean="1"></expression>
 		</RegExp>
 	</GetIMDBRating>
-  <GetKijkwijzer>
-    <RegExp 
-  </GetKijkwijzer>
 </scraper>
