@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addoninfo>
+  <id>metadata.port.hu</id>
+  <type>scraper</type>
+  <title>port.hu</title>
+  <library>porthu.xml</library>
+  <version>1.0.0</version>
+  <platforms>
+    <platform>all</platform>
+  </platforms>
+  <minversion>
+    <xbmc>20000</xbmc>
+  </minversion>
+  <summary lang="en">port.hu Movie Scraper</summary>
+  <summary lang="hu">Filminformáció a port.hu portálról</summary>
+  <description lang="en">Download Movie information from www.port.hu and complete it with information from imdb.com
+PORT.hu collects its programme information data from official and primary sources such as TV channels, cinemas, theatres and film distributors on the one hand and also creates some of its own content, like reviews of films, photos of concerts, buildings and restaurants as well as videos of theatre performances.The collected data are constantly updated on a 24 hour basis, which makes PORT.hu the most up to date programme information portal.</description>
+<description lang="hu">Filminformáció letöltése a port.hu portálról, mely kiegészítésre kerül az imdb.com-ról
+A PORT.hu a leglátogatottabb hazai kulturális programajánló portál. Az oldal célja, hogy segítséget nyújtson a kikapcsolódás megtervezéséhez, és ennek megfelelően igyekszik a lehető legteljesebb formában bemutatni a programlehetőségeket. Az oldalak tartalmi minőségének garanciája, hogy a PORT.hu a kulturális programinformációk egyik legnagyobb beszállítója.</description>
+  <author>Bence Nádas (olympia)</author>
+  <dependencies>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.impa.com</dependency>
+    <dependency minversion="1.0.0" maxversion="">metadata.common.dtrailer.com</dependency>
+  </dependencies>
+  <supportedcontent>
+    <content>movies</content>
+  </supportedcontent>
+</addoninfo>

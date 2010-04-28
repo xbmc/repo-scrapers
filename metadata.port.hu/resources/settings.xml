@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30000" type="bool" id="huntitle" default="false"/>
+    <setting label="30001" type="bool" id="engtitle" default="true"/>
+    <setting label="30002" type="bool" id="orighuntitle" default="false"/>
+    <setting label="30003" type="bool" id="hunorigtitle" default="false"/>
+    <setting label="30004" type="bool" id="hunmpaa" default="true"/>
+    <setting label="30005" type="bool" id="fullcredits" default="false"/>
+    <setting label="30006" type="bool" id="tmdbfanart" default="true"/>
+    <setting label="30007" type="bool" id="tmdbboritok" default="true"/>
+    <setting label="30008" type="bool" id="impawardsboritok" default="false"/>
+    <setting label="30009" type="bool" id="movieposterdbboritok" default="false"/>
+    <setting label="30010" type="bool" id="filmelozetes" default="false"/>
+</settings>

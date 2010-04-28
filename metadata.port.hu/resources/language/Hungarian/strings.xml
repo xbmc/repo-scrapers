@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Magyar filmcím</string>
+    <string id="30001">Eredeti Filmcím</string>
+    <string id="30002">Eredeti filmcím (Magyar filmcím)</string>
+    <string id="30003">Magyar filmcím (Eredeti filmcím)</string>
+    <string id="30004">Magyar korhatár-besorolás</string>
+    <string id="30005">Teljes stáblista letöltése</string>
+    <string id="30006">Fanart letöltése themoviedb.org-ról</string>
+    <string id="30007">Borítók letöltése themoviedb.org-ról</string>
+    <string id="30008">Borítók letöltése IMPAwards-ról</string>
+    <string id="30009">Borítók letöltése MoviePosterDB-ról</string>
+    <string id="30010">Filmelőzetes Dtrailer.com-ról</string>
+</strings>
