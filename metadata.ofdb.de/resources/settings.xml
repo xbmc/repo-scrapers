@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30000" type="bool" id="tmdbfanart" default="true"/>
+    <setting label="30001" type="bool" id="tmdbthumbs" default="true"/>
+    <setting label="30002" type="bool" id="movieposterdb" default="false"/>
+    <setting label="30003" type="bool" id="trailer" default="true"/>
+    <setting label="30004" type="labelenum" values="192|256|384|512|1024" id="imdbscale" default="512"/>
+</settings>
