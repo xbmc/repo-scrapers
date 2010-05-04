@@ -15,9 +15,9 @@
   <description>Download Movie information from www.moviemeter.nl</description>
   <author>The_Ghost16</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0">metadata.common.movieposterdb.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

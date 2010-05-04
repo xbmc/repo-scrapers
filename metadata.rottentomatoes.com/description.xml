@@ -16,7 +16,7 @@
 </description>
   <author>Redtapemedia + Team XBMC</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

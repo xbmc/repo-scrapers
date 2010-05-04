@@ -19,11 +19,11 @@ PORT.hu collects its programme information data from official and primary source
 A PORT.hu a leglátogatottabb hazai kulturális programajánló portál. Az oldal célja, hogy segítséget nyújtson a kikapcsolódás megtervezéséhez, és ennek megfelelően igyekszik a lehető legteljesebb formában bemutatni a programlehetőségeket. Az oldalak tartalmi minőségének garanciája, hogy a PORT.hu a kulturális programinformációk egyik legnagyobb beszállítója.</description>
   <author>Bence Nádas (olympia)</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.impa.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.dtrailer.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0">metadata.common.movieposterdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.impa.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.dtrailer.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

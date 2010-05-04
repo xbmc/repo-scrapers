@@ -22,11 +22,11 @@ Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försök
 De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
   <author>Team XBMC</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.imdb.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.movieposterdb.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.impa.com</dependency>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.dtrailer.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0">metadata.common.movieposterdb.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.impa.com</dependency>
+    <dependency minversion="1.0.0">metadata.common.dtrailer.com</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>

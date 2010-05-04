@@ -19,7 +19,7 @@
   <description lang="nl">Download muziek informatie van Last.fm</description>
   <author>TEAMXBMC</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.last.fm</dependency>
+    <dependency minversion="1.0.0">metadata.common.last.fm</dependency>
   </dependencies>
   <supportedcontent>
     <content>albums</content>

@@ -19,7 +19,7 @@
   <description lang="nl">Download film informatie van www.moviemaze.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
-    <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
+    <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>
   </dependencies>
   <supportedcontent>
     <content>movies</content>
