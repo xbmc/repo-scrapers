@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2009-08-10" name="PTGate and IMDb" content="movies" thumb="ptgate.jpg" language="pt">
+<scraper framework="1.1" date="2009-08-10" language="pt">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
 			<expression clear="yes" noclean="1">(http://www.cinema.ptgate.pt/filmes/[0-9]*)</expression>

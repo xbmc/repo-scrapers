@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-13" name="Daum TV" content="tvshows" thumb="daum.png" language="ko">
+<scraper framework="1.1" date="2010-04-13" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://movie.daum.net/tv/detail/main.do?tvProgramId=\1&lt;/url&gt;" dest="3">
 			<expression>movie\.daum\.net[^\?]*\?tvProgramId=(\d+)</expression>

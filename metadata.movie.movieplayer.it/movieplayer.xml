@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="11" date="2010-03-08" name="movieplayer.it" content="movies" thumb="movieplayer-it.jpg" language="it">
+<scraper framework="11" date="2010-03-08" language="it">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
 			<expression noclean="1">(http://www\.movieplayer\.it/film/[0-9]+/[^"]+)</expression>
