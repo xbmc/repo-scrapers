@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>MTV Music Video Scraper</summary>
+  <summary lang="se">MTV Musikvideoskrapa</summary>
   <description>Download MusicVideo information</description>
+  <description lang="se">Ladda ner musikvideo information från MTV.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>musicvideos</content>

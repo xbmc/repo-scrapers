@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>1ting Scraper</summary>
+  <summary lang="se">1ting Musikskrapa</summary>
   <description>Download Music information from www.1ting.com</description>
+  <description lang="se">Ladda ner musikinformation från www.1ting.com</description>
   <author>TAXIGPS</author>
   <supportedcontent>
     <content>albums</content>

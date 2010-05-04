@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>M1905 Movie Scraper</summary>
+  <summary lang="se">M1905 Filmskrapa</summary>
   <description>Download Movie information from www.m1905.com</description>
+  <description lang="se">Ladda ner filminformation från www.m1905.com</description>
   <author>TAXIGPS</author>
   <supportedcontent>
     <content>movies</content>

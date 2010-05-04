@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>IMDB Scraper Library</summary>
+  <summary lang="se">IMDB Skrapbibliotek</summary>
   <description>Download Movie information from www.imdb.com</description>
+  <description lang="se">Ladda ner filminformation från www.imdb.com</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

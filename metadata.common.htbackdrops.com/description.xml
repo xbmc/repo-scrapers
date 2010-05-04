@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>HTBackdrops Scraper Library</summary>
-  <description>some description</description>
+  <summary lang="se">HTBackdrops Filmskrapa</summary>
+  <description>Download movie information from HTBackdrops.</description>
+  <description lang="se">Ladda ner filminformation från HTBackdrops.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

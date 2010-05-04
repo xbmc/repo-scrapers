@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>Filmstarts.de Movie Scraper</summary>
+  <summary lang="se">Filmstarts.de Filmskrapa</summary>
   <description>Download Movie information from www.filmstarts.de</description>
+  <description lang="se">Ladda ner filminformation från www.filmstarts.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>

@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>DTrailer Scraper Library</summary>
-  <description>some description</description>
+  <summary lang="se">DTrailer Skrapbibliotek</summary>
+  <description>Download movie information from DTrailer.</description>
+  <description lang="se">Ladda ner filminformation från DTrailer.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

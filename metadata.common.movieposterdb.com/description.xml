@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>MoviePosterDB Scraper Library</summary>
+  <summary lang="se">MoviePosterDB Skrapbibliotek</summary>
   <description>some desription</description>
+  <description lang="se">Ladda ner filminformation från MoviePostersDB.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>LastFM Scraper Library</summary>
-  <description>Download Music information</description>
+  <summary lang="se">LastFM Skrapbibliotek</summary>
+  <description>Download Music information from Last.FM</description>
+  <description lang="se">Ladda ner musikinformation från Last.FM</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>albums</content>

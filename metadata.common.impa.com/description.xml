@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>IMPA Scraper Library</summary>
+  <summary lang="se">IMPA Skrapbibliotek</summary>
   <description>some description</description>
+  <description lang="se">Ladda ner filminformation från impa.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

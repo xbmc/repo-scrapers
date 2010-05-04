@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>LastFM Music Scraper</summary>
+  <summary lang="se">LastFM Musikskrapa</summary>
   <description>Download Music information</description>
+  <description lang="se">Ladda ner musikinformation från Last.FM</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.last.fm</dependency>

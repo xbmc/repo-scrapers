@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>Getlib Movie Scraper</summary>
+  <summary lang="se">Getlib Filmskrapa</summary>
   <description>Download Movie information from www.getlib.com</description>
+  <description lang="se">Ladda ner filminformation från www.getlib.com</description>
   <author>TAXIGPS</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>

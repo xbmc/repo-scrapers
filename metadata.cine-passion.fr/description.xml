@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>Le scraper Ciné Passion du site passion-xbmc.org</summary>
+  <summary lang="se">Filmskrapa till sidan passion-xbmc.org (Cine-Passion).</summary>
   <description>Récupère les informations des films en français</description>
+  <description lang="se">Ladda ner filminformation på franska från Cine-Passion.</description>
   <author>TEAMXBMC</author>
   <dependencies>
   </dependencies>

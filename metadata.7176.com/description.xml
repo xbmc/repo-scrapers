@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>7176 Movie Scraper</summary>
+  <summary lang="se">7176 Filmskrapa</summary>
   <description>Download Movie information from www.7176.com</description>
+  <description lang="se">Ladda ner filminformation från www.7176.com</description>
   <author>TAXIGPS</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>

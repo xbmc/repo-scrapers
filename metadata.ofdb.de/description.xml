@@ -12,7 +12,9 @@
     <xbmc>20000</xbmc>
   </minversion>
   <summary>OFDb.de Movie Scraper</summary>
+  <summary lang="se">OFDb.de Filmskrapa</summary>
   <description>Download Movie information from www.ofdb.de</description>
+  <description lang="se">Ladda ner filminformation från www.ofdb.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>
