@@ -13,8 +13,10 @@
   </minversion>
   <summary>LastFM Scraper Library</summary>
   <summary lang="se">LastFM Skrapbibliotek</summary>
+  <summary lang="nl">LastFM Scraper Collectie</summary>
   <description>Download Music information from Last.FM</description>
   <description lang="se">Ladda ner musikinformation från Last.FM</description>
+  <description lang="nl">Download muziek informatie</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>albums</content>

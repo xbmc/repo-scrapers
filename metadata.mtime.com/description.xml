@@ -13,8 +13,10 @@
   </minversion>
   <summary>Mtime Movie Scraper</summary>
   <summary lang="se">Mtime Filmskrapa</summary>
+  <summary lang="nl">Mtime Film Scraper</summary>
   <description>Download Movie information from www.mtime.com</description>
   <description lang="se">Ladda ner filminformation från www.mtime.com</description>
+  <description lang="nl">Download film informatie van www.mtime.com</description>
   <author>TAXIGPS</author>
   <supportedcontent>
     <content>movies</content>

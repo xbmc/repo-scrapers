@@ -13,8 +13,10 @@
   </minversion>
   <summary>Le scraper Ciné Passion du site passion-xbmc.org</summary>
   <summary lang="se">Filmskrapa till sidan passion-xbmc.org (Cine-Passion).</summary>
+  <summary lang="nl">Film Scraper van passion-xbmc.org</summary>
   <description>Récupère les informations des films en français</description>
   <description lang="se">Ladda ner filminformation på franska från Cine-Passion.</description>
+  <description lang="nl">Download franstalige film informatie van passion-xbmc.org</description>
   <author>TEAMXBMC</author>
   <dependencies>
   </dependencies>

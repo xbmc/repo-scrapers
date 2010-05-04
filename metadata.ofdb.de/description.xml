@@ -13,8 +13,10 @@
   </minversion>
   <summary>OFDb.de Movie Scraper</summary>
   <summary lang="se">OFDb.de Filmskrapa</summary>
+  <summary lang="nl">OFDb.de Film Scraper</summary>
   <description>Download Movie information from www.ofdb.de</description>
   <description lang="se">Ladda ner filminformation från www.ofdb.de</description>
+  <description lang="nl">Download film informatie van www.ofdb.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>

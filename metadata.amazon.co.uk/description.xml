@@ -13,8 +13,10 @@
   </minversion>
   <summary>Amazon Movie Scraper</summary>
   <summary lang="se">Amazon Filmskrapa</summary>
+  <summary lang="nl">Amazon Film Scraper</summary>
   <description>Download Movie information from www.amazon.uk</description>
   <description lang="se">Ladda ner filminformation från www.amazon.uk</description>
+  <description lang="nl">Download film informatie van www.amazon.uk</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

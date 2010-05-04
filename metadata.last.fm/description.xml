@@ -13,8 +13,10 @@
   </minversion>
   <summary>LastFM Music Scraper</summary>
   <summary lang="se">LastFM Musikskrapa</summary>
+  <summary lang="nl">LastFM Muziek Scraper</summary>
   <description>Download Music information</description>
   <description lang="se">Ladda ner musikinformation från Last.FM</description>
+  <description lang="nl">Download muziek informatie van Last.fm</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.last.fm</dependency>

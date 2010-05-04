@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Volledige casting weergeven</string>
+    <string id="30001">IMPAwards inschakelen</string>
+    <string id="30002">MoviePosterDB inschakelen</string>
+    <string id="30003">Trailers ophalen</string>
+    <string id="30004">Fanart ophalen</string>
+    <string id="30005">IMDB poster &amp;amp; Acteur foto formaat</string>
+    <string id="30006">Alternatieve IMDb bron</string>
+</strings>
+

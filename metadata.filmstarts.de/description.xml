@@ -13,8 +13,10 @@
   </minversion>
   <summary>Filmstarts.de Movie Scraper</summary>
   <summary lang="se">Filmstarts.de Filmskrapa</summary>
+  <summary lang="nl">Filmstarts.de Film Scraper</summary>
   <description>Download Movie information from www.filmstarts.de</description>
   <description lang="se">Ladda ner filminformation från www.filmstarts.de</description>
+  <description lang="nl">Download film informatie van www.filmstarts.de</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.themoviedb.org</dependency>

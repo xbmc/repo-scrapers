@@ -15,6 +15,7 @@
   <summary lang="se">Freebase Musikskrapa</summary>
   <description>Download Music information</description>
   <description lang="se">Ladda ner musikinformation från Freebase</description>
+  <description lang="nl">Download muziek informatie van freebase</description>
   <author>TEAMXBMC</author>
   <dependencies>
     <dependency minversion="1.0.0" maxversion="">metadata.common.htbackdrops.com</dependency>
