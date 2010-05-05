@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>NAVER Music Scraper</summary>
-  <description>Download music information from music.naver.com</description>
+  <summary lang="en">NAVER Music Scraper</summary>
+  <summary lang="kr">네이버 음악 스크래퍼</summary>
+  <description lang="en">Download music information from music.naver.com</description>
+  <description lang="kr">music.naver.com 에서 음악 정보 다운로드</description>
   <author>xbmc-korea</author>
   <dependencies>
   </dependencies>

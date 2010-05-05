@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>MyMovies.it Movie Scraper</summary>
-  <description>Download Movie information from www.mymovies.it</description>
+  <summary lang="en">MyMovies.it Movie Scraper</summary>
+  <summary lang="kr">MyMovies.it 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.mymovies.it</description>
+  <description lang="kr">MyMovies.it 에서 영화 정보 다운로드</description>
   <author>muttley</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>

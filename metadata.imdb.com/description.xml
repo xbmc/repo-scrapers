@@ -11,13 +11,16 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>IMDB Movie Scraper</summary>
+  <summary lang="en">IMDB Movie Scraper</summary>
+  <summary lang="kr">IMDB 영화 스크래퍼</summary>
   <summary lang="se">IMDB Filmskrapa</summary>
   <summary lang="nl">IMDB film Scraper</summary>
-  <description>Download Movie information from www.imdb.com
+  <description lang="en">Download Movie information from www.imdb.com
 The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
-  <description lang="se">Ladda ner filminformation fr�n www.imdb.com
-Internet Movie Database (IMDb) �r en STOR samling av filminformation. Dom f�rs�ker att katalogisera varenda detalj om en film, fr�n vem som var i den, till vem som gjorde den, inspelningsplatser och �ven var du kan hitta recensioner och fan-sidor p� webben. De g�r sedan sitt b�sta f�r att presentera denna information p� ett s�tt som �r l�tt att s�ka och komma �t.</description>
+  <description lang="kr">www.imdb.com 에서 영화 정보를 다운로드
+The Internet Movie Database (IMDb) 는 거대한 영화 정보를 가지고 있습니다. IMDB는 누구 출연 했는지, 누가 만들었는지, 촬영장소, 리뷰가 있는 곳, 팬사이트 같은 모든 세부적인 정보를 수집하고 있습니다. 그리고 검색과 사용이 편리하도록 정보를 보여주고 있습니다.</description>
+  <description lang="se">Ladda ner filminformation från www.imdb.com
+Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försöker att katalogisera varenda detalj om en film, från vem som var i den, till vem som gjorde den, inspelningsplatser och även var du kan hitta recensioner och fan-sidor på webben. De gör sedan sitt bästa för att presentera denna information på ett sätt som är lätt att söka och komma åt.</description>
   <description lang="nl">Download film informatie van www.imdb.com
 De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
   <author>Team XBMC</author>

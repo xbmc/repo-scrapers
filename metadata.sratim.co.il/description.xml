@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Sratim Movie Scraper</summary>
-  <description>Download Movie information from www.sratim.co.il</description>
+  <summary lang="en">Sratim Movie Scraper</summary>
+  <summary lang="kr">Sratim 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.sratim.co.il</description>
+  <description lang="kr">www.sratim.co.il에서 영화 정보 다운로드</description>
   <author>leo2 + Team XBMC</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>

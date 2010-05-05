@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>PtGate Movie Scraper</summary>
-  <description>Download Movie information from cinema.ptgate.pt</description>
+  <summary lang="en">PtGate Movie Scraper</summary>
+  <summary lang="kr">PtGate 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from cinema.ptgate.pt</description>
+  <description lang="kr">cinema.ptgate.pt 에서 영화 정보 다운로드</description>
   <author>apaneiro + Team XBMC</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>

@@ -11,11 +11,13 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>IMDB Scraper Library</summary>
+  <summary lang="en">IMDB Scraper Library</summary>
+  <summary lang="kr">IMDB 스크래퍼 라이브러리</summary>
   <summary lang="se">IMDB Skrapbibliotek</summary>
   <summary lang="nl">IMDB Scraper Bibliotheek</summary>
-  <description>Download Movie information from www.imdb.com</description>
-  <description lang="se">Ladda ner filminformation fr�n www.imdb.com</description>
+  <description lang="en">Download Movie information from www.imdb.com</description>
+  <description lang="kr">www.imdb.com 에서 영화 정보 다운로드</description>
+  <description lang="se">Ladda ner filminformation från www.imdb.com</description>
   <description lang="nl">Download film informatie van www.imdb.com</description>
   <author>TEAMXBMC</author>
   <supportedcontent>

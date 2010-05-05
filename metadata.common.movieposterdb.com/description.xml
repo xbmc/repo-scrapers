@@ -11,10 +11,12 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>MoviePosterDB Scraper Library</summary>
+  <summary lang="en">MoviePosterDB Scraper Library</summary>
+  <summary lang="kr">MoviePosterDB 스크래퍼 라이브러리</summary>
   <summary lang="se">MoviePosterDB Skrapbibliotek</summary>
-  <description>some desription</description>
-  <description lang="se">Ladda ner filminformation fr�n MoviePostersDB.</description>
+  <description lang="en">Download Movie Posters From MoviePosterDB</description>
+  <description lang="kr">MoviePosterDB 에서 포스터 다운로드</description>
+  <description lang="se">Ladda ner filminformation från MoviePostersDB.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Israel-Music scraper</summary>
-  <description>Israel-Music scraper</description>
+  <summary lang="en">Israel-Music scraper</summary>
+  <summary lang="kr">Israel-Music 음악 스크래퍼</summary>
+  <description lang="en">Israel-Music scraper</description>
+  <description lang="kr">Israel-Music 에서 음악 정보 다운로드</description>
   <author>leo2</author>
   <supportedcontent>
     <content>albums</content>

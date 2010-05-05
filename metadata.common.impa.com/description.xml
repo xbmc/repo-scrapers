@@ -11,10 +11,12 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>IMPA Scraper Library</summary>
+  <summary lang="en">IMPA Scraper Library</summary>
+  <summary lang="kr">IMPA 스크래퍼 라이브러리</summary>
   <summary lang="se">IMPA Skrapbibliotek</summary>
-  <description>some description</description>
-  <description lang="se">Ladda ner filminformation fr�n impa.</description>
+  <description lang="en">Download Movie information from IMPA</description>
+  <description lang="kr">IMPA 에서 등급 정보 다운로드</description>
+  <description lang="se">Ladda ner filminformation från impa.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

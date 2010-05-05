@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-17" language="ko">
+<?xml version="1.0" encoding="utf-8"?>
+<scraper framework="1.1" date="2010-04-30" name="NAVER Music" content="albums" thumb="naver.png" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
 			<expression>(http://music.naver.com/.*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateAlbumSearchUrl SearchStringEncoding="EUC-KR" dest="3">
+	<CreateAlbumSearchUrl SearchStringEncoding="euc-kr" dest="3">
 		<RegExp input="$$1+$$2" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
@@ -20,8 +20,11 @@
 	</GetAlbumSearchResults>
 	<GetAlbumDetails dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="11">
 				<expression>&lt;h2 title[^&gt;]*&gt;([^&lt;]*)&lt;/h2&gt;</expression>
+			</RegExp>
+			<RegExp input="$$11" output="&lt;title&gt;\1&lt;/title&gt;" dest="4">
+				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;artist&gt;\1&lt;/artist&gt;" dest="4+">
 				<expression>&lt;dt id="artistName"\s*&gt;.*?&lt;a href[^&gt;]*&gt;([^lt;]*)&lt;/a&gt;</expression>
@@ -43,15 +46,18 @@
 			</RegExp>
 			<RegExp conditional="!enFullReview" input="$$5" output="&lt;review&gt;\1&lt;/review&gt;" dest="4+">
 				<RegExp input="$$1" output="\1" dest="5">
-					<expression trim="1">&lt;div class="intro"[^&gt;]*id="albumDescSummary"&gt;([^&lt;]*)&lt;/div&gt;</expression>
+					<expression trim="1">&lt;div[^&gt;]*id="albumDescSummary"&gt;(.*?)&lt;/div&gt;</expression>
 				</RegExp>
 				<expression>(\S.*\S)</expression>
 			</RegExp>
 			<RegExp conditional="enFullReview" input="$$5" output="&lt;review&gt;\1&lt;/review&gt;" dest="4+">
 				<RegExp input="$$1" output="\1" dest="5">
-					<expression trim="1">&lt;div class="intro"[^&gt;]*id="albumDesc"&gt;(.*)&lt;a href="javascript:showDescription\('albumDesc'\);"</expression>
+					<expression trim="1">&lt;div[^&gt;]*id="albumDesc"&gt;(.*?)&lt;/div&gt;</expression>
 				</RegExp>
 				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<RegExp conditional="enKoccaReview" input="$$11" output="&lt;url function=&quot;GetKoccaReviewByName&quot;&gt;http://www.koccamusic.or.kr/search?swhere=Title&amp;skeyword=\1&lt;/url&gt;" dest="4+">
+				<expression encode="1"/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="4+">
 				<expression repeat="yes">&lt;td class="num"&gt;(\d+)&lt;/td&gt;.*?&lt;a href="[^"]*" class="musicname"[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
@@ -62,7 +68,7 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetAlbumDetails>
-	<CreateArtistSearchUrl SearchStringEncoding="EUC-KR" dest="3">
+	<CreateArtistSearchUrl SearchStringEncoding="euc-kr" dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://music.naver.com/search.nhn?where=artist&amp;query=\1&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
@@ -77,22 +83,25 @@
 	</GetArtistSearchResults>
 	<GetArtistDetails dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="10">
+				<expression>&lt;a href="/artist.nhn?artistId=(\d+)"&gt;&lt;img src="[^"]*/tab_artist1_on.gif"</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="4">
 				<expression>&lt;h2 title[^&gt;]*&gt;(.*?)&lt;/h2&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="4+">
-				<expression>/txt_birth\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+				<expression trim="1">/txt_birth\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="4+">
-				<expression>/txt_death\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+				<expression trim="1">/txt_death\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;formed&gt;\1&lt;/formed&gt;" dest="4+">
-				<expression>/txt_formation\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+				<expression trim="1">/txt_formation\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;disbanded&gt;\1&lt;/disbanded&gt;" dest="4+">
-				<expression>/txt_break\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
+				<expression trim="1">/txt_break\.gif".*?&lt;dd&gt;(\d{4}[^&lt;]*)&lt;/dd&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="4+">
+			<RegExp conditional="!enThumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="4+">
 				<expression>&lt;div class="albumartist_thumb"&gt;&lt;img src="(.*?)"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4+">
@@ -104,8 +113,29 @@
 			<RegExp input="$$1" output="&lt;yearsactive&gt;\1&lt;/yearsactive&gt;" dest="4+">
 				<expression trim="1">/txt_activity.gif".*?&lt;dd&gt;(.*?)&lt;/dd&gt;</expression>
 			</RegExp>
+			<RegExp conditional="!enFullReview" input="$$5" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="4+">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div[^&gt;]*id="artistBioSummary"\s*&gt;(.*?)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<RegExp conditional="enFullReview" input="$$5" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="4+">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div[^&gt;]*id="artistBio"\s*&gt;(.*?)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<RegExp conditional="enKoccaReview" input="$$2" output="&lt;url function=&quot;GetKoccaBiographyByName&quot;&gt;http://www.koccamusic.or.kr/search?swhere=Artist&amp;skeyword=\1&lt;/url&gt;" dest="4+">
+				<expression encode="1"/>
+			</RegExp>
 			<RegExp conditional="enDiscography" input="$$1" output="&lt;url function=&quot;GetDiscography&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
 				<expression>&lt;a href="(/artist.nhn\?m=album&amp;artistId=\d+)"&gt;</expression>
+			</RegExp>
+			<RegExp conditional="enThumbs" input="$$1" output="&lt;url cache=&quot;naver-photo-$$10.htm&quot; function=&quot;GetArtistThumb&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
+				<expression>&lt;a href="([^"]+)"&gt;&lt;img src="[^"]*/tab_artist5_off.gif"</expression>
+			</RegExp>
+			<RegExp conditional="enFanart" input="$$1" output="&lt;url cache=&quot;naver-photo-$$10.htm&quot; function=&quot;GetArtistFanart&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
+				<expression>&lt;a href="([^"]+)"&gt;&lt;img src="[^"]*/tab_artist5_off.gif"</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -121,4 +151,58 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDiscography>
+	<GetArtistThumb dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumb/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
+				<expression repeat="yes">&lt;a href="javascript:imageZoom\('/music/photo/thumbnail/([^']*)'\);"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistThumb>
+	<GetArtistFanart dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumb/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
+				<expression repeat="yes">&lt;a href="javascript:imageZoom\('/music/photo/thumbnail/([^']*)'\);"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistFanart>
+	<GetKoccaReviewByName dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetKoccaReview&quot;&gt;http://www.koccamusic.or.kr/metadetail/title/title_main.jsp?tid=\1&lt;/url&gt;" dest="4">
+				<expression>&lt;a href="javascript:goTitleMain\('(\d+)',''\);"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetKoccaReviewByName>
+	<GetKoccaReview dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$5" output="&lt;review&gt;\1&lt;/review&gt;" dest="4">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div class="word-wrap"&gt;(.*?)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetKoccaReview>
+	<GetKoccaBiographyByName dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetKoccaBiography&quot;&gt;http://www.koccamusic.or.kr/metadetail/artist/artist_main.jsp?aid=\1&lt;/url&gt;" dest="4">
+				<expression>&lt;a href="javascript:goArtistMain\((\d+)\);"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetKoccaBiographyByName>
+	<GetKoccaBiography dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$5" output="&lt;biography&gt;\1&lt;/biogrpahy&gt;" dest="4">
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression trim="1">&lt;div class="word-wrap"&gt;(.*?)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>(\S.*\S)</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetKoccaBiography>
 </scraper>

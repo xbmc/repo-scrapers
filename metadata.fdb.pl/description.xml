@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>FDB Movie Scraper</summary>
-  <description>Download Movie information from www.fdb.pl</description>
+  <summary lang="en">FDB Movie Scraper</summary>
+  <summary lang="kr">FDB 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.fdb.pl</description>
+  <description lang="kr">www.fdb.pl 에서 영화 정보 다운로드</description>
   <author>smuto + Team XBMC</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>

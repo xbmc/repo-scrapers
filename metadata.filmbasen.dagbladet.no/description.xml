@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Filmbasen Movie Scraper</summary>
-  <description>Download Movie information from filmbasen, Dagbladet's film database</description>
+  <summary lang="en">Filmbasen Movie Scraper</summary>
+  <summary lang="kr">Filmbasen 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from filmbasen, Dagbladet's film database</description>
+  <description lang="kr"> filmbasen, Dagbladet's film 에서 영화 정보 다운로드</description>
   <author>spiff</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.themoviedb.org</dependency>

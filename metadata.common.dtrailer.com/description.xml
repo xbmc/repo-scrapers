@@ -11,10 +11,12 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>DTrailer Scraper Library</summary>
+  <summary lang="en">DTrailer Scraper Library</summary>
+  <summary lang="kr">DTrailer 스크래퍼 라이브러리</summary>
   <summary lang="se">DTrailer Skrapbibliotek</summary>
-  <description>Download movie information from DTrailer.</description>
-  <description lang="se">Ladda ner filminformation fr�n DTrailer.</description>
+  <description lang="en">Download movie information from DTrailer.</description>
+  <description lang="kr">DTrailer 에서 예고편 다운로드</description>
+  <description lang="se">Ladda ner filminformation från DTrailer.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

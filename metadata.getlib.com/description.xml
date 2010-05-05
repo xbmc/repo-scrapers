@@ -11,11 +11,13 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Getlib Movie Scraper</summary>
+  <summary lang="en">Getlib Movie Scraper</summary>
+  <summary lang="kr">Getlib 영화 스크래퍼</summary>
   <summary lang="se">Getlib Filmskrapa</summary>
   <summary lang="nl">Getlib Film Scraper</summary>
-  <description>Download Movie information from www.getlib.com</description>
-  <description lang="se">Ladda ner filminformation fr�n www.getlib.com</description>
+  <description lang="en">Download Movie information from www.getlib.com</description>
+  <description lang="kr">www.getlib.com 에서 영화 정보 다운로드</description>
+  <description lang="se">Ladda ner filminformation från www.getlib.com</description>
   <description lang="nl">Download film informatie van www.getlib.com</description>
   <author>TAXIGPS</author>
   <dependencies>

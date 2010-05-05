@@ -11,10 +11,12 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Freebase Scraper</summary>
+  <summary lang="en">Freebase Music Scraper</summary>
+  <summary lang="kr">Freebase 음악 스크래퍼</summary>
   <summary lang="se">Freebase Musikskrapa</summary>
-  <description>Download Music information</description>
-  <description lang="se">Ladda ner musikinformation fr�n Freebase</description>
+  <description lang="en">Download Music information</description>
+  <description lang="kr">Freebase 에서 음악 정보 다운로드</description>
+  <description lang="se">Ladda ner musikinformation från Freebase</description>
   <description lang="nl">Download muziek informatie van freebase</description>
   <author>TEAMXBMC</author>
   <dependencies>

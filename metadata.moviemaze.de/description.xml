@@ -11,11 +11,13 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>MovieMaze.de Movie Scraper</summary>
+  <summary lang="en">MovieMaze.de Movie Scraper</summary>
+  <summary lang="kr">MovieMaze 영화 스크래퍼</summary>
   <summary lang="se">MovieMaze.de Filmskrapa</summary>
   <summary lang="nl">MovieMaze.de Film Scraper</summary>
-  <description>Download Movie information from www.moviemaze.de</description>
-  <description lang="se">Ladda ner filminformation fr�n www.moviemaze.de</description>
+  <description lang="en">Download Movie information from www.moviemaze.de</description>
+  <description lang="kr">www.moviemaze.de 에서 영화 정보 다운로드</description>
+  <description lang="se">Ladda ner filminformation från www.moviemaze.de</description>
   <description lang="nl">Download film informatie van www.moviemaze.de</description>
   <author>TEAMXBMC</author>
   <dependencies>

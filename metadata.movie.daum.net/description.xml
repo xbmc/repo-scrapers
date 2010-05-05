@@ -13,6 +13,10 @@
   </minversion>
   <summary>Daum Movie Scraper</summary>
   <description>Download movie information from movie.daum.net</description>
+  <summary lang="en">Daum Movie Scraper</summary>
+  <summary lang="kr">다음 음악 스크래퍼</summary>
+  <description lang="en">Download movie information from movie.daum.net</description>
+  <description lang="kr">movie.daum.net에서 영화 정보 다운로드</description>
   <author>xbmc-korea</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.movie.daum.net</dependency>

@@ -11,10 +11,14 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Le scraper Ciné Passion du site passion-xbmc.org</summary>
+  <summary lang="en">Ciné Passion Movie Scraper</summary>
+  <summary lang="fr">Le scraper Ciné Passion du site passion-xbmc.org</summary>
+  <summary lang="kr">Ciné Passion 영화 스크래퍼</summary>
   <summary lang="se">Filmskrapa till sidan passion-xbmc.org (Cine-Passion).</summary>
   <summary lang="nl">Film Scraper van passion-xbmc.org</summary>
-  <description>Récupère les informations des films en français</description>
+  <description lang="en">Download Movie information</description>
+  <description lang="fr">Récupère les informations des films en français</description>
+  <description lang="kr">passion-xbmc.org 에서 영화 정보 다운로드</description>
   <description lang="se">Ladda ner filminformation på franska från Cine-Passion.</description>
   <description lang="nl">Download franstalige film informatie van passion-xbmc.org</description>
   <author>TEAMXBMC</author>

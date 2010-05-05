@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Daum Music Scraper</summary>
-  <description>Download music information from music.daum.net</description>
+  <summary lang="en">Daum Music Scraper</summary>
+  <summary lang="kr">다음 음악 스크래퍼</summary>
+  <description lang="en">Download music information from music.daum.net</description>
+  <description lang="kr">music.daum.net 에서 음악 정보 다운로드</description>
   <author>xbmc-korea</author>
   <dependencies>
   </dependencies>

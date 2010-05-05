@@ -11,9 +11,11 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>TV show scraper</summary>
-  <description>TheTVDB.com is a TV Scraper. The site is a massive open database that can be modified by anybody and contains full meta data for many shows in different languages.   All content and images on the site have been contributed by their users for users and have a high standard or quality.  The database schema and website are open source under the GPL</description>
+  <summary lang="en">TV show scraper</summary>
+  <summary lang="kr">티비쇼 스크래퍼</summary>
+  <description lang="en">TheTVDB.com is a TV Scraper. The site is a massive open database that can be modified by anybody and contains full meta data for many shows in different languages.   All content and images on the site have been contributed by their users for users and have a high standard or quality.  The database schema and website are open source under the GPL</description>
   <description lang="nl">TheTVDB.com is een TV-show Scraper. De site is een gigantische open databank die door iedereen kan aangepast en uitgebreid worden. Het bevat informatie voor vele TV-shows in verschillende talen. Alle inhoud en afbeeldingen zijn bijgedragen door en voor gebruikers met een hoge kwaliteitsnorm. Het databank schema en de website zijn vrijgegeven onder de open source GPL licentie.</description>
+  <description lang="kr">TheTVDB.com 은 티비 스크래퍼입니다. 이 사이트는 누구나 수정할 수 있는 방대한 공개 자료를 가지고 있고 다양한 언어로 많은 쇼에 대한 메타 데이터를 포함하고 있습니다. 사이트의 모든 자료와 이미지는 유저들에 의해 작성되고있고, 양질의 정보입니다. 데이터베이스 구조와 웹사이트는 GPL 오픈소스입니다.</description>
   <author>Team XBMC</author>
   <supportedcontent>
     <content>tvshows</content>

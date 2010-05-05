@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>WorldArt Movie Scraper</summary>
-  <description>Download Movie information from www.worldart.ru</description>
+  <summary lang="en">WorldArt Movie Scraper</summary>
+  <summary lang="kr">WorldArt 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.worldart.ru</description>
+  <description lang="kr">www.worldart.ru에서 영화 정보 다운로드</description>
   <author>hamp + Team XBMC</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>

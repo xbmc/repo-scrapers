@@ -11,10 +11,12 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>HTBackdrops Scraper Library</summary>
+  <summary lang="en">HTBackdrops Scraper Library</summary>
+  <summary lang="kr">HTBackdrops 스크래퍼 라이브러리</summary>
   <summary lang="se">HTBackdrops Filmskrapa</summary>
-  <description>Download movie information from HTBackdrops.</description>
-  <description lang="se">Ladda ner filminformation fr�n HTBackdrops.</description>
+  <description lang="en">Download movie information from HTBackdrops.</description>
+  <description lang="kr">HTBackdrops 에서 팬아트 다운로드</description>
+  <description lang="se">Ladda ner filminformation från HTBackdrops.</description>
   <author>TEAMXBMC</author>
   <supportedcontent>
     <content>movies</content>

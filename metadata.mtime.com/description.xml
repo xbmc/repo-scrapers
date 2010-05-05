@@ -11,11 +11,13 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Mtime Movie Scraper</summary>
+  <summary lang="en">Mtime Movie Scraper</summary>
+  <summary lang="kr">Mtime 영화 스크래퍼</summary>
   <summary lang="se">Mtime Filmskrapa</summary>
   <summary lang="nl">Mtime Film Scraper</summary>
-  <description>Download Movie information from www.mtime.com</description>
-  <description lang="se">Ladda ner filminformation fr�n www.mtime.com</description>
+  <description lang="en">Download Movie information from www.mtime.com</description>
+  <description lang="kr">www.mtime.com 에서 영화 정보 다운로드</description>
+  <description lang="se">Ladda ner filminformation från www.mtime.com</description>
   <description lang="nl">Download film informatie van www.mtime.com</description>
   <author>TAXIGPS</author>
   <supportedcontent>

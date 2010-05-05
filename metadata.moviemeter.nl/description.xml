@@ -11,8 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>MovieMeter Movie Scraper</summary>
-  <description>Download Movie information from www.moviemeter.nl</description>
+  <summary lang="en">MovieMeter Movie Scraper</summary>
+  <summary lang="kr">MovieMeter 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.moviemeter.nl</description>
+  <description lang="kr">www.moviemeter.nl 에서 영화 정보 다운로드</description>
   <author>The_Ghost16</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>

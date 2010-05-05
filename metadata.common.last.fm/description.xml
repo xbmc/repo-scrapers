@@ -11,11 +11,13 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>LastFM Scraper Library</summary>
+  <summary lang="en">LastFM Scraper Library</summary>
+  <summary lang="kr">LastFM 스크래퍼 라이브러리</summary>
   <summary lang="se">LastFM Skrapbibliotek</summary>
   <summary lang="nl">LastFM Scraper Collectie</summary>
-  <description>Download Music information from Last.FM</description>
-  <description lang="se">Ladda ner musikinformation fr�n Last.FM</description>
+  <description lang="en">Download Music information from Last.FM</description>
+  <description lang="kr">LastFM 에서 음악 정보 다운로드</description>
+  <description lang="se">Ladda ner musikinformation från Last.FM</description>
   <description lang="nl">Download muziek informatie</description>
   <author>TEAMXBMC</author>
   <supportedcontent>

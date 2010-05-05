@@ -11,9 +11,10 @@
   <minversion>
     <xbmc>20000</xbmc>
   </minversion>
-  <summary>Rotten Tomatoes Movie Scraper</summary>
-  <description>Download Movie information from www.rottentomatoes.com
-</description>
+  <summary lang="en">Rotten Tomatoes Movie Scraper</summary>
+  <summary lang="kr">Rotten Tomatoes 영화 스크래퍼</summary>
+  <description lang="en">Download Movie information from www.rottentomatoes.com</description>
+  <description lang="kr">www.rottentomatoes.com에서 영화 정보 다운로드</description>
   <author>Redtapemedia + Team XBMC</author>
   <dependencies>
     <dependency minversion="1.0.0">metadata.common.imdb.com</dependency>
