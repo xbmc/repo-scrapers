@@ -67,6 +67,10 @@
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression>view.php\?page=blaettern&amp;Kat=Jahr&amp;Text=([0-9]+)</expression>
 			</RegExp>
+			<!--Country-->
+			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
+				<expression repeat="yes">view.php\?page=blaettern&amp;Kat=Land&amp;Text=([^&quot;]*)&quot;</expression>
+			</RegExp>
 			<!--Director-->
 			<RegExp input="$$9" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
