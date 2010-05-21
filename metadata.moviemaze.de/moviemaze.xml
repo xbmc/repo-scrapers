@@ -43,6 +43,13 @@
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression>([0-9]+)\)&lt;/h2</expression>
 			</RegExp>
+			<!--Country Film-->
+			<RegExp input="$$4" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
+				<RegExp input="$$1" output="\2" dest="4">
+					<expression>Land([^&quot;]*)&quot;standard&quot; valign=&quot;top&quot;&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression>[\t]\b(.*)\b</expression>
+			</RegExp>
 			<!--MPAA Film-->
 			<RegExp input="$$4" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
 				<RegExp input="$$1" output="\2" dest="4">
