@@ -28,9 +28,9 @@
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression trim="1">&lt;span class=&quot;standardsmall&quot;&gt;\((.*)\)&lt;/span&gt;</expression>
 			</RegExp>
-			<!-- Year -->
-			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression trim="1">&lt;strong&gt;.*?([0-9]{4})&lt;/strong&gt;&lt;br /&gt;</expression>
+			<!-- Year / Country -->
+			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;&lt;year&gt;\2&lt;/year&gt;" dest="5+">
+				<expression trim="1">&lt;strong&gt;([A-Za-z ]*)([0-9]{4})&lt;/strong&gt;&lt;br /&gt;</expression>
 			</RegExp>
 			<!-- MPAA -->
 			<RegExp input="$$1" output="&lt;mpaa&gt;ab \1&lt;/mpaa&gt;" dest="5+">
