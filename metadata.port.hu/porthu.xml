@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1,1" date="2010-04-27" language="hu">
+<scraper framework="1.1" date="2010-04-27">
 	<CreateSearchUrl SearchStringEncoding="iso-8859-2" dest="3">
 		<!--Movie search URL on port.hu-->
 		<RegExp input="$$1" output="http://www.port.hu/pls/ci/cinema.film_creator?i_text=\1&amp;i_film_creator=1" dest="3">

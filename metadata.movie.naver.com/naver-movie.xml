@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2010-04-16" language="ko">
+<scraper framework="1.1" date="2010-04-16">
 	<GetSettings dest="3">
 		<RegExp input="$$5" output="&lt;settings&gt;\1&lt;/settings&gt;" dest="3">
 			<RegExp input="$$1" output="&lt;setting label=&quot;30000&quot; type=&quot;bool&quot; id=&quot;EnableFullPlot&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5">

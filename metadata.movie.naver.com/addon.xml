@@ -8,6 +8,7 @@
     <import addon="metadata.common.movie.daum.net" version="1.0"/>
   </requires>
   <extension point="xbmc.metadata.scraper"
+             language="ko"
              library="naver-movie.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>

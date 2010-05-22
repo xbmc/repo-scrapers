@@ -11,6 +11,7 @@
     <import addon="metadata.common.impa.com" version="1.0"/>
   </requires>
   <extension point="xbmc.metadata.scraper"
+             language="pt"
              library="ptgate.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>

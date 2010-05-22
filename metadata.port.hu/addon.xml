@@ -12,6 +12,7 @@
     <import addon="metadata.common.dtrailer.com" version="1.0"/>
   </requires>
   <extension point="xbmc.metadata.scraper"
+             language="hu"
              library="porthu.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>

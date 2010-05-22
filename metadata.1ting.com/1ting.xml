@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.0" date="2009-12-27" language="zh">
+<scraper framework="1.0" date="2009-12-27">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1/" dest="3">
 			<expression>(http://www.1ting.com/album/.*)</expression>

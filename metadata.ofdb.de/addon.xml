@@ -9,6 +9,7 @@
     <import addon="metadata.common.movieposterdb.com" version="1.0"/>
   </requires>
   <extension point="xbmc.metadata.scraper"
+             language="de"
              library="ofdb.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
