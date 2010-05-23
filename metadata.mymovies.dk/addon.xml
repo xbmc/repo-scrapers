@@ -8,7 +8,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper"
              language="multi" 
-             library="mymoviesdk.xml"/>
+             library="mymoviesdk.xml"
+             requiressettings="true"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
     <minversion>26777</minversion>

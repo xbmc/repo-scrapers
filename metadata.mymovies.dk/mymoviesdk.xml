@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-01-13" requiressettings="true">
+<scraper framework="1.1" date="2010-01-13">
 	<CreateSearchUrl dest="3">
 		<RegExp conditional="!discdata" input="$$1" output="&lt;url&gt;https://api.mymovies.dk/Default.aspx?command=SearchMovieByTitle&amp;amp;title=\1&amp;amp;username=$INFO[username]&amp;amp;password=$INFO[password]&amp;amp;PrimaryLanguage=$INFO[language]&amp;amp;includeadult=$INFO[includeadult]&amp;amp;locale=1033&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
