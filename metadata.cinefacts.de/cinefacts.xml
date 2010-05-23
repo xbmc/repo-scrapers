@@ -45,21 +45,21 @@
 				<expression>&lt;dt class=&quot;c1&quot;&gt;Originaltitel:&lt;/dt&gt;[^&lt;]*&lt;dd class=&quot;first&quot;&gt;(.[^&lt;]*)&lt;/dd&gt;</expression>
 			</RegExp>
 			<!--Genre-->
-			<RegExp input="$$1" output="\1" dest="4+">
+			<RegExp input="$$1" output="\1" dest="4">
 				<expression noclean="1">Genre:([^:]*)Deutschlandstart:</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<expression repeat="yes" noclean="1" trim="1">&gt;*[ A-Za-z]([^&lt;&gt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Director Film-->
-			<RegExp input="$$1" output="\1" dest="7+">
+			<RegExp input="$$1" output="\1" dest="7">
 				<expression noclean="1">Regie:([^:]*)Buch:</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<expression repeat="yes" >&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Actors-->
-			<RegExp input="$$1" output="\1" dest="7+">
+			<RegExp input="$$1" output="\1" dest="7">
 				<expression noclean="1">Darsteller:&lt;/td&gt;(.*)&lt;/table</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="5+">
@@ -72,6 +72,13 @@
 			<!--Year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression>&lt;/a&gt; ([0-9]*) &lt;/dd&gt;</expression>
+			</RegExp>
+			<!--Country-->
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression noclean="1">Produktionsland:([^:]*)Verleih:</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
+				<expression repeat="yes" >&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--MPAA-->
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
