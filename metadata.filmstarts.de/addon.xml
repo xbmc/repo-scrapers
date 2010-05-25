@@ -2,7 +2,7 @@
 <addon id="metadata.filmstarts.de"
        name="FilmStarts"
        version="1.0.0"
-       provider-name="FIXME">
+       provider-name="Team XBMC + nobody">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.themoviedb.org" version="1.0"/>
