@@ -7,18 +7,14 @@
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.themoviedb.org" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="pl"
              library="filmweb.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">FilmWeb Movie Scraper</summary>
     <summary lang="kr">FilmWeb 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.filmweb.pl</description>
     <description lang="kr">www.filmweb.pl 에서 영화 정보 다운로드</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>

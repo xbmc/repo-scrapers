@@ -6,12 +6,11 @@
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="zh"
              library="m1905.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">M1905 Movie Scraper</summary>
     <summary lang="kr">M1905 영화 스크래퍼</summary>
     <summary lang="se">M1905 Filmskrapa</summary>
@@ -20,8 +19,5 @@
     <description lang="kr">www.m1905.com 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.m1905.com</description>
     <description lang="nl">Download film informatie van www.m1905.com</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>

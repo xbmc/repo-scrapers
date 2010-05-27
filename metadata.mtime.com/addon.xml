@@ -6,12 +6,11 @@
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="zh"
              library="mtime.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">Mtime Movie Scraper</summary>
     <summary lang="kr">Mtime 영화 스크래퍼</summary>
     <summary lang="se">Mtime Filmskrapa</summary>
@@ -20,8 +19,5 @@
     <description lang="kr">www.mtime.com 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.mtime.com</description>
     <description lang="nl">Download film informatie van www.mtime.com</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>

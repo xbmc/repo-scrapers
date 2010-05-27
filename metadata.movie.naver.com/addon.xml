@@ -7,18 +7,14 @@
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.movie.daum.net" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="ko"
              library="naver-movie.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">NAVER Movie Scraper</summary>
     <summary lang="kr">네이버 영화 스크래퍼</summary>
     <description lang="en">Download movie information from movie.naver.com</description>
     <description lang="kr">movie.naver.com 에서 영화 정보 다운로드</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>

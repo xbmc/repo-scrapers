@@ -6,12 +6,14 @@
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.albums"
+             language="zh"
+             library="1ting.xml"/>
+  <extension point="xbmc.metadata.scraper.artists"
              language="zh"
              library="1ting.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">1ting Scraper</summary>
     <summary lang="se">1ting Musikskrapa</summary>
     <summary lang="kr">1ting 음악 스크래퍼</summary>
@@ -19,9 +21,5 @@
     <description lang="se">Ladda ner musikinformation från www.1ting.com</description>
     <description lang="nl">Download muziek informatie van www.1ting.com</description>
     <description lang="kr">www.1ting.com 에서 음악 정보 다운로드</description>
-    <supportedcontent>
-      <content>albums</content>
-      <content>artists</content>
-    </supportedcontent>
   </extension>
 </addon>

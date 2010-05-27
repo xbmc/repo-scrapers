@@ -8,12 +8,11 @@
     <import addon="metadata.common.themoviedb.org" version="1.0"/>
     <import addon="metadata.common.movieposterdb.com" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="de"
              library="ofdb.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">OFDb.de Movie Scraper</summary>
     <summary lang="kr">OFDb.de 영화 스크래퍼</summary>
     <summary lang="se">OFDb.de Filmskrapa</summary>
@@ -22,8 +21,5 @@
     <description lang="kr">www.ofdb.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.ofdb.de</description>
     <description lang="nl">Download film informatie van www.ofdb.de</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>

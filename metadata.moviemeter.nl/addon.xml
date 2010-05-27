@@ -9,18 +9,14 @@
     <import addon="metadata.common.movieposterdb.com" version="1.0"/>
     <import addon="metadata.common.imdb.com" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.movies"
              language="nl"
              library="moviemeter.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">MovieMeter Movie Scraper</summary>
     <summary lang="kr">MovieMeter 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.moviemeter.nl</description>
     <description lang="kr">www.moviemeter.nl 에서 영화 정보 다운로드</description>
-    <supportedcontent>
-      <content>movies</content>
-    </supportedcontent>
   </extension>
 </addon>
