@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2010-03-26">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;\1.html&quot;&gt;http://www.animenewsnetwork.com/encyclopedia/anime.php?id=\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
+			<expression>animenewsnetwork.com/encyclopedia/anime.php\?id=([0-9]*)</expression>
+		</RegExp>
+	</NfoUrl>
+
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$6" output="&lt;url&gt;http://api.bing.com/xml.aspx?AppId=16E50AB9947899C41433EB944C60174737855036&amp;Sources=web&amp;xmltype=attributebased&amp;Query=\1+site%3Aanimenewsnetwork.com%2Fencyclopedia&lt;/url&gt;" dest="3">
+			<RegExp input="$$1" output="$$1%20%2dEND" dest="5">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$5" output="\1%20" dest="6">
+				<expression repeat="yes" noclean="1">(.*?)%20%2d</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</CreateSearchUrl>
+
+	<GetSearchResults dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;Yes&quot;&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url cache=&quot;\2.html&quot;&gt;http://www.animenewsnetwork.com/encyclopedia/anime.php?id=\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;web:WebResult Title=&quot;([^&gt;&quot;]+?)&quot; [^&gt;]* Url=&quot;http://www.animenewsnetwork.com/encyclopedia/anime.php\?id=([0-9]+?)&quot; [^&gt;]*&gt;</expression>
+			</RegExp>
+			<expression clear="yes" noclean="1"/>
+		</RegExp>
+	</GetSearchResults>
+
+	<GetDetails dest="3" clearbuffers="no">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">&quot;/encyclopedia/search/genreresults\?w=series.*?&amp;a=AA&amp;a=OC&amp;a=TA&amp;a=MA&amp;g=([^/&amp;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
+				<expression>Age rating:&lt;/STRONG&gt;[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression>Plot Summary:&lt;/STRONG&gt;[^&gt;]*&gt;(.*?)&lt;/DIV&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
+				<expression>Weighted mean:&lt;/B&gt; ([^\s]*) \(</expression>
+			</RegExp>
+
+			<!-- Skipping Running time -->
+
+			<!-- Get the first set of Vintage dates only -->			
+			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="5+">
+				<expression>Vintage:&lt;/STRONG&gt;[^&gt;]*&gt;([^&lt;\s]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>Vintage:&lt;/STRONG&gt;[^&gt;]*&gt;([0-9]{4})</expression>
+			</RegExp>
+
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1" clear="yes">Animation Production&lt;/B&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<expression repeat="yes">company.php[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Japanese only cast (ID could be used to get photo in the future) -->
+			<RegExp conditional="!allcasts" input="$$6" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="6">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Japanese cast(.*?)bar_horiz\.gif</expression>
+				</RegExp>	
+				<expression repeat="yes" noclean="3">class=ENTAB&gt;&lt;A.*? HREF=&quot;people.php\?id=([0-9]+?)&quot;&gt;([^&lt;]*)&lt;/A&gt; &lt;I&gt;as&lt;/I&gt;.*?&lt;nobr&gt;&lt;B&gt;(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;/div&gt;|&lt;/small&gt;&lt;/div&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;/div&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;/div&gt;)</expression>
+			</RegExp>
+			<!-- All language casts -->
+			<RegExp conditional="allcasts" input="$$1" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="6">	
+				<expression repeat="yes" noclean="3">CLASS=ENTAB&gt;&lt;A.*? HREF=&quot;people.php\?id=([0-9]+?)&quot;&gt;([^&lt;]*)&lt;/A&gt; &lt;I&gt;as&lt;/I&gt;.*?&lt;nobr&gt;&lt;B&gt;(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;/div&gt;|&lt;/small&gt;&lt;/div&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;/div&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;/div&gt;)</expression>
+			</RegExp>
+			<!-- Casts code cleanup -->
+			<RegExp input="$$6" output="\1" dest="7">
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="7">
+				<expression repeat="yes" noclean="1">(.*?)&lt;u&gt;[^&lt;]*&lt;/u&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="7+">
+				<expression noclean="1">.*&lt;u&gt;[^&lt;]*&lt;/u&gt;(.*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="\1" dest="6">
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp input="$$7" output="\1, " dest="6">
+				<expression repeat="yes" noclean="1">(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="\2" dest="6+">
+				<expression noclean="2">.*(&lt;/B&gt;&lt;/nobr&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;)(.*)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes">&lt;actor&gt;&lt;name&gt;(.*?)&lt;/name&gt;&lt;role&gt;(.*?)&lt;/role&gt;&lt;/actor&gt;</expression>
+			</RegExp>
+
+			<RegExp conditional="fanart" input="$$1" output="&lt;url cache=&quot;$$2-tvdb-search.xml&quot; function=&quot;GetFanartCollector&quot;&gt;Collect All Fanart&lt;/url&gt;" dest="5+">
+				<RegExp conditional="fanart" input="$$7" output="&lt;url cache=&quot;$$2-tvdb-search.xml&quot; function=&quot;GetFanart&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=all&lt;/url&gt;" dest="5+">
+					<RegExp input="$$1" output="\1" dest="6">
+						<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+					</RegExp>
+					<RegExp input="$$6" output="\1+" dest="7">
+						<expression repeat="yes" trim="1">([^\s]+)</expression>
+					</RegExp>
+					<expression noclean="1"/>
+				</RegExp>
+
+				<RegExp conditional="fanart" input="$$8" output="&lt;url function=&quot;GetFanart&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=all&lt;/url&gt;" dest="5+">
+					<RegExp conditional="fanartalt" input="$$1" output="\1" dest="6">
+						<expression noclean="1">&lt;STRONG&gt;Alternative title:&lt;/STRONG&gt;(.*?)&lt;DIV CLASS=&quot;encyc-info-type br&quot;&gt;</expression>
+					</RegExp>
+					<RegExp conditional="fanartalt" input="$$6" output="\1-SCRAPER-OR-" dest="7">
+						<expression repeat="yes">CLASS=&quot;tab&quot;&gt;([^\(&lt;]*)</expression>
+					</RegExp>
+					<RegExp conditional="fanartalt" input="$$7" output="\1+" dest="8">
+						<expression repeat="yes" trim="1">([^\s]+)</expression>
+					</RegExp>
+					<expression repeat="yes">(.*?)-SCRAPER-OR-</expression>
+				</RegExp>
+				<expression noclean="1"/>
+			</RegExp>
+
+			<RegExp conditional="banner" input="$$7" output="&lt;url cache=&quot;$$2-tvdb-search.xml&quot; function=&quot;GetBanner&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=all&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="\1+" dest="7">
+					<expression repeat="yes" trim="1">([^\s]+)</expression>
+				</RegExp>
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp conditional="poster" input="$$7" output="&lt;url cache=&quot;$$2-tvdb-search.xml&quot; function=&quot;GetPoster&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=all&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="\1+" dest="7">
+					<expression repeat="yes" trim="1">([^\s]+)</expression>
+				</RegExp>
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$2.html&quot; function=&quot;GetANNThumbnail&quot;&gt;Fallback to ANN Thumbnail&lt;/url&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+
+			<RegExp input="$$2" output="&lt;episodeguide&gt;&lt;url&gt;http://www.animenewsnetwork.com/encyclopedia/anime.php?id=\1&amp;page=25&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+
+			<expression noclean="1"/>
+		</RegExp>
+	</GetDetails>
+
+	<GetFanart dest="3" clearbuffers="no">
+		<RegExp input="$$5" output="\1" dest="6">
+			<expression>&lt;premiered&gt;(.*)&lt;/premiered&gt;</expression>
+		</RegExp>
+
+		<!-- Get the first match -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetFanartData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
+		</RegExp>
+		<!-- Or get the one with the best year match if found -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetFanartData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;FirstAired&gt;$$6.*?&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+
+		<!-- Do not get fanarts if already got fanarts for this ID -->
+		<RegExp input="$$3" output="\1" dest="6">
+			<expression clear="yes">cache=&quot;([0-9]*).xml&quot;</expression>
+		</RegExp>
+		<RegExp input="$$9" output="" dest="3">
+			<expression>(.*)/$$6-(.*)</expression>
+		</RegExp>
+	</GetFanart>
+
+	<GetFanartData dest="3" clearbuffers="no">
+		<!-- BUffer 9 should be only used for collecting fanart code -->
+		<RegExp input="$$1" output="&lt;thumb dim=&quot;\2&quot; colors=&quot;\3&quot; preview=&quot;_cache/\1&quot;&gt;\1&lt;/thumb&gt;" dest="9+">
+			<expression repeat="yes">&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;fanart&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;([^&lt;]*)&lt;/BannerType2&gt;[^&lt;]*&lt;Colors&gt;([^&lt;]*)&lt;/Colors&gt;</expression>
+		</RegExp>
+	</GetFanartData>
+
+	<GetFanartCollector dest="3" clearbuffers="no">
+		<RegExp input="$$9" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;fanart url=&quot;http://thetvdb.com/banners/&quot;&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="3">
+			<expression noclean="1"/>
+		</RegExp>
+	</GetFanartCollector>
+
+	<GetBanner dest="3" clearbuffers="no">
+		<RegExp input="$$5" output="\1" dest="6">
+			<expression>&lt;premiered&gt;(.*)&lt;/premiered&gt;</expression>
+		</RegExp>
+
+		<!-- Get the first match -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetBannerData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
+		</RegExp>
+		<!-- Or get the one with the best year match if found -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetBannerData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;FirstAired&gt;$$6.*?&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+	</GetBanner>
+
+	<GetBannerData dest="3" clearbuffers="no">
+		<!-- Clear buffer 6 to be safe -->
+		<RegExp input="$$6" output="" dest="6">
+			<expression/>
+		</RegExp>
+
+		<RegExp input="$$6" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="6+">
+				<expression repeat="yes">&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;graphical&lt;/BannerType2&gt;[^&lt;]*&lt;Language&gt;[a-z]*&lt;/Language&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="6+">
+				<expression repeat="yes">&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;text&lt;/BannerType2&gt;[^&lt;]*&lt;Language&gt;[a-z]*&lt;/Language&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="6+">
+				<expression repeat="yes">&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;blank&lt;/BannerType2&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetBannerData>
+
+	<GetPoster dest="3" clearbuffers="no">
+		<RegExp input="$$5" output="\1" dest="6">
+			<expression>&lt;premiered&gt;(.*)&lt;/premiered&gt;</expression>
+		</RegExp>
+
+		<!-- Get the first match -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetPosterData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
+		</RegExp>
+		<!-- Or get the one with the best year match if found -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetPosterData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;FirstAired&gt;$$6.*?&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+	</GetPoster>
+
+	<GetPosterData dest="3" clearbuffers="no">
+		<RegExp input="$$6" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="6">
+				<expression repeat="yes">&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;poster&lt;/BannerType&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetPosterData>
+
+	<GetANNThumbnail dest="3" clearbuffers="no">
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;thumb&gt;http://www.animenewsnetwork.com/thumbnails/fit200x200/encyc/\1&lt;/thumb&gt;&lt;/details&gt;" dest="3">
+			<expression>/thumbnails/fit200x200/encyc/([^']*)</expression>
+		</RegExp>
+	</GetANNThumbnail>
+
+	<GetEpisodeList dest="3" clearbuffers="no">
+		<!-- Clear buffer 6 to be safe -->
+		<RegExp input="$$6" output="" dest="6">
+			<expression/>
+		</RegExp>
+
+		<RegExp input="$$6" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="3">
+			<RegExp input="$$5" output="\1" dest="10">
+				<expression>&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+			</RegExp>
+
+			<RegExp input="$$1" output="&lt;episode&gt;&lt;url cache=&quot;$$10-episodes.html&quot;&gt;$$2&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;/episode&gt;" dest="6+">
+				<expression repeat="yes">CLASS=n&gt;([0-9]+?)\.&lt;/TD&gt;</expression>
+			</RegExp> 
+
+			<!-- Allows same amount of specials as normal season -->
+			<RegExp conditioanl="specials" input="$$1" output="&lt;episode&gt;&lt;url cache=&quot;bing.xml&quot;&gt;http://api.bing.com/xml.aspx?AppId=16E50AB9947899C41433EB944C60174737855036&amp;Sources=InstantAnswer&amp;xmltype=attributebased&amp;Query=1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;0&lt;/season&gt;&lt;/episode&gt;" dest="6+">
+				<expression repeat="yes">CLASS=n&gt;([0-9]+?)\.&lt;/TD&gt;</expression>
+			</RegExp> 
+
+			<!-- Single episode OVA without episode listing -->
+			<RegExp conditional="specials" input="$$1" output="&lt;episode&gt;&lt;url cache=&quot;bing.xml&quot;&gt;http://api.bing.com/xml.aspx?AppId=16E50AB9947899C41433EB944C60174737855036&amp;Sources=InstantAnswer&amp;xmltype=attributebased&amp;Query=1&lt;/url&gt;&lt;id&gt;1&lt;/id&gt;&lt;epnum&gt;1&lt;/epnum&gt;&lt;season&gt;0&lt;/season&gt;&lt;/episode&gt;" dest="6+">
+				<expression repeat="yes">&lt;title&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetEpisodeList>
+
+	<GetEpisodeDetails dest="3" clearbuffers="no">
+		<RegExp input="$$6" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="6">
+				<expression clear="yes">CLASS=d&gt;[^&gt;]*&gt;([^&lt;]*)[^=]*?=n&gt;$$2\.</expression>
+			</RegExp>
+			<RegExp input="$$1" output="TITLE-\1-TITLE" dest="7">
+				<expression>=n&gt;$$2\..*?=&quot;top&quot;&gt;[^&gt;]*&gt;(.*?)&lt;/DIV&gt;</expression>
+			</RegExp>
+			<RegExp input="$$7" output="TITLE-\1-TITLE" dest="7">
+				<expression>TITLE-\t\t(.*)-TITLE</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;title&gt;\1&lt;/title&gt;" dest="6+">
+				<expression>TITLE-(.*)-TITLE</expression>
+			</RegExp>
+
+			<!-- For two-parts episodes -->
+			<RegExp input="$$1" output="&lt;title&gt;\1 &amp; \2&lt;/title&gt;" dest="6+">
+				<expression>=n&gt;$$2\.[^=]*?=n&gt;A\)[^=]*?=&quot;top&quot;&gt;[^&gt;]*&gt;([^&lt;]*).*?CLASS=n&gt;\.&lt;[^=]*?=n&gt;B\)[^=]*?=&quot;top&quot;&gt;[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- For specials and 1 episode OVA -->
+			<RegExp conditional="specials" input="$$1" output="&lt;aired&gt;Special&lt;/aired&gt;&lt;title&gt;Special Episode&lt;/title&gt;" dest="6">
+				<expression>Query Search</expression>
+			</RegExp>
+
+			<!-- Search TVDB for episode overview and other extras -->
+			<RegExp conditional="details" input="$$5" output="&lt;url cache=&quot;\1-tvdb-search.xml&quot; function=&quot;GetEpisodeExtra&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=$$8&amp;language=all&lt;/url&gt;" dest="6+">
+				<RegExp input="$$5" output="\1" dest="7">
+					<expression trim="1">&lt;title&gt;([^&lt;]*)&lt;/title&gt;</expression>
+				</RegExp>
+				<RegExp input="$$7" output="\1+" dest="8">
+					<expression repeat="yes" trim="1">([^\s]+)</expression>
+				</RegExp>
+				<expression>&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>		
+	</GetEpisodeDetails>
+
+	<GetEpisodeExtra dest="3" clearbuffers="no">
+		<RegExp input="$$5" output="\1" dest="7">
+			<expression>&lt;premiered&gt;(.*)&lt;/premiered&gt;</expression>
+		</RegExp>
+
+		<!-- Get the first match -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetEpisodeExtraData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
+		</RegExp>
+		<!-- Or get the one with the best year match if found -->
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetEpisodeExtraData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;FirstAired&gt;$$7.*?&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+	</GetEpisodeExtra>
+
+	<!-- Buffer 5 is series data, buffer 6 is episode data at this point -->
+	<GetEpisodeExtraData dest="3" clearbuffers="no">
+		<RegExp input="$$6" output="\1" dest="7">
+			<expression>&lt;title&gt;([^&lt;]*)&lt;/title&gt;</expression>
+		</RegExp>
+
+		<RegExp input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1">&lt;EpisodeName&gt;$$7(.*?)&lt;/Episode&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="7">
+				<expression clear="yes">&lt;Overview&gt;(.*?)&lt;/Overview&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="7+">
+				<expression>&lt;Rating&gt;([^&lt;]+)&lt;/Rating&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetEpisodeExtraData>
+
+</scraper>
