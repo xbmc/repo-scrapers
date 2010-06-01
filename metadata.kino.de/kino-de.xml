@@ -12,8 +12,8 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.kino.de/\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">class=&quot;headline3&quot; style=&quot;margin: 0;&quot;&gt;.*?a href=&quot;([^&quot;]*)&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;/h1&gt;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kino.de/\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;h1.*?a href=&quot;([^&quot;]*)&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;strong&gt;[A-Za-z ]*([0-9]{4})&lt;/strong&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -53,7 +53,7 @@
 			</RegExp>
 			<!-- Plot -->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression trim="1">&lt;/table&gt;&lt;span style=&quot;line-height: 15px;&quot;&gt;(.*?)&lt;/span</expression>
+				<expression trim="1">&lt;span style=&quot;line-height: 15px;&quot;&gt;(.*?)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
 			</RegExp>
 			<!-- Cast/Crew -->
 			<RegExp input="$$1" output="&lt;url function=&quot;GetCastAndCrew&quot;&gt;http://www.kino.de\1&lt;/url&gt;" dest="5+">
