@@ -7,12 +7,14 @@
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.last.fm" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.albums"
+             language="en"
+             library="lastfm.xml"/>
+  <extension point="xbmc.metadata.scraper.artists"
              language="en"
              library="lastfm.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">LastFM Music Scraper</summary>
     <summary lang="kr">LastFM 음악 스크래퍼</summary>
     <summary lang="se">LastFM Musikskrapa</summary>
@@ -21,9 +23,5 @@
     <description lang="kr">LastFM 에서 음악 정보 다운로드</description>
     <description lang="se">Ladda ner musikinformation från Last.FM</description>
     <description lang="nl">Download muziek informatie van Last.fm</description>
-    <supportedcontent>
-      <content>albums</content>
-      <content>artists</content>
-    </supportedcontent>
   </extension>
 </addon>

@@ -7,12 +7,14 @@
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.htbackdrops.com" version="1.0"/>
   </requires>
-  <extension point="xbmc.metadata.scraper"
+  <extension point="xbmc.metadata.scraper.albums"
+             language="en"
+             library="freebase.xml"/>
+  <extension point="xbmc.metadata.scraper.artists"
              language="en"
              library="freebase.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">Freebase Music Scraper</summary>
     <summary lang="kr">Freebase 음악 스크래퍼</summary>
     <summary lang="se">Freebase Musikskrapa</summary>
@@ -20,9 +22,5 @@
     <description lang="kr">Freebase 에서 음악 정보 다운로드</description>
     <description lang="se">Ladda ner musikinformation från Freebase</description>
     <description lang="nl">Download muziek informatie van freebase</description>
-    <supportedcontent>
-      <content>albums</content>
-      <content>artists</content>
-    </supportedcontent>
   </extension>
 </addon>
