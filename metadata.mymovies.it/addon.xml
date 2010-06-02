@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.mymovies.it"
        name="My Movies.it"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="muttley">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -11,7 +11,6 @@
              language="it"
              library="mymovies.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">MyMovies.it Movie Scraper</summary>
     <summary lang="kr">MyMovies.it 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.mymovies.it</description>

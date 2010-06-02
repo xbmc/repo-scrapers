@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.imdb.com"
        name="IMDb"
-       version="1.0.1"
+       version="1.0.2"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -15,7 +15,6 @@
              language="en"
              library="imdb.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">IMDB Movie Scraper</summary>
     <summary lang="kr">IMDB 영화 스크래퍼</summary>
     <summary lang="se">IMDB Filmskrapa</summary>
@@ -28,5 +27,6 @@ The Internet Movie Database (IMDb) 는 거대한 영화 정보를 가지고 있�
 Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försöker att katalogisera varenda detalj om en film, från vem som var i den, till vem som gjorde den, inspelningsplatser och även var du kan hitta recensioner och fan-sidor på webben. De gör sedan sitt bästa för att presentera denna information på ett sätt som är lätt att söka och komma åt.</description>
     <description lang="nl">Download film informatie van www.imdb.com
 De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
+    <platform>all</platform>
   </extension>
 </addon>

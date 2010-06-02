@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.sratim.co.il"
        name="Srtatim"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="leo2">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -12,7 +12,6 @@
              language="he"
              library="sratime.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">Sratim Movie Scraper</summary>
     <summary lang="kr">Sratim 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.sratim.co.il</description>

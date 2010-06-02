@@ -10,10 +10,10 @@
              language="en"
              library="asiandb.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">AsianDB Movie Scraper</summary>
     <summary lang="kr">AsianDB 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.asiandb.com</description>
     <description lang="kr">www.asiandb.com 에서 영화 정보 다운로드</description>
+    <platform>all</platform>
   </extension>
 </addon>

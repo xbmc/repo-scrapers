@@ -10,7 +10,6 @@
              language="fr"
              library="cine-passion.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">Ciné Passion Movie Scraper</summary>
     <summary lang="fr">Le scraper Ciné Passion du site passion-xbmc.org</summary>
     <summary lang="kr">Ciné Passion 영화 스크래퍼</summary>
@@ -21,5 +20,6 @@
     <description lang="kr">passion-xbmc.org 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation på franska från Cine-Passion.</description>
     <description lang="nl">Download franstalige film informatie van passion-xbmc.org</description>
+    <platform>all</platform>
   </extension>
 </addon>

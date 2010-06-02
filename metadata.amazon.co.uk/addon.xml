@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.amazon.co.uk"
        name="Amazon.co.uk"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="C-Quel + John Lockwood">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -10,10 +10,10 @@
              language="en"
              library="amazonuk.xml"/>
   <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
     <summary lang="en">Amazon.co.uk Movie Scraper</summary>
     <summary lang="kr">Amazon.co.uk 영화 스크래퍼</summary>
     <description lang="en">Download Movie information from www.amazon.co.uk</description>
     <description lang="kr">www.amazon.co.uk 에서 영화 정보 다운로드</description>
+    <platform>all</platform>
   </extension>
 </addon>
