@@ -92,7 +92,7 @@
 				<expression>&lt;IMDB&gt;([^&lt;]*)&lt;/IMDB&gt;</expression>
 			</RegExp>
 			<!--Runtime-->
-			<RegExp input="$$1" output="&lt;runtime&gt;\1 min&lt;/runtime&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression>&lt;RunningTime&gt;([^&lt;]*)&lt;/RunningTime&gt;</expression>
 			</RegExp>
 			<!--Rating-->

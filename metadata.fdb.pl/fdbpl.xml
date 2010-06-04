@@ -45,7 +45,7 @@
 				<expression repeat="yes">&quot;/company/[^/]*/&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression trim="1">&lt;h5&gt;Runtime:&lt;/h5&gt;[^0-9]*([^&lt;]*)</expression>
+				<expression trim="1">&lt;h5&gt;Runtime:&lt;/h5&gt;\n&lt;div class=&quot;info-content&quot;&gt;\n([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression trim="1" noclean="1">&lt;title&gt;([^&lt;|^(]*)</expression>

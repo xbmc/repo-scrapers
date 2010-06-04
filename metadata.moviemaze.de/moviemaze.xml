@@ -72,7 +72,7 @@
 				<RegExp input="$$1" output="\2" dest="4">
 					<expression>L.nge([^&quot;]*)&quot;standard&quot; valign=&quot;top&quot;&gt;&lt;nobr&gt;([^&lt;]*)</expression>
 				</RegExp>
-				<expression>[\t]\b(.*)\b</expression>
+				<expression>[\t]\b([0-9]*)\b</expression>
 			</RegExp>
 			<!--URL to Thumbnail-->
 			<RegExp input="$$1" output="&lt;url function=&quot;GetThumbnailLink&quot;&gt;http://www.moviemaze.de/media/poster/\1/\2&lt;/url&gt;" dest="5+">

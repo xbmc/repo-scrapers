@@ -86,7 +86,7 @@
 			</RegExp>
 			<!--Runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression>L.nge:&lt;/dt&gt;[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression>L.nge:&lt;/dt&gt;[^&gt;]*&gt;([0-9]*)</expression>
 			</RegExp>
 			<!--Plot-->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">

@@ -35,7 +35,7 @@
 			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="13+">
 				<expression noclean="1">&lt;span class="10px titolettocast"&gt;Sceneggiatura: &lt;/span&gt;[\s]*&lt;br /&gt;[\s]*&lt;div style="float:left; margin-top:1px"&gt;&lt;a rel="nofollow" href="/[^&lt;]*&lt;img src="[^=]*="([^\"]*)" height="25px"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;runtime&gt;\1min&lt;/runtime&gt;" dest="13+">
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="13+">
 				<expression>&lt;div class="titolettocast" align="left"&gt;Durata:&lt;/div&gt;[\s]+([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="13+">

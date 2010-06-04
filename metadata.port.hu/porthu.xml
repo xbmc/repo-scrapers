@@ -94,7 +94,7 @@
 			</RegExp>
 			<!--Get runtime from imdb.com-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression trim="1">&lt;h5&gt;Runtime:&lt;/h5&gt;[^0-9]*([^&lt;]*)</expression>
+				<expression trim="1">&lt;h5&gt;Runtime:&lt;/h5&gt;\n&lt;div class=&quot;info-content&quot;&gt;\n([0-9]*)</expression>
 			</RegExp>
 			<!--Get original title from imdb.com and store it in buffer 18 for future use-->
 			<RegExp input="$$1" output="\1" dest="18">

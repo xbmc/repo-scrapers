@@ -80,7 +80,7 @@
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;votes&gt;\1\2&lt;/votes&gt;" dest="5+">
 				<expression>&lt;tr&gt;&lt;td align="center"&gt;\((.*) votos\)&lt;/td&gt;&lt;/tr&gt;</expression>
 			</RegExp>
-			<RegExp input="$$9" output="&lt;runtime&gt;\1 minutos&lt;/runtime&gt;" dest="5+">
+			<RegExp input="$$9" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
 					<expression noclean="1">&lt;b&gt;DURACI.N&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;PA.S&lt;/b&gt;</expression>
 				</RegExp>
