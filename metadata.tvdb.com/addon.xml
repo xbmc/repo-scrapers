@@ -13,7 +13,9 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary>TV show scraper</summary>
+    <summary lang="zh">电视剧集刮削器</summary>
     <description>TheTVDB.com is a TV Scraper. The site is a massive open database that can be modified by anybody and contains full meta data for many shows in different languages. All content and images on the site have been contributed by their users for users and have a high standard or quality. The database schema and website are open source under the GPL.</description>
+    <description lang="zh">TheTVDB.com是一个电视刮削器。该网站是一个巨大的开放式数据库，任何人都可以修改，包含多语言的许多电视剧集资料。网站设定了高品质标准，所有图片和内容都由用户提供。数据库结构和网站均在GPL许可下开源。</description>
     <description lang="nl">TheTVDB.com is een TV-show Scraper. De site is een gigantische open databank die door iedereen kan aangepast en uitgebreid worden. Het bevat informatie voor vele TV-shows in verschillende talen. Alle inhoud en afbeeldingen zijn bijgedragen door en voor gebruikers met een hoge kwaliteitsnorm. Het databank schema en de website zijn vrijgegeven onder de open source GPL licentie.</description>
     <supportedcontent>
       <content>tvshows</content>

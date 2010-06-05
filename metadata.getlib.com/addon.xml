@@ -15,10 +15,12 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">Getlib Movie Scraper</summary>
+    <summary lang="zh">Getlib电影刮削器</summary>
     <summary lang="kr">Getlib 영화 스크래퍼</summary>
     <summary lang="se">Getlib Filmskrapa</summary>
     <summary lang="nl">Getlib Film Scraper</summary>
     <description lang="en">Download Movie information from www.getlib.com</description>
+    <description lang="zh">从www.getlib.com下载电影资料。</description>
     <description lang="kr">www.getlib.com 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.getlib.com</description>
     <description lang="nl">Download film informatie van www.getlib.com</description>
