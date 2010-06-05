@@ -64,7 +64,7 @@
 			</RegExp>
 			<!-- Rating -->
 			<RegExp input="$$1" output="&lt;rating max=&quot;5&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="5+">
-				<expression trim="1">Gesamtwertung: ([0-9.]+) Sterne  bei ([0-9]*) Bewertungen</expression>
+				<expression trim="1">Gesamtwertung: ([0-9.]+) Sterne  bei ([0-9]*) Stimmen</expression>
 			</RegExp>
 			<!-- Genre Film -->
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
