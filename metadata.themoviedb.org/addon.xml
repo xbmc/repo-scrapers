@@ -13,8 +13,10 @@
              library="tmdb.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary>TMDB Movie Scraper</summary>
+    <summary lang="zh">TMDB电影刮削器</summary>
     <summary lang="nl">TMDB Film Scraper</summary>
     <description>themoviedb.org is a free and open movie database. It's completely user driven by people like you. TMDb is currently used by millions of people every month and with their powerful API, it is also used by many popular media centers like XBMC to retrieve Movie Metadata, Posters and Fanart to enrich the user's experience.</description>
+    <description lang="zh">themoviedb.org是一个开放和自由的电影数据库。它完全由象你一样的用户来掌控。TMDb每月为上百万用户提供服务，并通过强大的API界面为许多流行的媒体中心系统如XBMC提供电影资料、封面海报和同人画以丰富用户的体验。</description>
     <description lang="nl">themoviedb.org is een vrije en open film databank. Het wordt compleet aangedreven door gebruikers zoals jezelf. TMDb wordt momenteel maandelijks gebruikt door miljoenen mensen. Hun krachtige API maakt het voor mediaspelers zoals XBMC mogelijk om voor een film bijkomende informatie, posters en fanarts op te halen.</description>
     <platform>all</platform>
   </extension>
