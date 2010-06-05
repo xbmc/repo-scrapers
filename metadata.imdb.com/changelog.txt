@@ -1,2 +1,12 @@
-1.0.0:
-Initial import into addons repository
+[B]1.0.4[/B]
+
+- return numeric runtime/duration values
+- removed fanart.jpg
+
+[B]1.0.1-3[/B]
+
+- internal tests
+
+[B]1.0.0[/B]
+
+- Initial import into addons repository
