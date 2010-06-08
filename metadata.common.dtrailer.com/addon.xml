@@ -13,7 +13,9 @@
     <minversion>20000</minversion>
     <summary>DTrailer Scraper Library</summary>
     <summary lang="nl">DTralier Scraper Collectie</summary>
-    <description>Download trailers from www.themoviedb.org</description>
-    <description lang="nl">Download trailers van www.themoviedb.org</description>
+    <summary lang="pt">Biblioteca de trailers DTrailer</summary>
+    <description>Download trailers from en.dtrailer.com</description>
+    <description lang="nl">Download trailers van en.dtrailer.com</description>
+    <description lang="pt">Descarregar trailers de en.dtrailer.com</description>
   </extension>
 </addon>

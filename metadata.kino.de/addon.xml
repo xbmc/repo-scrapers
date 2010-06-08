@@ -15,10 +15,12 @@
     <summary lang="kr">Kino.de 영화 스크래퍼</summary>
     <summary lang="se">Kino.de Filmskrapa</summary>
     <summary lang="nl">Kino.de Film Scraper</summary>
+    <summary lang="pt">Scraper de filmes Kino.de</summary>
     <description lang="en">Download Movie information from www.kino.de</description>
     <description lang="kr">www.Kino.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.kino.de</description>
     <description lang="nl">Download film informatie van www.kino.de</description>
+    <description lang="pt">Descarregar informação de filmes de www.kino.de</description>
     <platform>all</platform>
   </extension>
 </addon>

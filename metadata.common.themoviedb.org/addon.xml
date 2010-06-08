@@ -13,7 +13,9 @@
     <minversion>20000</minversion>
     <summary>TMDb Scraper Library</summary>
     <summary lang="nl">TMDb Scraper Collectie</summary>
+    <summary lang="pt">Scraper de filmes TMDb</summary>
     <description>Download thumbs and fanarts from www.themoviedb.org</description>
     <description lang="nl">Download afbeeldingen en fanart van www.themoviedb.org</description>
+    <description lang="pt">Descarregar informação de filmes de www.themoviedb.org</description>
   </extension>
 </addon>

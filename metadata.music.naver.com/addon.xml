@@ -15,7 +15,9 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">NAVER Music Scraper</summary>
     <summary lang="kr">네이버 음악 스크래퍼</summary>
+    <summary lang="pt">Scraper de música NAVER</summary>
     <description lang="en">Download music information from music.naver.com</description>
     <description lang="kr">music.naver.com 에서 음악 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de música de music.naver.com</description>
   </extension>
 </addon>

@@ -18,6 +18,7 @@
   <extension point="xbmc.addon.metadata">
     <summary>AllMusic Scraper</summary>
     <summary lang="zh">AllMusic音乐刮削器</summary>
+    <summary lang="pt">Scraper de músicas AllMusic</summary>
     <description>Use AllMusic.com to fill your libray metadata information.
 The allmusic website was created in 1995 as a place for music fans to indulge their passion.
 The AMG editorial staff, along with hundreds of expert contributors (all music fanatics in their own right), has made allmusic the most comprehensive music reference source on the planet. They are all dedicated to creating and maintaining the knowledgeable, spirited content that music lovers and industry professionals have come to expect from AMG.
@@ -30,6 +31,10 @@ AMG的编辑和许多专业撰稿人（都是音乐狂热分子）共同把allmu
   De AllMusic website is ontstaan in 1995 als webstek voor echte muziekfans.
 The AMG redactie, samen met honderden bijdragende experen (allen muziekfans in hun eigen gebied), hebben van allmusic het meest complete muziek naslagwerk gemaakt op deze planeet.
 Alle genres en stijlen worden gedekt, gaande van de meest commerciele tot de meest alternatieve. We bekritiseren albums en artiesten in hun eigen genre, van opera tot garagerock tot traditionele country. Dit maakt dat fans van elke muziekstijl bij ons terecht kunnen voor de laatste informatie rond hun favoriete artiesten of om nieuwe muziek te leren ontdekken.</description>
+    <description lang="pt">Use o AllMusic.com para obter a informação da sua Biblioteca de música.
++O site allmusic foi criado em 1995 para alimentar a paixão dos fans de música.
++O pessoal da redacção da AMG, em conjunto com centenas de especialistas (todos fanáticos por música à sua maneira), tornaram o allmusic o mais completo site de referência musical do planeta. Continuam dedicados a criar e manter o conhecimento, espírito e conteúdos que fans de música e profissionais da indústria se habituaram a obter da AMG.
++Todos os géneros e estilos de música podem ser encontrados aqui, desde o mais comercial e popular até à música mais rara. Nós revemos e criticamos álbuns e artistas dentro do contexto do seu género - the ópera a rock de garagem, de pop a música country. Isto assegura que fans de qualquer género podem depender de nós para os manter actualizados sobre os seus artistas favoritos bem como de novos sons.</description>
     <platform>all</platform>
   </extension>
 </addon>

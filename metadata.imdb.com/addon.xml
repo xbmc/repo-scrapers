@@ -19,6 +19,7 @@
     <summary lang="kr">IMDB 영화 스크래퍼</summary>
     <summary lang="se">IMDB Filmskrapa</summary>
     <summary lang="nl">IMDB film Scraper</summary>
+    <summary lang="pt">Scraper de filmes IMDb</summary>
     <description lang="en">Download Movie information from www.imdb.com
 The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
     <description lang="kr">www.imdb.com 에서 영화 정보를 다운로드
@@ -27,6 +28,8 @@ The Internet Movie Database (IMDb) 는 거대한 영화 정보를 가지고 있�
 Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försöker att katalogisera varenda detalj om en film, från vem som var i den, till vem som gjorde den, inspelningsplatser och även var du kan hitta recensioner och fan-sidor på webben. De gör sedan sitt bästa för att presentera denna information på ett sätt som är lätt att söka och komma åt.</description>
     <description lang="nl">Download film informatie van www.imdb.com
 De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
+    <description lang="pt">Descarregar informação de filmes de www.imdb.com
++A Internet Movie Database (IMDb) é uma coleccção enorme de informação de filmes. Tentam catalogar cada detalhe pertinente sobre um filme, quem actuou nele, quem o produziu, curiosidades sobre o filme, locais de filmagem e até mesmo onde pode encontrar críticas e clubes de fans na Internet. A organização de todos os dados é de procura fácil, permitindo um rápido acesso a todos os detalhes.</description>
     <platform>all</platform>
   </extension>
 </addon>

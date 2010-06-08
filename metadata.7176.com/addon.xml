@@ -17,11 +17,13 @@
     <summary lang="kr">7176 영화 스크래퍼</summary>
     <summary lang="se">7176 Filmskrapa</summary>
     <summary lang="nl">7176 Film Scraper</summary>
+    <summary lang="pt">Scraper de filmes 7176</summary>
     <description lang="en">Download Movie information from www.7176.com</description>
     <description lang="zh">从www.7176.com下载电影资料。imdb.cn网站关闭后，7176可以说是最好的中文电影资料库网站，电影资料较全，而且与imdb.com共享电影编码，有利于从不同的网站取得更多相关图片信息。</description>
     <description lang="kr">www.7176.com 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.7176.com</description>
     <description lang="nl">Download film informatie van www.7176.com</description>
+    <description lang="pt">Descarregar informação de filmes de www.7176.com</description>
     <platform>all</platform>
   </extension>
 </addon>

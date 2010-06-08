@@ -17,10 +17,12 @@
     <summary lang="en">Freebase Music Scraper</summary>
     <summary lang="kr">Freebase 음악 스크래퍼</summary>
     <summary lang="se">Freebase Musikskrapa</summary>
+    <summary lang="pt">Scraper de filmes Freebase</summary>
     <description lang="en">Download Music information</description>
     <description lang="kr">Freebase 에서 음악 정보 다운로드</description>
     <description lang="se">Ladda ner musikinformation från Freebase</description>
     <description lang="nl">Download muziek informatie van freebase</description>
+    <description lang="pt">Descarregar informação de filmes de www.freebase.com</description>
     <platform>all</platform>
   </extension>
 </addon>

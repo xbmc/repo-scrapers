@@ -13,7 +13,9 @@
              library="beyazperde.xml.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Beyazperde Movie Scraper</summary>
+    <summary lang="pt">Scraper de filmes Beyazperde</summary>
     <description lang="en">Download Movie information from www.beyazperde.mynet.com</description>
+    <description lang="pt">Descarregar informação de filmes de www.beyazperde.mynet.com</description>
     <platform>all</platform>
   </extension>
 </addon>

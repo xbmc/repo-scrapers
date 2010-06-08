@@ -13,7 +13,9 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Rotten Tomatoes Movie Scraper</summary>
     <summary lang="kr">Rotten Tomatoes 영화 스크래퍼</summary>
+    <summary lang="pt">Scraper de filmes Rotten Tomatoes</summary>
     <description lang="en">Download Movie information from www.rottentomatoes.com</description>
     <description lang="kr">www.rottentomatoes.com에서 영화 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de www.rottentomatoes.com</description>
   </extension>
 </addon>

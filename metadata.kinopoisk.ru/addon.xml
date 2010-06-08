@@ -13,8 +13,10 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">KinoPoisk Movie Scraper</summary>
     <summary lang="kr">KinoPoisk 영화 스크래퍼</summary>
+    <summary lang="pt">Scraper de filmes KinoPoisk</summary>
     <description lang="en">Download Movie information from www.kinopoisk.ru</description>
     <description lang="kr">www.kinopoisk.ru 에서 영화 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de www.kinopoisk.ru</description>
     <platform>all</platform>
   </extension>
 </addon>

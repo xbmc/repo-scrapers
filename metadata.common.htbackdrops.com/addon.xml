@@ -12,6 +12,8 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary>HTBackdrops Scraper Library</summary>
-    <description>some description</description>
+    <summary lang="pt">Biblioteca de fundos HTBackdrops </summary>
+    <description>Download backdrops from www.htbackdrops.com</description>
+    <description lang="pt">Descarregar fundos de www.htbackdrops.com</description>
   </extension>
 </addon>

@@ -12,7 +12,9 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">MoviePlayer TV Scraper</summary>
     <summary lang="kr">MoviePlayer 티비쇼 스크래퍼</summary>
+    <summary lang="pt">Scraper de séries de TV MoviePlayer </summary>
     <description lang="en">Download TVShow information from www.movieplayer.it</description>
     <description lang="kr">www.movieplayer.it에서 티비쇼 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de www.movieplayer.it</description>
   </extension>
 </addon>

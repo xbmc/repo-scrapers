@@ -15,9 +15,11 @@
     <summary lang="kr">VideoBuster.de 영화 스크래퍼</summary>
     <summary lang="se">VideoBuster.de Filmskrapa</summary>
     <summary lang="nl">VideoBuster.de Film Scraper</summary>
+    <summary lang="pt">Scraper de filmes VideoBuster.de</summary>
     <description lang="en">Download Movie information from www.videobuster.de</description>
     <description lang="kr">www.videobuster.de에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.videobuster.de</description>
     <description lang="nl">Download film informatie van www.videobuster.de</description>
+    <description lang="pt">Descarregar informação de filmes de www.videobuster.de</description>
   </extension>
 </addon>

@@ -16,9 +16,11 @@
     <summary lang="kr">OFDb.de 영화 스크래퍼</summary>
     <summary lang="se">OFDb.de Filmskrapa</summary>
     <summary lang="nl">OFDb.de Film Scraper</summary>
+    <summary lang="pt">Scraper de filmes OFDb.de</summary>
     <description lang="en">Download Movie information from www.ofdb.de</description>
     <description lang="kr">www.ofdb.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.ofdb.de</description>
     <description lang="nl">Download film informatie van www.ofdb.de</description>
+    <description lang="pt">Descarregar informação de filmes de www.ofdb.de</description>
   </extension>
 </addon>

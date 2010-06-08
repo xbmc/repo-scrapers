@@ -13,7 +13,9 @@
     <minversion>20000</minversion>
     <summary>AllMusic Music Scraper</summary>
     <summary lang="nl">AllMusic Muziek Scraper</summary>
+    <summary lang="pt">Scraper de música AllMusic </summary>
     <description>Download Music information from www.allmusic.com</description>
     <description lang="nl">Download muziek informatie van www.allmusic.com</description>
+    <description lang="pt">Descarregar informação de música de www.allmusic.com</description>
   </extension>
 </addon>

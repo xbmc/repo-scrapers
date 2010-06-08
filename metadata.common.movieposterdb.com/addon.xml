@@ -14,8 +14,10 @@
     <summary lang="en">MoviePosterDB Scraper Library</summary>
     <summary lang="kr">MoviePosterDB 스크래퍼 라이브러리</summary>
     <summary lang="se">MoviePosterDB Skrapbibliotek</summary>
+    <summary lang="pt">Posters de filmes MoviePosterDB </summary>
     <description lang="en">Download Movie Posters From MoviePosterDB</description>
     <description lang="kr">MoviePosterDB 에서 포스터 다운로드</description>
     <description lang="se">Ladda ner filminformation från MoviePostersDB.</description>
+    <description lang="pt">Descarregar posters de filmes de www.movieposterdb.com</description>
   </extension>
 </addon>

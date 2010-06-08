@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
-    <string id="30000">Please translate me</string>
-    <string id="30001">Please translate me</string>
-    <string id="30002">Please translate me</string>
-    <string id="30003">Please translate me</string>
-    <string id="30004">Please translate me</string>
-    <string id="30005">Please translate me</string>
-    <string id="30006">Please translate me</string>
-    <string id="30007">Please translate me</string>
-    <string id="30008">Please translate me</string>
-    <string id="30009">Please translate me</string>
-    <string id="30010">Please translate me</string>
-    <string id="30011">Please translate me</string>
-    <string id="30012">Please translate me</string>
-    <string id="30013">Please translate me</string>
-    <string id="30014">Please translate me</string>
+    <string id="30000">Full cast</string>
+    <string id="30001">Full cast >> Producer(s)</string>
+    <string id="30002">Full cast >> Actors</string>
+    <string id="30003">Full cast >> Filmmakers</string>
+    <string id="30004">Full cast >> Cast separators</string>
+    <string id="30005">Add to Plot >> Critique</string>
+    <string id="30006">Add to Plot >> Audience critique</string>
+    <string id="30007">Add to Plot >> Forum comments</string>
+    <string id="30008">Add to Plot >> Famous film phrases</string>
+    <string id="30009">Vote in 10esimi</string>
+    <string id="30010">Direct vote, critics and the public</string>
+    <string id="30011">Direct vote, critics and audiences >> View at:</string>
+    <string id="30012">All posters</string>
+    <string id="30013">Trailer</string>
+    <string id="30014">TMDB backdrops (slow)</string>
 </strings>

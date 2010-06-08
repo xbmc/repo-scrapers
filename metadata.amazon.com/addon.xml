@@ -12,8 +12,10 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Amazon Movie Scraper</summary>
     <summary lang="kr">Amazon 영화 스크래퍼</summary>
+    <summary lang="pt">Scraper de filmes Amazon</summary>
     <description lang="en">Download Movie information from www.amazon.com</description>
     <description lang="kr">www.amazon.com 에서 영화 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de www.amazon.com</description>
     <platform>all</platform>
   </extension>
 </addon>

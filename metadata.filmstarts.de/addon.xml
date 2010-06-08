@@ -15,10 +15,12 @@
     <summary lang="kr">Filmstarts.de 영화 스크래퍼</summary>
     <summary lang="se">Filmstarts.de Filmskrapa</summary>
     <summary lang="nl">Filmstarts.de Film Scraper</summary>
+    <summary lang="pt">Scraper de filmes Filmstarts.de</summary>
     <description lang="en">Download Movie information from www.filmstarts.de</description>
     <description lang="kr">www.filmstarts.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.filmstarts.de</description>
     <description lang="nl">Download film informatie van www.filmstarts.de</description>
+    <description lang="pt">Descarregar informação de filmes de www.filmstarts.de</description>
     <platform>all</platform>
   </extension>
 </addon>
