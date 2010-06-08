@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.1" date="2010-04-16">
-	<GetSettings dest="3">
-		<RegExp input="$$5" output="&lt;settings&gt;\1&lt;/settings&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;setting label=&quot;30000&quot; type=&quot;bool&quot; id=&quot;EnableFullPlot&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;30001&quot; type=&quot;bool&quot; id=&quot;EnableThumbs&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;30002&quot; type=&quot;bool&quot; id=&quot;EnableFanart&quot; default=&quot;true&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;30003&quot; type=&quot;bool&quot; id=&quot;EnableTMDBFanart&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;setting label=&quot;30004&quot; type=&quot;bool&quot; id=&quot;EnableVoteNum&quot; default=&quot;false&quot;&gt;&lt;/setting&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</GetSettings>
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://movie.naver.com/moviedetail/moviedetailMain.do?movieId=\1&lt;/url&gt;" dest="3">
 			<expression>movie\.naver\.com[^\?]*\?code=(\d*)</expression>
