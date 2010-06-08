@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="30000">Descarregar informação do elenco todo (lento)</string>
+    <string id="30001">Descarregar classificação do MPAA e IMDb</string>
+    <string id="30002">Descarregar poster de TMDb (Inglês)</string>
+    <string id="30003">Descarregar fundos de TMDb (HD)</string>
+    <string id="30004">Descarregar fundos de movieplayer.it (SD)</string>
+</strings>
