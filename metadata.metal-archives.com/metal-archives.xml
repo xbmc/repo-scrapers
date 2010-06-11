@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<scraper framework="1.1" date="2010-05-25">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="http://www.\1" dest="3">
+			<expression>(metal-archives.com/.*)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateAlbumSearchUrl SearchStringEncoding="iso-8859-1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.metal-archives.com/search.php?string=\1&amp;amp;type=album&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+	</CreateAlbumSearchUrl>
+	<GetAlbumSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\1&lt;/artist&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://www.metal-archives.com/\2&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" noclean="2">&lt;a href='band.php[^']*'&gt;(.*?)&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;a href='(release.php[^']*)'&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>		
+	</GetAlbumSearchResults>
+	<GetAlbumDetails dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;artist&gt;\1&lt;/artist&gt;&lt;title&gt;\2&lt;/title&gt;" dest="5+">
+				<expression>Encyclopaedia Metallum - (.*?) - (.*)&lt;/title&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression encode="1">Encyclopaedia Metallum - (.*?) - .*&lt;/title&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression encode="1">Encyclopaedia Metallum - .*? - (.*)&lt;/title&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;label&gt;\1&lt;/label&gt;" dest="5+">
+				<expression trim="1">&lt;td valign=&quot;top&quot;&gt;.*?, ([^&lt;]*)&lt;br&gt;.*?.*? &lt;b&gt;([0-9]+)&lt;/b&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;track&gt;&lt;title&gt;\2&lt;/title&gt;&lt;position&gt;\1&lt;/position&gt;&lt;duration&gt;\3&lt;/duration&gt;&lt;/track&gt;" dest="5+">
+				<expression repeat="yes">&lt;td&gt;([0-9]+)\.&lt;/td&gt;&lt;td&gt;([^&lt;]*)&lt;/td&gt;&lt;td align='center'&gt;([^&lt;]*)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetAlbumReview&quot;&gt;http://www.metal-archives.com/\1&lt;/url&gt;&lt;rating max=&quot;100&quot;&gt;\2&lt;/rating&gt;" dest="5+">
+				<expression noclean="1">&lt;a href='newreview.php[^']*'>.*?&lt;br&gt;\[Average rating for &lt;a href='(review.php[^']*)'&gt;.*?&lt;b&gt;([0-9]+)%</expression>
+			</RegExp>
+			<RegExp input="$$1" conditional="lastfmalbumthumbs" output="&lt;url function=&quot;GetLastFMAlbumThumbs&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;artist=$$8&amp;album=$$9&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
+				<expression encode="1"/>
+			</RegExp>
+			<RegExp conditional="maalbumthumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">&lt;a href=&quot;(http://www.metal-archives.com/images[^&quot;]*)&quot;&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumDetails>
+	<GetAlbumReview dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8850-1&quot;?>&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="5">
+				<expression trim="1">&lt;table width=.*?&lt;/font&gt;(.*?)&lt;/table&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumReview>
+	<CreateArtistSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.metal-archives.com/search.php?string=\1&amp;amp;type=band&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+	</CreateArtistSearchUrl>
+	<GetArtistSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;$$2&lt;/title&gt;&lt;url&gt;http://www.metal-archives.com/\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression>location.href = '([^']*)'</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.metal-archives.com/\1&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" noclean="1">&lt;a href='(band.php[^']*)'&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>		
+	</GetArtistSearchResults>
+	<GetArtistDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression>Genre\(s\).*?&lt;td colspan=&quot;4&quot;&gt;([^&lt;]*)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">([^,]+)[,]?</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression>Lyrical theme\(s\).*?&lt;td colspan=&quot;4&quot;&gt;([^&lt;]*)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;theme&gt;\1&lt;/theme&gt;" dest="5+">
+				<expression repeat="yes">([^,]+)[,]?</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression>&lt;td class=&quot;tt&quot; colspan=&quot;4&quot;&gt;([^&lt;]*)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$9" output="&lt;name&gt;\1&lt;/name&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;formed&gt;\1&lt;/formed&gt;" dest="5+">
+				<expression>&lt;td&gt;.*?&lt;/td&gt;.*?&lt;td&gt;([0-9]+)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;biography&gt;\1\n\2&lt;/biography&gt;" dest="5+">
+				<expression trim="1,2">Current line-up&lt;/td&gt;(.*)&lt;td class=&quot;trt&quot; colspan=&quot;4&quot;&gt;Additional notes(.*?)&lt;td class=&quot;trt&quot; colspan=&quot;4&quot;>Buy</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;/album&gt;" dest="5+">
+				<expression repeat="yes">release.php[^']*'&gt;([^&lt;]*)&lt;.*?, ([0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$9" conditional="htbfanart" output="&lt;url cache=&quot;htb-$$2.html&quot; function=&quot;GetHTBFanart&quot; post=&quot;yes&quot;&gt;http://www.htbackdrops.com/search.php?search_terms=all&amp;amp;search_keywords=\1&lt;/url&gt;" dest="5+">
+				<expression encode="1"/>
+			</RegExp>
+			<RegExp input="$$9" conditional="lastfmartistthumbs" output="&lt;url function=&quot;GetLastFMArtistThumbs&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getimages&amp;amp;artist=\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
+				<expression encode="1"/>
+			</RegExp>
+			<RegExp input="$$2" conditional="htbthumbs" output="&lt;url cache=&quot;htb-$$2.html&quot; function=&quot;GetHTBThumbs&quot; post=&quot;yes&quot;&gt;http://www.htbackdrops.com/search.php?search_terms=all&amp;amp;search_keywords=\1&lt;/url&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="maartistthumbs"input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">&lt;a href='(http://www.metal-archives.com/images[^']*)'&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistDetails>
+</scraper>
