@@ -1,0 +1,12 @@
+[B]1.1.0[/B]
+
+- Arreglado un problema que no dejaba configurar correctamente el scraper.
+- Añadidas traducciones y mejorados ajustes.
+
+[B]1.0.2[/B]
+
+- Adaptado al nuevo formato de Addons.
+
+[B]1.0.0[/B]
+
+- Scraper Inicial
