@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <addon id="metadata.tvdb.com"
        name="The TVDB"
        version="1.0.1"
@@ -8,9 +8,10 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows"
              language="multi"
-             library="tvdb.xml"/>
+             library="tvdb.xml"
+             cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <summary>TVDB.com TV show scraper</summary>
+    <summary>Fetch TV show metadata from TheTVDB.com</summary>
     <summary lang="pt">Scraper de séries de TV TVDB.com</summary>
     <summary lang="zh">电视剧集刮削器</summary>
     <description>TheTVDB.com is a TV Scraper. The site is a massive open database that can be modified by anybody and contains full meta data for many shows in different languages. All content and images on the site have been contributed by their users for users and have a high standard or quality. The database schema and website are open source under the GPL.</description>
