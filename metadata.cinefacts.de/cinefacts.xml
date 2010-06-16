@@ -90,7 +90,7 @@
 			</RegExp>
 			<!--Plot-->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression>KURZINHALT&lt;/h2&gt;&lt;/li&gt;[^&gt;]*&gt;*([^&lt;]*)[&lt;/li&gt;]</expression>
+				<expression noclean="1" fixchars="1">KURZINHALT&lt;/h2&gt;&lt;/li&gt;[^&gt;]*&gt;*([^&lt;]*)[&lt;/li&gt;]</expression>
 			</RegExp>
 			<!--Writers-->
 			<RegExp input="$$1" output="\1" dest="6+">
