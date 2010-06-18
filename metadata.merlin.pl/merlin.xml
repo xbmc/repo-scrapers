@@ -74,10 +74,6 @@
 			<RegExp input="$$2" conditional="lastfmartistthumbs" output="&lt;chain function=&quot;GetLastFMArtistThumbs&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$2" conditional="discogsartistthumbs" output="&lt;url function=&quot;GetDiscogsArtistThumbs&quot; gzip=&quot;yes&quot;&gt;http://www.discogs.com/search?type=artists&amp;q=\1&amp;f=xml&amp;api_key=173f75844f&lt;/url&gt;" dest="5+">
-				<expression/>
-
-			</RegExp>
 			<RegExp input="$$2" conditional="htbfanart" output="&lt;chain function=&quot;GetHTBFanart&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
