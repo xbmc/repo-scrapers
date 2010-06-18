@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.metal-archives.com"
        name="Encyclopaedia Metallum"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="spiff">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
-    <import addon="metadata.common.htbackdrops.com" version="1.0"/>
-    <import addon="metadata.common.last.fm" version="1.0"/>
+    <import addon="metadata.common.htbackdrops.com" version="1.0.1"/>
+    <import addon="metadata.common.last.fm" version="1.0.1"/>
   </requires>
   <extension point="xbmc.metadata.scraper.albums"
              language="en"
