@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Download info for all the cast (slow)</string>
-    <string id="30001">Download MPAA and IMDb rating</string>
-    <string id="30002">Download poster from TMDb (English)</string>
-    <string id="30003">Download backdrops from TMDb (HD)</string>
-    <string id="30004">Download backdrops from movieplayer.it (SD)</string>
+    <string id="30000">Full cast info (slow)</string>
+    <string id="30001">Get MPAA, studio and rating from IMDb</string>
+    <string id="30002">Get i Poster from TMDB too (in English)</string>
+    <string id="30003">Get Fanarts from TMDB.com (HD)</string>
+    <string id="30004">Get Fanarts from Movieplayer.it (SD)</string>
 </strings>
