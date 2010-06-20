@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<strings>
-    <string id="30000">Enable Fanart</string>
-    <string id="30001">Grab artist thumbs from Last.fm</string>
-    <string id="30002">Grab album thumbs from Last.fm</string>
-    <string id="30003">Grab artist thumbs from HTBackdrops</string>
-    <string id="30004">Grab artist thumbs from metal-archives.com</string>
-    <string id="30005">Grab album thumbs from metal-archives.com</string>
-</strings>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <scraper framework="11" date="2010-06-11">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="\1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression noclean="1">(http://www\.movieplayer\.it/film/[0-9]+/[^"]+)</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="http://www.google.com/cse?cx=010988534213966941752%3Agzbql2poc0a&amp;ie=UTF-8&amp;q=\1$$4&amp;sa=Cerca&amp;hl=it" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.com/cse?cx=010988534213966941752%3Agzbql2poc0a&amp;amp;ie=UTF-8&amp;amp;q=\1$$4&amp;sa=Cerca&amp;amp;hl=it&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>

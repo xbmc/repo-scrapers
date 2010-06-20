@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.0" date="2009-05-22">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="\1/" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1/&lt;/url&gt;" dest="3">
 			<expression>(http://he.israel-music.com.*)</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateAlbumSearchUrl dest="3">
-		<RegExp input="$$1" output='http://he.israel-music.com/search/\1/' dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://he.israel-music.com/search/\1/&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
-		<RegExp input="$$2%20$$1" output='http://he.israel-music.com/search/\1/' dest="3">
+		<RegExp input="$$2%20$$1" output="&lt;url&gt;http://he.israel-music.com/search/\1/&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
 	</CreateAlbumSearchUrl>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" standalone="yes"?>
 <scraper framework="1.1" date="2009-03-12">
 	<CreateSearchUrl dest="3" SearchStringEncoding="CP1251">
-		<RegExp input="$$1" output="http://www.world-art.ru/search.php?name=\1&amp;global_sector=all" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.world-art.ru/search.php?name=\1&amp;amp;global_sector=all&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>

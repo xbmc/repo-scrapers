@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <scraper framework="1.0" date="2010-02-25">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="\1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression noclean="1">(http://$INFO[locality]\.rottentomatoes\.com/m/[A-Za-z0-9_]*)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;url&gt;http://$INFO[locality].rottentomatoes.com/alias?type=imdbid&amp;amp;s=\2&lt;/url&gt;" dest="3+">
@@ -12,7 +12,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="http://$INFO[locality].rottentomatoes.com/search/full_search.php?search=\1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://$INFO[locality].rottentomatoes.com/search/full_search.php?search=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1"></expression>
 		</RegExp>
 	</CreateSearchUrl>

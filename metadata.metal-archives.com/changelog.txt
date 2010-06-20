@@ -1,5 +1,0 @@
-[B]1.0.1[/B]
-Scraper libraries changed. No functional changes
-
-[B]1.0.0[/B]
-Initial commit.

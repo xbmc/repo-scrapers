@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <scraper framework="1.1" date="2009-09-26">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&amp;artist=\1&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;lang=$INFO[language]" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&amp;amp;artist=\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;amp;lang=$INFO[language]&lt;/url&gt;" dest="3">
 			<expression>(http://www.last.fm/music/([^/]*))$</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateArtistSearchUrl dest="3">
-		<RegExp input="$$1" output="http://ws.audioscrobbler.com/2.0/?method=artist.search&amp;artist=\1&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=artist.search&amp;amp;artist=\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
 	</CreateArtistSearchUrl>

@@ -5,13 +5,13 @@
 
 <scraper framework="1.0" date="2009-11-12">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="\1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression noclean="1">(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)</expression>
 		</RegExp>
 	</NfoUrl>
 
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="http://www.google.it/cse?q=\1&amp;cx=partner-pub-1699801751737986%3Ax7j961-1g3m&amp;ie=ISO-8859-1&amp;sa=Cerca&amp;num=20" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/cse?q=\1&amp;amp;cx=partner-pub-1699801751737986%3Ax7j961-1g3m&amp;amp;ie=ISO-8859-1&amp;amp;sa=Cerca&amp;amp;num=20&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>

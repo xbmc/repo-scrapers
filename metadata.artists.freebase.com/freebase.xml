@@ -6,7 +6,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateArtistSearchUrl dest="3">
-		<RegExp input="$$1" output="http://www.freebase.com/api/service/search?query=\1&amp;type=/music/artist&amp;indent=1" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.freebase.com/api/service/search?query=\1&amp;amp;type=/music/artist&amp;amp;indent=1&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
 	</CreateArtistSearchUrl>

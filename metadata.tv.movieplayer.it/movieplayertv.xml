@@ -2,7 +2,7 @@
 <scraper name="movieplayer.it" date="2010-03-08">
 
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="http://www.google.com/cse?cx=010185506218629253150%3Ah5nzuoc-h7w&amp;ie=UTF-8&amp;q=\1&amp;sa=Cerca&amp;hl=it" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.com/cse?cx=010185506218629253150%3Ah5nzuoc-h7w&amp;amp;ie=UTF-8&amp;amp;q=\1&amp;amp;sa=Cerca&amp;amp;hl=it&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
