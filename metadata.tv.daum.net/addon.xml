@@ -11,9 +11,11 @@
              library="daum-tv.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Daum TV Shows Scraper</summary>
+    <summary lang="hu">Daum TV műsor scraper</summary> 
     <summary lang="kr">다음 티비쇼 스크래퍼</summary>
     <summary lang="pt">Scraper de séries de TV Daum TV </summary>
     <description lang="en">Download TV shows information from movie.daum.net</description>
+    <description lang="hu">TV műsor információk letöltése a movie.daum.net-ről</description>
     <description lang="kr">movie.daum.net에서 티비쇼 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
   </extension>

@@ -14,9 +14,11 @@
              library="moviemeter.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">MovieMeter Movie Scraper</summary>
+    <summary lang="hu">MovieMeter Film scraper</summary> 
     <summary lang="kr">MovieMeter 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes MovieMeter</summary>
     <description lang="en">Download Movie information from www.moviemeter.nl</description>
+    <description lang="hu">Film információk letöltése a www.moviemeter.nl webhelyről</description>
     <description lang="kr">www.moviemeter.nl 에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de www.moviemeter.nl</description>
     <platform>all</platform>

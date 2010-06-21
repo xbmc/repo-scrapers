@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.beyazperde.mynet.com"
        name="Beyazperde"
        version="1.0.1"
@@ -13,8 +13,10 @@
              library="beyazperde.xml.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Beyazperde Movie Scraper</summary>
+    <summary lang="hu">Beyazperde Film scraper</summary> 
     <summary lang="pt">Scraper de filmes Beyazperde</summary>
     <description lang="en">Download Movie information from www.beyazperde.mynet.com</description>
+    <description lang="hu">Film információk letöltése a www.beyazperde.mynet.com-ról</description>
     <description lang="pt">Descarregar informação de filmes de www.beyazperde.mynet.com</description>
     <platform>all</platform>
   </extension>

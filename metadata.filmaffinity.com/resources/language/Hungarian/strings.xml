@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Teljes iMDB szereposztás letöltése</string>
+    <string id="30001">Filmelőzetesek engedélyezése</string>
+    <string id="30002">Csak a Filmaffinity információ fanart nélkül (gyors)</string>
+    <string id="30003">Fanart engedélyezése</string>
+    <string id="30004">IMPAwards poszterek letöltése</string>
+    <string id="30005">MoviePosterDB poszterek letöltése</string>
+    <string id="30006">iMDB poszterek letöltése</string>
+    <string id="30007">iMDB poszter méret</string>
+    <string id="30008">Stúdió logo kompatibilitás bekapcsolása</string>
+    <string id="30009">Extra iMDB információ letöltése</string>
+    <string id="30010">iMDB besorolás használata</string>
+</strings>

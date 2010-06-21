@@ -12,9 +12,11 @@
              library="daum-movie.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Daum Movie Scraper</summary>
+    <summary lang="hu">Daum Film scraper</summary> 
     <summary lang="kr">다음 음악 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Daum</summary>
     <description lang="en">Download movie information from movie.daum.net</description>
+    <description lang="hu">Film információk letöltése a movie.daum.net webhelyről</description>
     <description lang="kr">movie.daum.net에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
     <platform>all</platform>

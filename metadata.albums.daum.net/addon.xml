@@ -11,9 +11,11 @@
              library="daum-music.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Daum Album Scraper</summary>
+    <summary lang="hu">Daum Album scraper</summary> 
     <summary lang="kr">다음 음악 스크래퍼</summary>
     <summary lang="pt">Scraper de música Daum</summary>
     <description lang="en">Download music information from music.daum.net</description>
+    <description lang="hu">Zene információk letöltése a music.daum.net webhelyről</description>
     <description lang="kr">music.daum.net 에서 음악 정보 다운로드</description>
     <description lang="pt">Descarregar informação de música de music.daum.net</description>
   </extension>

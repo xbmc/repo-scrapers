@@ -11,9 +11,11 @@
              library="navier-music.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">NAVER Album Scraper</summary>
+    <summary lang="hu">NAVER Album scraper</summary> 
     <summary lang="kr">네이버 음악 스크래퍼</summary>
     <summary lang="pt">Scraper de música NAVER</summary>
     <description lang="en">Download music information from music.naver.com</description>
+    <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
     <description lang="kr">music.naver.com 에서 음악 정보 다운로드</description>
     <description lang="pt">Descarregar informação de música de music.naver.com</description>
   </extension>

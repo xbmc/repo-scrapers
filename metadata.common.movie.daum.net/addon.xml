@@ -12,9 +12,11 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">Daum Movie Scraper Library</summary>
+    <summary lang="hu">Daum Film scraper könyvtár</summary>
     <summary lang="kr">다음 무비 스크래퍼 라이브러리</summary>
     <summary lang="pt">Scraper de filmes Daum</summary>
     <description lang="en">Download movie information from movie.daum.net</description>
+    <description lang="hu">Film információk letöltése a movie.daum.net webhelyről</description>
     <description lang="kr">다음에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
   </extension>

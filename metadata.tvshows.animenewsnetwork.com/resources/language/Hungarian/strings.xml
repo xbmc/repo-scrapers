@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">Szereposztás engedélyezése minden nyelven</string>
+    <string id="30001">Nem listázott egyedi részek engedélyezése</string>
+    <string id="30002">TVDB Fanart engedélyezése</string>
+    <string id="30003">Alternatív címek engedélyezése a Fanart keresésekor</string>
+    <string id="30004">TVDB reklám engedélyezése</string>
+    <string id="30005">TVDB poszter engedélyezése</string>
+    <string id="30006">TVDB epizód részletek engedélyezése (epizódcím egyeztetésssel)</string>
+</strings>

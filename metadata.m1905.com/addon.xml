@@ -11,17 +11,19 @@
              library="m1905.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">M1905 Movie Scraper</summary>
-    <summary lang="zh">M1905电影刮削器</summary>
+    <summary lang="hu">M1905 Film scraper</summary>
     <summary lang="kr">M1905 영화 스크래퍼</summary>
-    <summary lang="se">M1905 Filmskrapa</summary>
     <summary lang="nl">M1905 Film Scraper</summary>
     <summary lang="pt">Scraper de filmes M1905</summary>
+    <summary lang="se">M1905 Filmskrapa</summary>
+    <summary lang="zh">M1905电影刮削器</summary>
     <description lang="en">Download Movie information from www.m1905.com</description>
-    <description lang="zh">从电影网www.m1905.com下载电影资料。</description>
+    <description lang="hu">Film információk letöltése a www.m1905.com webhelyről</description>
     <description lang="kr">www.m1905.com 에서 영화 정보 다운로드</description>
-    <description lang="se">Ladda ner filminformation från www.m1905.com</description>
     <description lang="nl">Download film informatie van www.m1905.com</description>
     <description lang="pt">Descarregar informação de filmes de www.m1905.com</description>
+    <description lang="se">Ladda ner filminformation från www.m1905.com</description>
+    <description lang="zh">从电影网www.m1905.com下载电影资料。</description>
     <platform>all</platform>
   </extension>
 </addon>

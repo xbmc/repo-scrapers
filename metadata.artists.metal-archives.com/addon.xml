@@ -13,11 +13,15 @@
              library="metal-archives.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary>Download information about your metal from Encyclopaedia Metallum</summary>
+    <summary lang="hu">Encyclopaedia Metallum Zene scraper</summary>
     <description>Encyclopaedia Metallum: The Metal Archives is a website which lists bands from various forms of heavy metal music.
 
 Encyclopaedia Metallum attempts to provide comprehensive information on each band, such as a discography, logos, pictures, lyrics, line-ups, biography, trivia and user-submitted reviews.
 
 The site also provides a system for submitting bands to the archives, and users are encouraged to use it. The site has 73,000+ bands listed, 170,000+ releases, 1,196,000+ tracks, 52,000+ reviews and 227,000+ registered users. It is one of the top 500 most-visited websites in five countries.</description>
+    <description lang="hu">A Metal Archives egy weboldal ami a heavy metal zene különböző formáit listázza.
+Az oldal megpróbál olyan átfogó információkat nyújtani minden egyes csapatról, mint a diszkográfia, logók, képek, dalszövegek, felállások, életrajzok és felhasználói vélemények.
+Továbbá egy olyan rendszert nyújt melyben a felhasználók bátorítva vannak, hogy együtteseket, információkat adjanak hozzá az adatbázishoz. Az oldalon 73,000+ együttes van listázva, 1,196,000+ szám, 52,000+ kritika és 227,000+ regisztrált felhasználó. A webhely benne van az 500 leglátogatottabb weboldal között öt országban.</description>
     <platform>all</platform>
   </extension>
 </addon>

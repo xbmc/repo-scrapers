@@ -12,9 +12,11 @@
              library="filmweb.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">FilmWeb Movie Scraper</summary>
+    <summary lang="hu">FilmWeb Film scraper</summary>
     <summary lang="kr">FilmWeb 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes FilmWeb</summary>
     <description lang="en">Download Movie information from www.filmweb.pl</description>
+    <description lang="hu">Film információk letöltése a www.filmweb.pl webhelyről</description>
     <description lang="kr">www.filmweb.pl 에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de www.filmweb.pl</description>
     <platform>all</platform>

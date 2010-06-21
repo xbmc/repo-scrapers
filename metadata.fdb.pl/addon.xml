@@ -12,9 +12,11 @@
              library="fdbpl.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">FDB Movie Scraper</summary>
+    <summary lang="hu">FDB Film scraper</summary> 
     <summary lang="kr">FDB 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes FDB</summary>
     <description lang="en">Download Movie information from www.fdb.pl</description>
+    <description lang="hu">Film információk letöltése a www.fdb.pl webhelyről</description>
     <description lang="kr">www.fdb.pl 에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de www.fdb.pl</description>
     <platform>all</platform>

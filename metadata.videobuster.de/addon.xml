@@ -12,14 +12,16 @@
              library="videobuster.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">VideoBuster.de Movie Scraper</summary>
+    <summary lang="hu">VideoBuster.de Film scraper</summary> 
     <summary lang="kr">VideoBuster.de 영화 스크래퍼</summary>
-    <summary lang="se">VideoBuster.de Filmskrapa</summary>
     <summary lang="nl">VideoBuster.de Film Scraper</summary>
     <summary lang="pt">Scraper de filmes VideoBuster.de</summary>
+    <summary lang="se">VideoBuster.de Filmskrapa</summary>
     <description lang="en">Download Movie information from www.videobuster.de</description>
+    <description lang="hu">Film információk letöltése a www.videobuster.de-ről</description>
     <description lang="kr">www.videobuster.de에서 영화 정보 다운로드</description>
-    <description lang="se">Ladda ner filminformation från www.videobuster.de</description>
     <description lang="nl">Download film informatie van www.videobuster.de</description>
     <description lang="pt">Descarregar informação de filmes de www.videobuster.de</description>
+    <description lang="se">Ladda ner filminformation från www.videobuster.de</description>
   </extension>
 </addon>

@@ -12,11 +12,13 @@
              library="moviemaze.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">MovieMaze.de Movie Scraper</summary>
+    <summary lang="hu">MovieMaze.de Film scraper</summary>
     <summary lang="kr">MovieMaze 영화 스크래퍼</summary>
     <summary lang="se">MovieMaze.de Filmskrapa</summary>
     <summary lang="nl">MovieMaze.de Film Scraper</summary>
     <summary lang="pt">Scraper de filmes MovieMaze.de</summary>
     <description lang="en">Download Movie information from www.moviemaze.de</description>
+    <description lang="hu">Film információk letöltése a www.moviemaze.de webhelyről</description>
     <description lang="kr">www.moviemaze.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.moviemaze.de</description>
     <description lang="nl">Download film informatie van www.moviemaze.de</description>

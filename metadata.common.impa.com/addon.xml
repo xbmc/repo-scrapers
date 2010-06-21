@@ -12,12 +12,14 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">IMPA Scraper Library</summary>
+    <summary lang="hu">IMPA scraper könyvtár</summary>
     <summary lang="kr">IMPA 스크래퍼 라이브러리</summary>
-    <summary lang="se">IMPA Skrapbibliotek</summary>
     <summary lang="pt">Scraper de filmes IMPA</summary>
+    <summary lang="se">IMPA Skrapbibliotek</summary>
     <description lang="en">Download Movie information from IMPA</description>
+    <description lang="hu">Film információk letöltése a IMPA webhelyről</description>
     <description lang="kr">IMPA 에서 등급 정보 다운로드</description>
-    <description lang="se">Ladda ner filminformation från impa.</description>
     <description lang="pt">Descarregar informação de filmes de www.impawards.com</description>
+    <description lang="se">Ladda ner filminformation från impa.</description>
   </extension>
 </addon>

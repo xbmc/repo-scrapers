@@ -12,11 +12,13 @@
              library="cinefacts.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Cinefacts.de Movie Scraper</summary>
+    <summary lang="hu">Cinefacts.de Film scraper</summary> 
     <summary lang="kr">Cinefacts.de 영화 스크래퍼</summary>
     <summary lang="se">Cinefacts.de Filmskrapa</summary>
     <summary lang="nl">Cinefacts.de Film Scraper</summary>
     <summary lang="pt">Scraper de filmes Cinefacts.de</summary>
     <description lang="en">Download Movie information from www.cinefacts.de</description>
+    <description lang="hu">Film információk letöltése a www.cinefacts.de webhelyről</description>
     <description lang="kr">www.cinefacts.de 에서 영화 정보 다운로드</description>
     <description lang="se">Ladda ner filminformation från www.cinefacts.de</description>
     <description lang="nl">Download film informatie van www.cinefacts.de</description>

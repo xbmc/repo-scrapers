@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Teljes szereposztás engedélyezése</string>
+    <string id="30001">Fanart letöltés a themoviedb.org-ról</string>
+    <string id="30002">Poszter letöltés a themoviedb.org-ról</string>
+    <string id="30003">Poszter letöltés az IMPAwards-ról</string>
+    <string id="30004">Poszter letöltés a MoviePosterDB-ról</string>
+    <string id="30005">IMDb filmelőzetes engedélyezése</string>
+    <string id="30006">Filmelőzetes engedélyezése a Dtrailer.com-ról</string>
+    <string id="30007">IMDb poszter &amp;amp; színész bélyegképek mérete</string>
+</strings>
+
