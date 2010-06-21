@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <setting type="lsep" label="30020"/>
+  <setting id="language" type="enum" label="30000" lvalues="30001|30002" default="0" />
+  <setting id="rating" type="enum" label="30010" lvalues="30011|30012|30013" default="0" />
+
+  <setting type="lsep" label="30030"/>
+  <setting enable="!eq(0,)" id="dummy" type="action" label="30031" default="" />
+  <setting enable="!eq(0,)" id="dummy" type="action" label="[B]http://passion-xbmc.org[/B]" default="" />
+</settings>

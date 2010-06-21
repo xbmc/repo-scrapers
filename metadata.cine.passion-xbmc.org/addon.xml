@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.cine.passion-xbmc.org"
+       name="Ciné-Passion"
+       version="1.0.7"
+       provider-name="Team Passion-XBMC (passion-xbmc.org)">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="multi"
+             library="cine-passion.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Ciné-passion scraper grabs film's informations in french from passion-xbmc.org.</summary>
+    <summary lang="fr">Le scraper Ciné-passion récupère les informations des films en français du site passion-xbmc.org.</summary>
+    <description lang="en">Ciné-passion scraper has been created by members of passion-xbmc.org community.</description>
+    <description lang="fr">Le scraper Ciné-passion est le fruit du travail de développeurs appartenant à la communauté Passion-xbmc.org.</description>
+    <disclaimer lang="en">Ciné-passion scraper is a community database where everyone is welcome to help.</disclaimer>
+    <disclaimer lang="fr">Le Scraper Ciné-Passion est une base de données communautaire à laquelle tout le monde est invité à participer.</disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
