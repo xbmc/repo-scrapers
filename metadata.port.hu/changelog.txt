@@ -1,2 +1,14 @@
-1.0.0:
+[B]1.0.3[/B]
+Added: NfUrl for looking at port.hu URL in the nfo
+Changed: use hdtrailersnet scraper library via chain function
+Fixed: punctuate plot outline
+Fixed: year was not displayed on multiple search results
+Fixed: trailer link was not fetched if title contained special chars
+Fixed: fix runtime scraping
+
+[B]1.0.2[/B]
+Fixed: update scraper to always return xml (CreateSearchResults)
+Fixed: make sure only numeric runtime values returned
+
+[B]1.0.0[/B]
 Initial version
