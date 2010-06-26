@@ -1,3 +1,6 @@
+[B]1.0.4[/B]
+Fixed: MPAA scraping from IMDb
+
 [B]1.0.3[/B]
 Added: NfUrl for looking at port.hu URL in the nfo
 Changed: use hdtrailersnet scraper library via chain function

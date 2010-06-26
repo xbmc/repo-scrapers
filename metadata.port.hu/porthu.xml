@@ -124,7 +124,7 @@
 			</RegExp>
 			<!--Get mpaa rating from imdb.com if Hungarian certification is unchecked in settings-->
 			<RegExp conditional="!hunmpaa" input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
-				<expression>MPAA&lt;/a&gt;:&lt;/h5&gt;\n&lt;div class="info-content"&gt;\n(.[^&lt;]*)</expression>
+				<expression>MPAA&lt;/a&gt;:&lt;/h5&gt;\n?&lt;div class=&quot;info-content&quot;&gt;\n?(.[^&lt;]*)</expression>
 			</RegExp>
 			<!--Get tagline from imdb.com-->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="5+">
