@@ -1,4 +1,12 @@
 <scraperfunctions>
+	<GetTMDBFanartByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBFanart&quot; cache=&quot;tmdb-images-\1.xml&quot;&gt;http://api.themoviedb.org/2.1/Movie.getImages/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetTMDBFanartByIdChain>
 	<GetTMDBFanartById dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBFanart&quot; cache=&quot;tmdb-images-tt\1.xml&quot;&gt;http://api.themoviedb.org/2.1/Movie.getImages/en/xml/57983e31fb435df4df77afb854740ea9/tt\1&lt;/url&gt;" dest="5">
@@ -24,6 +32,14 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetTMDBFanart>
+	<GetTMDBThumbsByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBThumbs&quot; cache=&quot;tmdb-images-\1.xml&quot;&gt;http://api.themoviedb.org/2.1/Movie.getImages/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetTMDBThumbsByIdChain>
 	<GetTMDBThumbsById dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBThumbs&quot; cache=&quot;tmdb-images-tt\1.xml&quot;&gt;http://api.themoviedb.org/2.1/Movie.getImages/en/xml/57983e31fb435df4df77afb854740ea9/tt\1&lt;/url&gt;" dest="5">
