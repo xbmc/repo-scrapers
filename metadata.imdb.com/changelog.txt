@@ -1,6 +1,8 @@
 [B]1.0.7[/B]
 - fixed MPAA scraping from IMDb
 - changed: switch to chaining IMDb scraper library functions
+- use akas.imdb.com instead of www.imdb.com for NfoUrl lookups (so that
+  the behaviour is the same as with title search lookups)
 
 [B]1.0.6[/B]
 - replace dtrailer.com with HD-Trailers.net for trailer scraping
