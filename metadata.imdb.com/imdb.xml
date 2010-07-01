@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2010-02-24">
+<scraper framework="1.1" date="2010-07-01">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.\1/title/tt\2/&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3">
 			<expression clear="yes" noclean="1">(imdb.com)/Title\?([0-9]*)</expression>
@@ -74,35 +74,38 @@
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression trim="1">Plot:&lt;/h5&gt;\n&lt;div class=&quot;info-content&quot;&gt;\n([^\|\&lt;]*)</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url function=&quot;GetIMDBPlot&quot;&gt;$$3plotsummary&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-credits.html&quot; function=&quot;GetIMDBCast&quot;&gt;$$3&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-credits.html&quot; function=&quot;GetIMDBDirectors&quot;&gt;$$3&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-credits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;$$3&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetIMDBCast&quot;&gt;$$3fullcredits&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetIMDBDirectors&quot;&gt;$$3fullcredits&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBFullDirectorsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fullcredits" input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;$$3fullcredits&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBFullWritersById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;url function=&quot;GetTMDBThumbsById&quot;&gt;$$3&lt;/url&gt;" dest="5+">
+			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="impawards" input="$$2" output="&lt;url cache=&quot;$$2-posters.html&quot; function=&quot;GetIMPALink&quot;&gt;$$3posters&lt;/url&gt;" dest="5+">
+			<RegExp conditional="impawards" input="$$2" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="movieposterdb" input="$$1" output="&lt;url function=&quot;GetMoviePosterDBLink&quot;&gt;http://www.movieposterdb.com/browse/search?type=movies&amp;amp;query=\1&lt;/url&gt;" dest="5+">
-				<expression>/title/tt([t0-9]*)/faq</expression>
+			<RegExp conditional="movieposterdb" input="$$2" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression/>
 			</RegExp>
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
@@ -122,10 +125,7 @@
 				</RegExp>
 				<expression>1080p</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-posters.html&quot; function=&quot;GetIMDBThumbs&quot;&gt;$$3posters&lt;/url&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp conditional="fanart" input="$$2" output="&lt;url function=&quot;GetTMDBFanartById&quot;&gt;$$3&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
