@@ -1,8 +1,6 @@
-[B]1.0.8[/B]
- - changed: switch to chaining IMDb scraper library functions
-
 [B]1.0.7[/B]
- - fixed MPAA scraping from IMDb
+- fixed MPAA scraping from IMDb
+- changed: switch to chaining IMDb scraper library functions
 
 [B]1.0.6[/B]
 - replace dtrailer.com with HD-Trailers.net for trailer scraping
