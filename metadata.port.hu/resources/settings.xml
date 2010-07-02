@@ -3,8 +3,8 @@
     <setting label="30000" type="labelenum" values="Magyar|Eredeti|Eredeti (Magyar)|Magyar (Eredeti)" id="titlelang" default="Eredeti"/>
     <setting label="30001" type="bool" id="hunmpaa" default="true"/>
     <setting label="30002" type="bool" id="fullcredits" default="false"/>
-    <setting label="30003" type="bool" id="tmdbfanart" default="true"/>
     <setting label="30004" type="bool" id="tmdbboritok" default="true"/>
+    <setting label="30003" type="bool" id="tmdbfanart" default="true"/>
     <setting label="30005" type="bool" id="impawardsboritok" default="false"/>
     <setting label="30006" type="bool" id="movieposterdbboritok" default="false"/>
     <setting label="30007" type="labelenum" values="nem|480p|720p|1080p" id="TrailerQ" default="480p"/>
