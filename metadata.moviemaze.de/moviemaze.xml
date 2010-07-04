@@ -125,7 +125,7 @@
 				<expression clear="yes">tt([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1+%7C%7C+\2" dest="7">
-				<expression trim="1,2" encode="1,2">&lt;h1&gt;([^&lt;]*)&lt;/h1&gt;&lt;h2&gt;\(([^,]*)</expression>
+				<expression trim="1,2" encode="1,2">&lt;h1&gt;([^&lt;]*)&lt;/h1&gt;.*&lt;h2&gt;\(([^,]*)</expression>
 			</RegExp>
 			<!--TMDB Thumbs & Fanart (IMDbId)-->
 			<RegExp input="$$6" output="&lt;url cache=&quot;$$6&quot; function=&quot;GetTMDBFanartById&quot;&gt;http://imdb.com/title/$$6&lt;/url&gt;" dest="5+">
