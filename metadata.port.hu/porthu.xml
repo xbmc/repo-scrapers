@@ -87,15 +87,11 @@
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Get imdb ID from imdb.com and store it in Buffer 11 for future use-->
 			<RegExp input="$$1" output="\1" dest="11">
-				<expression>/title/tt([t0-9]*)/faq</expression>
+				<expression>/title/(tt[t0-9]*)/faq</expression>
 			</RegExp>
 			<!--Append imdb ID from Buffer 11-->
 			<RegExp input="$$11" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression />
-			</RegExp>
-			<!--create imdb URL and store it in Buffer 12 for future use-->
-			<RegExp input="$$1" output="http://www.imdb.com/title/tt\1/" dest="12">
-				<expression>/title/tt([t0-9]*)/faq</expression>
 			</RegExp>
 			<!--Get runtime from imdb.com-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
@@ -143,35 +139,35 @@
 				<expression>"/company/[^/]*/"&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Get credits from imdb.com-->
-			<RegExp conditional="!fullcredits" input="$$11" output="&lt;url cache=&quot;tt$$11-credits.html&quot; function=&quot;GetIMDBCast&quot;&gt;$$12&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Get writers from imdb.com-->
-			<RegExp conditional="!fullcredits" input="$$11" output="&lt;url cache=&quot;tt$$11-credits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;$$12&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Get fullcredits from imdb.com-->
-			<RegExp conditional="fullcredits" input="$$11" output="&lt;url cache=&quot;tt$$11-fullcredits.html&quot; function=&quot;GetIMDBCast&quot;&gt;$$12fullcredits&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Get fullcredits from imdb.com-->
-			<RegExp conditional="fullcredits" input="$$11" output="&lt;url cache=&quot;tt$$11-fullcredits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;$$12fullcredits&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBFullWritersById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--Call GetTMDBThumbsById-->
-			<RegExp conditional="tmdbboritok" input="$$1" output="&lt;url function=&quot;GetTMDBThumbsById&quot;&gt;$$12&lt;/url&gt;" dest="5+">
+			<!--Call GetTMDBThumbsByIdChain-->
+			<RegExp conditional="tmdbboritok" input="$$11" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--Call GetTMDBFanartById-->
-			<RegExp conditional="tmdbfanart" input="$$1" output="&lt;url function=&quot;GetTMDBFanartById&quot;&gt;$$12&lt;/url&gt;" dest="5+">
+			<!--Call GetTMDBFanartByIdChain-->
+			<RegExp conditional="tmdbfanart" input="$$11" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Call GetMoviePosterDBLink-->
-			<RegExp conditional="movieposterdbboritok" input="$$1" output="&lt;url function=&quot;GetMoviePosterDBLink&quot;&gt;http://www.movieposterdb.com/browse/search?type=movies&amp;amp;query=$$11&lt;/url&gt;" dest="5+">
+			<RegExp conditional="movieposterdbboritok" input="$$11" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Call GetIMPALink-->
-			<RegExp conditional="impawardsboritok" input="$$11" output="&lt;url cache=&quot;tt$$11-posters.html&quot; function=&quot;GetIMPALink&quot;&gt;$$12posters&lt;/url&gt;" dest="5+">
+			<RegExp conditional="impawardsboritok" input="$$11" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Call Get480pTrailer if 480p selected for HD-Trailers.net-->
