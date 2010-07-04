@@ -7,8 +7,9 @@
     <string id="30004">Descargar pósters de IMPAwards</string>
     <string id="30005">Descargar pósters de MoviePosterDB</string>
     <string id="30006">Descargar pósters de IMDB</string>
-    <string id="30007">Tamaño del póster de IMDB</string>
+	<string id="30007">Descargar pósters de TheMovieDB</string>
     <string id="30008">Compatibilidad con miniaturas de Estudio</string>
     <string id="30009">Descargar Información Extra de iMDB</string>
     <string id="30010">Usar Puntuación desde iMDB</string>
+	<string id="30011">Descargar Posters Extras de Filmaffinity</string>
 </strings>

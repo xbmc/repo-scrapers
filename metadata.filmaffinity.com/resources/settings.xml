@@ -6,10 +6,11 @@
     <setting label="30010" type="bool" id="iMDBRatings" default="true" />    
     <setting label="30008" type="bool" id="StudioFlagsON" default="true" />
     <setting type="sep" />
+	<setting label="30011" type="bool" id="EnableFilmAffinityPosters" default="true" />
     <setting label="30001" type="bool" id="EnableTrailers" default="true" />
     <setting label="30003" type="bool" id="EnableFanArt" default="true" />
     <setting label="30004" type="bool" id="EnableIMPAwards" default="true" />
-    <setting label="30005" type="bool" id="movieposterdb" default="true" />
-    <setting label="30006" type="bool" id="EnableIMDBPosters" default="true" />
-    <setting label="30007" type="labelenum" values="192|256|384|512|1024" id="imdbscale" default="1024" />
+    <setting label="30005" type="bool" id="EnableMoviePosterDB" default="true" />
+	<setting label="30007" type="bool" id="EnableTMDBPoster" default="true" />
+	<setting label="30006" type="bool" id="EnableIMDBPosters" default="true" />
 </settings>

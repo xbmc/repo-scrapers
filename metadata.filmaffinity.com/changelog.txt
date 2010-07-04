@@ -1,3 +1,10 @@
+[B]1.2.0[/B]
+
+- Adaptado el scraper con las nuevas funciones <chain>.
+- Añadido descarga de posters desde TheMovieDB.
+- Eliminada opción sin uso.
+- Arreglado problema con los posters de filmaffinity.
+
 [B]1.1.0[/B]
 
 - Arreglado un problema que no dejaba configurar correctamente el scraper.
