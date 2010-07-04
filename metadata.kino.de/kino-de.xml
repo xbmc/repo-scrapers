@@ -26,7 +26,7 @@
 			</RegExp>
 			<!-- Original Title -->
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
-				<expression trim="1">&lt;span class=&quot;standardsmall&quot;&gt;\((.*)\)&lt;/span&gt;</expression>
+				<expression trim="1">&lt;span class=&quot;standardsmall&quot;&gt;\((.*?)\)&lt;/span&gt;</expression>
 			</RegExp>
 			<!-- Year / Country -->
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;&lt;year&gt;\2&lt;/year&gt;" dest="5+">
@@ -81,7 +81,7 @@
 				<expression noclean="1">Cast&lt;br /&gt;(.*?)headlinewhite</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="2+">
-				<expression trim="1" repeat="yes">&lt;td class=&quot;dbtreffer(dark|light)&quot; width=&quot;50%&quot;&gt;([^&lt;]*)&lt;/td&gt;.*?&lt;a href=&quot;[^&quot;]+&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
+				<expression noclean="2,3" trim="1" repeat="yes">&lt;td class=&quot;dbtreffer(dark|light)&quot; width=&quot;50%&quot;&gt;([^&lt;]*)&nbsp;&lt;/td&gt;.*?&lt;a href=&quot;[^&quot;]+&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- Director -->
 			<RegExp input="$$1" output="\1" dest="7">
