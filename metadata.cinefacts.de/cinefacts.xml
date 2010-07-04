@@ -4,15 +4,15 @@
 		<RegExp input="$$1" output="&lt;url&gt;http://www.cinefacts.de/kino/\1/\2/filmdetails.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
 			<expression clear="yes" noclean="1">(cinefacts.de/kino/)([0-9]*)/(.[^\/]*)/filmdetails.html</expression>
 		</RegExp>
-		<RegExp input="$$1" output="&lt;url cache=&quot;tt\2&quot; function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/externalreviews&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3+">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tt\2&quot; function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/externalreviews&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;&lt;/details&gt;" dest="3+">
 			<expression>(imdb.com/title/tt)([0-9]*)</expression>
 		</RegExp>
-		<RegExp input="$$1" output="&lt;url cache=&quot;tt\2&quot; function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/externalreviews&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3+">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tt\2&quot; function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/externalreviews&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;&lt;/details&gt;" dest="3+">
 			<expression>(imdb.com/)Title\?([0-9]+)</expression>
 		</RegExp>
 	</NfoUrl>
 	<GetByIMDBId dest="3">
-		<RegExp input="$$1" output="&lt;url function=&quot;GetCinefactsDetailsLink&quot;&gt;http://www.cinefacts.de/kino/\1&lt;/url&gt;&lt;id&gt;$$2&lt;/id&gt;" dest="3+">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;GetCinefactsDetailsLink&quot;&gt;http://www.cinefacts.de/kino/\1&lt;/url&gt;&lt;id&gt;$$2&lt;/id&gt;&lt;/details&gt;" dest="3+">
 			<expression noclean="1">&lt;a href=&quot;http://www.cinefacts.de/kino/([^&quot;]*)&quot;</expression>
 		</RegExp>
 	</GetByIMDBId>
