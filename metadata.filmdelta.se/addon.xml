@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.filmdelta.se"
        name="FilmDelta"
-       version="1.0.3"
-       provider-name="Daniel Halmgren">
+       version="1.0.4"
+       provider-name="Daniel Malmgren">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
     <import addon="metadata.common.themoviedb.org" version="1.0"/>
