@@ -1,4 +1,7 @@
-﻿1.0.7
+﻿1.0.9
+- added new icon.png
+
+1.0.7
 - added fanart.jpg thanks to willy
 
 1.0.6
