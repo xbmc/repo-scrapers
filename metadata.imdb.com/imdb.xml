@@ -38,8 +38,11 @@
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression trim="1" noclean="1">&lt;h1&gt;([^&lt;]*)</expression>
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
+				<expression>&lt;h1&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBAKATitlesById&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression>(tt[t0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression>a href=&quot;/year/([0-9]*)</expression>
@@ -107,6 +110,9 @@
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
+			<RegExp conditional="trailer" input="$$1" output="&lt;url function=&quot;GetIMDBTrailer&quot;&gt;http://akas.imdb.com/video/imdb/vi\1/player&lt;/url&gt;" dest="5+">
+				<expression>/vi([0-9]*)/</expression>
+			</RegExp>
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
 					<expression trim="1" noclean="1">&lt;h1&gt;([^&lt;]*)</expression>
@@ -131,4 +137,53 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
+	<GetIMDBAKATitlesById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;ParseIMDBAKATitles&quot;&gt;http://akas.imdb.com/title/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1" />
+		</RegExp>
+	</GetIMDBAKATitlesById>
+	<ParseIMDBAKATitles dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="2">
+				<expression>&lt;h1&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$10" output="\1" dest="4">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>&lt;h1&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<RegExp input="$$9" output="\1" dest="10">
+					<expression/>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression>&gt;\s*?"([^&lt;]+)"[^&lt;]+[&lt;em&gt;]?[^"]+UK|USA&lt;</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression>&gt;\s*?"([^&lt;]+)" - International [&lt;em&gt;]?[^"]+English</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<expression noclean="1" />
+			</RegExp>
+			<RegExp input="$$4" output="\1" dest="2">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="4">
+				<expression>&gt;\s*?"([^&lt;]+)"[^&lt;]+[&lt;em&gt;]?[^"]+$INFO[akatitles]</expression>
+			</RegExp>
+			<RegExp input="$$4" output="\1" dest="2">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$INFO[akatitles]" output="$$9" dest="4">
+				<expression>Keep Original</expression>
+			</RegExp>
+			<RegExp input="$$4" output="\1" dest="2">
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseIMDBAKATitles>
 </scraper>

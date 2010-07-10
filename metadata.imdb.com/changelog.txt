@@ -1,4 +1,5 @@
 [B]1.0.7[/B]
+- added: title scraping on preferred language
 - fixed MPAA scraping from IMDb
 - changed: switch to chaining IMDb scraper library functions
 - use akas.imdb.com instead of www.imdb.com for NfoUrl lookups (so that

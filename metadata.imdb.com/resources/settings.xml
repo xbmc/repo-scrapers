@@ -8,4 +8,5 @@
     <setting label="30005" type="bool" id="trailer" default="false"/>
     <setting label="30006" type="labelenum" values="No|480p|720p|1080p" id="TrailerQ" default="480p"/>
     <setting label="30007" type="labelenum" values="192|256|384|512|1024" id="imdbscale" default="512"/>
-</settings>
+    <setting label="30008" type="labelenum" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="akatitles" default="Keep Original"/>
+	</settings>
