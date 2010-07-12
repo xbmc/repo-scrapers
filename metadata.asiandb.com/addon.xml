@@ -17,7 +17,7 @@
     <description lang="en">Download Movie information from www.asiandb.com</description>
     <description lang="hu">Film információk letöltése a www.asiandb.com webhelyről</description>
     <description lang="kr">www.asiandb.com 에서 영화 정보 다운로드</description>
-    <description lang="pt">Descarregar informação de filmes de www.asiandb.com</summary>
+    <description lang="pt">Descarregar informação de filmes de www.asiandb.com</desctiption>
     <platform>all</platform>
   </extension>
 </addon>
