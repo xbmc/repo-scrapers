@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-    <setting label="Enable All Language Casts" type="bool" id="allcasts" default="false"/>
-    <setting label="Enable Unlisted Specials / 1 Episode OVA Workaround" type="bool" id="specials" default="true"/>
+    <setting label="30000" type="bool" id="allcasts" default="false"/>
+    <setting label="30001" type="bool" id="specials" default="true"/>
     <setting type="sep"/>
-    <setting label="Enable TVDB Fanart" type="bool" id="fanart" default="true"/>
-    <setting label="Include Alternative Titles in Fanart Search" type="bool" id="fanartalt" default="false" enable="eq(-1,true)"/>
+    <setting label="30002" type="bool" id="fanart" default="true"/>
+    <setting label="30003" type="bool" id="fanartalt" default="false" enable="eq(-1,true)"/>
     <setting type="sep"/>
-    <setting label="Enable TVDB Banner (With ANN Thumbnail Fallback)" type="bool" id="banner" default="false" enable="!eq(1,true)"/>
-    <setting label="Enable TVDB Poster (With ANN Thumbnail Fallback)" type="bool" id="poster" default="false" enable="!eq(-1,true)"/>
+    <setting label="30004" type="bool" id="banner" default="false" enable="!eq(1,true)"/>
+    <setting label="30005" type="bool" id="poster" default="false" enable="!eq(-1,true)"/>
     <setting type="sep"/>
-    <setting label="Enable TVDB Episode Details (Using Episode Title Matching)" type="bool" id="details" default="false"/>
+    <setting label="30006" type="bool" id="details" default="false"/>
 </settings>
