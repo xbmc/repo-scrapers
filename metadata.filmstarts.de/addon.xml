@@ -23,6 +23,7 @@
     <description lang="nl">Download film informatie van www.filmstarts.de</description>
     <description lang="pt">Descarregar informação de filmes de www.filmstarts.de</description>
     <description lang="se">Ladda ner filminformation från www.filmstarts.de</description>
+    <broken>Temporarily disabled due to site changes.</broken>
     <platform>all</platform>
   </extension>
 </addon>
