@@ -6,7 +6,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateAlbumSearchUrl dest="3">
-		<RegExp input="$$1" output="http://ws.audioscrobbler.com/2.0/?method=album.search&amp;album=\1&amp;artist=$$2&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;lang=$INFO[language]" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=album.search&amp;album=\1&amp;artist=$$2&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;lang=$INFO[language]&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
 	</CreateAlbumSearchUrl>
