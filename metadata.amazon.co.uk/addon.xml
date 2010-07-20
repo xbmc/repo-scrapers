@@ -11,7 +11,7 @@
              library="amazonuk.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Amazon.co.uk Movie Scraper</summary>
-    <summary lang="hu">Amazon.co.uk Film scaraper</summary>
+    <summary lang="hu">Amazon.co.uk filmadat leolvasó</summary>
     <summary lang="kr">Amazon.co.uk 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Amazon.co.uk</summary>
     <description lang="en">Download Movie information from www.amazon.co.uk</description>

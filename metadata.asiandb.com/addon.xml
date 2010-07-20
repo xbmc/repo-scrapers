@@ -11,7 +11,7 @@
              library="asiandb.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">AsianDB Movie Scraper</summary>
-    <summary lang="hu">AsianDB Film scraper</summary> 
+    <summary lang="hu">AsianDB filmadat leolvasó</summary>
     <summary lang="kr">AsianDB 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes AsianDB</summary>
     <description lang="en">Download Movie information from www.asiandb.com</description>

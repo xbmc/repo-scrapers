@@ -13,12 +13,12 @@
              library="merlin.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Merlin.pl Album scraper</summary>
-    <summary lang="hu">Merlin.pl Album scraper</summary> 
+    <summary lang="hu">Merlin.pl album információk</summary>
     <summary lang="kr">Merlin.pl 음악 스크래퍼</summary>
     <summary lang="pt">Scraper de música Merlin.pl</summary>
     <description lang="en">Download music information from merlin.pl. Also uses info from www.last.fm and www.allmusic.com</description>
     <description lang="kr">Merlin.pl 에서 음악 정보 다운로드 (last.fm 과 allmusic.com 정보 이용)</description>
-    <description lang="hu">Zene információk letöltése a merlin.pl, valamint a www.last.fm és a www.allmusic.com webhelyekről</description>
+    <description lang="hu">Album információk letöltése a merlin.pl, valamint a www.last.fm és a www.allmusic.com webhelyekről</description>
     <description lang="pt">Descarregar informação de música de merlin.pl. Também usa informação de www.last.fm e www.allmusic.com</description>
     <platform>all</platform>
   </extension>

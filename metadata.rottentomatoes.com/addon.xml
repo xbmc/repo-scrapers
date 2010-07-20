@@ -12,7 +12,7 @@
              library="rottentomatoes.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Rotten Tomatoes Movie Scraper</summary>
-    <summary lang="hu">Rotten Tomatoes Film scraper</summary>
+    <summary lang="hu">Rotten Tomatoes filmadat leolvasó</summary>
     <summary lang="kr">Rotten Tomatoes 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Rotten Tomatoes</summary>
     <description lang="en">Download Movie information from www.rottentomatoes.com</description>

@@ -11,7 +11,7 @@
              library="ann.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Anime News Network Tv Shows Scraper</summary>
-    <summary lang="hu">Anime News Network TV műsor scraper</summary>
+    <summary lang="hu">Anime News Network TV műsor leolvasó</summary>
     <description lang="en">Download TV show information from www.animenewsnetwork.com</description>
     <description lang="hu">TV műsor információk letöltése a www.animenewsnetwork.com-ról</description>
     <platform>all</platform>

@@ -12,7 +12,7 @@
              library="videobuster.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">VideoBuster.de Movie Scraper</summary>
-    <summary lang="hu">VideoBuster.de Film scraper</summary> 
+    <summary lang="hu">VideoBuster.de filmadat leolvasó</summary>
     <summary lang="kr">VideoBuster.de 영화 스크래퍼</summary>
     <summary lang="nl">VideoBuster.de Film Scraper</summary>
     <summary lang="pt">Scraper de filmes VideoBuster.de</summary>

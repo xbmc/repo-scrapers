@@ -12,7 +12,7 @@
              library="kinopoisk.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">KinoPoisk Movie Scraper</summary>
-    <summary lang="hu">KinoPoisk Film scraper</summary> 
+    <summary lang="hu">KinoPoisk filmadat leolvasó</summary>
     <summary lang="kr">KinoPoisk 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes KinoPoisk</summary>
     <description lang="en">Download Movie information from www.kinopoisk.ru</description>

@@ -12,7 +12,7 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">AllMusic Music Scraper</summary>
-    <summary lang="hu">AllMusic Zene scraper</summary> 
+    <summary lang="hu">AllMusic zenei adat leolvasó</summary>
     <summary lang="nl">AllMusic Muziek Scraper</summary>
     <summary lang="pt">Scraper de música AllMusic </summary>
     <description lang="en">Download Music information from www.allmusic.com</description>

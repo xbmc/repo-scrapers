@@ -11,7 +11,7 @@
              library="mtime.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Mtime Movie Scraper</summary>
-    <summary lang="hu">Mtime Film scraper</summary> 
+    <summary lang="hu">Mtime filmadat leolvasó</summary>
     <summary lang="kr">Mtime 영화 스크래퍼</summary>
     <summary lang="nl">Mtime Film Scraper</summary>
     <summary lang="pt">Scraper de filmes Mtime</summary>

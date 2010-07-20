@@ -11,7 +11,7 @@
              library="amazonus.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Amazon Movie Scraper</summary>
-    <summary lang="hu">Amazon Film scaraper</summary>
+    <summary lang="hu">Amazon filmadat leolvasó</summary>
     <summary lang="kr">Amazon 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Amazon</summary>
     <description lang="en">Download Movie information from www.amazon.com</description>

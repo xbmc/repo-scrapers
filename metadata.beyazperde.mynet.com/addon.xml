@@ -13,7 +13,7 @@
              library="beyazperde.xml.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Beyazperde Movie Scraper</summary>
-    <summary lang="hu">Beyazperde Film scraper</summary> 
+    <summary lang="hu">Beyazperde filmadat leolvasó</summary>
     <summary lang="pt">Scraper de filmes Beyazperde</summary>
     <description lang="en">Download Movie information from www.beyazperde.mynet.com</description>
     <description lang="hu">Film információk letöltése a www.beyazperde.mynet.com-ról</description>

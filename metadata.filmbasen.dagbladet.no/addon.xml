@@ -12,7 +12,7 @@
              library="filmbasen.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Filmbasen Movie Scraper</summary>
-    <summary lang="hu">Filmbasen Film scraper</summary> 
+    <summary lang="hu">Filmbasen filmadat leolvasó</summary>
     <summary lang="kr">Filmbasen 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Dagbladet</summary>
     <description lang="en">Download Movie information from filmbasen, Dagbladet's film database</description>

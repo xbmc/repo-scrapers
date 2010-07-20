@@ -12,7 +12,7 @@
              library="filmdelta.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">FilmDelta Movie Scraper</summary>
-    <summary lang="hu">FilmDelta Film scraper</summary> 
+    <summary lang="hu">FilmDelta filmadat leolvasó</summary>
     <summary lang="kr">FilmDelta 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes FilmDelta</summary>
     <description lang="en">Download Movie information from www.filmdelta.se</description>

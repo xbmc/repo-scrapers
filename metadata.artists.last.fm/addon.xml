@@ -13,13 +13,13 @@
              library="lastfm.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">LastFM Music Scraper</summary>
-    <summary lang="hu">LastFM Zene scraper</summary> 
+    <summary lang="hu">LastFM előadó információk</summary>
     <summary lang="kr">LastFM 음악 스크래퍼</summary>
     <summary lang="se">LastFM Musikskrapa</summary>
     <summary lang="nl">LastFM Muziek Scraper</summary>
     <summary lang="pt">Scraper de música LastFM</summary>
     <description lang="en">Download Music information from www.last.fm</description>
-    <description lang="hu">Zene információk letöltése a www.last.fm webhelyről</description>
+    <description lang="hu">Előadó információk letöltése a www.last.fm webhelyről</description>
     <description lang="kr">LastFM 에서 음악 정보 다운로드</description>
     <description lang="se">Ladda ner musikinformation från Last.FM</description>
     <description lang="nl">Download muziek informatie van Last.fm</description>

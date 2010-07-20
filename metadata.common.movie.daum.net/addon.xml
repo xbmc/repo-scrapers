@@ -12,7 +12,7 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">Daum Movie Scraper Library</summary>
-    <summary lang="hu">Daum Film scraper könyvtár</summary>
+    <summary lang="hu">Daum filmadat leolvasó-könyvtár</summary>
     <summary lang="kr">다음 무비 스크래퍼 라이브러리</summary>
     <summary lang="pt">Scraper de filmes Daum</summary>
     <description lang="en">Download movie information from movie.daum.net</description>

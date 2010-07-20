@@ -13,7 +13,7 @@
              library="sratime.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Sratim Movie Scraper</summary>
-    <summary lang="hu">Sratim Film scraper</summary> 
+    <summary lang="hu">Sratim filmadat leolvasó</summary>
     <summary lang="kr">Sratim 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes Sratim</summary>
     <description lang="en">Download Movie information from www.sratim.co.il</description>

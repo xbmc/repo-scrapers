@@ -13,7 +13,7 @@
              library="7176.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">7176 Movie Scraper</summary>
-    <summary lang="hu">7176 Film scaraper</summary>
+    <summary lang="hu">7176 filmadat leolvasó</summary>
     <summary lang="kr">7176 영화 스크래퍼</summary>
     <summary lang="nl">7176 Film Scraper</summary>
     <summary lang="pt">Scraper de filmes 7176</summary>

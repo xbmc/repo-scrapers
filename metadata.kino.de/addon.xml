@@ -12,7 +12,7 @@
              library="kino-de.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Kino.de Movie Scraper</summary>
-    <summary lang="hu">Kino.de Film scraper</summary> 
+    <summary lang="hu">Kino.de filmadat leolvasó</summary>
     <summary lang="kr">Kino.de 영화 스크래퍼</summary>
     <summary lang="nl">Kino.de Film Scraper</summary>
     <summary lang="pt">Scraper de filmes Kino.de</summary>

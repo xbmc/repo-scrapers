@@ -15,7 +15,7 @@
              library="ptgate.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">PtGate Movie Scraper</summary>
-    <summary lang="hu">PtGate Film scraper</summary>
+    <summary lang="hu">PtGate filmadat leolvasó</summary>
     <summary lang="kr">PtGate 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes PtGate</summary>
     <description lang="en">Download Movie information from cinema.ptgate.pt</description>

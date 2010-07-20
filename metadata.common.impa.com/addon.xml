@@ -12,7 +12,7 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">IMPA Scraper Library</summary>
-    <summary lang="hu">IMPA scraper könyvtár</summary>
+    <summary lang="hu">IMPA leolvasó-könyvtár</summary>
     <summary lang="kr">IMPA 스크래퍼 라이브러리</summary>
     <summary lang="pt">Scraper de filmes IMPA</summary>
     <summary lang="se">IMPA Skrapbibliotek</summary>

@@ -11,7 +11,7 @@
              library="m1905.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">M1905 Movie Scraper</summary>
-    <summary lang="hu">M1905 Film scraper</summary>
+    <summary lang="hu">M1905 filmadat leolvasó</summary>
     <summary lang="kr">M1905 영화 스크래퍼</summary>
     <summary lang="nl">M1905 Film Scraper</summary>
     <summary lang="pt">Scraper de filmes M1905</summary>
