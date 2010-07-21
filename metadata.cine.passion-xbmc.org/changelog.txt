@@ -1,4 +1,7 @@
-﻿1.0.9
+﻿1.0.10[
+- added Hungarian translation.
+
+1.0.9
 - added new icon.png
 
 1.0.7

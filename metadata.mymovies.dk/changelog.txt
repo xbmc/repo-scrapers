@@ -1,3 +1,9 @@
+1.2.3
+
+Added:
+
+- Hungarian translation
+
 1.2
 
 Added:

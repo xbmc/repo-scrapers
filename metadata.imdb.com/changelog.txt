@@ -1,3 +1,6 @@
+[B]1.0.8[/B]
+- changed: translation cosmetics
+
 [B]1.0.7[/B]
 - added: title scraping on preferred language
 - fixed MPAA scraping from IMDb
