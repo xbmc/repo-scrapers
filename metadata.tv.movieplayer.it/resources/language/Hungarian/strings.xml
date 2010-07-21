@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="30000">Teljes szereposztás (lassú)</string>
+    <string id="30001">Epizódképek beszerzése (lassú)</string>
+    <string id="30002">Fanartképek a Movieplayer.it-ről (SD)</string>
+    <string id="30003">Fanartképek a TheTVDB.com-ról (HD)</string>
+    <string id="30004">Poszterek és szalagképek a TheTVDB.com-ról</string>
+    <string id="30005">Poszterek előnyben részesítése</string>
+</strings>

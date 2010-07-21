@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <string id="30000">Nyelv</string>
+  <string id="30001">Francia</string>
+  <string id="30002">Angol</string>
+
+  <string id="30010">Besorolás</string>
+  <string id="30011">Ciné-Passion</string>
+  <string id="30012">Allociné</string>
+  <string id="30013">IMDB</string>
+
+  <string id="30020">Leolvasó</string>
+  <string id="30030">Létrehozók</string>
+  <string id="30031">[B]Segíts kiterjeszteni a Cine-Passion adatbázist![/B]</string>
+</strings>
