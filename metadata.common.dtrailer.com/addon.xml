@@ -12,10 +12,12 @@
     <platform>all</platform>
     <minversion>20000</minversion>
     <summary lang="en">DTrailer Scraper Library</summary>
+    <summary lang="es">Scraper de Trailers de DTrailer</summary>
     <summary lang="hu">Dtrailer leolvasó-könyvtár</summary>
     <summary lang="nl">DTralier Scraper Collectie</summary>
     <summary lang="pt">Biblioteca de trailers DTrailer</summary>
     <description lang="en">Download trailers from en.dtrailer.com</description>
+    <description lang="es">Descarga trailers de en.dtrailer.com</description>
     <description lang="hu">Filmelőzetesek letöltése az en.dtrailer.com-ról</description>
     <description lang="nl">Download trailers van en.dtrailer.com</description>
     <description lang="pt">Descarregar trailers de en.dtrailer.com</description>
