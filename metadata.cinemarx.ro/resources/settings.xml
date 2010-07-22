@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="Enable TMDBThumbs" type="bool" id="tmdbthumbs" default="true"/>
+    <setting label="Enable TMDBFanart" type="bool" id="tmdbfanart" default="true"/>
+</settings>
