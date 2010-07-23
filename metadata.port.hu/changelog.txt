@@ -1,3 +1,6 @@
+[B]1.0.6[/B]
+Added: originaltitle tag if Hungarian is the preferred language
+
 [B]1.0.5[/B]
 Changed: chain scraper library functions
 

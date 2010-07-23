@@ -101,6 +101,10 @@
 			<RegExp input="$$1" output="\1" dest="18">
 				<expression>&lt;h1&gt;([^&lt;]*)</expression>
 			</RegExp>
+			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
+			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5">
+				<expression>Magyar$</expression>
+			</RegExp>
 			<!--Append Original Title from Bufer 18 if labelenum = Eredeti-->
 			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$18&lt;/title&gt;" dest="5+">
 				<expression>Eredeti$</expression>
