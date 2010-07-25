@@ -1,4 +1,4 @@
-[B]1.0.9[/B]
+[B]1.0.10[/B]
 - fixed: scraping directors from imdb when fullcast enabled
 
 [B]1.0.9[/B]
