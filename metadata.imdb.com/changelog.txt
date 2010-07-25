@@ -1,4 +1,7 @@
 [B]1.0.9[/B]
+- fixed: scraping directors from imdb when fullcast enabled
+
+[B]1.0.9[/B]
 - changed: new scraper icon
 
 [B]1.0.8[/B]
