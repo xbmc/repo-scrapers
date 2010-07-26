@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <string id="30000">Use Google Search</string>
+  <string id="30001">AniDB ~ Enable prequel lookup</string>
+  <string id="30002">AniDB ~ Alternative prequel link type</string>
+  <string id="30003">AniDB ~ Enable only single Animation studio return</string>
+  <string id="30004">AniDB ~ Enable specials mapping at the end of episode list</string>
+  <string id="30005">AniDB ~ Enable specials mapping inside of episode list</string>
+  <string id="30006">TheTVDB ~ Enable fanart/posters</string>
+  <string id="30007">TheTVDB ~ Enable banners</string>
+  <string id="30008">TheTVDB ~ Continue lookup if no fanart found</string>
+  <string id="30009">TheTVDB ~ Enable extra episode details</string>
+</strings>
+
