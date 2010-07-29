@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
-    <string id="30000">Cast completo</string>
-    <string id="30001">Cast completo >> Regista/i</string>
-    <string id="30002">Cast completo >> Attori</string>
-    <string id="30003">Cast completo >> Filmmakers</string>
-    <string id="30004">Cast completo >> Separatori del Cast</string>
-    <string id="30005">Aggiungi al Plot >> Critica</string>
-    <string id="30006">Aggiungi al Plot >> Commenti del Pubblico</string>
-    <string id="30007">Aggiungi al Plot >> Commenti sul Forum</string>
-    <string id="30008">Aggiungi al Plot >> Frasi Celebri del film</string>
-    <string id="30009">Voto in 10esimi</string>
-    <string id="30010">Voto Dizionari, Critica e Pubblico</string>
-    <string id="30011">Voto Dizionari, Critica e Pubblico > Visualizza in:</string>
-    <string id="30012">Tutti i Posters</string>
-    <string id="30013">Trailer</string>
-    <string id="30014">TMDB Backdrops (Lento)</string>
+    <string id="30000">Cast</string>
+    <string id="30001">Completo con foto (lento)</string>
+    <string id="30002">Regista/i</string>
+    <string id="30003">Attori</string>
+    <string id="30004">Filmmakers</string>
+    <string id="30005">Separatori del Cast</string>
+        
+    <string id="30100">Votazione</string>
+    <string id="30101">In 10esimi</string>
+    <string id="30102">Includi Dizionari, Critica e Pubblico</string>
+    <string id="30103">Visualizza in:</string>
+    
+    <string id="30200">Immagini e Video</string>
+    <string id="30201">Tutti i Posters (lento)</string>
+    <string id="30202">In Hi-Res</string>
+    <string id="30203">Trailer (lento)</string>
+    <string id="30204">TMDB Backdrops (molto lento)</string>
+    
+    <string id="30300">Appendi al Plot</string>
+    <string id="30301">Critica (lento)</string>
+    <string id="30302">Commenti del Pubblico (lento)</string>
+    <string id="30303">Commenti sul Forum (lento)</string>
+    <string id="30304">Frasi Celebri del film (lento)</string>
 </strings>

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- myMovies.it scaper for xbmc. Written by muttley -->
-<!-- Get latest version from muttley.eb2a.com -->
-<!-- now...make popcorn and good vision! -->
+<scraper framework="1.1" date="2010-07-08">
 
-<scraper framework="1.0" date="2009-11-12">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
-			<expression noclean="1">(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)</expression>
+		<!-- Match new link style (http://www.mymovies.it/film/<year>/<film_name>/) -->
+		<RegExp input="$$1" output="&lt;url&gt;http://\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
+			<expression noclean="1">(www\.mymovies\.it/film/[0-9]{4}/[^/]+/)</expression>
+		</RegExp>
+		<!-- Match OLD link style (www.mymovies.it/dizionario/recensione.asp?id=[0-9]) -->
+		<RegExp input="$$1" output="&lt;url&gt;http://\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
+			<expression noclean="1">(www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)</expression>
 		</RegExp>
 	</NfoUrl>
 
-	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/cse?q=\1&amp;amp;cx=partner-pub-1699801751737986%3Ax7j961-1g3m&amp;amp;ie=ISO-8859-1&amp;amp;sa=Cerca&amp;amp;num=20&lt;/url&gt;" dest="3">
+	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/cse?q=\1$$4&amp;cx=partner-pub-1699801751737986%3Ax7j961-1g3m&amp;ie=ISO-8859-1&amp;sa=Cerca&amp;num=20&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="%20(\1)" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
@@ -19,12 +24,12 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<!-- Add new link style to Search result (http://www.mymovies.it/film/<year>/<film_name>/) -->
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\4, \3)&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; target=_top class=l&gt;(.+?) \(([0-9]{4})\) +\| +MYmovies&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\4 \3)&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; target=_top class=l&gt;(.+?) \([^0-9]*([0-9]{4})[^0-9]*\) +\| +MYmovies&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<!-- Add OLD link style to Search result (www.mymovies.it/dizionario/recensione.asp?id=[0-9]) -->
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\4, \3)&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)&quot; target=_top class=l&gt;(.+?) \(([0-9]{4})\) +\| +MYmovies&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\4 \3)&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)&quot; target=_top class=l&gt;(.+?) \([^0-9]*([0-9]{4})[^0-9]*\) +\| +MYmovies&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -51,11 +56,11 @@
 
 			<!-- Director(s) -->
 			<RegExp input="$$1" output="\1" dest="4">
-				<expression cs="true">&lt;div style=&quot;text-align:left&quot; class=&quot;linkblu&quot;&gt;[^U]+Un film di (.+?)Con</expression>
+				<expression cs="true">&lt;meta name=&quot;description&quot; content=&quot;Un film di (.+?) con</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<!-- separe each director -->
-				<expression repeat="yes" noclean="1">([^\.^,]+)[\.,]</expression>
+				<expression repeat="yes" noclean="1">[ ]?([^\.^,]+)[\.,]?</expression>
 			</RegExp>
 
 			<!-- Writer(s) -->
@@ -153,7 +158,6 @@
 					<expression noclean="1">&lt;title&gt;[^\(]+ \(([0-9]{4})</expression>
 				</RegExp>
 				<!-- Substitute "space" with "%20"...a sort of urlencoding -->
-				<!-- when supported use: encode="1" -->
 				<RegExp input="$$4" output="\1" dest="6">
 					<expression encode="1" />
 				</RegExp>
@@ -163,10 +167,12 @@
 
 			<!-- Plot: It is used for report many information... -->
 			<!-- Custum function are used only for see all buffer -->
-			<!-- I buffer della GetDetails non sono visibili alle funzioni custom e non risco a trovare un approccio differente per appendere informazioni al plot -->
+			<!-- I buffer della GetDetails non sono visibili alle funzioni custom e non risco a trovare un approccio differente per appendere informazioni al plot
+-->
 			<RegExp input="$$1" output="&lt;url function=&quot;GetMoviePlot&quot;&gt;$$2&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
+
 
 			<!-- Plot: all that you want append... -->
 			<RegExp conditional="critic" input="$$1" output="&lt;url function=&quot;GetMovieCritic&quot;&gt;\1&lt;/url&gt;" dest="5+">
@@ -183,7 +189,7 @@
 			</RegExp>
 
 			<!-- Plot: ...at the end -->
-			<!-- Non serve a un c***o l'url (già cached), ma è l'unico modo per vedere i buffer 10,11,12,13,14 istanziati nelle custom function -->
+			<!-- Non serve a un c***o l'url (già cached), ma è l'unico modo per vedere i buffer 10,11,12,13,14 istanziati nelle custom function e non scaricare nessuna pagina -->
 			<RegExp output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;AppendToPlot&quot;&gt;$$2&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
@@ -192,30 +198,35 @@
 		</RegExp>
 	</GetDetails>
 
-		<GetMovieWriters dest="5">
-			<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-				<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
-					<expression repeat="yes" noclean="1">title=&quot; ?([^&quot;]+)&quot;&gt; ?\1&lt;/a&gt;[^&lt;]+&lt;div style=&quot;margin-top:3px; font-weight:bold;&quot;&gt;Soggetto&lt;/div&gt;</expression>
-				</RegExp>
-				<expression noclean="1" />
+	<GetMovieWriters dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
+				<expression repeat="yes" noclean="1">title=&quot; ?([^&quot;]+)&quot;&gt; ?\1&lt;/a&gt;[^&lt;]+&lt;div style=&quot;margin-top:3px; font-weight:bold;&quot;&gt;Soggetto&lt;/div&gt;</expression>
 			</RegExp>
-		</GetMovieWriters>
+			<expression noclean="1" />
+		</RegExp>
+	</GetMovieWriters>
 
 	<GetMovieTrailer dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&lt;param name=&quot;flashvars&quot; value=&quot;file=([^&amp;]+)&amp;</expression>
+			<expression noclean="1">so\.addVariable\(&apos;file&apos;,&apos;[^=]+=([^&apos;]+)&apos;\);</expression>
 		</RegExp>
 	</GetMovieTrailer>
 
 	<GetMovieThumbs dest="5">
 		<RegExp input="$$3" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<!-- Match only one big image -->
+			<!-- Match only one big image (when alone img is always big) -->
 			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="3">
 				<expression noclean="1" clear="yes">&lt;img width=&quot;420&quot; style=&quot;margin-top:25px; margin-bottom:25px;&quot; title=&quot;[^&quot;]+&quot; alt=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot; /&gt;</expression>
 			</RegExp>
 			<!-- Match All img -->
-			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="3+">
+			<RegExp conditional="!bigThumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="3+">
 				<expression repeat="yes" noclean="1">&lt;img width=&quot;146&quot; style=&quot;margin-top:10px; margin-bottom:10px;&quot; title=&quot;[^&quot;]+&quot; alt=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot;</expression>
+			</RegExp>
+			<!-- Match (always) All img, but Big (hi-res) -->
+			<!-- it's simple: just change src ../imgpgx.jpg to ../locandinapgx.jpg con x € [0-9] -->
+			<RegExp conditional="bigThumbs" input="$$1" output="&lt;thumb&gt;\1locandina\2&lt;/thumb&gt;" dest="3+">
+				<expression repeat="yes" noclean="1,2">&lt;img width=&quot;146&quot; style=&quot;margin-top:10px; margin-bottom:10px;&quot; title=&quot;[^&quot;]+&quot; alt=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)imm([^&quot;]+)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -298,43 +309,48 @@
 
 	<!-- All stuff append to plot -->
 
-	<GetMoviePlot clearbuffers="no" dest="5">
-		<RegExp input="$$1" output="\1" dest="10">
-			<expression trim="1" cs="true">&lt;td rowspan=&quot;2&quot; valign=&quot;top&quot;&gt;(?:.+?)&lt;/a&gt;[^A-Z]+(.+?).[ $]+&lt;/p&gt;</expression>
+	<GetMoviePlot clearbuffers="no" dest="10">
+		<!-- Simple Trim left -->
+		<RegExp input="$$4" output="\1" dest="10">
+			<RegExp input="$$1" output="\1" dest="4">
+				<!-- get plot and some pre html tags -->
+				<expression clear="yes" trim="1">&lt;td rowspan=&quot;2&quot; valign=&quot;top&quot;&gt;(.+?)&lt;/p&gt;</expression>
+			</RegExp>
+			<expression noclean="1">[^a-z]*(.+)</expression>
 		</RegExp>
 	</GetMoviePlot>
 
-	<GetMovieCritic clearbuffers="no" dest="5">
+	<GetMovieCritic clearbuffers="no" dest="11">
 		<RegExp input="$$4" output="\n\n:: CRITICA ::\1" dest="11">
 			<RegExp input="$$1" output="\n\n\1 - \2 (\3)\n\n\4" dest="4">
-				<expression repeat="yes" cs="true" noclean="1,2,3" trim="4">&lt;h2&gt;&lt;a href=&quot;[^&quot;]+&quot; title=&quot;([^&quot;]+)&quot;&gt;\1&lt;/a&gt;&lt;/h2&gt;[^&gt;]+&gt;[^a-z]+([^&lt;]+)&lt;em&gt;([^&lt;]+)&lt;/em&gt;[^A-Z]+([^&lt;]+)</expression>
+				<expression clear="yes" repeat="yes" noclean="1,2,3" trim="4">&lt;h2&gt;&lt;a href=&quot;[^&quot;]+&quot; title=&quot;([^&quot;]+)&quot;&gt;\1&lt;/a&gt;&lt;/h2&gt;[^&gt;]+&gt;[^a-z]+([^&lt;]+)&lt;em&gt;([^&lt;]+)&lt;/em&gt;[^=]+=[^&gt;]+&gt;[^a-z]+([^&lt;]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetMovieCritic>
 
-	<GetMoviePublic clearbuffers="no" dest="5">
+	<GetMoviePublic clearbuffers="no" dest="12">
 		<RegExp input="$$4" output="\n\n:: PUBBLICO ::\1" dest="12">
-			<RegExp input="$$1" output="\n\n\1 stelle - \2\n\n\3" dest="4">
-				<expression repeat="yes" noclean="1,2" trim="3">&lt;img style=&quot;margin-right:5px;&quot; src=&quot;[^&quot;]+&quot;[^0-9]+([0-9])[^=]+=&quot;[^&gt;]+&gt;([^&lt;]+)(?:.+?)&lt;div id=&quot;parziale[0-9]+&quot; class=&quot;linkrosa&quot; style=&quot;color:\#333333; margin-right:10px; margin-bottom:10px;&quot;&gt;[^&gt;]+&gt;[^A-Za-z]([^&lt;]+)&lt;</expression>
+			<RegExp input="$$1" output="\n\n\2 stelle - \1\n\n\3" dest="4">
+				<expression clear="yes" repeat="yes" noclean="1,2" trim="3">&lt;strong&gt;&lt;a href=&quot;[^&quot;]+&quot;&gt;([^&lt;]+)&lt;/a&gt;&lt;/strong&gt;[^&lt;]+&lt;img style=&quot;margin-right:5px;&quot; src=&quot;[^&quot;]+&quot;[^0-9]+([0-9])(?:.+?)&lt;div id=&quot;parziale[0-9]+&quot; class=&quot;linkrosa&quot; style=&quot;color:\#333333; margin-right:10px; margin-bottom:10px;&quot;&gt;[^&gt;]+&gt;[^a-z]+([^&lt;]+)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetMoviePublic>
 
-	<GetMovieForum clearbuffers="no" dest="5">
+	<GetMovieForum clearbuffers="no" dest="13">
 		<RegExp input="$$4" output="\n\n:: FORUM ::\1" dest="13">
-			<RegExp input="$$1" output="\n\n\1 stelle - \2\n\n\3" dest="4">
-				<expression repeat="yes" noclean="1,2" trim="3">&lt;img style=&quot;margin-right:5px;&quot; src=&quot;[^&quot;]+&quot;[^0-9]+([0-9])[^=]+=&quot;[^&gt;]+&gt;([^&lt;]+)(?:.+?)&lt;div id=&quot;parziale[0-9]+&quot; class=&quot;linkrosa&quot; style=&quot;color:\#333333; margin-right:10px; margin-bottom:10px;&quot;&gt;[^&gt;]+&gt;[^A-Za-z]([^&lt;]+)&lt;</expression>
+			<RegExp input="$$1" output="\n\n\2 stelle - \1\n\n\3" dest="4">
+				<expression clear="yes" repeat="yes" noclean="1,2" trim="3">&lt;strong&gt;&lt;a href=&quot;[^&quot;]+&quot;&gt;([^&lt;]+)&lt;/a&gt;&lt;/strong&gt;[^&lt;]+&lt;img style=&quot;margin-right:5px;&quot; src=&quot;[^&quot;]+&quot;[^0-9]+([0-9])(?:.+?)&lt;div id=&quot;parziale[0-9]+&quot; class=&quot;linkrosa&quot; style=&quot;color:\#333333; margin-right:10px; margin-bottom:10px;&quot;&gt;[^&gt;]+&gt;[^a-z]+([^&lt;]+)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetMovieForum>
 
-	<GetMovieFrasiCelebri clearbuffers="no" dest="6">
+	<GetMovieFrasiCelebri clearbuffers="no" dest="14">
 		<RegExp input="$$4" output="\n\n:: FRASI CELEBRI ::\1" dest="14">
 			<RegExp input="$$1" output="\n\n\1 (\2)\n\n\3" dest="4">
-				<expression noclean="1" trim="3">&lt;td class=&quot;linkblu&quot; valign=&quot;top&quot; style=&quot;font-weight:bold; font-size:12px&quot;&gt;[^A-Z]+([^\(]+) \(([^\(]+)\)(?:.+?)&lt;strong class=&quot;rec_lancio&quot; &gt;(.+?)&lt;/strong&gt;</expression>
+				<expression clear="yes" noclean="1" trim="3">&lt;td class=&quot;linkblu&quot; valign=&quot;top&quot; style=&quot;font-weight:bold; font-size:12px&quot;&gt;[^A-Z]+([^\(]+) \(([^\(]+)\)(?:.+?)&lt;strong class=&quot;rec_lancio&quot; &gt;(.+?)&lt;/strong&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\n\n\1 (\2)\n\n\3" dest="4+">
 				<expression repeat="yes" noclean="1" trim="1,3">&lt;td valign=&quot;top&quot; style=&quot;font-weight:bold; font-size:12px&quot;&gt;[^A-Z]+([^\(]+)\(([^\)]+)\)(?:.+?)&lt;td valign=&quot;top&quot; style=&quot;font-size:12px&quot;&gt;[^A-Za-z]+(.+?)&lt;/td&gt;</expression>

@@ -1,0 +1,4 @@
+[B]1.0.6[/B]
+- Aggiunto il supporto a XBMC 10.5 (addons system)
+- Fixed trailer
+- Riorganizzato il menù configurazione 
