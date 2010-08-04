@@ -13,7 +13,7 @@
 	<GetArtistSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&amp;amp;artist=\4&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;amp;lang=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;artist&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;mbid&gt;([^&lt;]*)&lt;/mbid&gt;.*?&lt;url&gt;www\.last\.fm/music/(\+noredirect/)?([^&lt;]*)&lt;/url&gt;</expression>
+				<expression repeat="yes">&lt;artist&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;mbid&gt;([^&lt;]*)&lt;/mbid&gt;.*?&lt;url&gt;(?:http://)?www\.last\.fm/music/(\+noredirect/)?([^&lt;]*)&lt;/url&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>		
