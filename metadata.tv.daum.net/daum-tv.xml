@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-13">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2010-07-24" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://movie.daum.net/tv/detail/main.do?tvProgramId=\1&lt;/url&gt;" dest="3">
 			<expression>movie\.daum\.net[^\?]*\?tvProgramId=(\d+)</expression>
@@ -20,6 +20,10 @@
 	</GetSearchResults>
 	<GetDetails dest="7">
 		<RegExp input="$$4" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="7">
+			<!-- added -->
+			<RegExp input="$$1" output="\1" dest="2">
+				<expression>tvProgramId=(\d+)</expression>
+			</RegExp>
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="4">
 				<expression/>
 			</RegExp>
@@ -65,7 +69,10 @@
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="4+">
 				<expression>&lt;h4&gt;네티즌 평점&lt;/h4&gt;&lt;/a&gt;\s*&lt;span class="fs11 fc3"&gt;\((\d+) 참여\)&lt;/span&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url function=&quot;GetEpisodePages&quot; cache=&quot;daum-tvep-$$2.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$2&lt;/url&gt;" dest="4+">
+			<RegExp conditional="!useAgent" input="$$1" output="&lt;url function=&quot;GetEpisodePages&quot; cache=&quot;daum-tvep-$$2-1.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$2&lt;/url&gt;" dest="4+">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="useAgent" input="$$1" output="&lt;episodeguide&gt;http://127.0.0.1:8081/fetch?type=daumtv&amp;id=$$2&lt;/url&gt;" dest="4+">
 				<expression/>
 			</RegExp>
 			<RegExp conditional="EnableFanart" input="$$1" output="&lt;url cache=&quot;daum-photo-$$2.htm&quot; function=&quot;GetDaumFanart&quot;&gt;\1&amp;order=recommend&lt;/url&gt;" dest="4+">
@@ -74,40 +81,99 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
-	<GetEpisodeList dest="4">
-		<RegExp input="$$5" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="4">
-			<RegExp input="$$2" output="daum-tvep-\1.htm" dest="9">
-				<expression>tvProgramId=(\d+)</expression>
+	<GetEpisodeList dest="8">
+		<RegExp conditional="!useAgent" input="$$9" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="8">
+			<!-- page 1 from $$1 -->
+			<RegExp input="$$10" output="\1" dest="9">
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression>tvProgramId=(\d+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="12">
+					<expression>&lt;span class="current"&gt;(\d+)&lt;/span&gt;</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;daum-tvep-$$11-$$12.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$11&amp;page=$$12&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="10">
+					<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
-			<RegExp input="$$2" output="daum-tvep-\1-\2.htm" dest="9">
-				<expression>tvProgramId=(\d+)&amp;page=(\d+)</expression>
+			<!-- page 2 from $$2 -->
+			<RegExp input="$$10" output="\1" dest="9+">
+				<RegExp input="$$2" output="\1" dest="11">
+					<expression>tvProgramId=(\d+)</expression>
+				</RegExp>
+				<RegExp input="$$2" output="\1" dest="12">
+					<expression>&lt;span class="current"&gt;(\d+)&lt;/span&gt;</expression>
+				</RegExp>
+				<RegExp input="$$2" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;daum-tvep-$$11-$$12.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$11&amp;page=$$12&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="10">
+					<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
-			<RegExp conditional="UseSeason0" input="" output="0" dest="10">
-				<expression/>
+			<!-- page 3 from $$3 -->
+			<RegExp input="$$10" output="\1" dest="9+">
+				<RegExp input="$$3" output="\1" dest="11">
+					<expression>tvProgramId=(\d+)</expression>
+				</RegExp>
+				<RegExp input="$$3" output="\1" dest="12">
+					<expression>&lt;span class="current"&gt;(\d+)&lt;/span&gt;</expression>
+				</RegExp>
+				<RegExp input="$$3" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;daum-tvep-$$11-$$12.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$11&amp;page=$$12&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="10">
+					<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
-			<RegExp conditional="!UseSeason0" input="" output="1" dest="10">
-				<expression/>
+			<!-- page 4 from $$4 -->
+			<RegExp input="$$10" output="\1" dest="9+">
+				<RegExp input="$$4" output="\1" dest="11">
+					<expression>tvProgramId=(\d+)</expression>
+				</RegExp>
+				<RegExp input="$$4" output="\1" dest="12">
+					<expression>&lt;span class="current"&gt;(\d+)&lt;/span&gt;</expression>
+				</RegExp>
+				<RegExp input="$$4" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;daum-tvep-$$11-$$12.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$11&amp;page=$$12&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="10">
+					<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;$$9&quot;&gt;$$2&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;$$10&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="5">
-				<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+			<!-- page 5 from $$5 -->
+			<RegExp input="$$10" output="\1" dest="9+">
+				<RegExp input="$$5" output="\1" dest="11">
+					<expression>tvProgramId=(\d+)</expression>
+				</RegExp>
+				<RegExp input="$$5" output="\1" dest="12">
+					<expression>&lt;span class="current"&gt;(\d+)&lt;/span&gt;</expression>
+				</RegExp>
+				<RegExp input="$$5" output="&lt;episode&gt;&lt;title&gt;제\1회&lt;/title&gt;&lt;url cache=&quot;daum-tvep-$$11-$$12.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=$$11&amp;page=$$12&amp;ep=\1&lt;/url&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;/episode&gt;" dest="10">
+					<expression repeat="yes">&lt;h5 class="fs12 em"&gt;.*?제(\d+)회[^&lt;\d]*([\d\.]*)[^&lt;]*&lt;/span&gt;</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
-			<expression noclean="1"></expression>
+			<expression noclean="1"/>
+		</RegExp>
+		<RegExp conditional="useAgent" input="$$1" output="\1" dest="8">
+			<expression noclean="1"/>
 		</RegExp>
 	</GetEpisodeList>
 	<GetEpisodeDetails dest="4">
-		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+		<RegExp conditional="!useAgent" input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$3" output="\1" dest="9">
 				<expression>&amp;ep=(\d+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;제$$9회&lt;/title&gt;&lt;aired&gt;\1&lt;/aired&gt;&lt;plot&gt;\2&lt;/plot&gt;" dest="5">
-				<expression trim="1,2">&lt;h5 class="fs12 em"&gt;.*?제$$9회([^&lt;]*).*?&lt;/h5&gt;\s*&lt;p class="txt"&gt;\s*(.*?)&lt;/p&gt;</expression>
+				<expression trim="1,2">&lt;h5 class="fs12 em"&gt;.*?제$$9회&amp;nbsp;([^&lt;]*).*?&lt;/h5&gt;\s*&lt;p class="txt"&gt;\s*(.*?)&lt;/p&gt;</expression>
 			</RegExp>
-			<expression noclean="1"></expression>
+			<RegExp input="$$1" output="&lt;title&gt;\2&lt;/title&gt;&lt;aired&gt;\1&lt;/aired&gt;&lt;plot&gt;\3&lt;/plot&gt;" dest="5">
+				<expression trim="1,3">&lt;h5 class="fs12 em"&gt;.*?제$$9회&amp;nbsp;([^&lt;]*).*?&lt;/h5&gt;\s*&lt;p class="txt"&gt;\s*&lt;strong class="epTit"&gt;([^&lt;]*)&lt;/strong&gt;(.*?)&lt;/p&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+		<RegExp conditional="useAgent" input="$$1" output="\1" dest="4">
+			<expression noclean="1"/>
 		</RegExp>
 	</GetEpisodeDetails>
 	<GetEpisodePages dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;&lt;episodeguide&gt;\1&lt;/episodeguide&gt;&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url cache=&quot;daum-tvep-\1.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=\1&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;daum-tvep-\1-1.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=\1&lt;/url&gt;" dest="5">
 				<expression>href="http://movie.daum.net/tv/detail/episode.do\?tvProgramId=(\d+)"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;url cache=&quot;daum-tvep-\1-\2.htm&quot;&gt;http://movie.daum.net/tv/detail/episode.do?tvProgramId=\1&amp;page=\2&lt;/url&gt;" dest="5+">
