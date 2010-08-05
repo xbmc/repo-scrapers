@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.artists.daum.net"
-       name="Daum-Music"
+       name="Daum Music"
        version="1.0.4"
        provider-name="XBMC-Korea">
   <requires>
@@ -8,15 +8,15 @@
   </requires>
   <extension point="xbmc.metadata.scraper.artists"
              language="ko"
-             library="daum-music.xml"/>
+             library="daum-artists.xml"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">Daum Artist Scraper</summary>
-    <summary lang="hu">Daum előadó információk</summary>
-    <summary lang="kr">다음 음악 스크래퍼</summary>
+    <summary lang="en">Daum Music Artists Scraper</summary>
+    <summary lang="ko">다음 음악가 스크래퍼</summary>
+    <summary lang="hu">Daum Előadó scraper</summary> 
     <summary lang="pt">Scraper de música Daum</summary>
-    <description lang="en">Download music information from music.daum.net</description>
-    <description lang="hu">Előadó információk letöltése a music.daum.net webhelyről</description>
-    <description lang="kr">music.daum.net 에서 음악 정보 다운로드</description>
+    <description lang="en">Download music artist information from music.daum.net</description>
+    <description lang="ko">music.daum.net 에서 음악가 정보 다운로드</description>
+    <description lang="hu">Zene információk letöltése a music.daum.net webhelyről</description>
     <description lang="pt">Descarregar informação de música de music.daum.net</description>
   </extension>
 </addon>
