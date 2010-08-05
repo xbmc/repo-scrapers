@@ -2,4 +2,7 @@
 <strings>
     <string id="30000">앨범소개 모두 보기</string>
     <string id="30001">사진 더보기</string>
+    <string id="30002">팬아트</string>
+    <string id="30003">검색에 음악가 이름 사용</string>
+    <string id="30004">검색에 앨범 이름 사용</string>
 </strings>

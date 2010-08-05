@@ -1,12 +1,21 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-07">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2010-07-16" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
 			<expression>(http://music.daum.net/album/.*)</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateAlbumSearchUrl dest="3">
-		<RegExp input="$$1 $$2" output="&lt;url&gt;http://music.daum.net/search/album.do?query=\1&lt;/url&gt;" dest="3">
+		<RegExp conditional="!srchByArtist" input="$$1" output="&lt;url&gt;http://music.daum.net/search/album.do?query=\1&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+		<RegExp conditional="srchByArtist">
+			<RegExp conditional="!srchByAlbum" input="$$2" output="&lt;url&gt;http://music.daum.net/search/album.do?query=\1&lt;/url&gt;" dest="3">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="srchByAlbum" input="$$1+$$2" output="&lt;url&gt;http://music.daum.net/search/album.do?query=\1&lt;/url&gt;" dest="3">
+				<expression/>
+			</RegExp>
 			<expression/>
 		</RegExp>
 	</CreateAlbumSearchUrl>
@@ -15,9 +24,20 @@
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="4">
 				<expression repeat="yes">&lt;a href="([^"]+)" class="fl"[^&gt;]*&gt;(.+?)&lt;/a&gt;.*?&lt;a href="[^"]+" class="arti"[^&gt;]*&gt;(.+?)&lt;/a&gt;</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetAlbumSearchResultPage&quot;&gt;http://music.daum.net/search/album.do\1&lt;/url&gt;" dest="4+">
+				<expression repeat="yes">&lt;a href="([^"]+)" class="numBox"</expression>
+			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
 	</GetAlbumSearchResults>
+	<GetAlbumSearchResultPage dest="3">
+		<RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="4">
+				<expression repeat="yes">&lt;a href="([^"]+)" class="fl"[^&gt;]*&gt;(.+?)&lt;/a&gt;.*?&lt;a href="[^"]+" class="arti"[^&gt;]*&gt;(.+?)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumSearchResultPage>
 	<GetAlbumDetails dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="10">

@@ -2,4 +2,7 @@
 <strings>
     <string id="30000">Enable Full Album Review</string>
     <string id="30001">Prefer Full Thumbs</string>
+    <string id="30002">Enable Fanart</string>
+    <string id="30003">Search with Artist Name</string>
+    <string id="30004">Search with Album Name</string>
 </strings>
