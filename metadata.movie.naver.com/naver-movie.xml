@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2010-04-16">
+﻿<?xml version="1.0" encoding="EUC-KR"?>
+<scraper framework="1.1" date="2010-04-16" name="Naver Movie" content="movies" thumb="naver.png" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://movie.naver.com/moviedetail/moviedetailMain.do?movieId=\1&lt;/url&gt;" dest="3">
 			<expression>movie\.naver\.com[^\?]*\?code=(\d*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateSearchUrl SearchStringEncoding="EUC-KR" dest="3">
+	<CreateSearchUrl dest="3" SearchStringEncoding="EUC-KR">
 		<RegExp input="$$1+$$2" output="&lt;url&gt;http://movie.naver.com/movie/search/result.nhn?section=movie&amp;query=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
@@ -22,6 +22,9 @@
 		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="8">
 				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;title&gt;\1 (\2)&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;" dest="8+">
+                <expression trim="1,2">"&amp;main_title="\+encodeURIComponent\("([^&quot;]*)"\)\+"&amp;sub_title="\+encodeURIComponent\("([^",]*)"\)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1 (\2, \3)&lt;/title&gt;&lt;originaltitle&gt;\2&lt;/originaltitle&gt;&lt;year&gt;\3&lt;/year&gt;" dest="8+">
                 <expression trim="1,2">"&amp;main_title="\+encodeURIComponent\("([^&quot;]*)"\)\+"&amp;sub_title="\+encodeURIComponent\("([^,]*),\s*(\d*)"\)</expression>
@@ -53,14 +56,8 @@
 				</RegExp>
 				<expression repeat="yes">&lt;a href="/movie/bi/pi/basic.nhn\?code=\d+"&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="8+">
-				<RegExp conditional="!EnableFullPlot" input="$$1" output="\1" dest="7">
-					<expression noclean="1">&lt;div id="movietalk_small"[^&gt;]*&gt;(.*)&lt;a href="javascript:show_full\('movietalk'\);"</expression>
-				</RegExp>
-				<RegExp conditional="EnableFullPlot" input="$$1" output="\1" dest="7">
-					<expression noclean="1">&lt;div id="movietalk_full"[^&gt;]*&gt;(.*)&lt;a href="javascript:show_small\('movietalk'\);"</expression>
-				</RegExp>
-				<expression trim="1">&lt;p&gt;(.*)&lt;p&gt;</expression>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetPlot&quot;&gt;http://movie.naver.com/movie/bi/mi/basic.nhn?code=\1&lt;/url&gt;" dest="8+">
+				<expression noclean="1">&lt;li&gt;&lt;a href="basic.nhn\?code=(\d+)"&gt;</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;&lt;runtime&gt;\2&lt;/runtime&gt;&lt;premiered&gt;\3&lt;/premiered&gt;" dest="8+">
 				<RegExp input="$$1" output="\1" dest="7">
@@ -99,6 +96,14 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
+	<GetPlot dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;&lt;plot&gt;\2&lt;/plot&gt;" dest="5">
+				<expression>&lt;p class="c_ff4200"&gt;([^&lt;]*)&lt;/p&gt;\s*&lt;p&gt;(.*)&lt;/p&gt;\s*&lt;ul class="other"&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetPlot>
 	<GetNAVERPoster dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;GetNAVERPosterPage&quot;&gt;http://movie.naver.com/\1&lt;/url&gt;" dest="5+">
