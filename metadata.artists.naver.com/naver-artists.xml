@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-30">
+<?xml version="1.0" encoding="EUC-KR"?>
+<scraper framework="1.1" date="2010-07-24" language="ko">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
-			<expression>(http://music.naver.com/.*)</expression>
+		<RegExp input="$$1" output="\1" dest="3">
+			<expression>(http://music.naver.com/artist.*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateArtistSearchUrl SearchStringEncoding="euc-kr" dest="3">
+	<CreateArtistSearchUrl dest="3" SearchStringEncoding="EUC-KR">
 		<RegExp input="$$1" output="&lt;url&gt;http://music.naver.com/search.nhn?where=artist&amp;query=\1&lt;/url&gt;" dest="3">
 			<expression/>
 		</RegExp>
 	</CreateArtistSearchUrl>
 	<GetArtistSearchResults dest="3">
-		<RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="3">
+		<RegExp input="$$4" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;EUC-KR&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="3">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;url&gt;http://music.naver.com/artist.nhn?artistid=\1&lt;/url&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/entity&gt;" dest="4">
-				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation_artist\('([^']*)'\);" class="c u b2"&gt;(.*?)&lt;/a&gt;</expression>
+				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation_artist\('(\d+)'\);" class="c u b2"&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;url&gt;http://music.naver.com\1&lt;/url&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/entity&gt;" dest="4+">
+				<expression repeat="yes">&lt;a href="(/artist\.nhn\?artistid=\d+)" class="c u b2"&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -71,6 +74,9 @@
 			<RegExp conditional="enThumbs" input="$$1" output="&lt;url cache=&quot;naver-photo-$$10.htm&quot; function=&quot;GetArtistThumb&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
 				<expression>&lt;a href="([^"]+)"&gt;&lt;img src="[^"]*/tab_artist5_off.gif"</expression>
 			</RegExp>
+			<RegExp conditional="useAgent" input="$$1" output="&lt;url function=&quot;GetDaumFanart&quot;&gt;http://127.0.0.1:8081/fanart?type=daummusic&amp;name=\1&amp;coding=euc-kr&lt;/url&gt;" dest="4+">
+				<expression>&lt;h2 title[^&gt;]*&gt;(.*?)&lt;/h2&gt;</expression>
+			</RegExp>
 			<RegExp conditional="enFanart" input="$$1" output="&lt;url cache=&quot;naver-photo-$$10.htm&quot; function=&quot;GetArtistFanart&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
 				<expression>&lt;a href="([^"]+)"&gt;&lt;img src="[^"]*/tab_artist5_off.gif"</expression>
 			</RegExp>
@@ -90,7 +96,7 @@
 	</GetDiscography>
 	<GetArtistThumb dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumb/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumbnail/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
 				<expression repeat="yes">&lt;a href="javascript:imageZoom\('/music/photo/thumbnail/([^']*)'\);"&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -98,7 +104,7 @@
 	</GetArtistThumb>
 	<GetArtistFanart dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumb/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://down.music.naver.com/music/photo/thumbnail/\1&quot;&gt;http://down.music.naver.com/music/photo/\1&lt;/thumb&gt;" dest="5">
 				<expression repeat="yes">&lt;a href="javascript:imageZoom\('/music/photo/thumbnail/([^']*)'\);"&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -123,4 +129,9 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetKoccaBiography>
+	<GetDaumFanart dest="3">
+		<RegExp input="$$1" output="\1" dest="3">
+			<expression noclean="1"/>
+		</RegExp>
+	</GetDaumFanart>
 </scraper>

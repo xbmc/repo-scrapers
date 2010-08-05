@@ -5,4 +5,5 @@
     <setting label="30002" type="bool" id="enDiscography" default="true"/>
     <setting label="30003" type="bool" id="enThumbs" default="false"/>
     <setting label="30004" type="bool" id="enFanart" default="true"/>
+    <setting label="30005" type="bool" id="useAgent" default="false"/>
 </settings>
