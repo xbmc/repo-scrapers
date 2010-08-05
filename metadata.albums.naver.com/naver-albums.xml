@@ -1,23 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-04-30">
+<?xml version="1.0" encoding="EUC-KR"?>
+<scraper framework="1.1" date="2010-04-30" language="ko">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
-			<expression>(http://music.naver.com/.*)</expression>
+			<expression>(http://music.naver.com/album.*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateAlbumSearchUrl SearchStringEncoding="euc-kr" dest="3">
-		<RegExp input="$$1+$$2" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
+	<CreateAlbumSearchUrl dest="3" SearchStringEncoding="EUC-KR">
+		<RegExp conditional="!srchByArtist" input="$$1" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+		<RegExp conditional="srchByArtist">
+			<RegExp conditional="!srchByAlbum" input="$$2" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="srchByAlbum" input="$$1+$$2" output="&lt;url&gt;http://music.naver.com/search.nhn?where=album&amp;query=\1&lt;/url&gt;" dest="3">
+				<expression/>
+			</RegExp>
 			<expression/>
 		</RegExp>
 	</CreateAlbumSearchUrl>
 	<GetAlbumSearchResults dest="3">
+		<RegExp input="$$4" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;EUC-KR&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;url&gt;http://music.naver.com/album.nhn?tubeid=\1&lt;/url&gt;&lt;/entity&gt;" dest="4">
+				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation\('([^']*)'\);" class="c u"&gt;(.*?)&lt;/a&gt;.*?&lt;span title[^&gt;]*&gt;([^&lt;]*)&lt;/span&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetAlbumSearchResultPage&quot;&gt;http://music.naver.com\1&lt;/url&gt;" dest="4+">
+				<expression repeat="yes">&lt;a href="(/[^"]*)"[^&gt;]*&gt;&lt;span[^&gt;]*&gt;&lt;b class=board&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetAlbumSearchResults>
+	<GetAlbumSearchResultPage dest="3">
 		<RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="3">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;url&gt;http://music.naver.com/album.nhn?tubeid=\1&lt;/url&gt;&lt;/entity&gt;" dest="4">
 				<expression repeat="yes">&lt;a href="javascript:tube_goURL_appreciation\('([^']*)'\);" class="c u"&gt;(.*?)&lt;/a&gt;.*?&lt;span title[^&gt;]*&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
-	</GetAlbumSearchResults>
+	</GetAlbumSearchResultPage>
 	<GetAlbumDetails dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="11">
