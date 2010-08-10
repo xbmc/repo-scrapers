@@ -1,0 +1,20 @@
+Changelog:
+
+10/08/2010bis - Added hungarian strings, fixed addon.xml order descprition new version now 1.0.8 one step fwd from xbmc repo as it should be
+10/08/2010 - Created git repository new version is 1.07
+29/07/2010 - Fixed Plot because of another site code change.
+20/07/2010 - Small optmizations for better results; slightly mods to plot, tagline and outline; some small fixes for Xbmc Dharma
+18/07/2010 - Updated to match the latest changes to the site (again)
+21/04/2010 - Updated to match the latest changes to the site
+05/03/2010 - Added Fanart collector and fixed Actors bug
+04/01/2010 - Improved the Google search adding the "Year" to the "CreateSearchUrl" and "sorted=yes" to the "GetSearchResults"
+02/01/2010 - Removed "Cimi's" search and left only the Google one.
+04/12/2009 - Fixed TMDB Fanarts and Thumbs broken due to Camelot beta changes in "common" folder
+20/11/2009 - Added option to retreive up to 4 pages of results from mp.it it' will take longer obviously.
+17/11/2009 - Added staright MP search (tnx Cimi for the great help), still possible to use Google search enabling it in the scraper settings.
+16/11/2009 - cleanup of results title names for future XBMC filtering of duplicated entries (r24674 )
+15/11/2009 - fixed "outline" problem with the Rapier skin, it actually contain the plot and not the curiosity anymore.
+14/11/2009 - changed search url with myown google custom search to have more results
+12/11/2009 - changed method to retrieve the IMDb ID and the so the MPAA, studio, rating and Fanart
+09/11/2009 - added scraping of MPAA, studio, and ratings from IMDb (enabled by default, if disabled it will retrieve thos from movieplayer.it but the datas will probably be unusable by skins that use MPAA and studo icons)
+04/11/2009 - added download of TMDB Posters and Fanarts and fixed their selection in settings
