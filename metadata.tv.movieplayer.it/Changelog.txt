@@ -1,0 +1,3 @@
+Changelog:
+
+10/08/2010 - Initial commit to github rev. 1.0.5
