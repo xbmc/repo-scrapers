@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.albums.yoyo.pl"
        name="YoYo.pl"
-       version="1.0.3"
+        version="1.0.3"
        provider-name="smuto">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -14,9 +14,11 @@
     <summary lang="en">YoYo Album scraper</summary>
     <summary lang="hu">YoYo album információk</summary>
     <summary lang="pl">YoYo Album scraper</summary>
+    <summary lang="pt">Scraper de Álbuns YoYo</summary>
     <description lang="en">MusicBrainz scraper. Also uses info from merlin.pl and allmusic.com</description>
     <description lang="hu">Album információk letöltése a MusicBrainz, merlin.pl és az allmusic.com webhelyekről</description>
     <description lang="pl">MusicBrainz scraper. Album - wyszukiwanie i pobranie listy utworów na bazie MusicBrainz, opis i okłdka z merlin.pl (okładka domyślnie), generalne info z allmusic, okładka w opcjach.</description>
+    <description lang="pt">Scraper YoYo. Além de utilizar o MusicBrainz, também conta com os recursos disponíveis em merlin.pl e allmusic.com.</description>
     <platform>all</platform>
   </extension>
 </addon>

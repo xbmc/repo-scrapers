@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Portuguese strings.xml by hudo (hudokkow [AT] gmail [DOT] com) -->
+<strings>
+    <string id="30000">Corre sobre MusicBrainz-Last.fm-Allmusic-htbackdrops</string>
+    <string id="30001">Ligar fanart</string>
+    <string id="30002">Lingua</string>
+    <string id="30003">Descarregar miniaturas de artistas de Allmusic.com</string>
+    <string id="30006">Porcurar por 'mbid' no site last.fm</string>
+</strings>
