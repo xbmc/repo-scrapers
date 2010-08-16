@@ -1,3 +1,6 @@
+[B]1.0.3[/B]
+New icon.
+
 [B]1.0.2[/B]
 Added Hungarian translation.
 
