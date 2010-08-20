@@ -1,0 +1,4 @@
+﻿[B]1.1.0[/B]
+- Nowy portal, nowy scraper
+[B]1.0.0[/B]
+- Initial import into addons repository
