@@ -29,7 +29,7 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url cache=&quot;\1.xml&quot; &gt;http://www.cinefacts.de/kino/\1/\2/filmdetails.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes">&gt;&lt;a href=&quot;/kino/([0-9]*)/(.[^\/]*)/filmdetails.html&quot;&gt;[^&lt;]*&lt;b title=&quot;([^&quot;]*)&quot; class=&quot;headline&quot;&gt;[^&lt;]+&lt;/b&gt;&lt;/a&gt;&lt;br&gt;[^&lt;]+&lt;br&gt;+[^0-9]+([^&lt;]*)</expression>
+				<expression repeat="yes">&lt;a href=&quot;/kino/([0-9]*)/(.[^\/]*)/filmdetails.html&quot;&gt;[^&lt;]*&lt;b title=&quot;([^&quot;]*)&quot; class=&quot;headline&quot;.*?([0-9]{4})</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -46,14 +46,14 @@
 			</RegExp>
 			<!--Genre-->
 			<RegExp input="$$1" output="\1" dest="4">
-				<expression noclean="1">Genre:([^:]*)Deutschlandstart:</expression>
+				<expression noclean="1">Genre:([^:]*)&lt;dt</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<expression repeat="yes" noclean="1" trim="1">&gt;*[ A-Za-z]([^&lt;&gt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Director Film-->
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression noclean="1">Regie:([^:]*)Buch:</expression>
+				<expression noclean="1">Regie:([^:]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<expression repeat="yes" >&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
@@ -75,7 +75,7 @@
 			</RegExp>
 			<!--Country-->
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression noclean="1">Produktionsland:([^:]*)Verleih:</expression>
+				<expression noclean="1">Produktionsland:([^:]*)&lt;dt</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression repeat="yes" >&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
@@ -94,7 +94,7 @@
 			</RegExp>
 			<!--Writers-->
 			<RegExp input="$$1" output="\1" dest="6+">
-				<expression noclean="1">Buch:([^:]*)Musik:</expression>
+				<expression noclean="1">Buch:([^:]*)</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
 				<expression repeat="yes" >&lt;a href=&quot;[^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
@@ -108,7 +108,7 @@
 				<expression clear="yes">tt([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&quot;\1&quot;" dest="7">
-				<expression encode="1">&lt;/li&gt;[^:]*:&lt;/dt&gt;[^&lt;]*&lt;dd class=&quot;first&quot;&gt;(.[^&lt;]*)&lt;/dd&gt;</expression>
+				<expression trim="1" noclean="1" encode="1">&lt;h1&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<!--TMDB Thumbs & Fanart (IMDbId)-->
 			<RegExp input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
