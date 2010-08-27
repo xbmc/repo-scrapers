@@ -11,14 +11,14 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
 			<!--Код если найден единственный вариант-->
 			<RegExp input="$$7" output="&lt;entity&gt;\1&lt;/entity&gt;" dest="5+">
-				<RegExp input="$$6" output="&lt;title&gt;\1 " dest="7">
+				<RegExp input="$$1" output="&lt;title&gt;\1 " dest="7">
 					<expression trim="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
 				</RegExp>
-				<RegExp input="$$6" output="(\1)&lt;/title&gt;" dest="7+">
+				<RegExp input="$$1" output="(\1)&lt;/title&gt;" dest="7+">
 					<expression>&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/\d+/"&gt;(\d+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
 				</RegExp>
-				<RegExp input="$$6" output="&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="7+">
-					<expression>&lt;span class=&quot;title&quot;&gt;&lt;a href=&quot;/level/19/film/(.+?)/&quot;&gt;</expression>
+				<RegExp input="$$1" output="&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="7+">
+					<expression>&lt;a href=&quot;/level/19/film/(\d+)/&quot;&gt;</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>

@@ -1,3 +1,3 @@
-﻿1.0.1:
+﻿1.0.6:
 - Version from http://forum.xbmc.org/showpost.php?p=522213&postcount=36
 - Added <country> information 
