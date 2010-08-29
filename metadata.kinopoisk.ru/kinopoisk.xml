@@ -12,7 +12,7 @@
 			<!--Код если найден единственный вариант-->
 			<RegExp input="$$7" output="&lt;entity&gt;\1&lt;/entity&gt;" dest="5+">
 				<RegExp input="$$1" output="&lt;title&gt;\1 " dest="7">
-					<expression trim="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
+					<expression trim="1">class=&quot;moviename-big&quot;&gt;(.+?)&amp;nbsp;&lt;/h1&gt;</expression>
 				</RegExp>
 				<RegExp input="$$1" output="(\1)&lt;/title&gt;" dest="7+">
 					<expression>&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/\d+/"&gt;(\d+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
