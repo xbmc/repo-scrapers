@@ -1,5 +1,7 @@
 Changelog:
 
+28/08/2010 - Reduced movieplayer.it fanarts pages just to the summary one to improve speed
+27/08/2010 - Changed the search string for better results. Version now is 1.0.9
 10/08/2010bis - Added hungarian strings, fixed addon.xml order descprition new version now 1.0.8 one step fwd from xbmc repo as it should be
 10/08/2010 - Created git repository new version is 1.07
 29/07/2010 - Fixed Plot because of another site code change.

@@ -1,3 +1,6 @@
 Changelog:
 
+
+
+29/08/2010 - Added NfoUrl that was missing. Added TVDB Id to be used for Logo  downloader script and maybe others.
 10/08/2010 - Initial commit to github rev. 1.0.5

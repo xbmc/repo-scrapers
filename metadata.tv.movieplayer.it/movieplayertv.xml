@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper name="movieplayer.it" date="2010-08-10">
+<scraper name="movieplayer.it" date="2010-08-29">
+
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="\1" dest="3">
+			<expression noclean="1">(http://www\.movieplayer\.it/serietv/[0-9]+/[^"]+)</expression>
+		</RegExp>
+	</NfoUrl>
 
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.google.com/cse?cx=010185506218629253150%3Ah5nzuoc-h7w&amp;amp;ie=UTF-8&amp;amp;q=\1&amp;amp;sa=Cerca&amp;amp;hl=it&lt;/url&gt;" dest="3">
@@ -57,6 +63,13 @@
 			<RegExp input="$$1" output="&lt;episodeguide&gt;&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=\1&quot;&gt;http://www.movieplayer.it\1&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
 				<expression>&lt;a href=&quot;([^&quot;]+)&quot; title=&quot;[^&quot;]*&quot;&gt;Episodi&lt;/a&gt;</expression>
 			</RegExp>
+			<!--TheTVDB Id for logo downloader script-->
+			<RegExp input="$$9" output="&lt;url cache=&quot;\1-TVDBLink&quot; function=&quot;GetTVDBId&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=it&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression clear="yes" noclean="1" encode="1">&lt;strong&gt;Titolo originale:&lt;/strong&gt;[\n][\s]*&lt;a href=&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
+				</RegExp>
+				<expression />
+			</RegExp>
 			<!--TheTVDB posters and banners-->
 			<RegExp conditional="TVDBposter" input="$$9" output="&lt;url cache=&quot;\1-TVDBLink&quot; function=&quot;GetTVDBLink&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=it&lt;/url&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
@@ -92,6 +105,12 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetDetails>
+	
+	<GetTVDBId dest="6">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/details&gt;" dest="6">
+			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
+		</RegExp>
+	</GetTVDBId>
 	
 	<GetTVDBLink dest="6">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-TVDB&quot; function=&quot;GetTVDBStuff&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/banners/all/en/&lt;/url&gt;&lt;/details&gt;" dest="6">
