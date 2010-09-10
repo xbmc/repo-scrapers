@@ -1,3 +1,6 @@
+[B]1.0.13[/B]
+- fixed: another step to ensure English title gets scraped when selected
+
 [B]1.0.12[/B]
 - fixed: various fixes to title scraping on a preferred language
 
