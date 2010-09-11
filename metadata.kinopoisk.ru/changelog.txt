@@ -3,3 +3,12 @@
 - Added <country> information 
 1.0.7:
 - Fixed title search
+1.0.8:
+- Fixed multi-page poster scraping
+- Fixed actor grabbing when role written in english
+- Now grabbing studios and not distributors 
+1.0.9:
+- Changed encoding to "windows-1251"
+- Fixed year extracting in some cases
+1.0.10:
+- Added russian trailers

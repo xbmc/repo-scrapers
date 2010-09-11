@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
     <string id="30000">фанарт с сайта TMDB</string>
+    <string id="30001">оригинальное название в результатах поиска</string>
+    <string id="30002">скачивать русскоязычные трейлеры</string>
+    <string id="30003">предпочитать HD качество</string>
+    <string id="30004">предпочитаемое качество трейлера</string>
 </strings>
