@@ -10,22 +10,21 @@ Supported tags::
 
   title
   originaltitle
-  country
+  rating
   year
   top250
-  mpaa
+  votes
+  outline and plot (same content)
   tagline
   runtime
-  rating
-  genre
-  studio
-  actor
-  plot and outline (same content)
-  id
   thumb
-  actor
-  director
-  credits
-  producer
   fanart (from themoviedb.org)
+  mpaa
+  id
+  genre
+  country
+  credits
+  director
+  studio
   trailer (only russian language)
+  actor

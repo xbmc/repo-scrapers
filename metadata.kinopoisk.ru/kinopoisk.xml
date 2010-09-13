@@ -105,6 +105,9 @@
 				<expression>href="/level/19/film/(\d+)/"</expression>
 			</RegExp>
 			<!--PLOT and OUTLINE-->
+			<RegExp input="$$1" output="" dest="6">
+				<expression/>
+			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
 				<expression noclean="1">&lt;tr&gt;&lt;td colspan=3 style="padding: 10px 10px 20px 20px" class="news"&gt;\s+&lt;span class="_reachbanner_"&gt;[\t\n]*(.*?)[\t\n]*&lt;/span&gt;</expression>
 			</RegExp>
@@ -163,19 +166,18 @@
 				<!-- -->
 				<expression noclean="1" />
 			</RegExp>
-			<!--FANART (themoviedb)-->
-			<RegExp conditional="fanart" input="$$4" output="&lt;url cache=&quot;tmdb_\2.html&quot; function=&quot;GetTMDBFanartByIMDBUrl&quot;&gt;http://www.imdb.com/find?s=tt&amp;tyear=\1&amp;q=\2&lt;/url&gt;" dest="5+">
-				<RegExp input="$$1" output="\9:::\1.\2.\3.\4.\5.\6.\7.\8" dest="4">
-					<expression>&lt;span style="color: #666; font-size: 13px"&gt;([^&lt;\s]+)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)&lt;/span&gt;.+&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/[0-9]+/"&gt;([0-9]+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
+			<!--IMDBID functions-->
+			<RegExp input="$$4" output="&lt;url cache=&quot;tmdb_\2.html&quot; function=&quot;GetIMDBID&quot;&gt;http://www.imdb.com/search/title?release_date=\1,\1&amp;title=\2&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\2:::\1" dest="4">
+					<expression>&lt;span style="color: #666; font-size: 13px"&gt;(.+?)&lt;/span&gt;.+&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/[0-9]+/"&gt;([0-9]+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
 				</RegExp>
-				<expression>([0-9]+):::(.+)</expression>
-			</RegExp>
-			<!--IMDBID-->
-			<RegExp input="$$4" output="&lt;url cache=&quot;tmdb_\2.html&quot; function=&quot;GetIMDBID&quot;&gt;http://www.imdb.com/find?s=tt&amp;tyear=\1&amp;q=\2&lt;/url&gt;" dest="5+">
-				<RegExp input="$$1" output="\9:::\1.\2.\3.\4.\5.\6.\7.\8" dest="4">
-					<expression>&lt;span style="color: #666; font-size: 13px"&gt;([^&lt;\s]+)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)\s*([^&lt;\s]*)&lt;/span&gt;.+&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/[0-9]+/"&gt;([0-9]+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
+				<RegExp input="$$4" output="\1&amp;nbsp;" dest="4">
+					<expression noclean="1"/>
 				</RegExp>
-				<expression>([0-9]+):::(.+)</expression>
+				<RegExp input="$$4" output="\1 " dest="4">
+					<expression noclean="1" repeat="yes">(.*?)&amp;nbsp;</expression>
+				</RegExp>
+				<expression encode="2" trim="2">([0-9]+):::(.+)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -301,6 +303,54 @@
 			<RegExp input="$$5" output="&lt;trailer id=&quot;best&quot; &gt;\1&lt;/trailer&gt;" dest="2+">
 				<expression>&lt;trailer.*?&gt;([^&lt;]*)&lt;/trailer&gt;$</expression>
 			</RegExp>
+			<!-- non-russian trailers -->
+			<RegExp conditional="orig_trailer" input="$$5" output="&lt;trailer lang=&quot;orig&quot; id=&quot;best&quot; &gt;\1&lt;/trailer&gt;" dest="2+">
+				<RegExp input="$$1" output="&lt;trailer tilte=&quot;\1&quot;&gt;&lt;html&gt;\2&lt;/html&gt;&lt;/trailer&gt;" dest="3">
+					<expression repeat="yes" noclean="2">&lt;a href="/level/16/film/[^"]+" class="all"&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
+				</RegExp>
+				<RegExp input="$$3" output="\1" dest="3">
+					<expression noclean="1">tilte="Трейлер"(.*?)&lt;/trailer&gt;</expression>
+				</RegExp>
+				<!-- NOT HD TRAILERS-->
+				<RegExp input="$$3" output="&lt;trailer quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5">
+					<expression repeat="yes">&lt;td width=20&gt;&lt;/td&gt;.*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
+				</RegExp>
+				<!-- HD TRAILERS-->
+				<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
+					<expression repeat="yes">&lt;td width=20&gt;&lt;img src="/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
+				</RegExp>
+				<!-- Пытаемся выбрать предпочитаемое качество-->
+				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
+					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer lang=&quot;orig&quot;&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer type="HD" quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<expression>High</expression>
+				</RegExp>
+				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
+					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer type="HD" quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<expression>Medium</expression>
+				</RegExp>
+				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
+					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer type="HD" quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
+						<expression repeat="yes">&lt;trailer quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
+					</RegExp>
+					<expression>Low</expression>
+				</RegExp>
+				<!-- Выбираем последний найденный трейлер (вероятно он имеет максимальное качество) на случай если нету предпочтительного качества-->
+				<expression>&lt;trailer.*?&gt;([^&lt;]*)&lt;/trailer&gt;$</expression>
+			</RegExp>
+			<!-- END non-russian trailers -->
 			<expression noclean="1"/>
 		</RegExp>
 	</GMT>
@@ -354,12 +404,6 @@
 			<RegExp input="$$8" output="&lt;credits&gt;\2&lt;/credits&gt;" dest="7+">
 				<expression repeat="yes" trim="3">&lt;img src="([^"]+)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="producer"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;tr&gt;&lt;td colspan=3&gt;</expression>
-			</RegExp>
-			<RegExp input="$$8" output="&lt;producer&gt;\2&lt;/producer&gt;" dest="7+">
-				<expression repeat="yes" trim="3">&lt;img src="([^"]+)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
-			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
 	</PEOPLE>
@@ -373,8 +417,17 @@
 	</GetTMDBFanartByIMDBUrl>
 	<GetIMDBID dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;id&gt;tt\2&lt;/id&gt;" dest="5">
-				<expression>(com|")/title/tt([0-9]+)</expression>
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression>(?:com|")/title/(tt[0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="fanart" input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="tmdb_poster" input="$$6" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>

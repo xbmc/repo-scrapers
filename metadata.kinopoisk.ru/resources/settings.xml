@@ -7,4 +7,7 @@
     <setting label="30002" type="bool" id="download_trailer" default="true"/>
     <setting label="30003" type="bool" id="download_hd" default="true" enable="eq(-1,true)"/>
     <setting label="30004" type="labelenum" values="Low|Medium|High" id="TrailerQ" default="High" enable="eq(-2,true)"/>
+    <setting label="30005" type="bool" id="orig_trailer" default="false" enable="eq(-3,true)"/>
+    <setting type="sep" />
+    <setting label="30006" type="bool" id="tmdb_poster" default="false"/> 
 </settings>
