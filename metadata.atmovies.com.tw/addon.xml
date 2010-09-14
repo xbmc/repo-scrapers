@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.atmovies.com.tw"
+       name="AtMovies"
+       version="1.0.0"
+       provider-name="Jim Tai">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="1.0.3"/>
+    <import addon="metadata.common.imdb.com" version="1.0.4"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="zh"
+             library="AtMovies.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AtMovies Chinese Movie Scraper</summary>
+    <summary lang="zh">AtMovies電影資訊</summary>
+    <description lang="en">atmovies.com.tw is a free and open movie database.</description>
+    <description lang="zh">atmovies.com.tw是一個開放和免費的電影資料庫。</description>
+    <platform>all</platform>
+  </extension>
+</addon>
