@@ -5,17 +5,17 @@
 		</RegExp>
 	</GetIMDBPlotById>
 	<GetIMDBCastById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBCast&quot;&gt;http://akas.imdb.com/title/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBCast&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCastById>
 	<GetIMDBDirectorsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBDirectors&quot;&gt;http://akas.imdb.com/title/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBDirectors&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBDirectorsById>
 	<GetIMDBWritersById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;http://akas.imdb.com/title/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-credits.html&quot; function=&quot;GetIMDBWriters&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBWritersById>

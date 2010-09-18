@@ -1,3 +1,6 @@
+[B]1.0.14[/B]
+- fixed: tack /combined onto the end of the url to work around the new layout of IMDb
+
 [B]1.0.13[/B]
 - fixed: another step to ensure English title gets scraped when selected
 
