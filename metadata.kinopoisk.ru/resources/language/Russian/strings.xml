@@ -7,4 +7,7 @@
     <string id="30004">предпочитаемое качество трейлера</string>
     <string id="30005">добавлять не русский трейлер</string>
     <string id="30006">добавлять постер с TMDB</string>
+    <string id="30007">искать IMDB ID</string>
+    <string id="30008">искать год премьеры для IMDB ID</string>
+    <string id="30009">всегда использовать google для поиска IMDB ID </string>
 </strings>

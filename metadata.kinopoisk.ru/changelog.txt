@@ -1,4 +1,7 @@
-﻿1.0.12:
+﻿1.0.13:
+- Added workarounds for imdb id searching
+- Added option for google search
+1.0.12:
 - Added option for non-russian trailers
 - Added option for posters from TMDB
 1.0.11:

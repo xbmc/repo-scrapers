@@ -7,4 +7,7 @@
     <string id="30004">Prefered trailer quality</string>
     <string id="30005">Add non-rusian trailer</string>
     <string id="30006">Add TMDB poster</string>
+    <string id="30007">Search IMDB ID</string>
+    <string id="30008">Search IMDB ID with world premier year</string>
+    <string id="30009">Force searching IMDB ID with google</string>
 </strings>
