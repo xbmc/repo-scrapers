@@ -1,3 +1,6 @@
+[B]1.0.15[/B]
+- fixed: added additional check to avoid Canada (French Title) being scraped if USA / International selected
+
 [B]1.0.14[/B]
 - fixed: tack /combined onto the end of the url to work around the new layout of IMDb
 
