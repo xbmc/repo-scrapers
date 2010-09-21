@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.filmweb.pl"
        name="Filmweb"
-       version="1.1.0"
+       version="1.1.1"
        provider-name="smuto">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="1.0.5"/>
+    <import addon="metadata.common.themoviedb.org" version="1.0.6"/>
     <import addon="metadata.common.imdb.com" version="1.0.4"/>
   </requires>
   <extension point="xbmc.metadata.scraper.movies"
              language="pl"
              library="filmweb.xml"/>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">FilmWeb Movie Scraper</summary>
-    <summary lang="hu">FilmWeb filmadat leolvasó</summary>
-    <summary lang="kr">FilmWeb 영화 스크래퍼</summary>
+    <summary lang="en">Filmweb Movie Scraper</summary>
+    <summary lang="hu">Filmweb filmadat leolvasó</summary>
+    <summary lang="kr">Filmweb 영화 스크래퍼</summary>
     <summary lang="pl">Scraper filmowy Filmweb.pl</summary>
     <summary lang="pt">Scraper de filmes FilmWeb</summary>
     <description lang="en">Download Movie information from www.filmweb.pl</description>
@@ -22,6 +22,6 @@
     <description lang="kr">www.filmweb.pl 에서 영화 정보 다운로드</description>
     <description lang="pl">Filmweb - łeb pełen filmów! to największy polski serwis filmowy i druga największa baza filmowa na świecie. Drapacz ten korzysta z jednej z czterech stron głównych „Bazy Filmwebu” stworzonej przez użytkowników. Jak czegoś brakuje to mamy IMDb - ten portal jest tutaj obecny. Fanarty z themoviedb.org - te piękne tla to zasługa utalentowanych ludzi tworzących tę bazę. </description>
     <description lang="pt">Descarregar informação de filmes de www.filmweb.pl</description>
-	<platform>all</platform>
+    <platform>all</platform>
   </extension>
 </addon>
