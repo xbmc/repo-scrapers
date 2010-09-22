@@ -10,4 +10,5 @@
     <string id="30007">Search IMDB ID</string>
     <string id="30008">Search IMDB ID with world premier year</string>
     <string id="30009">Force searching IMDB ID with google</string>
+    <string id="30010">Get rating from KinoPoisk</string>    
 </strings>

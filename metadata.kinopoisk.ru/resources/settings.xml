@@ -8,6 +8,8 @@
     <setting type="sep" />
     <setting label="30001" type="bool" id="search_originaltitle" default="true"/>
     <setting type="sep" />
+    <setting label="30010" type="bool" id="kinopoisk_rating" default="false"/>
+    <setting type="sep" />
     <setting label="30002" type="bool" id="download_trailer" default="true"/>
     <setting label="30003" type="bool" id="download_hd" default="true" enable="eq(-1,true)"/>
     <setting label="30004" type="labelenum" values="Low|Medium|High" id="TrailerQ" default="High" enable="eq(-2,true)"/>
