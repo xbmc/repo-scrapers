@@ -1,3 +1,6 @@
+[B]1.0.8[/B]
+Fixed: adopt IMDb changes
+
 [B]1.0.7[/B]
 Fixed: scraping directors from imdb when fullcast enabled
 
