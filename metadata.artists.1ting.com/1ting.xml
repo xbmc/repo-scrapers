@@ -21,15 +21,12 @@
 			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="5+">
 				<expression noclean="1">&lt;li&gt;生日：[\n\t ]*([0-9]+)-([0-9]+)-([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$$4" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="5+">
-				<RegExp input="$$1" output="\1\n" dest="7">
-					<expression noclean="1">详细资料&lt;/h3&gt;(.*?)&lt;/ul&gt;</expression>
+			<RegExp input="$$8" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="5+">
+				<RegExp input="$$1" output="\1 " dest="7">
+					<expression noclean="1">class=&quot;profile&quot;&gt;(.*?)&lt;/div&gt;</expression>
 				</RegExp>
 				<RegExp input="$$7" output="\1" dest="8">
-					<expression repeat="yes" noclean="1">(.*?)[\n\t ]</expression>
-				</RegExp>
-				<RegExp input="$$8" output="\1\n" dest="4">
-					<expression repeat="yes">(.*?)&lt;/li&gt;</expression>
+					<expression repeat="yes" noclean="1">(.*?)[\t ]</expression>
 				</RegExp>
 				<expression/>
 			</RegExp>
@@ -37,7 +34,7 @@
 				<expression noclean="1">img src=&quot;(http://img.1ting.com/images/singer/[^&quot;]*)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;/album&gt;" dest="5+">
-				<expression repeat="yes">title=&quot;专辑: [^&quot;]*&quot;&gt;([^&lt;]*)&lt;/a&gt;&lt;/p&gt; \n&lt;p title=&quot;发行日期: [^&quot;]*&quot;&gt;([0-9]+)</expression>
+				<expression repeat="yes">class=&quot;albumName&quot;&gt;([^&lt;]*)&lt;/span&gt;.*?class=&quot;albumDate&quot;&gt;.*?target=&quot;_blank&quot;&gt;([0-9]+)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
