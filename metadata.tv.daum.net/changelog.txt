@@ -1,3 +1,13 @@
+1.1.1
+
+Changes
+- Default episode list for tv shows with non-existing episode pages
+
+1.1.0
+
+Changes
+- Finally handle episode pages that exceeds 5
+
 1.0.5
 
 Changes

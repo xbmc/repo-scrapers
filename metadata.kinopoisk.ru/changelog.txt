@@ -1,4 +1,7 @@
-﻿1.0.13:
+﻿1.0.14:
+- Rewrited IMDB ID logic
+- Added KinoPoisk rating
+1.0.13:
 - Added workarounds for imdb id searching
 - Added option for google search
 1.0.12:
