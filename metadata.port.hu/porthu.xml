@@ -102,7 +102,7 @@
 				<expression>&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \(([0-9]*)\)</expression>
 			</RegExp>
 			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
-			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5">
+			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5+">
 				<expression>Magyar$</expression>
 			</RegExp>
 			<!--Append Original Title from Bufer 18 if labelenum = Eredeti-->
