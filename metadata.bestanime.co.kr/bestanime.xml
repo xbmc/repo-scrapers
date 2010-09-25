@@ -57,7 +57,7 @@
 			<RegExp input="$$1" output="&lt;url function=&quot;GetTvdbIdByUrl&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=ko&lt;/url&gt;" dest="4+">
 				<expression trim="1" encode="1">&lt;td[^&gt;]*&gt;&lt;img[^&gt;]*&gt;\s*¿µÁ¦&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;(.*?)&lt;/td&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;anime-list.xml&quot; function=&quot;GetTvdbIdFromTbl&quot;&gt;http://xbmc-korean.googlecode.com/svn/trunk/addons/metadata.bestanime.co.kr/resources/anime-list.xml&lt;/url&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;anime-list.xml&quot; function=&quot;GetTvdbIdFromTbl&quot;&gt;http://xbmc-korean.googlecode.com/svn/trunk/tools/bestanime/anime-list.xml&lt;/url&gt;" dest="4+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$3" output="&lt;url cache=&quot;bestanime-$$2.htm&quot; function=&quot;GetTvdbDetails&quot;&gt;\1&lt;/url&gt;" dest="4+">
