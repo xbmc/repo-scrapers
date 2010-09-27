@@ -1,3 +1,6 @@
+[B]1.0.4[/B]
+- added thumb from amazon
+- new icon thx to freezy
 [B]1.0.3[/B]
 - added nfo support
 [B]1.0.0[/B]
