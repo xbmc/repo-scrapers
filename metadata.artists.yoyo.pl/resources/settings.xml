@@ -2,7 +2,7 @@
 <settings>
     <setting label="30000" type="lsep"/>
     <setting type="sep"/>
-    <setting label="30002" type="labelenum" lvalues="30009" id="language" default="30009"/>
+    <setting label="30002" type="labelenum" lvalues="30009" id="language" default=""/>
     <setting label="30003" type="bool" id="allmusicartistthumbs" default="false"/>
     <setting label="30006" type="bool" id="mbid" default="false"/>
     <setting label="" type="lsep"/>

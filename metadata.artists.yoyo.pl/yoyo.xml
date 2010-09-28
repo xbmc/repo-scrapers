@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-08-12">
+<scraper framework="1.1" date="2010-09-28">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://musicbrainz.org/ws/1/release-group/?type=xml&amp;artistid=\1&amp;releasetypes=Official&lt;/url&gt;" dest="3">
 			<expression>http://musicbrainz.org/artist/(.+?).html</expression>
@@ -64,8 +64,11 @@
 	</GetArtistDetails>
 	<GetBiography dest="5">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="4+">
-				<expression trim="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
+			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="4">
+				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
+			</RegExp>
+			<RegExp input="$$4" output="\1" dest="4">
+				<expression repeat="yes" noclean="1">([^\r]*)\r?</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
