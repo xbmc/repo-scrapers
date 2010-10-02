@@ -1,4 +1,7 @@
 [B]2.0.0[/B]
+- fixed: cast won't get scraped under certain circumtances
+
+[B]2.0.0[/B]
 - changed: adapted new IMDb layout
 
 [B]1.0.5[/B]
