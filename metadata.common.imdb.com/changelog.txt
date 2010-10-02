@@ -1,2 +1,5 @@
+[B]2.0.0[/B]
+- changed: adapted new IMDb layout
+
 [B]1.0.5[/B]
 - fixed: tack /combined onto the end of the url to work around the new layout of IMDb

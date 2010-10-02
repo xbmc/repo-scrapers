@@ -1,3 +1,6 @@
+[B]2.0.0[/B]
+- changed: adapted new IMDb layout
+
 [B]1.0.15[/B]
 - fixed: added additional check to avoid Canada (French Title) being scraped if USA / International selected
 
