@@ -1,3 +1,6 @@
+[B]2.0.1[/B]
+- fixed: trailer scraping from HD-Trailers.net
+
 [B]2.0.0[/B]
 - changed: adapted new IMDb layout
 
