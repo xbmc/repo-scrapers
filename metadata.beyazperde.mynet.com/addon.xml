@@ -14,9 +14,11 @@
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Beyazperde Movie Scraper</summary>
     <summary lang="hu">Beyazperde filmadat leolvasó</summary>
+    <summary lang="pl">Scraper filmów Beyazperde</summary>
     <summary lang="pt">Scraper de filmes Beyazperde</summary>
     <description lang="en">Download Movie information from www.beyazperde.mynet.com</description>
     <description lang="hu">Film információk letöltése a www.beyazperde.mynet.com-ról</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.beyazperde.mynet.com</description>
     <description lang="pt">Descarregar informação de filmes de www.beyazperde.mynet.com</description>
     <platform>all</platform>
     <broken>Borken scraper</broken>
