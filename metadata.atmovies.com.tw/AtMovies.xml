@@ -82,18 +82,18 @@
 	</GetDetails>
 	<GetIMDBRating clearbuffers="no" dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
-			<expression>&lt;b&gt;([0-9.]+)/10&lt;/b&gt;[^&lt;].*class="tn15more"&gt;([0-9,]+).*votes&lt;/a&gt;</expression>
+			<expression>&lt;span class="rating-rating"&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
 		</RegExp>
 	</GetIMDBRating>
 	<GetIMDBGenre clearbuffers="no" dest="5">
 		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 		    <RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="8">
-			    <expression repeat="yes">/Sections/Genres/[^/]*/"&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			    <expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
     		</RegExp>
 			<expression noclean="1" />
     	</RegExp>
 	</GetIMDBGenre>
-	<!--GetIMDBGenre clearbuffers="no" dest="5">
+	<!--  GetIMDBGenre clearbuffers="no" dest="5">
 		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$11" output="&lt;genre&gt;$$11&lt;/genre&gt;" dest="5">
 				<RegExp input="$$1" output="\1" dest="10">
