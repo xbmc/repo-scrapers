@@ -1,3 +1,6 @@
+[B]2.0.3[/B]
+- fixed: some more cast won't get scraped under certain circumtances, added back trailers from IMDb as fallback
+
 [B]2.0.2[/B]
 fixed: cast won't get scraped under certain circumtances, remove broken code to scrape trailers from IMDb
 

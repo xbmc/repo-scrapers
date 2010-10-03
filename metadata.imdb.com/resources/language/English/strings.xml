@@ -7,7 +7,8 @@
     <string id="30003">Enable posters from IMPAwards</string>
     <string id="30004">Enable posters from MoviePosterDB</string>
     <string id="30006">Enable trailers from HD-Trailers.net</string>
+    <string id="30005">Fall back on IMDb trailers</string>
     <string id="30007">IMDb Poster &amp; Actor Thumb(s) Size</string>
-	<string id="30008">Preferred Title Language from</string>
-	</strings>
+    <string id="30008">Preferred Title Language from</string>
+</strings>
 

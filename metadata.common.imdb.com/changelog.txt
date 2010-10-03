@@ -1,4 +1,7 @@
-[B]2.0.0[/B]
+[B]2.0.2[/B]
+- fixed: some more cast won't get scraped under certain circumtances
+
+[B]2.0.1[/B]
 - fixed: cast won't get scraped under certain circumtances
 
 [B]2.0.0[/B]
