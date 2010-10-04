@@ -106,7 +106,7 @@
 				<expression>(imdb.com/)Title\?([0-9]+)</expression>
 			</RegExp>
 			<!--URL to IMDBcredits-->
-			<RegExp conditional="!fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBScaledCastById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
 				<expression>(imdb.com/)Title\?([0-9]+)</expression>
 			</RegExp>
 			<RegExp conditional="!fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
@@ -115,7 +115,7 @@
 			<RegExp conditional="!fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
 				<expression>(imdb.com/)Title\?([0-9]+)</expression>
 			</RegExp>
-			<RegExp conditional="fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBScaledFullCastById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
 				<expression>(imdb.com/)Title\?([0-9]+)</expression>
 			</RegExp>
 			<RegExp conditional="fullcredits" input="$$1" output="&lt;chain function=&quot;GetIMDBFullDirectorsById&quot;&gt;tt\2&lt;/chain&gt;" dest="5+">
