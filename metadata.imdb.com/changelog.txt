@@ -1,3 +1,6 @@
+[B]2.0.4[/B]
+- reverted: fixchars removed from cast parsing, leads to Dharma Beta2 hanging, will be added back once next Beta is out
+
 [B]2.0.3[/B]
 - fixed: some more cast won't get scraped under certain circumtances, added back trailers from IMDb as fallback
 
