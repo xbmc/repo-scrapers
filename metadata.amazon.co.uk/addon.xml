@@ -13,10 +13,12 @@
     <summary lang="en">Amazon.co.uk Movie Scraper</summary>
     <summary lang="hu">Amazon.co.uk filmadat leolvasó</summary>
     <summary lang="kr">Amazon.co.uk 영화 스크래퍼</summary>
+    <summary lang="pl">Scraper filmów Amazon.co.uk</summary>
     <summary lang="pt">Scraper de filmes Amazon.co.uk</summary>
     <description lang="en">Download Movie information from www.amazon.co.uk</description>
     <description lang="hu">Film információk letöltése a www.amazon.co.uk webhelyről</description>
     <description lang="kr">www.amazon.co.uk 에서 영화 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.amazon.co.uk</description>
     <description lang="pt">Descarregar informação de filmes de www.amazon.co.uk</description>
     <platform>all</platform>
     <broken>Doesn't find any movie</broken>
