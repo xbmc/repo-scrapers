@@ -1,3 +1,6 @@
+[B]2.0.5[/B]
+- fixed: title won't find if a string is attached to the year (e.g. "TV 2008")
+
 [B]2.0.4[/B]
 - reverted: fixchars removed from cast parsing, leads to Dharma Beta2 hanging, will be added back once next Beta is out
 
