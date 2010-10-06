@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.imdb.com"
        name="IMDb"
-        version="2.0.8"
+        version="2.0.9"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -19,6 +19,7 @@
     <summary lang="hu">IMDB filmadat leolvasó</summary>
     <summary lang="kr">IMDB 영화 스크래퍼</summary>
     <summary lang="nl">IMDB film Scraper</summary>
+    <summary lang="pl">Scraper filmów IMDb</summary>
     <summary lang="pt">Scraper de filmes IMDb</summary>
     <summary lang="se">IMDB Filmskrapa</summary>
     <description lang="en">Download Movie information from www.imdb.com
@@ -29,6 +30,8 @@ Az Internet Film Adatbázis (IMDb) egy hatalmas film információ gyüjtemény. 
 The Internet Movie Database (IMDb) 는 거대한 영화 정보를 가지고 있습니다. IMDB는 누구 출연 했는지, 누가 만들었는지, 촬영장소, 리뷰가 있는 곳, 팬사이트 같은 모든 세부적인 정보를 수집하고 있습니다. 그리고 검색과 사용이 편리하도록 정보를 보여주고 있습니다.</description>
     <description lang="nl">Download film informatie van www.imdb.com
 De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.imdb.com
+IMDb jest POTĘŻNĄ kolekcją informacji o filmach. Serwis zajmuje się gromadzeniem każdych (nawet najdrobniejszych) informacji o filmach.</description>
     <description lang="pt">Descarregar informação de filmes de www.imdb.com
 A Internet Movie Database (IMDb) é uma coleccção enorme de informação de filmes. Tentam catalogar cada detalhe pertinente sobre um filme, quem actuou nele, quem o produziu, curiosidades sobre o filme, locais de filmagem e até mesmo onde pode encontrar críticas e clubes de fans na Internet. A organização de todos os dados é de procura fácil, permitindo um rápido acesso a todos os detalhes.</description>
     <description lang="se">Ladda ner filminformation från www.imdb.com
