@@ -96,7 +96,7 @@
 				<expression clear="yes" noclean="1">Director[s]?.*?&lt;/h4&gt;(.*?)&lt;div class</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="2+">
-				<expression repeat="yes" fixchars="1" clear="yes">&lt;a  href="/name[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes" clear="yes">&lt;a  href="/name[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -107,7 +107,7 @@
 				<expression noclean="1">Writer[s]?.*?&lt;/h4&gt;(.*?)&lt;div class</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
-				<expression repeat="yes" fixchars="1">&lt;a  href="/name[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes">&lt;a  href="/name[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -146,7 +146,7 @@
 				<expression clear="yes" noclean="1">Director[s]?:&lt;/h5&gt;[^&gt;]*&gt;(.*?)&lt;/div</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="2+">
-				<expression repeat="yes" fixchars="1" clear="yes">&lt;a href="/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes" clear="yes">&lt;a href="/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -157,7 +157,7 @@
 				<expression noclean="1">Writing credits(.*?)name="</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
-				<expression repeat="yes" fixchars="1">&lt;a href="/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes">&lt;a href="/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>

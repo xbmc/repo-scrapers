@@ -1,3 +1,6 @@
+[B]2.0.8[/B]
+- reverted: purge fixchars from all functions, since it cause convert fails on Beta2 and Linux
+
 [B]2.0.7[/B]
 - fixed: title won't find if year includes the string /I in the search results
 
