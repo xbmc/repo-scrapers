@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <strings>
-    <string id="30000">Biography from lastfm.pl, description from merlin.pl</string>
-    <string id="30001">Album covers from allmusic.com</string>
-    <string id="30002">Album covers from last.fm</string>
+    <string id="30000">Powered by MusicBrainz-Merlin-Allmusic</string>
+    <string id="30002">Grab album thumbs from Allmusic.com</string>
+    <string id="30005">Search by artist &amp; year on merlin.pl</string>
 </strings>

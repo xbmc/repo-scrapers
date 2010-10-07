@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <strings>
-    <string id="30000">Biografia z Last.fm.pl, opis płyty z Merlin.pl</string>
-    <string id="30001">Okładka albumu z Allmusic.com</string>
-    <string id="30002">Okładka albumu z Last.fm</string>
+    <string id="30000">Powered by MusicBrainz-Merlin-Allmusic</string>
+    <string id="30002">Okładka z Allmusic.com</string>
+    <string id="30005">Szukaj tylko według nazwy artysty i roku wydania</string>
 </strings>

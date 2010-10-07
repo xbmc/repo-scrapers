@@ -4,8 +4,4 @@
     <string id="30002">Language</string>
     <string id="30003">Grab artist thumbs from Allmusic.com</string>
     <string id="30006">Search by mbid on last.fm</string>
-    <!-- Possible values for id="30009"                     -->
-    <!-- =========================                          -->
-    <!-- en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh                -->
-    <string id="30009">en</string>
 </strings>
