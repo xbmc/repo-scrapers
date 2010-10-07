@@ -14,11 +14,13 @@
     <summary lang="en">MoviePosterDB Scraper Library</summary>
     <summary lang="hu">MoviePosterDB leolvasó-könyvtár</summary>
     <summary lang="kr">MoviePosterDB 스크래퍼 라이브러리</summary>
+    <summary lang="pl">Scraper plakatów MoviePosterDB</summary>
     <summary lang="pt">Posters de filmes MoviePosterDB </summary>
     <summary lang="se">MoviePosterDB Skrapbibliotek</summary>
     <description lang="en">Download Movie Posters From MoviePosterDB</description>
     <description lang="hu">Film információk letöltése a MoviePosterDB webhelyről</description>
     <description lang="kr">MoviePosterDB 에서 포스터 다운로드</description>
+    <description lang="pl">Pobieraj plakaty filmów z www.movieposterdb.com</description>
     <description lang="pt">Descarregar posters de filmes de www.movieposterdb.com</description>
     <description lang="se">Ladda ner filminformation från MoviePostersDB.</description>
   </extension>

@@ -13,10 +13,12 @@
     <summary lang="en">Israel-Music scraper</summary>
     <summary lang="hu">Israel-Music album információk</summary>
     <summary lang="kr">Israel-Music 음악 스크래퍼</summary>
+    <summary lang="pl">Scraper albumów Israel-Music</summary>
     <summary lang="pt">Scraper de música Israel-Music</summary>
     <description lang="en">Download music information from www.israel-music.com</description>
     <description lang="hu">Album információk letöltése a www.israel-music.com-ról</description>
     <description lang="kr">Israel-Music 에서 음악 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o albumach z www.israel-music.com </description>
     <description lang="pt">Descarregar informação de música de www.israel-music.com </description>
     <platform>all</platform>
   </extension>

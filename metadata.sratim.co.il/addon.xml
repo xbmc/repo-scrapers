@@ -15,10 +15,12 @@
     <summary lang="en">Sratim Movie Scraper</summary>
     <summary lang="hu">Sratim filmadat leolvasó</summary>
     <summary lang="kr">Sratim 영화 스크래퍼</summary>
+    <summary lang="pl">Scraper filmów Sratim</summary>
     <summary lang="pt">Scraper de filmes Sratim</summary>
     <description lang="en">Download Movie information from www.sratim.co.il</description>
     <description lang="hu">Film információk letöltése a www.sratim.co.il webhelyről</description>
     <description lang="kr">www.sratim.co.il에서 영화 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.sratim.co.il</description>
     <description lang="pt">Descarregar informação de filmes de www.sratim.co.il</description>
     <broken>Unable to connect server</broken>
   </extension>

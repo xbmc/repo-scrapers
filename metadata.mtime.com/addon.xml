@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.mtime.com"
        name="MTime"
-       version="1.0.3"
+       version="1.0.4"
        provider-name="Taxigps">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -14,12 +14,14 @@
     <summary lang="hu">Mtime filmadat leolvasó</summary>
     <summary lang="kr">Mtime 영화 스크래퍼</summary>
     <summary lang="nl">Mtime Film Scraper</summary>
+    <summary lang="pl">Scraper filmów Mtime</summary>
     <summary lang="pt">Scraper de filmes Mtime</summary>
     <summary lang="se">Mtime Filmskrapa</summary>
     <description lang="en">Download Movie information from www.mtime.com</description>
     <description lang="hu">Film információk letöltése a www.mtime.com webhelyről</description>
     <description lang="kr">www.mtime.com 에서 영화 정보 다운로드</description>
     <description lang="nl">Download film informatie van www.mtime.com</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.mtime.com</description>
     <description lang="pt">Descarregar informação de filmes de www.mtime.com</description>
     <description lang="se">Ladda ner filminformation från www.mtime.com</description>
     <platform>all</platform>

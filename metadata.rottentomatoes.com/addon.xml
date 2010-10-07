@@ -14,10 +14,12 @@
     <summary lang="en">Rotten Tomatoes Movie Scraper</summary>
     <summary lang="hu">Rotten Tomatoes filmadat leolvasó</summary>
     <summary lang="kr">Rotten Tomatoes 영화 스크래퍼</summary>
+    <summary lang="pl">Scraper filmów Rotten Tomatoes</summary>
     <summary lang="pt">Scraper de filmes Rotten Tomatoes</summary>
     <description lang="en">Download Movie information from www.rottentomatoes.com</description>
     <description lang="hu">Film információk letöltése a www.rottentomatoes.com webhelyről</description>
     <description lang="kr">www.rottentomatoes.com에서 영화 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.rottentomatoes.com</description>
     <description lang="pt">Descarregar informação de filmes de www.rottentomatoes.com</description>
     <broken>Doesn't find any movie</broken>
   </extension>
