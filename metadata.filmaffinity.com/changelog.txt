@@ -1,3 +1,7 @@
+[B]1.2.3[/B]
+
+- Arreglados los tags rotos a causa de la remodelación de la pagina web de imdb.
+
 [B]1.2.1[/B]
 - Added Hungarian translation.
 
