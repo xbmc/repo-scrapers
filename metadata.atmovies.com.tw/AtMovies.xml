@@ -21,19 +21,22 @@
 			</RegExp>
 			<!--year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>&lt;b&gt;影片年份：&lt;/b&gt;(\d+)[ \t\n\r\cM]+</expression>
+				<expression>&lt;[Bb]&gt;影片年份：&lt;/[Bb]&gt;(\d+)[ \t\n\r\cM]+</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>&lt;b&gt;�v���~���G&lt;/b&gt;(\d+)</expression>
+				<expression>&lt;[Bb]&gt;�v���~���G&lt;/[Bb]&gt;(\d+)</expression>
 			</RegExp>
 			<!--runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression>&lt;B&gt;片長：([\d]+分)&amp;nbsp;</expression>
+				<expression>&lt;[Bb]&gt;片長：([\d]+分)&amp;nbsp;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1分&lt;/runtime&gt;" dest="5+">
-				<expression>&lt;B&gt;�����G([\d]+)��&amp;nbsp;</expression>
+				<expression>&lt;[Bb]&gt;�����G([\d]+)��&amp;nbsp;</expression>
 			</RegExp>
 			<!--outline-->
+			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
+				<expression>&lt;font class="at11" color="606060"&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
 				<expression>&lt;font class=at11 color=606060&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
 			</RegExp>
