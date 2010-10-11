@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.moviemaze.de"
        name="MovieMaze"
-       version="1.0.13"
+       version="1.0.14"
        provider-name="Team XBMC + w00dst0ck">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -11,6 +11,7 @@
              language="de"
              library="moviemaze.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="de">MovieMaze.de Film Scraper</summary>
     <summary lang="en">MovieMaze.de Movie Scraper</summary>
     <summary lang="hu">MovieMaze.de filmadat leolvasó</summary>
     <summary lang="kr">MovieMaze 영화 스크래퍼</summary>
@@ -18,6 +19,7 @@
     <summary lang="nl">MovieMaze.de Film Scraper</summary>
     <summary lang="pl">Scraper filmów MovieMaze.de</summary>
     <summary lang="pt">Scraper de filmes MovieMaze.de</summary>
+    <description lang="de">Lade Filminformation von MovieMaze.de</description>
     <description lang="en">Download Movie information from www.moviemaze.de</description>
     <description lang="hu">Film információk letöltése a www.moviemaze.de webhelyről</description>
     <description lang="kr">www.moviemaze.de 에서 영화 정보 다운로드</description>
