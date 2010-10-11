@@ -73,7 +73,7 @@
 			</RegExp>
 
 			<!-- Get the rating from IMDB.com if the IMDBrating setting is set to true -->
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-rating.html&quot; function=&quot;GetIMDBRating&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
+			<RegExp conditional="IMDBrating" input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetIMDBRating&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
 				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
 			</RegExp>
 
@@ -88,7 +88,7 @@
 			</RegExp>
 
 			<!-- Get the studio from IMDB.com -->
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-studio.html&quot; function=&quot;GetIMDBStudio&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetIMDBStudio&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
 				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
 			</RegExp>
 
@@ -98,7 +98,7 @@
 			</RegExp>
 
 			<!-- Get Fanart from TMDB -->
-			<RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="8+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetFanart&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
 				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
 			</RegExp>
 			<expression noclean="1"></expression>
@@ -120,4 +120,12 @@
 			<expression noclean="1"></expression>
 		</RegExp>
 	</GetIMDBRating>
+	<GetFanart dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="6">
+				<expression>/title/(tt[t0-9]*)/faq</expression>
+			</RegExp>
+			<expression noclean="1"></expression>
+		</RegExp>
+	</GetFanart>
 </scraper>
