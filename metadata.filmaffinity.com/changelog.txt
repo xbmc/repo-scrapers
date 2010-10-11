@@ -1,3 +1,7 @@
+[B]1.2.4[/B]
+
+- Arreglado un error de regex.
+
 [B]1.2.3[/B]
 
 - Arreglados los tags rotos a causa de la remodelación de la pagina web de imdb.

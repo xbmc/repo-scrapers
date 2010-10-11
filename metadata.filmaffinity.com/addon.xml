@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.filmaffinity.com"
        name="FilmAffinity"
-       version="1.2.3"
+       version="1.2.4"
        provider-name="hectorZiN + MaDDoGo">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -20,11 +20,11 @@
     <summary lang="pl">Scraper filmów FilmAffinity</summary>
     <summary lang="pt">Scraper de filmes FilmAffinity</summary>
     <summary lang="es">Scraper de Películas de Filmaffinity</summary>
-    <description lang="en">Download Movie information from www.filmaffinity.com</description>
-    <description lang="hu">Film információk letöltése a www.filmaffinity.com-ról</description>
-    <description lang="kr">www.filmaffinity.com 에서 영화 정보 다운로드</description>
-    <description lang="pl">Pobieraj informacje o filmach z www.filmaffinity.com</description>
-    <description lang="pt">Descarregar informação de filmes de www.filmaffinity.com</description>
+    <description lang="en">Download Movie information from www.filmaffinity.com/es</description>
+    <description lang="hu">Film információk letöltése a www.filmaffinity.com/es-ról</description>
+    <description lang="kr">www.filmaffinity.com/es 에서 영화 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.filmaffinity.com/es</description>
+    <description lang="pt">Descarregar informação de filmes de www.filmaffinity.com/es</description>
     <description lang="es">Scraper que usa la versión española de Filmaffinity para descargar información de películas en español, ayudándose de varias páginas para ampliar la información.</description>
     <platform>all</platform>
   </extension>
