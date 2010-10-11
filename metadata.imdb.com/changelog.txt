@@ -1,3 +1,9 @@
+[B]2.0.10[/B]
+- fixed: year won't get scraped if title contains brackets
+
+[B]2.0.9[/B]
+- added: Polish language
+
 [B]2.0.8[/B]
 - reverted: purge fixchars from all functions, since it cause convert fails on Beta2 and Linux
 
