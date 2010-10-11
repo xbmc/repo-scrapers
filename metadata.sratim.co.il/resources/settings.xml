@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
     <setting label="30000" type="bool" id="fullcredits" default="false"/>
-    <setting label="30001" type="bool" id="trailer" default="true"/>
-    <setting label="30002" type="bool" id="fanart" default="false"/>
-    <setting label="" type="bool" id="imdbrank" default="false"/>
+    <setting label="30001" type="bool" id="imdbtrailer" default="true"/>
+    <setting label="30002" type="bool" id="fanart" default="true"/>
+    <setting label="30003" type="bool" id="imdbrating" default="false"/>
 </settings>
