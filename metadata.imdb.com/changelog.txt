@@ -1,3 +1,6 @@
+[B]2.1.0[/B]
+- changed: scrape only 1 studio
+
 [B]2.0.11[/B]
 - changed: move scraping of IMDb rating out to IMDb scraper library
 
