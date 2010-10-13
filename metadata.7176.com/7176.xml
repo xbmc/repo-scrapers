@@ -77,14 +77,14 @@
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetFullcredits&quot;&gt;$$3/fulldredits&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="movieposterdb" input="$$1" output="&lt;url function=&quot;GetMoviePosterDBLink&quot;&gt;http://www.movieposterdb.com/browse/search?type=movies&amp;amp;query=\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="movieposterdb" input="$$1" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression>/title/tt([0-9]*)/ratings</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;url cache=&quot;\1-poster.html&quot; function=&quot;GetPoster&quot;&gt;http://posters.7176.com/poster/\1&lt;/url&gt;" dest="5+">
 				<expression repeat="yes">&lt;a href=http://posters.7176.com/poster/([0-9]*)</expression>
 			</RegExp>
-			<RegExp conditional="tmdbfanart" input="$$2" output="&lt;url function=&quot;GetTMDBFanartById&quot;&gt;$$3&lt;/url&gt;" dest="5+">
-				<expression/>
+			<RegExp conditional="tmdbfanart" input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression>/title/tt([0-9]*)/ratings</expression>
 			</RegExp>
 			<RegExp conditional="!tmdbfanart" input="$$1" output="&lt;url cache=&quot;\1-fanart.html&quot; function=&quot;GetFanartThumb&quot;&gt;http://posters.7176.com/jz/\1&lt;/url&gt;" dest="5+">
 				<expression repeat="yes">&lt;a href=http://posters.7176.com/jz/([0-9]*)</expression>
