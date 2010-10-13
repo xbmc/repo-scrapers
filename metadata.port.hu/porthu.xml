@@ -102,7 +102,7 @@
 			</RegExp>
 			<!--Get original title from imdb.com and store it in buffer 18 for future use-->
 			<RegExp input="$$1" output="\1" dest="18">
-				<expression>&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\d]*?([0-9]*)\)</expression>
+				<expression>&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
 			</RegExp>
 			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5+">
@@ -134,8 +134,8 @@
 				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
 			</RegExp>
 			<!--Get rating from imdb.com-->
-			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="5+">
-				<expression>&lt;span class="rating-rating"&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
+			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression/>
 			</RegExp>
 			<!--Get genres from imdb.com-->
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
@@ -143,7 +143,7 @@
 			</RegExp>
 			<!--Get studio from imdb.com-->
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
-				<expression repeat="yes">"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Get credits from imdb.com-->
 			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
