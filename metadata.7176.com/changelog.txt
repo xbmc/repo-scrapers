@@ -1,0 +1,15 @@
+﻿[B]1.0.6[/B]
+- 使用fixchars参数转换电影剧情介绍中的HTML转义字符串
+  use fixchars to tanslate HTML Escape Sequence in outline and plot
+
+[B]1.0.5[/B]
+- 改用chain功能调用tmdb刮削器代码库
+  changed to use chain function to call tmdb scraper library
+
+[B]1.0.4[/B]
+- 加入多国语言插件描述信息
+  add multi-language descriptions
+
+[B]1.0.0[/B]
+- 初始化加入扩展功能库
+  Initial import into addons repository
