@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<scraper framework="1.0" date="2010-09-21">
+<scraper framework="1.0" date="2010-10-14">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;"  dest="3">
 			<expression noclean="1">filmweb.pl/f([0-9]*)/</expression>
@@ -52,7 +52,7 @@
 	<GetDetails clearbuffers="no" dest="3">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
-				<expression fixchars="1">h1[^&gt;]+&gt;(.*?)&lt;/h1</expression>
+				<expression fixchars="1">&lt;h1[^&gt;]+&gt;(.*?)&lt;/h1</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression noclean="1">filmId[^&gt;]+&gt;([0-9]*)</expression>
@@ -281,7 +281,7 @@
 				<expression>&quot;/company/[^/]*/&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="6+">
-				<expression>&lt;h1&gt;([^&lt;]*)</expression>
+				<expression>title-extra"&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
