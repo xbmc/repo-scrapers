@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="11" date="2010-08-28">
+<scraper framework="11" date="2010-10-14">
 
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="\1" dest="3">
 			<expression noclean="1">(http://www\.movieplayer\.it/film/[0-9]+/[^"]+)</expression>
 		</RegExp>
 	</NfoUrl>
-	
+
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.google.com/cse?cx=010988534213966941752%3Agzbql2poc0a&amp;amp;ie=UTF-8&amp;amp;q=\1$$4%20site:movieplayer.it&amp;sa=Cerca&amp;amp;hl=it&lt;/url&gt;" dest="3">
+   	<RegExp conditional="!Google" input="$$1" output="&lt;url&gt;http://www.movieplayer.it/ricerca/?t=film&amp;q=\1&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="%20(\1)" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	   <RegExp conditional="Google" input="$$1" output="&lt;url&gt;http://www.google.com/cse?cx=010988534213966941752%3Agzbql2poc0a&amp;amp;ie=UTF-8&amp;amp;q=\1$$4%20site:movieplayer.it&amp;sa=Cerca&amp;amp;hl=it&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
-	
+
 <GetSearchResults dest="8">
-	<RegExp input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
-		<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/\2/&quot;&gt;http://www.movieplayer.it/film/\1/\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
-			<expression repeat="yes">&lt;a href=&quot;http://www\.movieplayer\.it/film/([0-9]+)/([^/]*)/[^&gt;]*&gt;([^\(]*)[^\d]*([0-9]*)[^=]*&lt;/a&gt;</expression>
+	<RegExp conditional="!Google" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
+		<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 \4&lt;/title&gt;&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/\2/&quot;&gt;http://www.movieplayer.it/film/\1/\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
+		  <expression repeat="yes">&lt;/small&gt; -[\s]*[\n]*[\s]*&lt;h2&gt;*[\n]*[\s]*&lt;a href=&quot;/film/([^/]*)/([^/]*)/&quot;&gt;[^&lt;]*&lt;strong&gt;([^\(]*)([^&lt;]*)&lt;/a&gt;</expression>
 		</RegExp>
+		<expression clear="yes" trim="1" noclean="1"/>
+	</RegExp>
+		<RegExp conditional="Google" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
+		 <RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/\2/&quot;&gt;http://www.movieplayer.it/film/\1/\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
+			<expression repeat="yes">&lt;a href=&quot;http://www\.movieplayer\.it/film/([0-9]+)/([^/]*)/[^&gt;]*&gt;([^\(]*)[^\d]*([0-9]*)[^=]*&lt;/a&gt;</expression>	
+		 </RegExp>
 		<expression clear="yes" trim="1" noclean="1"/>
 	</RegExp>
 </GetSearchResults>
@@ -78,17 +90,18 @@
 			<RegExp conditional="!IMDb" input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="13+">
 				<expression> id="users-vote"[^&lt;]*&lt;span&gt;&lt;a href="/film/[0-9]*/[^/]*/statistiche/" title="[^"]*"&gt;[\s]*([^\n]*)[\n][\s]*&lt;/a&gt;</expression>
 			</RegExp>
-									<!--Poster-->
+						<!--Poster-->
 			<RegExp input="$$1" output="&lt;thumb&gt;\1.jpg&lt;/thumb&gt;" dest="13+">
 				<expression>&lt;div class="poster"&gt;[^_]*&lt;img src="([^_]*)_medium.jpg</expression>
 			</RegExp>
 						<!--Posters-->
-			<RegExp input="$$1" output="&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/&quot; function=&quot;GetPosters&quot;&gt;http://www.movieplayer.it\1manifesti-e-poster/1/&lt;/url&gt;" dest="13+">
-				<expression>&lt;a rel="nofollow" href="([^"]*)" title="[^"]*"&gt;GALLERY&lt;/a&gt;</expression>
+			<RegExp conditional="AltPosters" input="$$1" output="&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/&quot; function=&quot;GetPosters&quot;&gt;http://www.movieplayer.it\1manifesti-e-poster/1/&lt;/url&gt;" dest="13+">
+				<expression>&lt;a href=&quot;([^&quot;]*)&quot; title=&quot;[^&quot;]*&quot;&gt;Foto &amp;amp; Trailer&lt;/a&gt;</expression>
 			</RegExp>
 						<!--Trailer-->
 			<RegExp input="$$1" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="13+">
-				<expression>s1\.addVariable\("file","([^"]+)"\);</expression>
+			
+			
 			</RegExp>
 						<!--Full Cast-->
 			<RegExp conditional="FullCast" input="$$1" output="&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/&quot; function=&quot;GetMovieCast&quot;&gt;http://www.movieplayer.it\1#personaggi&lt;/url&gt;" dest="13+">
