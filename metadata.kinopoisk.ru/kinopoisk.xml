@@ -93,7 +93,7 @@
 				<expression trim="1">&lt;span style="color: #666; font-size: 13px"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;OriginaltitleToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<expression>(.+)</expression>
+				<expression/>
 			</RegExp>
 			<!-- проверяем русский фильм -->
 			<RegExp input="$$2" output="no origtitle" dest="4">
@@ -188,22 +188,25 @@
 				<expression />
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;PlotToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$1" output="\1&amp;#133;&amp;#151;&amp;nbsp;&lt;=end=&gt;" dest="2">
+				<RegExp input="$$1" output="\1&amp;#151;&amp;#133;&amp;nbsp;&amp;nbsp;&amp;#133;&lt;=end=&gt;" dest="2">
 					<expression noclean="1">&lt;tr&gt;&lt;td colspan=3 style="padding: 10px 10px 20px 20px" class="news"&gt;\s+&lt;span class="_reachbanner_"&gt;[\t\n]*(.*?)[\t\n]*&lt;/span&gt;</expression>
 				</RegExp>
 				<RegExp input="$$2" output="\1[CR]" dest="2">
 					<expression repeat="yes" noclean="1" trim="1">(.*?)(?:&lt;br /&gt;\r\n&lt;br /&gt;\r\n|&lt;br /&gt;&lt;br /&gt;|&lt;br&gt;&lt;br&gt;|&lt;=end=&gt;)</expression>
 				</RegExp>
+				<RegExp input="$$2" output="\1&amp;hellip;" dest="2">
+					<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;&amp;#133;</expression>
+				</RegExp>
 				<RegExp input="$$2" output="\1 " dest="2">
 					<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;</expression>
 				</RegExp>
-				<RegExp input="$$2" output="\1&amp;#x2014;" dest="2">
-					<expression repeat="yes" noclean="1">(.*?)(?:&amp;mdash;|&amp;#151;)</expression>
-				</RegExp>
-				<RegExp input="$$2" output="\1&amp;#x2026;" dest="2">
+				<RegExp input="$$2" output="\1&amp;hellip;" dest="2">
 					<expression repeat="yes" noclean="1">(.*?)&amp;#133;</expression>
 				</RegExp>
-				<expression>(.*)&amp;#x2026;</expression>
+				<RegExp input="$$2" output="\1&amp;mdash;" dest="2">
+					<expression repeat="yes" noclean="1">(.*?)&amp;#151;</expression>
+				</RegExp>
+				<expression>(.*)&amp;mdash;</expression>
 			</RegExp>
 			<!--STUDIO-->
 			<RegExp input="$$1" output="&lt;url function=&quot;STUDIOS&quot;&gt;http://www.kinopoisk.ru\1&lt;/url&gt;" dest="5+">
@@ -679,10 +682,14 @@
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*)&amp;#xAB;</expression>
 			</RegExp>
+			<!-- удалем мусор -->
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*?), The$</expression>
 			</RegExp>
-			<!--TODO: fixchars bug UTF-16 -> UTF-8
+			<RegExp input="$$11" output="\1" dest="11">
+				<expression noclean="1">(.*?) 3D$</expression>
+			</RegExp>
+			<!-- fixchars by design convert all data to SearchStringEncoding http://trac.xbmc.org/ticket/10497
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression fixchars="1" noclean="1"/>
 			</RegExp>
@@ -713,11 +720,12 @@
 			</RegExp>
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression noclean="1">(.*)&amp;#xAB;</expression>
-			</RegExp>			
+			</RegExp>
+			<!-- удалем мусор -->		
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression noclean="1">(.*?) 3D$</expression>
 			</RegExp>
-			<!--TODO: fixchars bug UTF-16 -> UTF-8
+			<!-- fixchars by design convert all data to SearchStringEncoding http://trac.xbmc.org/ticket/10497
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression fixchars="1" noclean="1"/>
 			</RegExp>
@@ -745,11 +753,18 @@
 		<RegExp input="$$1" output="\1" dest="1">
 			<expression noclean="1">(.*)&amp;#xAB;</expression>
 		</RegExp>
-		<!--TODO: fixchars bug UTF-16 -> UTF-8
+		<!-- fixchars by design convert all data to SearchStringEncoding http://trac.xbmc.org/ticket/10497
 		<RegExp input="$$1" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<expression fixchars="1" noclean="1"/>
 		</RegExp>
 		-->
+		<RegExp input="$$1" output="\1&amp;#8212;;" dest="1">
+			<expression repeat="yes" noclean="1">(.*?)&amp;mdash;</expression>
+		</RegExp>
+		<RegExp input="$$1" output="\1&amp;##8230;" dest="1">
+			<expression repeat="yes" noclean="1">(.*?)&amp;hellip;</expression>
+		</RegExp>
+		<!-- -->
 		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="4">
 			<expression/>
 		</RegExp>
