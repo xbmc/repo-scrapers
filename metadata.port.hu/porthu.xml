@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-10-07">
+<scraper framework="1.1" date="2010-10-16">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;" dest="3">
 			<expression clear="yes" noclean="1">i_film_id=([0-9]*)</expression>
@@ -111,15 +111,6 @@
 			<!--Append Original Title from Bufer 18 if labelenum = Eredeti-->
 			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$18&lt;/title&gt;" dest="5+">
 				<expression>Eredeti$</expression>
-			</RegExp>
-			<!--Append Original Title from Bufer 18 and Hungarian Title from Buffer 20 if labelenum = Eredeti (Magyar)-->
-			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$18 ($$20)&lt;/title&gt;" dest="5+">
-				<!--Eredeti (Magyar)-->
-				<expression>Eredeti \(Magyar\)</expression>
-			</RegExp>
-			<!--Append HungarianTitle from Bufer 20 and Original Title from Buffer 18 if labelenum = Magyar (Eredeti)-->
-			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$20 ($$18)&lt;/title&gt;" dest="5+">
-				<expression>Magyar \(Eredeti\)</expression>
 			</RegExp>
 			<!--Get top250 from imdb.com-->
 			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="5+">

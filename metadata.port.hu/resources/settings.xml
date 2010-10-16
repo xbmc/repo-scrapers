@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
-    <setting label="30000" type="labelenum" values="Magyar|Eredeti|Eredeti (Magyar)|Magyar (Eredeti)" id="titlelang" default="Magyar"/>
+    <setting label="30000" type="labelenum" values="Magyar|Eredeti" id="titlelang" default="Magyar"/>
     <setting label="30001" type="bool" id="hunmpaa" default="true"/>
     <setting label="30002" type="bool" id="fullcredits" default="false"/>
     <setting type="sep"/>
