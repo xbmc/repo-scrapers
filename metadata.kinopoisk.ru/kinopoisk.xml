@@ -741,7 +741,7 @@
 		<RegExp input="none" output="" dest="4">
 			<expression/>
 		</RegExp>
-		<RegExp input="$$1" output="\1&amp;laquo;&amp;raquo;" dest="1">
+		<RegExp input="$$1" output="\1&amp;hellip;&amp;mdash;&amp;laquo;&amp;raquo;" dest="1">
 			<expression noclean="1"/>
 		</RegExp>
 		<RegExp input="$$1" output="\1&amp;#xBB;" dest="1">
@@ -758,11 +758,14 @@
 			<expression fixchars="1" noclean="1"/>
 		</RegExp>
 		-->
-		<RegExp input="$$1" output="\1&amp;#8212;;" dest="1">
+		<RegExp input="$$1" output="\1&amp;#8212;" dest="1">
 			<expression repeat="yes" noclean="1">(.*?)&amp;mdash;</expression>
 		</RegExp>
-		<RegExp input="$$1" output="\1&amp;##8230;" dest="1">
+		<RegExp input="$$1" output="\1&amp;#8230;" dest="1">
 			<expression repeat="yes" noclean="1">(.*?)&amp;hellip;</expression>
+		</RegExp>
+		<RegExp input="$$1" output="\1" dest="1">
+			<expression noclean="1">(.*)&amp;#8230;</expression>
 		</RegExp>
 		<!-- -->
 		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="4">

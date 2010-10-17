@@ -1,4 +1,6 @@
-﻿1.0.15:
+﻿1.0.16:
+- Small fixes in plot parsing
+1.0.15:
 - Added Polish translation by kolabor
 - Removed 3D from title tag
 1.0.14:
