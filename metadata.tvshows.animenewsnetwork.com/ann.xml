@@ -153,7 +153,10 @@
 		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;\1.xml&quot; function=&quot;GetFanartData&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;&lt;/details&gt;" dest="3">
 			<expression>&lt;FirstAired&gt;$$6.*?&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
 		</RegExp>
-
+		<RegExp input="$$1" output="&lt;details/&gt;" dest="3">
+			<expression>&lt;Data&gt;\s*?&lt;/Data&gt;</expression>
+		</RegExp>
+		
 		<!-- Do not get fanarts if already got fanarts for this ID -->
 		<RegExp input="$$3" output="\1" dest="6">
 			<expression clear="yes">cache=&quot;([0-9]*).xml&quot;</expression>
