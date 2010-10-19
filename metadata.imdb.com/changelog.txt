@@ -1,3 +1,6 @@
+[B]2.1.1[/B]
+- changed: re-added fixchars
+
 [B]2.1.0[/B]
 - changed: scrape only 1 studio
 
