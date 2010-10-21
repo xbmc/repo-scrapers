@@ -61,7 +61,7 @@
 			</RegExp>
 			<!--Get year from port.hu and store it in buffer 14 for future use-->
 			<RegExp input="$$1" output="\1" dest="14">
-				<expression>, (19\d\d|20\d\d)\)\s&lt;/span&gt;</expression>
+				<expression>, (19\d\d|20\d\d)\s?&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Append year from buffer 14-->
 			<RegExp input="$$14" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
