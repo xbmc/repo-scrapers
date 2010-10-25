@@ -93,7 +93,7 @@
 				<expression trim="1">&lt;span style="color: #666; font-size: 13px"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;OriginaltitleToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<expression/>
+				<expression>(.+)</expression>
 			</RegExp>
 			<!-- проверяем русский фильм -->
 			<RegExp input="$$2" output="no origtitle" dest="4">
