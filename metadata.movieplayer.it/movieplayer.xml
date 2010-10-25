@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="11" date="2010-10-14">
+<scraper framework="11" date="2010-10-25">
 
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="\1" dest="3">
-			<expression noclean="1">(http://www\.movieplayer\.it/film/[0-9]+/[^"]+)</expression>
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
+			<expression noclean="1" trim="1">(http://www\.movieplayer\.it/film/[0-9]+/[^"]+)</expression>
 		</RegExp>
 	</NfoUrl>
 
@@ -23,9 +23,9 @@
 	</CreateSearchUrl>
 
 <GetSearchResults dest="8">
-	<RegExp conditional="!Google" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
+	<RegExp conditional="!Google" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 		<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 \4&lt;/title&gt;&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/\2/&quot;&gt;http://www.movieplayer.it/film/\1/\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
-		  <expression repeat="yes">&lt;/small&gt; -[\s]*[\n]*[\s]*&lt;h2&gt;*[\n]*[\s]*&lt;a href=&quot;/film/([^/]*)/([^/]*)/&quot;&gt;[^&lt;]*&lt;strong&gt;([^\(]*)([^&lt;]*)&lt;/a&gt;</expression>
+			<expression repeat="yes">&lt;/small&gt; -[\s]*[\n]*[\s]*&lt;h2&gt;*[\n]*[\s]*&lt;a href=&quot;/film/([^/]*)/([^/]*)/&quot;&gt;([^\(]*)([^&lt;]*)&lt;/a&gt;</expression>
 		</RegExp>
 		<expression clear="yes" trim="1" noclean="1"/>
 	</RegExp>
@@ -100,8 +100,7 @@
 			</RegExp>
 						<!--Trailer-->
 			<RegExp input="$$1" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="13+">
-			
-			
+			   <expression>file: &quot;([^&quot;]+)&quot;</expression>		
 			</RegExp>
 						<!--Full Cast-->
 			<RegExp conditional="FullCast" input="$$1" output="&lt;url spoof=&quot;http://www.movieplayer.it/adv/interstitial/1.html?next=/film/\1/&quot; function=&quot;GetMovieCast&quot;&gt;http://www.movieplayer.it\1#personaggi&lt;/url&gt;" dest="13+">

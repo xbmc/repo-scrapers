@@ -1,5 +1,7 @@
 Changelog:
 
+25/10/2010 - Fixed Trailers (it was deleted by mistake)
+23/10/2010 - Adjusted the MP search, but Google engine is better and more reliable as it doesn't need the exact movie name. So Google is the default again and we don't hammer MP site either. Fixed the .nfo url too (tnx to Spiff)
 14/10/2010 - Finally added the movieplayer.it own search (they removed the base64 encoding). Added one option in settings for Google search and anothe rone to get just one or more Posters from MP. Added Polish Translation. The version bump now to 1.1.0 :P
 29/09/2010 - Updated GetImdbStuff function to match IMDb latest site changes
 28/08/2010 - Reduced movieplayer.it fanarts pages just to the summary one to improve speed
