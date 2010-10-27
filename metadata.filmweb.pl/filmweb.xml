@@ -25,7 +25,7 @@
 	</NfoUrl>
 	<GetByIMDBId dest="3">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;FilmwebByIMDBId&quot;&gt;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;amp;q=\1+site:filmweb.pl&lt;/url&gt;&lt;details&gt;" dest="3+">
-			<expression encode="1">&lt;h3 class=[^&gt;]+&gt;(.*?)&lt;/h3</expression>
+			<expression fixchars="1" encode="1">&lt;h3 class=[^&gt;]+&gt;(.*?)\([0-9]{4}\)</expression>
 		</RegExp>
 	</GetByIMDBId>
 	<FilmwebByIMDBId dest="3">
@@ -176,27 +176,27 @@
 	<Opisy dest="5">
 		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression>class="desc.*?&lt;p&gt;(.*?)&lt;/p&gt;</expression>
+				<expression noclean="1"  fixchars="1">class="desc.*?&lt;p&gt;(.*?)&lt;/p&gt;</expression>
 			</RegExp>
 			<RegExp input="$$10" output="\1 [opis dystrybutora]" dest="8">
 				<RegExp input="$$1" output="\1" dest="10">
-					<expression>class="desc[^~]+&lt;p&gt;([^\[]+)\[opis</expression>
+					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;([^\[]+)\[opis</expression>
 				</RegExp>
-				<expression>(.+)</expression>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<RegExp input="$$11" output="\1 [opis dystrybutora dvd]" dest="8">
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression>class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
+					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
 				</RegExp>
-				<expression>(.+)</expression>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<RegExp input="$$12" output="\1 [opis dystrybutora kino]" dest="8">
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression>class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
+					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
 				</RegExp>
-				<expression>(.+)</expression>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<expression noclean="1" fixchars="1"/>
+			<expression/>
 		</RegExp>
 	</Opisy>
 	<Plakaty dest="5">
@@ -292,7 +292,7 @@
 				<expression noclean="1">mediaPhotosList(.*?)&lt;/ul&gt;</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="8">
-				<expression noclean="1" repeat="yes">href=&quot;([^&quot;]+)</expression>
+				<expression noclean="1" repeat="yes">href=&quot;([^&quot;]+)&quot; o</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
