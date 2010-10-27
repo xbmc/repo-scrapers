@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.amazon.com"
        name="Amazon.com"
-       version="1.0.3" 
+       version="1.0.4" 
        provider-name="C-Quel + John Lockwood">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -21,6 +21,5 @@
     <description lang="pl">Pobieraj informacje o filmach z www.amazon.com</description>
     <description lang="pt">Descarregar informação de filmes de www.amazon.com</description>
     <platform>all</platform>
-    <broken>Doesn't find any movie</broken>
   </extension>
 </addon>
