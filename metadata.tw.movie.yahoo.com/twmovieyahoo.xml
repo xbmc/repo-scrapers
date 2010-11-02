@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<scraper framework="1.1" date="2010-09-13" name="Yahoo!Taiwan Movie" content="movies" thumb="icon.png"
+	language="zh">
+	<CreateSearchUrl dest="3" SearchStringEncoding="UTF-8">
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;\n&lt;url&gt;http://tw.movie.yahoo.com/moviesearch_result.html?k=\1&lt;/url&gt;"
+			dest="3">
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$3" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;\n&lt;results&gt;\n\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;\n&lt;title&gt;\2 (\3) - \4&lt;/title&gt;\n&lt;url&gt;http://tw.movie.yahoo.com/movieinfo_main.html/id=\1&lt;/url&gt;\n&lt;/entity&gt;\n" dest="3">
+				<expression repeat="yes">&lt;h4&gt;&lt;a href=&quot;http://tw.rd.yahoo.com/referurl/movie/searchresult/[^&gt;]*id=([0-9]*)&quot;&gt;(.[^\n]*)&lt;/a&gt;&lt;/h4&gt;[\n ]*&lt;h5&gt;&lt;[a-z0-9\&quot;= :/\.\*_]*&gt;([^\n]*)&lt;/a&gt;&lt;/h5&gt;[\n ]*&lt;[a-z\&quot;= ]*&gt;上映日期：&lt;span&gt;([0-9]*)</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>	
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;\n&lt;details&gt;\n\1&lt;/details&gt;\n" dest="3">
+			<!-- Title -->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;\n" dest="5">
+				<expression trim="1" noclean="1">&lt;title&gt;(.*)( - Yahoo)</expression>
+			</RegExp>
+			<!-- Genre -->
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;\n" dest="5+">
+				<expression repeat="yes">http://tw\.movie\.yahoo\.com/moviegenre_result\.html\?id=[0-9]+'&gt;(.[^&lt;]*)</expression>
+			</RegExp>
+			<!-- Thumb -->		
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;\2&quot;&gt;\1&lt;/thumb&gt;\n" dest="5+">
+				<expression>http://tw.rd.yahoo.com/referurl/movie/movieinfo/bigposter/\*(.[^&quot;]*)&quot; target=&quot;_poster&quot;&gt;&lt;img src=&quot;(.[^&quot;]*)</expression>
+			</RegExp>
+			<!-- Year -->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;\n" dest="5+">
+				<expression>上映日期：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;([0-9]*)</expression>
+			</RegExp>
+			<!-- Director -->
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;\n" dest="5+">
+				<expression>導　　演：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.[^&lt;]*)</expression>
+			</RegExp>
+			<!-- Studio -->
+			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;\n" dest="5+">
+				<expression>發行公司：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.[^&lt;]*)</expression>
+			</RegExp>
+			<!-- Rating -->
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;\n" dest="5+">
+				<expression>總評分:&lt;em&gt;(.[^&lt;]*)</expression>
+			</RegExp>
+			<!-- Votes -->
+			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;\n" dest="5+">
+				<expression>共&lt;q&gt;([0-9]*)</expression>
+			</RegExp>
+			<!-- Fanart -->
+			<RegExp input="$$2" output="&lt;fanart&gt;\1&lt;/fanart&gt;\n" dest="5+">
+				<RegExp input="$$1" output="&lt;thumb preview=&quot;http://tw.ent\1.yimg.com/mpho4/\2/\3/\4.jpg&quot;&gt;http://tw.ent\1.yimg.com/mpho/\2/\3/\4.jpg&lt;/thumb&gt;\n" dest="2">
+					<expression repeat="yes">target='_photoplayer'&gt;&lt;img src=&quot;http://tw\.ent([0-9]*)\.yimg\.com/mpho4/([0-9]*)/([0-9]*)/([0-9]*)\.jpg</expression>
+				</RegExp>
+				<expression noclean="1" />
+			</RegExp>
+			<!-- Plot -->
+			<RegExp input="$$1" output="&lt;plot&gt;\2&lt;/plot&gt;\n" dest="5+">
+				<expression>(&lt;div class=&quot;text full&quot;&gt;&lt;p&gt;)(.*)(&lt;p&gt;&lt;span class=&quot;date&quot;&gt;)</expression>
+			</RegExp>
+			<!-- Outline -->	
+			<RegExp input="$$1" output="&lt;outline&gt;\1...&lt;/outline&gt;\n" dest="5+">
+				<expression>&lt;div class=&quot;text&quot;&gt;&lt;p&gt;(.[^&lt;]*)</expression>
+			</RegExp>
+			<!-- Short Plot/Outline -->
+			<RegExp input="$$1" output="&lt;plot&gt;\2&lt;/plot&gt;\n&lt;outline&gt;\2...&lt;/outline&gt;\n" dest="5+">
+				<expression>(&lt;div class=&quot;text show&quot;&gt;&lt;p&gt;)(.*)(&lt;p&gt;&lt;span class=&quot;date&quot;&gt;)</expression>
+			</RegExp>
+			<!-- Actor -->
+<!--
+			<RegExp input="$$2" output="&lt;actor&gt;&lt;name&gt; \1 &lt;/name&gt;&lt;/actor&gt;\n" dest="5+">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression>演　　員：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.[^&lt;]*)</expression>
+				</RegExp>
+				<expression repeat="yes" fixchars="1">(.[^、]*)</expression>
+			</RegExp>
+-->
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+</scraper>
