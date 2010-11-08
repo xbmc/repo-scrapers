@@ -1,3 +1,6 @@
+=== 1.0.1
+- Updated the disneyinfo icon with non upsized version
+
 === 1.0.0
 Initial release of the disneyinfo scraper
 - Support scraping disneyinfo.nl movies for dutch titels and descriptions
