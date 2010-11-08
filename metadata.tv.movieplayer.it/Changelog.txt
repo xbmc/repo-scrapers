@@ -2,5 +2,6 @@ Changelog:
 
 
 
+08/11/2010 - Fixed TVDB fanarts, Added movieplayer.it search engine.
 29/08/2010 - Added NfoUrl that was missing. Added TVDB Id to be used for Logo  downloader script and maybe others.
 10/08/2010 - Initial commit to github rev. 1.0.5
