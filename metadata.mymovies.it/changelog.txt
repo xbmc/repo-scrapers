@@ -1,3 +1,14 @@
+[B]Note:[/B] if the scraper is very slow, i suggest to disable setting tagged with "(slow)" in scraper settings.
+
+[B]1.1.0[/B]
+- Fixed problem for long title
+- Added support for new title (asterix votes)
+- Used tag <rating max="*">
+- Fixed problem with single poster in low res
+- Fixed trailer
+- Fixed TMDB FanART
+- Improved append varius stuff to plot
+
 [B]1.0.6[/B]
 - Aggiunto il supporto a XBMC 10.5 (addons system)
 - Fixed trailer

@@ -8,7 +8,7 @@
     <setting label="30005" type="bool" id="fakeactor" default="false" enable="eq(-4,true)"/>
 
     <setting label="30100" type="lsep" />
-    <setting label="30101" type="bool" id="rating_ten" default="false"/>
+    <setting label="30101" type="bool" id="rating_ten" default="true"/>
     <setting label="30102" type="bool" id="other_rating" default="true"/>
     <setting label="30103" type="labelenum" values="mpaa|studio|outline" id="tag_other_rating" default="studio" enable="eq(-1,true)"/>
 
