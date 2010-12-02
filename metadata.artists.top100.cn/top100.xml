@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.0" date="2010-12-1">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="\1" dest="3">
+			<expression>(http://www.top100.cn/artist/.*?shtml)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateArtistSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.top100.cn/search/allartist.aspx?keyword=\1/&lt;/url&gt;" dest="3">
+			<expression/>
+		</RegExp>
+	</CreateArtistSearchUrl>
+	<GetArtistSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2(\3)&lt;/title&gt;&lt;url&gt;http://www.top100.cn/\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">艺术家：&lt;a href=&quot;../(artist/[^&quot;]*)&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;英文名：&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistSearchResults>
+	<GetArtistDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="5">
+				<expression>&lt;h2 class=&quot;sname&quot;&gt;([^&lt;]*)&lt;/h2&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="5+">
+				<expression noclean="1">&lt;li class=&quot;l1&quot;&gt;生日：([^&lt;]*)&lt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="5+">
+				<expression>&lt;div class=&quot;sdesc&quot; id=&quot;longinfo&quot;[^&gt;]*&gt;(.*?)&amp;nbsp&amp;nbsp&amp;nbsp&lt;a style=</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">&lt;dt&gt;&lt;img +alt=&quot;[^&quot;]*&quot; src=&quot;(http://[^&quot;]*)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1">&lt;div&gt;最新专辑&lt;/div&gt;(.*?)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;/album&gt;" dest="5+">
+				<expression repeat="yes">class=&quot;a5 fw700&quot; title=&quot;([^&quot;]*)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$2-fanart.html&quot; function=&quot;GetTop100Fanart&quot;&gt;http://www.top100.cn/ashx/ServiceRouter.ashx?reqtype=imagelist&singerid=\1&lt;/url&gt;" dest="5+">
+				<expression>var itemid = &quot;([0-9]+)&quot;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistDetails>
+	<GetTop100Fanart dest="5">
+		<RegExp input="$$13" output="&lt;details&gt;&lt;fanart url=&quot;http://ph.top100.cn/&quot;&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;\2&quot;&gt;\1&lt;/thumb&gt;" dest="13">
+				<expression repeat="yes" noclean="1">&quot;imageurl&quot;:&quot;http://ph.top100.cn/([^&quot;]*)&quot;,&quot;breimageurl&quot;:&quot;http://ph.top100.cn/([^&quot;]*)&quot;</expression>
+			</RegExp>
+			<expression noclean="1">(.+)</expression>
+		</RegExp>
+	</GetTop100Fanart>
+</scraper> 
