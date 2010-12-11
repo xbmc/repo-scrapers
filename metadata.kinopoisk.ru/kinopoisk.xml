@@ -35,11 +35,11 @@
 				<expression noclean="1" />
 			</RegExp>
 			<!--Код если найдено несколько вариантов-->
-			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;a class="all" href="/level(.+?)"&gt;(.+?)&lt;/a&gt;,&amp;nbsp;&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;.+?m_act\[year\]/(\d+)/"&gt;</expression>
 			</RegExp>
-			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;a class="all" href="/level(.+?)"&gt;(.+?)&lt;/a&gt;,&amp;nbsp;&lt;a[^&gt;]*&gt;([^&lt;]*)&lt;.*?color="#999999"&gt;(.*?)&lt;</expression>
+			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;.+?m_act\[year\]/(\d+)/"&gt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
 			</RegExp>
 			<!-- fix html entities from titles-->
 			<RegExp conditional="search_originaltitle" input="$$5" output="\1[]&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
@@ -110,6 +110,9 @@
 			</RegExp>
 			<RegExp input="$$4" output="false" dest="17">
 				<expression>^$</expression>
+			</RegExp>
+			<RegExp input="none" output="test$$17test" dest="5+">
+				<expression>none</expression>
 			</RegExp>
 			<!--COUNTRY-->
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
@@ -251,6 +254,9 @@
 	</GetDetails>
 	<GMP dest="4">
 		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.kinopoisk.ru/images/poster/sm_\1&quot;&gt;http://www.kinopoisk.ru/images/poster/\1&lt;/thumb&gt;" dest="8+">
+				<expression repeat="yes" noclean="1">&lt;a href="/picture/[0-9]+/"&gt;&lt;img class="new" src="/images/poster/sm_([^"]+)" width</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.kinopoisk.ru/images/poster/sm_\1&quot;&gt;http://www.kinopoisk.ru/images/poster/\1&lt;/thumb&gt;" dest="8+">
 				<expression repeat="yes" noclean="1">&lt;a href="/picture/[0-9]+/"&gt;&lt;img  src="/images/poster/sm_([^"]+)" width</expression>
 			</RegExp>
@@ -630,6 +636,9 @@
 		<RegExp conditional="!use_world_premier" input="none" output="$$14" dest="18">
 			<expression/>
 		</RegExp>
+		<RegExp input="$$15" output="0" dest="15">
+			<expression>^$</expression>
+		</RegExp>
 		<RegExp input="none" output="$$15:::$$18:::$$19" dest="20">
 			<expression/>
 		</RegExp>
@@ -685,6 +694,9 @@
 			<!-- удалем мусор -->
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*?), The$</expression>
+			</RegExp>
+			<RegExp input="$$11" output="\1" dest="11">
+				<expression noclean="1">(.*?) в 3D$</expression>
 			</RegExp>
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*?) 3D$</expression>

@@ -1,4 +1,7 @@
-﻿1.0.17:
+﻿1.0.18:
+- New search web layout
+- Removed "3D" from movie title
+1.0.17:
 - Fixed russian movie search
 1.0.16:
 - Small fixes in plot parsing
