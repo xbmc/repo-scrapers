@@ -36,10 +36,10 @@
 			</RegExp>
 			<!--Код если найдено несколько вариантов-->
 			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;.+?m_act\[year\]/(\d+)/"&gt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
 			</RegExp>
 			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;.+?m_act\[year\]/(\d+)/"&gt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
 			</RegExp>
 			<!-- fix html entities from titles-->
 			<RegExp conditional="search_originaltitle" input="$$5" output="\1[]&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
@@ -451,8 +451,11 @@
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="actor"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="producer"&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
 			</RegExp>
-			<RegExp input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://www.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
+			<RegExp conditional="!rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://www.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
 				<expression repeat="yes" trim="3">&lt;img src="/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;(.*?)&lt;/a&gt;&lt;b&gt;.*?&lt;/b&gt;... ([^&lt;,]+)</expression>
+			</RegExp>
+			<RegExp conditional="rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://www.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
+				<expression repeat="yes" trim="3">&lt;img src="/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([а-яА-Я][^&lt;]*)&lt;/a&gt;&lt;b&gt;.*?&lt;/b&gt;... ([^&lt;,]+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;thumb&gt;\3&lt;/thumb&gt;&lt;/actor&gt;" dest="7">
 				<expression repeat="yes" trim="3">&lt;n&gt;([^&lt;]+)&lt;r&gt;(?:играет |)([^&lt;]+)&lt;t&gt;(?:(http://www.kinopoisk.ru/images/actor/[0-9]+.jpg)&lt;/e&gt;|http://www.kinopoisk.ru/images/actor/&lt;/e&gt;)</expression>

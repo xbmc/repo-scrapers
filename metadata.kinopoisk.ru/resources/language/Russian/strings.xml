@@ -11,4 +11,5 @@
     <string id="30008">искать год премьеры для IMDB ID</string>
     <string id="30009">всегда использовать google для поиска IMDB ID</string>
     <string id="30010">рейтинг KinoPoisk</string>
+    <string id="30011">загружать только переведённых актёров</string>
 </strings>

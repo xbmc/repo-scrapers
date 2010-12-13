@@ -1,3 +1,5 @@
+1.0.19:
+- Added option for scraping only actors with translated names
 ﻿1.0.18:
 - New search web layout
 - Removed "3D" from movie title
