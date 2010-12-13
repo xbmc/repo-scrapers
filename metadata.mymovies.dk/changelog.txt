@@ -1,3 +1,14 @@
+1.2.5
+
+Added:
+
+- Danish translation
+
+Changes:
+
+- Fixed covers with Disc based info.
+- Fixed search result with Disc based info.
+
 1.2.3
 
 Added:
