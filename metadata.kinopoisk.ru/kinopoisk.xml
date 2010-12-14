@@ -449,7 +449,7 @@
 	<PEOPLE dest="10">
 		<RegExp input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="10">
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="actor"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="producer"&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
+				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="actor"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;table</expression>
 			</RegExp>
 			<RegExp conditional="!rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://www.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
 				<expression repeat="yes" trim="3">&lt;img src="/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;(.*?)&lt;/a&gt;&lt;b&gt;.*?&lt;/b&gt;... ([^&lt;,]+)</expression>
@@ -469,7 +469,7 @@
 			</RegExp>
 			<!-- -->
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="director"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="actor"&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
+				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="director"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;table</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;director&gt;\2&lt;/director&gt;" dest="7+">
 				<expression repeat="yes" trim="3">&lt;img src="([^"]+)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
