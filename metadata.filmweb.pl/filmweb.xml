@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<scraper framework="1.0" date="2010-10-14">
+<scraper framework="1.0" date="2010-12-15">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;"  dest="3">
 			<expression noclean="1">filmweb.pl/f([0-9]*)/</expression>
@@ -41,7 +41,7 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" fixchars="2">searchResult.*?src="http://gfx.filmweb.pl/po/[^/]*/[^/]*/([0-9]*)/.*?searchResultTitle[^&gt;]+&gt;(.*?)&lt;/a&gt;&lt;/h3&gt;.*?searchResultDetails[^0-9]+([0-9]*)</expression>
+				<expression repeat="yes" fixchars="2">searchResult.*?src="http://1.fwcdn.pl/po/[^/]*/[^/]*/([0-9]*)/.*?searchResultTitle[^&gt;]+&gt;(.*?)&lt;/a&gt;&lt;/h3&gt;.*?searchResultDetails[^0-9]+([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$5" output="\1 " dest="5">
 				<expression repeat="yes" noclean="1">([^\t]*)\t?</expression>
@@ -75,7 +75,7 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression noclean="1">class="time"&gt;([0-9]*)</expression>
 			</RegExp>
-			<RegExp conditional="!poster" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
 				<expression noclean="1">posterLightbox.+?href="([^"]*)\?</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1\2...&lt;/outline&gt;" dest="5+">
@@ -113,7 +113,7 @@
 			</RegExp>
 			<RegExp input="$$10" output="\1" dest="5+">
 				<RegExp conditional="!EnableFullCast" input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\11\2&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4 \5&lt;/role&gt;&lt;/actor&gt;" dest="10">
-					<expression repeat="yes" fixchars="3,4,5">src="(?:([^"]*\.)[^"]*(\.jpg))?[^\/]+\/span&gt;[^&gt;]+&gt;([^&lt;]+)[^v]+v&gt;\n(.*?)\n(.*?)&lt;/div&gt;</expression>
+					<expression repeat="yes" fixchars="3,4,5">src="(?:([^"]*\.)[^"]*(\.jpg))?[^\/]+\/span&gt;([^&lt;]+)[^v]+v&gt;\n(.*?)\n(.*?)&lt;/div&gt;</expression>
 				</RegExp>
 				<RegExp input="$$8" output="&lt;url function=&quot;Obsada&quot;&gt;http://www.filmweb.pl/film/xbmc-2009-$$9/cast&lt;/url&gt;" dest="10">
 					<expression>.+?Animacja.+</expression>
@@ -201,8 +201,8 @@
 	</Opisy>
 	<Plakaty dest="5">
 		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://gfx.filmweb.pl/po\12\2&quot;&gt;http://gfx.filmweb.pl/po\13\2&lt;/thumb&gt;" dest="8+">
-				<expression noclean="1" repeat="yes">href=&quot;http://gfx.filmweb.pl/po(?:([^"]*\.)[^"]*(\.jpg))</expression>
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://1.fwcdn.pl/po\12\2&quot;&gt;http://1.fwcdn.pl/po\13\2&lt;/thumb&gt;" dest="8+">
+				<expression noclean="1" repeat="yes">posterC.*?src=&quot;http://1.fwcdn.pl/po(?:([^"]*\.)[^"]*(\.jpg))</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
