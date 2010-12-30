@@ -1,3 +1,5 @@
+1.0.21:
+- Added NfoUrl (thanks to vava@github)
 1.0.20:
 - Fixed actors page parsings
 1.0.19:

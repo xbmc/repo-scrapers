@@ -6,6 +6,8 @@ Description
 
 Download Movie information from www.kinopoisk.ru
 
+Supports NfoUrl.
+
 Supported tags::
 
   title
@@ -26,5 +28,5 @@ Supported tags::
   credits
   director
   studio
-  trailer (only russian language)
+  trailer
   actor
