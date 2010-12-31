@@ -1,3 +1,5 @@
+1.0.22:
+- Fixed films search (thanks to phoenixx@xbmc.ru)
 1.0.21:
 - Added NfoUrl (thanks to vava@github)
 1.0.20:

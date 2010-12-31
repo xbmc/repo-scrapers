@@ -32,7 +32,7 @@
 					<expression noclean="1"/>
 				</RegExp>
 				<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="7+">
-					<expression>&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/\d+/"&gt;(\d+)&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;</expression>
+					<expression>&lt;td class=""&gt;&lt;a href="/level/10/m_act%5Byear%5D/(\d+)/"</expression>
 				</RegExp>
 				<RegExp input="$$1" output="&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="7+">
 					<expression>&lt;a href="/level/19/film/(\d+)/"&gt;</expression>
@@ -41,10 +41,10 @@
 			</RegExp>
 			<!--Код если найдено несколько вариантов-->
 			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
 			</RegExp>
 			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
 			</RegExp>
 			<!-- fix html entities from titles-->
 			<RegExp conditional="search_originaltitle" input="$$5" output="\1[]&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
