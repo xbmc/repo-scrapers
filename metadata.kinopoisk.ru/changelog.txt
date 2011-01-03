@@ -1,3 +1,5 @@
+1.0.23:
+- Fixed film's year scraping
 1.0.22:
 - Fixed films search (thanks to phoenixx@xbmc.ru)
 1.0.21:
