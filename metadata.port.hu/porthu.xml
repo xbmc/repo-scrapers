@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2010-10-16">
+<scraper framework="1.1" date="2011-01-05">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;" dest="3">
 			<expression clear="yes" noclean="1">i_film_id=([0-9]*)</expression>
@@ -20,11 +20,11 @@
 			</RegExp>
 			<!--Get year of the movie if search thrown directly to the movie page-->
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression clear="yes">, (19\d\d|20\d\d)\)\s&lt;/span&gt;</expression>
+				<expression clear="yes">, (19\d\d|20\d\d)\s?&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Search results if search thrown directly to the movie page-->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 \3&lt;/title&gt;&lt;year&gt;$$9&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=$$7&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression clear="yes" noclean="1">&lt;span class="blackbigtitle"&gt;([^&lt;]*)(&lt;/span&gt;\n&lt;br/&gt;&lt;span class="txt"&gt;([^&lt;]*))?</expression>
+				<expression clear="yes" noclean="1">class="blackbigtitle"&gt;([^&lt;]*)(&lt;/span&gt;\n&lt;br/&gt;&lt;span class="txt"&gt;([^&lt;]*))?</expression>
 			</RegExp>
 			<!--Search results if there are multiple matches-->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\5&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
@@ -41,7 +41,7 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-2&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Get Hungarian Title from port.hu and store it in buffer 20 for future use-->
 			<RegExp input="$$1" output="\1" dest="20">
-				<expression>&lt;span class="blackbigtitle"&gt;([^&lt;]*)</expression>
+				<expression>class="blackbigtitle"&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<!--Append Hungarian Title from Bufer 20 if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$20&lt;/title&gt;" dest="5">
@@ -69,7 +69,7 @@
 			</RegExp>
 			<!--Get director from port.hu-->
 			<RegExp input="$$1" output="&lt;director&gt;\2&lt;/director&gt;" dest="5+">
-				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;(.*?)&lt;/a&gt;&lt;/span&gt;</expression>
+				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;&lt;strong&gt;(.*?)&lt;/strong&gt;&lt;/a&gt;&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Call GetIMDBDetails function-->
 			<RegExp input="$$10" output="\1" dest="5+">
@@ -126,7 +126,7 @@
 			</RegExp>
 			<!--Get rating from imdb.com-->
 			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
-				<expression/>
+				<expression />
 			</RegExp>
 			<!--Get genres from imdb.com-->
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
