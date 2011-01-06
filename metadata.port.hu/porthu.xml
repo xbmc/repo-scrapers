@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2011-01-05">
+<scraper framework="1.1" date="2011-01-06">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;" dest="3">
 			<expression clear="yes" noclean="1">i_film_id=([0-9]*)</expression>
@@ -68,8 +68,8 @@
 				<expression />
 			</RegExp>
 			<!--Get director from port.hu-->
-			<RegExp input="$$1" output="&lt;director&gt;\2&lt;/director&gt;" dest="5+">
-				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;&lt;strong&gt;(.*?)&lt;/strong&gt;&lt;/a&gt;&lt;/span&gt;</expression>
+			<RegExp input="$$1" output="&lt;director&gt;\3&lt;/director&gt;" dest="5+">
+				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;(&lt;strong&gt;)?(.*?)(&lt;/strong&gt;)?&lt;/a&gt;&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Call GetIMDBDetails function-->
 			<RegExp input="$$10" output="\1" dest="5+">
