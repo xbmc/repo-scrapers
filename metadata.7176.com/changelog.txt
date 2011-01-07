@@ -1,4 +1,8 @@
-﻿[B]1.0.6[/B]
+﻿[B]1.0.7[/B]
+- 修正：网站变化造成电影名称获取有误
+  fixed: site change cause title error
+
+[B]1.0.6[/B]
 - 使用fixchars参数转换电影剧情介绍中的HTML转义字符串
   use fixchars to tanslate HTML Escape Sequence in outline and plot
 
