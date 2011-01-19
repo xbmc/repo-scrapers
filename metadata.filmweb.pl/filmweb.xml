@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<scraper framework="1.0" date="2010-12-15">
+<scraper framework="1.0" date="2011-01-19">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;"  dest="3">
 			<expression noclean="1">filmweb.pl/f([0-9]*)/</expression>
@@ -51,13 +51,22 @@
 	</GetSearchResults>
 	<GetDetails clearbuffers="no" dest="3">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
-				<expression fixchars="1">&lt;h1[^&gt;]+&gt;(.*?)&lt;/h1</expression>
+			<RegExp input="$$6" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression fixchars="1">&lt;h1[^&gt;]+&gt;(.*?)&lt;/h1</expression>
+				</RegExp>
+				<RegExp input="$$6" output="\3 \1" dest="6">
+					<expression>(.*)(, (A|An|The|Das|Der|Des|Die|De|L'|Le|Les|La|Un|Une|El|Il|Las|Los|Una|Unos|Unas))$</expression>
+				</RegExp>
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
+				<expression fixchars="1">class=filmYear&gt;[^&gt;]+&gt;(.*?)&lt;/h2</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression noclean="1">filmId[^&gt;]+&gt;([0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$9" output="&lt;id&gt;\1&lt;/id&gt;" dest="5+">
+			<RegExp input="$$9" output="&lt;filmweb.id&gt;\1&lt;/filmweb.id&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
@@ -94,13 +103,13 @@
 				<expression repeat="yes">"&gt;([^&lt;]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">scenariusz(.*?)&lt;/td&gt;</expression>
+				<expression noclean="1">scenariusz:(.*?)&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
 				<expression repeat="yes" fixchars="1">title="([^"]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">reżyseria(.*?)&lt;/td&gt;</expression>
+				<expression noclean="1">reżyseria:(.*?)&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<expression repeat="yes" fixchars="1">title="([^"]+)</expression>
@@ -161,7 +170,10 @@
 				</RegExp>
 				<expression>(.+)</expression>
 			</RegExp>
-			<RegExp input="" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5">
+			<RegExp input="$$6" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
+				<expression/>
+			</RegExp>
+			<RegExp input="" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp conditional="EnableFullCast" input="" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
@@ -195,6 +207,12 @@
 					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$8" output="\1 " dest="8">
+				<expression repeat="yes" noclean="1">([^\t]*)\t?</expression>
+			</RegExp>
+			<RegExp input="$$8" output="\1\2" dest="8">
+				<expression repeat="yes" noclean="1,2">([^\s]*)(?:(\s)\2*)?</expression>
 			</RegExp>
 			<expression/>
 		</RegExp>
@@ -280,8 +298,11 @@
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="6+">
 				<expression>&quot;/company/[^/]*/&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="6+">
-				<expression>title-extra"&gt;([^&lt;]*)</expression>
+			<RegExp input="$$7" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="6+">
+				<RegExp input="$$1" output="\1" dest="7">
+					<expression>title-extra"&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression>(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
