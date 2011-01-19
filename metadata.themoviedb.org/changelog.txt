@@ -1,3 +1,6 @@
+[B]1.2.4[/B]
+- fixed: not scraping artwork for movies without IMDb id
+
 [B]1.2.3[/B]
 - fixed: can't get full search results list when some have <released> message and some haven't
 
