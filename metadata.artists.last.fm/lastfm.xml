@@ -26,8 +26,17 @@
 			<RegExp input="$$1" output="&lt;biography&gt;&lt;![CDATA[\1]]&gt;&lt;/biography&gt;" dest="5+">
 				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;thumb&gt;\2&lt;/thumb&gt;" dest="5+">
-				<expression noclean="1">&lt;image size=&quot;(extra)?large&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
+			<RegExp input="$$6" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&lt;image size=&quot;large&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&lt;image size=&quot;extralarge&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&lt;image size=&quot;mega&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
+				</RegExp>
+				<expression noclean="1" />
 			</RegExp>
 			<RegExp input="$$2" conditional="htbthumbs" output="&lt;chain function=&quot;GetHTBThumbs&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
