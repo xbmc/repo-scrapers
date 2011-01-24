@@ -1,3 +1,12 @@
+[B]1.3[/B]
+
+- Arreglados problemas con expresiones regulares
+- Añadida una opción para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
+- Añadida la opción de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
+- Editado el menú de configuracion del scraper
+- Código comentado para entender mejor las funciones
+- Varios problemas pequeños arreglados
+
 [B]1.2.4[/B]
 
 - Arreglado un error de regex.

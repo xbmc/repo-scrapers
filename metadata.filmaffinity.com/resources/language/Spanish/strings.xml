@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
-    <string id="30000">Descargar Casting Completo</string>
-    <string id="30001">Habilitar trailers</string>
-    <string id="30002">Sólo póster de FilmAffinity y sin FanArt (rápido)</string>
-    <string id="30003">Habilitar FanArt</string>
-    <string id="30004">Descargar pósters de IMPAwards</string>
-    <string id="30005">Descargar pósters de MoviePosterDB</string>
-    <string id="30006">Descargar pósters de IMDB</string>
-	<string id="30007">Descargar pósters de TheMovieDB</string>
+    <string id="30000">Descargar Reparto de</string>
+    <string id="30001">Seleccionar Servicio de Trailers</string>
+    <string id="30002">Descargar solo Póster sin FanArt (rápido)</string>
+    <string id="30003">FanArt de TheMovieDB</string>
+    <string id="30004">Pósters de IMPAwards</string>
+    <string id="30005">Pósters de MoviePosterDB</string>
+    <string id="30006">Pósters de IMDB</string>
+	<string id="30007">Pósters de TheMovieDB</string>
     <string id="30008">Compatibilidad con miniaturas de Estudio</string>
-    <string id="30009">Descargar Información Extra de iMDB</string>
-    <string id="30010">Usar Puntuación desde iMDB</string>
-	<string id="30011">Descargar Posters Extras de Filmaffinity</string>
+    <string id="30009">Descargar Eslogan, Clasificación por edades, Top 250...</string>
+    <string id="30010">Usar Puntuación de iMDB</string>
+	<string id="30011">Pósters Extras de Filmaffinity</string>
+	<string id="30012">Opciones Generales</string>
+	<string id="30013">Descarga de Posters, Fanarts, etc...</string>
+	<string id="30014">Información extra de iMDB</string>
+	
 </strings>
