@@ -1,6 +1,6 @@
 <scraperfunctions>
 	<GetIMPAThumbsById dest="5">
-		<RegExp input="$$1"output="&lt;details&gt;&lt;url cache=&quot;$$1-posters.html&quot; function=&quot;GetIMPALink&quot;&gt;http://www.imdb.com/title/$$1/posters&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-posters.html&quot; function=&quot;GetIMPALink&quot;&gt;http://www.imdb.com/title/$$1/posters&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression />
 		</RegExp>
 	</GetIMPAThumbsById>
