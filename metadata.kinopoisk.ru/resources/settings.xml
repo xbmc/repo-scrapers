@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
+    <setting label="30012" type="bool" id="posters_from_kinopoisk" default="true"/>
+    <setting type="sep" />
     <setting label="30007" type="bool" id="search_imdb_ID" default="true"/>
     <setting label="30008" type="bool" id="use_world_premier" default="true" enable="eq(-1,true)"/>
     <setting label="30009" type="bool" id="google_search" default="false" enable="eq(-2,true)"/>

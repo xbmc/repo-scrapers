@@ -1,3 +1,7 @@
+1.0.26:
+- Fixed actor scraping
+1.0.25:
+- Fixed posters from kinopoisk.ru
 1.0.24:
 - Fixed scraping imdbid from imdb.com site
 1.0.23:

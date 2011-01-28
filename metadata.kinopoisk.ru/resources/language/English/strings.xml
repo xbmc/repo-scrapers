@@ -11,5 +11,6 @@
     <string id="30008">Search IMDB ID with world premier year</string>
     <string id="30009">Force searching IMDB ID with google</string>
     <string id="30010">Get rating from KinoPoisk</string>
-    <string id="30011">Get only actors with names translated to russian</string>   
+    <string id="30011">Get only actors with names translated to russian</string>
+    <string id="30012">Download posters from KinoPoisk.ru</string>   
 </strings>

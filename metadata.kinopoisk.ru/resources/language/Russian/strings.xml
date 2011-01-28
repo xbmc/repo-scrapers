@@ -12,4 +12,5 @@
     <string id="30009">всегда использовать google для поиска IMDB ID</string>
     <string id="30010">рейтинг KinoPoisk</string>
     <string id="30011">загружать только переведённых актёров</string>
+    <string id="30012">загружать постеры с сайта KinoPoisk.ru</string>   
 </strings>
