@@ -60,7 +60,7 @@
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">"/es/moviegenre.php?[^&gt;]*&gt;([^&lt;]*)</expression>
+				<expression repeat="yes">/es/moviegenre.php?[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
 			
 			<RegExp conditional="!StudioFlagsON" input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si la compatibilidad con estudios esta desactivada descarga todos las productoras (y es incompatible con skins si hay mas de una)-->
@@ -95,7 +95,7 @@
 			</RegExp>
 			
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;votes&gt;\1\2&lt;/votes&gt;" dest="5+">
-				<expression>align=&quot;center&quot;&gt;\(([1-9\.]*)</expression>
+				<expression>align=&quot;center&quot;&gt;\(([0-9\.]*)</expression>
 			</RegExp>
 			
 			<RegExp input="$$9" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
