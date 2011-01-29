@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2009-09-26">
+<scraper framework="1.1" date="2011-01-26">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;album=\2&amp;artist=\1&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b" dest="3">
 			<expression>(http://www.last.fm/music/([^/]*)/(.*))</expression>
@@ -12,11 +12,11 @@
 	</CreateAlbumSearchUrl>
 	<GetAlbumSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\2&lt;/artist&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;amp;album=\4&amp;amp;artist=\3&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;amp;lang=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\2&lt;/artist&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;album=\4&amp;artist=\3&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;lang=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
 				<expression repeat="yes">&lt;album&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;artist&gt;([^&lt;]*)&lt;/artist&gt;.*?&lt;url&gt;http://www.last.fm/music/([^/]+)/(.*?)&lt;/url&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
-		</RegExp>		
+		</RegExp>
 	</GetAlbumSearchResults>
 	<GetAlbumDetails dest="3">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
@@ -41,9 +41,6 @@
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="6">
 					<expression noclean="1">&lt;image size=&quot;extralarge&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
-				</RegExp>
-				<RegExp input="$$1" output="\1" dest="6">
-					<expression noclean="1">&lt;image size=&quot;mega&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
