@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?><scraper framework="1,1" date="2011-01-18">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.kinobox.cz/vyhledavani?filmy=1&amp;amp;t=\1&lt;/url&gt;" dest="3">
+			<expression />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="3">
+		<!--get search results-->
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$6" output="&lt;entity&gt;&lt;title&gt;\3 (\6)&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\5&lt;/year&gt;&lt;url&gt;\1&lt;/url&gt;&lt;originaltitle&gt;\6&lt;/originaltitle&gt;&lt;/entity&gt;" dest="5">
+				<!--select only movie results - ignore persons or articles-->
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression clear="yes" trim="1" noclean="1">&lt;div id="filmy_list"[^&gt;]*&gt;(.*?)(?=(&lt;div id=)|(&lt;script ))</expression>
+				</RegExp>
+				<expression repeat="yes" trim="3,5,6">&lt;li class="vysledek [^"]+"&gt;\s*&lt;div class="number"&gt;[0-9.]+&lt;/div&gt;.*?&lt;a rel="hoverbox\[img\]" href="(http://www.kinobox.cz/[^"]*film/([^"]+))"&gt;([^&lt;]*)&lt;/a&gt;\s*(&lt;span class="datum"&gt;[(]([0-9]{4})[)]&lt;/span&gt;)?.*?(?:\s*&lt;br /&gt;(.[^(]*?)(?:\(.+?\))?\s*&lt;/div&gt;)?.*?&lt;/li&gt;</expression>
+			</RegExp>
+			<!--remove empty ()-->
+			<RegExp input="$$5" output="\1\3" dest="5">
+				<expression repeat="yes" trim="1" noclean="1,3">(&lt;entity&gt;&lt;title&gt;[^(]+)(\(\))|(.*?&lt;/entity&gt;)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$3" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--title-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="3">
+				<expression clear="yes">&lt;meta property="og:title" content="([^"]+)" /&gt;</expression>
+			</RegExp>
+			<!--premiered in CR-->
+			<RegExp input="$$1" output="&lt;premiered&gt;\3-\2-\1&lt;/premiered&gt;&lt;aired&gt;\3-\2-\1&lt;/aired&gt;" dest="3+">
+				<expression>Premiéra v ČR: ([0-9]+). ([0-9]+). ([0-9]+)&lt;</expression>
+			</RegExp>
+			<!--year-->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="3+">
+				<expression>&lt;span&gt;[(]([0-9]{4})[)]&lt;/span&gt;&lt;/h1&gt;</expression>
+			</RegExp>
+			<!--tagline-->
+			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="3+">
+				<expression>&lt;th&gt;Motto:&lt;/th&gt;\s*&lt;td&gt;([^&lt;]+)&lt;/td&gt;</expression>
+			</RegExp>
+			<!--plot-->
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="3+">
+				<expression trim="1">&lt;td id="obsah_wrapper"&gt;(?:\s*&lt;script.*?&lt;/script&gt;)?(.+?)(\s*&lt;span class="more".*?&lt;/span&gt;\s*)?\s*&lt;/td&gt;</expression>
+			</RegExp>
+			<!--director-->
+			<RegExp input="$$5" output="&lt;director&gt;\1&lt;/director&gt;" dest="3+">
+				<!--list of directors-->
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression repeat="yes" clear="yes" trim="1">&lt;tr&gt;\s*&lt;th&gt;Režie:&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^,]+)</expression>
+			</RegExp>
+			<!--credits-->
+			<RegExp input="$$5" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="3+">
+				<!--list of credits-->
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression repeat="yes" trim="1">&lt;tr&gt;\s*&lt;th&gt;Scénář:&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^,]+)</expression>
+			</RegExp>
+			<!--actors-->
+			<RegExp input="$$5" output="&lt;actor&gt;&lt;thumb&gt;http://www.kinobox.cz/data/osobnosti/170x250x0/\2&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;...\4&lt;/role&gt;&lt;/actor&gt;" dest="3+">
+				<!--list of actors-->
+				<RegExp input="$$1" output="\1" dest="5">
+					<expression clear="yes" trim="1" noclean="1">&lt;tr&gt;\s*&lt;th&gt;Hrají:&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" trim="3,4">(&lt;img src="/data/osobnosti/20x30x1/([0-9][^"]+)" /&gt;)?\s*&lt;a href=[^&gt;]*&gt;([^&lt;]+)&lt;/a&gt;\s*&lt;span&gt;([^&lt;]*)&lt;/span&gt;</expression>
+			</RegExp>
+			<!--remove links to missing actor thumbs-->
+			<RegExp input="$$3" output="\1\4" dest="3">
+				<expression repeat="yes" noclean="1,4,5">(.*?)(&lt;thumb&gt;http://www.kinobox.cz/data/osobnosti/170x250x0/&lt;/thumb&gt;)(.*?)|(.*?$)</expression>
+			</RegExp>
+			<!--replace missing role names by ...-->
+			<RegExp input="$$3" output="\1\4\5\6\7" dest="3">
+				<expression repeat="yes" noclean="1,3,4,5,6,7">(.*?)(((&lt;role&gt;)\.\.\.([^&lt;]+&lt;/role&gt;))|(&lt;role&gt;\.\.\.&lt;/role&gt;))(.*?&lt;/actor&gt;)</expression>
+			</RegExp>
+			<!--more thumbs and fanarts-->
+			<RegExp input="$$1" output="&lt;url function=&quot;GetKinoboxThumbs&quot;&gt;\1&lt;/url&gt;" dest="3+">
+				<expression>"(http://www.kinobox.cz/[^"]*film/[^"]+/fotogalerie/plakaty)"</expression>
+			</RegExp>
+			<!--rating-->
+			<RegExp input="$$1" output="&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;" dest="3+">
+				<expression>&lt;span class="[^"]*"&gt;([0-9]+)&lt;/span&gt;&lt;span class="percent_sign"&gt;%&lt;/span&gt;</expression>
+			</RegExp>
+			<!--originaltitle-->
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="3+">
+				<expression>&lt;span class="[a-z]+_nazev"&gt;\s*([^(&lt;]+)[^)&lt;]*\)?&lt;br /&gt;\s*&lt;/span&gt;</expression>
+			</RegExp>
+			<!--country-->
+			<RegExp input="$$5" output="&lt;country&gt;\1&lt;/country&gt;" dest="3+">
+				<!--parse countries-->
+				<RegExp input="$$1" output="\1\3" dest="5">
+					<expression clear="yes">(?:&lt;h2&gt;\s*(.*), ([^0-9,]+)\s*[,0-9 min.]*&lt;/h2&gt;)|(?:&lt;h2&gt;\s*([^0-9,]{0,4})\s*[,0-9 min.]*&lt;/h2&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^/]+)( / )?</expression>
+			</RegExp>
+			<!--genre-->
+			<RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="3+">
+				<!--genres-->
+				<RegExp input="$$1" output="\2\3" dest="5">
+					<expression clear="yes">(?:&lt;h2&gt;\s*(.*), ([^0-9,]+)\s*[,0-9 min.]*&lt;/h2&gt;)|(?:&lt;h2&gt;\s*([^0-9, ]{4,})\s*[,0-9 min.]*&lt;/h2&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^/]+)( / )?</expression>
+			</RegExp>
+			<!--runtime-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="3+">
+				<expression trim="1">(?:\s+([0-9]+) min.)\s*&lt;/h2&gt;</expression>
+			</RegExp>
+			<!--fanart = first picture from movie-->
+			<RegExp input="$$1" output="&lt;url function=&quot;GetKinoboxFanart&quot;&gt;\1&lt;/url&gt;" dest="3+">
+				<expression>"(http://www.kinobox.cz/[^"]*film/[^"]+/fotogalerie/z-filmu)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+	<GetKinoboxThumbs dest="3">
+		<RegExp input="$$3" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--thumbs - hires-->
+			<RegExp input="$$1" output="&lt;thumb&gt;http://www.kinobox.cz\1&lt;/thumb&gt;" dest="3">
+				<expression repeat="yes">[0-9]+:'([^']+)</expression>
+			</RegExp>
+			<!--thumb lo-res-->
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="3+">
+				<expression>&lt;meta property="og:image" content="(http://www.kinobox.cz/data/posters/[0-9x]*/[0-9][^"]+)" /&gt;</expression>
+			</RegExp>
+			<expression trim="1" noclean="1" />
+		</RegExp>
+	</GetKinoboxThumbs>
+	<GetKinoboxFanart dest="3">
+		<RegExp input="$$3" output="&lt;details&gt;&lt;fanart url=&quot;http://www.kinobox.cz&quot;&gt;\1&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<!--fanarts - hires-->
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="3">
+				<expression repeat="yes">[0-9]+:'([^']+)</expression>
+			</RegExp>
+			<expression trim="1" noclean="1" />
+		</RegExp>
+	</GetKinoboxFanart>
+</scraper>
