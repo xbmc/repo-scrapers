@@ -1,0 +1,24 @@
+2011-02-01 kristi5 
+
+  * pridana licence GPL
+  * upravene logo dle pravidel XBMC
+
+
+2011-16-01  kristi5
+
+* fotky hercu ze SerialZone
+* &nbsp; odstranen z textu pribehu
+
+
+2011-15-01  kristi5
+
+* stahuji se vsechny serie (max. 99 serii)
+* opraveny zakladni informace pro epizody ktere nemaji vlastni stranku
+
+
+2011-14-01  kristi5
+
+* zakladni funkcionalita
+- nestahuji se fotky hercu
+- originalni nazvy se objevují pouze pri hledani serialu. Originalni nazev je k dispozici ale soucasne XBMC ho nezobrazuje.
+- stahuje se maximalne 1-10. serie

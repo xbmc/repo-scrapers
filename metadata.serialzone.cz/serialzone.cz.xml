@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?><scraper framework="1,1" date="2011-01-16">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.serialzone.cz/hledani/\1/&lt;/url&gt;" dest="3">
+			<expression encode="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="2">
+		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="2">
+			<!--get results from result page-->
+			<RegExp input="$$4" output="\1" dest="3">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&lt;h2&gt;Výsledky v názvech&lt;/h2&gt;[^&lt;]*&lt;table class="obsazeni"&gt;(.*?)&lt;/table&gt;</expression>
+				</RegExp>
+				<RegExp input="$$3" output="\1\4" dest="4">
+					<RegExp input="$$6" output="&lt;entity&gt;&lt;id&gt;\2&lt;/id&gt;&lt;url&gt;\1&lt;/url&gt;&lt;title&gt;\4 (\6)&lt;/title&gt;&lt;originaltitle&gt;\6&lt;/originaltitle&gt;&lt;year&gt;\5&lt;/year&gt;&lt;thumb&gt;\3&lt;/thumb&gt;&lt;/entity&gt; \n" dest="3">
+						<expression repeat="yes">a href="(http://www.serialzone.cz/serial/([^"]*)/)".*?src="(http://www.serialzone.cz/obrazky/serialy/[^"]*)".*?alt="([^"]*)".*?nepodstatne"&gt;[(]?([0-9]{4})[^&lt;]*.*?mensi"&gt;([^&lt;]+)&lt;/span&gt;</expression>
+					</RegExp>
+					<expression repeat="yes" trim="1,2" noclean="1,2,3,4">(&lt;entity&gt;.*?&lt;title&gt;\s*([^(]*)\s*)([(]\2[)])|(.*?&lt;/entity&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes" noclean="1" />
+			</RegExp>
+			<!--get result list with one element if exact match found and tvshow page was displayed-->
+			<RegExp input="$$2" output="\1\4" dest="3+">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;id&gt;\3&lt;/id&gt;&lt;title&gt;\1 (\5)&lt;/title&gt;&lt;url&gt;\2&lt;/url&gt;&lt;originaltitle&gt;\5&lt;/originaltitle&gt;&lt;thumb&gt;\4&lt;/thumb&gt;&lt;year&gt;\6&lt;/year&gt;&lt;/entity&gt;" dest="2">
+					<expression>hlavni-nadpis"&gt;&lt;h1&gt;(.*) - informace&lt;/h1&gt;.*a href="(http://www.serialzone.cz/serial/([^"]*)/)"&gt;Informace.*&lt;img src="(http://www.serialzone.cz/obrazky/serialy/[^"]*)" class="obr-right ramecek".*Původní název: &lt;i&gt;(.*?)&lt;/i&gt;.*Roky natáčení:[^0-9]*([0-9]{4})</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1,2" noclean="1,2,3,4">(&lt;entity&gt;.*?&lt;title&gt;\s*([^(]*)\s*)([(]\2[)])|(.*?&lt;/entity&gt;)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<!-- TVSHOW details -->
+	<GetDetails dest="3">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--get title-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;&lt;originaltitle&gt;\2&lt;/originaltitle&gt;" dest="4">
+				<expression trim="1,2">Český název: &lt;i&gt;([^&lt;]+)&lt;/i&gt;&lt;br /&gt;Původní název: &lt;i&gt;([^&lt;]+)&lt;/i&gt;</expression>
+			</RegExp>
+			<!--thumb-->
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;&lt;thumb type=&quot;season&quot; season=&quot;0&quot;&gt;\1&lt;/thumb&gt;&lt;thumb type=&quot;season&quot; season=&quot;1&quot;&gt;\1&lt;/thumb&gt;&lt;thumb type=&quot;season&quot; season=&quot;2&quot;&gt;\1&lt;/thumb&gt;&lt;thumb type=&quot;season&quot; season=&quot;3&quot;&gt;\1&lt;/thumb&gt;&lt;thumb type=&quot;season&quot; season=&quot;4&quot;&gt;\1&lt;/thumb&gt; \n&lt;thumb type=&quot;season&quot; season=&quot;5&quot;&gt;\1&lt;/thumb&gt; \n&lt;thumb type=&quot;season&quot; season=&quot;6&quot;&gt;\1&lt;/thumb&gt; \n&lt;thumb type=&quot;season&quot; season=&quot;7&quot;&gt;\1&lt;/thumb&gt;" dest="4+">
+				<expression>&lt;img src="(http://www.serialzone.cz/obrazky/[^"]+)" class="obr-right ramecek" </expression>
+			</RegExp>
+			<!--remove &nbsp;-->
+			<RegExp input="$$5" output="\1 " dest="4+">
+				<!--plot-->
+				<RegExp input="$$1" output="&lt;plot&gt;\2&lt;/plot&gt;" dest="5">
+					<expression trim="2">&lt;h2&gt;Popis seriálu&lt;/h2&gt;\s*(&lt;[^&gt;]*&gt;)*\s*&lt;p[^&gt;]*&gt;(.+?)&lt;/p&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" noclean="1">(.*?)(&amp;nbsp;|$)</expression>
+			</RegExp>
+			<!--runtime-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="4+">
+				<expression>Průměrná délka jednoho dílu: &lt;i&gt;([0-9]+)</expression>
+			</RegExp>
+			<!--years aired-->
+			<RegExp input="$$1" output="&lt;aired&gt;\1\2&lt;/aired&gt;&lt;year&gt;\1&lt;/year&gt;&lt;premiered&gt;\1&lt;/premiered&gt;" dest="4+">
+				<expression trim="2">Roky natáčení: &lt;i&gt;([0-9]+)\s*([^&lt;]*)\s*&lt;/i&gt;</expression>
+			</RegExp>
+			<!--genre-->
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4+">
+				<expression repeat="yes">&lt;a href="http://www.serialzone.cz/serialy/zanr/[^"]*"&gt;(.+?)&lt;/a&gt;</expression>
+			</RegExp>
+			<!--rating-->
+			<RegExp input="$$1" output="&lt;rating max=&quot;100&quot;&gt;\2&lt;/rating&gt;&lt;votes&gt;\1&lt;/votes&gt;" dest="4+">
+				<expression>&lt;span id="procenta" title="([0-9]*)[^"]*"&gt;\s*([.0-9]+)\s*[%]?\s*&lt;/span&gt;</expression>
+			</RegExp>
+			<!--fanart-->
+			<RegExp input="$$1" output="&lt;fanart url=&quot;http://www.serialzone.cz/grafika/serialy&quot;&gt;&lt;thumb&gt;\1&lt;/thumb&gt;&lt;/fanart&gt;" dest="4+">
+				<expression>http://www.serialzone.cz/grafika/serialy/([^)]+)</expression>
+			</RegExp>
+			<!--episode guide-->
+			<RegExp input="$$1" output="&lt;episodeguide&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/episodeguide&gt;" dest="4+">
+				<expression>&lt;a href="(http://www.serialzone.cz/serial/[^/]+/epizody/)"&gt;Epizody&lt;/a&gt;</expression>
+			</RegExp>
+			<!--id on serial zone-->
+			<RegExp input="$$3" output="&lt;id&gt;\1&lt;/id&gt;" dest="4+">
+				<expression>http://www.serialzone.cz/serial/([^/]+)</expression>
+			</RegExp>
+			<!--ID - imdb-->
+			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="4+">
+				<expression trim="1">&lt;a href="http://www.imdb.com/title/tt([0-9]+)/"[^&gt;]*&gt;IMDb&lt;/a&gt;</expression>
+			</RegExp>
+			<!--get actors/directors/writers/credits from separate page-->
+			<RegExp input="$$1" output="&lt;url function=GetSerialZoneActors&gt;\1&lt;/url&gt;" dest="4+">
+				<expression>&lt;a href="(http://www.serialzone.cz/serial/[^/]+/obsazeni/)"&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+	<GetEpisodeList clearbuffers="no" dest="6">
+		<RegExp input="$$3" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="6">
+			<!--series 1-9-->
+			<RegExp input="$$1" output="\2\1" dest="4">
+				<expression repeat="yes" trim="7" noclean="1,2">(?&lt;=(&lt;h3&gt;[0-9]. série&lt;/h3&gt;))(.+?)(?=(&lt;h3&gt;|&lt;div))</expression>
+			</RegExp>
+			<!--series 10-99-->
+			<RegExp input="$$1" output="\2\1" dest="4+">
+				<expression repeat="yes" trim="5" noclean="1,2">(?&lt;=(&lt;h3&gt;[0-9][0-9]. série&lt;/h3&gt;))(.*?)(?=(&lt;h3&gt;|&lt;div))</expression>
+			</RegExp>
+			<!--episodes with its own episode page-->
+			<RegExp input="$$4" output="&lt;episode&gt;&lt;title&gt;\5&lt;/title&gt;&lt;url&gt;\3&lt;/url&gt;&lt;id&gt;\4&lt;/id&gt;&lt;epnum&gt;\1&lt;/epnum&gt;&lt;season&gt;\6&lt;/season&gt;&lt;/episode&gt;" dest="3">
+				<expression repeat="yes">([0-9]+)[.] (&lt;img\b[^&gt;]*&gt;)?.*?&lt;a href="(http://www.serialzone.cz/serial/[^/]*/epizody/([^/]*)/)"&gt;([^&lt;]*).*?&lt;br /&gt;(?=.*?([0-9]+). série)</expression>
+			</RegExp>
+			<!--episodes without own page-->
+			<RegExp input="$$4" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;url&gt;$$2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;\5&lt;/season&gt;&lt;/episode&gt;" dest="3+">
+				<expression repeat="yes" trim="4">(^|&lt;/h3&gt;|&lt;br /&gt;)(([0-9]+)[.] ([^&lt;]+)).*?(?=&lt;br /&gt;)(?=.*?([0-9]+). série)</expression>
+			</RegExp>
+			<expression clear="yes" noclean="1" />
+		</RegExp>
+	</GetEpisodeList>
+	<!-- EPISODE details -->
+	<GetEpisodeDetails dest="4">
+		<!--episode details-->
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<!--get title-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;&lt;originaltitle&gt;\2&lt;/originaltitle&gt;" dest="5">
+				<expression trim="1,2">Český název: &lt;i&gt;([^&lt;]+)&lt;/i&gt;&lt;br /&gt;Původní název: &lt;i&gt;([^&lt;]+)&lt;/i&gt;</expression>
+			</RegExp>
+			<!--season - episode-->
+			<RegExp input="$$1" output="&lt;season&gt;\1&lt;/season&gt;&lt;episode&gt;\2&lt;/episode&gt;" dest="5+">
+				<expression trim="1,2">České číslování: &lt;i&gt;\s*([0-9]+)[.]\s*řada[^&lt;]*/\s*([0-9]+)[.]\s*díl[^&lt;]*&lt;/i&gt;</expression>
+			</RegExp>
+			<!--remove &nbsp;-->
+			<RegExp input="$$4" output="\1 " dest="5+">
+				<!--plot-->
+				<RegExp input="$$1" output="&lt;plot&gt;\2&lt;/plot&gt;" dest="4">
+					<expression clear="yes" trim="2">&lt;h2&gt;Obsah dílu&lt;/h2&gt;\s*(&lt;[^&gt;]*&gt;)*\s*&lt;p[^&gt;]*&gt;(.+?)&lt;/p&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" noclean="1">(.*?)(&amp;nbsp;|$)</expression>
+			</RegExp>
+			<!--year-->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;&lt;premiered&gt;\1&lt;/premiered&gt;" dest="5+">
+				<expression>Rok natočení: &lt;i&gt;([0-9]{1,4})&lt;/i&gt;</expression>
+			</RegExp>
+			<!--runtime-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression>Délka: &lt;i&gt;([0-9]+)[.,0-9 ]*\s*min[^&lt;]*&lt;/i&gt;</expression>
+			</RegExp>
+			<!--aired-->
+			<RegExp input="$$1" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="5+">
+				<expression>První vysílání: &lt;i&gt;([^&lt;]+)&lt;/i&gt;</expression>
+			</RegExp>
+			<!--rating-->
+			<RegExp input="$$1" output="&lt;rating max=&quot;100&quot;&gt;\2&lt;/rating&gt;&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
+				<expression>&lt;span id="procenta" title="([0-9]*)[^"]*"&gt;([0-9.]+)</expression>
+			</RegExp>
+			<!--serialzone id-->
+			<RegExp input="$$3" output="&lt;id&gt;\1&lt;/id&gt;" dest="5+">
+				<expression>http://www.serialzone.cz/serial/[^/]+/epizody/([^/]+)/</expression>
+			</RegExp>
+			<!--get actors/directors/writers/credits from separate page-->
+			<RegExp input="$$3" output="&lt;url function=GetSerialZoneActors&gt;\1&lt;/url&gt;" dest="5+">
+				<expression>(http://www.serialzone.cz/serial/arabela/epizody/[^/]+)</expression>
+			</RegExp>
+			<!--only basic episode info from episodes page-->
+			<RegExp input="$$2$$1" output="&lt;title&gt;\3&lt;/title&gt;&lt;originaltitle&gt;\5&lt;/originaltitle&gt;&lt;aired&gt;\7&lt;/aired&gt;&lt;season&gt;\4&lt;/season&gt;&lt;episode&gt;\2&lt;/episode&gt;" dest="5">
+				<expression>(([0-9]+)[.]\s*([^&lt;]+)).*[^0-9]([0-9]+). série.*?\1\s*&lt;span[^&gt;]*&gt;[(](.*?)[)]&lt;/span&gt;(\s*&lt;span[^&gt;]*&gt;([0-9.]+)&lt;/span&gt;)?</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetEpisodeDetails>
+	<SerialZoneActor dest="3">
+		<!--actor information-->
+		<RegExp input="$$4" output="&lt;details&gt;&lt;actor&gt;\1&lt;/actor&gt;&lt;/details&gt;" dest="3">
+			<!--actor name-->
+			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="4">
+				<expression trim="1">&lt;h1&gt;(.*) - informace&lt;/h1&gt;</expression>
+			</RegExp>
+			<!--actor thumb-->
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="4+">
+				<expression>&lt;img src="(http://www.serialzone.cz/obrazky/osobnosti/[^"]+)"[^&gt;]*&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</SerialZoneActor>
+	<GetSerialZoneActors dest="4">
+		<RegExp input="$$3" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<!--director-->
+			<RegExp input="$$2" output="&lt;director&gt;\2&lt;/director&gt;" dest="3">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression clear="yes" noclean="1">&lt;h3&gt;Režie&lt;/h3&gt;(.*?)(&lt;/table&gt;|&lt;h3&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes">&lt;a href="(http://www.serialzone.cz/osobnost/[^"]+)"&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+			<!--credits-->
+			<RegExp input="$$2" output="&lt;credits&gt;\2&lt;/credits&gt;" dest="3+">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression clear="yes" noclean="1">&lt;h3&gt;Tvůrci&lt;/h3&gt;(.*?)(&lt;/table&gt;|&lt;h3&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes">&lt;a href="(http://www.serialzone.cz/osobnost/[^"]*)"&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<!--writer-->
+			<RegExp input="$$2" output="&lt;writer&gt;\2&lt;/writer&gt;" dest="3+">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression clear="yes" noclean="1">&lt;h3&gt;Scén[aá]ř&lt;/h3&gt;(.*?)(&lt;/table&gt;|&lt;h3&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes">&lt;a href="(http://www.serialzone.cz/osobnost/[^"]*)"&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			</RegExp>
+			<!--hlavni herci, jmena a role-->
+			<RegExp input="$$2" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="3+">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression clear="yes" noclean="1">&lt;h3&gt;Hlavní postavy&lt;/h3&gt;(.*?)(&lt;h3&gt;|&lt;/table&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="2,3">&lt;td&gt;(&lt;a[^&gt;]*&gt;)?([^&lt;]*)(&lt;/a&gt;)?&lt;/td&gt;&lt;td&gt;...&lt;/td&gt;&lt;td&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<!--hlavni herci, fotky-->
+			<RegExp input="$$2" output="&lt;url function=SerialZoneActor&gt;\1&lt;/url&gt;" dest="3+">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression clear="yes" noclean="1">&lt;h3&gt;Hlavní postavy&lt;/h3&gt;(.*?)(&lt;h3&gt;|&lt;/table&gt;)</expression>
+				</RegExp>
+				<expression repeat="yes">&lt;td&gt;&lt;a href="(http://www.serialzone.cz/osobnost/[^"]*)"&gt;[^&lt;]*&lt;/a&gt;&lt;/td&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSerialZoneActors>
+</scraper>
