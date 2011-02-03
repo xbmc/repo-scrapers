@@ -4,21 +4,13 @@
 		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?id=\2&lt;/url&gt;"  dest="3">
 			<expression clear="yes" noclean="1">(moviemeter.nl/film/)([0-9]*)</expression>
 		</RegExp>
-		<RegExp input="$$1" output="&lt;url function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/miscsites&lt;/url&gt;" dest="3+">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?imdbid=\2&lt;/url&gt;" dest="3+">
 			<expression>(imdb.com/)Title\?([0-9]+)</expression>
 		</RegExp>
-		<RegExp input="$$1" output="&lt;url function=&quot;GetByIMDBId&quot;&gt;http://www.imdb.com/title/tt\2/miscsites&lt;/url&gt;" dest="3+">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?imdbid=\2&lt;/url&gt;" dest="3+">
 			<expression>(imdb.com/title/tt)([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<GetByIMDBId dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?id=\2&lt;/url&gt;" dest="3+">
-			<expression clear="yes" noclean="1">(moviemeter.nl/film/)([0-9]*)</expression>
-		</RegExp>
-		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?id=\1&lt;/url&gt;" dest="3+">
-			<expression noclean="1">&lt;a href=&quot;http://www.moviemeter.nl/index.php3\?id=([0-9]*)&quot;</expression>
-		</RegExp>
-	</GetByIMDBId>
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/index.php?movie=\1$$4&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
