@@ -93,6 +93,27 @@
 			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetFanart&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
 				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
 			</RegExp>
+			
+			<!-- Get Trailer(s) from HD-Trailers.net -->
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>480p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>720p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>1080p</expression>
+			</RegExp>
+			
 			<expression noclean="1"></expression>
 		</RegExp>
 	</GetDetails>

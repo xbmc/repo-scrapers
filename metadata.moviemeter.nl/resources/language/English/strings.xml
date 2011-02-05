@@ -2,5 +2,6 @@
 <strings>
     <!-- settings labels -->
     <string id="30000">Get rating from IMDB</string>
+    <string id="30001">Enable Trailers from HD-Trailers.net</string>
 </strings>
 
