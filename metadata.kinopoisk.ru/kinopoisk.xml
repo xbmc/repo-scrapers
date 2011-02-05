@@ -231,7 +231,7 @@
 			<!--TRAILER-->
 			<RegExp conditional="download_trailer" input="$$2" output="\1" dest="5+">
 				<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="9">
-					<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src="/images/flags/flag.*?alt="(.*?)"</expression>
+					<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src=".*?/images/flags/flag.*?alt="(.*?)"</expression>
 				</RegExp>
 				<RegExp input="$$9" output="true" dest="9">
 					<expression>Россия</expression>
