@@ -1,3 +1,7 @@
+2011-02-08 kristi5 
+
+  * opraven addon.xml - spatne UTF-8 kodovani
+
 2011-02-01 kristi5 
 
   * pridana licence GPL
