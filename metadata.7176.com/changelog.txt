@@ -1,4 +1,8 @@
-﻿[B]1.0.7[/B]
+﻿[B]1.0.8[/B]
+- 修正：英文名含“-”字符的电影目录无法获取
+  fixed: can't get movie list when english title has - character
+
+[B]1.0.7[/B]
 - 修正：网站变化造成电影名称获取有误
   fixed: site change cause title error
 
