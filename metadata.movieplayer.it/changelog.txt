@@ -1,5 +1,6 @@
 Changelog:
 
+13/02/2011 - Fixed studio's logos retrieving only one studio from imdb.
 25/10/2010 - Fixed Trailers (it was deleted by mistake)
 23/10/2010 - Adjusted the MP search, but Google engine is better and more reliable as it doesn't need the exact movie name. So Google is the default again and we don't hammer MP site either. Fixed the .nfo url too (tnx to Spiff)
 14/10/2010 - Finally added the movieplayer.it own search (they removed the base64 encoding). Added one option in settings for Google search and anothe rone to get just one or more Posters from MP. Added Polish Translation. The version bump now to 1.1.0 :P

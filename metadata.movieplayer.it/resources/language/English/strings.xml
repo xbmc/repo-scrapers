@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Search using Google (inaccurate but faster)</string>
+    <string id="30000">Search using Google</string>
     <string id="30001">Get MPAA, studio and rating from IMDb</string>
     <string id="30002">Full cast informations (slow)</string>
     <string id="30003">Get alternative Posters from Movieplayer.it</string>
