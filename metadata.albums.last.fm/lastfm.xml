@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2011-01-26">
+<scraper framework="1.1" date="2011-02-17">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;album=\2&amp;artist=\1&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b" dest="3">
 			<expression>(http://www.last.fm/music/([^/]*)/(.*))</expression>
@@ -35,6 +35,9 @@
 			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="5+">
 				<expression fixchars="1">&lt;content&gt;(.?)&lt;/content&gt;</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="5+">
+				<expression repeat="yes" noclean="1">&lt;track rank=&quot;(.*?)&quot;.*?&lt;name&gt;(.*?)&lt;/name&gt;</expression>
+			</RegExp>
 			<RegExp input="$$6" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
 					<expression noclean="1">&lt;image size=&quot;large&quot;&gt;([^&lt;]*)&lt;/image&gt;</expression>
@@ -44,18 +47,7 @@
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url function=&quot;GetTracks&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=playlist.fetch&amp;amp;playlistURL=lastfm://playlist/album/\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
-				<expression noclean="1">&lt;id&gt;(.*?)&lt;/id&gt;</expression>
-			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
 	</GetAlbumDetails>
-	<GetTracks dest="5">
-		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;track&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/track&gt;" dest="4+">
-				<expression noclean="1" repeat="yes">&lt;track&gt;.*?&lt;title&gt;(.*?)&lt;/title&gt;</expression>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</GetTracks>
 </scraper>
