@@ -24,5 +24,6 @@
     <description lang="kr">cinema.ptgate.pt 에서 영화 정보 다운로드</description>
     <description lang="pl">Pobieraj informacje o filmach z cinema.ptgate.pt</description>
     <description lang="pt">Descarregar informação de filmes de cinema.ptgate.pt</description>
+    <broken>Portal layout has changed.</broken>
   </extension>
 </addon>
