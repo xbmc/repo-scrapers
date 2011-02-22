@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<scraper framework="1.0" date="2011-01-19">
+<scraper framework="1.0" date="2011-02-18">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;"  dest="3">
 			<expression noclean="1">filmweb.pl/f([0-9]*)/</expression>
@@ -34,7 +34,7 @@
 		</RegExp>
 	</FilmwebByIMDBId>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.filmweb.pl/search/film?sort=COUNT&amp;amp;q=\1&amp;amp;startYear=$$2&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.filmweb.pl/search/film?sort=COUNT&amp;amp;q=\1&amp;amp;startYear=$$2&amp;amp;endYear=$$2&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
@@ -211,6 +211,12 @@
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
+			<RegExp input="$$13" output="\1 [opis dystrybutora]" dest="8">
+				<RegExp input="$$1" output="\1" dest="13">
+					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;([^\[]+)\[opis</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
 			<RegExp conditional="opis" input="$$12" output="\1 [opis dystrybutora kino]" dest="8">
 				<RegExp input="$$1" output="\1" dest="12">
 					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
@@ -294,9 +300,21 @@
 			<RegExp input="$$6" output="&lt;url function=&quot;TryGetTrailer&quot;&gt;http://www.filmweb.pl/video/trailer/\1&lt;/url&gt;" dest="11">
 				<expression repeat="yes">singleTrailerSide[^=]+=&quot;/video/trailer/([^&quot;]+)</expression>
 			</RegExp>
-			<RegExp input="$$12" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="11">
+			<RegExp input="$$12" output="&lt;trailer&gt;plugin://plugin.video.youtube/?action=play_video&videoid=\1&lt;/trailer&gt;" dest="11">
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression clear="yes" noclean="1">source src="([^"]+)</expression>
+					<expression clear="yes" noclean="1">youtube.com/v/(.{11})\??</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$12" output="&lt;trailer&gt;plugin://plugin.video.youtube/?action=play_video&videoid=\1&lt;/trailer&gt;" dest="11">
+				<RegExp input="$$1" output="\1" dest="12">
+					<expression clear="yes" noclean="1">youtube.com/watch\?v=(.{11})\??</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$12" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="11">
+				<RegExp input="$$1" output="\1\2" dest="12">
+					<expression clear="yes" noclean="1">src="([^"]+)(mp4|mpg|mov)</expression>
 				</RegExp>
 				<expression>(.+)</expression>
 			</RegExp>
