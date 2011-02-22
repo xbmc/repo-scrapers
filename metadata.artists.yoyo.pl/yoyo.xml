@@ -38,7 +38,7 @@
 			<RegExp input="$$7" output="&lt;chain function=&quot;GetHTBFanart&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!allmusicartistthumbs" input="$$7" output="&lt;chain function=&quot;GetLastFMArtistThumbs&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="!allmusicartistthumbs" input="$$7" output="&lt;chain function=&quot;GetLastFMArtistThumbsByName&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$7" output="&lt;url function=&quot;ThumbsAsFanart&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getimages&amp;amp;artist=\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
@@ -50,16 +50,22 @@
 			<RegExp input="$$6" output="&lt;url function=&quot;ArtistUTFtoASCII&quot;&gt;http://www.remove-pl.yoyo.pl/smu4.php?text=$$6&amp;dot=$$6&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
+			<RegExp input="$$7" output="&lt;url function=&quot;GetGenres&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&amp;amp;artist=\1&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
+				<expression />
+			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetArtistDetails>
 	<GetBiography dest="5">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;biography&gt;&lt;![CDATA[\1]]&gt;&lt;/biography&gt;" dest="4">
 				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
 			</RegExp>
-			<RegExp input="$$4" output="\1" dest="4">
-				<expression repeat="yes" noclean="1">([^\r]*)\r?</expression>
+			<RegExp input="$$6" output="&lt;biography&gt;&lt;![CDATA[\1]]&gt;&lt;/biography&gt;" dest="4">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)User-contributed</expression>
+				</RegExp>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -111,4 +117,15 @@
 			<expression noclean="1" />
 		</RegExp>
 	</ThumbsAsFanart>
+	<GetGenres dest="5">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4">
+				<expression noclean="1">&lt;tag&gt;.*?&lt;name&gt;([^/lt;]*)&lt;/name&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;style&gt;\1&lt;/style&gt;" dest="4+">
+				<expression repeat="yes" noclean="1">&lt;tag&gt;.*?&lt;name&gt;([^/lt;]*)&lt;/name&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetGenres>
 </scraper>
