@@ -13,7 +13,7 @@
 	<GetAlbumSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\2&lt;/artist&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://ws.audioscrobbler.com/2.0/?method=album.getinfo&amp;album=\4&amp;artist=\3&amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&amp;lang=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;album&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;artist&gt;([^&lt;]*)&lt;/artist&gt;.*?&lt;url&gt;http://www.last.fm/music/([^/]+)/(.*?)&lt;/url&gt;</expression>
+				<expression repeat="yes" fixchars="4">&lt;album&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;artist&gt;([^&lt;]*)&lt;/artist&gt;.*?&lt;url&gt;http://www.last.fm/music/([^/]+)/(.*?)&lt;/url&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -33,7 +33,7 @@
 				<expression trim="1">&lt;releasedate&gt;[^,]*([0-9]+),&lt;/releasedate&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="5+">
-				<expression fixchars="1">&lt;content&gt;(.?)&lt;/content&gt;</expression>
+				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="5+">
 				<expression repeat="yes" noclean="1">&lt;track rank=&quot;(.*?)&quot;.*?&lt;name&gt;(.*?)&lt;/name&gt;</expression>
