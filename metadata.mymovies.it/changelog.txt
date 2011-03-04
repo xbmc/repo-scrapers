@@ -1,4 +1,9 @@
-[B]Note:[/B] if the scraper is very slow, i suggest to disable setting tagged with "(slow)" in scraper settings.
+[B]Note:[/B] if the scraper is very slow, disable setting tagged with "(slow)".
+
+[B]1.1.1[/B]
+- Change default films search url: http://www.google.it/search?q=film_name+site:mymovies.it
+- Fixed trailer problem. The first and only issue reported on http://code.google.com/p/mymovies-xbmc-scraper/issues/ ;)
+- Fixed search problem. Reported here http://forum.xbmc.org/showpost.php?p=733887&postcount=89
 
 [B]1.1.0[/B]
 - Fixed problem for long title

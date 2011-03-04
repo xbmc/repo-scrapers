@@ -12,8 +12,8 @@
 		</RegExp>
 	</NfoUrl>
 
-	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/cse?q=\1$$4&amp;cx=partner-pub-1699801751737986%3Ax7j961-1g3m&amp;ie=ISO-8859-1&amp;sa=Cerca&amp;num=20&lt;/url&gt;" dest="3">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/search?q=\1$$4+site:mymovies.it&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -22,14 +22,14 @@
 	</CreateSearchUrl>
 
 	<GetSearchResults dest="8">
-		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<!-- Add new link style to Search result (http://www.mymovies.it/film/<year>/<film_name>/) -->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; target=_top class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<!-- Add OLD link style to Search result (www.mymovies.it/dizionario/recensione.asp?id=[0-9]) -->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" cs="true">&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[0-9]+)&quot; target=_top class=l&gt;(.+?)(?: +\| +MYmovies)?&lt;/a&gt;&lt;table border=0 cellpadding=0 cellspacing=0&gt;&lt;tr&gt;&lt;td class=&quot;j&quot;&gt;&lt;div class=std&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[^&quot;]+)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -194,8 +194,8 @@
 	</GetMovieWriters>
 
 	<GetMovieTrailer dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1.flv&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">so\.addVariable\('file','[^=]+=([^=]+).flv</expression>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&lt;meta property=&quot;og:video&quot; content=&quot;([^&quot;]+)&quot; /&gt;</expression>
 		</RegExp>
 	</GetMovieTrailer>
 

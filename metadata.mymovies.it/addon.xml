@@ -16,10 +16,7 @@
     <summary lang="hu">MyMovies.it Film scraper</summary> 
     <summary lang="kr">MyMovies.it 영화 스크래퍼</summary>
     <summary lang="pt">Scraper de filmes MyMovies.it</summary>
-    <description lang="it">Scarica le informazioni dei film da www.mymovies.it.
-Per problemi, segnalazioni o suggerimenti: http://code.google.com/p/mymovies-xbmc-scraper/
-
-Buona visione! :)</description>
+    <description lang="it">Riporta problemi o suggerimenti su: https://code.google.com/p/mymovies-xbmc-scraper/issues/list o http://forum.xbmc.org/showthread.php?t=58141</description>
     <description lang="en">Download Movie information from www.mymovies.it</description>
     <description lang="hu">Film információk letöltése a www.mymovies.it webhelyről</description>
     <description lang="kr">MyMovies.it 에서 영화 정보 다운로드</description>
