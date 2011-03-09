@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <strings>
   <string id="30000">Nyelv</string>
   <string id="30001">Francia</string>
@@ -8,6 +8,8 @@
   <string id="30011">Ciné-Passion</string>
   <string id="30012">Allociné</string>
   <string id="30013">IMDB</string>
+  <string id="30014">Movie Set</string>
+  <string id="30015">MPAA</string>
 
   <string id="30020">Leolvasó</string>
   <string id="30030">Létrehozók</string>

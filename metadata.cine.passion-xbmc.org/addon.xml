@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.cine.passion-xbmc.org"
        name="Ciné-Passion"
-       version="1.0.11"
+       version="1.1.4"
        provider-name="Team Passion-XBMC (passion-xbmc.org)">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -13,15 +13,12 @@
     <summary lang="en">Ciné-passion scraper grabs film's informations in french from passion-xbmc.org.</summary>
     <summary lang="hu">Ciné-passion francia filmadat leolvasó</summary>
     <summary lang="fr">Le scraper Ciné-passion récupère les informations des films en français du site passion-xbmc.org.</summary>
-    <summary lang="pl">Scraper filmów passion-xbmc.org.</summary>
     <description lang="en">Ciné-passion scraper has been created by members of passion-xbmc.org community.</description>
     <description lang="hu">A Ciné-passion leolvasót a passion-xbmc.org közösség tagjai hozták létre.</description>
     <description lang="fr">Le scraper Ciné-passion est le fruit du travail de développeurs appartenant à la communauté Passion-xbmc.org.</description>
-    <description lang="pl">Pobieraj informacje o filmach (w język francuskim) z Passion-xbmc.org.</description>
     <disclaimer lang="en">Ciné-passion scraper is a community database where everyone is welcome to help.</disclaimer>
     <disclaimer lang="hu">Ciné-passion leolvasó egy közösségi adatbázis ahol mindenki segítsége fontos.</disclaimer>
     <disclaimer lang="fr">Le Scraper Ciné-Passion est une base de données communautaire à laquelle tout le monde est invité à participer.</disclaimer>
-    <disclaimer lang="pl">Scraper Ciné-passion jest społecznościową bazą danych, prowadzoną w języku francuskim.</disclaimer>
     <platform>all</platform>
   </extension>
 </addon>
