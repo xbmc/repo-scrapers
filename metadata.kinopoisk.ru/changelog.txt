@@ -1,3 +1,5 @@
+1.0.28:
+- Fixed poster scraping for movies with single poster
 1.0.27:
 - Fixed trailer downloading
 1.0.26:

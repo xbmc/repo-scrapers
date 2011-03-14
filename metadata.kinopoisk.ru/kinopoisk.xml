@@ -258,8 +258,8 @@
 		</RegExp>
 	</GetDetails>
 	<GetPoster dest="4">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb preview=&quot;http://st.kinopoisk.ru/images/poster/sm_\1.jpg&quot;&gt;\2&lt;/thumb&gt;&lt;/details&gt;" dest="4">
-				<expression repeat="no" noclean="1">&lt;a href="/picture/([0-9]+)/"&gt;[^&lt;]+&lt;img.*?src="([^"]+)"</expression>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb preview=&quot;http://st.kinopoisk.ru/images/poster/sm_im_\2.jpg&quot;&gt;http://st.kinopoisk.ru/\1&lt;/thumb&gt;&lt;/details&gt;" dest="4">
+		<expression repeat="no" noclean="1">&lt;img style="border: 1px #777 solid; position: absolute; margin-left: -5000px" src="http://st.kinopoisk.ru/([^"]+?-(\d+).jpg)"</expression>
 		</RegExp>
 	</GetPoster>
 	<GMP dest="4">
