@@ -24,11 +24,11 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<!-- Add new link style to Search result (http://www.mymovies.it/film/<year>/<film_name>/) -->
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<!-- Add OLD link style to Search result (www.mymovies.it/dizionario/recensione.asp?id=[0-9]) -->
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[^&quot;]+)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -64,7 +64,7 @@
 			</RegExp>
 
 			<!-- Writer(s) -->
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetMovieWriters&quot;&gt;\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;fullcredits.html&quot; function=&quot;GetMovieWriters&quot;&gt;\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Cast [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Cast&lt;/a&gt;&lt;/td&gt;</expression>
 			</RegExp>
 
@@ -75,7 +75,7 @@
 
 			<!-- Get Average Rating -->
             <RegExp input="$$1" output="\1.\2" dest="6">
-                <expression noclean="1" clear="yes">&lt;div style=&quot;text-align:center; font-size:23px; font-weight:bold; letter-spacing:1px; margin:0px 11px 7px 11px&quot;&gt;([0-9]),([0-9]{2})</expression>
+                <expression noclean="1" clear="yes">&lt;span class=&quot;rating&quot;&gt;([0-9]),([0-9]{1,2})&lt;/span&gt;</expression>
             </RegExp>
 			<!-- Convert to 10eseimi -->
             <RegExp conditional="rating_ten" input="$$6" output="&lt;rating max=&quot;5&quot;&gt;\1&lt;/rating&gt;" dest="5+">				
@@ -104,11 +104,11 @@
 			</RegExp>
 
 			<!-- Cast -->
-			<RegExp conditional="!fullcredits" input="$$1" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetMovieCast&quot;&gt;\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!fullcredits" input="$$1" output="&lt;url cache=&quot;fullcredits.html&quot; function=&quot;GetMovieCast&quot;&gt;\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Cast [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Cast&lt;/a&gt;&lt;/td&gt;</expression>
 			</RegExp>
 			<!-- else Full Cast -->
-			<RegExp conditional="fullcredits" input="$$1" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetMovieFullCast&quot;&gt;\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="fullcredits" input="$$1" output="&lt;url cache=&quot;fullcredits.html&quot; function=&quot;GetMovieFullCast&quot;&gt;\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Cast [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Cast&lt;/a&gt;&lt;/td&gt;</expression>
 			</RegExp>
 
@@ -157,7 +157,7 @@
             <!-- Plot: It is used for report many information... -->
             <!-- Custum function are used only for see all buffer -->
             <!-- I buffer della GetDetails non sono visibili alle funzioni custom e non risco a trovare un approccio differente per appendere informazioni al plot -->
-            <RegExp input="$$1" output="&lt;url cache=&quot;$$2-main.html&quot; function=&quot;GetMoviePlot&quot;&gt;$$2&lt;/url&gt;" dest="5+">
+            <RegExp input="$$1" output="&lt;url cache=&quot;main.html&quot; function=&quot;GetMoviePlot&quot;&gt;$$2&lt;/url&gt;" dest="5+">
                 <expression />
             </RegExp>
  
@@ -192,10 +192,10 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetMovieWriters>
-
+	
 	<GetMovieTrailer dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&lt;meta property=&quot;og:video&quot; content=&quot;([^&quot;]+)&quot; /&gt;</expression>
+			<expression noclean="1">url: &apos;([^&apos;|?]+\.flv).*&apos;</expression>
 		</RegExp>
 	</GetMovieTrailer>
 
