@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2011-01-06">
+<scraper framework="1.1" date="2011-04-04">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;" dest="3">
 			<expression clear="yes" noclean="1">i_film_id=([0-9]*)</expression>
@@ -96,7 +96,13 @@
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Get imdb ID from imdb.com and store it in Buffer 11 for future use-->
 			<RegExp input="$$1" output="\1" dest="11">
-				<expression>/title/(tt[t0-9]*)/faq</expression>
+				<expression>/title/(tt[t0-9]*)/combined</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="12">
+				<expression clear="yes">/title/([t0-9]*)/faq</expression>
+			</RegExp>
+			<RegExp input="$$12" output="\1" dest="11">
+				<expression>(.+)</expression>
 			</RegExp>
 			<!--Append imdb ID from Buffer 11-->
 			<RegExp input="$$11" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">

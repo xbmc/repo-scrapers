@@ -1,3 +1,6 @@
+[B]1.4.1[/B]
+- fixed: won't scrape imdb details and artwork for some movies
+
 [B]1.4.0[/B]
 - added: fallback to imdb plot if no plot is available on port.hu
 
