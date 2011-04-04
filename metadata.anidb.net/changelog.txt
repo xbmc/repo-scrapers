@@ -1,2 +1,11 @@
 1.0.0:
 Initial commit
+
+1.1.0:
+Fixed: Workaround for bug #11377 (causes scraper freezing or wrong parses in specific cases)
+Changed: Splitting settings into categories
+Changed: Slightly improved Google search
+Added: Possibility to specify sources (URLs) for anidb.xml and anime-list.xml files
+Added: Possibility to select official title (+language) over main title
+Added: Possibility to use personal anime mapping file
+    
