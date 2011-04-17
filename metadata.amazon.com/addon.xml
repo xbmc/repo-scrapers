@@ -21,5 +21,6 @@
     <description lang="pl">Pobieraj informacje o filmach z www.amazon.com</description>
     <description lang="pt">Descarregar informação de filmes de www.amazon.com</description>
     <platform>all</platform>
+    <broken>will not find any movies</broken>
   </extension>
 </addon>
