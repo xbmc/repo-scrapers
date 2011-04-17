@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.sratim.co.il"
        name="Sratim"
-       version="1.0.9"
+        version="1.0.9"
        provider-name="G.Vago & sking">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -26,5 +26,6 @@
     <description lang="hu">Film információk letöltése a www.sratim.co.il webhelyről</description>
     <description lang="kr">www.sratim.co.il에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de www.sratim.co.il</description>
+    <broken>will not download most of the details, nor artwork</broken>
   </extension>
 </addon>

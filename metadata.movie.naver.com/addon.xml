@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.movie.naver.com"
        name="Naver Movie"
-       version="1.0.4"
+        version="1.0.4"
        provider-name="XBMC-Korea">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -20,5 +20,6 @@
     <description lang="kr">movie.naver.com 에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de movie.naver.com</description>
     <platform>all</platform>
+    <broken>won't fetch movie title and plot</broken>
   </extension>
 </addon>
