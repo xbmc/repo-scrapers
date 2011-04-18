@@ -1,13 +1,19 @@
 [B]Note:[/B] if the scraper is very slow, disable setting tagged with "(slow)".
 
+[B]1.1.3[/B]
+- Fixed regex: title, trailer, runtime
+- Added original title
+- Search imdb id form google...not perfect but i hope better.
+- Import info from IMDB (vote, mpaa, studio, top250). Deactivable from settings.
+
 [B]1.1.2[/B]
 - Fixed regex: rating and trailer
 - Fixed url cache 
 
 [B]1.1.1[/B]
 - Change default films search url: http://www.google.it/search?q=film_name+site:mymovies.it
-- Fixed trailer problem. The first and only issue reported on http://code.google.com/p/mymovies-xbmc-scraper/issues/ ;)
-- Fixed search problem. Reported here http://forum.xbmc.org/showpost.php?p=733887&postcount=89
+- Fixed trailer problem. The first and only issue reported on code.google.com ;)
+- Fixed search problem. Reported on forum.xbmc.org
 
 [B]1.1.0[/B]
 - Fixed problem for long title

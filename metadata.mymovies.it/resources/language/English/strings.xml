@@ -7,7 +7,7 @@
     <string id="30004">Filmmakers</string>
     <string id="30005">Cast separators</string>
         
-    <string id="30100">Vote</string>
+    <string id="30100">Vote (mymovies.it)</string>
     <string id="30101">In 10esimi</string>
     <string id="30102">Direct vote, critics and the public</string>
     <string id="30103">View at:</string>
@@ -17,6 +17,7 @@
     <string id="30202">In Hi-Res</string>
     <string id="30203">Trailer (slow)</string>
     <string id="30204">TMDB Backdrops (slow)</string>
+    <string id="30205">Vote, studio, mpaa, top250 from imdb (slow)</string>
     
     <string id="30300">Appendi al Plot</string>
     <string id="30301">Critique (slow)</string>
