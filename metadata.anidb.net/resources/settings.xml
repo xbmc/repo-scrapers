@@ -15,7 +15,10 @@
     <setting label="30102" type="bool" id="Prequels" default="true"/>
     <setting label="30103" type="labelenum" values="Parent Story|Alternative Setting|Side Story" id="AlternativePrequelLinkType" default="Parent Story" enable="eq(-1,true)"/>
     <setting type="sep"/>
+    <setting label="30108" type="labelenum" values="600|600+500|600+500+400|600+500+400+300|600+500+400+300+200|600+500+400+300+200+100" id="GenreWeight" default="600+500"/>
+    <setting label="30109" type="labelenum" values="9|8|7|6|5|4|3|2|1|0" id="GenreCount" default="6"/>
     <setting label="30104" type="bool" id="SingleStudio" default="true"/>
+    <setting label="30107" type="bool" id="OnlyMainCast" default="false"/>
     <setting label="30105" type="bool" id="SpecialsAtEnd" default="true"/>
     <setting label="30106" type="bool" id="SpecialsInside" default="true"/>
   </category>

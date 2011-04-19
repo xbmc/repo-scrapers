@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<scraper framework="1.1" date="2011-04-02">
+<scraper framework="1.1" date="2011-04-18">
 
   <NfoUrl dest="3">         
     <RegExp input="$$1" output="&lt;url gzip=&quot;yes&quot; cache=&quot;\1.xml&quot;&gt;http://api.anidb.net:9001/httpapi?request=anime&amp;client=xbmcscrap&amp;clientver=1&amp;protover=1&amp;aid=\1&lt;/url&gt;" dest="3">
@@ -138,17 +138,23 @@
       <RegExp input="$$19" output="\1" dest="17">
         <expression clear="yes" noclean="1">(?i)(&lt;supplemental-info(?!\s+replace=&quot;(?:true|yes)&quot;)[^&gt;]*&gt;.*?&lt;/supplemental-info&gt;)</expression>
       </RegExp>
-      <RegExp conditional="OfficalName" input="$$1" output="\1" dest="15">
-        <expression clear="yes" trim="1">(?i)&lt;title\s+xml:lang=&quot;$INFO[OfficalLanguage]&quot;\s+type=&quot;official&quot;&gt;([^&lt;]+)&lt;/title&gt;</expression>
-      </RegExp>
-      <RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="8">
+      <RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="16">
         <expression clear="yes" trim="1">(?i)&lt;title.*?type=&quot;main&quot;&gt;([^&lt;]+)&lt;/title&gt;</expression>
       </RegExp>
-      <RegExp conditional="OfficalName" input="$$15" output="&lt;title&gt;\1&lt;/title&gt;" dest="8">
+      <RegExp conditional="OfficalName" input="$$1" output="\1" dest="15">
+        <expression clear="yes" trim="1">(?i)&lt;title\s+xml:lang=&quot;$INFO[OfficalLanguage]&quot;\s+type=&quot;official&quot;&gt;([^&lt;]+)&lt;/title&gt;</expression> 
+      </RegExp>
+      <RegExp conditional="OfficalName" input="$$15" output="&lt;title&gt;\1&lt;/title&gt;" dest="16">
         <expression noclean="1">(.+)</expression>
       </RegExp>
-      <RegExp input="$$18" output="\1" dest="8">
+      <RegExp input="$$18" output="\1" dest="16">
         <expression noclean="1">(?i)(&lt;title&gt;.*?&lt;/title&gt;)</expression>
+      </RegExp>
+      <RegExp input="$$16" output="\1" dest="8">
+        <RegExp input="$$16" output="'\1" dest="16">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression clear="yes" noclean="1">'(.*)</expression>
       </RegExp>
       <RegExp conditional="!OfficalName" input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="16">
         <expression clear="yes" trim="1">(?i)&lt;title\s+xml:lang=&quot;en&quot;\s+type=&quot;official&quot;&gt;([^&lt;]+)&lt;/title&gt;</expression>
@@ -160,7 +166,10 @@
         <expression noclean="1">(?i)(&lt;originaltitle&gt;.*?&lt;/originaltitle&gt;)</expression>
       </RegExp>
       <RegExp input="$$16" output="\1" dest="8+">
-        <expression noclean="1"/>
+        <RegExp input="$$16" output="'\1" dest="16">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression noclean="1">'(.*)</expression>
       </RegExp>
       <RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="16">
         <expression clear="yes">(?i)&lt;startdate&gt;(\d{4})-</expression>
@@ -168,7 +177,7 @@
       <RegExp input="$$18" output="\1" dest="16">
         <expression noclean="1">(?i)(&lt;year&gt;.*?&lt;/year&gt;)</expression>
       </RegExp>
-      <RegExp input="$$16" output="\1" dest="8+">
+			<RegExp input="$$16" output="\1" dest="8+">         
         <expression noclean="1"/>
       </RegExp>
       <RegExp input="$$1" output="&lt;thumb&gt;http://img7.anidb.net/pics/anime/\1&lt;/thumb&gt;" dest="16">
@@ -217,12 +226,45 @@
       <RegExp input="$$16" output="\1" dest="8+">
         <expression noclean="1"/>
       </RegExp>
-      <!-- Only genres with weight 600 and 500 are overtaken -->
-      <RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="6">
+      <!-- Only genres with defined weight are overtaken -->
+      <RegExp input="$$1" output="\1" dest="5">
+        <expression clear="yes" noclean="1">(?i)&lt;categories&gt;(.*?)&lt;/categories&gt;</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
         <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;600&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
       </RegExp>
-      <RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="6+">
-        <expression repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;500&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6">
+        <expression clear="yes" noclean="1">(?i)[^-]*600[^-]*-(.*)</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;500&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6+">
+        <expression noclean="1">(?i)[^-]*500[^-]*-(.*)</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;400&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6+">
+        <expression noclean="1">(?i)[^-]*400[^-]*-(.*)</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;300&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6+">
+        <expression noclean="1">(?i)[^-]*300[^-]*-(.*)</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;200&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6+">
+        <expression noclean="1">(?i)[^-]*200[^-]*-(.*)</expression>
+      </RegExp>
+      <RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;category[^&gt;]*weight=&quot;100&quot;&gt;[^&lt;]*&lt;name&gt;([^&lt;]+)&lt;/name&gt;</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreWeight]-$$7" output="\1" dest="6+">
+        <expression noclean="1">(?i)[^-]*100[^-]*-(.*)</expression>
       </RegExp>
       <RegExp input="$$17" output="\1" dest="6+">
         <expression noclean="1" repeat="yes">(?i)(&lt;genre&gt;.*?&lt;/genre&gt;)</expression>
@@ -332,9 +374,33 @@
       <RegExp input="$$18" output="\1" dest="6">
         <expression noclean="1" repeat="yes">(?i)(&lt;genre&gt;.*?&lt;/genre&gt;)</expression>
       </RegExp>
-      <!-- Only 6 genres is overtaken -->
-      <RegExp input="$$6" output="\1\2\3\4\5\6" dest="8+">
-        <expression noclean="1,2,3,4,5,6">(?i)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      <!-- Only specified number genres is overtaken -->
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4\5\6\7\8\9" dest="8+">
+        <expression noclean="1,2,3,4,5,6,7,8,9">(?i)9-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4\5\6\7\8" dest="8+">
+        <expression noclean="1,2,3,4,5,6,7,8">(?i)8-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4\5\6\7" dest="8+">
+        <expression noclean="1,2,3,4,5,6,7">(?i)7-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4\5\6" dest="8+">
+        <expression noclean="1,2,3,4,5,6">(?i)6-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4\5" dest="8+">
+        <expression noclean="1,2,3,4,5">(?i)5-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3\4" dest="8+">
+        <expression noclean="1,2,3,4">(?i)4-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2\3" dest="8+">
+        <expression noclean="1,2,3">(?i)3-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1\2" dest="8+">
+        <expression noclean="1,2">(?i)2-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)?</expression>
+      </RegExp>
+      <RegExp input="$INFO[GenreCount]-$$6" output="\1" dest="8+">
+        <expression noclean="1">(?i)1-(&lt;genre&gt;[^&lt;]+&lt;/genre&gt;)</expression>
       </RegExp>
       <RegExp input="$$1" output="\1" dest="6">
         <expression clear="yes">&lt;description[^&gt;]*&gt;(.*?)&lt;/description&gt;</expression>
@@ -432,7 +498,13 @@
       </RegExp>
       <RegExp input="$$6" output="\1" dest="6">
         <expression noclean="1">(?:\r?\n)*(.*)</expression>
-      </RegExp>     
+      </RegExp>
+      <RegExp input="$$6" output="'\1" dest="6">
+        <expression repeat="yes" noclean="1">`?([^`]+)</expression>
+      </RegExp>
+      <RegExp input="$$6" output="\1" dest="6">
+        <expression noclean="1">'(.*)</expression>
+      </RegExp>
       <RegExp input="$$6" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="16">
         <expression clear="yes" noclean="1" trim="1"/>
       </RegExp>
@@ -442,10 +514,32 @@
       <RegExp input="$$16" output="\1" dest="8+">
         <expression noclean="1"/>
       </RegExp>
+      <!-- Main character + optionaly Secondary character enumared as "Cast" -->
       <RegExp input="$$1" output="\1" dest="6">
-        <expression clear="yes" noclean="1">(?i)&lt;creators&gt;(.*)&lt;/creators&gt;</expression>
+        <expression clear="yes" noclean="1">(?i)&lt;characters&gt;(.*?)&lt;/characters&gt;</expression>
+      </RegExp>
+      <RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;/actor&gt;" dest="16">
+        <expression clear="yes" repeat="yes">(?i)&lt;character.*?type=&quot;main character in&quot;[^&gt;]*&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;seiyuu[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;.*?&lt;/character&gt;</expression>
+      </RegExp>
+      <RegExp conditional="!OnlyMainCast" input="$$6" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;/actor&gt;" dest="16+">
+        <expression repeat="yes">(?i)&lt;character.*?type=&quot;secondary cast in&quot;[^&gt;]*&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;seiyuu[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;.*?&lt;/character&gt;</expression>
+      </RegExp>
+      <RegExp input="$$17" output="\1" dest="16+">
+        <expression noclean="1" repeat="yes">(?i)(&lt;actor&gt;.*?&lt;/actor&gt;)</expression>
+      </RegExp>
+      <RegExp input="$$18" output="\1" dest="16">
+        <expression noclean="1" repeat="yes">(?i)(&lt;actor&gt;.*?&lt;/actor&gt;)</expression>
+      </RegExp>
+      <RegExp input="$$16" output="\1" dest="8+">
+        <RegExp input="$$16" output="'\1" dest="16">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression noclean="1">'(.*)</expression>
       </RegExp>
       <!-- All "Original" and "Character" creators are enumerated as "Writter" -->
+      <RegExp input="$$1" output="\1" dest="6">
+        <expression clear="yes" noclean="1">(?i)&lt;creators&gt;(.*?)&lt;/creators&gt;</expression>
+      </RegExp>
       <RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="16">
         <expression clear="yes" repeat="yes">(?i)&lt;name.*?type=&quot;(?:Original|Character)[^&gt;]*?&gt;(.*?)&lt;/name&gt;</expression>
       </RegExp>
@@ -456,7 +550,10 @@
         <expression noclean="1" repeat="yes">(?i)(&lt;credits&gt;.*?&lt;/credits&gt;)</expression>
       </RegExp>
       <RegExp input="$$16" output="\1" dest="8+">
-        <expression noclean="1"/>
+        <RegExp input="$$16" output="'\1" dest="16">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression noclean="1">'(.*)</expression>
       </RegExp>
       <!-- All "Direction" creators are enumerated as "Director" -->
       <RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="16">
@@ -469,7 +566,10 @@
         <expression noclean="1" repeat="yes">(?i)(&lt;director&gt;.*?&lt;/director&gt;)</expression>
       </RegExp>
       <RegExp input="$$16" output="\1" dest="8+">
-        <expression noclean="1"/>
+        <RegExp input="$$16" output="'\1" dest="16">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression noclean="1">'(.*)</expression>
       </RegExp>
       <RegExp conditional="SingleStudio" input="$$11$$10$$13$$12" output="\1" dest="8+">
         <!-- "Animation work" studios has priority over "Work" studios bellow ($$13,$$12) -->
@@ -788,8 +888,14 @@
       <RegExp input="$$1" output="\1" dest="5">
         <expression clear="yes" noclean="1">(?i)(&lt;episode id=&quot;$$3&quot;.*?&lt;/episode&gt;)</expression>
       </RegExp>
-      <RegExp input="$$5" output="&lt;title&gt;\1&lt;/title&gt;" dest="4">
-        <expression clear="yes">(?i)&lt;title xml:lang=&quot;en&quot;[^&gt;]*&gt;([^&lt;]+)&lt;/title&gt;</expression>
+      <RegExp input="$$7" output="&lt;title&gt;\1&lt;/title&gt;" dest="4">
+        <RegExp input="$$5" output="\1" dest="6">
+	        <expression clear="yes">(?i)&lt;title xml:lang=&quot;en&quot;[^&gt;]*&gt;([^&lt;]+)&lt;/title&gt;</expression>
+        </RegExp>
+        <RegExp input="$$6" output="'\1" dest="7">
+          <expression clear="yes" repeat="yes">`?([^`]+)</expression>
+        </RegExp>
+        <expression>'(.*)</expression>
       </RegExp>
       <RegExp input="$$5" output="1-\1" dest="9">
         <expression clear="yes">(?i)&lt;epno[^&gt;]*&gt;(\d+)&lt;/epno&gt;</expression>
@@ -820,6 +926,21 @@
       </RegExp> 
       <RegExp input="$$5" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="4+">
         <expression>(?i)&lt;airdate[^&gt;]*&gt;([^&lt;]+)&lt;/airdate&gt;</expression>
+      </RegExp>
+      <RegExp input="$$1" output="\1" dest="6">
+        <expression clear="yes" noclean="1">(?i)&lt;characters&gt;(.*?)&lt;/characters&gt;</expression>
+      </RegExp>
+      <RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\5&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="7">
+        <expression clear="yes" repeat="yes">(?i)&lt;character[^&gt;]*type=&quot;main character in&quot;[^&gt;]*&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\1&gt;\s*)*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\3&gt;\s*)*?&lt;episodes[^&lt;]*[&gt;,]$$3[&lt;,][^/]*/episodes&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\4&gt;\s*)*?&lt;seiyuu[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\6&gt;\s*)*?&lt;/character&gt;</expression>
+      </RegExp>
+      <RegExp conditional="!OnlyMainCast" input="$$6" output="&lt;actor&gt;&lt;name&gt;\5&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="7+">
+        <expression repeat="yes">(?i)&lt;character[^&gt;]*type=&quot;secondary cast in&quot;[^&gt;]*&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\1&gt;\s*)*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\3&gt;\s*)*?&lt;episodes[^&lt;]*[&gt;,]$$3[&lt;,][^/]*/episodes&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\4&gt;\s*)*?&lt;seiyuu[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;\s*(?:&lt;([^&gt;\s]+)[^&gt;]*&gt;[^&lt;]*&lt;/\6&gt;\s*)*?&lt;/character&gt;</expression>
+      </RegExp>
+      <RegExp input="$$7" output="\1" dest="4+">
+        <RegExp input="$$7" output="'\1" dest="7">
+          <expression clear="yes" repeat="yes" noclean="1">`?([^`]+)</expression>
+        </RegExp>
+        <expression noclean="1">'(.*)</expression>
       </RegExp>
       <RegExp input="$$1" output="\1" dest="6">
         <expression clear="yes" noclean="1">(?i)&lt;creators&gt;(.*?)&lt;/creators&gt;</expression>

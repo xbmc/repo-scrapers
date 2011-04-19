@@ -9,3 +9,7 @@ Added: Possibility to specify sources (URLs) for anidb.xml and anime-list.xml fi
 Added: Possibility to select official title (+language) over main title
 Added: Possibility to use personal anime mapping file
     
+1.2.0:
+Changed: Replace "`" with "'" in all significant texts 
+Changed: Configuration for genres
+Added: Loading characters + actors/seiyus

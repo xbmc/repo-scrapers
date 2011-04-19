@@ -11,9 +11,12 @@
   <string id="30101">Official name language</string>
   <string id="30102">Enable prequel lookup</string>
   <string id="30103">Alternative prequel link type</string>
-  <string id="30104">Enable only single Animation studio return</string>
-  <string id="30105">Enable specials mapping at the end of episode list</string>
-  <string id="30106">Enable specials mapping inside of episode list</string>
+  <string id="30104">Return only single Animation studio</string>
+  <string id="30105">Map specials at the end of episode list</string>
+  <string id="30106">Map specials inside of episode list</string>
+  <string id="30107">Return only Main characters cast</string>
+  <string id="30108">Return only Genres with weight</string>
+  <string id="30109">Number of Genres returned</string>
   <!-- TheTVDB -->
   <string id="30200">Enable fanart/posters</string>
   <string id="30201">Enable banners</string>
