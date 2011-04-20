@@ -10,8 +10,7 @@
     <setting label="30100" type="lsep" />
     <setting label="30101" type="bool" id="rating_ten" default="true" enable="!eq(8,true)"/>
     <setting label="30102" type="bool" id="other_rating" default="true"/>
-    <setting label="30103" type="labelenum" values="mpaa|studio|outline" id="tag_other_rating" default="outline" enable="eq(-1,true)"/>
-
+    
     <setting label="30200" type="lsep" />
     <setting label="30201" type="bool" id="thumbs" default="true"/>
     <setting label="30202" type="bool" id="bigThumbs" default="true" enable="eq(-1,true)" />

@@ -90,17 +90,25 @@
 			</RegExp> 
 			
 			<!-- Others Rating -->
-			<RegExp conditional="other_rating" input="$$8" output="&lt;$INFO[tag_other_rating]&gt;\1&lt;/$INFO[tag_other_rating]&gt;" dest="5+">
+			<RegExp conditional="other_rating" input="$$8" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
 				<!-- Dizionari -->
-				<RegExp input="$$1" output="Dizionari: \1" dest="8">
+				<RegExp input="$$1" output="Dizionari: \1/5" dest="8">
 					<expression clear="yes" noclean="1,2">&lt;td style=&quot;letter-spacing:1px;&quot;[^&gt;]+&gt;[^;]+;dizionari&lt;/td&gt;[^0-9]+([0-9,]+) stelle</expression>
 				</RegExp>
+				<!-- String separetor -->
+				<RegExp input="$$8" output=" - " dest="8+">
+					<expression>Dizionari</expression>
+				</RegExp>
 				<!-- Critica -->
-				<RegExp input="$$1" output=" / Critica: \1" dest="8+">
+				<RegExp input="$$1" output="Critica: \1/5" dest="8+">
 					<expression noclean="1,2">&lt;td style=&quot;letter-spacing:1px;&quot;[^&gt;]+&gt;[^;]+;critica&lt;/td&gt;[^0-9]+([0-9,]+) stelle</expression>
 				</RegExp>
+				<!-- String separetor -->
+				<RegExp input="$$8" output=" - " dest="8+">
+					<expression>Critica</expression>
+				</RegExp>
 				<!-- Pubblico -->
-				<RegExp input="$$1" output=" / Pubblico: \1" dest="8+">
+				<RegExp input="$$1" output="Pubblico: \1/5" dest="8+">
 					<expression noclean="1,2">&lt;td style=&quot;letter-spacing:1px;&quot;[^&gt;]+&gt;[^;]+;pubblico&lt;/td&gt;[^0-9]+([0-9,]+) stelle</expression>
 				</RegExp>
 				<expression noclean="1" />
