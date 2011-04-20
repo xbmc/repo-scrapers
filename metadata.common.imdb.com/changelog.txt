@@ -1,3 +1,6 @@
+[B]2.1.0[/B]
+- fixed: actor roles and remove scraping of imdb trailers
+
 [B]2.0.8[/B]
 - fixed: actor images
 

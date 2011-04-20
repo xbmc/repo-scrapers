@@ -1,3 +1,6 @@
+[B]2.1.9[/B]
+- fixed: actor roles and remove scraping of imdb trailers
+
 [B]2.1.8[/B]
 - fixed: some movies won't scrape at all
 
