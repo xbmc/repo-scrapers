@@ -1,0 +1,14 @@
+1.0.5
+
+Changes
+- Fetch fanart thru Agent server
+
+1.0.4
+
+Changes
+- version fix
+
+1.0.0
+
+Changes
+- Initial addon version

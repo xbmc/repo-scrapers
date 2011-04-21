@@ -1,0 +1,15 @@
+[B]1.1.5[/B]
+- Added trailers from HDTrailers.net
+
+[B]1.1.4[/B]
+- Fixed dutch settings string.
+
+[B]1.1.3[/B]
+- Fixed scraping with NFO files.
+
+[B]1.1.2[/B]
+- Initial version in XBMC 10.0
+
+[B]1.0.0[/B]
+
+- First release as addon (need IMDB common for extra information)

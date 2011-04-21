@@ -1,0 +1,81 @@
+[B]1.3.1[/B]
+- fixed: added year to search string properly
+
+[B]1.3.0[/B]
+- added: year to search string
+
+[B]1.2.5[/B]
+- fixed: mpaa is returning string 'Rated' if there is no rating on tmdb
+
+[B]1.2.4[/B]
+- fixed: not scraping artwork for movies without IMDb id
+
+[B]1.2.3[/B]
+- fixed: can't get full search results list when some have <released> message and some haven't
+
+[B]1.2.2[/B]
+- fixed: real fix for hd-trailers.net
+
+[B]1.2.1[/B]
+- fixed: trailer scraping from hd-trailers.net
+
+[B]1.2.0[/B]
+- Added option to scrape rating from IMDb
+
+[B]1.1.6[/B]
+- Fix rating images to show up on default skins
+
+[B]1.1.5[/B]
+- Fix decimal separator
+
+[B]1.1.4[/B]
+- Support for <alternative_name> and <original_name> in searches
+
+[B]1.1.3[/B]
+- fixed missing imdb id (#2)
+
+[B]1.1.2[/B]
+- fixed missing imdb id
+
+[B]1.1.1[/B]
+- no writers due to API changes
+
+[B]1.1.0[/B]
+- added multi-language support
+
+[B]1.0.11[/B]
+- added Polish translation
+
+[B]1.0.9[/B]
+- translation cosmetics
+
+[B]1.0.8[/B]
+- changed hdtrailers.net version dependency
+
+[B]1.0.7[/B]
+- final fix for nfourl scraping issue
+
+[B]1.0.6[/B]
+- fixed nfourl scraping issue
+
+[B]1.0.5[/B]
+- switch tmdb scraper to chain tmdb scraper library functions
+
+[B]1.0.4[/B]
+- replace dtrailer.com with HD-Trailers.net for trailer scraping
+
+[B]1.0.3[/B]
+- scraper library interfaces changed. no functional changes
+
+[B]1.0.2[/B]
+
+- scraper might fetch wrong studio, genre and country values
+- no search results in case the release date is missing
+
+[B]1.0.1[/B]
+
+- various fixes after api change
+
+[B]1.0.0[/B]
+
+- Initial import into addons repository

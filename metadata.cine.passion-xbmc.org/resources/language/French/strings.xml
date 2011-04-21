@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <string id="30000">Langue</string>
+  <string id="30001">Français</string>
+  <string id="30002">Anglais</string>
+  <string id="30003">Nom d'utilisateur</string>
+  <string id="30004">Mot de passe</string>
+
+  <string id="30010">Notes</string>
+  <string id="30011">Ciné-Passion</string>
+  <string id="30012">Allociné</string>
+  <string id="30013">IMDB</string>
+  <string id="30014">Récupérer les Sagas</string>
+  <string id="30015">MPAA</string>
+
+  <string id="30020">Scraper</string>
+  <string id="30030">Compte Passion-XBMC</string>
+  
+  <string id="30050">Site Web</string>
+  <string id="30051">Support Forum</string>
+  <string id="30052">[B]Cliquez ici pour le support[/B]</string>
+  <string id="30053">Participer</string>
+  <string id="30054">[B]Cliquez ici pour participer/visiter[/B]</string>
+</strings>

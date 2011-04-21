@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.albums.naver.com"
+       name="Naver Music"
+       version="1.0.4"
+       provider-name="XBMC-Korea">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.albums"
+             language="ko"
+             library="naver-albums.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">NAVER Music Albums Scraper</summary>
+    <summary lang="ko">네이버 음악앨범 스크래퍼</summary>
+    <summary lang="hu">NAVER Album scraper</summary> 
+    <summary lang="pt">Scraper de música NAVER</summary>
+    <description lang="en">Download music album information from music.naver.com</description>
+    <description lang="ko">music.naver.com 에서 음악앨범 정보 다운로드</description>
+    <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
+    <description lang="pt">Descarregar informação de música de music.naver.com</description>
+  </extension>
+</addon>

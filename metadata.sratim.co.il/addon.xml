@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.sratim.co.il"
+       name="Sratim"
+       version="1.1.0"
+       provider-name="Lev Waisberg">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="1.0.7"/>
+    <import addon="metadata.common.imdb.com" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="he"
+             library="sratim.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Sratim Movie Scraper</summary>
+    <summary lang="he">סקרייפר סרטים מאתר סרטים</summary>
+    <summary lang="hu">Sratim filmadat leolvasó</summary>
+    <summary lang="kr">Sratim 영화 스크래퍼</summary>
+    <summary lang="pt">Scraper de filmes Sratim</summary>
+    <summary lang="nl">Sratim film Scraper</summary>
+    <summary lang="pl">Scraper filmów Sratim</summary>
+	<description lang="he">www.sratim.co.il הורדת מידע סרטים מאתר</description>
+	<description lang="en">Download Movie information from www.sratim.co.il</description>
+	<description lang="nl">Download film informatie van www.sratim.co.il</description>
+	<description lang="pl">Pobieraj informacje o filmach z www.sratim.co.il</description>
+    <description lang="hu">Film információk letöltése a www.sratim.co.il webhelyről</description>
+    <description lang="kr">www.sratim.co.il에서 영화 정보 다운로드</description>
+    <description lang="pt">Descarregar informação de filmes de www.sratim.co.il</description>
+  </extension>
+</addon>

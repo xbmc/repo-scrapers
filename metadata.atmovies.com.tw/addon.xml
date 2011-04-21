@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.atmovies.com.tw"
+       name="AtMovies"
+       version="1.0.4"
+       provider-name="Jimmy Tai">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="1.2.0"/>
+    <import addon="metadata.common.imdb.com" version="2.1.4"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="zh"
+             library="AtMovies.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AtMovies Traditional Chinese Movie Scraper</summary>
+    <summary lang="zh">開眼電影網 正體中文電影資訊</summary>
+    <description lang="en">AtMovies a free and open movie database in Traditional Chinese. This scraper downloads movie details from AtMovies. Part of the information will be downloaded from IMDB and TMDB. Because I changed the search engine, users can now search titles by file name. IMPORTANT: Note that if you can find movie titles but can't download movie detail, please try again at another time because of the connection issue of AtMovie. To fully enable all the functions of this scraper, it is also recommended to set this scraper as the default movie scraper( System->Video->Scrapers ). To obtain information of director, writer and cast, be sure to have IMDB scraper installed.</description>
+    <description lang="zh">開眼電影網是一個開放和免費的電影資料庫。這個scraper會從開眼電影網下載電影資訊，部份的資訊會從IMDB和TMDB下載。由於更換了搜尋引擎，目前的版本可以直接以檔名來搜尋，根據我的經驗，開眼電影網似乎在晚上時間比較難連線，若發生找的到片名但是找不到詳細內容的話，請換個時間試試(如早上)。為了全面發揮本scraper的功能，建議在使用的時候將本scraper設為預設的電影scraper站台(系統設定->影片->網路站台)。如要取得導演、編劇、演員等資訊，請確保也安裝了IMDB的scraper。</description>
+    <platform>all</platform>
+  </extension>
+</addon>

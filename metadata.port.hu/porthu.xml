@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scraper framework="1.1" date="2011-04-04">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;" dest="3">
+			<expression clear="yes" noclean="1">i_film_id=([0-9]*)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateSearchUrl SearchStringEncoding="iso-8859-2" dest="3">
+		<!--Movie search URL on port.hu-->
+		<RegExp input="$$1" output="&lt;url&gt;http://www.port.hu/pls/ci/cinema.film_creator?i_text=\1&amp;amp;i_film_creator=1&lt;/url&gt;" dest="3">
+			<expression clear="yes" noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<!--Create results xml with iso-8859-2 encoding-->
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-2&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<!--Get port.hu ID of the movie if search thrown directly to the movie page-->
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression clear="yes">i_film_id=([0-9]*)&amp;</expression>
+			</RegExp>
+			<!--Get year of the movie if search thrown directly to the movie page-->
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression clear="yes">, (19\d\d|20\d\d)\s?&lt;/span&gt;</expression>
+			</RegExp>
+			<!--Search results if search thrown directly to the movie page-->
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 \3&lt;/title&gt;&lt;year&gt;$$9&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=$$7&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression clear="yes" noclean="1">class="blackbigtitle"&gt;([^&lt;]*)(&lt;/span&gt;\n&lt;br/&gt;&lt;span class="txt"&gt;([^&lt;]*))?</expression>
+			</RegExp>
+			<!--Search results if there are multiple matches-->
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\5&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2" target="_top"&gt;[^&lt;]*[^&gt;]*&gt; \(([^\)]*)?(((?!br).)*(19\d\d|20\d\d))?.*?&lt;/span&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\6&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2" target="_top"&gt;(?:\()?([^&lt;\)]*)[^&gt;]*&gt;( \([^\)]*)?(((?!br).)*(19\d\d|20\d\d))?.*?&lt;/span&gt;</expression>
+			</RegExp>
+			<expression clear="yes" noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails clearbuffers="no" dest="3">
+		<!--Create details xml with iso-8859-2 encoding-->
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-2&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--Get imdb ID from port.hu-->
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression clear="yes">i_param=([0-9]*)" target="top"&gt;IMDb&lt;/a&gt;&lt;/span&gt;</expression>
+			</RegExp>
+			<!--Get Hungarian Title from port.hu and store it in buffer 20 for future use-->
+			<RegExp input="$$1" output="\1" dest="20">
+				<expression>class="blackbigtitle"&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<!--Append Hungarian Title from Bufer 20 if labelenum = Magyar-->
+			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$20&lt;/title&gt;" dest="5">
+				<expression>Magyar$</expression>
+			</RegExp>
+			<!--Get plot from port.hu-->
+			<RegExp input="$$1" output="\1" dest="15">
+				<expression>&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
+			</RegExp>
+			<RegExp input="$$15" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;tt$$9&lt;/chain&gt;" dest="5+">
+				<expression>^$</expression>
+			</RegExp>
+			<RegExp input="$$15" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<!--Get the first sentence of the plot from port.hu as an outline-->
+			<RegExp input="$$1" output="&lt;outline&gt;\1.&lt;/outline&gt;" dest="5+">
+				<expression>&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.{180,}?)[.?!]</expression>
+			</RegExp>
+			<!--Get certification from port.hu if Hungarian cerrtification is selected in settings-->
+			<RegExp conditional="hunmpaa" input="$$1" output="&lt;mpaa&gt;\1 \2&lt;/mpaa&gt;" dest="5+">
+				<expression>&lt;img alt="\(\d{2}\)" title="(\d{2})(.*?)"</expression>
+			</RegExp>
+			<!--Get year from port.hu and store it in buffer 14 for future use-->
+			<RegExp input="$$1" output="\1" dest="14">
+				<expression>, (19\d\d|20\d\d)\s?&lt;/span&gt;</expression>
+			</RegExp>
+			<!--Append year from buffer 14-->
+			<RegExp input="$$14" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Get director from port.hu-->
+			<RegExp input="$$1" output="&lt;director&gt;\3&lt;/director&gt;" dest="5+">
+				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;(&lt;strong&gt;)?(.*?)(&lt;/strong&gt;)?&lt;/a&gt;&lt;/span&gt;</expression>
+			</RegExp>
+			<!--Call GetIMDBDetails function-->
+			<RegExp input="$$10" output="\1" dest="5+">
+				<!--Create imdb URL based on the fetched imdb ID-->
+				<RegExp input="$$9" output="&lt;url cache=&quot;tt\1-main.html&quot; function=&quot;GetIMDBDetails&quot;&gt;http://akas.imdb.com/title/tt\1/&lt;/url&gt;" dest="10">
+					<expression />
+				</RegExp>
+				<expression noclean="1" />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+	<GetIMDBDetails clearbuffers="no" dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--Get imdb ID from imdb.com and store it in Buffer 11 for future use-->
+			<RegExp input="$$1" output="\1" dest="11">
+				<expression>/title/([t0-9]*)/combined</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="12">
+				<expression clear="yes">/title/([t0-9]*)/faq</expression>
+			</RegExp>
+			<RegExp input="$$12" output="\1" dest="11">
+				<expression>(.+)</expression>
+			</RegExp>
+			<!--Append imdb ID from Buffer 11-->
+			<RegExp input="$$11" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<!--Get runtime from imdb.com-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression trim="1">&lt;h4[^&gt;]*?&gt;Runtime:&lt;/h4&gt;[^0-9]*([0-9]+)</expression>
+			</RegExp>
+			<!--Get original title from imdb.com and store it in buffer 18 for future use-->
+			<RegExp input="$$1" output="\1" dest="18">
+				<expression>&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+			</RegExp>
+			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
+			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5+">
+				<expression>Magyar$</expression>
+			</RegExp>
+			<!--Append Original Title from Bufer 18 if labelenum = Eredeti-->
+			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$18&lt;/title&gt;" dest="5+">
+				<expression>Eredeti$</expression>
+			</RegExp>
+			<!--Get top250 from imdb.com-->
+			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="5+">
+				<expression>Top 250 #([0-9]*)&lt;/</expression>
+			</RegExp>
+			<!--Get mpaa rating from imdb.com if Hungarian certification is unchecked in settings-->
+			<RegExp conditional="!hunmpaa" input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
+				<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?([^&lt;]*)</expression>
+			</RegExp>
+			<!--Get tagline from imdb.com-->
+			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="5+">
+				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
+			</RegExp>
+			<!--Get rating from imdb.com-->
+			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Get genres from imdb.com-->
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+			</RegExp>
+			<!--Get studio from imdb.com-->
+			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+			<!--Get credits from imdb.com-->
+			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Get writers from imdb.com-->
+			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Get fullcredits from imdb.com-->
+			<RegExp conditional="fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Get fullcredits from imdb.com-->
+			<RegExp conditional="fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBFullWritersById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Call GetTMDBThumbsByIdChain-->
+			<RegExp conditional="tmdbboritok" input="$$11" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Call GetTMDBFanartByIdChain-->
+			<RegExp conditional="tmdbfanart" input="$$11" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Call GetMoviePosterDBLink-->
+			<RegExp conditional="movieposterdbboritok" input="$$11" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Call GetIMPALink-->
+			<RegExp conditional="impawardsboritok" input="$$11" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--Call Get480pTrailer if 480p selected for HD-Trailers.net-->
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
+				<expression>480p</expression>
+			</RegExp>
+			<!--Call Get720pTrailer if 720p selected for HD-Trailers.net-->
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
+				<expression>720p</expression>
+			</RegExp>
+			<!--Call Get1080pTrailer if 1080p selected for HD-Trailers.net-->
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
+				<expression>1080p</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetIMDBDetails>
+</scraper>

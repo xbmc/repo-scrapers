@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.albums.merlin.pl"
+       name="Merlin.pl"
+       version="1.0.7"
+       provider-name="smuto">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.allmusic.com" version="1.8.1"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.albums"
+             language="pl"
+             library="merlin.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Merlin.pl Album scraper</summary>
+    <summary lang="hu">Merlin.pl album információk</summary>
+    <summary lang="kr">Merlin.pl 음악 스크래퍼</summary>
+    <summary lang="pl">Scraper albumów Merlin.pl</summary>
+    <summary lang="pt">Scraper de música Merlin.pl</summary>
+    <description lang="en">Download music information from merlin.pl. Also uses info from MusicBrainz and allmusic.com</description>
+    <description lang="kr">Merlin.pl 에서 음악 정보 다운로드 (MusicBrainz 과 allmusic.com 정보 이용)</description>
+    <description lang="hu">Album információk letöltése a merlin.pl, valamint a MusicBrainz és a allmusic.com webhelyekről</description>
+    <description lang="pl">Pobieraj informacje o albumach. Wyszukiwanie i pobranie listy utworów z MusicBrainz, opis i okłdka z merlin.pl, generalne info z allmusic.</description>
+    <description lang="pt">Descarregar informação de música de merlin.pl. Também usa informação de MusicBrainz e allmusic.com</description>
+    <platform>all</platform>
+  </extension>
+</addon>

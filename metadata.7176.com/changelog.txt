@@ -1,0 +1,27 @@
+﻿[B]1.0.9[/B]
+- 修正：网站变化造成导演、编剧、演员表无法
+  fixed: site change cause can't get director, writer and actor
+
+[B]1.0.8[/B]
+- 修正：英文名含“-”字符的电影目录无法获取
+  fixed: can't get movie list when english title has - character
+
+[B]1.0.7[/B]
+- 修正：网站变化造成电影名称获取有误
+  fixed: site change cause title error
+
+[B]1.0.6[/B]
+- 使用fixchars参数转换电影剧情介绍中的HTML转义字符串
+  use fixchars to tanslate HTML Escape Sequence in outline and plot
+
+[B]1.0.5[/B]
+- 改用chain功能调用tmdb刮削器代码库
+  changed to use chain function to call tmdb scraper library
+
+[B]1.0.4[/B]
+- 加入多国语言插件描述信息
+  add multi-language descriptions
+
+[B]1.0.0[/B]
+- 初始化加入扩展功能库
+  Initial import into addons repository

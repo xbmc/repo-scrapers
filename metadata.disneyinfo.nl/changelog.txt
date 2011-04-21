@@ -1,0 +1,11 @@
+=== 1.0.1
+- Updated the disneyinfo icon with non upsized version
+
+=== 1.0.0
+Initial release of the disneyinfo scraper
+- Support scraping disneyinfo.nl movies for dutch titels and descriptions
+- Gets images from TMDB
+- Option to add movies to a set by default (ie. all disney movies will be added to the 'Disney' set)
+- Option to add movies to a genre by default
+
+- TODO: Find a good source for dutch dvd posters, mainly english now.

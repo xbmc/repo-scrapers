@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<scraper framework="1.1" date="2010-09-13">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.bing.com/search?q=site:+app.atmovies.com.tw+action%3Dfilmdata+影片資料+\1+$$4&amp;go=&amp;form=QBRE&amp;filt=all&amp;setmkt=zh-TW&amp;setlang=SET_NULL&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="\1" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=filmdata&amp;amp;film_id=\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" trim="1">&lt;p&gt;(.*?) [:\w* ]*&lt;strong&gt;.*?film_[iI][dD]=([a-zA-Z0-9]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!--title-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[ \t\n\r\cM]*(.+?)[ \t\n\r\cM]*&lt;/span&gt;&lt;br&gt;</expression>
+			</RegExp>
+			<!--year-->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>&lt;[Bb]&gt;影片年份：&lt;/[Bb]&gt;(\d+)[ \t\n\r\cM]+</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>&lt;[Bb]&gt;�v���~���G&lt;/[Bb]&gt;(\d+)</expression>
+			</RegExp>
+			<!--runtime-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression>&lt;[Bb]&gt;片長：([\d]+分)&amp;nbsp;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;runtime&gt;\1分&lt;/runtime&gt;" dest="5+">
+				<expression>&lt;[Bb]&gt;�����G([\d]+)��&amp;nbsp;</expression>
+			</RegExp>
+			<!--outline-->
+			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
+				<expression>&lt;font class="at11" color="606060"&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
+				<expression>&lt;font class=at11 color=606060&gt;[ \t\n\r\cM]*(.*?)[ \t\n\r\cM]*&lt;/font&gt;</expression>
+			</RegExp>
+			<!--plot-->
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression trim="1">&lt;div class="sub_content"[^&gt;]*&gt;[ \n\r\t\cM]+(.*?)[ \n\r\t\cM]+&lt;/div&gt;</expression>
+			</RegExp>
+			<!--imdb link-->
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression>(http://us.imdb.com/Title\?\d+)</expression>
+			</RegExp>
+			<!--imdb ID with tt-->
+			<RegExp input="$$1" output="tt\1" dest="8">
+				<expression>http://us.imdb.com/Title\?(\d+)</expression>
+			</RegExp>
+			<!--rating-->
+			<RegExp input="$$2" output="&lt;url function=&quot;GetIMDBRating&quot;&gt;$$7&lt;/url&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--genre-->
+			<RegExp input="$$2" output="&lt;url function=&quot;GetIMDBGenre&quot;&gt;$$7&lt;/url&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--poster-->
+			<RegExp input="$$8" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--fanart-->
+			<RegExp input="$$8" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--cast-->
+			<RegExp input="$$8" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--director-->
+			<RegExp input="$$8" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<!--writer-->
+			<RegExp input="$$8" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+	<GetIMDBRating clearbuffers="no" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression>&lt;span class="rating-rating"&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
+		</RegExp>
+	</GetIMDBRating>
+	<GetIMDBGenre clearbuffers="no" dest="5">
+		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="8">
+				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetIMDBGenre>
+</scraper>

@@ -1,0 +1,2 @@
+[B]1.1.0[/B]
+- big pile of fixes, should work now after long time!

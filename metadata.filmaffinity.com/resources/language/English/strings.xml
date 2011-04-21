@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Download full iMDB Cast</string>
+    <string id="30001">Enable trailers</string>
+    <string id="30002">Only Filmaffinity info without Fanart (faster)</string>
+    <string id="30003">Enable Fanart</string>
+    <string id="30004">Download IMPAwards poster</string>
+    <string id="30005">Download MoviePosterDB poster</string>
+    <string id="30006">Download iMDB poster</string>
+    <string id="30007">Download TheMovieDB poster</string>
+    <string id="30008">Enable compatibility with Studio logos</string>
+    <string id="30009">Download extra iMDB information</string>
+    <string id="30010">Use iMDB rating</string>
+	<string id="30011">Download Extra Posters from Filmaffinity</string>
+
+</strings>

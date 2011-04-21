@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.artists.naver.com"
+       name="Naver Music"
+       version="1.0.5"
+       provider-name="XBMC-Korea">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.artists"
+             language="ko"
+             library="naver-artists.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">NAVER Music Artist Scraper</summary>
+    <summary lang="ko">네이버 음악가 스크래퍼</summary>
+    <summary lang="hu">NAVER Előadó scraper</summary> 
+    <summary lang="pt">Scraper de música NAVER</summary>
+	<description lang="en">Download music artist information from music.naver.com</description>
+    <description lang="ko">music.naver.com 에서 음악가 정보 다운로드</description>
+    <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
+    <description lang="pt">Descarregar informação de música de music.naver.com</description>
+  </extension>
+</addon>

@@ -1,0 +1,16 @@
+Version 1.0.4 (Dec 4 2010)
+ - Change the search engine to Bing because it seems that we can't use AtMovies' search engine now :( 
+
+Version 1.0.3 (Oct 8 2010)
+ - Adapt new layout of AtMovies for some movies 
+
+Version 1.0.2 (Oct 3 2010)
+ - Adapt new layout of IMDB 
+
+Version 1.0.1 (Sep 28 2010)
+ - New icon. Thanks freezy.
+ - More detail of scraper description. Be sure to read it first.
+
+Version 1.0.0 (Sep 11 2010)
+ - Initial version for Dharma release :D 
+

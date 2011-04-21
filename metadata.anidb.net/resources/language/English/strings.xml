@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+  <!-- General -->
+  <string id="30000">Use Google Search</string>
+  <string id="30001">Anime list URL</string>
+  <string id="30002">Anime mapping URL</string>
+  <string id="30003">Use personal anime mapping</string>
+  <string id="30004">Personal anime mapping URL</string>
+  <!-- AniDB -->
+  <string id="30100">Use official name instead of main name</string>
+  <string id="30101">Official name language</string>
+  <string id="30102">Enable prequel lookup</string>
+  <string id="30103">Alternative prequel link type</string>
+  <string id="30104">Return only single Animation studio</string>
+  <string id="30105">Map specials at the end of episode list</string>
+  <string id="30106">Map specials inside of episode list</string>
+  <string id="30107">Return only Main characters cast</string>
+  <string id="30108">Return only Genres with weight</string>
+  <string id="30109">Number of Genres returned</string>
+  <!-- TheTVDB -->
+  <string id="30200">Enable fanart/posters</string>
+  <string id="30201">Enable banners</string>
+  <string id="30202">Continue lookup if no fanart found</string>
+  <string id="30203">Enable extra episode details</string>
+</strings>

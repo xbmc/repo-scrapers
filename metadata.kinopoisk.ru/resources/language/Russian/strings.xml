@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">фанарт с сайта TMDB</string>
+    <string id="30001">оригинальное название в результатах поиска</string>
+    <string id="30002">скачивать русскоязычные трейлеры</string>
+    <string id="30003">предпочитать HD качество</string>
+    <string id="30004">предпочитаемое качество трейлера</string>
+    <string id="30005">добавлять не русский трейлер</string>
+    <string id="30006">добавлять постер с TMDB</string>
+    <string id="30007">искать IMDB ID</string>
+    <string id="30008">искать год премьеры для IMDB ID</string>
+    <string id="30009">всегда использовать google для поиска IMDB ID</string>
+    <string id="30010">рейтинг KinoPoisk</string>
+    <string id="30011">загружать только переведённых актёров</string>
+    <string id="30012">загружать постеры с сайта KinoPoisk.ru</string>   
+</strings>

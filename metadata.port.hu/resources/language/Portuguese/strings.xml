@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Título Húngaro</string>
+    <string id="30001">Título original</string>
+    <string id="30002">Título original (Título Húngaro)</string>
+    <string id="30003">Título Húngaro (Título original)</string>
+    <string id="30004">Certificação Húngara</string>
+    <string id="30005">Ligar créditos do elenco completo</string>
+    <string id="30006">Ligar fanart de themoviedb.org</string>
+    <string id="30007">Ligar posters de themoviedb.org</string>
+    <string id="30008">Ligar posters de IMPAwards</string>
+    <string id="30009">Ligar posters de MoviePosterDB</string>
+    <string id="30010">Ligar trailers de Dtrailer.com</string>
+</strings>

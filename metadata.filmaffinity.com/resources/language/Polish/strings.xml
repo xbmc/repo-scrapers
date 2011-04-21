@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30000">Pełna obsada z IMDb</string>
+    <string id="30001">Włącz zwiastuny</string>
+    <string id="30002">Tylko info z Filmaffinity bez fanartu (szybko)</string>
+    <string id="30003">Włącz fanart</string>
+    <string id="30004">Pobieraj plakat z IMPAwards</string>
+    <string id="30005">Pobieraj plakat z MoviePosterDB</string>
+    <string id="30006">Pobieraj plakat z IMDb</string>
+    <string id="30007">Pobieraj plakat z TheMovieDB</string>
+    <string id="30008">Włącz kompatybilność z logotypami wytwórni</string>
+    <string id="30009">Pobieraj dodatkowe informacje z IMDb</string>
+    <string id="30010">Użyj oceny IMDb</string>
+	<string id="30011">Pobieraj dodatkowe plakaty z Filmaffinity</string>
+</strings>

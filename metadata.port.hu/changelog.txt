@@ -1,0 +1,74 @@
+[B]1.4.2[/B]
+- fixed: actor roles
+
+[B]1.4.1[/B]
+- fixed: won't scrape imdb details and artwork for some movies
+
+[B]1.4.0[/B]
+- added: fallback to imdb plot if no plot is available on port.hu
+
+[B]1.3.6[/B]
+- fixed: actor images
+
+[B]1.3.5[/B]
+Fixed: directors (sometimes wrong director got scraped)
+
+[B]1.3.4[/B]
+Fixed: Fixed title and year scraping due to site changes
+
+[B]1.3.3[/B]
+Fixed: actors scraping
+
+[B]1.3.2[/B]
+Fixed: year scraping
+
+[B]1.3.1[/B]
+Changed: remove scraping of mixed titles
+
+[B]1.3.0[/B]
+Cosmetics
+
+[B]1.2.2[/B]
+Changed: New search results structure for better auto-matching
+
+[B]1.2.1[/B]
+Added: Polish translations
+
+[B]1.2.0[/B]
+Changed: adapt new IMDb layout
+
+[B]1.1.0[/B]
+Fixed: originaltitle, make Hungarian the the default title language
+
+[B]1.0.9[/B]
+Fixed: year scraping
+
+[B]1.0.8[/B]
+Fixed: adapt IMDb changes
+
+[B]1.0.7[/B]
+Fixed: scraping directors from imdb when fullcast enabled
+
+[B]1.0.6[/B]
+Added: originaltitle tag if Hungarian is the preferred language
+
+[B]1.0.5[/B]
+Changed: chain scraper library functions
+
+[B]1.0.4[/B]
+Fixed: MPAA scraping from IMDb
+
+[B]1.0.3[/B]
+Added: NfUrl for looking at port.hu URL in the nfo
+Changed: use hdtrailersnet scraper library via chain function
+Fixed: punctuate plot outline
+Fixed: year was not displayed on multiple search results
+Fixed: trailer link was not fetched if title contained special chars
+Fixed: fix runtime scraping
+
+[B]1.0.2[/B]
+Fixed: update scraper to always return xml (CreateSearchResults)
+Fixed: make sure only numeric runtime values returned
+
+[B]1.0.0[/B]
+Initial version

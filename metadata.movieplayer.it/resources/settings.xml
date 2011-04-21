@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30000" type="bool" id="Google" default="true"/>
+    <setting label="30001" type="bool" id="IMDb" default="false"/>
+    <setting label="30002" type="bool" id="FullCast" default="false"/>
+    <setting label="30003" type="bool" id="AltPosters" default="false"/>
+    <setting label="30004" type="bool" id="posterTMDB" default="false"/>
+    <setting type="sep"/>
+    <setting label="30005" type="bool" id="FanartTMDB" default="true"/>
+    <setting label="30006" type="bool" id="Fan" default="true"/>
+</settings>

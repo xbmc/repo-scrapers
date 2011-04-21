@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="128">
+    <setting type="lsep" label="30030"/>
+    <setting id="username" type="text" label="30003" option="urlencoded" default="" />
+    <setting id="password" type="text" option="hidden|urlencoded" label="30004" default="" />
+	
+	<setting type="lsep" label="30020"/>
+    <setting id="language" type="enum" label="30000" lvalues="30001|30002" default="0" />
+    <setting id="rating" type="enum" label="30010" lvalues="30011|30012|30013" default="2" />
+    <setting id="mpaa" type="labelenum" label="30015" values="Argentina|Australia|Austria|Belgium|Brazil|Canada|Chile|China|Colombia|Cyprus|Czech Republic|Denmark|East Germany|Egypt|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Indonesia|Iran|Iraq|Ireland|Israel|Italy|Japan|Kuwait|Lebanon|Luxembourg|Malaysia|Malta|Mexico|Netherlands|New Zealand|Norway|Peru|Philippines|Poland|Portugal|Puerto Rico|Romania|Singapore|Slovakia|South Africa|South Korea|Soviet Union|Spain|Sweden|Switzerland|Taiwan|Thailand|Turkey|UK|USA|Ukraine|Venezuela|Vietnam|West Germany" default="France" />
+    <setting id="saga" type="bool" label="30014" default="true" />
+  </category>
+
+  <category label="30050">
+    <setting type="lsep" label="30051"/>
+    <setting type="action" label="30052" action="RunScript($CWD/resources/lib/xbmcwebbrowser.py,$ID,http://passion-xbmc.org/scraper-cine-passion-support-francais/)" default="" />
+    <setting type="lsep" label="30053"/>
+    <setting type="action" label="30054" action="RunScript($CWD/resources/lib/xbmcwebbrowser.py,$ID,http://passion-xbmc.org/scraper/index2.php?Page=Home)" default="" />
+  </category>
+</settings>

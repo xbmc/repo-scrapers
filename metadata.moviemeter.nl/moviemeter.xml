@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<scraper framework="1.1" date="2010-03-26">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?id=\2&lt;/url&gt;"  dest="3">
+			<expression clear="yes" noclean="1">(moviemeter.nl/film/)([0-9]*)</expression>
+		</RegExp>
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?imdbid=\2&lt;/url&gt;" dest="3+">
+			<expression>(imdb.com/)Title\?([0-9]+)</expression>
+		</RegExp>
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?imdbid=\2&lt;/url&gt;" dest="3+">
+			<expression>(imdb.com/title/tt)([0-9]*)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.theghost16.nl/MovieMeter/index.php?movie=\1$$4&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="%20(\1)" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;?xml version='1.0' encoding='iso-8859-1' standalone='yes'?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;'\2'&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.theghost16.nl/MovieMeter/movie.php?id=\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">&lt;a href=movie.php\?id=([0-9]*)&gt;*(.[^\(]*)\(([0-9]*)\)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!-- Title!-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="8">
+				<expression noclean="1">Titel: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Year!-->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="8+">
+				<expression noclean="1">Jaar: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Runtime!-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="8+">
+				<expression noclean="1">Filmduur: ([0-9]*)</expression>
+			</RegExp>
+
+			<!-- Genre(s)!-->
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="8+">
+				<expression noclean="1">Genre\(s\): ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Plot & Outline!-->
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;&lt;outline&gt;\1&lt;/outline&gt;" dest="8+">
+				<expression noclean="1">Plot: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Director! -->
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="8+">
+				<expression noclean="1">Regisseur\(s\): ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get the rating from moviemeter if the IMDBrating setting is set to false -->
+			<RegExp conditional="!IMDBrating" input="$$1" output="&lt;rating max=&quot;5&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="8+">
+				<expression noclean="1" trim ="1">Rating: (.[^\(]*)\(([0-9,]+) votes\)</expression>
+			</RegExp>
+
+			<!-- Get the rating from IMDB.com if the IMDBrating setting is set to true -->
+			<RegExp conditional="IMDBrating" input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetIMDBRating&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get the writer from IMDB.com -->
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;tt\1&lt;/chain&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get the Cast from IMDB.com -->
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;tt\1&lt;/chain&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get the studio from IMDB.com -->
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetIMDBStudio&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get thumbs from MoviePoster -->
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;tt\1&lt;/chain&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get Fanart from TMDB -->
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-moviemeter.html&quot; function=&quot;GetFanart&quot;&gt;http://akas.imdb.com/title/tt\1&lt;/url&gt;" dest="8+">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
+			
+			<!-- Get Trailer(s) from HD-Trailers.net -->
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>480p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>720p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="8+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Titel: ([^&lt;]*)</expression>
+				</RegExp>
+				<expression>1080p</expression>
+			</RegExp>
+			
+			<expression noclean="1"></expression>
+		</RegExp>
+	</GetDetails>
+	<GetIMDBStudio dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="6">
+				<expression repeat="yes">"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"></expression>
+		</RegExp>
+	</GetIMDBStudio>
+	<GetIMDBRating dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6">
+				<expression>&lt;span class="rating-rating"&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"></expression>
+		</RegExp>
+	</GetIMDBRating>
+	<GetFanart dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="6">
+				<expression>/title/(tt[t0-9]*)/faq</expression>
+			</RegExp>
+			<expression noclean="1"></expression>
+		</RegExp>
+	</GetFanart>
+</scraper>

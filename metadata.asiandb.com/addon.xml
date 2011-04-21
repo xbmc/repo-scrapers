@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.asiandb.com"
+       name="AsianDB"
+       version="1.0.3"
+       provider-name="FIXME">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="en"
+             library="asiandb.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AsianDB Movie Scraper</summary>
+    <summary lang="hu">AsianDB filmadat leolvasó</summary>
+    <summary lang="kr">AsianDB 영화 스크래퍼</summary>
+    <summary lang="pl">Scraper filmów AsianDB</summary>
+    <summary lang="pt">Scraper de filmes AsianDB</summary>
+    <description lang="en">Download Movie information from www.asiandb.com</description>
+    <description lang="hu">Film információk letöltése a www.asiandb.com webhelyről</description>
+    <description lang="kr">www.asiandb.com 에서 영화 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.asiandb.com</description>
+    <description lang="pt">Descarregar informação de filmes de www.asiandb.com</description>
+    <platform>all</platform>
+  </extension>
+</addon>

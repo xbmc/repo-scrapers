@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Title Language</string>
+    <string id="30001">Hungarian Certification</string>
+    <string id="30002">Enable full cast credits</string>
+    <string id="30003">Enable fanart from themoviedb.org</string>
+    <string id="30004">Enable posters from themoviedb.org</string>
+    <string id="30005">Enable posters from IMPAwards</string>
+    <string id="30006">Enable posters from MoviePosterDB</string>
+    <string id="30007">Enable trailers from HD-Trailers.net</string>
+</strings>

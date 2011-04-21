@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Język tytułu</string>
+    <string id="30001">Klasyfikacja węgierska</string>
+    <string id="30002">Włącz pełną obsadę</string>
+    <string id="30003">Włącz fanart z themoviedb.org</string>
+    <string id="30004">Włącz plakaty z themoviedb.org</string>
+    <string id="30005">Włącz plakaty z IMPAwards</string>
+    <string id="30006">Włącz plakaty z MoviePosterDB</string>
+    <string id="30007">Włącz zwiastuny z HD-Trailers.net</string>
+</strings>
