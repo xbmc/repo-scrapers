@@ -1,2 +1,7 @@
+[B]1.1.1[/B]
+- support new movie-profile page
+- add trailers from hd-trailers.net
+- add original title
+
 [B]1.1.0[/B]
 - big pile of fixes, should work now after long time!
