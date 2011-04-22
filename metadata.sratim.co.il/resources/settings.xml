@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
     <setting label="30000" type="bool" id="fullcredits" default="false"/>
+	<setting label="30001" type="labelenum" values="No|480p|720p|1080p" id="TrailerQ" default="480p"/>
     <setting label="30002" type="bool" id="fanart" default="true"/>
     <setting label="30003" type="bool" id="imdbrating" default="false"/>
 </settings>
