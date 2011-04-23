@@ -1,3 +1,7 @@
+[B]1.1.2[/B]
+- support new search results
+- fix non-imdb rating
+
 [B]1.1.1[/B]
 - support new movie-profile page
 - add trailers from hd-trailers.net
