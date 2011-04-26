@@ -1,3 +1,6 @@
+[B]1.4.0[/B]
+- added: trailer scraping from TMDB via youtube plugin
+
 [B]1.3.1[/B]
 - fixed: added year to search string properly
 
