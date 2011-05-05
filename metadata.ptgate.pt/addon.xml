@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.ptgate.pt"
        name="PTGate"
-        version="1.1.1"
+        version="1.2.0"
        provider-name="apaneiro">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -24,6 +24,5 @@
     <description lang="kr">cinema.ptgate.pt 에서 영화 정보 다운로드</description>
     <description lang="pl">Pobieraj informacje o filmach z cinema.ptgate.pt</description>
     <description lang="pt">Descarregar informação de filmes de cinema.ptgate.pt</description>
-    <broken>Portal layout has changed.</broken>
   </extension>
 </addon>
