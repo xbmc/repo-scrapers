@@ -1,3 +1,6 @@
+Version 1.0.5 (May 4 2011)
+ - Modify regex for the change of Bing search engine
+
 Version 1.0.4 (Dec 4 2010)
  - Change the search engine to Bing because it seems that we can't use AtMovies' search engine now :( 
 

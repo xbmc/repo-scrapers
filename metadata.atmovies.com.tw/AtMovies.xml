@@ -10,8 +10,8 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=filmdata&amp;amp;film_id=\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" trim="1">&lt;p&gt;(.*?) [:\w* ]*&lt;strong&gt;.*?film_[iI][dD]=([a-zA-Z0-9]*)</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=filmdata&amp;amp;film_id=\1&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" trim="1">.*?film_[iI][dD]=(f[a-zA-Z0-9]*).*&lt;p&gt;(.*?) [:\w* ]*&lt;strong&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
