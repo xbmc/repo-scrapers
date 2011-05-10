@@ -145,7 +145,7 @@
 	<GetEpisodeList dest="3">
 		<RegExp input="$$4" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="3">
 			<RegExp input="$$2" output="\1" dest="10">
-				<expression>http://(?:www\.)thetvdb.com/api/1D62F2F90030C444/series/([0-9]*)/all/$INFO[language].zip</expression>
+				<expression>http://(?:www\.)thetvdb.com/api/(.+)/series/([0-9]*)/all/(.+).zip</expression>
 			</RegExp>
 			<RegExp conditional="!dvdorder">
 				<!-- Regular episodes (Absolute order) -->

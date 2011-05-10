@@ -1,3 +1,6 @@
+[B]1.2.2[/B]
+- Fixed: episodeguide url won't picked up sometimes
+
 [B]1.2.1[/B]
 - Fixed: won't parse longer search results
 
