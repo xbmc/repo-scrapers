@@ -144,7 +144,7 @@
 	<!-- returns:	results in xml format <episodeguide><episode><title>*</title><url>*</url><season>*</season><epnum>*</epnum><thumb>*</thumb><id>*</id><aired>*</aired></episode>*</episodeguide> !-->
 	<GetEpisodeList dest="3">
 		<RegExp input="$$4" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="3">
-			<RegExp input="$$2" output="\1" dest="10">
+			<RegExp input="$$2" output="\2" dest="10">
 				<expression>http://(?:www\.)thetvdb.com/api/(.+)/series/([0-9]*)/all/(.+).zip</expression>
 			</RegExp>
 			<RegExp conditional="!dvdorder">
