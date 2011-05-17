@@ -33,7 +33,7 @@
 				<expression trim="1">&lt;releasedate&gt;[^,]*([0-9]+),&lt;/releasedate&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="5+">
-				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]</expression>
+				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]\]</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="5+">
 				<expression repeat="yes" noclean="1">&lt;track rank=&quot;(.*?)&quot;.*?&lt;name&gt;(.*?)&lt;/name&gt;</expression>
