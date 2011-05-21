@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="WINDOWS-1251"?>
 <scraper date="2010-02-23" framework="1.1">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&lt;/url&gt;" dest="3">
 			<expression noclean="1">(http://www\.kinopoisk\.ru/level/1/film/[0-9]*/)</expression>
 		</RegExp>
 	</NfoUrl>
 	<!-- Формируем поисковый URl -->
 	<CreateSearchUrl SearchStringEncoding="CP1251" dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.kinopoisk.ru/index.php?level=7&amp;from=forma&amp;result=adv&amp;m_act%5Bfrom%5D=forma&amp;m_act%5Bwhat%5D=content&amp;m_act%5Bfind%5D=\1&amp;m_act%5Byear%5D=$$2|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://s.kinopoisk.ru/index.php?level=7&amp;from=forma&amp;result=adv&amp;m_act%5Bfrom%5D=forma&amp;m_act%5Bwhat%5D=content&amp;m_act%5Bfind%5D=\1&amp;m_act%5Byear%5D=$$2|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
@@ -34,16 +34,16 @@
 				<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="7+">
 					<expression>&lt;a href="/level/10/m_act%5Byear%5D/(\d+)/"</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;" dest="7+">
+				<RegExp input="$$1" output="&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;" dest="7+">
 					<expression>&lt;a href="/level/19/film/(\d+)/"&gt;</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
 			<!--Код если найдено несколько вариантов-->
-			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;&lt;/entity&gt;" dest="5+">
 				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
 			</RegExp>
-			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20i686%3B%20en-US%3B%20rv%3A1.8.1.14)%20Gecko%2F20080418%20Ubuntu%2F7.10%20(gutsy)%20Firefox%2F2.0.0.14&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;&lt;/entity&gt;" dest="5+">
 				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
 			</RegExp>
 			<!-- fix html entities from titles-->
@@ -121,7 +121,7 @@
 			</RegExp>
 			<!--COUNTRY-->
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
-				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src="/images/flags/flag.*?alt="(.*?)"</expression>
+				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src="http://st.kinopoisk.ru/images/flags/flag.*?alt="(.*?)"</expression>
 			</RegExp>
 			<!--YEAR-->
 			<RegExp input="$$1" output="\1" dest="13">
@@ -132,7 +132,7 @@
 			</RegExp>
 			<!-- premier year -->
 			<RegExp input="$$1" output="\1" dest="14">
-				<expression>href="/level/80/film/\d+/"&gt;.+?([0-9]+)&lt;/a&gt;</expression>
+				<expression>href="/level/80/film/\d+/".+?([0-9]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- количество голосов на imdb id -->
 			<RegExp input="$$1" output="\1 " dest="15">
@@ -147,11 +147,11 @@
 			</RegExp>
 			<!--TOP250-->
 			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="5+">
-				<expression>Top250: &lt;a[^&gt;]+&gt;([0-9]*)&lt;/a&gt;</expression>
+				<expression>&lt;a href="/level/56/film/\d+/" style="color:#555"&gt;([0-9]*).+?&lt;/a&gt;</expression>
 			</RegExp>
 			<!--Рейтинг MPAA-->
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
-				<expression>&lt;tr&gt;&lt;td class="type"&gt;[^&lt;]+MPAA&lt;/td&gt;&lt;td[^&gt;]+&gt;&lt;a href=&apos;.+?/rn/(.+?)/&apos;</expression>
+				<expression>&lt;tr&gt;&lt;td class="type"&gt;[^&lt;]+MPAA&lt;/td&gt;&lt;td[^&gt;]+&gt;&lt;a href='.+?/rn/(.+?)/'</expression>
 			</RegExp>
 			<!--TAGLINE-->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="5+">
@@ -163,7 +163,7 @@
 			</RegExp>
 			<!--Рейтинг IMDB-->
 			<RegExp conditional="!kinopoisk_rating" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="5+">
-				<expression>IMDB: ([0-9.]+) \(([0-9\s]+)\)&lt;/div&gt;</expression>
+				<expression>IMDb: ([0-9.]+) \(([0-9\s]+)\)&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp conditional="kinopoisk_rating" input="none" output="" dest="2">
 				<expression />
@@ -225,7 +225,7 @@
 				<expression>href="/level/19/film/(\d+)/"</expression>
 			</RegExp>
 			<!--POSTERS-->
-			<RegExp input="$$1" conditional="posters_from_kinopoisk" output="&lt;url function=&quot;GMP&quot;&gt;http://www.kinopoisk.ru\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="posters_from_kinopoisk" input="$$1" output="&lt;url function=&quot;GMP&quot;&gt;http://www.kinopoisk.ru\1&lt;/url&gt;" dest="5+">
 				<expression>href="(/level/17/film/([0-9]+)/)"</expression>
 			</RegExp>
 			<!--TRAILER-->
@@ -239,14 +239,14 @@
 				<!-- Если фильм произведён в России, то выбираем первый трейлер -->
 				<RegExp input="$$9"  output="$$4" dest="2">
 					<RegExp input="$$1" output="&lt;url function=&quot;GMT_Russia&quot;&gt;http://www.kinopoisk.ru/level/16/film/\1&lt;/url&gt;" dest="4">
-						<expression>&lt;a href="/level/16/film/(\d+)/"&gt;</expression>
+						<expression>&lt;a href="/level/16/film/(\d+)/</expression>
 					</RegExp>
 					<expression>^true$</expression>
 				</RegExp>
 				<!-- Если фильм произведён не в России, то выбираем русский трейлер -->
 				<RegExp input="$$9" output="$$3" dest="2">
 					<RegExp input="$$1" output="&lt;url function=&quot;GMT&quot;&gt;http://www.kinopoisk.ru/level/16/film/\1&lt;/url&gt;" dest="3">
-						<expression>&lt;a href="/level/16/film/(\d+)/"&gt;</expression>
+						<expression>&lt;a href="/level/16/film/(\d+)/</expression>
 					</RegExp>
 					<expression>^&lt;country&gt;</expression>
 				</RegExp>
@@ -259,7 +259,7 @@
 	</GetDetails>
 	<GetPoster dest="4">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb preview=&quot;http://st.kinopoisk.ru/images/poster/sm_im_\2.jpg&quot;&gt;http://st.kinopoisk.ru/\1&lt;/thumb&gt;&lt;/details&gt;" dest="4">
-		<expression repeat="no" noclean="1">&lt;img style="border: 1px #777 solid; position: absolute; margin-left: -5000px" src="http://st.kinopoisk.ru/([^"]+?-(\d+).jpg)"</expression>
+		<expression repeat="no" noclean="1">&lt;img style="border: 1px #777 solid; position: absolute; margin-left: -5000px" id='image' src="http://st.kinopoisk.ru/([^"]+?-(\d+).jpg)"</expression>
 		</RegExp>
 	</GetPoster>
 	<GMP dest="4">
@@ -274,7 +274,7 @@
 				<expression noclean="1">&lt;div class="navigator"&gt;(.*?)&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;url function=&quot;GMP_SINGLE&quot;&gt;http://www.kinopoisk.ru\1&lt;/url&gt;" dest="8+">
-				<expression repeat="yes" noclean="1">&lt;li &gt;&lt;a href="(/level/17/film/\d+/page/\d+/)">\d+&lt;/a&gt;&lt;/li&gt;</expression>
+				<expression repeat="yes" noclean="1">&lt;li &gt;&lt;a href="(/level/17/film/\d+/page/\d+/)"&gt;\d+&lt;/a&gt;&lt;/li&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -301,7 +301,7 @@
 			</RegExp>
 			<!-- HD TRAILERS-->
 			<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
+				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- Пытаемся выбрать предпочитаемое качество-->
 			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
@@ -341,7 +341,7 @@
 	<GMT dest="4">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;trailer tilte=&quot;\1&quot;&gt;&lt;html&gt;\2&lt;/html&gt;&lt;/trailer&gt;" dest="3">
-				<expression repeat="yes" noclean="2">src="/images/flags/flag-2.gif".*?class="all"&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
+				<expression repeat="yes" noclean="2">src="http://st.kinopoisk.ru/images/flags/flag-2.gif".*?class="all"[^&gt;]*&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
 			</RegExp>
 			<RegExp input="$$3" output="\1" dest="3">
 				<expression noclean="1">tilte="Трейлер.*?"(.*?)&lt;/trailer&gt;</expression>
@@ -352,7 +352,7 @@
 			</RegExp>
 			<!-- HD TRAILERS-->
 			<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
+				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- Пытаемся выбрать предпочитаемое качество-->
 			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
@@ -400,7 +400,7 @@
 				</RegExp>
 				<!-- HD TRAILERS-->
 				<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-					<expression repeat="yes">&lt;td width=20&gt;&lt;img src="/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
+					<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
 				</RegExp>
 				<!-- Пытаемся выбрать предпочитаемое качество-->
 				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
@@ -462,15 +462,15 @@
 				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="actor"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;table</expression>
 			</RegExp>
 			<RegExp conditional="!rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://st.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
-				<expression repeat="yes" trim="3">&lt;img src="http://st.kinopoisk.ru/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;(.*?)&lt;/a&gt;&lt;b&gt;.*?&lt;/b&gt;... ([^&lt;,]+)</expression>
+				<expression repeat="yes" trim="3">title="/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;a href="/level/4/people/\d+/"&gt;(.*?)&lt;/a&gt;.+?"role"&gt;... ([^&lt;]+)</expression>
 			</RegExp>
 			<RegExp conditional="rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;http://st.kinopoisk.ru/images/actor/\1&lt;/e&gt;" dest="9">
-				<expression repeat="yes" trim="3">&lt;img src="http://st.kinopoisk.ru/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([а-яА-Я][^&lt;]*)&lt;/a&gt;&lt;b&gt;.*?&lt;/b&gt;... ([^&lt;,]+)</expression>
+				<expression repeat="yes" trim="3">title="/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)" alt=.+?&lt;a href="/level/4/people/\d+/"&gt;([а-яА-Я][^&lt;]*)&lt;/a&gt;.*?"role"&gt;... ([^&lt;]+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;thumb&gt;\3&lt;/thumb&gt;&lt;/actor&gt;" dest="7">
 				<expression repeat="yes" trim="3">&lt;n&gt;([^&lt;]+)&lt;r&gt;(?:играет |)([^&lt;]+)&lt;t&gt;(?:(http://st.kinopoisk.ru/images/actor/[0-9]+.jpg)&lt;/e&gt;|http://st.kinopoisk.ru/images/actor/&lt;/e&gt;)</expression>
 			</RegExp>
-			<!-- remove &nbsp; from actor roles -->
+			<!-- убираем &nbsp; из ролей актёров -->
 			<RegExp input="$$7" output="\1&amp;nbsp;" dest="7">
 				<expression noclean="1"/>
 			</RegExp>
@@ -482,13 +482,13 @@
 				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="director"&gt;&lt;/td&gt;&lt;/tr&gt;.+?&lt;/table&gt;(.*?)&lt;table</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;director&gt;\1&lt;/director&gt;" dest="7+">
-				<expression repeat="yes" trim="3">&lt;img src="[^"]+" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
+				<expression repeat="yes" trim="3">"name"&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression clear="yes" noclean="1">&lt;tr&gt;&lt;td colspan=3&gt;&lt;a name="writer"&gt;&lt;/td&gt;&lt;/tr&gt;(.*?)&lt;table</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="7+">
-				<expression repeat="yes" trim="3">&lt;img src="[^"]+" alt=.+?&lt;p&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
+				<expression repeat="yes" trim="3">"name"&gt;&lt;a href="/level/4/people/\d+/"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
