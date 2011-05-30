@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2010-07-19" name="cinemagia.ro" content="movies" thumb="cinemagia.png" language="ro">
- <include>common/tmdb.xml</include>
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2011-05-30" name="cinemagia.ro" content="movies" thumb="cinemagia.png" language="ro">
+	<include>common/tmdb.xml</include>
 	<CreateSearchUrl SearchStringEncoding="utf-8" clearbuffers="no" dest="3">
 		<!--movie search url on cinemarx.ro-->
 		<RegExp input="$$1" output="&lt;url&gt;http://www.cinemagia.ro/cauta/?q=\1&amp;pn=99&amp;search_type=filme&lt;/url&gt;" dest="3">
-			<expression noclean="1"/>
+			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
@@ -11,7 +11,7 @@
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" trim="1" noclean="1">search-item-container clearfix[^=]*..(http://www.cinemagia.ro/filme/[^"]*)[^=]*..([^"]*)[^(]*.(\d{4})[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
-			<expression noclean="1"/>
+			<expression noclean="1" />
 		</RegExp>
 	</GetSearchResults>
 	<GetDetails dest="3">
@@ -34,7 +34,7 @@
 				<RegExp input="$$4 $$6" output="\1" dest="4">
 					<expression>($$6)</expression>
 				</RegExp>
-				<expression noclean="1"/>
+				<expression noclean="1" />
 			</RegExp>
 			<!--Year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
@@ -56,11 +56,11 @@
 			</RegExp>
 			<!--rating (from cinemagia)-->
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression noclean="1">property="v:average"&gt;([^&lt;]*)</expression>
+				<expression noclean="1">&lt;span property="v:average"[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
 			<!--votes (from cinemagia)-->
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-				<expression noclean="1">&lt;a id="showMovieRatingGroupByValue"[^&gt;]*.([^ ]*)</expression>
+				<expression noclean="1">property="v:votes"&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression noclean="1">&lt;h3&gt;Produs de&lt;/h3&gt;[^&gt;]*.([^&lt;]*)</expression>
@@ -73,21 +73,21 @@
 				<expression repeat="yes" noclean="1">&lt;a href="http://www.cinemagia.ro/actori/[^=]*."(http://[^/]*.[^/]*)/resize/db/actor/([^"]*(?=-))[^&lt;]*[^=]*[^/]*[^&gt;]*.([^&lt;]*)&lt;/a&gt;[^&lt;]*[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp conditional="fullmoviedistribution" input="$$3" output="&lt;url function=&quot;GetFullMovieDistribution&quot;&gt;$$3distributie/&lt;/url&gt;" dest="5+">
-				<expression/>
+				<expression />
 			</RegExp>
 			<RegExp input="$$3" output="&lt;url function=&quot;GetMovieSinopsis&quot;&gt;$$3wiki/sinopsis/&lt;/url&gt;" dest="5+">
-				<expression/>
+				<expression />
 			</RegExp>
 			<RegExp conditional="!tmdbthumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
 				<expression>&lt;a href="(http://static.cinemagia.ro/img/db/movie/[^"]*)</expression>
 			</RegExp>
-			<RegExp conditional="tmdbthumbs" input="$$12" output="&lt;url function=&quot;GetTMDBThumbsById&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<expression/>
+			<RegExp conditional="tmdbthumbs" input="$$12" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
-			<RegExp conditional="tmdbfanart" input="$$12" output="&lt;url function=&quot;GetTMDBFanartById&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<expression/>
+			<RegExp conditional="tmdbfanart" input="$$12" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
-			<expression noclean="1"/>
+			<expression noclean="1" />
 		</RegExp>
 	</GetDetails>
 	<GetFullMovieDistribution dest="5">
@@ -104,7 +104,7 @@
 				</RegExp>
 				<expression repeat="yes" noclean="1">&lt;tr&gt;.*?&lt;td style="width:30px"&gt;[^&lt;]*&lt;a href="[^&gt;]*[^"]*.([^:]*://[^\/]*\/[^\/]*\/)[^\/]*\/([^-]*[^0-9]*[^l]*l)[^.]*(.[^"]*)[^\/]*[^:]*:[^:]*[^&gt;]*&gt;([^&lt;]*)[^&gt;]*&gt;[^&gt;]*&gt;[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
-			<expression noclean="1"/>
+			<expression noclean="1" />
 		</RegExp>
 	</GetFullMovieDistribution>
 	<GetMovieSinopsis dest="5">
