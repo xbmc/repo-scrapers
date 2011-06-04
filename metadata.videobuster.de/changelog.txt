@@ -1,3 +1,7 @@
+[B]1.1.0[/B]
+- better results if searching with year appended
+- removed dupe fanart expression
+
 [B]1.0.9[/B]
 - changed to use chain function to get fanart from tmdb
 
@@ -8,18 +12,14 @@
 - added Hungarian translation
 
 [B]1.0.5[/B]
-
- - fixed missing ratings
+- fixed missing ratings
 
 [B]1.0.4[/B]
-
 - return numeric runtime/duration values
 
 [B]1.0.1-3[/B]
-
 - added production countries
 - internal tests
 
 [B]1.0.0[/B]
-
 - Initial import into addons repository
