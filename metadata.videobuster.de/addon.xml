@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.videobuster.de"
        name="VideoBuster"
-       version="1.0.9"
+       version="1.1.0"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -11,6 +11,7 @@
              language="de"
              library="videobuster.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="de">VideoBuster.de Film Scraper</summary>
     <summary lang="en">VideoBuster.de Movie Scraper</summary>
     <summary lang="hu">VideoBuster.de filmadat leolvasó</summary>
     <summary lang="kr">VideoBuster.de 영화 스크래퍼</summary>
@@ -18,6 +19,7 @@
     <summary lang="pl">Scraper filmów VideoBuster.de</summary>
     <summary lang="pt">Scraper de filmes VideoBuster.de</summary>
     <summary lang="se">VideoBuster.de Filmskrapa</summary>
+    <description lang="de">Lade Filminformation von www.videobuster.de</description>
     <description lang="en">Download Movie information from www.videobuster.de</description>
     <description lang="hu">Film információk letöltése a www.videobuster.de-ről</description>
     <description lang="kr">www.videobuster.de에서 영화 정보 다운로드</description>
