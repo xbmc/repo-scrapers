@@ -6,7 +6,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.videobuster.de/titlesearch.php?order_column=name&amp;tab_search_content=movies&amp;search_title=\1$$4&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.videobuster.de/titlesearch.php?order_column=requests&amp;tab_search_content=movies&amp;search_title=\1$$4&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="&amp;search_year_to=\1" dest="4+">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -16,7 +16,7 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.videobuster.de\1.html?tab=details&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;(.*?).html.*?&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;label&gt;Produktion:&lt;/label&gt;.*?([0-9]*)&lt;/div&gt;</expression>
+				<expression repeat="yes">&lt;div class=&quot;name&quot;&gt;&lt;a href=&quot;(.*?).html.*?&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;label&gt;Produktion:&lt;/label&gt;.*?([0-9]+).*?&lt;label&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>

@@ -1,3 +1,6 @@
+[B]1.1.1[/B]
+- use search results pre-sorted by popularity
+
 [B]1.1.0[/B]
 - better results if searching with year appended
 - removed dupe fanart expression
