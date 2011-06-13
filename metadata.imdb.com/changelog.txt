@@ -1,3 +1,6 @@
+[B]2.2.0[/B]
+- Better USA/International title recognition + make NfoUrl imdb site independent
+
 [B]2.1.9[/B]
 - fixed: actor roles and remove scraping of imdb trailers
 
