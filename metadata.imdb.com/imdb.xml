@@ -2,10 +2,10 @@
 <scraper framework="1.1" date="2011-03-15">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://akas.\1/title/tt\2/&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3">
-			<expression clear="yes" noclean="1">(imdb.com)/Title\?([0-9]*)</expression>
+			<expression clear="yes" noclean="1">(imdb.+)/Title\?([0-9]*)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;url&gt;http://akas.\1\2/&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3+">
-			<expression noclean="1">(imdb.com/title/tt)([0-9]*)</expression>
+			<expression noclean="1">(imdb.+/title/tt)([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
@@ -152,30 +152,66 @@
 					<expression>&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
 				</RegExp>
 				<RegExp input="$$9" output="\1" dest="10">
-					<expression/>
+					<expression />
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression>&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+(UK|USA|Canada\s(&lt;em&gt;)?\(English title\))</expression>
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+Hong Kong [&lt;em&gt;][^&quot;]+English</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression>&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+Hong Kong [&lt;em&gt;][^&quot;]+English</expression>
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((Canada)\s(&lt;em&gt;)?\((English|imdb))</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression>&gt;\s*?&quot;([^&lt;]+)" - International [&lt;em&gt;]?[^&quot;]+English</expression>
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+(UK(&lt;em&gt;)?&lt;br&gt;)</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English title\)(&lt;/em&gt;)?(,|&lt;)( |b)</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English title\)(&lt;/em&gt;)? (&lt;em&gt;)?\(imdb</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression>&lt;a href="/country/[^&gt;]+&gt;(USA|UK|NewZealand|Canada)</expression>
+					<expression clear="yes">&lt;a href=&quot;/country/[^&gt;]+&gt;(UK&lt;/a&gt;&lt;/div&gt;)</expression>
 				</RegExp>
 				<RegExp input="$$12" output="$$9" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="12">
+					<expression clear="yes">&lt;a href=&quot;/country/[^&gt;]+&gt;(USA&lt;/a&gt;&lt;/div&gt;)</expression>
+				</RegExp>
+				<RegExp input="$$12" output="$$9" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+(USA(&lt;em&gt;)?&lt;br&gt;)</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((English|imdb))</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((new title))</expression>
+				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<expression noclean="1" />
@@ -190,7 +226,7 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="5">
-				<expression>&lt;a href="/country/[^&gt;]+&gt;($INFO[akatitles])</expression>
+				<expression>&lt;a href=&quot;/country/[^&gt;]+&gt;($INFO[akatitles])</expression>
 			</RegExp>
 			<RegExp input="$$5" output="$$9" dest="4">
 				<expression>($INFO[akatitles])</expression>
