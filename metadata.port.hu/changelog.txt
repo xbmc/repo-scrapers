@@ -1,3 +1,6 @@
+[B]1.5.0[/B]
+- re-added: Hungarian and Original title in the same title field (not recommended to use)
+
 [B]1.4.3[/B]
 - fixed: incorrectly scraped year under some circumtances
 
