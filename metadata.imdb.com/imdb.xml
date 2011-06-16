@@ -2,10 +2,10 @@
 <scraper framework="1.1" date="2011-03-15">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://akas.\1/title/tt\2/&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3">
-			<expression clear="yes" noclean="1">(imdb.+)/Title\?([0-9]*)</expression>
+			<expression clear="yes" noclean="1">(imdb....?)/Title\?([0-9]*)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;url&gt;http://akas.\1\2/&lt;/url&gt;&lt;id&gt;tt\2&lt;/id&gt;" dest="3+">
-			<expression noclean="1">(imdb.+/title/tt)([0-9]*)</expression>
+			<expression noclean="1">(imdb....?/title/tt)([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
