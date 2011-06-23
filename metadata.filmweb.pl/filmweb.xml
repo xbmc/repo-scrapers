@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<scraper framework="1.0" date="2011-02-18">
+<scraper framework="1.0" date="2011-06-22">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;"  dest="3">
 			<expression noclean="1">filmweb.pl/f([0-9]*)/</expression>
@@ -34,14 +34,14 @@
 		</RegExp>
 	</FilmwebByIMDBId>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.filmweb.pl/search/film?sort=COUNT&amp;amp;q=\1&amp;amp;startYear=$$2&amp;amp;endYear=$$2&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.filmweb.pl/search/film?q=\1&amp;amp;startYear=$$2&amp;amp;endYear=$$2&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" fixchars="2">searchResult.*?src="http://1.fwcdn.pl/po/[^/]*/[^/]*/([0-9]*)/.*?searchResultTitle[^&gt;]+&gt;(.*?)&lt;/a&gt;&lt;/h3&gt;.*?searchResultDetails[^0-9]+([0-9]*)</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;filmweb-\3&quot;&gt;http://www.filmweb.pl/Film?id=\3&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" fixchars="1">searchResult.*?searchResultTitle[^&gt;]+&gt;(.*?)&lt;/a&gt;&lt;/h3&gt;.*?searchResultDetails[^0-9]+([0-9]*).*?src="http://1.fwcdn.pl/po/[^/]*/[^/]*/([0-9]*)/</expression>
 			</RegExp>
 			<RegExp input="$$5" output="\1 " dest="5">
 				<expression repeat="yes" noclean="1">([^\t]*)\t?</expression>
@@ -65,6 +65,9 @@
 					<expression>(.*)(, (A|An|The|Das|Der|Des|Die|De|L'|Le|Les|La|Un|Une|El|Il|Las|Los|Una|Unos|Unas))$</expression>
 				</RegExp>
 				<expression/>
+			</RegExp>
+			<RegExp conditional="!UseOriginalTitle" input="$$6" output="&lt;url function=&quot;TitletoASCII&quot;&gt;http://www.remove-pl.yoyo.pl/smu4.php?text=\1&lt;/url&gt;" dest="5+">
+				<expression encode="1"/>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
@@ -201,43 +204,40 @@
 		</RegExp>
 	</GoogleToIMDB>
 	<Opisy dest="5">
-		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<RegExp input="" output="Na razie nikt nie dodał streszczenia fabuły tego filmu. Możesz być pierwszy! Zamieść swój opis." dest="8">
-				<expression />
-			</RegExp>
-			<RegExp input="$$10" output="\1" dest="8">
+		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$10" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="10">
-					<expression noclean="1" fixchars="1">li class="?desc[^&gt;]+&gt;&lt;p&gt;(.*?)&lt;/p&gt;</expression>
+					<expression fixchars="1">li class="?desc[^&gt;]+&gt;&lt;p&gt;(.*?)&lt;/p&gt;</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp input="$$13" output="\1 [opis dystrybutora]" dest="8">
+			<RegExp input="$$13" output="&lt;plot&gt;\1 [opis dystrybutora]&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="13">
-					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;([^\[]+)\[opis</expression>
+					<expression fixchars="1">class="desc[^~]+&lt;p&gt;([^\[]+)\[opis</expression>
 				</RegExp>
-				<expression>(.+)</expression>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="opis" input="$$12" output="\1 [opis dystrybutora kino]" dest="8">
+			<RegExp conditional="opis" input="$$12" output="&lt;plot&gt;\1 [opis dystrybutora kino]&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
+					<expression fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="opis" input="$$11" output="\1 [opis dystrybutora dvd]" dest="8">
+			<RegExp conditional="opis" input="$$11" output="&lt;plot&gt;\1 [opis dystrybutora dvd]&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
+					<expression fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="!opis" input="$$11" output="\1 [opis dystrybutora dvd]" dest="8">
+			<RegExp conditional="!opis" input="$$11" output="&lt;plot&gt;\1 [opis dystrybutora dvd]&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
+					<expression fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora dvd</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="!opis" input="$$12" output="\1 [opis dystrybutora kino]" dest="8">
+			<RegExp conditional="!opis" input="$$12" output="&lt;plot&gt;\1 [opis dystrybutora kino]&lt;/plot&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression noclean="1" fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
+					<expression fixchars="1">class="desc[^~]+&lt;p&gt;(.*?)&lt;/p&gt;[^\[]+\[opis dystrybutora kino</expression>
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
@@ -247,7 +247,7 @@
 			<RegExp input="$$8" output="\1\2" dest="8">
 				<expression repeat="yes" noclean="1,2">([^\s]*)(?:(\s)\2*)?</expression>
 			</RegExp>
-			<expression/>
+			<expression noclean="1" />
 		</RegExp>
 	</Opisy>
 	<Plakaty dest="5">
@@ -279,21 +279,30 @@
 		</RegExp>
 	</Obsada>
 	<Zwiastuny dest="5">
-		<RegExp input="$$8" output="&lt;details&gt;&lt;url function=&quot;GetTrailerLink&quot;&gt;http://www.filmweb.pl/video/trailer/\1&lt;/url&gt;&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="8">
-				<expression>class=image[^=]+=&quot;/video/trailer/([^&quot;]+)</expression>
+		<RegExp input="$$8$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="" output="&lt;plot&gt;Na razie nikt nie dodał streszczenia fabuły tego filmu. Możesz być pierwszy! Zamieść swój opis.&lt;/plot&gt;" dest="13">
+				<expression />
 			</RegExp>
-			<RegExp input="$$11" output="\1" dest="8">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTrailerLink&quot;&gt;http://www.filmweb.pl/video/\1&lt;/url&gt;" dest="8">
+				<expression>class=image[^=]+=&quot;/video/([^&quot;]+)</expression>
+			</RegExp>
+			<RegExp input="$$11" output="&lt;url function=&quot;GetTrailerLink&quot;&gt;http://www.filmweb.pl/video/trailer/\1&lt;/url&gt;" dest="8">
+				<RegExp input="$$1" output="\1" dest="11">
+					<expression>class=image[^=]+=&quot;/video/trailer/([^&quot;]+)</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$11" output="&lt;url function=&quot;GetTrailerLink&quot;&gt;http://www.filmweb.pl/video/trailer/\1&lt;/url&gt;" dest="8">
 				<RegExp input="$$1" output="\1" dest="11">
 					<expression>class=image[^=]+=&quot;/video/trailer/([^&quot;]+polski[^&quot;]+)</expression>
 				</RegExp>
 				<expression>(.+)</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1"/>
 		</RegExp>
 	</Zwiastuny>
 	<GetTrailerLink dest="5">
-		<RegExp input="$$11" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+		<RegExp input="$$11$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
 				<expression noclean="1">Więcej dla tego filmu(.*?)&lt;h2</expression>
 			</RegExp>
@@ -314,7 +323,13 @@
 			</RegExp>
 			<RegExp input="$$12" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="11">
 				<RegExp input="$$1" output="\1\2" dest="12">
-					<expression clear="yes" noclean="1">src="([^"]+)(mp4|mpg|mov)</expression>
+					<expression clear="yes" noclean="1">src="([^"]+)(mp4|mpg|mov|ogv)</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$14" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="13">
+				<RegExp input="$$1" output="\1" dest="14">
+					<expression  fixchars="1" noclean="1">&lt;div class=trailerReport&gt;&lt;/div&gt;(.*?)&lt;div class=recommendOthers</expression>
 				</RegExp>
 				<expression>(.+)</expression>
 			</RegExp>
@@ -322,8 +337,20 @@
 		</RegExp>
 	</GetTrailerLink>
 	<TryGetTrailer dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression clear="yes" noclean="1">source src="([^"]+)</expression>
+		<RegExp input="$$11" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$12" output="&lt;trailer&gt;plugin://plugin.video.youtube/?action=play_video&videoid=\1&lt;/trailer&gt;" dest="11">
+				<RegExp input="$$1" output="\1" dest="12">
+					<expression clear="yes" noclean="1">youtube.com/v/(.{11})\??</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$12" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="11">
+				<RegExp input="$$1" output="\1\2" dest="12">
+					<expression clear="yes" noclean="1">src="([^"]+)(mp4|mpg|mov|ogv)</expression>
+				</RegExp>
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression noclean="1"/>
 		</RegExp>
 	</TryGetTrailer>
 	<IMDB-Details dest="5">
@@ -363,4 +390,12 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</Fanarty>
+	<TitletoASCII dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;sorttitle&gt;\1&lt;/sorttitle&gt;" dest="5">
+				<expression noclean="1">&lt;textarea&gt;(.*?)xbmc(.*?)&lt;/textarea&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</TitletoASCII>
 </scraper>
