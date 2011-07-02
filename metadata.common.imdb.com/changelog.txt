@@ -1,3 +1,6 @@
+[B]2.1.1[/B]
+- fixed: IMDb rating
+
 [B]2.1.0[/B]
 - fixed: actor roles and remove scraping of imdb trailers
 
