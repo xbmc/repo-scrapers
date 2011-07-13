@@ -1,5 +1,9 @@
 Changelog:
 
+13/07/2011 - Added Results per page and "Year" option in settings, but it's best to keep it off.
+Optimized the cache for IMDb and tmdb and other fixes
+09/07/2011 - Almost completely rewritten: Bing is now the default search engine, all the infos by default are taken from movieplayer.it the user will enable the other features. 
+Many, many fixes.....
 07/03/2011 - Fixed Google search results.
 13/02/2011 - Fixed studio's logos retrieving only one studio from imdb.
 25/10/2010 - Fixed Trailers (it was deleted by mistake)

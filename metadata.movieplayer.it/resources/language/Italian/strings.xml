@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
     <string id="30000">Usa Google per la ricerca (più veloce ma meno preciso)</string>
-    <string id="30001">Scarica MPAA, studio e rating da IMDb</string>
-    <string id="30002">Scarica le informazioni di tutto il cast (lento)</string>
-    <string id="30003">Scarica anche i poster alternativi di Movieplayer.it</string>
+    <string id="30001">Scarica MPAA, studio, rating ed il cast da IMDb</string>
+    <string id="30002">Scarica tutto il cast da Movieplayer.it (lento)</string>
+    <string id="30003">Scarica tutti i Poster di Movieplayer.it</string>
     <string id="30004">Scarica i Poster anche da TMDB (in Inglese)</string>
-    <string id="30005">Scarica gli sfondi Fanart da TMDB.com (HD)</string>
-    <string id="30006">Scarica gli sfondi Fanart da Movieplayer.it (SD)</string>
+    <string id="30005">Scarica gli sfondi Fanart anche da TMDB (HD)</string>
+    <string id="30006">Scarica tutti gli sfondi Fanart di Movieplayer.it (SD)</string>
+    <string id="30007">Includi l'anno nella ricerca</string>
+    <string id="30008">Usa Bing per la ricerca (più veloce ma meno preciso)</string>
+    <string id="30009">Risultati per pagina: </string>
 </strings>
