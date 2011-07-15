@@ -879,8 +879,14 @@
       <RegExp input="$$1" output="\1" dest="20">
         <expression>&lt;anime id=&quot;(\d+)&quot;</expression>
       </RegExp>
-      <RegExp input="$$1" output="\1" dest="7">
-        <expression clear="yes" noclean="1">(?i)&lt;characters&gt;.*?&lt;/characters&gt;.*?&lt;episodes&gt;(.*?)&lt;/episodes&gt;</expression>
+      <RegExp input="$$1" output="\1" dest="6">
+        <expression clear="yes" noclean="1">(?i)&lt;characters&gt;.*?&lt;/characters&gt;.*?(&lt;episodes&gt;.*?&lt;/episodes&gt;)</expression>
+      </RegExp>
+      <RegExp input="$$1" output="\1" dest="6+">
+        <expression noclean="1">(?i)(&lt;episodes&gt;.*?&lt;/episodes&gt;)</expression>
+      </RegExp>
+      <RegExp input="$$6" output="\1" dest="7">
+        <expression clear="yes" noclean="1">(?i)&lt;episodes&gt;(.*?)&lt;/episodes&gt;</expression>
       </RegExp>
       <RegExp input="$$7" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;url cache=&quot;$$20.xml&quot;&gt;\1&lt;/url&gt;&lt;epnum&gt;\2&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\3&lt;/aired&gt;&lt;/episode&gt;" dest="8">
         <expression clear="yes" repeat="yes">(?i)&lt;episode\s+id=&quot;(\d+)&quot;[^&gt;]*&gt;\s*&lt;epno\s+type=&quot;1&quot;&gt;(\d+)&lt;/epno&gt;\s*(?:&lt;length&gt;[^&lt;]*&lt;/length&gt;\s*)?(?:&lt;airdate&gt;([^&lt;]+)&lt;/airdate&gt;\s*)?(?:&lt;rating[^&gt;]*&gt;[^&lt;]*&lt;/rating&gt;\s*)?(?:&lt;title[^&gt;]*&gt;[^&lt;]*&lt;/title&gt;\s*)*?&lt;title xml:lang=&quot;en&quot;&gt;([^&lt;]+)&lt;/title&gt;.*?&lt;/episode&gt;</expression>
