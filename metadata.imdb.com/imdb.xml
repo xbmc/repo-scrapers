@@ -19,13 +19,7 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes">/title/([t0-9]*)/combined</expression>
-			</RegExp>
-			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes">/title/([t0-9]*)/faq</expression>
-			</RegExp>
-			<RegExp input="$$8" output="\1" dest="7">
-				<expression>(.+)</expression>
+				<expression clear="yes">/title/([t0-9]*)/(combined|faq|releaseinfo|vote)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;http://akas.imdb.com/title/$$7/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
 				<expression clear="yes" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
