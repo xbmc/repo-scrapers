@@ -109,13 +109,13 @@
 				<expression fixchars="1">&lt;/h3&gt;&lt;p&gt;([^&lt;]+)&lt;a</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">gatunek(.*?)&lt;/td&gt;</expression>
+				<expression noclean="1">gatunek:(.*?)&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<expression repeat="yes" fixchars="1">"&gt;([^&lt;]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">produkcja(.*?)&lt;/td&gt;</expression>
+				<expression noclean="1">produkcja:(.*?)&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression repeat="yes">"&gt;([^&lt;]+)</expression>
@@ -136,7 +136,7 @@
 				<expression noclean="1">class="cast comBox dataBox"([^~]*)class="additional-info comBox"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression noclean="1">gatunek(.*?)&lt;/td&gt;</expression>
+				<expression noclean="1">gatunek:(.*?)&lt;/td&gt;</expression>
 			</RegExp>
 			<RegExp input="$$10" output="\1" dest="5+">
 				<RegExp conditional="!EnableFullCast" input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\11\2&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="10">
