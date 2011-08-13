@@ -96,13 +96,7 @@
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Get imdb ID from imdb.com and store it in Buffer 11 for future use-->
 			<RegExp input="$$1" output="\1" dest="11">
-				<expression>/title/([t0-9]*)/combined</expression>
-			</RegExp>
-			<RegExp input="$$1" output="\1" dest="12">
-				<expression clear="yes">/title/([t0-9]*)/faq</expression>
-			</RegExp>
-			<RegExp input="$$12" output="\1" dest="11">
-				<expression>(.+)</expression>
+				<expression clear="yes">/title/([t0-9]*)/(combined|faq|releaseinfo|vote)</expression>
 			</RegExp>
 			<!--Append imdb ID from Buffer 11-->
 			<RegExp input="$$11" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
