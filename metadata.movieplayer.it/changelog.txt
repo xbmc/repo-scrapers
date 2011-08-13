@@ -1,5 +1,9 @@
 Changelog:
 
+11/08/2011 - added "" to bing search, fixed original title and mpaa fields.
+07/08/2011 - updated main scraper to use new MoviePlayer layout .
+07/08/2011 - Removed optional IMDB, now it's used by default to retrieve all data except plot,tagline,outline,fanart and poster.
+07/08/2011 - Commit test.
 14/07/2011 - Fixed IMDb missing stuff and some cosmetics.
 13/07/2011 - Added Results per page and "Year" option in settings, but it's best to keep it off.
 Optimized the cache for IMDb and tmdb and other fixes

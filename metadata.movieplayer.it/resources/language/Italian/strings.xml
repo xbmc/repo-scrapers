@@ -1,8 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <strings>
-    <string id="30000">Usa Google per la ricerca (più veloce ma meno preciso)</string>
-    <string id="30001">Scarica MPAA, studio, rating ed il cast da IMDb</string>
-    <string id="30002">Scarica tutto il cast da Movieplayer.it (lento)</string>
     <string id="30003">Scarica tutti i Poster di Movieplayer.it</string>
     <string id="30004">Scarica i Poster anche da TMDB (in Inglese)</string>
     <string id="30005">Scarica gli sfondi Fanart anche da TMDB (HD)</string>
