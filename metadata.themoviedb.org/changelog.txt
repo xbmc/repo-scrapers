@@ -1,3 +1,6 @@
+[B]1.4.1[/B]
+- fixed: IMDb rating after site change 
+
 [B]1.4.0[/B]
 - added: trailer scraping from TMDB via youtube plugin
 
