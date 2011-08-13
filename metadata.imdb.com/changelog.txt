@@ -1,3 +1,6 @@
+[B]2.2.5[/B]
+- fixed: IMDb rating, MPAA rating and plot outline after site changes
+
 [B]2.2.4[/B]
 - fixed: missing imdb ID in search results due to site changes
 
