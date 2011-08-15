@@ -143,9 +143,73 @@
 			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--Get genres from imdb.com-->
-			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+			<!--Get genres from imdb.com and use as is-->
+			<RegExp conditional="!hungenre" input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+			</RegExp>
+			<!--Get genres from imdb.com and translate them to Hungarian if selected-->
+			<RegExp conditional="hungenre" input="$$1" output="\1" dest="17">
+				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Akció&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Action</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Akció&lt;/genre&gt;&lt;genre&gt;Kaland&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Action and Adventure</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Animációs&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Animation</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Bűnügyi&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Crime</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Családi&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">(Family|Children)</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Dokumentum&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Documentary</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Dráma&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Drama</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Háborús&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">War</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Kaland&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Adventure</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Mini-Sorozat&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Mini-Series</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Misztikus&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Mystery</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Romantikus&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Romance</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Sci-Fi&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Science-Fiction</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Szappanopera&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Soap</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Történelmi&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">History</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Valóságshow&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Reality</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Vígjáték&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Comedy</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Zenés&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Music</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;Életrajzi&lt;/genre&gt;" dest="5+">
+				<expression noclean="1">Biography</expression>
+			</RegExp>
+			<RegExp input="$$17" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes" noclean="1">(Anime|Fantasy|Horror|Musical|Sci-Fi|Sport|Thriller|Western)</expression>
 			</RegExp>
 			<!--Get studio from imdb.com-->
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">

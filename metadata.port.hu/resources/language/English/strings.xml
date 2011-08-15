@@ -9,4 +9,5 @@
     <string id="30005">Enable posters from IMPAwards</string>
     <string id="30006">Enable posters from MoviePosterDB</string>
     <string id="30007">Enable trailers from HD-Trailers.net</string>
-</strings>
+    <string id="30008">Translate genres to Hungarian</string>
+	</strings>
