@@ -77,7 +77,7 @@
 				<expression noclean="1" repeat="yes">&lt;category type=&quot;genre&quot; name=&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
-				<expression noclean="1" repeat="yes">&lt;studio name=&quot;([^&quot;]*)&quot;</expression>
+				<expression noclean="1">&lt;studio name=&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression noclean="1" repeat="yes">&lt;country name=&quot;([^&quot;]*)&quot;</expression>

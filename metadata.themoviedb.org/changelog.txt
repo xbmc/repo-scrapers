@@ -1,5 +1,11 @@
+[B]1.4.3[/B]
+- changed: scrape only one studio
+
+[B]1.4.2[/B]
+- version number skipped to stay sync with XBMC 10.1 scraper version numbering
+
 [B]1.4.1[/B]
-- fixed: IMDb rating after site change 
+- fixed: IMDb rating after site change
 
 [B]1.4.0[/B]
 - added: trailer scraping from TMDB via youtube plugin
