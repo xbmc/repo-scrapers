@@ -1,3 +1,6 @@
+[B]1.4.2[/B]
+- fixed: url/mixed nfo scraping
+
 [B]1.4.1[/B]
 - fixed: IMDb rating after site change 
 
