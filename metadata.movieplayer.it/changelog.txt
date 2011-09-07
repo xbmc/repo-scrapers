@@ -1,5 +1,5 @@
 Changelog:
-
+05/09/2011 - Tuning of year & originaltitle regexp
 11/08/2011 - added "" to bing search, fixed original title and mpaa fields.
 07/08/2011 - updated main scraper to use new MoviePlayer layout .
 07/08/2011 - Removed optional IMDB, now it's used by default to retrieve all data except plot,tagline,outline,fanart and poster.
