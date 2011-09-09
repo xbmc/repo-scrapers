@@ -2,10 +2,10 @@
 <settings>
     <setting label="30000" type="lsep" />
     <setting label="30001" type="bool" id="fullcredits" default="true"/>
-    <setting label="30002" type="bool" id="viewDirector" default="true" enable="eq(-1,true)"/>
-    <setting label="30003" type="bool" id="viewActors" default="true" enable="eq(-2,true)"/>
-    <setting label="30004" type="bool" id="viewFilmmakers" default="true" enable="eq(-3,true)"/>
-    <setting label="30005" type="bool" id="fakeactor" default="false" enable="eq(-4,true)"/>
+    <setting label="30002" type="bool" subsetting="true" id="viewDirector" default="true" enable="eq(-1,true)"/>
+    <setting label="30003" type="bool" subsetting="true" id="viewActors" default="true" enable="eq(-2,true)"/>
+    <setting label="30004" type="bool" subsetting="true" id="viewFilmmakers" default="true" enable="eq(-3,true)"/>
+    <setting label="30005" type="bool" subsetting="true" id="fakeactor" default="false" enable="eq(-4,true)"/>
 
     <setting label="30100" type="lsep" />
     <setting label="30101" type="bool" id="rating_ten" default="true" enable="!eq(8,true)"/>
@@ -13,7 +13,7 @@
     
     <setting label="30200" type="lsep" />
     <setting label="30201" type="bool" id="thumbs" default="true"/>
-    <setting label="30202" type="bool" id="bigThumbs" default="true" enable="eq(-1,true)" />
+    <setting label="30202" type="bool" subsetting="true" id="bigThumbs" default="true" enable="eq(-1,true)" />
     <setting label="30203" type="bool" id="trailer" default="true"/>
     <setting label="30204" type="bool" id="backdrops" default="true"/>
     <setting label="30205" type="bool" id="imdb" default="true"/>
