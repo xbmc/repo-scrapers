@@ -1,4 +1,11 @@
-[B]Note:[/B] if the scraper is very slow, disable setting tagged with "(slow)".
+[B]1.1.7[/B]
+- Added User Agent for error: "unable to connect to remote server"
+
+[B]1.1.6[/B]
+- Fixed regex: GetSearchResults, ParseImdbData (rating)
+
+[B]1.1.5[/B]
+- Fixed regex: trailer
 
 [B]1.1.4[/B]
 - Added base scale (vote/10) in direct vote, critics and the public. Proposed on forum.xbmc.org

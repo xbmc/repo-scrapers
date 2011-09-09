@@ -13,7 +13,7 @@
 	</NfoUrl>
 
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/search?q=\1$$4+site:mymovies.it&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.google.it/search?q=\1$$4+site:mymovies.it|User-Agent=Mozilla/5.0&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -25,11 +25,11 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<!-- Add new link style to Search result (http://www.mymovies.it/film/<year>/<film_name>/) -->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/film/[0-9]{4}/[^/]+/)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;</expression>
 			</RegExp>
 			<!-- Add OLD link style to Search result (www.mymovies.it/dizionario/recensione.asp?id=[0-9]) -->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url cache=&quot;main.html&quot;&gt;\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[^&quot;]+)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;&lt;div class=&quot;s&quot;&gt;(?(?=Un film di )Un film di (.+?) con)</expression>
+				<expression repeat="yes" cs="true">&lt;h3 class=&quot;r&quot;&gt;&lt;a href=&quot;(http://www\.mymovies\.it/dizionario/recensione\.asp\?id=[^&quot;]+)&quot; class=l&gt;(.+?)(?: +- +MYmovies)?(?: +\| +MYmovies)?&lt;/a&gt;&lt;/h3&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -123,11 +123,12 @@
 				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Cast [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Cast&lt;/a&gt;&lt;/td&gt;</expression>
 			</RegExp>
 
-			<!-- Thumb -->
+			<!-- Thumbs -->
+			<!-- Low res thumb get from first (scheda) film page -->
 			<RegExp conditional="!thumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
 				<expression cs="true" noclean="1">&lt;img style=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot; width=&quot;150px&quot; alt=&quot;Locandina</expression>
 			</RegExp>
-			<!-- else All Thumbs -->
+			<!-- Get all film thumbs -->
 			<RegExp conditional="thumbs" input="$$1" output="&lt;url function=&quot;GetMovieThumbs&quot;&gt;\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Poster [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Poster&lt;/a&gt;&lt;/td&gt;</expression>
 			</RegExp>
@@ -216,8 +217,7 @@
 	
 	<GetMovieTrailer dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&apos;(http://[^&apos;]+trailer.flv)&apos;</expression>
-			<!-- <expression noclean="1">url: &apos;([^&apos;|?]+\.flv).*&apos;</expression> -->
+			<expression noclean="1">&apos;(http://[^&apos;\?]+trailer[^&apos;\?]*\.flv)</expression>
 		</RegExp>
 	</GetMovieTrailer>
 
@@ -278,7 +278,7 @@
 			</RegExp>
 			<!-- I can't use pulbic function GetIMDBRatingById :( -->
 		   	<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6+">
-				<expression>&lt;span class=&quot;rating-rating&quot;&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
+				<expression>&lt;span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+).*?&gt;.*?title=&quot;([0-9,]+)\s</expression>
 			</RegExp>
 		   <expression noclean="1"/>
 		</RegExp>
