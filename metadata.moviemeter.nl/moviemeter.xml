@@ -29,6 +29,10 @@
 	</GetSearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<!-- IMDB Id!-->
+			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="8">
+				<expression noclean="1">IMDB Id: ([^&lt;]*)</expression>
+			</RegExp>
 			<!-- Title!-->
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="8">
 				<expression noclean="1">Titel: ([^&lt;]*)</expression>
