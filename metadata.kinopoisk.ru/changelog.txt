@@ -1,3 +1,7 @@
+1.0.35:
+- Fixed posters downloading
+1.0.34:
+- Fixed studios parsing (gentoosiast@xbmc.ru)
 1.0.33:
 - Added Accept-Language header
 1.0.32:
