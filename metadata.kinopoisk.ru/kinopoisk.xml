@@ -83,7 +83,7 @@
 				$$17 - русский фильм (true/false)
 				$$18 - год используемый для поиска
 				$$19 - название фильма используемое для поиска
-				$$20 - строка для поиска imdb id (формат: количество голосов:::год:::название)				
+				$$20 - строка для поиска imdb id (формат: количество голосов:::год:::название)
 		-->
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--TITLE (to UTF8)-->
@@ -258,8 +258,8 @@
 		</RegExp>
 	</GetDetails>
 	<GetPoster dest="4">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb preview=&quot;http://st.kinopoisk.ru/images/poster/sm_im_\2.jpg&quot;&gt;http://st.kinopoisk.ru/\1&lt;/thumb&gt;&lt;/details&gt;" dest="4">
-		<expression repeat="no" noclean="1">&lt;img style="border: 1px #777 solid; position: absolute; margin-left: -5000px" id='image' src="http://st.kinopoisk.ru/([^"]+?-(\d+).jpg)"</expression>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb preview=&quot;http://st.kinopoisk.ru/images/poster/sm_\2.jpg&quot;&gt;http://st.kinopoisk.ru/\1&lt;/thumb&gt;&lt;/details&gt;" dest="4">
+		<expression repeat="no" noclean="1">&lt;img style="cursor: pointer;" id="image" src="http://st.kinopoisk.ru/([^"]+?-(\d+).jpg)"</expression>
 		</RegExp>
 	</GetPoster>
 	<GMP dest="4">
@@ -443,7 +443,7 @@
 				<expression noclean="1">&lt;b&gt;Производство:&lt;/b&gt;(.*?)&lt;/table&gt;</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="7">
-				<expression repeat="yes">&lt;a href="/level/10/m_act\[studio\]/\d+/" class="all"&gt;(.+?)&lt;/a&gt;</expression>
+				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bstudio%5D/\d+/" class="all"&gt;(.+?)&lt;/a&gt;</expression>
 			</RegExp>
 			<!--fix &nbsp-->
 			<RegExp input="$$7" output="\1&amp;nbsp;" dest="7">
