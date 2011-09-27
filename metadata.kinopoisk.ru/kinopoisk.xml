@@ -168,27 +168,18 @@
 			<RegExp conditional="kinopoisk_rating" input="none" output="" dest="2">
 				<expression />
 			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="none" output="" dest="3">
-				<expression />
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$1" output="\1:::\2" dest="2">
-				<expression noclean="2">href="/level/83/film/\d+/" class="continue" style="[^"]+"&gt;([0-9.]+)&lt;span style="font:100 14px tahoma, verdana"&gt;&amp;nbsp;&amp;nbsp;([^&gt;]+)&lt;/span</expression>
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$2" output="\1&amp;nbsp;" dest="3">
-				<expression noclean="1">.*?:::(.*)</expression>
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$3" output="\1" dest="3">
-				<expression noclean="1" repeat="yes">(.*?)&amp;nbsp;</expression>
+			<RegExp conditional="kinopoisk_rating" input="$$1" output="\1:::\2 \3 \4" dest="2">
+				<expression noclean="2">itemprop="ratingValue"&gt;(.+?)&lt;/span&gt;&lt;span.*?&gt;&nbsp;(\d*)&nbsp;(\d*)&nbsp;(\d+)&lt;</expression>
 			</RegExp>
 			<RegExp conditional="kinopoisk_rating" input="$$2" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
 				<expression noclean="1">(.*?):::.*</expression>
 			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$3" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-				<expression noclean="1"/>
+			<RegExp conditional="kinopoisk_rating" input="$$2" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
+				<expression noclean="1">.*?:::[ ]*([0-9 ]+)</expression>
 			</RegExp>
 			<!--GENRE-->
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bgenre%5D/\d+/"&gt;([^&gt;]*)&lt;/a&gt;</expression>
+				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bgenre%5D/\d+/".+?&gt;([^&lt;]+)</expression>
 			</RegExp>
 			<!--PLOT and OUTLINE-->
 			<!-- and fixing paragraphs in html and cp1251 entities -->
