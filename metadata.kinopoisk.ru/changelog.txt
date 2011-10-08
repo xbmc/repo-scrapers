@@ -1,9 +1,11 @@
+1.0.37:
+- Fixed orinal movie name scraping (remezen at xbmc.ru)
 1.0.36:
 - Fixed kinopoisk.ru rating and genres scraping
 1.0.35:
 - Fixed posters downloading
 1.0.34:
-- Fixed studios parsing (gentoosiast@xbmc.ru)
+- Fixed studios parsing (gentoosiast at xbmc.ru)
 1.0.33:
 - Added Accept-Language header
 1.0.32:
@@ -27,7 +29,7 @@
 1.0.23:
 - Fixed film's year scraping
 1.0.22:
-- Fixed films search (thanks to phoenixx@xbmc.ru)
+- Fixed films search (thanks to phoenixx at xbmc.ru)
 1.0.21:
 - Added NfoUrl (thanks to vava@github)
 1.0.20:
