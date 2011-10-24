@@ -22,7 +22,7 @@
 				<expression trim="1" noclean="1">&lt;title&gt;(.*?)\s*(\(\d*\))? – סרטים&lt;/title&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression trim="1">&lt;div id="profilememo" style="font-size:14px;[^;]*;?text-align:justify;"&gt;(([^&lt;]*(&lt;br\s*/?&gt;)?[^&lt;]*)*)&lt;/div&gt;</expression>
+				<expression trim="1">&lt;meta name="description" content="(([^&lt;]*(&lt;br\s*/?&gt;)?[^&lt;]*)*)" /&gt;</expression>			
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression noclean="1">class="Box_Blue"(.*?)class="profilelrgstars"</expression>
