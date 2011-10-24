@@ -1,3 +1,6 @@
+[B]1.1.5[/B]
+- fix plot scrapping (done by vtrh83@gmail.com)
+
 [B]1.1.4[/B]
 - fix another movie names issue
 
