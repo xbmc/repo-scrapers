@@ -37,6 +37,9 @@
 			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="5+">
 				<expression>&lt;h3&gt;Born[^&gt;]*&gt;[^&gt;]*&gt;(.*?)&lt;/p&gt;</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="5+">
+				<expression>&lt;h3&gt;Birth[^&gt;]*&gt;[^&gt;]*&gt;(.*?)&lt;/p&gt;</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="5+">
 				<expression>&lt;h3&gt;Died[^&gt;]*&gt;[^&gt;]*&gt;(.*?)&lt;/p&gt;</expression>
 			</RegExp>
