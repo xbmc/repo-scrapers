@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2011-03-15">
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2011-10-28">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://akas.imdb.com/title/tt\1/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="3">
 			<expression clear="yes" noclean="1">imdb....?/Title\?([0-9]*)</expression>
@@ -105,6 +105,15 @@
 				<expression/>
 			</RegExp>
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp conditional="ytrailer" input="$$1" output="&lt;chain function=&quot;GetYoutubeTrailer&quot;&gt;$$6=$$9&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\2" dest="6">
+					<expression>&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="\2" dest="9">
+					<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>
+				</RegExp>
 				<expression/>
 			</RegExp>
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
