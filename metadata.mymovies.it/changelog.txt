@@ -1,3 +1,6 @@
+[B]1.1.8[/B]
+- Fixed regex: GetSearchResults (for change in google search report)
+
 [B]1.1.7[/B]
 - Added User Agent for error: "unable to connect to remote server"
 
