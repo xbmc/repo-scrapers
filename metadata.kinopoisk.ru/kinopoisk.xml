@@ -41,10 +41,10 @@
 			</RegExp>
 			<!--Код если найдено несколько вариантов-->
 			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
 			</RegExp>
 			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla%2F5.0%20(X11%3B%20U%3B%20Linux%20x86_64%3B%20rv%3A2.0.1)%20Gecko%2F20100101%20Firefox%2F4.0.1&amp;Accept-Language=ru-ru,ru%3Bq=0.8,en-us%3Bq=0.5,en%3Bq=0.3&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="http://www.kinopoisk.ru/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
+				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
 			</RegExp>
 			<!-- fix html entities from titles-->
 			<RegExp conditional="search_originaltitle" input="$$5" output="\1[]&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
@@ -79,7 +79,6 @@
 				$$13 - год с kinopoisk
 				$$14 - год премьеры
 				$$15 - количество голосов на imdb
-				
 				$$17 - русский фильм (true/false)
 				$$18 - год используемый для поиска
 				$$19 - название фильма используемое для поиска
@@ -116,9 +115,6 @@
 			<RegExp input="$$4" output="false" dest="17">
 				<expression>^$</expression>
 			</RegExp>
-			<RegExp input="none" output="test$$17test" dest="5+">
-				<expression>none</expression>
-			</RegExp>
 			<!--COUNTRY-->
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src="http://st.kinopoisk.ru/images/flags/flag.*?alt="(.*?)"</expression>
@@ -132,7 +128,7 @@
 			</RegExp>
 			<!-- premier year -->
 			<RegExp input="$$1" output="\1" dest="14">
-				<expression>href="/level/80/film/\d+/".+?([0-9]+)&lt;/a&gt;</expression>
+				<expression>href=&quot;/level/80/film/\d+/&quot;[^&gt;]*&gt;[^&lt;]*([0-9]{4})&lt;/a&gt;</expression>
 			</RegExp>
 			<!-- количество голосов на imdb id -->
 			<RegExp input="$$1" output="\1 " dest="15">
@@ -147,11 +143,11 @@
 			</RegExp>
 			<!--TOP250-->
 			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="5+">
-				<expression>&lt;a href="/level/56/film/\d+/" style="color:#555"&gt;([0-9]*).+?&lt;/a&gt;</expression>
+				<expression>Топ250: &lt;a href="/level/20/#([0-9]+)</expression>
 			</RegExp>
 			<!--Рейтинг MPAA-->
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
-				<expression>&lt;tr&gt;&lt;td class="type"&gt;[^&lt;]+MPAA&lt;/td&gt;&lt;td[^&gt;]+&gt;&lt;a href='.+?/rn/(.+?)/'</expression>
+				<expression>itemprop="contentRating"[ ]+content="MPAA[ ]+([^"]+)"</expression>
 			</RegExp>
 			<!--TAGLINE-->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="5+">
@@ -161,21 +157,21 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression>&lt;td class="time" id="runtime"&gt;([0-9]+)</expression>
 			</RegExp>
-			<!--Рейтинг IMDB-->
-			<RegExp conditional="!kinopoisk_rating" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="5+">
-				<expression>IMDb: ([0-9.]+) \(([0-9\s]+)\)&lt;/div&gt;</expression>
+			<!--Рейтинг и голоса -->
+			<RegExp input="$INFO[RatingSource]" output="$$2" dest="5+">
+				<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="2">
+					<expression>IMDb: ([0-9.]+) \(([0-9\s]+)\)&lt;/div&gt;</expression>
+				</RegExp>
+				<expression>IMDB</expression>
 			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="none" output="" dest="2">
-				<expression />
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$1" output="\1:::\2 \3 \4" dest="2">
-				<expression noclean="2">itemprop="ratingValue"&gt;(.+?)&lt;/span&gt;&lt;span.*?&gt;&nbsp;(\d*)&nbsp;(\d*)&nbsp;(\d+)&lt;</expression>
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$2" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression noclean="1">(.*?):::.*</expression>
-			</RegExp>
-			<RegExp conditional="kinopoisk_rating" input="$$2" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-				<expression noclean="1">.*?:::[ ]*([0-9 ]+)</expression>
+			<RegExp input="$INFO[RatingSource]" output="$$2" dest="5+">
+				<RegExp input="$$1" output="\1:::\2 \3 \4" dest="2">
+					<expression>itemprop=&quot;ratingValue&quot;.+?&lt;span&gt;(.+?)&lt;/span&gt;.+?itemprop=&quot;ratingCount&quot;&gt;(?:&amp;nbsp;|[ ])*([0-9]*)(?:&amp;nbsp;|[ ])*([0-9]*)(?:&amp;nbsp;|[ ])*([0-9]*)(?:&amp;nbsp;|[ ])*&lt;</expression>
+				</RegExp>
+				<RegExp input="$$2" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="2">
+					<expression trim="1,2">(.*):::(.*)</expression>
+				</RegExp>
+				<expression>Kinopoisk</expression>
 			</RegExp>
 			<!--GENRE-->
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
@@ -220,31 +216,9 @@
 				<expression>href="(/level/17/film/([0-9]+)/)"</expression>
 			</RegExp>
 			<!--TRAILER-->
-			<RegExp conditional="download_trailer" input="$$2" output="\1" dest="5+">
-				<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="9">
-					<expression repeat="yes">&lt;a href="/level/10/m_act%5Bcountry%5D/.+?/"&gt;&lt;img src=".*?/images/flags/flag.*?alt="(.*?)"</expression>
-				</RegExp>
-				<RegExp input="$$9" output="true" dest="9">
-					<expression>Россия</expression>
-				</RegExp>
-				<!-- Если фильм произведён в России, то выбираем первый трейлер -->
-				<RegExp input="$$9"  output="$$4" dest="2">
-					<RegExp input="$$1" output="&lt;url function=&quot;GMT_Russia&quot;&gt;http://www.kinopoisk.ru/level/16/film/\1&lt;/url&gt;" dest="4">
-						<expression>&lt;a href="/level/16/film/(\d+)/</expression>
-					</RegExp>
-					<expression>^true$</expression>
-				</RegExp>
-				<!-- Если фильм произведён не в России, то выбираем русский трейлер -->
-				<RegExp input="$$9" output="$$3" dest="2">
-					<RegExp input="$$1" output="&lt;url function=&quot;GMT&quot;&gt;http://www.kinopoisk.ru/level/16/film/\1&lt;/url&gt;" dest="3">
-						<expression>&lt;a href="/level/16/film/(\d+)/</expression>
-					</RegExp>
-					<expression>^&lt;country&gt;</expression>
-				</RegExp>
-				<!-- -->
-				<expression noclean="1" />
+			<RegExp conditional="download_trailer" input="$$1" output="&lt;url function=&quot;GetTrailers&quot;&gt;http://www.kinopoisk.ru/level/16/film/\1&lt;/url&gt;" dest="5+">
+				<expression>&lt;a href="/level/16/film/(\d+)/</expression>
 			</RegExp>
-
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
@@ -278,156 +252,109 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GMP_SINGLE>
-	<GMT_Russia dest="4">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;trailer tilte=&quot;\1&quot;&gt;&lt;html&gt;\2&lt;/html&gt;&lt;/trailer&gt;" dest="3">
-				<expression repeat="yes" noclean="2">&lt;a href="/level/16/film/[^"]+" class="all"&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
-			</RegExp>
-			<RegExp input="$$3" output="\1" dest="3">
-				<expression noclean="1">tilte="Трейлер"(.*?)&lt;/trailer&gt;</expression>
-			</RegExp>
-			<!-- NOT HD TRAILERS-->
-			<RegExp input="$$3" output="&lt;trailer quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;/td&gt;.*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-			</RegExp>
-			<!-- HD TRAILERS-->
-			<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-			</RegExp>
-			<!-- Пытаемся выбрать предпочитаемое качество-->
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>High</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>Medium</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>Low</expression>
-			</RegExp>
-			<!-- Выбираем последний найденный трейлер (вероятно он имеет максимальное качество) на случай если нету предпочтительного качества-->
-			<RegExp input="$$5" output="&lt;trailer id=&quot;best&quot; &gt;\1&lt;/trailer&gt;" dest="2+">
-				<expression>&lt;trailer.*?&gt;([^&lt;]*)&lt;/trailer&gt;$</expression>
-			</RegExp>
-			<expression noclean="1"/>
+	<GetTrailers clearbuffers="no" dest="4">
+		<!-- Используемые буфферы
+			$$10 - RegexpExpression, возвращающее блоки трейлеров: {1} HTML-блок всего ролика {2} Что угодно, если русский, либо пусто {3} Название
+			$$11 - RegexpExpression, возвращающее сами трейлеры:   {1} Что угодно, если ролик HD, либо пусто {2} ссылка на ролик {3} качество - "Высокое качество" и т.д.
+			$$19 - русские трейлеры
+			$$20 - нерусские трейлеры
+		-->
+		<RegExp input="" output="&lt;!-- ролик --&gt;([^!]*?&lt;div style=&quot;position: relative&quot;&gt;[^&lt;]*(?:&lt;img[^&gt;]*(flag-2.gif))*[^!]*?class=&quot;all&quot;&gt;([^&lt;]+)[^!]*)&lt;!-- /ролик --&gt;" dest="10">
+			<expression/>
 		</RegExp>
-	</GMT_Russia>
-	<GMT dest="4">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;trailer tilte=&quot;\1&quot;&gt;&lt;html&gt;\2&lt;/html&gt;&lt;/trailer&gt;" dest="3">
-				<expression repeat="yes" noclean="2">src="http://st.kinopoisk.ru/images/flags/flag-2.gif".*?class="all"[^&gt;]*&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
-			</RegExp>
-			<RegExp input="$$3" output="\1" dest="3">
-				<expression noclean="1">tilte="Трейлер.*?"(.*?)&lt;/trailer&gt;</expression>
-			</RegExp>
-			<!-- NOT HD TRAILERS-->
-			<RegExp input="$$3" output="&lt;trailer quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;/td&gt;.*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-			</RegExp>
-			<!-- HD TRAILERS-->
-			<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-				<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-			</RegExp>
-			<!-- Пытаемся выбрать предпочитаемое качество-->
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>High</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>Medium</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="$$6" dest="2">
-				<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer type="HD" quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-					<expression repeat="yes">&lt;trailer quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<expression>Low</expression>
-			</RegExp>
-			<!-- Выбираем последний найденный трейлер (вероятно он имеет максимальное качество) на случай если нету предпочтительного качества-->
-			<RegExp input="$$5" output="&lt;trailer id=&quot;best&quot; &gt;\1&lt;/trailer&gt;" dest="2+">
-				<expression>&lt;trailer.*?&gt;([^&lt;]*)&lt;/trailer&gt;$</expression>
-			</RegExp>
-			<!-- non-russian trailers -->
-			<RegExp conditional="orig_trailer" input="$$5" output="&lt;trailer lang=&quot;orig&quot; id=&quot;best&quot; &gt;\1&lt;/trailer&gt;" dest="2+">
-				<RegExp input="$$1" output="&lt;trailer tilte=&quot;\1&quot;&gt;&lt;html&gt;\2&lt;/html&gt;&lt;/trailer&gt;" dest="3">
-					<expression repeat="yes" noclean="2">&lt;a href="/level/16/film/[^"]+" class="all"&gt;(.*?)&lt;/a&gt;(.*?)&lt;!-- /ролик</expression>
-				</RegExp>
-				<RegExp input="$$3" output="\1" dest="3">
-					<expression noclean="1">tilte="Трейлер"(.*?)&lt;/trailer&gt;</expression>
-				</RegExp>
-				<!-- NOT HD TRAILERS-->
-				<RegExp input="$$3" output="&lt;trailer quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5">
-					<expression repeat="yes">&lt;td width=20&gt;&lt;/td&gt;.*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-				</RegExp>
-				<!-- HD TRAILERS-->
-				<RegExp conditional="download_hd" input="$$3" output="&lt;trailer type=&quot;HD&quot; quality=&quot;\2&quot;&gt;\1&lt;/trailer&gt;" dest="5+">
-					<expression repeat="yes">&lt;td width=20&gt;&lt;img src="http://st.kinopoisk.ru/images/icon-hd2.gif".*?&lt;a href="(?:.*?)&amp;type=trailer&amp;link=(.*?)" class="continue"&gt;(.*?)&lt;/a&gt;</expression>
-				</RegExp>
-				<!-- Пытаемся выбрать предпочитаемое качество-->
-				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
-					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer lang=&quot;orig&quot;&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer type="HD" quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer quality="Высокое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<expression>High</expression>
-				</RegExp>
-				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
-					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer type="HD" quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer quality="Среднее качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<expression>Medium</expression>
-				</RegExp>
-				<RegExp conditional="orig_trailer" input="$INFO[TrailerQ]" output="$$6" dest="2+">
-					<RegExp conditional="download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer type="HD" quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<RegExp conditional="!download_hd" input="$$5" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="6">
-						<expression repeat="yes">&lt;trailer quality="Низкое качество"&gt;(.*?)&lt;/trailer&gt;</expression>
-					</RegExp>
-					<expression>Low</expression>
-				</RegExp>
-				<!-- Выбираем последний найденный трейлер (вероятно он имеет максимальное качество) на случай если нету предпочтительного качества-->
-				<expression>&lt;trailer.*?&gt;([^&lt;]*)&lt;/trailer&gt;$</expression>
-			</RegExp>
-			<!-- END non-russian trailers -->
-			<expression noclean="1"/>
+		<RegExp input="" output="&lt;td width=20&gt;(?:&lt;img src=&quot;http://st.kinopoisk.ru/images/icon-(hd)2.gif&quot;)*[^&lt;]*&lt;/td[^&lt;]*&lt;td[^&lt;]*&lt;a href=&quot;(?:.*?)&amp;type=trailer&amp;link=([^&quot;]+)&quot; class=&quot;continue&quot;&gt;(?:&lt;b&gt;)*(.+?)(?:&lt;/b&gt;)*&lt;/a&gt;" dest="11">
+			<expression/>
 		</RegExp>
-	</GMT>
+		<!-- Собираем всё видео -->
+		<RegExp input="$$1" output="&lt;trailer tilte=&quot;\3&quot; flag=&quot;\2&quot;&gt;&lt;html&gt;\1&lt;/html&gt;&lt;/trailer&gt;" dest="3">
+			<expression repeat="yes" noclean="1" >$$10</expression>
+		</RegExp>
+		
+		<!-- Оставляем только трейлеры и тизеры-->
+		<RegExp input="$$3" output="\1" dest="2">
+			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[Тт]рейлер[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
+		</RegExp>		
+		<RegExp input="$$3" output="\1" dest="2+">
+			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[Тт]изер[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
+		</RegExp>		
+		<!-- Если трейлеры и тизеры не найдены, берем все подряд -->
+		<RegExp conditional="GetAnyVideo" input="$$2" output="$$3" dest="2">
+			<expression noclean="1">^$</expression>
+		</RegExp>		
+		<!-- Берем с русским флажком -->
+		<RegExp input="$$2" output="\1" dest="3">
+			<expression noclean="1" repeat="yes" clear="yes">(&lt;trailer tilte=&quot;[^&quot;]*&quot; flag=&quot;[^&quot;]+&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+		</RegExp>
+		<RegExp input="$$3" output="&lt;trailer lang=&quot;ru&quot; type=&quot;\1&quot; quality=&quot;\3&quot;&gt;\2&lt;/trailer&gt;" dest="19">
+			<expression repeat="yes">$$11</expression>
+		</RegExp>
+		<!-- Берем без русского флажка -->
+		<RegExp input="$$2" output="\1" dest="3+">
+			<expression noclean="1" repeat="yes" clear="yes">(&lt;trailer tilte=&quot;[^&quot;]*&quot; flag=&quot;&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+		</RegExp>
+		<RegExp input="$$3" output="&lt;trailer lang=&quot;&quot; type=&quot;\1&quot; quality=&quot;\3&quot;&gt;\2&lt;/trailer&gt;" dest="20">
+			<expression repeat="yes">$$11</expression>
+		</RegExp>
+		<!-- В зависимости от настроек, сортируем либо русские и нерусские отдельно, либо всей кучей -->
+		<RegExp input="$INFO[TrailerPriority]" output="&lt;details&gt;&lt;chain function=&quot;SortTrailers&quot;&gt;foreign&lt;/chain&gt;&lt;chain function=&quot;SortTrailers&quot;&gt;russian&lt;/chain&gt;&lt;/details&gt;" dest="4+">
+			<expression>0</expression>
+		</RegExp>
+		<RegExp input="$INFO[TrailerPriority]" output="&lt;details&gt;&lt;chain function=&quot;SortTrailers&quot;&gt;all&lt;/chain&gt;&lt;/details&gt;" dest="4+">
+			<expression>1</expression>
+		</RegExp>	
+	</GetTrailers>
+	<SortTrailers clearbuffers="no" dest="4">
+		<RegExp input="$$1" output="$$19" dest="5">
+			<expression clear="no">russian</expression>
+		</RegExp>
+		<RegExp input="$$1" output="$$20" dest="5">
+			<expression clear="no">foreign</expression>
+		</RegExp>
+		<RegExp input="$$1" output="$$19$$20" dest="5">
+			<expression clear="no">all</expression>
+		</RegExp>
+		<!-- Перемещаем HD в начало списка, ограничивая и сортируя по качеству -->
+		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Высокое качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression clear="yes">3</expression>
+		</RegExp>
+		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4+">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Среднее качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression>3|2</expression>
+		</RegExp>
+		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4+">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Низкое качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression>3|2|1</expression>
+		</RegExp>
+		<!-- В конец списка помещаем "не HD" ролики, ограничивая и сортируя по качеству -->
+		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Высокое качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression>3</expression>
+		</RegExp>
+		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Среднее качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression>3|2</expression>
+		</RegExp>
+		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
+			<RegExp input="$$5" output="\1" dest="6">
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Низкое качество&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+			</RegExp>
+			<expression>3|2|1</expression>
+		</RegExp>
+		<RegExp input="" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;$$4&lt;/details&gt;" dest="4">
+			<expression/>
+		</RegExp>
+	</SortTrailers>
 	<STUDIOS dest="4">
 		<RegExp input="$$8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="\1" dest="7">
@@ -678,7 +605,7 @@
 	<TitleToUTF8 clearbuffers="no" dest="4">
 		<RegExp input="none" output="" dest="4">
 			<expression/>
-		</RegExp>	
+		</RegExp>
 		<RegExp input="$$11" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="\1&amp;laquo;&amp;raquo;&amp;nbsp;" dest="11">
 				<expression noclean="1"/>
@@ -737,7 +664,7 @@
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression noclean="1">(.*)&amp;#xAB;</expression>
 			</RegExp>
-			<!-- удалем мусор -->		
+			<!-- удалем мусор -->
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression noclean="1">(.*?) 3D$</expression>
 			</RegExp>
