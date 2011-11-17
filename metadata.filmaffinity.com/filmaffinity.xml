@@ -38,14 +38,14 @@
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
-				<expression>&lt;b&gt;T.TULO ORIGINAL&lt;/b&gt;&lt;/td&gt;.*&lt;td &gt;&lt;b&gt;([^&lt;]+)</expression>
+				<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
 			</RegExp>
 			
 			<RegExp input="$$8" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="8">
-					<expression>&lt;b&gt;SINOPSIS&lt;/b&gt;&lt;/td&gt;[^&lt;]*&lt;td&gt;([^&lt;]*)</expression>
+					<expression>&lt;th&gt;SINOPSIS&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;</expression>
 				</RegExp>
-				<expression>(.*)\(</expression>
+				<expression>(.*)\(FILMAFFINITY\)</expression>
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
@@ -54,9 +54,9 @@
 			
 			<RegExp input="$$9" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&lt;b&gt;A.O&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;DURACI.N&lt;/b&gt;</expression>
+					<expression>&lt;th&gt;A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;</expression>
 				</RegExp>
-				<expression repeat="yes">&lt;td &gt;([0-9]*)</expression>
+				<expression>\s*([0-9]{4})\s*</expression>
 			</RegExp>
 			
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
@@ -64,49 +64,43 @@
 			</RegExp>
 			
 			<RegExp conditional="!StudioFlagsON" input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si la compatibilidad con estudios esta desactivada descarga todos las productoras (y es incompatible con skins si hay mas de una)-->
-				<expression>&lt;b&gt;PRODUCTORA&lt;/b&gt;&lt;/td&gt;[^&gt;]*&gt;([^&lt;]*)&lt;/td&gt;</expression>
+                <expression>&lt;th&gt;PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression> 
 			</RegExp>
 			
 			<RegExp conditional="StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+"> <!-- Si no sólamente descarga el primero y es más compatible con los skins -->
 				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&lt;b&gt;PRODUCTORA&lt;/b&gt;&lt;/td&gt;[^&gt;]*&gt;([^&lt;]*)&lt;/td&gt;</expression>
+					<expression noclean="1">&lt;th&gt;PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression> 
 				</RegExp>
 				<expression>([^/&lt;]*)</expression>
 			</RegExp>
 			
 			<RegExp input="$$9" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&lt;b&gt;DIRECTOR&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;GUI.N&lt;/b&gt;</expression>
+				<RegExp input="$$1" output="\1" dest="9">	
+					<expression noclean="1">&lt;th&gt;DIRECTOR&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;GUI&amp;Oacute\;N&lt;/th&gt;</expression>
 				</RegExp>
-				<expression repeat="yes">stext=[^&gt;]*&gt;([^&lt;]+)</expression>
+				<expression repeat="yes">&lt;a href="[^"]*"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			
-			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&lt;b&gt;GUI.N&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;M.SICA&lt;/b&gt;</expression>
-				</RegExp>
-				<expression repeat="yes">&lt;td &gt;([^&lt;]+)</expression>
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<expression noclean="1">&lt;th&gt;GUI&amp;Oacute\;N&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;M&amp;Uacute\;SICA&lt;/th&gt;</expression>
 			</RegExp>
 			
 			<!-- Estas dos expresiones cogen la puntuación y el numero de votos de filmaffinity -->
-			
+
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="5+">
 				<expression>bold;&quot;&gt;([1-9]),([0-9])</expression>
 			</RegExp>
 			
 			<RegExp conditional="!iMDBRatings" input="$$1" output="&lt;votes&gt;\1\2&lt;/votes&gt;" dest="5+">
-				<expression>align=&quot;center&quot;&gt;\(([0-9\.]*)</expression>
+				<expression>style=&quot;margin: 4px 0\;&quot;&gt;\(([0-9\.]*) votos\)</expression>
 			</RegExp>
 			
-			<RegExp input="$$9" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&lt;b&gt;DURACI.N&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;PA.S&lt;/b&gt;</expression>
-				</RegExp>
-				<expression repeat="yes">&lt;td&gt;([0-9]*) min\.</expression>
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression>&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;\s*&lt;td&gt;\s*&lt;div style=&quot;float: right\;&quot;&gt;>\s*&lt;a href=[^&gt;]*&gt;\s*&lt;/div&gt;\s*([0-9]*) min\.&lt;/td&gt;</expression>
 			</RegExp>
 			
 			<!-- Descarga el listado de actores de filmaffinity (Pocos resultados y sin el rol que realizan en la película) -->
-			
+
 			<RegExp input="$INFO[Cast]" output="$$6" dest="5+">
 				<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="6">
 					<expression repeat="yes">stype=cast[^&gt;]*&gt;([^&lt;]*)</expression>
@@ -115,7 +109,7 @@
 			</RegExp>
 			
 			<!-- Si la opción solo poster de filmaffinity esta activada descarga el primer poster que aparece en la web -->
-			
+
 			<RegExp input="$$1" output="&lt;thumb&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="5+">
 				<expression noclean="1,2">href="http://pics.filmaffinity.com/([^=]*large.jpg)"</expression>
 			</RegExp>
@@ -129,19 +123,16 @@
 
 			<RegExp input="$$9" output="&lt;url function=&quot;GoogleToIMDB&quot;&gt;http://www.google.com/search?q=site:imdb.com\1&lt;/url&gt;" dest="5+">
 				<RegExp input="$$8" output="+\1" dest="9">
-					<RegExp input="$$7" output="\1" dest="8">
-						<RegExp input="$$1" output="\1" dest="7">
-							<expression noclean="1">&lt;b&gt;T.TULO ORIGINAL&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;A.O&lt;/b&gt;</expression>
-						</RegExp>
-						<expression>&lt;td &gt;&lt;b&gt;([^&lt;]+)&lt;/b&gt;&lt;/td&gt;</expression>
+					<RegExp input="$$1" output="\1" dest="8">
+						<expression>&lt;th&gt;T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;([^&lt;]*)&lt;/strong&gt;&lt;/td&gt;</expression>
 					</RegExp>
 					<expression repeat="yes">([^ ,]+)</expression>
 				</RegExp>
 				<RegExp input="$$6" output="+\1" dest="9+">
 					<RegExp input="$$1" output="\1" dest="6">
-						<expression noclean="1">&lt;b&gt;A.O&lt;/b&gt;&lt;/td&gt;(.*)&lt;b&gt;DURACI.N&lt;/b&gt;</expression>
+						<expression>&lt;th&gt;A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*)&lt;/td&gt;\s*&lt;/tr&gt;\s*&lt;tr&gt;\s*&lt;th&gt;DURACI&Oacute;N&lt;/th&gt;</expression>
 					</RegExp>
-					<expression repeat="yes">&lt;td &gt;([0-9]*)</expression>
+					<expression>\s*([0-9]{4})\s*</expression>
 				</RegExp>
 				<expression />
 			</RegExp>
@@ -250,10 +241,10 @@
 				<expression>Top 250 #([0-9]*)&lt;/</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="6+">
-				<expression noclean="1">MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?([^&lt;]*)</expression>
+				<expression noclean="1">MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?&lt;span itemprop=&quot;contentRating&quot;&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp conditional="iMDBRatings" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6+">
-				<expression>&lt;span class="rating-rating"&gt;([0-9.]+).*?&gt;([0-9,]+) votes&lt;/a&gt;</expression>
+				<expression>&lt;span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+).*?&gt;.*?title=&quot;([0-9,]+)\s</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="6+">
 				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>

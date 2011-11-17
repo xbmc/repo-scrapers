@@ -1,16 +1,33 @@
+[B]1.4.1[/B]
+
+- Actualizada informaci√≥n al ingl√©s y borrado archivos para adaptarse a las reglas de addons (Thanks Olympia)
+
+[B]1.4[/B]
+
+- Arreglados los fallos que daba filmaffinity en la √∫ltima actualizaci√≥n (aporte de agjacome, otra vez muchas gracias!)
+
+[B]1.3.4[/B]
+
+- Arregladas otra vez las votaciones, espero que imdb no cambie m√°s el dise√±o...
+
+[B]1.3.3[/B]
+
+- A√±adida la posibilidad de descargar posters desde Alpacine (No implementado al 100%).
+- Arreglado problema con puntuaci√≥n en imdb.
+
 [B]1.3.1[/B]
 
-- Arreglado problema con los gÈneros.
-- Arreglado problema con el numero de votaciones (no cogÌa los ceros)
+- Arreglado problema con los g√©neros.
+- Arreglado problema con el numero de votaciones (no cog√≠a los ceros)
 
 [B]1.3[/B]
 
 - Arreglados problemas con expresiones regulares
-- AÒadida una opciÛn para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
-- AÒadida la opciÛn de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
-- Editado el men˙ de configuracion del scraper
-- CÛdigo comentado para entender mejor las funciones
-- Varios problemas pequeÒos arreglados
+- A√±adida una opci√≥n para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
+- A√±adida la opci√≥n de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
+- Editado el men√∫ de configuracion del scraper
+- C√≥digo comentado para entender mejor las funciones
+- Varios problemas peque√±os arreglados
 
 [B]1.2.4[/B]
 
@@ -18,7 +35,7 @@
 
 [B]1.2.3[/B]
 
-- Arreglados los tags rotos a causa de la remodelaciÛn de la pagina web de imdb.
+- Arreglados los tags rotos a causa de la remodelaci√≥n de la pagina web de imdb.
 
 [B]1.2.1[/B]
 - Added Hungarian translation.
@@ -26,14 +43,14 @@
 [B]1.2.0[/B]
 
 - Adaptado el scraper con las nuevas funciones <chain>.
-- AÒadido descarga de posters desde TheMovieDB.
-- Eliminada opciÛn sin uso.
+- A√±adido descarga de posters desde TheMovieDB.
+- Eliminada opci√≥n sin uso.
 - Arreglado problema con los posters de filmaffinity.
 
 [B]1.1.0[/B]
 
 - Arreglado un problema que no dejaba configurar correctamente el scraper.
-- AÒadidas traducciones y mejorados ajustes.
+- A√±adidas traducciones y mejorados ajustes.
 
 [B]1.0.2[/B]
 

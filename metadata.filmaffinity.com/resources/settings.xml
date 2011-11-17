@@ -12,6 +12,7 @@
     <setting label="30005" type="bool" id="EnableMoviePosterDB" default="true" enable="!eq(-8,true)" visible="!eq(-8,true)"/>
 	<setting label="30007" type="bool" id="EnableTMDBPoster" default="true" enable="!eq(-9,true)" visible="!eq(-9,true)"/>
 	<setting label="30006" type="bool" id="EnableIMDBPosters" default="true" enable="!eq(-10,true)" visible="!eq(-10,true)"/>
+	<setting label="30015" type="bool" id="EnableAlpacinePosters" default="true" enable="!eq(-11,true)" visible="!eq(-11,true)"/>    
 	<setting label="30014" type="lsep" />
     <setting label="30009" type="bool" id="ExtraiMDB" default="true" />
     <setting label="30010" type="bool" id="iMDBRatings" default="true" visible="!eq(-1,false)"/>
