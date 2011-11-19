@@ -1,0 +1,4 @@
+[B]1.1.0[/B]
+- fixed: no search results on titles without alt title
+- fixed: possible missing fanart 
+- added: trailer support
