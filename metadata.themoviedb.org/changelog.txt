@@ -1,3 +1,6 @@
+[B]1.4.4[/B]
+- fixed: actor thumb scraping was broken due to API changes
+
 [B]1.4.3[/B]
 - fixed: use imdb ID from nfo
 - changed: scrape only one studio
