@@ -1,11 +1,15 @@
+[B]1.4.4[/B]
+- fixed: actor thumb scraping was broken due to API changes
+
 [B]1.4.3[/B]
+- fixed: use imdb ID from nfo
 - changed: scrape only one studio
 
 [B]1.4.2[/B]
-- version number skipped to stay sync with XBMC 10.1 scraper version numbering
+- fixed: url/mixed nfo scraping
 
 [B]1.4.1[/B]
-- fixed: IMDb rating after site change
+- fixed: IMDb rating after site change 
 
 [B]1.4.0[/B]
 - added: trailer scraping from TMDB via youtube plugin
