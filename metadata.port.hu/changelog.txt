@@ -1,3 +1,6 @@
+[B]1.6.2[/B]
+- fixed: Originaltitle scraping
+
 [B]1.6.1[/B]
 - fixed: Originaltitle some time contains 'IMDb - ' string
 
