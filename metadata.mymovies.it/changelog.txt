@@ -1,3 +1,6 @@
+[B]1.1.9[/B]
+- Added imdb id, not visible in film info but needed for trakt plugin (Tmac12 request)
+
 [B]1.1.8[/B]
 - Fixed regex: GetSearchResults (for change in google search report)
 
