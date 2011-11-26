@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.common.rottentomatoes.com"
+       name="Rottentomatoes common scraper functions"
+       version="1.0.0"
+       provider-name="Team XBMC">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.library"
+             library="rt.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <minversion>20000</minversion>
+    <summary lang="en">RT Scraper Library</summary>
+    <summary lang="hu">RT leolvasó-könyvtár</summary>
+    <summary lang="kr">RT 스크래퍼 라이브러리</summary>
+    <summary lang="pl">Scraper RT</summary>
+    <summary lang="pt">Scraper de filmes RT</summary>
+    <summary lang="se">RT Skrapbibliotek</summary>
+    <description lang="en">Download Movie information from RT</description>
+    <description lang="hu">Film információk letöltése a RT webhelyről</description>
+    <description lang="kr">RT 에서 등급 정보 다운로드</description>
+    <description lang="pl">Pobieraj informacje o filmach z RT</description>
+    <description lang="pt">Descarregar informação de filmes de RT</description>
+    <description lang="se">Ladda ner filminformation från RT.</description>
+  </extension>
+</addon>

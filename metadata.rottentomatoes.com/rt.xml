@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2011-04-25">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=x36q7ff48xg7m8jfz9xscjkk&amp;q=\1&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="+\1" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\4&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;rt-\4.xml&quot;&gt;http://api.rottentomatoes.com/api/public/v1.0/movie_alias.json?apikey=x36q7ff48xg7m8jfz9xscjkk&amp;type=imdb&amp;id=\4&lt;/url&gt;&lt;/entity&gt;" dest="3">
+				<expression repeat="yes">{&quot;id&quot;:&quot;([^&quot;]*)&quot;,&quot;title&quot;:&quot;([^&quot;]*)&quot;,&quot;year&quot;:([^,]*).*?imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
+				<expression noclean="1">&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
+				<expression noclean="1">&quot;title&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression noclean="1">&quot;year&quot;:([^,]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression noclean="1">&quot;runtime&quot;:([^,]*)</expression>
+			</RegExp>
+			<RegExp conditional="audiencescore" input="$$1" output="&lt;chain function=&quot;GetRTAudienceScoreByIMDbId&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression>&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp conditional="criticsscore" input="$$1" output="&lt;chain function=&quot;GetRTCriticsScoreByIMDbId&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression>"imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;mpaa&gt;Rated \1&lt;/mpaa&gt;" dest="5+">
+				<expression>&quot;mpaa_rating&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetRTCast&quot;&gt;http://api.rottentomatoes.com/api/public/v1.0/movies/\1/cast.json?apikey=x36q7ff48xg7m8jfz9xscjkk&lt;/url&gt;" dest="5+">
+				<expression noclean="1">&quot;id&quot;:([^,]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetRTGenresByIMDbId&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression>&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<expression noclean="1">&quot;studio&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression noclean="1">&quot;synopsis&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp conditional="imdbplot" input="$$1" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression>&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<expression repeat="yes" noclean="1">&quot;abridged_directors&quot;:\[{&quot;name&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;\1&quot;&gt;\4&lt;/thumb&gt;" dest="5+">
+				<expression repeat="yes" noclean="1,3">&quot;thumbnail&quot;:&quot;([^&quot;]*)&quot;,&quot;profile&quot;:&quot;([^&quot;]*)&quot;,&quot;detailed&quot;:&quot;([^&quot;]*)&quot;,&quot;original&quot;:&quot;([^&quot;]*)&quot;</expression>
+			</RegExp>
+			<RegExp conditional="tmdbthumbs" input="$$1" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression>&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp conditional="fanart" input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression>&quot;imdb&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&quot;title&quot;:&quot;([^&quot;]*)</expression>
+				</RegExp>
+				<expression>480p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&quot;title&quot;:&quot;([^&quot;]*)</expression>
+				</RegExp>
+				<expression>720p</expression>
+			</RegExp>
+			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">&quot;title&quot;:&quot;([^&quot;]*)</expression>
+				</RegExp>
+				<expression>1080p</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+	<GetRTCast dest="8">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="4">
+				<expression repeat="yes">&quot;name&quot;:&quot;([^&quot;]*)&quot;,&quot;characters&quot;:\[&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetRTCast>
+</scraper>
