@@ -1,3 +1,15 @@
+[B]1.4.3[/B]
+
+- Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a Lechu)
+- Mejorada la búsqueda de miniaturas y posters en filmaffinity (gracias a Lechu)
+- Corregida, una vez más, la lectura de los votos de filmaffinity (gracias a Lechu)
+- Corregida la descarga de sinopsis para ciertas películas (gracias a agjacome)
+- Cambiado el icono de filmaffinity para que sea igual que el rediseño de su web (gracias Lechu)
+
+[B]1.4.2[/B]
+
+- Arreglada duración de la película y el país (gracias XBMCSPAIN)
+
 [B]1.4.1[/B]
 
 - Actualizada información al inglés y borrado archivos para adaptarse a las reglas de addons (Thanks Olympia)
