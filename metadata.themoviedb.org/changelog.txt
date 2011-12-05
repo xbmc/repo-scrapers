@@ -1,3 +1,6 @@
+[B]2.0.0[/B]
+- complete rewrite to use the json api
+
 [B]1.4.5[/B]
 - added: support for IMDb.xx support for NFO scraping
 
