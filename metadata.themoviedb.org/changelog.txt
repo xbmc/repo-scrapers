@@ -1,3 +1,6 @@
+[B]2.0.1[/B]
+- fixed: imdb url nfo not resolving tmdb id
+
 [B]2.0.0[/B]
 - complete rewrite to use the json api
 
