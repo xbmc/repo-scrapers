@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.0" date="2010-05-26" >
+	<NfoUrl dest="3">
+                <RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ImdbNfoToSratimLink&quot;&gt;http://sratim.co.il/browse.php?cs=movies&q=tt\1|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;&lt;/details&gt;" dest="3">
+                        <expression noclean="1">imdb....?/title/tt([0-9]*)</expression>
+                </RegExp>
+        </NfoUrl>
+	<ImdbNfoToSratimLink dest="3">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url&gt;http://www.sratim.co.il/view.php?id=\1|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/details&gt;" dest="3">
+			<expression clear="yes" noclean="1">&lt;a href="view.php\?id=([0-9]+)[^"]*".title="([^"]*)"</expression>
+		</RegExp>
+	</ImdbNfoToSratimLink>
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://sratim.co.il/browse.php?cs=movies&q=\1|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
@@ -24,12 +34,15 @@
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression trim="1">&lt;meta name="description" content="(([^&lt;]*(&lt;br\s*/?&gt;)?[^&lt;]*)*)" /&gt;</expression>			
 			</RegExp>
+			
+			<!--geners (7)-->
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression noclean="1">class="Box_Blue"(.*?)class="profilelrgstars"</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<expression repeat="yes" trim="1">&lt;a href="browse.php\?g=[^"]*"&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
+			
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression>&lt;td class[^&gt;]*&gt;הפקה:&lt;/td&gt;[^&lt;]*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression>
 			</RegExp>
@@ -54,37 +67,80 @@
 			<RegExp conditional="fullcredits" input="$$8" output="&lt;url function=&quot;GetActorDetails&quot;&gt;http://www.sratim.co.il/profileview.php?id=\1&lt;/url&gt;" dest="5+">
 				<expression repeat="yes">&lt;a href="profileview.php\?id=([^"]*)"&gt;&lt;b&gt;[^&lt;]*&lt;/b&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="\1" dest="9">
+			<!--director (12)-->
+			<RegExp input="$$1" output="\1" dest="12">
 				<expression noclean="1">&lt;td class[^&gt;]*&gt;בימוי:&lt;/td&gt;&lt;td&gt;(.*?)&lt;/td&gt;</expression>
 			</RegExp>
-			<RegExp input="$$9" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+			<RegExp input="$$12" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<expression repeat="yes" trim="1">&lt;a href="profileview.php\?id=[^"]*"&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression trim="1">&lt;a href="browse.php\?uy=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
-			</RegExp>
-			<RegExp conditional="!imdbrating" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression trim="1">&lt;span class="rank_redtext"[^&gt;]*&gt;([^&lt;]*)&lt;/span&gt;</expression>
-			</RegExp>
-			<RegExp conditional="!imdbrating" input="$$1" output="&lt;votes&gt;0&lt;/votes&gt;" dest="5+">
-				<!--<expression trim="1" repeat="no">&lt;span.*?&gt;([0-9]+?) מדרגים&lt;/span&gt;</expression>-->
-				<expression />
-			</RegExp>
+			
+			<!--runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression trim="1">&lt;/div&gt;([0-9]+?) דק'</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;thumb&gt;http://www.sratim.co.il\1&lt;/thumb&gt;" dest="5+">
-				<expression trim="1">&lt;img src="([^"]*)" class="lrg_cover" alt="</expression>
+			
+			
+			<!--year-->
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression trim="1">&lt;a href="browse.php\?uy=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
+			
+			<!--rating (10)-->
+			<RegExp input="$INFO[ratingFrom]" output="$$10" dest="5+">
+				<RegExp  input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="10">
+					<expression trim="1">&lt;span class="rank_redtext"[^&gt;]*&gt;([^&lt;]*)&lt;/span&gt;</expression>
+				</RegExp>
+				<expression>Sratim</expression>      
+			</RegExp>
+			<RegExp input="$INFO[ratingFrom]" output="$$10" dest="5+">
+				<RegExp input="$$1" output="&lt;votes&gt;0&lt;/votes&gt;" dest="10">
+					<!--<expression trim="1" repeat="no">&lt;span.*?&gt;([0-9]+?) מדרגים&lt;/span&gt;</expression>-->
+					<expression />
+				</RegExp>
+				<expression>Sratim</expression>      
+			</RegExp>
+			<RegExp input="$INFO[ratingFrom]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$10&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="10">
+					<expression trim="1">http://www.imdb.com/title/(tt[^"]+)"</expression>
+				</RegExp>
+				<expression>IMDB</expression>
+			</RegExp>
+			
+			<!--thumb (9)-->
+			<RegExp input="$INFO[thumbFrom]" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression trim="1">http://www.imdb.com/title/(tt[^"]+)</expression>
+				</RegExp>
+				<expression>IMDB</expression>
+			</RegExp>
+			<RegExp input="$INFO[thumbFrom]" output="$$9" dest="5+">
+				<RegExp input="$$1" output="&lt;thumb&gt;http://www.sratim.co.il\1&lt;/thumb&gt;" dest="9">
+					<expression trim="1">&lt;img src="([^"]*)" class="lrg_cover"</expression>
+				</RegExp>
+				<expression>Sratim</expression>
+			</RegExp>
+			
+			<!-- Fan Art (13)-->
+			<RegExp input="$INFO[fanart]" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$13&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="13">
+					<expression trim="1">http://www.imdb.com/title/(tt[^"]+)</expression>
+				</RegExp>
+				<expression>MovieDB</expression>
+			</RegExp>
+			<RegExp input="$INFO[fanart]" output="&lt;chain function=&quot;GetGoogleFanart&quot;&gt;$$13&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="13">
+					<expression trim="1">class="smtext".+?right;"&gt;(.*?)&lt;</expression>
+				</RegExp>
+				<expression>Google</expression>
+			</RegExp>
+			
+			<!-- english title -->
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression trim="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
-			<RegExp conditional="imdbrating" input="$$1" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<expression trim="1">http://www.imdb.com/title/(tt[^"]+)"</expression>
-			</RegExp>
-			<RegExp conditional="fanart" input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<expression trim="1">http://www.imdb.com/title/(tt[^"]+)</expression>
-			</RegExp>
+			
+			<!-- Trailers (6) -->
 			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
 					<expression noclean="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>

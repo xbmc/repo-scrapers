@@ -1,3 +1,10 @@
+[B]1.1.7[/B]
+- Added .Nfo file support (will take imdb url from .nfo file and fetch movie
+with it) - done by hagai.co@gmail.com
+- Added option to get thumbs from TMDB / Sratim
+- changed settings format for rating
+- added options for fan art instead of true/false
+
 [B]1.1.6[/B]
 - fix thumb scrapping (due to changes in sratim.co.il format)
 
