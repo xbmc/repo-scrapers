@@ -33,7 +33,7 @@
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Title-->
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression trim="1" noclean="1">&lt;h1&gt;([^&lt;]*)</expression>
+				<expression trim="1" noclean="1">&lt;h1[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<!--Original Title-->
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
@@ -54,7 +54,7 @@
 			<!--Director Film-->
 			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<RegExp input="$$1" output="\2" dest="7">
-					<expression>Regie([^&quot;]*)&quot;standard_justify&quot;&gt;([^&lt;]*)</expression>
+					<expression>Regie([^&quot;]*)&quot;standard_justify&quot;&gt;(.*?)&lt;/tr&gt;</expression>
 				</RegExp>
 				<expression repeat="yes">([^,]+)</expression>
 			</RegExp>
@@ -74,20 +74,20 @@
 				<expression>/media/trailer/([0-9]+,[a-zA-Z0-9\-]+).html. ti</expression>
 			</RegExp>
 			<!--User rating-->
-			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;100&lt;/votes&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;" dest="5+">
 				<expression trim="1" noclean="1">Wertung von ([0-9]+)%</expression>
 			</RegExp>
 			<!--Genre Film-->
 			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
 				<RegExp input="$$1" output="\2" dest="7">
-					<expression>Genre([^&quot;]*)&quot;standard&quot; valign=&quot;top&quot;&gt;([^&lt;]*)</expression>
+					<expression>Genre([^&quot;]*)&quot;standard&quot; valign=&quot;top&quot;&gt;(.*?)&lt;/tr&gt;</expression>
 				</RegExp>
 				<expression repeat="yes">([^, ]+)</expression>
 			</RegExp>
 			<!--Writer-->
 			<RegExp input="$$7" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
 				<RegExp input="$$1" output="\2" dest="7">
-					<expression trim="2">Drehbuch([^%]*)%&gt;([^&lt;]*)</expression>
+					<expression trim="2">Drehbuch([^%]*)%&gt;(.*?)&lt;/tr&gt;</expression>
 				</RegExp>
 				<expression repeat="yes">([^,]+)</expression>
 			</RegExp>
@@ -107,7 +107,7 @@
 				<expression clear="yes">tt([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1+%7C%7C+\2" dest="7">
-				<expression trim="1,2" encode="1,2">&lt;h1&gt;([^&lt;]*)&lt;/h1&gt;.*&lt;h2&gt;\(([^,]*)</expression>
+				<expression trim="1,2" encode="1,2">&lt;h1[^&gt;]*&gt;([^&lt;]*)&lt;/h1&gt;.*&lt;h2&gt;\(([^,]*)</expression>
 			</RegExp>
 			<!--TMDB Thumbs & Fanart (IMDbId)-->
 			<RegExp input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
@@ -123,7 +123,7 @@
 			<RegExp input="$$6" output="&lt;url cache=&quot;google-$$2&quot; function=&quot;ChainTMDBThumbs&quot;&gt;http://www.google.com/search?q=site:imdb.com+releaseinfo+$$7&lt;/url&gt;" dest="5+">
 				<expression>^$</expression>
 			</RegExp>
-			<expression noclean="1" />
+			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
 	<!-- Thumbnail -->
