@@ -24,13 +24,13 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression trim="1">&lt;a href=&quot;.*?&quot; class=&quot;px28 bold hei c_000&quot;&gt;(.*?)&lt;/a&gt;</expression>
+				<expression trim="1">class=&quot;px28 bold hei c_000&quot;.*?&gt;(.*?)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
-				<expression trim="1">&lt;a href=&quot;.*?&quot; class=&quot;ml9 px24&quot;&gt;(.*?)&lt;/a&gt;</expression>
+				<expression trim="1">class=&quot;ml9 px24&quot;&gt;(.*?)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>href=&quot;.*?/movie/section/year/([0-9]*)/&quot;</expression>
+				<expression>href=&quot;http://movie.mtime.com/movie/search/section/\?year=([0-9]*)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-details.html&quot; function=&quot;GetDetailsPage&quot;&gt;$$3details.html&lt;/url&gt;" dest="5+">
 				<expression/>
@@ -42,7 +42,7 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">href=&quot;http://search.mtime.com/movie/section/genre/[^&gt;]*&gt;([^&lt;]*).nbsp</expression>
+				<expression repeat="yes">href=&quot;http://movie.mtime.com/movie/search/section/\?type=[^&gt;]*&gt;([^&lt;]*).nbsp</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression>发行公司：&lt;/strong&gt;(.*?)&lt;/a&gt;</expression>
