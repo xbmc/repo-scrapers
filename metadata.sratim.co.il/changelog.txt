@@ -1,3 +1,8 @@
+[B]1.1.8[/B]
+- fix plot scrapping
+- fix runtime scrapping
+- added option to choose language of title (eng/heb)
+
 [B]1.1.7[/B]
 - Added .Nfo file support (will take imdb url from .nfo file and fetch movie
 with it) - done by hagai.co@gmail.com
