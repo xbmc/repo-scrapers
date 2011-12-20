@@ -10,10 +10,10 @@ import xbmc
 from xbmcaddon import Addon
 
 
-__addon__ = Addon( sys.argv[ 1 ] )
+Addon = Addon( sys.argv[ 1 ] )
 
 
-def notification( header="", message="", sleep=5000, icon=__addon__.getAddonInfo( "icon" ) ):
+def notification( header="", message="", sleep=5000, icon=Addon.getAddonInfo( "icon" ) ):
     """ Will display a notification dialog with the specified header and message,
         in addition you can set the length of time it displays in milliseconds and a icon image.
     """
@@ -29,7 +29,7 @@ def Main():
     try:
         url = sys.argv[ 2 ]
         # notify user
-        notification( __addon__.getAddonInfo( "name" ), url )
+        notification( Addon.getAddonInfo( "name" ), url )
         # launch url
         launchUrl( url )
     except:
