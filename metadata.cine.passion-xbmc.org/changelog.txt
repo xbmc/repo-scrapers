@@ -1,3 +1,15 @@
+1.1.8
+- fixed 'useraccount.py' Non-ASCII character and invalid syntax on OpenElec and ATV
+
+1.1.7
+- added secure user infos in url
+
+1.1.6
+- reverted version 1.1.5 (not work on Dharma)
+
+1.1.5
+- added support 'metadata.cine.passion.service'
+
 1.1.4
 - URLencoding for Username and Password in settings
 
