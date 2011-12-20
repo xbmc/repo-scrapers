@@ -1,3 +1,6 @@
+1.1.9
+- fixed missing files
+
 1.1.8
 - fixed 'useraccount.py' Non-ASCII character and invalid syntax on OpenElec and ATV
 
