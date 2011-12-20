@@ -5,4 +5,5 @@
 	<setting label="30002" type="labelenum" values="MovieDB|Google|None" id="fanart" default="MovieDB" />
 	<setting label="30003" type="labelenum" values="Sratim|TMDB" id="thumbFrom" default="Sratim" />
 	<setting label="30004" type="labelenum" values="IMDB|Sratim" id="ratingFrom" default="Sratim"/>
+	<setting label="30005" type="labelenum" values="Hebrew|English" id="titleLang" default="Hebrew"/>
 </settings>
