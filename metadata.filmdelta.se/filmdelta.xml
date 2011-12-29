@@ -21,8 +21,11 @@
 	</GetSearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+			<RegExp conditional="swedishtitles" input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
 				<expression noclean="1">&lt;title&gt; (.*?) - Filmdelta -</expression>
+			</RegExp>
+			<RegExp conditional="!swedishtitles" input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression>&lt;h4&gt;Originaltitel&lt;/h4&gt;[^&lt;]*&lt;h5&gt;([^&lt;]*)&lt;/h5&gt;.*?/filmarkiv/([0-9]*)/</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;&lt;runtime&gt;\2&lt;/runtime&gt;" dest="5+">
 				<expression noclean="1">([0-9]*)&lt;/a&gt;, ([0-9]*) min</expression>
