@@ -128,7 +128,7 @@
 				<RegExp input="$$1" output="\1" dest="9">
 					<expression trim="1">http://www.imdb.com/title/(tt[^"]+)</expression>
 				</RegExp>
-				<expression>IMDB</expression>
+				<expression>TMDB</expression>
 			</RegExp>
 			<RegExp input="$INFO[thumbFrom]" output="$$9" dest="5+">
 				<RegExp input="$$1" output="&lt;thumb&gt;http://www.sratim.co.il\1&lt;/thumb&gt;" dest="9">
