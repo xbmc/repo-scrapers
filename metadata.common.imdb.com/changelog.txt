@@ -1,3 +1,6 @@
+[B]2.1.5[/B]
+- fixed: Cleanup and factored out Genres to common
+
 [B]2.1.4[/B]
 - fixed: fetching directors and writers due to site changes
 

@@ -1,3 +1,6 @@
+[B]2.3.4[/B]
+- fixed: factored out genres to common
+
 [B]2.3.3[/B]
 - fixed: failed to fetch country and genre due to site changes
 
