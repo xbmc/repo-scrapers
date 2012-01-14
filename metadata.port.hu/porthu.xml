@@ -144,12 +144,12 @@
 				<expression />
 			</RegExp>
 			<!--Get genres from imdb.com and use as is-->
-			<RegExp conditional="!hungenre" input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+			<RegExp conditional="!hungenre" input="$$1" output="&lt;chain function=&quot;GetIMDBGenresById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<!--Get genres from imdb.com and translate them to Hungarian if selected-->
 			<RegExp conditional="hungenre" input="$$1" output="\1" dest="17">
-				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+				<expression repeat="yes">itemprop=&quot;genre&quot;[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$17" output="&lt;genre&gt;Akció&lt;/genre&gt;" dest="5+">
 				<expression noclean="1">Action</expression>
