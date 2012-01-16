@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2011-09-06" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-01-16" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -12,7 +12,7 @@
 			<expression noclean="1" />
 		</RegExp>
 		<RegExp conditional="Bing" input="$$1" output="&lt;url&gt;http://it.bing.com/search?q=&quot;\1$$4&quot;+site%3Amovieplayer.it%2Ffilm%2F+-site%3Amovieplayer.it%2Ffilm%2Fnews%2F+-site%3Amovieplayer.it%2Ffilm%2Farticoli%2F+-site%3Amovieplayer.it%2Ffilm%2Fprossimamente%2F+-site%3Amovieplayer.it%2Ffilm%2Fboxoffice%2F&amp;count=$INFO[count]&lt;/url&gt;" dest="3">
-			<RegExp conditional="Year" input="$$2" output="%20(\1)" dest="4">
+			<RegExp conditional="Year" input="$$2" output="%20(film+\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -138,6 +138,10 @@
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
 			</RegExp>
+			<!--IMDB Genre-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBGenresById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
 			<!--Cast-->
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBScaledCastById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
@@ -188,11 +192,7 @@
 			</RegExp>
 			<!--Country-->
 			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="6+">
-				<expression repeat="yes">&lt;a href="/country/[^&gt;]+&gt;([^&lt;]+)</expression>
-			</RegExp>
-			<!--Genere-->
-			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="6+">
-				<expression repeat="yes">&lt;a href="/genre/([^"]+)</expression>
+				<expression>"/country/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
