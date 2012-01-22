@@ -1,5 +1,7 @@
-﻿[B]1.1.1[/B]
-- add nfo support by IMDB.id
+﻿[B]1.2.0[/B]
+- poprawka: imdb ID z literkami tt
+[B]1.1.1[/B]
+- dodana obsługa IMDB z pliku .nfo
 [B]1.1.0[/B]
 - Nowy portal, nowy scraper
 [B]1.0.0[/B]
