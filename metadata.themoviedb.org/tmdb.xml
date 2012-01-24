@@ -107,7 +107,7 @@
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="set" input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
