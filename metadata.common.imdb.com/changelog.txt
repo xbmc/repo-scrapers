@@ -1,3 +1,6 @@
+[B]2.1.7[/B]
+- fixed: typo in fixing previous plot issue
+
 [B]2.1.6[/B]
 - fixed: plot when contains html links
 
