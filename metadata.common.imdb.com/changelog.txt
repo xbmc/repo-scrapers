@@ -1,3 +1,6 @@
+[B]2.1.9[/B]
+- fixed: plot when contains html links (once again)
+
 [B]2.1.8[/B]
 - revert: two latest changes - cause crash some times
 
