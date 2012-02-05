@@ -1,3 +1,6 @@
+[B]3.0.9[/B]
+- fixed: missing language parameter name in NfoUrl
+
 [B]3.0.8[/B]
 - fixed: movies without release date won't find
 
