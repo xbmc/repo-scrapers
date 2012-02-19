@@ -1,3 +1,6 @@
+[B]2.3.5[/B]
+- added: prioritize 'imdb display title' when scraping AKA titles
+
 [B]2.3.4[/B]
 - fixed: factored out genres to common
 
