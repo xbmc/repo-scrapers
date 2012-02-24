@@ -1,3 +1,15 @@
+[B]1.4.5[/B]
+
+- Añadida la posibilidad de descargar información de colecciones de TMDb.
+
+[B]1.4.4[/B]
+
+- Mejorada la obtención de guionistas desde filmaffinity.
+- Mejorada la obtención de productoras desde filmaffintiy.
+- Corregido bug en descarga de primera productora cuando miniaturas de estudio está activo.
+- Añadido soporte completamente funcional para descargas de posters de Alpacine.
+- Eliminados todos los espacios en blanco extras en todos los textos descargados.
+
 [B]1.4.3[/B]
 
 - Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a Lechu)
