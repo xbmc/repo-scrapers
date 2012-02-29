@@ -3,6 +3,7 @@
     <setting label="30000" type="bool" id="poster" default="true"/>
     <setting label="30003" type="bool" id="opis" default="false"/>
     <setting label="30008" type="bool" id="UseOriginalTitle" default="false"/>
+    <setting id="language" default="pl" />
     <setting type="sep" />
     <setting label="30002" type="bool" id="iMDBRatings" default="false"/>
     <setting label="30001" type="bool" id="EnableFullCast" default="false"/>
