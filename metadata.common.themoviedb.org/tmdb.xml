@@ -173,8 +173,8 @@
 
 	<GetTMDBTrailerByIdChain dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBTrailer&quot; cache=&quot;tmdb-trailer-$INFO[language]-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1/trailers?api_key=57983e31fb435df4df77afb854740ea9&lt;/url&gt;" dest="5">
-				<expression>^([0-9]+)$</expression>
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBTrailer&quot; cache=&quot;tmdb-trailer-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1/trailers?api_key=57983e31fb435df4df77afb854740ea9&lt;/url&gt;" dest="5">
+				<expression />
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
