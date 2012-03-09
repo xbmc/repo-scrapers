@@ -3,7 +3,7 @@
     <setting label="30000" type="lsep"/>
     <setting type="sep"/>
     <setting label="30002" type="bool" id="allmusicalbumthumbs" default="true"/>
-    <setting label="30005" type="bool" id="merlinartistonly" default="false"/>
+    <setting label="30004" type="bool" id="relationships" default="false"/>
     <setting label="" type="lsep"/>
     <setting label="[COLOR=FFe2ff43] pozdr. smuto[/COLOR]" type="lsep"/>
 </settings>
