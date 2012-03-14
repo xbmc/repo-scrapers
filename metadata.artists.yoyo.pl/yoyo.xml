@@ -12,8 +12,8 @@
 	</CreateArtistSearchUrl>
 	<GetArtistSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\5\7\9&lt;/title&gt;&lt;genre&gt;\2&lt;/genre&gt;&lt;year&gt;\6\8&lt;/year&gt;&lt;url&gt;http://musicbrainz.org/ws/2/artist/\3?inc=url-rels+release-groups&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes">(score":"[^"]+","type":"([^"]+)|score":"[^"]+)","id":"([^"]+)","(name":"([^"]+)",[^,]+,[^,]+,"disambiguation":"([^"]+)|name":"([^"]+)",[^,]+,"disambiguation":"([^"]+)|name":"([^"]+))</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\4&lt;/title&gt;&lt;genre&gt;\2&lt;/genre&gt;&lt;year&gt;\6\7\8&lt;/year&gt;&lt;url&gt;http://musicbrainz.org/ws/2/artist/\3?inc=url-rels+release-groups&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">(score":"[^"]+","type":"([^"]+)|score":"[^"]+)","id":"([^"]+)","name":"([^"]+)","(sort-name":"[^"]+",[^,]+,[^,]+,"disambiguation":"([^"]+)|sort-name":"[^"]+",[^,]+,"disambiguation":"([^"]+)|sort-name":"[^"]+","disambiguation":"([^"]+)|sort-name":"[^"]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -25,6 +25,18 @@
 			</RegExp>        
 			<RegExp input="$$1" output="&lt;album&gt;&lt;title&gt;\1\2\3&lt;/title&gt;&lt;/album&gt;" dest="5+">
 				<expression repeat="yes">type="Album"[^&lt;]*&lt;title&gt;([^&lt;]*)&lt;/title&gt;|type="Compilation"[^&lt;]*&lt;title&gt;([^&lt;]*)&lt;/title&gt;|type="Soundtrack"[^&lt;]*&lt;title&gt;([^&lt;]*)&lt;/title&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression noclean="1">&lt;artist.*?id=&quot;([^&quot;]+)</expression>
+			</RegExp>
+			<RegExp input="" output="&lt;url function=&quot;FirstTryFanart&quot; cache=&quot;ftv-images-$$7.xml&quot;&gt;http://fanart.tv/api/music.php?id=$$7&amp;type=background&lt;/url&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="" output="&lt;url function=&quot;GetBiography&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&amp;amp;mbid=$$7&amp;amp;lang=$INFO[language]&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="" output="&lt;chain function=&quot;GetLastFMArtistThumbsByID&quot;&gt;$$7&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="\2xbmc\1" dest="6">
 				<expression fixchars="1,2" encode="1,2" noclean="1,2">&lt;name&gt;([^&lt;]+).*?&lt;title&gt;([^&lt;]+)</expression>
@@ -40,18 +52,6 @@
 					<expression>allmusic.com/artist/p([0-9]+)</expression>
 				</RegExp>
 				<expression noclean="1"/>
-			</RegExp>
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression noclean="1">&lt;artist.*?id=&quot;([^&quot;]+)</expression>
-			</RegExp>
-			<RegExp input="" output="&lt;url function=&quot;FirstTryFanart&quot; cache=&quot;ftv-images-$$7.xml&quot;&gt;http://fanart.tv/api/music.php?id=$$7&amp;type=background&lt;/url&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="" output="&lt;url function=&quot;GetBiography&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&amp;amp;mbid=$$7&amp;amp;lang=$INFO[language]&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp input="" output="&lt;chain function=&quot;GetLastFMArtistThumbsByID&quot;&gt;$$7&lt;/chain&gt;" dest="5+">
-				<expression />
 			</RegExp>
 			<RegExp input="" output="&lt;url function=&quot;GetGenres&quot;&gt;http://ws.audioscrobbler.com/2.0/?method=artist.gettoptags&amp;amp;mbid=$$7&amp;amp;api_key=71e468a84c1f40d4991ddccc46e40f1b&lt;/url&gt;" dest="5+">
 				<expression/>
