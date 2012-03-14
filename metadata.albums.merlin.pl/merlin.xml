@@ -13,7 +13,10 @@
 	<GetAlbumSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\5&lt;/artist&gt;&lt;title&gt;\4&lt;/title&gt;&lt;url&gt;http://musicbrainz.org/ws/2/release-group/\3?inc=url-rels+artist-credits+releases&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes">(score":"[^"]+","type":"([^"]+)|score":"[^"]+)","id":"([^"]+)","title":"([^"]+)".+?"name":"([^"]+)</expression>
+				<expression repeat="yes">(score":"[^"]+","type":"([^"]+)|score":"[^"]+)","id":"([^"]+)","title":"([^"]+)[^\[]+[^,]+,"name":"([^"]+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;artist&gt;\5&lt;/artist&gt;&lt;title&gt;\4&lt;/title&gt;&lt;url&gt;http://musicbrainz.org/ws/2/release-group/\3?inc=url-rels+artist-credits+releases&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression>(score":"[^"]+","type":"([^"]+)|score":"[^"]+)","id":"([^"]+)","title":"([^"]+)[^\[]+[^,]+,"name":"([^"]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -59,8 +62,11 @@
 			<RegExp input="$$6" output="&lt;url function=&quot;AlbumUTFtoASCII&quot;&gt;http://www.remove-pl.yoyo.pl/smu4.php?text=$$6&amp;dot=$$6&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression noclean="1">&lt;title&gt;(.*?)&lt;/title&gt;</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;url function=&quot;GetMBTracks&quot;&gt;http://musicbrainz.org/ws/2/release/\1?inc=recordings&lt;/url&gt;" dest="5+">
-				<expression noclean="1">release id="([^"]+)</expression>
+				<expression noclean="1">release id="([^"]+)[^&lt;]+&lt;title&gt;$$7&lt;/title&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -193,6 +199,12 @@
 			</RegExp>
 			<RegExp input="$$9" output="&lt;thumb&gt;http://merlin.pl/images,images_big\1&lt;/thumb&gt;" dest="10">
 				<expression noclean="1">src="[^,]+,[^,]+([^"]+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression noclean="1">Kategorie:(.+?)&lt;/dd&gt;</expression>
+			</RegExp>
+			<RegExp input="$$9" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="10+">
+				<expression repeat="yes" trim="1" noclean="1">"&gt;([^&lt;]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;label&gt;\1&lt;/label&gt;" dest="10+">
 				<expression noclean="1">dt&gt;Firma fonograficzna:[^=]+[^&gt;]+&gt; ([^&lt;]*)&lt;</expression>
