@@ -84,7 +84,7 @@
 			</RegExp>
 			<!-- Posters -->
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\1/w400/\2&quot;&gt;\1/w700/\2&lt;/thumb&gt;" dest="5+">
-				<expression>src=&quot;(https://gfx.videobuster.de/archive/resized)/w200/([^&quot;]*)&quot;</expression>
+				<expression>src=&quot;(https://gfx.videobuster.de/archive/resized)/w124/([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<!-- Fanart -->
 			<RegExp input="$$1" output="&lt;url cache=&quot;google-\1&quot; function=&quot;ChainTMDBFanart&quot;&gt;http://www.google.com/search?q=site:imdb.com+releaseinfo+\1+\2&lt;/url&gt;" dest="5+">
