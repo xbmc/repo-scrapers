@@ -1,3 +1,6 @@
+[B]1.1.6[/B]
+- added sets ('filmreihe' on videobuster.de)
+
 [B]1.1.5[/B]
 - fixed missing poster (due to site changes)
 
