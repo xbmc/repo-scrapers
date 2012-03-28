@@ -38,7 +38,7 @@
 			</RegExp>
 			<RegExp input="$INFO[titleLang]" output="$$14" dest="5+">
 				<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="14">
-					<expression trim="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
+					<expression trim="1">&lt;span class="Gray"&gt;In English:&lt;/span&gt;\s*([^&lt;]*)</expression>
 				</RegExp>
 				<expression>Hebrew</expression>
 			</RegExp>
@@ -50,7 +50,7 @@
 			</RegExp>
 			<RegExp input="$INFO[titleLang]" output="$$14" dest="5+">
 				<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="14">
-					<expression trim="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
+					<expression trim="1">&lt;span class="Gray"&gt;In English:&lt;/span&gt;\s*([^&lt;]*)</expression>
 				</RegExp>
 				<expression>English</expression>
 			</RegExp>
@@ -60,17 +60,18 @@
 				<expression trim="1">&lt;meta name="description" content="(([^&lt;]*(&lt;br\s*/?&gt;)?[^&lt;]*)*)"</expression>			
 			</RegExp>
 			
-			<!--geners (7)-->
-			<RegExp input="$$1" output="\1" dest="7">
+			<!--geners (14)-->
+			<RegExp input="$$1" output="\1" dest="14">
 				<expression noclean="1">class="Box_Blue"(.*?)class="profilelrgstars"</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes" trim="1">&lt;a href="browse.php\?g=[^"]*"&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			<RegExp input="$$14" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes" trim="1">&lt;span itemprop="genre"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
 			
 			<!--studio -->
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
-				<expression>&lt;td class[^&gt;]*&gt;הפקה:&lt;/td&gt;[^&lt;]*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression>
+				<!--<expression>&lt;td class[^&gt;]*&gt;הפקה:&lt;/td&gt;[^&lt;]*&lt;td&gt;([^&lt;]*)&lt;/td&gt;</expression>-->
+				<expression repeat="yes" trim="1">&lt;span itemprop="productionCompany"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
 
 			<!-- actors lower list -->
@@ -84,12 +85,9 @@
 				<expression repeat="yes">&lt;a href="profileview.php\?id=([^"]*)"&gt;&lt;b&gt;[^&lt;]*&lt;/b&gt;</expression>
 			</RegExp>
 			
-			<!--director (12)-->
-			<RegExp input="$$1" output="\1" dest="12">
-				<expression noclean="1">&lt;td class[^&gt;]*&gt;בימוי:&lt;/td&gt;&lt;td&gt;(.*?)&lt;/td&gt;</expression>
-			</RegExp>
-			<RegExp input="$$12" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<expression repeat="yes" trim="1">&lt;a href="profileview.php\?id=[^"]*"&gt;([^&lt;]*)&lt;/a&gt;</expression>
+			<!--director -->
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<expression repeat="yes" trim="1">&lt;a href="profileview.php\?id=[^"]*" itemprop="director"&gt;([^&lt;]*)&lt;/a&gt;</expression>
 			</RegExp>
 			
 			<!--runtime-->
@@ -136,6 +134,12 @@
 				</RegExp>
 				<expression>Sratim</expression>
 			</RegExp>
+			<RegExp input="$INFO[thumbFrom]" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression trim="1">http://www.imdb.com/title/(tt[^"]+)</expression>
+				</RegExp>
+				<expression>MoviePosterDB</expression>
+			</RegExp>
 			
 			<!-- Fan Art (13)-->
 			<RegExp input="$INFO[fanart]" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$13&lt;/chain&gt;" dest="5+">
@@ -144,31 +148,16 @@
 				</RegExp>
 				<expression>MovieDB</expression>
 			</RegExp>
-			<RegExp input="$INFO[fanart]" output="&lt;chain function=&quot;GetGoogleFanart&quot;&gt;$$13&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="13">
-					<expression trim="1">class="smtext".+?right;"&gt;(.*?)&lt;</expression>
-				</RegExp>
-				<expression>Google</expression>
-			</RegExp>
 			
-			<!-- Trailers (6) -->
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+			<!-- Trailers (6, 7) -->
+			<RegExp input="$INFO[trailersFrom]" output="&lt;chain function=&quot;GetYoutubeTrailer&quot;&gt;$$6=$$7&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
-					<expression noclean="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
+					<expression trim="1">&lt;span class="Gray"&gt;In English:&lt;/span&gt;\s*([^&lt;]*)</expression><!--english title-->
 				</RegExp>
-				<expression>480p</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="6">
-					<expression noclean="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
+				<RegExp input="$$1" output="\1" dest="7">
+					<expression trim="1">&lt;a href="browse.php\?uy=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;</expression><!--year-->
 				</RegExp>
-				<expression>720p</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="6">
-					<expression noclean="1">&lt;div class="smtext" style="direction:ltr;text-align:right;"&gt;([^&lt;]*)&lt;/span&gt;</expression>
-				</RegExp>
-				<expression>1080p</expression>
+				<expression>YouTube</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -181,64 +170,4 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetActorDetails>
-	<GetHDTrailersnet480p dest="3">
-	<RegExp input="$$6" output="&lt;details&gt;&lt;url function=&quot;Parse480pTrailer&quot; cache=&quot;hd-trailers-\1.xml&quot;&gt;http://xbmc.hd-trailers.net/movie/\1|User-Agent=XBMC/10.0&lt;/url&gt;&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="\1-" dest="6">
-				<expression repeat="yes" fixchars="1" trim="1">([\w]+)</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</GetHDTrailersnet480p>
-	<GetHDTrailersnet720p dest="3">
-		<RegExp input="$$6" output="&lt;details&gt;&lt;url function=&quot;Parse720pTrailer&quot; cache=&quot;hd-trailers-\1.xml&quot;&gt;http://xbmc.hd-trailers.net/movie/\1|User-Agent=XBMC/10.0&lt;/url&gt;&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="\1-" dest="6">
-				<expression repeat="yes" fixchars="1" trim="1">([\w]+)</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</GetHDTrailersnet720p>
-	<GetHDTrailersnet1080p dest="3">
-		<RegExp input="$$6" output="&lt;details&gt;&lt;url function=&quot;Parse1080pTrailer&quot; cache=&quot;hd-trailers-\1.xml&quot;&gt;http://xbmc.hd-trailers.net/movie/\1|User-Agent=XBMC/10.0&lt;/url&gt;&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="\1-" dest="6">
-				<expression repeat="yes" fixchars="1" trim="1">([\w]+)</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</GetHDTrailersnet1080p>
-	<Parse480pTrailer dest="5">
-		<!--Fetch 480p trailer link from hdtrailers.net-->
-		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res480p</expression>
-		</RegExp>
-	</Parse480pTrailer>
-	<Parse720pTrailer dest="5">
-		<RegExp input="$$6" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<!--Fallback to fetch 480p trailer link if 720p is not available-->
-			<RegExp input="$$1" output="http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1" dest="6">
-				<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res480p</expression>
-			</RegExp>
-			<!--Fetch 720p trailer link from hdtrailers.net-->
-			<RegExp input="$$1" output="http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1" dest="6">
-				<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res720p</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</Parse720pTrailer>
-	<Parse1080pTrailer dest="5">
-		<RegExp input="$$6" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<!--Fallback to fetch 480p trailer link if 720p and 1080p are not available-->
-			<RegExp input="$$1" output="http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1" dest="6">
-				<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res480p</expression>
-			</RegExp>
-			<!--Fallback to fetch 720p trailer link if 1080p is not available-->
-			<RegExp input="$$1" output="http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1" dest="6">
-				<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res720p</expression>
-			</RegExp>
-			<!--Fetch 1080p trailer link from hdtrailers.net-->
-			<RegExp input="$$1" output="http://playlist.yahoo.com/makeplaylist.dll?sdm=web&amp;pt=rd&amp;sid=\1" dest="6">
-				<expression noclean="1">&quot;&gt;Trailer&lt;/td&gt;.*?sid=(\d*)&quot; rel=&quot;lightbox\[res1080p</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</Parse1080pTrailer>
 </scraper>

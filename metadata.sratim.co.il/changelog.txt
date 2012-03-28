@@ -1,3 +1,10 @@
+[B]1.2.0[/B]
+- fix extraction of director, genres, english title, studio due to changes in sratim website
+- add YouTube trailers
+- remove hdTrailers.net trailers
+- add MoviePosterDB thumbs
+- remove Google fanart
+
 [B]1.1.9[/B]
 - fix extracting TMDB thumbs
 
