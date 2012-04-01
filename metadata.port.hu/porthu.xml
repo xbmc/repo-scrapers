@@ -239,7 +239,7 @@
 			<RegExp conditional="tmdbfanart" input="$$11" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="tmdbset" input="$$11" output="&lt;chain function=&quot;GetTMDBSet&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="tmdbset" input="$$11" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Call GetMoviePosterDBLink-->
@@ -248,6 +248,9 @@
 			</RegExp>
 			<!--Call GetIMPALink-->
 			<RegExp conditional="impawardsboritok" input="$$11" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+			<RegExp conditional="tmdbtrailer" input="$$11" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<!--Call Get480pTrailer if 480p selected for HD-Trailers.net-->
@@ -265,28 +268,4 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBDetails>
-	<GetTMDBSet dest="4">
-		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBId&quot; cache=&quot;tmdb-images-tt\1.xml&quot;&gt;http://api.themoviedb.org/2.1/Movie.getImages/en/xml/57983e31fb435df4df77afb854740ea9/tt\1&lt;/url&gt;" dest="5">
-				<expression>tt([0-9]+)</expression>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</GetTMDBSet>
-	<ParseTMDBId dest="4">
-		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBSet&quot; cache=&quot;tmdb-set-\1.xml&quot;&gt;http://www.themoviedb.org/movie/\1&lt;/url&gt;" dest="5">
-				<expression>&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</ParseTMDBId>
-	<ParseTMDBSet dest="5">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;set&gt;\1&lt;/set&gt;" dest="2">
-				<expression noclean="1">Part of the:&lt;/strong&gt; &lt;a href=".*?"&gt;([^&lt;]*)</expression>
-			</RegExp>
-			<expression noclean="1">(.+)</expression>
-		</RegExp>
-	</ParseTMDBSet>
 </scraper>

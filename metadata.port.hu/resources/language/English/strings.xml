@@ -11,4 +11,8 @@
     <string id="30007">Enable trailers from HD-Trailers.net</string>
     <string id="30008">Translate genres to Hungarian</string>
     <string id="30009">Get Set titles from themoviedb.org</string>
-	</strings>
+    <string id="30010">Preferred Poster Language</string>
+    <string id="30011">Artwork</string>
+    <string id="30012">Trailers</string>
+    <string id="30013">Enable trailers from themoviedb.org</string>
+</strings>
