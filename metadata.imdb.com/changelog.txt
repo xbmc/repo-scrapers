@@ -1,3 +1,8 @@
+[B]2.4.0[/B]
+- added: Get Trailers from TMDb
+- fixed: outline was not scraped under certain circumtances
+- removed: setting for artwork scaling
+
 [B]2.3.5[/B]
 - added: prioritize 'imdb display title' when scraping AKA titles
 
