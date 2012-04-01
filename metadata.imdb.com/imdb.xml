@@ -95,6 +95,9 @@
 			<RegExp conditional="fullcredits" input="$$2" output="&lt;chain function=&quot;GetIMDBFullWritersById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
+			<RegExp conditional="tmdbset" input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
 			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>

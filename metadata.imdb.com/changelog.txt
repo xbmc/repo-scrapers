@@ -1,3 +1,8 @@
+[B]2.5.0[/B]
+- added: Set title scraping from TMDb
+- refactored: scraper settings
+- re-added: setting for artwork scaling
+
 [B]2.4.0[/B]
 - added: Get Trailers from TMDb
 - fixed: outline was not scraped under certain circumtances
