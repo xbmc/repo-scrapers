@@ -6,16 +6,16 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="gb2312">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.baidu.com/s?wd=site:movie.mtime.com+\1&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://m.mtime.com/search/?q=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
-		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" noclean="1">href=&quot;http://movie.mtime.com/([0-9]+)/?&quot; ?target=&quot;_blank&quot;&gt;(.*?)&lt;/a&gt;</expression>
+		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4 \3&lt;/title&gt;&lt;url&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="3+">
+				<expression repeat="yes">&lt;div&gt; &lt;p&gt;&lt;a href="http://movie.m.mtime.com/([0-9]+)/"&gt;(.+?)&lt;/a&gt;(.+?)&lt;a href="http://movie.m.mtime.com/[0-9]+/"&gt;(.+?)&lt;/a&gt;&lt;/p&gt; &lt;/div&gt;</expression>
 			</RegExp>
-			<expression clear="yes" noclean="1"/>
+			<expression noclean="1"/>
 		</RegExp>
 	</GetSearchResults>
 	<GetDetails dest="3">
@@ -36,7 +36,10 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression trim="1">片长：&lt;/strong&gt;(.*?)&lt;/li&gt;</expression>
+				<expression trim="1">片长：&lt;/strong&gt;&lt;span[^&gt;]*&gt;([0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;country&gt;\2&lt;/country&gt;" dest="5+">
+				<expression repeat="yes">href=&quot;http://(search.mtime.com/movie/section/area/|movie.mtime.com/movie/search/section/\?nation=)[^&gt;]*&gt;([^&lt;]*).nbsp</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-rating.html&quot; function=&quot;GetRating&quot;&gt;$$3rating/summary.html&lt;/url&gt;" dest="5+">
 				<expression/>
@@ -49,6 +52,9 @@
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression>&lt;!-- 剧情介绍 --&gt;.*?&lt;p&gt;(.*?)&lt;/p&gt;</expression>
+			</RegExp>
+			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;http://movie.m.mtime.com/$$2/plots.html&lt;/url&gt;" dest="5+">
+				<expression/>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetFullcredits&quot;&gt;$$3fullcredits.html&lt;/url&gt;" dest="5+">
 				<expression/>
@@ -65,6 +71,14 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>	
+	<GetPlot clearbuffers="no" dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="2">
+				<expression repeat="yes">&lt;p class="intro"&gt;(.*?)&lt;/p&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetPlot>
 	<GetDetailsPage clearbuffers="no" dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="2">
