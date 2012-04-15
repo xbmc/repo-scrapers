@@ -1,3 +1,6 @@
+[B]3.1.0[/B]
+- updated: factored out title scraping to common library
+
 [B]3.0.9[/B]
 - fixed: missing language parameter name in NfoUrl
 
