@@ -1,3 +1,7 @@
+[B]2.2.0[/B]
+- factored out GetIMDBAKATitlesById
+- factored out scraping certifications
+
 [B]2.1.9[/B]
 - fixed: plot when contains html links (once again)
 
