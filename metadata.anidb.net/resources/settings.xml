@@ -2,6 +2,7 @@
 <settings>
   <category label="General">
     <setting label="30000" type="bool" id="Google" default="false"/>
+    <setting label="30005" type="labelenum" id="IdFrom" values="AniDB.net|TheTVDB.com" default="AniDB.net"/>
     <setting type="sep"/>
     <setting label="30001" type="text" id="AnimeListUrl" default="http://sites.google.com/site/anidblist/anidb.xml"/>
     <setting label="30002" type="text" id="AnimeMappingUrl" default="http://sites.google.com/site/anidblist/anime-list.xml"/>
@@ -10,22 +11,27 @@
   </category>
   <category label="AniDB">
     <setting label="30100" type="bool" id="OfficalName" default="false"/>
-    <setting label="30101" type="labelenum" values="en|de|fr|it|cs|sk|hu|pl|ru|ja|zh" id="OfficalLanguage" default="en" enable="eq(-1,true)"/>
+    <setting label="30101" type="labelenum" id="OfficalLanguage" values="en|de|fr|it|cs|sk|hu|pl|ru|ja|zh" default="en" enable="eq(-1,true)"/>
+    <setting label="30110" type="labelenum" id="RatingType" values="Average|Weighted" default="Average"/>
     <setting type="sep"/>
     <setting label="30102" type="bool" id="Prequels" default="true"/>
-    <setting label="30103" type="labelenum" values="Parent Story|Alternative Setting|Side Story" id="AlternativePrequelLinkType" default="Parent Story" enable="eq(-1,true)"/>
+    <setting label="30103" type="labelenum" id="AlternativePrequelLinkType" values="Parent Story|Alternative Setting|Side Story" default="Parent Story" enable="eq(-1,true)"/>
     <setting type="sep"/>
-    <setting label="30108" type="labelenum" values="600|600+500|600+500+400|600+500+400+300|600+500+400+300+200|600+500+400+300+200+100" id="GenreWeight" default="600+500"/>
-    <setting label="30109" type="labelenum" values="9|8|7|6|5|4|3|2|1|0" id="GenreCount" default="6"/>
+    <setting label="30108" type="labelenum" id="GenreWeight" values="600|600+500|600+500+400|600+500+400+300|600+500+400+300+200|600+500+400+300+200+100" default="600+500"/>
+    <setting label="30109" type="labelenum" id="GenreCount" values="9|8|7|6|5|4|3|2|1|0" default="6"/>
     <setting label="30104" type="bool" id="SingleStudio" default="true"/>
     <setting label="30107" type="bool" id="OnlyMainCast" default="false"/>
     <setting label="30105" type="bool" id="SpecialsAtEnd" default="true"/>
     <setting label="30106" type="bool" id="SpecialsInside" default="true"/>
   </category>
   <category label="TheTVDB">
-  	<setting label="30200" type="bool" id="Fanart" default="true"/>
-    <setting label="30201" type="bool" id="Banners" default="false" enable="eq(-1,true)"/>
-    <setting label="30202" type="bool" id="NoFanartContinue" default="true" enable="eq(-2,true)"/>
+    <setting label="30204" type="bool" id="Posters" default="true"/>
+    <setting label="30201" type="bool" id="Banners" default="false"/>
+    <setting label="30205" type="labelenum" id="PostersOrder" values="Posters first|Banners first" default="Posters first" enable="eq(-1,true)+eq(-2,true)"/>
+    <setting type="sep"/>
+  	<setting label="30200" type="bool" id="Fanarts" default="true"/>
+    <setting label="30202" type="bool" id="NoFanartContinue" default="true" enable="eq(-1,true)"/>
+    <setting type="sep"/>
     <setting label="30203" type="bool" id="ExtraDetails" default="true"/>
   </category>
 </settings>
