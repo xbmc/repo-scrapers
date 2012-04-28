@@ -1,3 +1,6 @@
+[B]1.0.2[/B]
+- added: support for OFDb.de plot
+
 [B]1.0.1[/B]
 - fixed: put UK back on the map
 - added: poster from IMDb is now optional
