@@ -1,3 +1,6 @@
+[B]2.2.1[/B]
+- fixed: hopefully fixed issue with html encodes
+
 [B]2.2.0[/B]
 - factored out GetIMDBAKATitlesById
 - factored out scraping certifications
