@@ -39,7 +39,7 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\2&lt;/originaltitle&gt;" dest="5+">
-				<expression fixchars="1">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+				<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\2&lt;/year&gt;" dest="5+">
 				<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>

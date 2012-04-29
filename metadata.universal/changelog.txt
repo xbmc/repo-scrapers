@@ -1,3 +1,6 @@
+[B]1.0.4[/B]
+- updated: to use IMDb scraper library v2.2.2
+
 [B]1.0.3[/B]
 - updated: to use IMDb scraper library v2.2.1
 
