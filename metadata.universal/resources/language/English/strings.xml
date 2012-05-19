@@ -30,6 +30,9 @@
     <string id="30034">     Preferred Thumb Language</string>
     <string id="30035">Certification Prefix</string>
     <string id="30036">Enable posters from IMDb</string>
+    <string id="30037">Enable posters from trakt.tv</string>
+    <string id="30038">Enable fanart from trakt.tv</string>
+    <string id="30039">Enable trailers from trakt.tv</string>
 
     <string id="30100">Rating</string>
     <string id="30021">Get Ratings from</string>

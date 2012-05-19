@@ -1,0 +1,120 @@
+<scraperfunctions>
+
+	<GetTRAKTTVPlotByIdChain clearbuffers="no" dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression clear="yes" noclean="1" />
+			</RegExp>
+			<RegExp input="$$8" output="&lt;url function=&quot;ParseTRAKTTVPlot&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVPlotByIdChain>
+	<ParseTRAKTTVPlot dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="9">
+				<expression clear="yes" fixchars="1">&quot;overview&quot;:&quot;(.*?)&quot;,&quot;</expression>
+			</RegExp>
+			<RegExp input="$$9" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTRAKTTVPlot>
+
+	<GetTRAKTTVGenresByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTRAKTTVGenres&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVGenresByIdChain>
+	<ParseTRAKTTVGenres dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression clear="yes" noclean="1">&quot;genres&quot;:\[([^\]]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="2">
+				<expression repeat="yes" fixchars="1">&quot;([^&quot;]*)&quot;(,|\])</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTRAKTTVGenres>
+
+	<GetTRAKTTVRatingByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTRAKTTVRating&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVRatingByIdChain>
+	<ParseTRAKTTVRating dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="2">
+				<expression noclean="1">&quot;percentage&quot;:([0-9])([0-9])</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="2+">
+				<expression noclean="1">&quot;votes&quot;:([0-9]+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTRAKTTVRating>
+
+	<GetTRAKTTVTrailerByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTRAKTTVTrailer&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVTrailerByIdChain>
+	<ParseTRAKTTVTrailer dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;trailer&gt;plugin://plugin.video.youtube/?action=play_video&amp;amp;videoid=\1&lt;/trailer&gt;" dest="2">
+				<expression noclean="1">/watch\?v=([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1">(.+)</expression>
+		</RegExp>
+	</ParseTRAKTTVTrailer>
+
+	<GetTRAKTTVFanartByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTRAKTTVFanart&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVFanartByIdChain>
+	<ParseTRAKTTVFanart dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&quot;fanart&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1">(.+)</expression>
+		</RegExp>
+	</ParseTRAKTTVFanart>
+
+	<GetTRAKTTVThumbsByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTRAKTTVThumbs&quot; cache=&quot;trakttv-\1.json&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/\1&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTRAKTTVThumbsByIdChain>
+	<ParseTRAKTTVThumbs dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression clear="yes" noclean="1">&quot;images&quot;:{([^}]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="2+">
+				<expression repeat="yes" noclean="1">&quot;poster&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1">(.+)</expression>
+		</RegExp>
+	</ParseTRAKTTVThumbs>
+
+</scraperfunctions>
