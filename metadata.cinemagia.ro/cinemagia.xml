@@ -1,11 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2011-05-30" name="cinemagia.ro" content="movies" thumb="cinemagia.png" language="ro">
+﻿<?xml version="1.0" encoding="utf-8"?>
+    <scraper framework="1.1" date="2012-05-21">
 	<include>common/tmdb.xml</include>
-	<CreateSearchUrl SearchStringEncoding="utf-8" clearbuffers="no" dest="3">
-		<!--movie search url on cinemarx.ro-->
-		<RegExp input="$$1" output="&lt;url&gt;http://www.cinemagia.ro/cauta/?q=\1&amp;pn=99&amp;search_type=filme&lt;/url&gt;" dest="3">
-			<expression noclean="1" />
+	<CreateSearchUrl SearchStringEncoding="utf-8" dest="3">
+		<!--movie search url on cinemagia.ro-->
+		<RegExp input="$$1" output="&lt;url&gt;http://www.cinemagia.ro/cauta/?q=\1&amp;amp;pn=99&amp;amp;search_type=filme&lt;/url&gt;" dest="3">
+			<expression clear="yes" noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
+	<!-- </CreateSearchUrl> -->
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
@@ -18,7 +20,7 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--ID IMDB-->
 			<RegExp input="$$1" output="\1" dest="12">
-				<expression noclean="1">(http://www.imdb.com/title/tt[0-9]*)</expression>
+				<expression noclean="1">http://www.imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!--Title-->
 			<RegExp input="$$4" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
@@ -55,19 +57,23 @@
 				<expression repeat="yes" trim="1" noclean="1">&lt;a href="http://www.cinemagia.ro/[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
 			<!--rating (from cinemagia)-->
-			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
+			<RegExp conditional="!imdbrating" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
 				<expression noclean="1">&lt;span property="v:average"[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
 			<!--votes (from cinemagia)-->
-			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
+			<RegExp conditional="!imdbrating" input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
 				<expression noclean="1">property="v:votes"&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<!--rating/votes (from imdb)-->
+			<RegExp conditional="imdbrating" input="$$12" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;tt$$12&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression noclean="1">&lt;h3&gt;Produs de&lt;/h3&gt;[^&gt;]*.([^&lt;]*)</expression>
 			</RegExp>
 			<!--Runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression noclean="1">Durata[^&gt;]*.&lt;span&gt;([^&lt;]*)</expression>
+				<expression noclean="1">Durata[^&gt;]*.&lt;span&gt;([0-9]*)</expression>
 			</RegExp>
 			<RegExp conditional="!fullmoviedistribution" input="$$1" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;thumb&gt;\1/db/actor/\2.jpg&lt;/thumb&gt;&lt;/actor&gt;" dest="5+">
 				<expression repeat="yes" noclean="1">&lt;a href="http://www.cinemagia.ro/actori/[^=]*."(http://[^/]*.[^/]*)/resize/db/actor/([^"]*(?=-))[^&lt;]*[^=]*[^/]*[^&gt;]*.([^&lt;]*)&lt;/a&gt;[^&lt;]*[^&gt;]*.([^&lt;]*)</expression>
@@ -84,7 +90,7 @@
 			<RegExp conditional="tmdbthumbs" input="$$12" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="tmdbfanart" input="$$12" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$12" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />

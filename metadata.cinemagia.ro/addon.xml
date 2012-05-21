@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.cinemagia.ro"
        name="cinemagia"
-       version="1.1.0"
-       provider-name="and-ray">
+       version="1.1.1"
+       provider-name="ancalex">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.1.4"/>
+    <import addon="metadata.common.imdb.com" version="2.1.9"/>
   </requires>
   <extension point="xbmc.metadata.scraper.movies"
              language="ro"
