@@ -1,3 +1,6 @@
+[B]1.1.1[/B]
+- fixed: some potential html encode issues
+
 [B]1.1.0[/B]
 - added: support for trakt.tv
 
