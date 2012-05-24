@@ -47,10 +47,10 @@
 			<RegExp input="$$7" output="&lt;chain function=&quot;GetLastFMDiscographyByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;chain function=&quot;GetLastFMGenresByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$7" output="&lt;chain function=&quot;GetLastFMArtistGenresByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;chain function=&quot;GetLastFMStylesByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$7" output="&lt;chain function=&quot;GetLastFMArtistStylesByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
