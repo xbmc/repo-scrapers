@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting type="lsep" label="Thumb Sources"/>
+    <setting label="30005" type="bool" id="fanarttvthumbs" default="false"/>
+    <setting label="30003" type="bool" id="htbthumbs" default="true"/>
+    <setting label="30002" type="bool" id="lastfmartistthumbs" default="false"/>
+    <setting label="30001" type="bool" id="allmusicartistthumbs" default="false"/>
+    <setting type="lsep" label="Fanart Sources"/>
+    <setting label="30004" type="bool" id="fanarttvfanart" default="true"/>
+    <setting label="30000" type="bool" id="htbfanart" default="false"/>
+</settings>
