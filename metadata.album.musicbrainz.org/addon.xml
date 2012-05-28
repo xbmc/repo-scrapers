@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.musicbrainz.org"
+       name="MusicBrainz"
+       version="1.0.0"
+       provider-name="Team XBMC">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.last.fm" version="1.1.0"/>
+    <import addon="metadata.common.musicbrainz.org" version="1.1.1"/>
+    <import addon="metadata.common.fanart.tv" version="1.0.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.albums"
+             language="en"
+             library="musicbrainz.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">MusicBrainz Album Scraper</summary>
+    <description lang="en">MusicBrainz is an open music encyclopedia that collects music metadata and makes it available to the public.
+MusicBrainz aims to be:
+ - The ultimate source of music information by allowing anyone to contribute and releasing the data under open licenses.
+ - The universal lingua franca for music by providing a reliable and unambiguous form of music identification, enabling both people and machines to have meaningful conversations about music.
+ 
+Like Wikipedia, MusicBrainz is maintained by a global community of users and we want everyone — including you — to participate and contribute. </description>
+    <platform>all</platform>
+  </extension>
+</addon>

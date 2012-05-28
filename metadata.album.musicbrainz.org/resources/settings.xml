@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting type="lsep" label="General Settings"/>
+      <setting label="30002" type="bool" id="lastfmalbumreview" default="false"/>
+    <setting type="lsep" label="Artwork Settings"/>
+      <setting label="30000" type="bool" id="fanarttvalbumthumbs" default="true"/>
+      <setting label="30001" type="bool" id="lastfmalbumthumbs" default="true"/>
+</settings>

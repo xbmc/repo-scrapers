@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2012-05-28">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://musicbrainz.org/ws/2/release/\1?inc=url-rels+recordings+release-groups+artists+labels&lt;/url&gt;" dest="3">
+			<expression>release-group/(.+)</expression>
+		</RegExp>
+	</NfoUrl>
+	<CreateAlbumSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://search.musicbrainz.org/ws/2/release/?fmt=xml&amp;query=release:&quot;\1&quot;%20AND%20artist:&quot;$$2&quot;%20AND%20type:album&lt;/url&gt;" dest="3">
+			<expression />
+		</RegExp>
+	</CreateAlbumSearchUrl>
+	<GetAlbumSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;year&gt;\5-\4-T#\6&lt;/year&gt;&lt;artist&gt; \3 &lt;/artist&gt;&lt;title&gt; \2 &lt;/title&gt;&lt;url cache=&quot;mb-\1-album.xml&quot;&gt;http://musicbrainz.org/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">id=&quot;([^&quot;]*)&quot;&gt;&lt;title&gt;([^&lt;]*).*?&lt;name&gt;([^&lt;]*)&lt;.*?&lt;date&gt;(\d{4}).*?&lt;country&gt;([^&lt;]*).*?&lt;track-count&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetAlbumSearchResults>
+	<GetAlbumDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="3">
+				<expression>id=&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="4">
+				<expression>&lt;release-group type=&quot;Album&quot; id=&quot;([^&quot;]*)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumTitleByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumArtistByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumRatingByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumLabelByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumDateByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumTracksByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp conditional="lastfmalbumreview" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumReviewByAlbumAndArtist&quot;&gt;\1::\2&lt;/chain&gt;" dest="5+">
+				<expression trim="1,2" encode="1,2">&lt;release id=&quot;[^&quot;]*&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;.*?&lt;artist id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetFanartTvAlbumThumbsByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp conditional="lastfmalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumThumbs&quot;&gt;\1::\2&lt;/chain&gt;" dest="5+">
+				<expression trim="1,2" encode="1,2">&lt;release id=&quot;[^&quot;]*&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;.*?&lt;artist id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetAlbumDetails>
+</scraper>
