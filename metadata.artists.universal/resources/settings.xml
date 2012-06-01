@@ -2,12 +2,14 @@
 <settings>
   <category label="128">
       <setting label="30006" type="labelenum" values="last.fm|None" id="biogsource" default="last.fm"/>
+      <setting label="30015" type="labelenum" values="en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh" id="lastfmlanguage" default="en" visible="eq(-1,0)"/>
+      <setting type="sep"/>
       <setting label="30008" type="labelenum" values="last.fm|MusicBrainz|allmusic.com|None" id="discogsource" default="MusicBrainz"/>
+      <setting type="sep"/>
       <setting label="30009" type="labelenum" values="last.fm|allmusic.com|None" id="genressource" default="last.fm"/>
       <setting label="30010" type="labelenum" values="last.fm|allmusic.com|None" id="stylessource" default="last.fm"/>
       <setting label="30011" type="labelenum" values="allmusic.com|MusicBrainz|None" id="lifespansource" default="allmusic.com"/>
       <setting label="30012" type="labelenum" values="allmusic.com|None" id="moodssource" default="allmusic.com"/>
-      <setting label="30013" type="labelenum" values="allmusic.com|None" id="instrumentssource" default="allmusic.com"/>
       <setting label="30014" type="labelenum" values="allmusic.com|None" id="yearsasource" default="allmusic.com"/>
   </category>
 
@@ -20,7 +22,6 @@
     <setting type="lsep" label="Fanart Sources"/>
     <setting label="30004" type="bool" id="fanarttvfanart" default="true"/>
     <setting label="30000" type="bool" id="htbfanart" default="false"/>
-
-
   </category>
+
 </settings>

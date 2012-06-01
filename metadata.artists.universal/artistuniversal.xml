@@ -68,9 +68,6 @@
 			<RegExp input="$INFO[moodssource]" output="&lt;chain function=&quot;GetAMGArtistMoodsByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
-			<RegExp input="$INFO[instrumentssource]" output="&lt;chain function=&quot;GetAMGArtistInstrumentsByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
-				<expression>allmusic.com</expression>
-			</RegExp>
 			<RegExp input="$INFO[yearsasource]" output="&lt;chain function=&quot;GetAMGArtistYearsActiveByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
