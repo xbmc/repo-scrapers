@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-    <setting label="30002" type="labelenum" values="en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh" id="language" default="en"/>
+    <setting label="30002" type="labelenum" values="en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh" id="lastfmlanguage" default="en"/>
     <setting label="30000" type="bool" id="htbfanart" default="true"/>
     <setting label="30001" type="bool" id="htbthumbs" default="true"/>
 </settings>
