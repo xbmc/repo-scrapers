@@ -1,3 +1,8 @@
+[B]1.1.2[/B]
+- added: Australia to the country list of certifications
+- changed: sorted countries alphabetically
+- added: option to scrape preferred country certification from TMDb
+
 [B]1.1.1[/B]
 - fixed: some potential html encode issues
 

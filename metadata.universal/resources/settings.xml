@@ -4,10 +4,10 @@
     <setting label="30024" type="lsep"/>
       <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="IMDb"/>
       <setting label="30008" type="labelenum" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
-      <setting label="30027" type="labelenum" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|en|sv|no" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
+      <setting label="30027" type="labelenum" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
     <setting type="lsep" label="30016"/>
       <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|Rotten Tomatoes|trakt.tv|OFDb.de" id="plotsource" default="IMDb"/>
-      <setting label="30020" type="labelenum" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|en|sv|no" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
+      <setting label="30020" type="labelenum" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
     <setting label="30025" type="lsep"/>
       <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="IMDb"/>
     <setting label="30026" type="lsep"/>
@@ -20,7 +20,7 @@
     <setting type="lsep" label="Poster Sources"/>
     <setting label="30037" type="bool" id="trakttvposter" default="false"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
-    <setting label="30034" type="labelenum" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|en|sv|no" id="tmdbthumblanguage" default="en" enable="!eq(-1,false)"/>
+    <setting label="30034" type="labelenum" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbthumblanguage" default="en" enable="!eq(-1,false)"/>
     <setting label="30003" type="bool" id="impawards" default="false"/>
     <setting label="30004" type="bool" id="movieposterdb" default="false"/>
     <setting label="30036" type="bool" id="imdbthumbs" default="false"/>
@@ -45,7 +45,8 @@
       <setting label="30115" type="labelenum" values="All Critics|Top Critics" id="allcritics" default="All Critics" visible="eq(-3,1)"/>
     <setting type="lsep" label="30031"/>
     <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
-      <setting label="30033" type="labelenum" values="Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
+      <setting label="30033" type="labelenum" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
+      <setting label="30033" type="labelenum" values="au|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|us|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>/>
     <setting label="30035" type="text" id="certprefix" default="Rated "/>
   </category>
 
