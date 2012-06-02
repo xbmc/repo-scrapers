@@ -1,3 +1,6 @@
+[B]1.1.1[/B]
+Added: handling of new format of allmusic link
+
 [B]1.1.0[/B]
 Added: language setting for last.fm artist biography
 
