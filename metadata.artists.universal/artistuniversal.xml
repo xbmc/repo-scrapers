@@ -21,7 +21,7 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetArtistSearchResults>
-	<GetArtistDetails dest="3">
+	<GetArtistDetails dest="3" clearbuffers="no">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="\2" dest="7">
 				<expression noclean="1">type=&quot;[^&quot;]*&quot; id=&quot;([^&quot;]*)&quot;&gt;&lt;name&gt;([^&lt;]*)</expression>
