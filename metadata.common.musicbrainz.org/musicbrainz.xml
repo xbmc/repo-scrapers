@@ -72,7 +72,7 @@
 	<ParseMBAlbumRating dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="2">
-				<expression noclean="1">&lt;/release-group&gt;.*?&lt;rating votes-count=&quot;[^&quot;]*&quot;&gt;(\d)</expression>
+				<expression noclean="1">&lt;/primary-type&gt;&lt;rating votes-count="[^"]*"&gt;(\d)</expression>
 			</RegExp>
 			<expression noclean="1">(.+)</expression>
 		</RegExp>
