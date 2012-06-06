@@ -6,14 +6,14 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateAlbumSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://search.musicbrainz.org/ws/2/release/?fmt=xml&amp;query=release:&quot;\1&quot;%20AND%20artist:&quot;$$2&quot;%20AND%20type:album&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://search.musicbrainz.org/ws/2/release/?fmt=xml&amp;query=release:&quot;\1&quot;%20AND%20artist:&quot;$$2&quot;&lt;/url&gt;" dest="3">
 			<expression />
 		</RegExp>
 	</CreateAlbumSearchUrl>
 	<GetAlbumSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;year&gt;\5-\4-T#\6&lt;/year&gt;&lt;artist&gt; \3 &lt;/artist&gt;&lt;title&gt; \2 &lt;/title&gt;&lt;url cache=&quot;mb-\1-album.xml&quot;&gt;http://musicbrainz.org/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes">id=&quot;([^&quot;]*)&quot;&gt;&lt;title&gt;([^&lt;]*).*?&lt;name&gt;([^&lt;]*)&lt;.*?&lt;date&gt;(\d{4}).*?&lt;country&gt;([^&lt;]*).*?&lt;track-count&gt;([^&lt;]*)</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;year&gt;\5-\4-T#\6&lt;/year&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url cache=&quot;mb-\1-album.xml&quot;&gt;http://musicbrainz.org/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">id=&quot;([^&quot;]*)&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;/title&gt;&lt;status&gt;Official&lt;/status&gt;&lt;text-representation&gt;&lt;language&gt;[^&lt;]*&lt;/language&gt;&lt;script&gt;[^&lt;]*&lt;/script&gt;&lt;/text-representation&gt;&lt;artist-credit&gt;&lt;name-credit&gt;&lt;artist\sid=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;/name&gt;(?:&lt;sort-name&gt;[^&lt;]*&lt;/sort-name&gt;)*(?:&lt;disambiguation&gt;[^&lt;]*&lt;/disambiguation&gt;)*(?:&lt;alias-list&gt;.*?&lt;/alias-list&gt;)*&lt;/artist&gt;&lt;/name-credit&gt;&lt;/artist-credit&gt;&lt;release-group\stype=&quot;[^&quot;]*&quot;\sid=&quot;[^&quot;]*&quot;&gt;&lt;primary-type&gt;[^&lt;]*&lt;/primary-type&gt;(?:&lt;secondary-type-list&gt;&lt;secondary-type&gt;[^&lt;]*&lt;/secondary-type&gt;&lt;/secondary-type-list&gt;)*&lt;/release-group&gt;&lt;date&gt;(\d{4})[^&lt;]*&lt;/date&gt;(?:&lt;country&gt;)*([^&lt;]*)?.*?&lt;track-list\scount=&quot;(\d+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -44,14 +44,11 @@
 			<RegExp input="$$3" output="&lt;chain function=&quot;GetMBAlbumTracksByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="lastfmalbumreview" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumReviewByAlbumAndArtist&quot;&gt;\1::\2&lt;/chain&gt;" dest="5+">
-				<expression trim="1,2" encode="1,2">&lt;release id=&quot;[^&quot;]*&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;.*?&lt;artist id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;</expression>
-			</RegExp>
 			<RegExp conditional="fanarttvalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetFanartTvAlbumThumbsByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="lastfmalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumThumbs&quot;&gt;\1::\2&lt;/chain&gt;" dest="5+">
-				<expression trim="1,2" encode="1,2">&lt;release id=&quot;[^&quot;]*&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;.*?&lt;artist id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;</expression>
+			<RegExp conditional="lastfmalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumThumbs&quot;&gt;\1::\2::\1::\2&lt;/chain&gt;" dest="5+">
+				<expression trim="1,2">&lt;release id=&quot;[^&quot;]*&quot;&gt;&lt;title&gt;([^&lt;]*)&lt;.*?&lt;artist id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
