@@ -39,7 +39,7 @@
 
   <category label="30100">
     <setting type="lsep" label="30030"/>
-    <setting label="30021" type="labelenum" values="IMDb|Rotten Tomatoes|themoviedb.org|trakt.tv" id="mratingsource" default="IMDb"/>
+    <setting label="30021" type="labelenum" values="IMDb|Rotten Tomatoes|MetaCritic|themoviedb.org|trakt.tv" id="mratingsource" default="IMDb"/>
       <setting label="30120" type="bool" id="rtoutline" default="false" visible="eq(-1,1)"/>
       <setting label="30110" type="labelenum" values="TomatoMeter|Average Rating" id="tomato" default="TomatoMeter" visible="eq(-2,1)"/>
       <setting label="30115" type="labelenum" values="All Critics|Top Critics" id="allcritics" default="All Critics" visible="eq(-3,1)"/>

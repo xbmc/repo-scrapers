@@ -1,3 +1,6 @@
+[B]2.3.0[/B]
+- added: option to scrape rating from MetaCritic (via IMDb)
+
 [B]2.2.3[/B]
 - fixed: still to address some html encode issues, now in plots
 

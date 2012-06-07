@@ -74,6 +74,9 @@
 			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
 			</RegExp>
+			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetMetaCriticRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>MetaCritic</expression>
+			</RegExp>
 			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetRTRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>Rotten Tomatoes</expression>
 			</RegExp>
