@@ -172,7 +172,7 @@
 	<ParseLastFMAlbumReview dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="2">
-				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]\]</expression>
+				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)(User-|\]\])</expression>
 			</RegExp>
 			<expression noclean="1">(.+)</expression>
 		</RegExp>
