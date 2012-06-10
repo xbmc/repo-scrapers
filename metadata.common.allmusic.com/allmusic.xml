@@ -308,7 +308,7 @@
 	<ParseAMGAlbumMoods dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression trim="1" noclean="1">&gt;&lt;h3&gt;popular moods&lt;/h3&gt;(.*?)&lt;/ul&gt;</expression>
+				<expression trim="1" noclean="1">&gt;\s*&lt;h4&gt;album moods&lt;/h4&gt;(.*?)&lt;/ul&gt;</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;mood&gt;\1&lt;/mood&gt;" dest="2">
 				<expression repeat="yes" noclean="1">&lt;li&gt;[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;&lt;/li&gt;</expression>

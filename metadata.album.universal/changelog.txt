@@ -1,2 +1,5 @@
+[B]1.0.1[/B]
+Fixed: scraping moods from allmusic.com
+
 [B]1.0.0[/B]
 Initial version
