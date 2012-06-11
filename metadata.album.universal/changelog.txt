@@ -1,3 +1,6 @@
+[B]1.0.3[/B]
+Fixed: Some Album releases were not found
+
 [B]1.0.2[/B]
 Fixed: Track Duration from MusicBrainz was wrong in certain cases. Credits to scudlee!
 
