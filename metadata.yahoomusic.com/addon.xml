@@ -26,5 +26,6 @@
     <description lang="pl">Pobieraj informacje o teledyskach z music.yahoo.com</description>
     <description lang="pt">Descarregar informação de filmes de music.yahoo.com</description>
     <description lang="se">Ladda ner musikvideoinformation från music.yahoo.com</description>
+    <broken>broken, please use last.fm scraper for music videos</broken>
   </extension>
 </addon>
