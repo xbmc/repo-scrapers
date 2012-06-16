@@ -1,3 +1,8 @@
+[B]2.0.0[/B]
+Added: Fallback per field
+Added: scraping in case of multiple artists (feat., ft., &, and)
+Added: other improvements
+
 [B]1.2.1[/B]
 Added: Enable all source for artwork by default
 
