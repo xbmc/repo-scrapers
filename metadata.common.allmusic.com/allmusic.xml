@@ -108,7 +108,7 @@
 				<expression trim="1,2">&lt;dt&gt;\s*Disbanded[^&gt;]*&gt;[^&gt;]*&gt;[^&gt;]*&gt;(.*?\d{4})\s*([^&lt;]*)?</expression>
 			</RegExp>
 			<RegExp input="$$11" output="$$12" dest="2">
-				<RegExp input="$INFO[lifespanfbsource]" output="&lt;chain function=&quot;GetMBLafeSpanByMBID&quot;&gt;$$8&lt;/chain&gt;" dest="12">
+				<RegExp input="$INFO[lifespanfbsource]" output="&lt;chain function=&quot;GetMBFallbackLafeSpanByMBID&quot;&gt;$$8&lt;/chain&gt;" dest="12">
 					<expression>MusicBrainz</expression>
 				</RegExp>
 			<expression>^$</expression>
