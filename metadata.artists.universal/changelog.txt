@@ -1,3 +1,6 @@
+[B]2.0.1[/B]
+Fixed: potential crashes due to infinite loop
+
 [B]2.0.0[/B]
 Added: Fallback per field
 Added: scraping in case of multiple artists (feat., ft., &, and)
