@@ -17,7 +17,7 @@
 			<RegExp input="$$1" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/album&gt;" dest="2">
 				<expression repeat="yes">&lt;album[^&gt;]*&gt;[^&lt;]*&lt;name&gt;([^&lt;]*?)&lt;/name&gt;</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1"/>
 		</RegExp>
 	</ParseLastFMDiscography>
 
@@ -63,7 +63,7 @@
 			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="6">
 				<expression fixchars="1">&lt;content&gt;&lt;!\[CDATA\[(.*?)\]\]</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1"/>
 		</RegExp>
 	</ParseLastFMFallbackBiography>
 
@@ -106,7 +106,7 @@
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4">
 				<expression noclean="1">&lt;tag&gt;.*?&lt;name&gt;([^/lt;]*)&lt;/name&gt;</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1"/>
 		</RegExp>
 	</ParseLastFMFallbackArtistGenres>
 
@@ -127,10 +127,10 @@
 				<RegExp input="$INFO[genresfbsource]" output="&lt;chain function=&quot;GetAMGFallbackArtistStylesByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="12">
 					<expression>allmusic.com</expression>
 				</RegExp>
-				<expression>&lt;genre&gt;&lt;/genre&gt;</expression>
+				<expression>&lt;style&gt;&lt;/style&gt;</expression>
 			</RegExp>
 			<RegExp input="$$11" output="$$11" dest="4">
-				<expression>&lt;genre&gt;(.+)&lt;/genre&gt;</expression>
+				<expression>&lt;style&gt;(.+)&lt;/style&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -149,7 +149,7 @@
 			<RegExp input="$$1" output="&lt;style&gt;\1&lt;/style&gt;" dest="4">
 				<expression repeat="yes" noclean="1">&lt;tag&gt;.*?&lt;name&gt;([^/lt;]*)&lt;/name&gt;</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1" />
 		</RegExp>
 	</ParseLastFMFallbackArtistStyles>
 
@@ -171,7 +171,7 @@
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\2&quot;&gt;\1&lt;/thumb&gt;" dest="6">
 				<expression repeat="yes" noclean="1">&lt;size name=&quot;original&quot;[^&gt;]*&gt;([^&lt;]*)&lt;[^&lt;]*&lt;size name=&quot;large&quot;[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
-			<expression noclean="1">(.+)</expression>
+			<expression noclean="1" />
 		</RegExp>
 	</ParseLastFMArtistThumbs>
 
