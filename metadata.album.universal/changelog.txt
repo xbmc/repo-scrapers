@@ -1,3 +1,7 @@
+[B]1.1.0[/B]
+Added: trying to get album info when multiple artists are credited (first artist will be used)
+Fixed: will not find some albums
+
 [B]1.0.3[/B]
 Fixed: Some Album releases were not found
 
