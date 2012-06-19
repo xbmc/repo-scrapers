@@ -1,3 +1,6 @@
+[B]2.0.2[/B]
+Fixed: artists won't find with 'and' in their name
+
 [B]2.0.1[/B]
 Fixed: potential crashes due to infinite loop
 

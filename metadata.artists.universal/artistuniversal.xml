@@ -11,7 +11,7 @@
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">(.+)(?:Ft%2e|Feat%2e|%26|and)</expression>
+				<expression noclean="1">(.+)(?:Ft%2e|Feat%2e|%26|%20and%20)</expression>
 			</RegExp>
 			<RegExp input="$$6" output="\1" dest="4">
 				<expression>(.+)</expression>
