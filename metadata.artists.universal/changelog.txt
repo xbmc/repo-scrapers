@@ -1,3 +1,6 @@
+[B]2.0.4[/B]
+Improved: further improve search results for artists with almost no data
+
 [B]2.0.3[/B]
 Improved: search results are now return artists with almost no data
 
