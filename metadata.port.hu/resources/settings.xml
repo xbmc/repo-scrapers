@@ -6,6 +6,7 @@
     <setting label="30008" type="bool" id="hungenre" default="false"/>
     <setting label="30002" type="bool" id="fullcredits" default="false"/>
     <setting label="30009" type="bool" id="tmdbset" default="true"/>
+    <setting label="30014" type="labelenum" values="hu|en" id="tmdbsetlanguage" default="hu" enable="eq(-1,true)"/>
   </category>
 
   <category label="30011">
