@@ -1,3 +1,6 @@
+[B]2.0.6[/B]
+Fixed: accommodate new Frodo style URL encoding
+
 [B]2.0.5[/B]
 Removed: '&' sign from artist splitter
 
