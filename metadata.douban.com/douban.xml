@@ -26,11 +26,11 @@
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
-				<expression>&lt;db:attribute name=&quot;title&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
-			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
 				<expression>&lt;db:attribute lang=&quot;zh_CN&quot; name=&quot;aka&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;&lt;title&gt;\1&lt;/title&gt;" dest="5+">
+				<expression>&lt;db:attribute name=&quot;title&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression>&lt;db:attribute name=&quot;year&quot;&gt;([0-9]+)&lt;/db:attribute&gt;</expression>
