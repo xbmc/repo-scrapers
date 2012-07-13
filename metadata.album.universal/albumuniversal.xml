@@ -6,7 +6,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateAlbumSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://search.musicbrainz.org/ws/2/release/?fmt=xml&amp;query=release:&quot;\1&quot;%20AND%20artist:&quot;$$2&quot;&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://search.musicbrainz.org/ws/2/release/?fmt=xml&amp;query=release:&quot;\1&quot;%20AND%20artist:&quot;$$4&quot;&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="\1" dest="4">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
@@ -68,6 +68,9 @@
 			</RegExp>
 			<RegExp input="$INFO[albumreviewsource]" output="&lt;chain function=&quot;GetLastFMAlbumReviewByAlbumAndArtist&quot;&gt;$$7::$$8::$$7::$$8&lt;/chain&gt;" dest="5+">
 				<expression>last.fm</expression>
+			</RegExp>
+			<RegExp input="$INFO[albumreviewsource]" output="&lt;chain function=&quot;GetTADBAlbumReviewByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
+				<expression>TheAudioDb.com</expression>
 			</RegExp>
 			<RegExp input="$INFO[albumreviewsource]" output="&lt;url function=&quot;GetAmazonDEAlbumReview&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression>amazon.de</expression>
