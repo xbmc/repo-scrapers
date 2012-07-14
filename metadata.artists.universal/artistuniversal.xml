@@ -79,6 +79,9 @@
 			<RegExp input="$INFO[stylessource]" output="&lt;chain function=&quot;GetLastFMArtistStylesByMBID&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
 				<expression>last.fm</expression>
 			</RegExp>
+			<RegExp input="$INFO[biogsource]" output="&lt;chain function=&quot;GetTADBBiographyByMBID&quot;&gt;$$8&lt;/chain&gt;" dest="5+">
+				<expression>TheAudioDb.com</expression>
+			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
 	</GetArtistDetails>
