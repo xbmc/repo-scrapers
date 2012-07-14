@@ -41,6 +41,9 @@
 				<RegExp input="$INFO[biogfbsource]" output="&lt;chain function=&quot;GetAMGFallbackBiographyByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="12">
 					<expression>allmusic.com</expression>
 				</RegExp>
+				<RegExp input="$INFO[biogfbsource]" output="&lt;chain function=&quot;GetTADBFMFallbackBiographyByMBID&quot;&gt;$$9&lt;/chain&gt;" dest="12">
+					<expression>TheAudioDb.com</expression>
+				</RegExp>
 				<expression>^$</expression>
 			</RegExp>
 			<RegExp input="$$11" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="6">
