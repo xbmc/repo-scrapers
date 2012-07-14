@@ -55,7 +55,7 @@
 			<RegExp input="" output="" dest="2">
 				<expression />
 			</RegExp>
-			<RegExp input="$$1" output="\1" dest="2">
+			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="2">
 				<expression clear="yes">&quot; itemprop=&quot;description&quot;&gt;(.*?)div class=&quot;advertisement leaderboard&quot;&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
