@@ -18,5 +18,6 @@
     <description lang="ko">music.daum.net 에서 음악 앨범 정보 다운로드</description>
     <description lang="hu">Zene információk letöltése a music.daum.net webhelyről</description>
     <description lang="pt">Descarregar informação de música de music.daum.net</description>
+    <broken>broken due to site changes</broken>
   </extension>
 </addon>
