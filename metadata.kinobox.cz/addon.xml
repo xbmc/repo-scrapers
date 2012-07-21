@@ -16,5 +16,6 @@
     <description lang="en">Info scraper for Kinobox.cz. Kinobox contains description of czech and international movies in czech language.</description>
     <description lang="cs">Stahovač informací o filmech z kinobox.cz. Kinobox obsahuje popisy českých i mezinárodních filmů pouze v českém jazyce. Součástí Kinoboxu je také sekce České Filmové Nebe.</description>
     <platform>all</platform>
+    <broken>broken due to site changes</broken>
   </extension>
 </addon>

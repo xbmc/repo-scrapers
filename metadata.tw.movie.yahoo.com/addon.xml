@@ -19,5 +19,6 @@
     <description lang="en">Helps you to scrape movie information from Yahoo!Taiwan Movie (http://tw.movie.yahoo.com).[CR][CR]Supported features: [CR]Title (Chinese/English)[CR]Genre[CR]Thumb[CR]Year[CR]Director[CR]Studio[CR]Rating[CR]Votes[CR]Fanart[CR]Plot[CR]Outline[CR][CR]Incomplete features:[CR]Duration[CR]Actor[CR]Trailer[CR]Fanart (HD)</description>
     <description lang="zh">幫助你從 Yahoo!奇摩電影 網站匯入電影相關資訊。[CR][CR]目前完成功能：[CR]片名(中英文)[CR]類型[CR]縮圖[CR]上映日期[CR]導演[CR]發行公司[CR]評分[CR]投票數[CR]劇照[CR]劇情[CR]簡介[CR][CR]尚未完成部分：[CR]片長[CR]演員名單[CR]預告片[CR]高畫質劇照</description>
     <platform>all</platform>
+    <broken>broken due to site changes</broken>
   </extension>
 </addon>

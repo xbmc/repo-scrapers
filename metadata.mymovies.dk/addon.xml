@@ -17,5 +17,6 @@
     <description lang="kr">MyMovies.dk 에서 영화 정보 다운로드</description>
     <description lang="pl">Pobieraj informacje o filmach z www.mymovies.dk</description>
     <description lang="pt">Descarregar informação de filmes de www.mymovies.dk</description>
+    <broken>broken due to site changes</broken>
   </extension>
 </addon>
