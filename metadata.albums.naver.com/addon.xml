@@ -18,5 +18,6 @@
     <description lang="ko">music.naver.com 에서 음악앨범 정보 다운로드</description>
     <description lang="hu">Zene információk letöltése a music.naver.com webhelyről</description>
     <description lang="pt">Descarregar informação de música de music.naver.com</description>
+    <broken>broken due to site changes</broken>
   </extension>
 </addon>
