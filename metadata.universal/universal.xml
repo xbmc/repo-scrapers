@@ -89,7 +89,7 @@
 			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetIMDBGenresById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
 			</RegExp>
-			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetTMDBLangGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
 			</RegExp>
 			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetTRAKTTVGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
