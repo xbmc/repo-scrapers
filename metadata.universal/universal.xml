@@ -188,7 +188,7 @@
 				</RegExp>
 				<expression/>
 			</RegExp>
-			<RegExp conditional="tmdbtrailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="tmdbtrailer" input="$$2" output="&lt;chain function=&quot;GetTMDBLangTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp conditional="trakttvtrailer" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
