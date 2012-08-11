@@ -44,8 +44,14 @@
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;originaltitle&gt;\2&lt;/originaltitle&gt;" dest="5+">
+			<RegExp input="$$1" output="\2" dest="19">
 				<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\2" dest="20">
+				<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>
+			</RegExp>
+			<RegExp input="$$19" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
+				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\2&lt;/year&gt;" dest="5+">
 				<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>
@@ -121,6 +127,9 @@
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetTRAKTTVPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>trakt.tv</expression>
+			</RegExp>
+			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetPortHUPlotByTitleAndYear&quot;&gt;$$19::$$20&lt;/chain&gt;" dest="5+">
+				<expression>port.hu</expression>
 			</RegExp>
 			<RegExp input="$INFO[creditssource]" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
