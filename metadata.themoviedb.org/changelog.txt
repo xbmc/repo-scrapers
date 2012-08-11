@@ -1,3 +1,6 @@
+[B]3.4.0[/B]
+- added: prefer trailer language according to the selected language
+
 [B]3.3.0[/B]
 - updated: improve CreateSearchUrl according to TMDb API changes
 
