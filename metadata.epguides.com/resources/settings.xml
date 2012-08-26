@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <setting label="30001" type="labelenum" id="language" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|en|sv|no" sort="yes" default="en" />
+  <setting label="30002" type="bool" id="posters" default="false" />
+</settings>
