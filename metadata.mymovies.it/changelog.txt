@@ -1,5 +1,9 @@
+[B]2.0.1[/B]
+- Fixed trailer: Update regex for change in some films pages
+- Added setting category: For more user-friendly scraper settings
+
 [B]2.0.0[/B]
-- Fix fanart: GetTMDBFanartByIdChain url function to chain fuction (stefano85 request)
+- Fixed fanart: GetTMDBFanartByIdChain url function to chain fuction (stefano85 request)
 
 [B]1.1.9[/B]
 - Added imdb id, not visible in film info but needed for trakt plugin (Tmac12 request)
