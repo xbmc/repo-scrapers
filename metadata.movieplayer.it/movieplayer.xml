@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-01-16" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-09-18" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -36,21 +36,21 @@
 		<RegExp input="$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Title-->
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="13">
-				<expression trim="1" noclean="1">&lt;span itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt;</expression>
+				<expression trim="1" noclean="1">&lt;p itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt;</expression>
 			</RegExp>
 			<!--Year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="13+">
-				<expression trim="1" noclean="1">&lt;span class="year"&gt;.*?anno=([0-9]*)"&gt;</expression>
+				<expression trim="1" noclean="1">&lt;h1 itemprop="name"&gt;.*?anno=([0-9]*)"&gt;</expression>
 			</RegExp>
 			<!--Original title-->
 			<RegExp input="$$4" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="13+">
 				<!--Try OriginalTitle (putTitle just in case MP site hasn't original title) & (get before)-->
 				<RegExp input="$$1" output="\1" dest="4">
-					<expression noclean="1">&lt;span itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt;</expression>
+					<expression noclean="1">&lt;p itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt;</expression>
 				</RegExp>
 				<!--Try OriginalTitle (if MP site has original title, take it)-->
 				<RegExp input="$$1" output="\2" dest="3">
-					<expression cs="true" clear="yes" noclean="1">&lt;span itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt; \(([^/"]*)\) </expression>
+					<expression cs="true" clear="yes" noclean="1">&lt;p itemprop="description"&gt;&lt;strong&gt;(?:&amp;#x22;)?([^"]*?)(?:&amp;#x22;)?&lt;/strong&gt; \(([^/"]*)\)</expression>
 				</RegExp>
 				<!--Test if exist a real original film title if exist overwrite normal title-->
 				<RegExp input="$$3" output="\1" dest="4">
@@ -82,7 +82,7 @@
 			</RegExp>
 			<!--Poster-->
 			<RegExp input="$$1" output="&lt;thumb&gt;\1.jpg&lt;/thumb&gt;" dest="13+">
-				<expression>&lt;div class="poster"&gt;[^_]*&lt;img src="([^_]*)_medium.jpg</expression>
+				<expression>&lt;div class="poster"&gt;[^_]*src="([^_]*)_medium.jpg</expression>
 			</RegExp>
 			<!--Trailer-->
 			<RegExp input="$$1" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="13+">
