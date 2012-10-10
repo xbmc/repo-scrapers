@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.musicvideos.theaudiodb.com"
        name="TheAudioDb.com for Music Videos"
-       version="1.0.0"
+       version="1.0.1"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -19,6 +19,7 @@
     <summary lang="pl">Scraper teledysków theaudiodb.com</summary>
     <summary lang="pt">Scraper de música theaudiodb.com</summary>
     <summary lang="se">Skrapa för theaudiodb.com musik</summary>
+    <summary lang="zh">theaudiodb.com音乐电视刮削器</summary>
     <description lang="bg">Сваля информация за музикални клипове</description>
     <description lang="en">Download Music Video information</description>
     <description lang="fi">Lataa musiikkivideoiden tiedot</description>
@@ -27,5 +28,6 @@
     <description lang="pl">Pobieraj informacje o teledyskach z theaudiodb.com</description>
     <description lang="pt">Descarregar informação de filmes de theaudiodb.com</description>
     <description lang="se">Ladda ner musikvideoinformation från theaudiodb.com</description>
+    <description lang="zh">从theaudiodb.com下载音乐电视资料</description>
   </extension>
 </addon>
