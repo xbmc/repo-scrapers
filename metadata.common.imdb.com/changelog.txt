@@ -1,3 +1,6 @@
+[B]2.4.0[/B]
+- added: aspect tag to imdb poster
+
 [B]2.3.0[/B]
 - added: option to scrape rating from MetaCritic (via IMDb)
 
