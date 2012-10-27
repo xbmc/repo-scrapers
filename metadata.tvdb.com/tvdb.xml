@@ -188,7 +188,10 @@
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression noclean="1">&lt;Episode&gt;.*?&lt;id&gt;$$2&lt;/id&gt;(.*?)&lt;/Episode&gt;</expression>
 			</RegExp>
-			<RegExp input="$$8" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;uniqueid&gt;$$2&lt;/uniqueid&gt;" dest="4">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$8" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="4+">
 				<expression>&lt;Overview&gt;([^&lt;]*)&lt;/Overview&gt;</expression>
 			</RegExp>
 			<RegExp input="$$8" output="\1" dest="6">
