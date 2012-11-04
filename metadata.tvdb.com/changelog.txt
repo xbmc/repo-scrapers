@@ -1,3 +1,6 @@
+[B]1.4.1[/B]
+- Fixed: missing xml tag in GetTVDBId
+
 [B]1.4.0[/B]
 - Added: scraping of EpisodeID
 
