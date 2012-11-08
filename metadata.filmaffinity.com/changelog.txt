@@ -1,6 +1,20 @@
+[B]1.5.0[/B]
+
+- Añadida la búsqueda de información adicional buscando en cascada dentro de IMDB
+- Añadida la selección de trailers de TheMovieDB (gracias XBMCERO)
+- Añadida la selección de idioma para los posters de TheMovieDB (gracias XBMCERO)
+- Revisada la descarga de póster de filmaffinity
+- Añadida opción de descarga rápida de póster principal de filmaffinity (gracias XBMCERO)
+- Añadida la descarga de póster y fanart the trackt.tv
+- Añadido mostrar título original
+- Mejorada la búsqueda principal usando la búsqueda de google
+- Opciones de configuración revisadas y reordenadas (gracias XBMCERO y davidmuma)
+- Priorizados los posters de otras páginas sobre los de filmaffinity en caso de ser seleccionados
+- Eliminado soporte de Alpacine ya que la página ha dejado de funcionar
+
 [B]1.4.5[/B]
 
-- Añadida la posibilidad de descargar información de colecciones de TMDb.
+- Añadida la posibilidad de descargar información de colecciones de TheMovieDB.
 
 [B]1.4.4[/B]
 

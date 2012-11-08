@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: MaDDoGo <maddogo@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgctxt "Addon Summary"
+msgid "Filmaffinity Movie Scraper"
+msgstr "Filmaffinity Movie Scraper"
+
+msgctxt "Addon Description"
+msgid "Download Movie information from www.filmaffinity.com"
+msgstr "Download Movie information from www.filmaffinity.com"
+
+msgctxt "Addon Disclaimer"
+msgid "It's recommended to configure it before use"
+msgstr "It's recommended to configure it before use"
+
+msgctxt "#30000"
+msgid "General"
+msgstr "General"
+
+msgctxt "#30001"
+msgid "General options"
+msgstr "General options"
+
+msgctxt "#30002"
+msgid "Compatibility with Studio logos"
+msgstr "Compatibility with Studio logos"
+
+msgctxt "#30003"
+msgid "Get Set (Collection) Titles from TheMovieDB"
+msgstr "Get Set (Collection) Titles from TheMovieDB"
+
+msgctxt "#30004"
+msgid "Preferred Set (Collection) Titles Language"
+msgstr "Preferred Set (Collection) Titles Language"
+
+msgctxt "#30006"
+msgid "IMDB Sources"
+msgstr "IMDB Sources"
+
+msgctxt "#30007"
+msgid "Use IMDB full cast (actor, rol and picture)"
+msgstr "Use IMDB full cast (actor, rol and picture)"
+
+msgctxt "#30008"
+msgid "Extra information (Slogan, MPAA, Top 250)"
+msgstr "Extra information (Slogan, MPAA, Top 250)"
+
+msgctxt "#30009"
+msgid "Use IMDB ratings"
+msgstr "Use IMDB ratings"
+
+msgctxt "#30100"
+msgid "Search info only from Filmaffinity (faster)"
+msgstr "Search info only from Filmaffinity (faster)"
+
+msgctxt "#30020"
+msgid "Posters"
+msgstr "Posters"
+
+msgctxt "#30021"
+msgid "Posters Sources"
+msgstr "Posters Sources"
+
+msgctxt "#30022"
+msgid "Filmaffinity main poster (faster)"
+msgstr "Filmaffinity main poster (faster)"
+
+msgctxt "#30023"
+msgid "TheMovieDB posters"
+msgstr "TheMovieDB posters"
+
+msgctxt "#30024"
+msgid "Preferred Posters Language"
+msgstr "Preferred Posters Language"
+
+msgctxt "#30025"
+msgid "MoviePosterDB posters"
+msgstr "MoviePosterDB posters"
+
+msgctxt "#30026"
+msgid "IMDB posters"
+msgstr "IMDB posters"
+
+msgctxt "#30027"
+msgid "IMPAwards posters"
+msgstr "IMPAwards posters"
+
+msgctxt "#30028"
+msgid "Trackt posters"
+msgstr "Trackt posters"
+
+msgctxt "#30029"
+msgid "FilmAffinity extra posters"
+msgstr "FilmAffinity extra posters"
+
+msgctxt "#30030"
+msgid "FanArts"
+msgstr "FanArts"
+
+msgctxt "#30031"
+msgid "FanArts Sources"
+msgstr "FanArts Sources"
+
+msgctxt "#30032"
+msgid "TheMovieDB FanArts"
+msgstr "TheMovieDB FanArts"
+
+msgctxt "#30033"
+msgid "Trackt FanArts"
+msgstr "Trackt FanArts"
+
+msgctxt "#30040"
+msgid "Trailers"
+msgstr "Trailers"
+
+msgctxt "#30041"
+msgid "Trailers Sources"
+msgstr "Trailers Sources"
+
+msgctxt "#30042"
+msgid "Select Trailers from"
+msgstr "Select Trailers from"
+
+msgctxt "#30043"
+msgid "TheMovieDB Trailers"
+msgstr "TheMovieDB Trailers"
+
+msgctxt "#30044"
+msgid "Preferred Trailer Language"
+msgstr "Preferred Trailer Language"
