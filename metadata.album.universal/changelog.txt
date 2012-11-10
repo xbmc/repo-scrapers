@@ -1,6 +1,8 @@
+[B]1.3.7[/B]
+Temporarily disable fanarttv.com scraping due to site load issues
+
 [B]1.3.6[/B]
 Fixed: Scraper now works with both API layout
-
 
 [B]1.3.5[/B]
 Added: Chinese translation
