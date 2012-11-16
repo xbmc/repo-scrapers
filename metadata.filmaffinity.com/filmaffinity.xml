@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2011-12-02">
+
+	<!--obtención de la url desde el fichero .nfo -->
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;" dest="3">
+			<expression noclean="1">filmaffinity.com/es/film([0-9]*)</expression>
+		</RegExp>
+	</NfoUrl>
+
+	<!-- búsqueda principal -->
+	<CreateSearchUrl SearchStringEncoding="iso-8859-1" dest="3">
+		<!-- búsqueda de filmaffinity usando título y año -->
+		<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/advsearch.php?stype[]=title&amp;fromyear=$$2&amp;toyear=$$2&amp;stext=\1&lt;/url&gt;" dest="3">
+			<expression noclean="1" />
+		</RegExp>
+		<!-- búsqueda en filmaffinity a través de google -->
+		<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.google.com/search?sourceid=navclient&amp;btnI=1&amp;q=site:filmaffinity.com+\1+$$2&lt;/url&gt;" dest="3">
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+
+	<!-- parseo de los resultados de la búsqueda principal -->
+	<GetSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot;; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<!-- búsqueda de filmaffinity -->
+			<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\3)&lt;/title&gt;&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" noclean="1,2">&lt;a href=&quot;/es/film([0-9]*)\.html&quot;&gt;([^&lt;]*)&lt;/a&gt;[^\(]*\(([0-9]{4})</expression>
+			</RegExp>
+			<!-- búsqueda de google -->
+			<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 (\2)&lt;/title&gt;" dest="5+">
+				<expression noclean="1,2">&lt;title&gt;([^&lt;]*)\(([0-9]{4})</expression>
+			</RegExp>
+			<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression noclean="1">movie_id=([0-9]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+
+	<!-- obtención de los detalles de la película -->
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+
+			<!-- obtención de título -->
+			<RegExp input="$$1" conditional="!EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression trim="1" noclean="1">movie.gif&quot; border=&quot;0&quot;&gt; (.*?)(\(AKA|&lt;)</expression>
+			</RegExp>
+			<RegExp input="$$1" conditional="EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression trim="1">T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(&lt;|\(AKA)</expression>
+			</RegExp>
+
+			<!-- obtención de título original -->
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
+				<expression trim="1">T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(&lt;|\(AKA)</expression>
+			</RegExp>
+
+			<!-- obtención del argumento -->
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression trim="1">SINOPSIS&lt;/th&gt;\s*&lt;td&gt;(.*?)(\(FILMAFFINITY\)|&lt;/td&gt;)</expression>
+			</RegExp>
+
+			<!-- obtención del país -->
+			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
+				<expression>countries/...jpg&quot; title=&quot;([^&quot;]*)</expression>
+			</RegExp>
+
+			<!-- obtención del año -->
+			<RegExp input="$$9" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td&gt;</expression>
+				</RegExp>
+				<expression>\s*([0-9]{4})</expression>
+			</RegExp>
+
+			<!-- obtención del género -->
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">moviegenre.php?[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- obtención de estudio (productora) -->
+			<!-- si "miniaturas de estudio" desactivado: descargamos todo -->
+			<RegExp conditional="!StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">([^,\;/]+)</expression>
+			</RegExp>
+			<!-- si activado: descargamos sólo la primera productora -->
+			<RegExp conditional="StudioFlagsON" input="$$9" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>PRODUCTORA&lt;/th&gt;\s*&lt;td&gt;([^&lt;/]*)</expression>
+				</RegExp>
+				<!-- limpiamos cosas como "Coproducción Alemana-Francia;" -->
+				<expression trim="1">(?:(?:[^\;]*)\;\s)?(.*)</expression>
+			</RegExp>
+
+			<!-- obtención del director (o directores) -->
+			<RegExp input="$$9" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression noclean="1">DIRECTOR&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td</expression>
+				</RegExp>
+				<expression repeat="yes">a href="[^"]*"&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+
+			<!-- obtención de guionistas -->
+			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression>GUI&amp;Oacute\;N&lt;/th&gt;\s*&lt;td&gt;(.*?)(\(|&lt;)</expression>
+				</RegExp>
+				<expression repeat="yes" trim="1">(.*?)(&amp;amp;|;|,|$)</expression>
+			</RegExp>
+
+			<!-- obtención de puntuación y número de votos de filmaffinity (si búsqueda rápida) -->
+			<RegExp conditional="EnableFastSearch" input="" output="$$9" dest="5+">
+				<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="9">
+					<expression>bold;&quot;&gt;([1-9]),([0-9])</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="9+">
+					<expression>&gt;([0-9\.]*) votos</expression>
+				</RegExp>
+				<expression></expression>
+			</RegExp>
+			<!-- obtención de puntuación y número de votos de filmaffinity (si no IMDB) -->
+			<RegExp conditional="!IMDBRatings" input="" output="$$9" dest="5+">
+				<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="9">
+					<expression>bold;&quot;&gt;([1-9]),([0-9])</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="9+">
+					<expression>&gt;([0-9\.]*) votos</expression>
+				</RegExp>
+				<expression></expression>
+			</RegExp>
+
+			<!-- obtención de duración -->
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression>&lt;/a&gt;\s*&lt;/div&gt;\s*([0-9]*) min\.\s*&lt;/td&gt;</expression>
+			</RegExp>
+
+			<!-- obtención de listado de actores desde filmaffinity (si búsqueda rápida) -->
+			<RegExp conditional="EnableFastSearch" input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes">stype=cast[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<!-- obtención de listado de actores desde filmaffinity (si no IMDB) -->
+			<RegExp conditional="!IMDBCast" input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes">stype=cast[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- hd-trailers 480p -->
+			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$5" output="\1" dest="6">
+					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression>HD-Trailers\(480p\)</expression>
+			</RegExp>
+			<!-- hd-trailers 720p -->
+			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$5" output="\1" dest="6">
+					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression>HD-Trailers\(720p\)</expression>
+			</RegExp>
+			<!-- hd-trailers 1080p -->
+			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+				<RegExp input="$$5" output="\1" dest="6">
+					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
+				</RegExp>
+				<expression>HD-Trailers\(1080p\)</expression>
+			</RegExp>
+			
+			<!-- obtención del IMDBid -->
+			<RegExp conditional="!EnableFastSearch" input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;\1&lt;/url&gt;" dest="5+">
+				<RegExp conditional="!GoogleAdvSearch" input="" output="http://akas.imdb.com/find?s=tt;lm=0;nr=1;q=" dest="9">
+					<expression />
+				</RegExp>
+				<RegExp conditional="GoogleAdvSearch" input="" output="http://www.google.com/search?q=site:imdb.com" dest="9">
+					<expression />
+				</RegExp>
+				<RegExp input="$$8" output="+\1" dest="9+">
+					<RegExp input="$$1" output="\1" dest="8">
+						<expression>T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(\(AKA|&lt;)</expression>
+					</RegExp>
+					<!-- unimos con '+' cada palabra -->
+					<expression repeat="yes">([^ ,]+)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="+(\1)" dest="9+">
+					<RegExp input="$$1" output="\1" dest="6">
+						<expression>A&Ntilde;O&lt;/th&gt;\s*&lt;td&gt;(.*?)&lt;/td</expression>
+					</RegExp>
+					<expression>\s*([0-9]{4})</expression>
+				</RegExp>
+				<expression />
+			</RegExp>
+
+			<!-- trailer de filmaffinity -->
+			<RegExp conditional="EnableFATrailer" input="" output="&lt;url function=&quot;SearchTrailerPage&quot;&gt;http://www.filmaffinity.com/es/evideos.php$$6&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">/es/evideos.php([^"]+)</expression>
+				</RegExp>
+				<expression />
+			</RegExp>
+
+			<!-- si "solo poster" descarga el primer poster de filmaffinity -->
+			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">pics.filmaffinity.com/([^&quot;]*)</expression>
+			</RegExp>
+			
+			<!-- Descargar todos los posters que haya en filmaffinity -->
+			<RegExp conditional="!FirstFilmAffinityPoster" input="" output="$$9" dest="5+">
+				<RegExp conditional="EnableFilmAffinityPosters" input="$$1" output="&lt;url function=&quot;GetFilmAffinityPosters&quot;&gt;http://www.filmaffinity.com/es/filmimages.php\1&lt;/url&gt;" dest="9">
+					<expression noclean="1">(\?movie_id[^"]+)</expression>
+				</RegExp>
+				<expression/>
+			</RegExp>
+			
+			<!-- eliminamos todos los espacios en blanco que hayan aparecido por el camino -->
+			<RegExp input="$$5" output="\1 " dest="5">
+				<expression repeat="yes" noclean="1">(\S+)</expression>
+			</RegExp>
+			
+			<!-- y le devolvemos todos los detalles al señor XBMC -->
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+
+	<!-- función para obtener trailers desde filmaffinity -->
+	<SearchTrailerPage dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;plugin://plugin.video.youtube/?action=play_video&amp;videoid=\1&lt;/trailer&gt;</details>" dest="5+">
+			<expression noclean="1">http://www.youtube.com/v/([^&amp;|^\\]*)</expression>
+		</RegExp>
+	</SearchTrailerPage>
+	
+	<!-- obtención y uso del id de IMDB -->
+	<GetIMDBid dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+
+			<!-- obtención del id de IMDB -->
+			<RegExp input="" output="&lt;id&gt;tt$$6&lt;/id&gt;" dest="5">
+				<!-- a través de IMDB (búsqueda en cascada) -->
+				<RegExp conditional="!GoogleAdvSearch" input="$$6" output="\1" dest="6">
+					<!-- recuperamos el año -->
+					<RegExp input="$$1" output="\1" dest="2">
+						<expression noclean="1">autocomplete=&quot;off&quot; value=&quot;[^&quot;]*\(([0-9]{4})\)&quot;</expression>
+					</RegExp>
+					<!-- recuperamos el título completo... -->
+					<RegExp input="$$3" output="\1|" dest="4">
+						<RegExp input="$$1" output="\1" dest="3">
+							<expression noclean="1" trim="1">autocomplete=&quot;off&quot; value=&quot;\s([^&quot;]*)\s\([0-9]{4}\)&quot;</expression>
+						</RegExp>
+						<!-- ... pero nos quedamos sólo con sus palabras individualmente -->
+						<expression repeat="yes">([^ ,]+)</expression>
+					</RegExp>
+					<!-- buscamos todas las entradas que encajen con el año, sobreescribiendo la variable $$2 -->
+					<RegExp input="$$1" output="\1" dest="2">
+						<expression noclean="1" repeat="yes">/title/tt([0-9]*/';&quot;&gt;[^&lt;]*&lt;)/a&gt;\s*\($$2</expression>
+					</RegExp>
+					<!-- de las de ese año, buscamos la primera entrada, por si IMDB acertase a la primera -->
+					<RegExp input="$$2" output="\1" dest="6">
+						<expression noclean="1">([0-9]*)</expression>
+					</RegExp>
+					<!-- de las de ese año, buscamos ahora que encaje alguna palabra como la primera (si falla se queda con el resultado anterior) -->
+					<RegExp input="$$2" output="\1" dest="6">
+						<expression noclean="1">([0-9]*)/';&quot;&gt;($$4')</expression>
+					</RegExp>
+					<!-- de las de ese año, buscamos por último el título completo con el año (si falla se queda con el resultado anterior) -->
+					<RegExp input="$$2" output="\1" dest="6">
+						<expression noclean="1">([0-9]*)/';&quot;&gt;$$3&lt;</expression>
+					</RegExp>
+					<expression/>
+				</RegExp>
+				<!-- o a través de google (búsqueda directa) -->
+				<RegExp conditional="GoogleAdvSearch" input="$$1" output="\1" dest="6">
+					<expression>/title/tt([0-9]*)</expression>
+				</RegExp>
+				<expression noclean="1" />
+			</RegExp>
+
+			<RegExp conditional="!FirstFilmAffinityPoster" input="$$6" output="$$9" dest="5+">
+				<!-- obtención de los pósters de TheMovieDatabase.org -->
+				<RegExp conditional="EnableTMDBPoster" input="" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="9">
+					<expression />
+				</RegExp>
+				<!-- obtención de los pósters de MoviePosterDB -->
+				<RegExp conditional="EnableMoviePosterDB" input="" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;tt$$6&lt;/chain&gt;" dest="9+">
+					<expression />
+				</RegExp>
+				<!-- obtención de los pósters de IMDB -->
+				<RegExp conditional="EnableIMDBPosters" input="" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;tt$$6&lt;/chain&gt;" dest="9+">
+					<expression />
+				</RegExp>
+				<!-- obtención de los pósters de IMPAwards -->
+				<RegExp conditional="EnableIMPAwards" input="" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;tt$$6&lt;/chain&gt;" dest="9+">
+					<expression />
+				</RegExp>
+				<!-- obtención del póster de trakt.tv -->
+				<RegExp conditional="EnableTracktPoster" input="" output="&lt;url function=&quot;GetTracktPoster&quot;&gt;http://trakt.tv/search/imdb?q=tt$$6&lt;/url&gt;" dest="9+">
+					<expression />
+				</RegExp>
+				<expression>[0-9]</expression>
+			</RegExp>
+			
+			<!-- obtención de título de colección desde TMDB-->
+			<RegExp conditional="EnableTMDBSet" input="$$6" output="&lt;chain function=&quot;GetTMDBLangSetByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+			
+			<!-- obtención de los fanarts de TheMovieDatabase.org -->
+			<RegExp conditional="EnableTMDBFanArt" input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+			
+			<!-- obtención de los fanarts de trakt.tv -->
+			<RegExp conditional="EnableTracktFanArt" input="$$6" output="&lt;url function=&quot;GetTracktFanart&quot;&gt;http://trakt.tv/search/imdb?q=tt$$6&lt;/url&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+			
+			<!-- configuración: trailer de tmdb -->
+			<RegExp conditional="EnableTMDBTrailer" input="$$6" output="&lt;chain function=&quot;GetTMDBLangTrailerByIdChain&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+
+			<!-- obtención del listado completo de actores desde IMDB -->
+			<RegExp conditional="IMDBCast" input="$$6" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;tt$$6&lt;/chain&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+
+			<!-- obtención de información extra de IMDB (top250, rating, etc) -->
+			<RegExp conditional="ExtraIMDB" input="$$6" output="&lt;url function=&quot;GetImdbStuff&quot;&gt;http://www.imdb.com/title/tt$$6&lt;/url&gt;" dest="5+">
+				<expression>[0-9]</expression>
+			</RegExp>
+			
+			<expression noclean="1" />
+		</RegExp>
+	</GetIMDBid>
+
+	<!-- función para la obtención de pósters de filmaffinity -->
+	<GetFilmAffinityPosters dest="5">
+		<RegExp input="$$10" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;thumb&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="10">
+				<expression repeat="yes" noclean="1">url_l: \'http://pics.filmaffinity.com/([^\']*)\', description: \'\', type_id: \'Poster</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;http://pics.filmaffinity.com/\1&lt;/thumb&gt;" dest="10+">
+				<expression noclean="1">"http://pics.filmaffinity.com/([^"]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetFilmAffinityPosters>
+	
+	<!-- función para la obtención de fanart de trackt -->
+	<GetTracktFanart dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;fanart&gt;&lt;thumb&gt;\1&lt;/thumb&gt;&lt;/fanart&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">background-image:url\(([^\)]+)</expression>
+		</RegExp>
+	</GetTracktFanart>
+	
+	<!-- función para la obtención de póster de trackt -->
+	<GetTracktPoster dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb&gt;\1&lt;/thumb&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">picture: '([^')]+)</expression>
+		</RegExp>
+	</GetTracktPoster>
+	
+	<!-- función para la obtención de detalles extra de IMDb -->
+	<GetImdbStuff dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+
+			<!-- obtención de Top250 -->
+			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="6">
+				<expression>Top 250 #([0-9]*)&lt;/</expression>
+			</RegExp>
+
+			<!-- obtención de ratings MPAA -->
+			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="6+">
+				<expression noclean="1">span itemprop=&quot;contentRating&quot;&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- obtención de puntuación y número de votos -->
+			<RegExp conditional="IMDBRatings" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6+">
+				<expression>span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+)&lt;/span&gt;.*?title=&quot;([0-9,]+)\s</expression>
+			</RegExp>
+
+			<!-- obtención de eslogan -->
+			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="6+">
+				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
+			</RegExp>
+
+			<expression noclean="1" />
+		</RegExp>
+	</GetImdbStuff>
+
+</scraper>

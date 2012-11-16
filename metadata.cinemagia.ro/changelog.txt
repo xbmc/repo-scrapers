@@ -1,0 +1,3 @@
+1.0.0 Initial release
+1.1.0 Updated to cinemagia.ro latest changes; added hungarian, polish and portuguese translations
+1.1.1 Added option for IMDB ratings; always download fanart from tmdb (removed option); corrected errors downloading tmdb thumbs and fanart; updated language strings; added romanian translation

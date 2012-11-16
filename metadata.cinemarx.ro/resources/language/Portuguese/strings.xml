@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Portuguese strings.xml by hudo (hudokkow [AT] gmail [DOT] com) -->
+<strings>
+    <string id="30000">Ligar classificação de IMDB</string>
+    <string id="30001">Ligar miniaturas de themoviedb.org</string>
+</strings>
