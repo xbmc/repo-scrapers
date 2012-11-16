@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.artists.yoyo.pl"
+       name="YoYo-MusicBrainz"
+        version="1.1.1"
+       provider-name="smuto">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.last.fm" version="1.0.4"/>
+    <import addon="metadata.common.allmusic.com" version="1.8.1"/>
+    <import addon="metadata.common.htbackdrops.com" version="1.0.4"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.artists"
+             language="multi"
+             library="yoyo.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">YoYo artist scraper</summary>
+    <summary lang="hu">YoYo előadó információk</summary>
+    <summary lang="pl">Scraper arytsty YoYo</summary>
+    <summary lang="pt">Scraper de artistas YoYo</summary>
+    <description lang="en">MusicBrainz scraper. Also uses info from last.fm and allmusic.com</description>
+    <description lang="hu">Előadó információk letöltése a MusicBrainz, last.fm és az allmusic.com webhelyekről</description>
+    <description lang="pl">YoYo scraper - wyszukiwanie na bazie MusicBrainz, biografia z last.fm,  dyskografia z MusicBrainz, generalne info z allmusic, fanart z htbackdrops (jak są) - w przeciwnym wypadku zdjęcia z lastfm</description>
+    <description lang="pt">Scraper YoYo. Além de utilizar o MusicBrainz, também conta com os recursos disponíveis em last.fm e allmusic.com.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

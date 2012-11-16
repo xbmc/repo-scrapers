@@ -1,0 +1,8 @@
+[B]1.1.2[/B]
+- fixed: url nfo handling
+
+[B]1.1.1[/B]
+- added: trailer scraping from TMDB via youtube plugin
+
+[B]1.1.0[/B]
+- changed: use tmdb as main search provider

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30000" type="bool" id="FullCast" default="false"/>
+    <setting label="30001" type="bool" id="EpThumb" default="false"/>
+    <setting type="sep"/>
+    <setting label="30002" type="bool" id="Fan" default="false"/>
+    <setting label="30003" type="bool" id="TVDBFanart" default="true"/>
+    <setting label="30004" type="bool" id="TVDBposter" default="false"/>
+    <setting label="30005" type="bool" id="posters" default="true" enable="eq(-1,true)"/>
+</settings>

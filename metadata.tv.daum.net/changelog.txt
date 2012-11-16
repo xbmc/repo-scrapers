@@ -1,0 +1,35 @@
+1.1.1
+
+Changes
+- Default episode list for tv shows with non-existing episode pages
+
+1.1.0
+
+Changes
+- Finally handle episode pages that exceeds 5
+
+1.0.5
+
+Changes
+- Episode Title fix
+
+1.0.4
+
+Changes
+- support Agent server to retrieve Episode info
+
+1.0.3
+
+Changes
+- GetEpisodeList format was changed $$1 : episode page 1 $$2 : episode page 2 $$N : the last episode page $$N+1 : URL of the first page N is still limited to 5
+
+1.0.2
+
+Changes
+- use season0 is no more necessary
+- new icon
+
+1.0.1
+
+Changes
+- Initial addon version

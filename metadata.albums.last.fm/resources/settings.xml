@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting label="30000" type="labelenum" values="en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh" id="lastfmlanguage" default="en"/>
+</settings>

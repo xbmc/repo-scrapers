@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30000" type="bool" id="AddToSet" default="false"/>
+    <setting label="30001" type="text" id="SetName" default="Disney"/>
+    <setting label="30002" type="bool" id="AddToGenre" default="false"/>
+    <setting label="30003" type="text" id="GenreName" default="Disney"/>
+</settings>

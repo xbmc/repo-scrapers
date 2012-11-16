@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.tv.daum.net"
+       name="Daum Movie"
+       version="1.1.1"
+       provider-name="XBMC-Korea">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.tvshows"
+             language="ko"
+             library="daum-tv.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Daum TV Shows Scraper</summary>
+    <summary lang="ko">다음 티비쇼 스크래퍼</summary>
+    <summary lang="hu">Daum TV műsor scraper</summary> 
+    <summary lang="pt">Scraper de séries de TV Daum TV </summary>
+    <description lang="en">Download TV shows information from movie.daum.net</description>
+    <description lang="ko">movie.daum.net에서 티비쇼 정보 다운로드</description>
+    <description lang="hu">TV műsor információk letöltése a movie.daum.net-ről</description>
+    <description lang="pt">Descarregar informação de filmes de movie.daum.net</description>
+
+  </extension>
+</addon>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">Teljes szereposztás</string>
+    <string id="30001">Teljes szereposztás >> Producer(ek)</string>
+    <string id="30002">Teljes szereposztás >> Színész(ek)</string>
+    <string id="30003">Teljes szereposztás >> Rendező(k)</string>
+    <string id="30004">Teljes szereposztás >> Mellékszereplő(k)</string>
+    <string id="30005">Tartalomhoz >> Filmkritika</string>
+    <string id="30006">Tartalomhoz >> Nézői kritikák</string>
+    <string id="30007">Tartalomhoz >> Fórum beírások</string>
+    <string id="30008">Tartalomhoz >> Híres filmszövegek</string>
+    <string id="30009">Szavazz</string>
+    <string id="30010">Direkt szavazat, kritikusok és a közönség</string>
+    <string id="30011">Direct szavazat >> Megtekintés:</string>
+    <string id="30012">Minden poszter</string>
+    <string id="30013">Filmelőzetes</string>
+    <string id="30014">TMDB fanartképek (lassú)</string>
+</strings>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting label="30000" type="bool" id="ptgateonly" default="false"/>
+    <setting type="sep"/>
+    <setting label="30001" type="bool" id="fullcredits" default="false"/>
+    <setting label="30002" type="bool" id="impawards" default="true"/>
+    <setting label="30003" type="bool" id="movieposterdb" default="false"/>
+    <setting label="30004" type="bool" id="trailer" default="true"/>
+    <setting label="30005" type="bool" id="fanart" default="true"/>
+    <setting label="30006" type="labelenum" values="192|256|384|512|1024" id="imdbscale" default="512"/>
+</settings>

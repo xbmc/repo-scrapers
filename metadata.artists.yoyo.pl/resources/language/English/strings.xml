@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">Powered by MusicBrainz-Last.fm-Allmusic-htbackdrops</string>
+    <string id="30002">Language</string>
+    <string id="30003">Grab artist thumbs from Allmusic.com</string>
+    <string id="30004">Show info about the availability relationship to Allmusic</string>
+    <string id="30006">Search by mbid on last.fm</string>
+</strings>

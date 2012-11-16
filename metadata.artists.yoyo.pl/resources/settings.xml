@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+    <setting label="30000" type="lsep"/>
+    <setting type="sep"/>
+    <setting label="30002" type="labelenum" values="en|de|es|fr|it|jp|pl|pt|ru|sv|tr|zh" id="language" default="pl"/>
+    <setting label="30003" type="bool" id="allmusicartistthumbs" default="true"/>
+    <setting label="30004" type="bool" id="relationships" default="false"/>
+    <setting label="" type="lsep"/>
+    <setting label="[COLOR=FFe2ff43] pozdr. smuto[/COLOR]" type="lsep"/>
+</settings>

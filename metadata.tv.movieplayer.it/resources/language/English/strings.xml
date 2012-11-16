@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="30000">Full cast info (slow)</string>
+    <string id="30001">Get episodes images (slow)</string>
+    <string id="30002">Get Fanarts from Movieplayer.it (SD)</string>
+    <string id="30003">Get Fanarts from TheTVDB.com (HD)</string>
+    <string id="30004">Get Posters and Banners from TheTVDB.com</string>
+    <string id="30005">Prefer Posters</string>
+    <string id="30006">Search using Google</string>
+</strings>

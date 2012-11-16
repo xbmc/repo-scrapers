@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.anidb.net"
+       name="AniDB.net"
+       version="2.0.0"
+       provider-name="bambi">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.tvshows"
+             language="en"
+             library="anidb.xml"
+             cachepersistence="48:00"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">AniDB.net TV Show scraper</summary>
+    <description lang="en">Download anime show informations from AniDB.net</description>
+    <platform>all</platform>
+  </extension>
+</addon>

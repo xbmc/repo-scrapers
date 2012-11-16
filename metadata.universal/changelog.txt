@@ -1,0 +1,41 @@
+[B]1.5.0[/B]
+- added: option to select preferred trailer language
+
+[B]1.4.0[/B]
+- added: option to get plot from port.hu
+
+[B]1.3.0[/B]
+- added: option to select genre language when screping from TMDb
+
+[B]1.2.0[/B]
+- added: option to scrape rating from MetaCritic (via IMDb)
+
+[B]1.1.2[/B]
+- added: Australia to the country list of certifications
+- changed: sorted countries alphabetically
+- added: option to scrape preferred country certification from TMDb
+
+[B]1.1.1[/B]
+- fixed: some potential html encode issues
+
+[B]1.1.0[/B]
+- added: support for trakt.tv
+
+[B]1.0.5[/B]
+- added: some improvement to match movies by their International Titles
+
+[B]1.0.4[/B]
+- updated: to use IMDb scraper library v2.2.2
+
+[B]1.0.3[/B]
+- updated: to use IMDb scraper library v2.2.1
+
+[B]1.0.2[/B]
+- added: support for OFDb.de plot
+
+[B]1.0.1[/B]
+- fixed: put UK back on the map
+- added: poster from IMDb is now optional
+
+[B]1.0.0[/B]
+- Initial version

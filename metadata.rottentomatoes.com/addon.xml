@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.rottentomatoes.com"
+       name="Rotten Tomatoes"
+       version="1.0.0" 
+       provider-name="Team XBMC">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="1.1.0"/>
+    <import addon="metadata.common.hdtrailers.net" version="1.0.6"/>
+    <import addon="metadata.common.imdb.com" version="2.1.3"/>
+    <import addon="metadata.common.rottentomatoes.com" version="1.0.0"/>
+    <import addon="plugin.video.youtube" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="en"
+             library="rt.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">RT Movie Scraper</summary>
+    <summary lang="de">Film-Scraper für RT</summary>
+    <summary lang="es">Scraper de películas de RT</summary>
+    <summary lang="hu">RT filmadat leolvasó</summary>
+    <summary lang="nl">RT-filmscraper</summary>
+    <summary lang="pl">Scraper filmowy RT</summary>
+    <summary lang="pt">Scraper de filmes RT</summary>
+    <summary lang="ro">Scraper de filme RT</summary>
+    <summary lang="ru">Обработчик Фильмов для RT</summary>
+    <summary lang="zh">RT电影刮削器</summary>
+    <description lang="en">Rotten Tomatoes is a website devoted to reviews, information, and news of films—widely known as a film review aggregator. Its name derives from the cliché of audiences throwing tomatoes and other vegetables at a poor stage performance.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

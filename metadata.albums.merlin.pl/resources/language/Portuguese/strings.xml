@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Portuguese strings.xml by hudo (hudokkow [AT] gmail [DOT] com) -->
+<strings>
+    <string id="30000">Corre sobre MusicBrainz-Merlin-Allmusic</string>
+    <string id="30002">Descarregar miniaturas de álbuns de Allmusic.com</string>
+    <string id="30005">Procurar por artista &amp; ano em merlin.pl</string>
+</strings>

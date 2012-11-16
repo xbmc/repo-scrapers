@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <category label="128">
+    <setting label="30000" type="labelenum" values="Magyar|Eredeti|Eredeti (Magyar)|Magyar (Eredeti)" id="titlelang" default="Magyar"/>
+    <setting label="30001" type="bool" id="hunmpaa" default="true"/>
+    <setting label="30008" type="bool" id="hungenre" default="false"/>
+    <setting label="30002" type="bool" id="fullcredits" default="false"/>
+    <setting label="30009" type="bool" id="tmdbset" default="true"/>
+    <setting label="30014" type="labelenum" values="hu|en" id="tmdbsetlanguage" default="hu" enable="eq(-1,true)"/>
+  </category>
+
+  <category label="30011">
+    <setting label="30004" type="bool" id="tmdbboritok" default="true"/>
+    <setting label="30010" type="labelenum" values="hu|en" id="language" default="hu" enable="eq(-1,true)"/>
+    <setting type="sep"/>
+    <setting label="30005" type="bool" id="impawardsboritok" default="false"/>
+    <setting label="30006" type="bool" id="movieposterdbboritok" default="false"/>
+    <setting type="sep"/>
+    <setting label="30003" type="bool" id="tmdbfanart" default="true"/>
+  </category>
+
+  <category label="30012">
+    <setting label="30007" type="labelenum" values="nem|480p|720p|1080p" id="TrailerQ" default="nem"/>
+    <setting label="30013" type="bool" id="tmdbtrailer" default="true"/>
+  </category>
+</settings>
