@@ -1,3 +1,6 @@
+[B]2.6.0[/B]
+- updated: outfactored tagline scraping to common library
+
 [B]2.5.3[/B]
 - added: try to address some html encode issue in plots
 
