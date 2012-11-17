@@ -1,3 +1,6 @@
+[B]2.4.0[/B]
+Re-enable fanart.tv scraping by default
+
 [B]2.3.0[/B]
 Added: Scraping artist thumbs and fanarts from theaudiodb.com
 
