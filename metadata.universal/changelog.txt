@@ -1,3 +1,6 @@
+[B]1.6.1[/B]
+- changed: an attempt to remove Video Games from Search Results
+
 [B]1.6.0[/B]
 - added: option to select tagline source
 
