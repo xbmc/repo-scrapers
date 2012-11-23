@@ -1,3 +1,6 @@
+[B]1.9.1[/B]
+- fixed: mpaa rating won't scrape from IMDb
+
 [B]1.9.0[/B]
 - added: Language preference for Sets
 

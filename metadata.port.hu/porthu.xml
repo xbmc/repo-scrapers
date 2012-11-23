@@ -132,12 +132,12 @@
 				<expression>Top 250 #([0-9]*)&lt;/</expression>
 			</RegExp>
 			<!--Get mpaa rating from imdb.com if Hungarian certification is unchecked in settings-->
-			<RegExp conditional="!hunmpaa" input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
-				<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?([^&lt;]*)</expression>
+			<RegExp conditional="!hunmpaa" input="$$11" output="&lt;chain function=&quot;GetIMDBUSACert&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<!--Get tagline from imdb.com-->
-			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="5+">
-				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
+			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBTaglineById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<!--Get rating from imdb.com-->
 			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
