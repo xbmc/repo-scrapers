@@ -1,3 +1,6 @@
+[B]3.6.1[/B]
+- updated: Scraper name
+
 [B]3.6.0[/B]
 - updated: out factored tagline scraping to common library
 
