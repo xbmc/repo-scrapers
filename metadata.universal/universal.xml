@@ -9,7 +9,7 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="iso-8859-1">
-		<RegExp input="$$1" output="&lt;url&gt;http://akas.imdb.com/find?s=tt;q=\1$$4&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://akas.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -18,23 +18,14 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes">/title/([t0-9]*)/(combined|faq|releaseinfo|vote)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;http://akas.imdb.com/title/$$7/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression clear="yes" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;http://akas.imdb.com/title/$$7/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression fixchars="2" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?[^&quot;]*?(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\).*?Also Known As:&lt;/h4&gt;([^\n]*)</expression>
-			</RegExp>
 			<RegExp input="$$1" output="\1" dest="4">
-				<expression noclean="1">(&gt;&lt;a href=&quot;/title.*)</expression>
+				<expression noclean="1">&lt;table class=&quot;findList&quot;(.*?)&lt;/div</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" noclean="1,2">&gt;&lt;a href=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt; *\([^\(]*?([0-9]{4})[^\)]*\)(?!\s\(VG\))</expression>
+				<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*\([^\(]*?([0-9]{4})[^\)]*\)(?!\s\(Video\sGame\))</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" noclean="1,2">&gt;&lt;a href=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt; *\([^\(]*?([0-9]{4})[^\)]*\)(?!\s\(VG\))(?:\s\(V\))?\s*&lt;p class=&quot;find-aka&quot;&gt;aka\s&quot;([^&quot;]*).*?International\s&lt;</expression>
+				<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*\([^\(]*?([0-9]{4})[^\)]*\)\s&lt;br/&gt;aka\s&lt;i&gt;&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<expression clear="yes" noclean="1"/>
 		</RegExp>
