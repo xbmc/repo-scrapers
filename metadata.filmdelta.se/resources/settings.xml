@@ -2,4 +2,6 @@
 <settings>
     <setting label="30000" type="bool" id="fanart" default="true" />
     <setting label="30001" type="bool" id="swedishtitles" default="true" />
+    <setting label="30002" type="bool" id="trailers" default="false" />
 </settings>
+
