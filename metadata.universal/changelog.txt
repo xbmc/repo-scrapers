@@ -1,3 +1,6 @@
+[B]1.8.0[/B]
+- changed: switch to TMDb search engine
+
 [B]1.7.0[/B]
 - fixed: won't find anything after IMDb layout changes
 
