@@ -1,3 +1,6 @@
+[B]1.9.0[/B]
+- updated: Settings Clean-up / added TOP250 and outline from IMDb
+
 [B]1.8.1[/B]
 - fixed: studio and country won't scrape
 
