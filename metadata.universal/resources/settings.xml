@@ -12,12 +12,21 @@
       <setting label="30042" type="labelenum" values="IMDb|themoviedb.org" id="taglinesource" default="IMDb"/>
       <setting label="30043" type="labelenum" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
-      <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="IMDb"/>
+      <setting label="30045" type="bool" id="imdboutline" default="true"/>
     <setting type="sep"/>
       <setting label="30022" type="labelenum" values="IMDb|themoviedb.org|trakt.tv" id="genressource" default="IMDb"/>
       <setting label="30040" type="labelenum" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbgenreslanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
       <setting label="30013" type="bool" id="tmdbset" default="true"/>
+  </category>
+
+  <category label="30200">
+    <setting type="sep"/>
+      <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="IMDb"/>
+    <setting type="sep"/>
+      <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="IMDb"/>
+    <setting type="sep"/>
+      <setting label="30202" type="labelenum" values="IMDb|themoviedb.org" id="countrysource" default="IMDb"/>
   </category>
 
   <category label="30011">
@@ -48,6 +57,7 @@
       <setting label="30120" type="bool" id="rtoutline" default="false" visible="eq(-1,1)"/>
       <setting label="30110" type="labelenum" values="TomatoMeter|Average Rating" id="tomato" default="TomatoMeter" visible="eq(-2,1)"/>
       <setting label="30115" type="labelenum" values="All Critics|Top Critics" id="allcritics" default="All Critics" visible="eq(-3,1)"/>
+    <setting label="30044" type="bool" id="imdbtop250" default="true"/>
     <setting type="lsep" label="30031"/>
     <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
       <setting label="30033" type="labelenum" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
