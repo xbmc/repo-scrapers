@@ -170,15 +170,20 @@
 			
 			<!-- obtención del IMDBid -->
 			<RegExp conditional="!EnableFastSearch" input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<RegExp conditional="!GoogleAdvSearch" input="" output="http://akas.imdb.com/find?s=tt;lm=0;nr=1;q=" dest="9">
+				<RegExp conditional="!GoogleAdvSearch" input="" output="http://www.imdb.com/xml/find?xml=1&nr=1&tt=on&q=" dest="9">
 					<expression />
 				</RegExp>
 				<RegExp conditional="GoogleAdvSearch" input="" output="http://www.google.com/search?q=site:imdb.com" dest="9">
 					<expression />
 				</RegExp>
 				<RegExp input="$$8" output="+\1" dest="9+">
+					<!-- buscamos primero el título original -->
 					<RegExp input="$$1" output="\1" dest="8">
 						<expression>T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;(.*?)(\(AKA|&lt;)</expression>
+					</RegExp>
+					<!-- buscamos ahora posibles alternativas (si no existen, nos quedamos con el resultado anterior) -->
+					<RegExp input="$$1" output="\1" dest="8">
+						<expression>T&amp;Iacute\;TULO ORIGINAL&lt;/th&gt;\s*&lt;td&gt;&lt;strong&gt;.*?\(AKA ([^\(]*)</expression>
 					</RegExp>
 					<!-- unimos con '+' cada palabra -->
 					<expression repeat="yes">([^ ,]+)</expression>
@@ -237,36 +242,8 @@
 			<!-- obtención del id de IMDB -->
 			<RegExp input="" output="&lt;id&gt;tt$$6&lt;/id&gt;" dest="5">
 				<!-- a través de IMDB (búsqueda en cascada) -->
-				<RegExp conditional="!GoogleAdvSearch" input="$$6" output="\1" dest="6">
-					<!-- recuperamos el año -->
-					<RegExp input="$$1" output="\1" dest="2">
-						<expression noclean="1">autocomplete=&quot;off&quot; value=&quot;[^&quot;]*\(([0-9]{4})\)&quot;</expression>
-					</RegExp>
-					<!-- recuperamos el título completo... -->
-					<RegExp input="$$3" output="\1|" dest="4">
-						<RegExp input="$$1" output="\1" dest="3">
-							<expression noclean="1" trim="1">autocomplete=&quot;off&quot; value=&quot;\s([^&quot;]*)\s\([0-9]{4}\)&quot;</expression>
-						</RegExp>
-						<!-- ... pero nos quedamos sólo con sus palabras individualmente -->
-						<expression repeat="yes">([^ ,]+)</expression>
-					</RegExp>
-					<!-- buscamos todas las entradas que encajen con el año, sobreescribiendo la variable $$2 -->
-					<RegExp input="$$1" output="\1" dest="2">
-						<expression noclean="1" repeat="yes">/title/tt([0-9]*/';&quot;&gt;[^&lt;]*&lt;)/a&gt;\s*\($$2</expression>
-					</RegExp>
-					<!-- de las de ese año, buscamos la primera entrada, por si IMDB acertase a la primera -->
-					<RegExp input="$$2" output="\1" dest="6">
-						<expression noclean="1">([0-9]*)</expression>
-					</RegExp>
-					<!-- de las de ese año, buscamos ahora que encaje alguna palabra como la primera (si falla se queda con el resultado anterior) -->
-					<RegExp input="$$2" output="\1" dest="6">
-						<expression noclean="1">([0-9]*)/';&quot;&gt;($$4')</expression>
-					</RegExp>
-					<!-- de las de ese año, buscamos por último el título completo con el año (si falla se queda con el resultado anterior) -->
-					<RegExp input="$$2" output="\1" dest="6">
-						<expression noclean="1">([0-9]*)/';&quot;&gt;$$3&lt;</expression>
-					</RegExp>
-					<expression/>
+				<RegExp conditional="!GoogleAdvSearch" input="$$1" output="\1" dest="6">
+					<expression>&quot;tt([0-9]*)</expression>
 				</RegExp>
 				<!-- o a través de google (búsqueda directa) -->
 				<RegExp conditional="GoogleAdvSearch" input="$$1" output="\1" dest="6">
