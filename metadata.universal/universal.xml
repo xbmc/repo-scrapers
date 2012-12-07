@@ -33,7 +33,7 @@
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="2">
-				<expression noclean="1">&quot;id&quot;:([0-9]*),&quot;</expression>
+				<expression noclean="1">&quot;id&quot;:([0-9]*),&quot;imdb_id</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="2">
 				<expression noclean="1">&quot;id&quot;:[0-9]*,&quot;imdb_id&quot;:&quot;([^&quot;]*)</expression>
