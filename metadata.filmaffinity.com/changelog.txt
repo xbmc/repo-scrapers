@@ -1,3 +1,7 @@
+[B]1.5.1[/B]
+
+Updated scraper to raise the imdb API update
+
 [B]1.5.0[/B]
 
 - Añadida la búsqueda de información adicional buscando en cascada dentro de IMDB
