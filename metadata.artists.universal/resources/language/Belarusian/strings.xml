@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- English language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/en/ -->
+<!-- Belarusian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/be/ -->
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
@@ -18,7 +18,7 @@
     <string id="30011">Get Artist Life-Span from</string>
     <string id="30012">Get Artist Moods from</string>
     <string id="30014">Get Artist Years Active from</string>
-    <string id="30015">     Preferred Language</string>
+    <string id="30015">     Пераважная мова</string>
     <string id="30016">Fallback to Artist Biography from</string>
     <string id="30017">Fallback to Artist Discography from</string>
     <string id="30018">Fallback to Artist Genres from</string>
