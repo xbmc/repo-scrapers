@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Czech language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/cs/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Povolit fanart z themoviedb.org</string>
+    <string id="30002">Povolit plagáty z themoviedb.org</string>
+    <string id="30003">Povolit plagáty z IMPAwards</string>
+    <string id="30004">Povolit plagáty z MoviePosterDB</string>
+    <string id="30005">Získat upoutávky přímo z YouTube</string>
+    <string id="30006">Povolit upoutávky z HD-Trailers.net</string>
+    <string id="30008">Upřednostňovaný jazyk názvu z</string>
+    <string id="30009">Povolit upoutávky z themoviedb.org</string>
+    <string id="30011">Grafika</string>
+    <string id="30012">Upoutávky</string>
+    <string id="30013">Získat názvy sad (kolekcí) z themoviedb.org</string>
+    <string id="30014">Získat děj z</string>
+    <string id="30015">Získat obsazení / režiséry / scénáristy z</string>
+    <string id="30016">Zdroje děje</string>
+    <string id="30020">Preferovaný jazyk děje</string>
+    <string id="30021">Získat hodnocení z</string>
+    <string id="30022">Získat žánr z</string>
+    <string id="30023">Získat název z</string>
+    <string id="30024">Zdroje názvu</string>
+    <string id="30025">Zdroje štábu a zásluh</string>
+    <string id="30026">Zdroje žánrů</string>
+    <string id="30027">Upřednostňovaný jazyk názvů</string>
+    <string id="30028">Zdroje upoutávek</string>
+    <string id="30029">Filmové kolekce</string>
+    <string id="30030">Zdroje hodnocení</string>
+    <string id="30031">Nastavení certifikace</string>
+    <string id="30032">Získat certifikace z</string>
+    <string id="30033">Upřednostňovaná země certifikace</string>
+    <string id="30034">Upřednostňovaný jazyk náhledu</string>
+    <string id="30035">Prefix certifikace</string>
+    <string id="30036">Povolit plagáty z IMDb</string>
+    <string id="30037">Povolit plagáty z trakt.tv</string>
+    <string id="30038">Povolit fanart z trakt.tv</string>
+    <string id="30039">Povolit upoutávky z trakt.tv</string>
+    <string id="30040">Jazyk žánru</string>
+    <string id="30041">Upřednostňovaný jazyk upoutávky</string>
+    <string id="30042">Získat hlášku z</string>
+    <string id="30043">Upřednostňovaný jazyk hlášek</string>
+    <string id="30044">Získat 250 nejlépe hodnocených IMDb</string>
+    <string id="30045">Získat přehled z IMDb</string>
+    <string id="30100">Hodnocení</string>
+    <string id="30110">Generovat hodnocení pomocí</string>
+    <string id="30115">Použít skóre agregované z</string>
+    <string id="30120">Použít shodu kritiků jako přehled filmu</string>
+    <string id="30200">Zásluhy</string>
+    <string id="30201">Získat studio z</string>
+    <string id="30202">Získat zemi z</string>
+</strings>

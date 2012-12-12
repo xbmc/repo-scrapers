@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Portuguese language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/pt/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Activar fanart de themoviedb.org</string>
+    <string id="30002">Activar posters de themoviedb.org</string>
+    <string id="30003">Activar posters de IMPAwards</string>
+    <string id="30004">Activar posters de MoviePosterDB</string>
+    <string id="30005">Obter Trailers directamente de YouTube</string>
+    <string id="30006">Activar trailers de HD-Trailers.net</string>
+    <string id="30008">Idioma Preferido para Título de</string>
+    <string id="30009">Activar trailers de themoviedb.org</string>
+    <string id="30011">Artwork</string>
+    <string id="30012">Trailers</string>
+    <string id="30013">Obter Títulos de Conjuntos de themoviedb.org</string>
+    <string id="30014">Obter Enredo de</string>
+    <string id="30015">Obter Elenco / Realizadores / Argumentistas de</string>
+    <string id="30016">Fontes de Enredo</string>
+    <string id="30020">Idioma Preferido para Enredo</string>
+    <string id="30021">Obter Avaliações de</string>
+    <string id="30022">Obter Géneros de</string>
+    <string id="30023">Obter Título de</string>
+    <string id="30024">Fontes de Título</string>
+    <string id="30025">Fontes de Elenco e Créditos</string>
+    <string id="30026">Fontes de Géneros</string>
+    <string id="30027">Idioma Preferido para Título</string>
+    <string id="30028">Fontes de Trailer</string>
+    <string id="30029">Colecções de Filmes</string>
+    <string id="30030">Fontes de Avaliações</string>
+    <string id="30031">Definições de Certificação</string>
+    <string id="30032">Obter Certificação de</string>
+    <string id="30033">País Preferido para Certificação</string>
+    <string id="30034">Idioma Preferido para Miniatura</string>
+    <string id="30035">Prefixo de Certificação</string>
+    <string id="30036">Activar posters de IMDb</string>
+    <string id="30037">Activar Pósters de trakt.tv</string>
+    <string id="30038">Activar fanart de trakt.tv</string>
+    <string id="30039">Activar trailers de trakt.tv</string>
+    <string id="30040">Idioma dos Géneros</string>
+    <string id="30041">Idioma Preferido para Trailer</string>
+    <string id="30042">Obter Slogan De</string>
+    <string id="30043">Idioma Preferido para Slogan</string>
+    <string id="30044">Obter Classificação IMDb TOP250</string>
+    <string id="30045">Obter Resumo De IMDb</string>
+    <string id="30100">Avaliação</string>
+    <string id="30110">Gerar Avaliação Através De</string>
+    <string id="30115">Usar a Pontuação Agregada de</string>
+    <string id="30120">Usar Consenso dos Críticos para Resumo do Enredo</string>
+    <string id="30200">Créditos</string>
+    <string id="30201">Obter Estúdio de</string>
+    <string id="30202">Obter País de</string>
+</strings>

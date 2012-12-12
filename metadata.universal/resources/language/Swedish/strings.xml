@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Swedish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/sv/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Aktivera fanart från themoviedb.org</string>
+    <string id="30002">Aktivera posters från themoviedb.org</string>
+    <string id="30003">Aktivera posters från IMPAwards</string>
+    <string id="30004">Aktivera posters från MoviePosterDB</string>
+    <string id="30005">Hämta trailers direkt från YouTube</string>
+    <string id="30006">Aktivera trailers från HD-Trailers.net</string>
+    <string id="30008">Föredraget titelspråk från</string>
+    <string id="30009">Aktivera trailers från themoviedb.org</string>
+    <string id="30011">Grafik</string>
+    <string id="30012">Trailers</string>
+    <string id="30014">Hämta Handling från</string>
+    <string id="30015">Hämta rollsättning / regissörer / författare från</string>
+    <string id="30016">Handlingskällor</string>
+    <string id="30020">Föredraget språk för handling</string>
+    <string id="30021">Hämta betyg från</string>
+    <string id="30022">Hämta genrer från</string>
+    <string id="30023">Hämta titlar från</string>
+    <string id="30024">Titelkällor</string>
+    <string id="30026">Genrekällor</string>
+    <string id="30027">Föredraget titelspråk</string>
+    <string id="30028">Trailerkällor</string>
+    <string id="30029">Filmsamlingar</string>
+    <string id="30030">Betygskällor</string>
+    <string id="30031">Certifikatinställningar</string>
+    <string id="30032">Hämta certifikat från</string>
+    <string id="30033">Föredraget certifikatland</string>
+    <string id="30034">Föredraget miniatyrspråk</string>
+    <string id="30036">Aktivera posters från IMDb</string>
+    <string id="30037">Aktivera posters från trakt.tv</string>
+    <string id="30038">Aktivera fanart från trakt.tv</string>
+    <string id="30039">Aktivera trailers från trakt.tv</string>
+    <string id="30040">Genrespråk</string>
+    <string id="30041">Föredraget trailerspråk</string>
+    <string id="30100">Betyg</string>
+    <string id="30200">Medverkande</string>
+</strings>

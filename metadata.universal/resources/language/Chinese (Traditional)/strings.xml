@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Chinese (Traditional) language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/zh_TW/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30011">圖片</string>
+    <string id="30012">預告片</string>
+    <string id="30024">標題來源</string>
+    <string id="30026">分類來源</string>
+    <string id="30028">預告片來源</string>
+    <string id="30030">評等來源</string>
+    <string id="30100">評等</string>
+    <string id="30200">改機者</string>
+</strings>

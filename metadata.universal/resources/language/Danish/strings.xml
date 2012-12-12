@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Danish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/da/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Aktivér fankunst fra themoviedb.org</string>
+    <string id="30002">Aktivér plakater fra themoviedb.org</string>
+    <string id="30003">Aktivér plakater fra IMPAwards</string>
+    <string id="30004">Aktivér plakater fra MoviePosterDB</string>
+    <string id="30005">Få trailere direkte fra Youtube</string>
+    <string id="30006">Aktivér trailere fra HD-Trailers,net</string>
+    <string id="30008">Foretrukket sprog til Titel</string>
+    <string id="30009">Aktivér trailere fra themoviedb.org</string>
+    <string id="30011">Illustrationer</string>
+    <string id="30012">Trailere</string>
+    <string id="30013">Få Titler på sæt (samlinger) fra themoviedb.org </string>
+    <string id="30014">Få Plot fra</string>
+    <string id="30015">Hent Medvirkende / Instruktører / Forfattere fra</string>
+    <string id="30016">Plot Kilder</string>
+    <string id="30020">Foretrukket sprog til Plot</string>
+    <string id="30021">Få Bedømmelse fra </string>
+    <string id="30022">Få Genrer fra</string>
+    <string id="30023">Få Titel fra</string>
+    <string id="30024">Titel-kilder</string>
+    <string id="30025">Medvirkende &amp; Credits Kilder</string>
+    <string id="30026">Genrer-kilder</string>
+    <string id="30027">Foretrukket sprog til Titel</string>
+    <string id="30028">Trailer-kilder</string>
+    <string id="30029">Filmsamlinger</string>
+    <string id="30030">Bedømmelse-kilder</string>
+    <string id="30031">Certifikat-indstillinger</string>
+    <string id="30032">Få Certifikater fra</string>
+    <string id="30033">Foretrukket certifikat-land</string>
+    <string id="30034">Foretukket sprog til Minibillede</string>
+    <string id="30035">Certifikat-præfiks</string>
+    <string id="30036">Aktivér plakater fra IMDb</string>
+    <string id="30037">Aktivér plakater fra trakt.tv</string>
+    <string id="30038">Aktivér fankunst fra trakt.tv</string>
+    <string id="30039">Aktivér trailere fra trakt.tv</string>
+    <string id="30040">Genre-sprog</string>
+    <string id="30041">Foretrukket sprog til Trailere</string>
+    <string id="30042">Hent Undertitel Fra</string>
+    <string id="30043">Foretrukket sprog til Tagline</string>
+    <string id="30044">Hent IMDb TOP250 Rangliste</string>
+    <string id="30045">Hent Resumé fra IMDb</string>
+    <string id="30100">Bedømmelse</string>
+    <string id="30110">Bedømmelse genereret ved hjælp af</string>
+    <string id="30115">Anvend Score indsamlet fra</string>
+    <string id="30120">Brug Anmelderes konsensus som Filmresumé</string>
+    <string id="30200">Tak til</string>
+    <string id="30201">Hent Studie fra</string>
+    <string id="30202">Hent Land fra</string>
+</strings>
