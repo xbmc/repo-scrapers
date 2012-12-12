@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Slovenian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/sl/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30000">Vključi ozadja</string>
+    <string id="30001">Napovedniki s HD-Trailers.net</string>
+    <string id="30003">Prenesi ocene z IMDb</string>
+    <string id="30005">Prenesi plakate z IMDb</string>
+    <string id="30006">Prenesi oceno publike</string>
+    <string id="30007">Prenesi oceno kritikov</string>
+    <string id="30008">Prenesi zgodbo z IMDb</string>
+</strings>
