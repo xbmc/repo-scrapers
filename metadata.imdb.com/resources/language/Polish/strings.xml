@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Polish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/pl/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
 <strings>
     <!-- settings labels -->
     <string id="30000">Włącz pełną obsadę</string>
@@ -6,8 +10,12 @@
     <string id="30002">Włącz plakaty z themoviedb.org</string>
     <string id="30003">Włącz plakaty z IMPAwards</string>
     <string id="30004">Włącz plakaty z MoviePosterDB</string>
+    <string id="30005">Pobieraj trailery prosto z YouTube</string>
     <string id="30006">Włącz zwiastuny z HD-Trailers.net</string>
     <string id="30007">Rozmiar plakatów i miniatur aktorów z IMDb</string>
     <string id="30008">Preferowany język tytułu</string>
+    <string id="30009">Uruchom trailery z themoviedb.org</string>
+    <string id="30011">Artwork</string>
+    <string id="30012">Trailery</string>
+    <string id="30013">Pobierz nazwę kolekcji z themoviedb.org</string>
 </strings>
-

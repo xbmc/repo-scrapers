@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Romanian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ro/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Activează distribuţie completă</string>
+    <string id="30001">Activează artă a fanilior de la themoviedb.org</string>
+    <string id="30002">Activează postere de la themoviedb.org</string>
+    <string id="30003">Activează postere de la IMPAwards</string>
+    <string id="30004">Activează postere de la MoviePosterDB</string>
+    <string id="30005">Obţine trailere direct de la YouTube</string>
+    <string id="30006">Obţine trailere de la HD-Trailers.net</string>
+    <string id="30007">Dimensiune imagine redusă poster şi actori</string>
+    <string id="30008">Titlul în limba preferată de la</string>
+    <string id="30009">Activează trailere de la themoviedb.org</string>
+    <string id="30011">Artă</string>
+    <string id="30012">Trailere</string>
+    <string id="30013">Obţine titluri set de la themoviedb.org</string>
+</strings>

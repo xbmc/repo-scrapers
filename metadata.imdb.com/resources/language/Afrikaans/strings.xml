@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Afrikaans language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/af/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Stel volle rolverdeling krediete in staat</string>
+    <string id="30001">Stel ondersteunerkuns van themoviedb.org in staat</string>
+    <string id="30002">Stel plakkate van themoviedb.org in staat</string>
+    <string id="30003">Stel plakkate van IMPAwards in staat</string>
+    <string id="30004">Stel plakkate van MoviePosterDB in staat</string>
+    <string id="30005">Kry Voorskoue direk vanaf YouTube</string>
+    <string id="30006">Stel voorskoue van HD-Trailers.net in staat</string>
+    <string id="30007">IMDB Plakkaat &amp; Akteur Duimnael(s) Grootte</string>
+    <string id="30008">Verkose Titel Taal vanaf</string>
+    <string id="30009">Stel voorskoue van themoviedb.org in staat</string>
+    <string id="30011">Kunswerk</string>
+    <string id="30012">Voorskoue</string>
+    <string id="30013">Kry Stel titels vanaf themoviedb.org</string>
+</strings>

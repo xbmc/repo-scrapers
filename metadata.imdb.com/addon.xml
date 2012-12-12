@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.imdb.com"
        name="IMDb"
-       version="2.6.2"
+       version="2.6.3"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -16,28 +16,60 @@
              language="en"
              library="imdb.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="af">IMDB Fliek Skraper</summary>
+    <summary lang="be">IMDB Movie Scraper</summary>
+    <summary lang="bg">Сваля инф. за филми от IMDB</summary>
+    <summary lang="cs">Zdroj dat k filmům IMDB</summary>
+    <summary lang="da">IMDb Film-scraper</summary>
+    <summary lang="de">IMDB Movie Scraper</summary>
+    <summary lang="el">Scraper Ταινιών του IMDb</summary>
     <summary lang="en">IMDB Movie Scraper</summary>
+    <summary lang="es">Buscador de información de películas en IMDB</summary>
+    <summary lang="es_AR">Scraper IMDb películas</summary>
+    <summary lang="fr">Collecteur de films IMDb</summary>
+    <summary lang="he">IMDB סקרייפר סרטים</summary>
     <summary lang="hu">IMDB filmadat leolvasó</summary>
-    <summary lang="kr">IMDB ?? ????</summary>
+    <summary lang="it">Scraper dei film IMDB</summary>
+    <summary lang="ko">IMDB 영화 자료수집기</summary>
+    <summary lang="lt">IMDB filmų Scraper</summary>
+    <summary lang="mk">IMDB Movie Scraper</summary>
     <summary lang="nl">IMDB film Scraper</summary>
     <summary lang="pl">Scraper filmów IMDb</summary>
     <summary lang="pt">Scraper de filmes IMDb</summary>
+    <summary lang="pt_BR">Scraper de FIlme IMDB</summary>
+    <summary lang="ro">Catalog filme IMDB</summary>
+    <summary lang="ru">Скрапер фильмов IMDB</summary>
     <summary lang="se">IMDB Filmskrapa</summary>
-    <description lang="en">Download Movie information from www.imdb.com
-The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
-    <description lang="hu">Film információk letöltése a www.imdb.com webhelyr?l.
-Az Internet Film Adatbázis (IMDb) egy hatalmas film információ gyüjtemény. Itt megpróbálják katalogizálni a filmek minden egyes apró részletét a szerepl?kt?l a készít?kön át, a forgatási helyszínekig, még azt is, hogy hol találsz leírásokat fan oldalakat a web-en az adott filmr?l. Mindezt úgy téve, hogy az információ egyszer?en elérhet? és könnyen kereshet? legyen.</description>
-    <description lang="kr">www.imdb.com ?? ?? ??? ????
-The Internet Movie Database (IMDb) ? ??? ?? ??? ??? ????. IMDB? ?? ?? ???, ?? ?????, ????, ??? ?? ?, ???? ?? ?? ???? ??? ???? ????. ??? ??? ??? ????? ??? ???? ????.</description>
-    <description lang="nl">Download film informatie van www.imdb.com
-De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
-    <description lang="pl">Pobieraj informacje o filmach z www.imdb.com
-IMDb jest POT??N? kolekcj? informacji o filmach. Serwis zajmuje si? gromadzeniem ka?dych (nawet najdrobniejszych) informacji o filmach.</description>
-    <description lang="pt">Descarregar informação de filmes de www.imdb.com
-A Internet Movie Database (IMDb) é uma coleccção enorme de informação de filmes. Tentam catalogar cada detalhe pertinente sobre um filme, quem actuou nele, quem o produziu, curiosidades sobre o filme, locais de filmagem e até mesmo onde pode encontrar críticas e clubes de fans na Internet. A organização de todos os dados é de procura fácil, permitindo um rápido acesso a todos os detalhes.</description>
-    <description lang="se">Ladda ner filminformation från www.imdb.com
-Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försöker att katalogisera varenda detalj om en film, från vem som var i den, till vem som gjorde den, inspelningsplatser och även var du kan hitta recensioner och fan-sidor på webben. De gör sedan sitt bästa för att presentera denna information på ett sätt som är lätt att söka och komma åt.</description>
+    <summary lang="sl">Ponudnik infomacij o filmih IMDB</summary>
+    <summary lang="sv">IMDB Filmskrapa</summary>
+    <summary lang="zh">IMDB电影资料</summary>
+    <description lang="af">Laai Fliek inligting vanaf www.imdb.com&#10;Die Internet Movie Databasis (IMDb) is 'n REUSE versameling van fliek inligting. Hulle probeer elke pertinente detail van 'n fliek te katalogiseer, van wie daarin is, tot wie dit gemaak het, tot trivia omtrent dit, tot verfilming lokasies, en selfs waar jy resensies en aanhanger werwe op die net kan vind. Hulle doen hulle bes om die informasie op 'n manier voor te stel wat maklik is om te deursoek en toeganklik is.</description>
+    <description lang="be">Download Movie information from www.imdb.com&#10;The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
+    <description lang="bg">Сваля информация за филми от www.imdb.com&#10;The Internet Movie Database (IMDb) е ОГРОМНА библиотека съдържаща информация за много филми. Целта е да се опише всеки детайл - създаделите, актьорския състав, разни маловажни факти, места на снимките и адреси на които можете да намерите фенове на дадения филм. Полагат се и грижи за информацията - да да бъде лесно достъпна, а търсенето - ефикасно.</description>
+    <description lang="cs">Stahovat informace k filmům z www.imdb.com&#10;The Internet Movie Database (IMDb) je obrovskou kolekcí informací k filmům. Snaží se katalogizovat každý detail o filmu, od obsazení, tvůrcích, natáčecích lokacích až po odkazy na recenze a stránky fanoušků. Dělají co je v jejich silách aby tyto informace byly snadno vyhledatelné a přístupné.</description>
+    <description lang="da">Hent filminformation fra www.IMDb.com&#10;The Internet Movie Database (IMDb) er en ENORM samling af filminformation. De stræber efter at katalogisere alle relevante detaljer om film, lige fra hvem der var med i den, hvem der lavede den, til trivia og optagelseslokationer, og endda hvor du kan finde bedømmelser og fansider på nettet. De gør derefter deres bedste for at præsentere denne information på en måde, så den er nem at søge i og få adgang til.</description>
+    <description lang="de">Lade Filminformationen von www.imdb.com The Internet Movie Database (IMDb) ist eine GROßE Kollektion von Filminformationen. Sie versuchen jedes relevantes Detail eines Films zu katalogisieren, von Darstellern, zu wer ihn machte, zu Drehorten und auch wo man Reviews und Fanseiten im Internet findet. Dann machen sie ihr bestes, diese Informationen zu präsentieren in einer Art und Weise, dass diese einfach zu suchen und zugänglich sind.</description>
+    <description lang="el">Λήψη πληροφοριών Ταινιών από το www.imdb.com&#10;Το Internet Movie Database (IMDb) είναι μία ΤΕΡΑΣΤΙΑ συλλογή κινηματογραφικών πληροφοριών. Στόχος της είναι η αρχειοθέτηση κάθε συναφούς στοιχείου για μια ταινία, από το ποιος παίζει σε αυτήν, ποιος την έγραψε, μέχρι μικρές λεπτομέρειες όπως οι τοποθεσίες όπου έγιναν τα γυρίσματα, ακόμα και το που μπορεί να βρει κανείς κριτικές και ιστοσελίδες θαυμαστών. Γίνεται, επίσης, το καλύτερο δυνατό προκειμένου οι πληροφορίες να παρουσιάζονται με τέτοιο τρόπο που να καθίσταται εύκολη η αναζήτηση και η πρόσβαση σε αυτές.</description>
+    <description lang="en">Download Movie information from www.imdb.com&#10;The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
+    <description lang="es">Descarga información de películas de IMDB ⏎ Internet Movie Database (IMDb) es una ENORME recopilación de información sobre películas. En IMDb se intenta catalogar todos los detalles importantes de cada película, desde quién aparece, quién la ha creado, detalles curiosos, hasta localizaciones del rodaje, e incluso información de dónde se pueden encontrar artículos de opinión y otros contenidos creados por  admiradores. Además, hacen todo lo que está en su mano para ofrecer esta información de forma accesible.</description>
+    <description lang="es_AR">Descargar información de películas desde www.imdb.com.&#10;The Internet Movie Database (IMDb) es una inmensa colección de información de películas. Ellos tratan de catalogar cada detalle relevante sobre una película, desde quiénes participan en ella y quién la hizo, hasta trivias sobre ella y lugares de filmación. Luego, hacen todo lo posible para presentar esta información en una manera que sea fácil de buscar y acceder.</description>
+    <description lang="fr">Télécharge les informations des films depuis www.imdb.com&#10;The Internet Movie Database (IMDb) est une ÉNORME base d'informations de films. Elle essaye de rassembler tous les détails pertinents concernant un film, de la distribution au réalisateur en passant par les anecdotes qui l'entoure, les lieux de tournages et même les sites web annexes. Elle tente également de faire de son mieux pour que ces informations soient facilement accessibles et lisibles.</description>
+    <description lang="he">הורד פרטי סרט מהאתר  www.imdb.com⏎ The Internet Movie Database (IMDb) זה מאגר ענק של מידע על סרטים. הם מנסים לקטלג כל פרט רלוונטי על הסרט, ממי הופיע בזה, מי יצר את זה, לשחק טרוויה על זה, מיקומי צילום ואפילו איפה הינך יכול למצוא סיקורים ואתרי מערצים ברשת. לאחר מכן הם מנסים לעשות כל אשר ביכולתם כדי להציג את המידע הזה בדרך הכי קלה כדי לחפש ולגשת.</description>
+    <description lang="hu">Film információk letöltése a www.imdb.com webhelyről.&#10;Az Internet Film Adatbázis (IMDb) egy hatalmas film információ gyűjtemény. Itt megpróbálják katalogizálni a filmek minden egyes apró részletét a szereplőktől a készítőkön át, a forgatási helyszínekig, még azt is, hogy hol találsz leírásokat fan oldalakat a web-en az adott filmről. Mindezt úgy téve, hogy az információ egyszerűen elérhető és könnyen kereshető legyen.</description>
+    <description lang="it">Scarica le informazioni sui film da www.imdb.com&#10;Internet Movie Database (IMDb) è un'ENORME collezione di informazioni sui film. Loro provano a catalogare ogni singolo dettaglio pertinente che riguarda un film, da chi c'è dentro, a chi l'ha fatto, ai trivia, ai luoghi delle riprese, e pure dove puoi trovare sul web recensioni e siti dei fan. Fanno del loro meglio per presentare queste informazioni in maniera che siano facili da cercare e da accedervi.</description>
+    <description lang="ko">www.imdb.com에서 영화 정보를 가져옵니다.&#10;The Internet Movie Database (IMDb) 에는 많은 양의 영화 정보가 있습니다. IMDB에는 출연진, 제작자, 촬영지, 트리비아 등 영화에 대한 모든 상세한 정보가 있으며, 리뷰와 팬 사이트에 대한 정보도 제공합니다. 그리고 이 정보들을 쉽게 검색하고 접근할 수 있도록 최선을 다합니다.</description>
+    <description lang="lt">Atsisiųsti filmų informaciją iš www.imdb.com&#10; The Internet Movie Database (IMDb) yra didžiulė filmų informacijos kolekcija. IMDb stengiasi kataloguoti kiekvieną susijusią išsamią informaciją apie filmą, kur sukūrtas, kas režisierius, scenaristas ir t.t., taip pat surinkti (info) visas smulkmenas iš filmavimo vietos, taip pat kur galima rasti atsiliepimus ir/ar fanų žiniatinkliuose. IMDb padarys viską, kad pateikti visą išsamią informaciją tokiu būdu, kad būtų lengva prieiga ir paieška.</description>
+    <description lang="mk">Симнете филмски информации од www.imdb.com&#10;На Интернет Филмската база на податоци (IMDb) е огромна збирка на филмски информации. Тие се обидуваат да се набројат сите релевантни детали за некој филм, од кој беше во него, за тоа кој го направи, тривијата за него, до локации на снимање, па дури и каде што можете да најдете прегледи и фан сајтови на интернет. Тие ги презентираат овие информации на начин кој е лесен за пребарување и пристап.</description>
+    <description lang="nl">Download film informatie van www.imdb.com&#10;De Internet Movie Database (IMDB) bevat een GIGANTISCHE collectie aan filminformatie. Ze proberen elk pertinent detail van elke film te catalogeren: wie er meespeelde, de makers, weetjes rond de film, film locatie en zelf waar je extra reviews en fansites kunt vinden. Ze doen hun best om al deze gegevens weer te geven in een zeer toegankelijke manier.</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.imdb.com&#10;IMDb jest POT??N? kolekcj? informacji o filmach. Serwis zajmuje si? gromadzeniem ka?dych (nawet najdrobniejszych) informacji o filmach.</description>
+    <description lang="pt">Descarregar informação de filmes de www.imdb.com&#10;A Internet Movie Database (IMDb) é uma coleccção enorme de informação de filmes. Tentam catalogar cada detalhe pertinente sobre um filme, quem actuou nele, quem o produziu, curiosidades sobre o filme, locais de filmagem e até mesmo onde pode encontrar críticas e clubes de fans na Internet. A organização de todos os dados é de procura fácil, permitindo um rápido acesso a todos os detalhes.</description>
+    <description lang="pt_BR">Download de informação de filmes de www.imdb.com. The Internet Movie Database (IMDb) é Uma enorme coleção de informações ds filmes. Eles tentam catalogar todos os detalhes pertinentes sobre um filme, desde quem atuou nele, para quem foi feito, curiosidades sobre , locais de filmagem, e até onde você pode encontrar opiniões e sites de fãs na web. Eles deram o seu melhor para apresentar esta informação de uma maneira que seja fácil de pesquisar e acessar.</description>
+    <description lang="ro">Obţineţi informaţii despre filme de la www.imdb.com⏎ The Internet Movie Database (IMDb) este o colecţie IMENSĂ de informaţii despre filme. Ei încearcă sa catalogheze fiecare detaliu pertinent despre un film, cine a juca în el, cine l-a produs, informaţii de culise, locaţii de filmare şi chiar recenzii de critici sau ale fanilor. IMDd îşi dă toată silinţa pentru a prezenta această informaţie într-o manieră ce e simplu de căutat şi accesat.</description>
+    <description lang="ru">Download Movie information from www.imdb.com⏎ The Internet Movie Database (IMDb) is a HUGE collection of movie information. They try to catalog every pertinent detail about a movie, from who was in it, to who made it, to trivia about it, to filming locations, and even where you can find reviews and fan sites on the web. They then do their best to present this information in a manner that is easy to search and access.</description>
+    <description lang="se">Ladda ner filminformation från www.imdb.com&#10;Internet Movie Database (IMDb) är en STOR samling av filminformation. Dom försöker att katalogisera varenda detalj om en film, från vem som var i den, till vem som gjorde den, inspelningsplatser och även var du kan hitta recensioner och fan-sidor på webben. De gör sedan sitt bästa för att presentera denna information på ett sätt som är lätt att söka och komma åt.</description>
+    <description lang="sl">Prenesite informacije o filmih z www.imdb.com&#10;The Internet Movie Database (IMDb) je VELIKANSKA zbirka filmskih informacij. Poskušajo zabeležiti vsako še tako majhno podrobnost o filmu, kdo je v njem igral, kdo ga je ustvaril, zanimivosti, lokacije snemanja ter tudi povezave do ocen in ljubiteljskih strani. Vse informacije poskušajo predstaviti tako, da se preprosto iščejo in dostopajo.</description>
+    <description lang="sv">Ladda ned Filminformation från www.imdb.com⏎ The Internet Movie Database (IMDb) är en enormt stor databas med filminformation. De försöker att indexerea varje relevant detalj om en film, vem som medverkade, vem som skapade filmen, anekdoter, inspelningsplats, och även filmrecensioner och fansiter. De gör sedan sitt bästa för att presentera informationen, göra den sökbar och lättillgänglig.    </description>
+    <description lang="zh">从www.imdb.com下载电影信息。互联网电影资料库（IMDB）是一个大型电影信息库。它力求列示电影的任何相关细节，包括它的内容、制作者、花絮、拍摄地点，还有评论和粉丝网站。同时，尽可能让信息能够很容易搜索和访问。</description>
     <platform>all</platform>
-    <broken>broken due to site layout changes</broken>
   </extension>
 </addon>

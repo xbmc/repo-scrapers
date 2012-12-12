@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Macedonian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/mk/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Enable full cast credits</string>
+    <string id="30001">Овозможи сликички од themoviedb.org</string>
+    <string id="30002">Овозможи постери од themoviedb.org</string>
+    <string id="30003">Овозможи постери од IMPAwards</string>
+    <string id="30004">Овозможи постери од MoviePosterDB</string>
+    <string id="30005">Превземи трејлери директно од YouTube</string>
+    <string id="30006">Овозможи трејлери од HD-Trailers.net</string>
+    <string id="30007">IMDb Poster &amp; Actor димензија на сликичка</string>
+    <string id="30008">Посакуван јазик на превод од</string>
+    <string id="30009">Овозможи трејлери од themoviedb.org</string>
+    <string id="30011">Уметнини</string>
+    <string id="30012">Трејлери</string>
+    <string id="30013">Превземи поставени наслови од themoviedb.org</string>
+</strings>

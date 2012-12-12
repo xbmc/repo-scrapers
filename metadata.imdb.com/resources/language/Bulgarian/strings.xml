@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Bulgarian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/bg/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Включи на пълния списък с актьори</string>
+    <string id="30001">Разреши ползването на Fanarts за артисти от themoviedb.org</string>
+    <string id="30002">Разреши ползването на постери от themoviedb.org</string>
+    <string id="30003">Разреши ползването на постери от IMPAwards</string>
+    <string id="30004">Разреши ползването на постери от MoviePosterDB</string>
+    <string id="30005">Извличане на трейлъри директно то YouTube</string>
+    <string id="30006">Разреши ползването на трейлъри от HD-Trailers.net</string>
+    <string id="30007">Размер за постери и миниатюри на актьори (от IMDb)</string>
+    <string id="30008">Предпочитам заглавията да са на (език)</string>
+    <string id="30009">Разреши ползването на трейлъри от themoviedb.org</string>
+    <string id="30011">Изображения</string>
+    <string id="30012">Трейлъри</string>
+    <string id="30013">Сваляне имената на поредиците от themoviedb.org</string>
+</strings>
