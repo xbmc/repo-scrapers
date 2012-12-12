@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Spanish (Argentina) language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/es_AR/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30000">Descargar Fanart</string>
+    <string id="30001">Activar Trailers de HD-Trailers.net</string>
+    <string id="30003">Obtener ratings de IMDb</string>
+    <string id="30005">Obtener poster de TMDb</string>
+    <string id="30006">Obtener Rating de la audiencia</string>
+    <string id="30007">Obtener Rating de los críticos</string>
+    <string id="30008">Obtener argumento de IMDb</string>
+</strings>

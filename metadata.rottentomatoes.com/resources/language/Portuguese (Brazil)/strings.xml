@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Portuguese (Brazil) language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/pt_BR/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30000">Ativar Fanart</string>
+    <string id="30001">Preferir Trailer de HD-Trailers.net</string>
+    <string id="30003">Pegar classificação do IMDb</string>
+    <string id="30005">Buscar Poster do TMDb</string>
+    <string id="30006">Pegar Classificação Audiência</string>
+    <string id="30007">Pegar Classificação Críticos</string>
+    <string id="30008">Obter enredo de IMDb</string>
+</strings>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Dutch language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/nl/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30000">Fanart inschakelen</string>
+    <string id="30001">Trailers van HD-Trailers.net inschakelen</string>
+    <string id="30003">Verkrijg beoordeling van IMDb</string>
+    <string id="30005">Haal poster op bij TMDb</string>
+    <string id="30006">Ophalen van waardering door publiek</string>
+    <string id="30007">Ophalen van waardering door critici</string>
+    <string id="30008">Ophalen van verhaallijn bij IMDb</string>
+</strings>

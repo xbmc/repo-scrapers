@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.rottentomatoes.com"
        name="Rotten Tomatoes"
-       version="1.0.0" 
+       version="1.0.1" 
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -15,17 +15,57 @@
              language="en"
              library="rt.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="af">RT Fliek Skraper</summary>
+    <summary lang="be">RT Movie Scraper</summary>
+    <summary lang="bg">Сваля инф. за филми от RT </summary>
+    <summary lang="cs">Zdroj dat k filmům RT</summary>
+    <summary lang="da">RT Film-scraper</summary>
+    <summary lang="de">Film-Scraper für Rotten Tomatoes</summary>
+    <summary lang="el">Scraper Ταινιών του RT</summary>
     <summary lang="en">RT Movie Scraper</summary>
-    <summary lang="de">Film-Scraper für RT</summary>
     <summary lang="es">Scraper de películas de RT</summary>
+    <summary lang="es_AR">Scraper de películas RT</summary>
+    <summary lang="fr">Scraper Film RT</summary>
+    <summary lang="gl">Scraper de RT Movie</summary>
+    <summary lang="he">RT סקרייפר סרטים</summary>
     <summary lang="hu">RT filmadat leolvasó</summary>
+    <summary lang="it">Scraper dei film RT</summary>
+    <summary lang="ko">RT 영화 자료수집기</summary>
+    <summary lang="mk">RT Movie Scraper</summary>
     <summary lang="nl">RT-filmscraper</summary>
     <summary lang="pl">Scraper filmowy RT</summary>
-    <summary lang="pt">Scraper de filmes RT</summary>
+    <summary lang="pt">Scraper de Filmes RT</summary>
+    <summary lang="pt_BR">Scraper Filmes RT Movie</summary>
     <summary lang="ro">Scraper de filme RT</summary>
     <summary lang="ru">Обработчик Фильмов для RT</summary>
+    <summary lang="sl">Ponudnik informacij o filmih RT</summary>
+    <summary lang="sv">RT Filmskrapa</summary>
     <summary lang="zh">RT电影刮削器</summary>
+    <description lang="af">Rotten Tomatoes is 'n webwerf toegewy aan resensies, informasie, en nuus van films—wyd bekend as 'n film resensie samevoeger. Die naam is afgelei van die cliché van gehore wat tamaties en ander groentes na swak verhoog optredes gegooi het.</description>
+    <description lang="be">Rotten Tomatoes is a website devoted to reviews, information, and news of films—widely known as a film review aggregator. Its name derives from the cliché of audiences throwing tomatoes and other vegetables at a poor stage performance.</description>
+    <description lang="bg">Rotten Tomatoes е уебсайт посветен на филмите (прегледи, новини и информация) - добре познат агрегатор на информация. Името му произхожда от клишето за хвърляне на домати и други зеленчуци по сцената, когато актьорите не се представят добре.</description>
+    <description lang="cs">Rotten Tomatoes je webová stránka věnující se recenzím, informacím a novinkám k filmům. Je všeobecně známá jako agregátor recenzí. Název služby vychází z klasického klišé, kdy publikum hází rajčata a jinou zeleninu, při shlédnutí špatného představení.</description>
+    <description lang="da">Rotten Tomatoes er en hjemmeside, der er dedikeret til anmeldelser, information og nyheder om film. Sidens navn stammer fra klichéen om publikum, der kaster tomater og andre grøntsager efter en dårlig sceneoptræden.</description>
+    <description lang="de">Rotten Tomatoes widmet sich Reviews, Informationen und Neuigkeiten von Filmen. Der Name des Addons leitet sich von dem alten Cliché ab, dass bei schlechter schauspielerischer Leistung, das Publikum früher gerne mit Tomaten oder anderem Gemüse in Richtung Bühne geworfen hat.</description>
+    <description lang="el">Το Rotten Tomatoes είναι μία ιστοσελίδα αφιερωμένη σε κριτικές, πληροφορίες και ειδήσεις για ταινίες — γνωστό ευρύτερα ως συναθροιστής κριτικών ταινιών (film review aggregator). Το όνομά του προέρχεται από το κλισέ σχετικά με το κοινό που πετάει τομάτες και λαχανικά σε μια κακή παράσταση.</description>
     <description lang="en">Rotten Tomatoes is a website devoted to reviews, information, and news of films—widely known as a film review aggregator. Its name derives from the cliché of audiences throwing tomatoes and other vegetables at a poor stage performance.</description>
+    <description lang="es">"Rotten Tomatoes" es un sitio web dedicado a las críticas, información y noticias de películas". Su nombre proviene del cliché de que el público lanzaba tomates podridos, y otros vegetales, al escenario cuando estimaba que la actuación había sido mala.</description>
+    <description lang="es_AR">Rotten Tomatoes es un sitio web dedicado a las críticas, información y noticias de películas. Su nombre viene del cliché del público de arrojar tomates y otros vegetales a una mala ejecución artística.</description>
+    <description lang="gl">Rotten Tomatoes é un sitio web adicado á comentar, informar e das novas sobre filmes, máis coñecido coma un agregador de comentarios sobre filmes. O seu nome vén do tópico por parte dos espectadores de ciscar tomates e outros vexetais ó escenario nas malas actuacións.</description>
+    <description lang="he">Rotten Tomatoes הוא אתר אשר מוקדש לסיקורים, מידע וחדשות על סרטים—ובגדול ידוע כמאגר סיקורי סרטים. השם נובע מהקלישה שהקהל זורק עגבניות ושאר ירקות אל עבר הופעת במה גרועה.</description>
+    <description lang="hu">A Rotten Tomatoes egy olyan webhely amely a filmekkel kapcsolatos információk, kritikák, hírek szolgáltatásáért jött létre - úgy is ismert mint a a különböző kritikák gyűjtőhelye. A név a paradicsomot és egyéb zöldségeket dobáló nézőkre utal a gyenge előadások után.</description>
+    <description lang="it">Rotten Tomatoes è un sito dedicato alle recensioni, informazioni e novità sui film, ampiamente conosciuto come un aggregatore di recensioni. Il suo nome deriva dal cliché del pubblico che lancia pomodori e altri ortaggi a una rappresentazione teatrale scadente.</description>
+    <description lang="ko">Rotten Tomatoes는 영화 정보와 뉴스, 리뷰를 제공하는 웹사이트입니다. 웹사이트 이름은 형편없는 무대 공연에 토마토나 야채를 던지던 관행에서 유래합니다.</description>
+    <description lang="mk">Rotten Tomatoes е веб страна наменета за прегледи, информации и вести за филмови - нашитоко познат како агрегатор на филмски прегледи.</description>
+    <description lang="nl">Rotten Tomatoes is een website gericht op reviews, informatie en filmnieuws, en welbekend als filmreviewverzamelaar. Haar naam komt van het cliche van publiek dat tomaten en andere groenten gooit naar een slechte voorstelling.</description>
+    <description lang="pl">Rotten Tomatoes to strona poświęcona opinią, informacją i wiadomością z filmów, powszechnie znanya jako źródło przeglądu filmowego. Jej nazwa pochodzi od stereotypu publiczności rzucającej starymi pomidorami za słabe przedstawienie.</description>
+    <description lang="pt">Rotten Tomatoes é um site dedicado a críticas, informação e notícias de filmes - amplamente conhecido como um agregador de críticas de filmes. O seu nome é inspirado no cliché do público atirar tomates e outros vegetais a um mau desempenho em palco.</description>
+    <description lang="pt_BR">Rotten Tomatoes é um site dedicado a comentários, informações e notícias de filmes-amplamente conhecido como um agregador de revisão de filmes. Seu nome deriva do clichê de audiências tomates e outros vegetais lançados ao palco em uma performance de palco fraca.</description>
+    <description lang="ro">Rotten Tomatoes este un site dedicat recenziilor, informaţiilor şi ştirilor despre filme - mai pe larg cunoscut ca un colector de recenzii de film. Numele său este un derivat al clişeului cu o audienţă ce aruncă roşii stricate şi alte legume către o prestaţie slabă pe scenă</description>
+    <description lang="ru">Rotten Tomatoes это сайт, посвященный обзорам, информации и новостям видео - широко известное хранилище обзоров видео. Свое имя он унаследовал от истории о зрителях, которые закидывали помидорами и прочими овощами низкопробные постановки.</description>
+    <description lang="sl">Rotten Tomatoes je spletna stran, predana ocenam, informacijam in novicam o filmih — poznana kot vir ocen. Ime izhaja iz stereotipa o metanju paradižnikov in druge zelenjame na oder ob slabih predstavah.</description>
+    <description lang="sv">Rotten Tomatoes är en webbplats dedikerad till recensioner, information och nyheter om film—allmänt känt som en filmrecensions-aggregator. Namnet härleds ur klichén då publiken i missnöje slänger tomater eller andra grönsaker på en scen-föreställning.</description>
+    <description lang="zh">烂番茄（Rotten Tomatoes）是专门从事电影评论、影片资讯、影视新闻的网站--以搜罗影评而著称。它的名称源自听众向糟糕的舞台表演丢番茄掷蔬菜的举动。</description>
     <platform>all</platform>
   </extension>
 </addon>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Romanian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ro/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30000">Activează Fanart</string>
+    <string id="30001">Activează trailere de la HD-Trailers.net</string>
+    <string id="30003">Obţine rating de la IMDb</string>
+    <string id="30005">Descarcă poster de la TMDb</string>
+    <string id="30006">Obţine rating audienţă</string>
+    <string id="30007">Obţine rating critici</string>
+    <string id="30008">Obţine sumar de la IMDb</string>
+</strings>
