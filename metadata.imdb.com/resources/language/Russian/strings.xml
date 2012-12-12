@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Russian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ru/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <!-- settings labels -->
+    <string id="30000">Включить список исполнителей</string>
+    <string id="30001">Включить обложку с  themoviedb.org</string>
+    <string id="30002"> Включить постеры с themoviedb.org</string>
+    <string id="30003"> Включить постеры с IMPAwards</string>
+    <string id="30004"> Включить постеры с MoviePosterDB</string>
+    <string id="30005">Брать трейлеры прямо с YouTube</string>
+    <string id="30006"> Брать трейлеры с HD-Trailers.net</string>
+    <string id="30007">Рамер иконки(ок) постера IMDb и актера</string>
+    <string id="30008">Предпочтительный язык названия с</string>
+    <string id="30009">Брать трейлеры с  themoviedb.org</string>
+    <string id="30011">Обложка</string>
+    <string id="30012">Трейлеры</string>
+    <string id="30013">Получать список названий с  themoviedb.org</string>
+</strings>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Korean language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ko/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
 <strings>
     <!-- settings labels -->
     <string id="30000">전체 출연진 가져오기</string>
@@ -6,7 +10,12 @@
     <string id="30002">themoviedb.org 에서 포스터 가져오기</string>
     <string id="30003">IMPAwards 에서 포스터 가져오기</string>
     <string id="30004">MoviePosterDB 에서 포스터 가져오기</string>
+    <string id="30005">유투브에서 직접 예고편 가져오기</string>
     <string id="30006">HD-Trailers.net 에서 예고편 가져오기</string>
-    <string id="30007">IMDb 포스터 &amp; 배우 미리보기 크기</string>
+    <string id="30007">IMDb 포스터 &amp; 배우 사진 크기</string>
+    <string id="30008">선호하는 타이틀 언어</string>
+    <string id="30009">themoviedb.org에서 예고편 가져오기</string>
+    <string id="30011">아트웍</string>
+    <string id="30012">예고편</string>
+    <string id="30013">themoviedb.org에서 시리즈 타이틀 가져오기</string>
 </strings>
-
