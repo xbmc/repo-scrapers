@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.albums.last.fm"
        name="Last.FM"
-       version="1.2.2"
+       version="1.2.3"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -11,20 +11,67 @@
              language="en"
              library="lastfm.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="af">LastFM Album Skraper</summary>
+    <summary lang="be">LastFM Album Scraper</summary>
+    <summary lang="bg">Сваля инф. за албуми от LastFM</summary>
+    <summary lang="cs">Zdroj dat o albech LastFM</summary>
+    <summary lang="da">LastFM album-scraper</summary>
+    <summary lang="de">LastFM Album Scraper</summary>
+    <summary lang="el">Scraper Άλμπουμ του LastFM</summary>
     <summary lang="en">LastFM Album Scraper</summary>
-    <summary lang="hu">LastFM album információk</summary>
-    <summary lang="kr">LastFM 음악 스크래퍼</summary>
-    <summary lang="se">LastFM Musikskrapa</summary>
+    <summary lang="es">Buscador de LastFM</summary>
+    <summary lang="es_AR">Scraper de Álbumes de LastFM</summary>
+    <summary lang="es_MX">LastFM Album Scraper</summary>
+    <summary lang="fr">Scraper Album LastFM</summary>
+    <summary lang="he">LastFM סקרייפר אלבומים</summary>
+    <summary lang="hu">LastFM albuminformáció leolvasó</summary>
+    <summary lang="it">Scraper degli album LastFM</summary>
+    <summary lang="ja">LastFM アルバムスクレーパー</summary>
+    <summary lang="ko">LastFM 음악 스크래퍼</summary>
+    <summary lang="lt">LastFM albumų Scraper</summary>
+    <summary lang="mk">LastFM Album Scraper</summary>
     <summary lang="nl">LastFM Muziek Scraper</summary>
     <summary lang="pl">Scraper albumów LastFM</summary>
     <summary lang="pt">Scraper de música de LastFM</summary>
+    <summary lang="pt_BR">Scraper de Álbum LastFM</summary>
+    <summary lang="ro">Colector informaţii album LastFM</summary>
+    <summary lang="ru">Инфоресурс альбомов LastFM</summary>
+    <summary lang="se">LastFM Musikskrapa</summary>
+    <summary lang="sl">Ponudnik informacij o albumih LastFM</summary>
+    <summary lang="sv">LastFM Album skrapa</summary>
+    <summary lang="th">ตัวดึงข้อมูลอัลบั้ม LastFM</summary>
+    <summary lang="zh">LastFM专辑资料</summary>
+    <description lang="af">Laai Musiek inligting af van www.last.fm</description>
+    <description lang="be">Download Music information from www.last.fm</description>
+    <description lang="bg">Сваля информация за музикални албуми от www.last.fm</description>
+    <description lang="cs">Stáhnout informace o hudbě z www.last.fm</description>
+    <description lang="da">Hent musikinformation fra www.last.fm</description>
+    <description lang="de">Lade Musik Informationen von www.last.fm</description>
+    <description lang="el">Λήψη πληροφοριών Μουσικής από www.last.fm</description>
     <description lang="en">Download Music information from www.last.fm</description>
-    <description lang="hu">Album információk letöltése a www.last.fm webhelyről</description>
-    <description lang="kr">LastFM 에서 음악 정보 다운로드</description>
-    <description lang="se">Ladda ner musikinformation från Last.FM</description>
+    <description lang="es">Descargar información de música desde www.last.fm</description>
+    <description lang="es_AR">Descargar Información de Música de www.last.fm</description>
+    <description lang="es_MX">Descargar Información de www.last.fm</description>
+    <description lang="fa">بارگیری اطلاعات موسیقی از www.last.fm</description>
+    <description lang="fr">Télécharger les informations Musique depuis www.last.fr</description>
+    <description lang="he">הורד פרטי מוזיקה מ- www.last.fm</description>
+    <description lang="hu">Albuminformációk letöltése a www.last.fm webhelyről</description>
+    <description lang="it">Scarica informazioni musicali da www.last.fm</description>
+    <description lang="ja">www.last.fm から音楽情報をダウンロード</description>
+    <description lang="ko">LastFM 에서 음악 정보 다운로드</description>
+    <description lang="lt">Atsisiųsti muzikos informaciją iš www.last.fm</description>
+    <description lang="mk">Превземи информации за музиката од www.last.fm</description>
     <description lang="nl">Download muziek informatie van Last.fm</description>
     <description lang="pl">Pobieraj informacje o albumach z Last.fm</description>
     <description lang="pt">Descarregue informação de música de Last.fm</description>
+    <description lang="pt_BR">Download informações Música de www.lastfm</description>
+    <description lang="ro">Descarcă informaţii despre muzică de la www.last.fm</description>
+    <description lang="ru">Загружать сведения о музыке с www.last.fm</description>
+    <description lang="se">Ladda ner musikinformation från Last.FM</description>
+    <description lang="sl">Prenesite informacije o glasbi z www.last.fm</description>
+    <description lang="sv">Ladda ned Musik information från www.last.fm</description>
+    <description lang="th">ดาวน์โหลดข้อมูลเพลง จาก www.last.fm</description>
+    <description lang="zh">从www.last.fm下载音乐信息。</description>
     <platform>all</platform>
   </extension>
 </addon>
