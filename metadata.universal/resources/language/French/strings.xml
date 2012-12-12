@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- French language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/fr/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Activer les fanarts de themoviedb.org</string>
+    <string id="30002">Activer les affiches de themoviedb.org</string>
+    <string id="30003">Activer les affiches de IMPAwards</string>
+    <string id="30004">Activer les affiches de MoviePosterDB</string>
+    <string id="30005">Récupérer les bandes-annonces depuis YouTube</string>
+    <string id="30006">Activer les bandes-annonces de HD-Trailers.net</string>
+    <string id="30009">Activer les bandes-annonces de themoviedb.org</string>
+    <string id="30011">Logo série TV</string>
+    <string id="30012">Bandes-annonces</string>
+    <string id="30014">Récupérer le synopsis depuis</string>
+    <string id="30015">Récupérer la distribution, les réalisateurs et les scénaristes depuis</string>
+    <string id="30016">Sources des synopsis</string>
+    <string id="30020">Langue des synopsis</string>
+    <string id="30021">Récupérer les critiques depuis</string>
+    <string id="30022">Récupérer les genres depuis</string>
+    <string id="30023">Récupérer le titre depuis</string>
+    <string id="30024">Sources des titres</string>
+    <string id="30025">Sources de la distributions et des crédits</string>
+    <string id="30026">Sources des genres</string>
+    <string id="30027">Langue des titres</string>
+    <string id="30028">Sources des bandes-annonces</string>
+    <string id="30029">Collections de films</string>
+    <string id="30030">Sources des critiques</string>
+    <string id="30034">Langue préférée des vignettes</string>
+    <string id="30036">Activer les affiches de IMDb</string>
+    <string id="30037">Activer les affiches de trakt.tv</string>
+    <string id="30038">Activer les fanarts de trakt.tv</string>
+    <string id="30039">Activer les bandes-annonces de trakt.tv</string>
+    <string id="30040">Langue des genres</string>
+    <string id="30041">Langue des bandes-annonces</string>
+    <string id="30100">Classement</string>
+    <string id="30200">Crédits</string>
+    <string id="30202">Obtenir le pays depuis</string>
+</strings>

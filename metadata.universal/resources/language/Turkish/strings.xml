@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Turkish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/tr/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">themoviedb.org fanartlarını etkinleştir</string>
+    <string id="30002">themoviedb.org posterlerini etkinleştir</string>
+    <string id="30003">IMPAwards posterlerini etkinleştir</string>
+    <string id="30004">MoviePosterDB posterlerini etkinleştir</string>
+    <string id="30005">Fragmanları doğrudan YouTube'dan alın</string>
+    <string id="30006">HD-Trailers.net fragmanlarını etkinleştir</string>
+    <string id="30009">themoviedb.org fragmanlarını etkinleştir</string>
+    <string id="30011">Çizim</string>
+    <string id="30012">Fragmanlar</string>
+    <string id="30100">Derecelendirme</string>
+    <string id="30200">Jenerik</string>
+</strings>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Chinese (Simple) language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/zh/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">启用themoviedb.org同人画</string>
+    <string id="30002">启用themoviedb.org海报</string>
+    <string id="30003">启用IMPAwards海报</string>
+    <string id="30004">启用MoviePosterDB海报</string>
+    <string id="30005">直接从YouTube获取预告片</string>
+    <string id="30006">启用HD-Trailers.net预告片</string>
+    <string id="30008">首选片名语言于</string>
+    <string id="30009">启用themoviedb.org预告片</string>
+    <string id="30011">艺术图片</string>
+    <string id="30012">预告片</string>
+    <string id="30013">从themoviedb.org获取影片集（系列片）标题</string>
+    <string id="30014">获取剧情于</string>
+    <string id="30015">获取演员/导演/编剧于</string>
+    <string id="30016">剧情信息来源</string>
+    <string id="30020">首选剧情语言</string>
+    <string id="30021">获取评分于</string>
+    <string id="30022">获取类型于</string>
+    <string id="30023">获取片名于</string>
+    <string id="30024">片名信息来源</string>
+    <string id="30025">演职人员信息来源</string>
+    <string id="30026">类型信息来源</string>
+    <string id="30027">首选片名语言</string>
+    <string id="30028">预告片来源</string>
+    <string id="30029">系列电影</string>
+    <string id="30030">评分信息来源</string>
+    <string id="30031">分级设置</string>
+    <string id="30032">获取分级于</string>
+    <string id="30033">首选分级国家</string>
+    <string id="30034">首选缩略图语言</string>
+    <string id="30035">分级前缀</string>
+    <string id="30036">启用IMDb海报</string>
+    <string id="30037">启用trakt.tv海报</string>
+    <string id="30038">启用trakt.tv同人画</string>
+    <string id="30039">启用trakt.tv预告片</string>
+    <string id="30040">类型语言</string>
+    <string id="30041">首选预告片语言</string>
+    <string id="30042">获取标语于</string>
+    <string id="30043">首选标语语言</string>
+    <string id="30044">获取IMDB TOP250排名</string>
+    <string id="30045">获取IMDB简介</string>
+    <string id="30100">评分</string>
+    <string id="30110">评分产生于</string>
+    <string id="30115">使用合计分数于</string>
+    <string id="30120">使用影评的共识为电影简介</string>
+    <string id="30200">演职制作</string>
+    <string id="30201">获取出品人于</string>
+    <string id="30202">获取国家于</string>
+</strings>

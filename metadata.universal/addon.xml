@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.universal"
        name="Universal Scraper"
-       version="1.9.3"
+       version="1.9.4"
        provider-name="Olympia, Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -20,8 +20,50 @@
              language="en"
              library="universal.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="be">Universal Movie Scraper</summary>
+    <summary lang="bg">Универсален източник на инф. за филми</summary>
+    <summary lang="cs">Univerzální zdroj dat k filmům</summary>
+    <summary lang="da">Universal Film-scraper</summary>
+    <summary lang="de">Universal Movie Scraper</summary>
+    <summary lang="el">Universal Scraper Ταινιών</summary>
     <summary lang="en">Universal Movie Scraper</summary>
+    <summary lang="es">Buscador Universal de Películas</summary>
+    <summary lang="es_AR">Buscador Universal de Películas</summary>
+    <summary lang="fr">Collecteur de films universel</summary>
+    <summary lang="he">Universal סקרייפר סרטים</summary>
+    <summary lang="hu">Univerzális film adat leolvasó</summary>
+    <summary lang="it">Scraper universale di film</summary>
+    <summary lang="ko">Universal 영화 자료수집기</summary>
+    <summary lang="mk">Universal Movie Scraper</summary>
+    <summary lang="nl">Universele filmscraper</summary>
+    <summary lang="pl">Universal Movie Scraper</summary>
+    <summary lang="pt">Scraper Universal de Filmes</summary>
+    <summary lang="pt_BR">Scraper de FIlmes Universal</summary>
+    <summary lang="ro">Catalog de filme universal</summary>
+    <summary lang="ru">Универсальный скрапер фильмов</summary>
+    <summary lang="sl">Univerzalni ponudnik informacij o filmih</summary>
+    <summary lang="sv">Universell filmskrapa</summary>
+    <summary lang="zh">通用电影刮削器</summary>
+    <description lang="be">This scraper collecting information from the following supported sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information.</description>
+    <description lang="bg">Сваля информация от следните сайтове: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Можете да определите от кой сайт каква информация да се сваля.&#10;&#10;Първоначалното търсене винаги се прави в TMDb.</description>
+    <description lang="cs">Tento zdroj dat získává informace z následujících podporovaných stránek: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Vždy provádí základní hledání na IMDb, ale pro následující hledání může být upraveno pro každou hodnotu, ze které stránky chcete specifickou informaci získat.</description>
+    <description lang="da">Denne scraper indsamler information fra følgende understøttede sider: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Første søgning sker altid i TMDb, men efterfølgende kan der felt for felt vælges, hvilken side den specifikke infomation ønskes fra.</description>
+    <description lang="de">Dieser Sammler sammelt Informationen von den folgenden, unterstützen Seiten: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Es fürt jedes mal die Anfangssuche auf TMDb aus, aber danach kann Feld für Feld ausgewählt werden, woher die Information geholt werden sollen.</description>
+    <description lang="el">Αυτό το scraper συλλέγει πληροφορίες από τις ακόλουθες ιστοσελίδες: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Η αρχική αναζήτηση γίνεται πάντα στο TMDb, αλλά έπειτα μπορεί να ρυθμιστεί πεδίο ανά πεδίο από ποια σελίδα να λαμβάνονται πληροφορίες.</description>
     <description lang="en">This scraper collecting information from the following supported sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information.</description>
+    <description lang="es_AR">Este buscador obtiene información de los siguientes sitios: IMDb, TMDb, Rotten tomatoes, Trakt.tv, OFDb.de. Realiza la búsqueda inicial en TMDb, pero a partir de allí se puede especificar desde que sitio se desea obtener cada campo.</description>
+    <description lang="he">סקרייפר זה אוסף מידע מהתארים הנתמכים הבאים: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de זה תמיד עושה את החיפוש הפנימי ב-TMDb, אבל בהתאם לזאת ניתן להגדיר לכל שדה מאיזה אתר אתה רוצה לקבל את המידע.</description>
+    <description lang="hu">Ez a leolvasó a következő helyekről gyűjt információkat: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. A kezdő keresést midig az IMDb-n végzi, de utána mezőnként beállítható, hogy melyik oldalakat használja az adott információ lekérésére.</description>
+    <description lang="ko">이 영화 자료수집기는 IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de에서 영화 정보를 가져옵니다. 항상 IMDb를 먼저 검색하지만 특정한 정보는 지정한 사이트에서 가져오도록 필드별 설정이 가능합니다.</description>
+    <description lang="mk">This scraper collecting information from the following supported sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information.</description>
+    <description lang="nl">Deze scraper verzamelt informatie van de volgende ondersteunde sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Het start altijd de eerste zoektocht op TMDb, maar vervolgens kan veld voor veld informatie gekozen worden van de site waar jij de specifieke informatie van wilt.</description>
+    <description lang="pl">Ten scraper zbiera informacje z następujących portali: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Najpierw szuka na TMDb, a następnie może być ustawiony by poszczególne pola były wypełnione informacjami z innych portali.</description>
+    <description lang="pt">Este scraper recolhe informações dos seguintes sítios: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. A pesquisa inicial é sempre feita no TMDb, mas depois pode especificar para cada campo os sítios dos quais quer obter informação.</description>
+    <description lang="pt_BR">Este scraper coleta informações dos seguintes sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. A busca inicial sempre se dá no TMDb, mas segue aquilo que estiver setado campo a campo  dos sites que você deseja informação específica.</description>
+    <description lang="ro">Acest catalog este completat cu informații de la următoarele siteuri: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Căutarea inițială se face întotdeauna pe TMDb, dar după aceasta fiecare câmp poate fi setat să ia informația de pe un site specific.</description>
+    <description lang="ru">Этот модуль собирает информацию со следующих поддерживаемых сайтов: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Он всегда делает первоначальный поиск по TMDb, но может быть установлена последовательность, с какого сайта вы хотите получить конкретную информацию.</description>
+    <description lang="sl">Ta ponudnik združuje informacije s sledečih strani: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Vedno opravi osnovno iskanje na TMDb, vendar lahko nastavite od kod se bo prenesla posamezna informacija.</description>
+    <description lang="zh">本刮削器从以下站点获取信息：IMDb、TMDb、Rotten Tomatoes、Trakt.tv、OFDb.de。初始结果总是先从TBDb获取，然后可以针对不同项目分别设置从不同站点获取信息。</description>
     <platform>all</platform>
   </extension>
 </addon>
