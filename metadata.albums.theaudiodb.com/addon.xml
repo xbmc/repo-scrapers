@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.albums.theaudiodb.com"
        name="TheAudioDb Album Scraper"
-       version="1.0.1"
+       version="1.0.2"
        provider-name="Olympia, Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -12,8 +12,57 @@
              language="en"
              library="tadb.xml"/>
   <extension point="xbmc.addon.metadata">
+    <summary lang="af">TheAudioDb Album Skraper</summary>
+    <summary lang="be">TheAudioDb Album Scraper</summary>
+    <summary lang="bg">Сваля инф. за албуми от TheAudioDb</summary>
+    <summary lang="cs">Zdroj dat o albech TheAudioDb</summary>
+    <summary lang="da">AudioDb Album-scraper</summary>
+    <summary lang="de">TheAudioDb Album Scraper</summary>
+    <summary lang="el">Scraper Άλμπουμ του TheAudioDb</summary>
     <summary lang="en">TheAudioDb Album Scraper</summary>
+    <summary lang="es">Scraper de Álbum de TheAudioDb</summary>
+    <summary lang="es_AR">Scraper de Álbumes de TheAudioDb</summary>
+    <summary lang="fr">Scraper Album TheAudioDb</summary>
+    <summary lang="gl">Scraper de TheAudioDb para álbum</summary>
+    <summary lang="he">TheAudioDb סקרייפר שלבומים</summary>
+    <summary lang="hu">TheAudioDb album leolvasó</summary>
+    <summary lang="it">Scraper degli album TheAudioDb</summary>
+    <summary lang="ko">TheAudioDb 앨범 자료수집기</summary>
+    <summary lang="mk">TheAudioDb Album Scraper</summary>
+    <summary lang="nl">TheAudioDb Album Scraper</summary>
+    <summary lang="pl">TheAudioDb scraper albumu muzycznego</summary>
+    <summary lang="pt">Scraper de Áudio TheAudioDb</summary>
+    <summary lang="pt_BR">Scraper Álbum TheAudioDB</summary>
+    <summary lang="ro">Catalog de albume TheAudioDb</summary>
+    <summary lang="ru">Скрапер альбомов TheAudioDb</summary>
+    <summary lang="sl">Ponudnik informacij o albumih TheAudioDb</summary>
+    <summary lang="sv">TheAudioDb Albumskrapa</summary>
+    <summary lang="zh">TheAudioDb专辑资料</summary>
+    <description lang="af">TheAudioDB.com is 'n gemeenskaps gedrewe databasis van oudio vrystellings. Dit is ons mikpunt om die mees eenvoudige, maklikste om te gebruik en akkurate bron van Musiek metadata op die web te wees. Ons verskaf ook 'n API vir toegang tot ons stoorplek van data sodat dit in vele gewilde HTPC en Mobiele programme gebruik kan word om jou die beste moontlike oudio ondervinding te gee sonder die moeite.</description>
+    <description lang="be">TheAudioDB.com is a community driven database of audio releases. It is our aim to be the most simple, easy to use and accurate source for Music metadata on the web. We also provide an API to access our repository of data so it can be used in many popular HTPC and Mobile apps to give you the best possible audio experience without the hassle.</description>
+    <description lang="bg">TheAudioDB.com е база от данни за аудио издания, която се задвижва изцяло от потребителите си. Целта е да се превърне в най-лесния (за боравене) и точен източник на метаданни за музикалната Ви колекция. Наличен е и API достъп до хранилището на данните - за улеснено свързване с различните HTPC и мобилни приложения, които Ви позволяват да се възползвате в най-голяма степен от информацията по удобен за Вас начин.</description>
+    <description lang="cs">TheAudioDB.com je komunitou řízená databáze zvukových nahrávek. Naším cílem je být nejjednodušším, nejpoužitelnějším a přesným zdrojem hudebních metadat na internetu. Poskytujeme také API pro přístup k našemu datovému repoiztáři, na použití v populárních mobilních a HTPC aplikacích, pro co nejlepší hudební zážitek.</description>
+    <description lang="da">TheAudioDB.com er en community-drevet database over lyd-udgivelser. Det er vores mål at være den mest simple, tilgængelige og præcise kilde til musik-metadata på nettet. Vi tilbyder også API-adgang til vores datalager, så det kan bruges i mange populære HTPC- og mobilprogrammer og give dig den bedst mulige lydoplevelse uden besværet.</description>
+    <description lang="de">TheAudioDB.com ist eine Community-basierte Datenbank von Musik-Releases. Es ist unser Ziel,die einfachste und genaueste Quelle für Audio-Metadaten im Web, zu sein. Wir bieten auch eine API für den Datenzugriff, damit die Infos in vielen populären HTPC und Mobile Apps verwendet werden können, um Ihnen das bestmögliche Hörerlebnis zu liefern</description>
+    <description lang="el">Το TheAudioDB.com είναι μία βάση δεδομένων μουσικών εκδόσεων που στηρίζεται στην κοινότητα. Στόχος μας είναι να είμαστε η πιο απλή, εύκολη στη χρήση και ακριβής πηγή Μουσικών μετα-δεδομένων στο διαδίκτυο. Παρέχουμε, επίσης, ένα API για πρόσβαση στο αποθετήριο δεδομένων μας, ούτως ώστε να μπορεί να χρησιμοποιηθεί από πολλές δημοφιλείς εφαρμογές κέντρων πολυμέσων (HTPC) και κινητών τηλεφώνων, προκειμένου να έχετε την καλύτερη δυνατή μουσική εμπειρία χωρίς κόπο.</description>
     <description lang="en">TheAudioDB.com is a community driven database of audio releases. It is our aim to be the most simple, easy to use and accurate source for Music metadata on the web. We also provide an API to access our repository of data so it can be used in many popular HTPC and Mobile apps to give you the best possible audio experience without the hassle.</description>
+    <description lang="es">TheAudioDB.com es una base de datos impulsada por la comunidad de los contenidos de audio. Nuestro objetivo es ser la fuente más simple, fácil de usar y precisa para los metadatos de música en la web. También proporcionamos una API para acceder a nuestro repositorio de datos para que pueda ser utilizado en los mas populares HTPC y aplicaciones móviles para darle la mejor experiencia de audio posible sin molestias.</description>
+    <description lang="es_AR">TheAudioDb.com es una base de datos de publicaciones de audio manejada por la comunidad. Nuestro objetivo es ser la fuente de metadata de Música más simple, fácil de usar y precisa de internet. También tenemos una API para acceder a nuestro repositorio de datos para ser usada en cualquiera de los más famosos sistemas para HTPC o aplicaciones móviles para darte la mejor experiencia en audio.</description>
+    <description lang="gl">TheAudioDB.com e una base de datos de lanzamentos de audio impulsada por unha comunidade. O noso obxectivo é ser unha fonte de música o máis simple, doada de usar e exacta posíbel no web, tamén fornecemos dun API que poida ser usado para acceder ao noso repositorio de datos dende moitos dos máis populares HTPCs e aplicacións mobéis para ofrecerte a mellor experiencia sonora sen problemas.</description>
+    <description lang="he">TheAudioDb היא קהילה אשר מכילה מסד נתונים עבור אודיו. המטרה שלנו להיות הכי פשוטים וקלים עבור שימוש והשגת מקור לנתוני מוזיקה ברשת. כמוכן אנחנו מעניקים API כדי לגשת למקור הנתונים כדי שניתן יהיה להשתמש במחשבי HTPC ואפליקציות ניידות כדי להעניק לך את חווית האודיו הכי טובה שיש ללא כל מאמץ.</description>
+    <description lang="hu">A TheAudioDB.com webhely egy közösség által fejlesztett zenei adatbázis. A célunk, hogy a legegyszerűbb, könnyen használható és pontos forrás legyünk a zenével kapcsolatos adatok eléréséhez. Biztosítunk egy alkalmazási felületet (API) a tárhelyünkön található adatok elérésére, hogy számos HTPC és mobil alkalmazás elérhesse azt, ezáltal biztosítva a lehető legteljesebb zenei élményt.</description>
+    <description lang="it">TheAudioDB.com è un database comunitario di uscite audio. Il nostro obiettivo è di essere la fonte più semplice, facile da usare e precisa per i metadati musica sul web. Forniamo anche una API per accedere al nostro archivio di dati in modo che possa essere utilizzato in molti HTPC popolari e applicazioni mobili per darvi la migliore esperienza audio possibile; senza fastidio.</description>
+    <description lang="ko">TheAudioDB.com은 커뮤니티 지향의 오디오 데이터베이스입니다. 가장 단순하고, 사용하기 쉽고, 정확한 음악 메타데이터를 제공하는 것이 우리의 목표입니다. 우리는 또한 우리의 데이터 저장소에 접근할 수 있는 API를 제공해서 이를 이용하는 많은 HTPC와 모바일앱이 최선의 오디오 경험을 제공할 수 있도록 합니다.</description>
+    <description lang="mk">TheAudioDB.com is a community driven database of audio releases. It is our aim to be the most simple, easy to use and accurate source for Music metadata on the web. We also provide an API to access our repository of data so it can be used in many popular HTPC and Mobile apps to give you the best possible audio experience without the hassle.</description>
+    <description lang="nl">TheAudioDB.com is een gemeenschap gedreven database van audio releases. Het is ons doel om de meest eenvoudige, makkelijk te gebruiken en nauwkeurige bron voor muziek metadata op het web. We bieden ook een API om onze repository van toegang tot de gegevens, zodat het kan worden gebruikt in vele populaire HTPC en mobiele apps om u de best mogelijke audio-ervaring zonder het gedoe.</description>
+    <description lang="pl">TheAudioDB.com to społeczność prowadząca bazę wydawnictw muzycznych. Naszym głównym założeniem jest być jak najbardziej prostym, łatwym w użyciu źródłem muzycznych metadanych w sieci. Udostępniamy także API by dać dostęp do naszych zasobów dla wielu popularnych HTPC oraz mobilnych aplikacji w celu jak najlepszych doświadczeń z muzyką.</description>
+    <description lang="pt">TheAudioDB.com é uma base de dados de edições de áudio, mantida pela comunidade. Esta fonte de metadados de Música da web tem como metas a simplicidade, facilidade de utilização e exactidão. Também fornecemos uma API para aceder ao nosso repositório de dados, para poder ser usada em muitas aplicações móveis e de HTPC. Assim terá a melhor experiência de áudio possível, sem complicações.</description>
+    <description lang="pt_BR">TheAudioDB.com é um banco de dados que orienta a comunidade dos lançamentos de áudio. O nosso objetivo é ser a fonte mais simples, fácil de usar e precisa de metadados de Músicas na web. Nós também fornecemos uma API para acessar nosso repositório de dados para que possa ser usado em muitos HTPC populares e aplicativos móveis para dar-lhe a melhor experiência de áudio possível sem ter incômodos.</description>
+    <description lang="ro">TheAudioDB.com este o bază de date de lansări audio completată de către comunitate. Țelul nostru este fim sursa cea mai simplă, ușor de folosit și precisă pentru informații muzicale de pe web. De asemenea oferim și un API pentru accesul la depozitul nostru de date pentru a putea fi folosit în HTPC-urile și aplicațiile mobile populare pentru a vă oferi cea mai bună experiență audio posibilă fără prea mare efort.</description>
+    <description lang="ru">TheAudioDb.com это публичная база аудио. Наша цель - быть самым простым, удобным и точным источником сетевых аудио метаданных. У нас имеется API для доступа к нашему хранилищу данных, которое можно использовать в популярных HTPC и мобильных приложениях для получения вами лучших аудио-впечатлений без каких-либо проблем.</description>
+    <description lang="sl">TheAudioDB.com je glasbena baza, ki jo ureja skupnost. Naš cilj je postati najbolj preprost, lahkeh za uporabo in točen vir informacij o glasbi na spletu. Ponujamo API za dostop do podatkov za uporabo v priljubljenih aplikacijah za HTPC-je in mobilne naprave za kar najboljšo izkušnjo poslušanja glasbe.</description>
+    <description lang="sv">TheAudioDB.com är en communitydriven databas över ljudutgivning. Vårt mål är att vara den enklaste, mest användarvänliga och mest korrekta källan för metadata på webben. Vi erbjuder även en API för tillgång till vår datakatalog, som kan användas i många populära HTPC och mobilapplikationer för att ge dig den bästa möjliga ljudupplevelsen utan krångel.</description>
+    <description lang="zh">TheAudioDB.com是一个社区驱动的音乐资料库。我们的目标是简单、便利和精确的提供网络音乐元数据。我们提供访问数据库的API，以支持多种流行的HTPC和移动应用程序，为你提供无障碍的最佳音乐体验。</description>
     <platform>all</platform>
   </extension>
 </addon>
