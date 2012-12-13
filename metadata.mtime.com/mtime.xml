@@ -12,7 +12,7 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4 \3&lt;/title&gt;&lt;url&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4 \3&lt;/title&gt;&lt;url gzip=&quot;yes&quot;&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">&lt;div&gt; &lt;p&gt;&lt;a href="http://movie.m.mtime.com/([0-9]+)/"&gt;(.+?)&lt;/a&gt;(.+?)&lt;a href="http://movie.m.mtime.com/[0-9]+/"&gt;(.+?)&lt;/a&gt;&lt;/p&gt; &lt;/div&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
