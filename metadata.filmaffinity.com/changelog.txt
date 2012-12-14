@@ -1,6 +1,10 @@
+[B]1.5.2[/B]
+
+- Añadida la capacidad de selección del mejor resultado en IMDB
+
 [B]1.5.1[/B]
 
-Updated scraper to raise the imdb API update
+- Actualización de la búsqueda de información en IMDB
 
 [B]1.5.0[/B]
 
