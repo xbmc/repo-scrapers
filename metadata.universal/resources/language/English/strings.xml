@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- English language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/en/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
-
 <strings>
     <string id="30001">Enable fanart from themoviedb.org</string>
     <string id="30002">Enable posters from themoviedb.org</string>
@@ -19,7 +15,6 @@
     <string id="30015">Get Cast / Directors / Writers From</string>
     <string id="30016">Plot Sources</string>
     <string id="30020">     Preferred Plot Language</string>
-    <string id="30021">Get Ratings from</string>
     <string id="30022">Get Genres From</string>
     <string id="30023">Get Title From</string>
     <string id="30024">Title Sources</string>
@@ -40,15 +35,25 @@
     <string id="30039">Enable trailers from trakt.tv</string>
     <string id="30040">     Genre Language</string>
     <string id="30041">     Preferred Trailer Language</string>
+    <string id="30041">     Preferred Trailer Language</string>
     <string id="30042">Get Tagline From</string>
     <string id="30043">     Preferred Tagline Language</string>
     <string id="30044">Get IMDb TOP250 Ranking</string>
     <string id="30045">Get Outline From IMDb</string>
+
     <string id="30100">Rating</string>
+    <string id="30021">Get Ratings from</string>
     <string id="30110">     Rating Generated Using</string>
     <string id="30115">     Use the Score Aggregated from</string>
     <string id="30120">     Use Critics' Consensus as Movie Outline</string>
+
     <string id="30200">Credits</string>
     <string id="30201">Get Studio from</string>
     <string id="30202">Get Country from</string>
+
+    <string id="30300">Search</string>
+    <string id="30301">IMDb</string>
+    <string id="30302">themoviedb.org</string>
+    <string id="30303">Search Engine to Use</string>
+
 </strings>

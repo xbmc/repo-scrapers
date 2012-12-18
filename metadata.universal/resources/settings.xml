@@ -65,4 +65,10 @@
     <setting label="30035" type="text" id="certprefix" default="Rated "/>
   </category>
 
+  <category label="30300">
+    <setting type="lsep" label="30303"/>
+    <setting label="30301" type="bool" id="imdbsearch" default="true" enable="!eq(1,true)"/>
+    <setting label="30302" type="bool" id="tmdbsearch" default="false" enable="!eq(-1,true)"/>
+  </category>
+
 </settings>
