@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-09-18" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-12-17" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -59,7 +59,7 @@
 				<expression noclean="1" />
 			</RegExp>
 			<!--IMDB details-->
-			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;http://akas.imdb.com/find?s=tt;q=\1&lt;/url&gt;" dest="13+">
+			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="13+">
 				<RegExp input="$$13" output="\1%20" dest="9">
 					<expression clear="yes" noclean="1" encode="1">&lt;originaltitle&gt;([^/"]*)&lt;/originaltitle&gt;</expression>
 				</RegExp>

@@ -1,4 +1,5 @@
 Changelog:
+17/12/2012 - Fixed IMDB search URL
 18/09/2012 - Updated for the new Movieplayer site layout
 16/01/2012 - Updated local IMDB string, moved Genre to official imdb.common. Tuned Bing search with (film %date%)
 05/09/2011 - Tuning of year & originaltitle regexp
