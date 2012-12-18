@@ -1,5 +1,8 @@
+[B]2.0.0[/B]
+- added: Option to Use IMDb Search Engine
+
 [B]1.9.4[/B]
-- updated language files from Transifex
+- updated: language files from Transifex
 
 [B]1.9.3[/B]
 - fixed: won't scrape from TMDb when movie is part of a collection
