@@ -1,3 +1,6 @@
+[B]2.1.1[/B]
+- added: IMDb videos to search results
+
 [B]2.1.0[/B]
 - changed: set en-us as default when searching on IMDb
 - added: option to set a secondary search language for IMDb search
