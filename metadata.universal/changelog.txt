@@ -1,3 +1,10 @@
+[B]2.1.0[/B]
+- changed: set en-us as default when searching on IMDb
+- added: option to set a secondary search language for IMDb search
+- added: ption to set language when scraping Collection Name
+- changed: revamp settings layout
+- fixed: won't scrape full cast
+
 [B]2.0.0[/B]
 - added: Option to Use IMDb Search Engine
 
