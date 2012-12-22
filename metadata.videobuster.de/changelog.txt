@@ -1,3 +1,6 @@
+[B]1.1.7[/B]
+- fixed broken scraper (Credits to EddieZero)
+
 [B]1.1.6[/B]
 - added sets ('filmreihe' on videobuster.de)
 
