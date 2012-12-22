@@ -76,10 +76,10 @@
 	</GetAKASearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp conditional="imdbsearch" input="$$1" output="&lt;originaltitle&gt;\2&lt;/originaltitle&gt;" dest="19">
-				<expression>&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+			<RegExp conditional="imdbsearch" input="$$1" output="\2" dest="19">
+				<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
 			</RegExp>
-			<RegExp conditional="imdbsearch" input="$$1" output="&lt;year&gt;\2&lt;/year&gt;" dest="20">
+			<RegExp conditional="imdbsearch" input="$$1" output="\2" dest="20">
 				<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>
 			</RegExp>
 			<RegExp conditional="tmdbsearch" input="$$1" output="\1" dest="2">
@@ -91,10 +91,7 @@
 			<RegExp conditional="tmdbsearch" input="$$1" output="\1" dest="19">
 				<expression fixchars="1">&quot;original_title&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
-			<RegExp conditional="tmdbsearch" input="$$1" output="&lt;year&gt;\2&lt;/year&gt;" dest="20">
-				<expression>&lt;meta name=&quot;title&quot; content=&quot;([^&quot;]*?) \([^\(]*?([0-9]{4})\)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="\1" dest="20">
+			<RegExp conditional="tmdbsearch" input="$$1" output="\2" dest="20">
 				<expression noclean="1">&quot;release_date&quot;:&quot;([0-9]+)-</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
