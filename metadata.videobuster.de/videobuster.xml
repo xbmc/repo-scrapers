@@ -15,8 +15,8 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.videobuster.de\2&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">class=&quot;movietip_yes&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;a class=&quot;more&quot; href=&quot;([^&quot;]*)&quot;&gt;.*?&lt;label&gt;Produktion:&lt;/label&gt;.*?([0-9]+)&lt;/div&gt;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://www.videobuster.de\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">class=&quot;name&quot;&gt;&lt;a href=&quot;([^&quot;]*)&quot;&gt;([^&lt;]*)&lt;/a&gt;.*?&lt;label&gt;Produktion&lt;/label&gt;.*?([0-9]+)&lt;/div&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -80,11 +80,11 @@
 			</RegExp>
 			<!-- Plot -->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression trim="1">&lt;div class=&quot;txt movie_description&quot;&gt;(.*?)&lt;/div&gt;</expression>
+				<expression trim="1">&lt;div class=&quot;txt movie_description movie_description_short&quot;&gt;(.*?)&lt;/div&gt;</expression>
 			</RegExp>
 			<!-- Trailer -->
 			<RegExp input="$$1" output="&lt;url function=&quot;GetTrailer&quot;&gt;http://www.videobuster.de\1&lt;/url&gt;" dest="5+">
-				<expression>&lt;a href=&quot;([^&quot;]*)&quot; class=&quot;&quot;&gt;&lt;div class=&quot;tab&quot;&gt;([0-9]+) Trailer&lt;/div&gt;</expression>
+				<expression>&lt;a href=&quot;([^&quot;]*)&quot; class=&quot;([^&quot;]*)&quot;&gt;&lt;div class=&quot;tab&quot;&gt;([0-9]+) Trailer&lt;/div&gt;</expression>
 			</RegExp>
 			<!-- Posters -->
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\1/w400/\2&quot;&gt;\1/w700/\2&lt;/thumb&gt;" dest="5+">
