@@ -4,3 +4,6 @@ Added setting to use original title instead of swedish one
 1.1.0
 Fixed fetching of thumb (both from filmdelta and tmdb) and fanart (tmdb)
 Added fetching of trailer from tmdb (optional, default disabled)
+
+1.1.1
+Added fetching of rating
