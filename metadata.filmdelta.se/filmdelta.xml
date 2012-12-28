@@ -33,6 +33,9 @@
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
 				<expression trim="1">&lt;div class="text"&gt;[^&lt;]*&lt;p&gt;(.*?)&lt;/p&gt;</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
+				<expression trim="1">&lt;span class='block' style="margin-top:2px; font-weight:bold;"&gt;Snitt: ([^&lt;]*)&lt;/span&gt;</expression>
+			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="7">
 					<expression noclean="1">&lt;div class="info" id="actors"&gt;(.*?)&lt;/div&gt;</expression>
