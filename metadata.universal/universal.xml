@@ -8,7 +8,7 @@
 			<expression noclean="1">imdb....?/title/tt([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateSearchUrl dest="3" clearbuffers="no" SearchStringEncoding="iso-8859-1">
+	<CreateSearchUrl dest="3" clearbuffers="no">
 		<RegExp conditional="tmdbsearch" input="$$1" output="&lt;url&gt;http://api.themoviedb.org/3/search/movie?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;query=\1&amp;amp;year=$$4&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="\1" dest="4">
 				<expression clear="yes">(.+)</expression>
