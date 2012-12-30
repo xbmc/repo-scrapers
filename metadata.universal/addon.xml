@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.universal"
        name="Universal Scraper"
-       version="2.1.2"
+       version="2.1.3"
        provider-name="Olympia, Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -44,7 +44,7 @@
     <summary lang="sl">Univerzalni ponudnik informacij o filmih</summary>
     <summary lang="sv">Universell filmskrapa</summary>
     <summary lang="zh">通用电影刮削器</summary>
-    <description lang="be">This scraper collecting information from the following supported sites: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information.</description>
+    <description lang="be">This scraper collecting information from the following supported sites: IMDb, TMDb, Rotten Tomatoes, Port.hu, Trakt.tv, OFDb.de. The scraper will use IMDb or TMDb search engine (according to your choice in the scraper settings), following that it can be set field by field that from which site you want that specific information.</description>
     <description lang="bg">Сваля информация от следните сайтове: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Можете да определите от кой сайт каква информация да се сваля.&#10;&#10;Първоначалното търсене винаги се прави в TMDb.</description>
     <description lang="cs">Tento zdroj dat získává informace z následujících podporovaných stránek: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Vždy provádí základní hledání na IMDb, ale pro následující hledání může být upraveno pro každou hodnotu, ze které stránky chcete specifickou informaci získat.</description>
     <description lang="da">Denne scraper indsamler information fra følgende understøttede sider: IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de. Første søgning sker altid i TMDb, men efterfølgende kan der felt for felt vælges, hvilken side den specifikke infomation ønskes fra.</description>
