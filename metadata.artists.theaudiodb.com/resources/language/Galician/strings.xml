@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Danish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/da/ -->
+<!-- Galician language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/gl/ -->
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30004">Aktiver Fankunst til Kunstnere fra fanart.tv</string>
-    <string id="30005">Aktiver Miniaturebilleder til Kunstnere fra fanart.tv</string>
+    <string id="30004">Habilitar os Fanarts dos artistas dende fanart.tv</string>
+    <string id="30005">Habilitar as miniaturas dos artistas dende fanart.tv</string>
 </strings>
