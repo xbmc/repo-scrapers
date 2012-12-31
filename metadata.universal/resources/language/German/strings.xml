@@ -12,9 +12,8 @@
     <string id="30006">Aktiviere Trailer von HD-Trailers.net</string>
     <string id="30008">Bevorzugte Sprache</string>
     <string id="30009">Aktiviere Trailer von themoviedb.org</string>
-    <string id="30011">Artwork</string>
+    <string id="30011">Poster</string>
     <string id="30012">Trailer</string>
-    <string id="30013">Lade Set (Collection) Titel von themoviedb.org</string>
     <string id="30014">Lade Handlung von</string>
     <string id="30015">Lade Besetzung / Regisseure / Autoren von</string>
     <string id="30016">Handlungs Quellen</string>
@@ -43,12 +42,14 @@
     <string id="30042">Hole Motto von</string>
     <string id="30043">Bevorzugte Tagline Sprache</string>
     <string id="30044">Hole IMDb TOP 250 Rangliste</string>
-    <string id="30045">Hole Gliederung von IMDb</string>
     <string id="30100">Bewertung</string>
     <string id="30110">Bewertung erstellt mit</string>
     <string id="30115">Nutze die Bewertung aggregiert von</string>
-    <string id="30120">Kritischen Konsens als Filmgliederung verwenden</string>
     <string id="30200">Anerkennung</string>
     <string id="30201">Hole Studio von </string>
     <string id="30202">Hole Land von </string>
+    <string id="30300">Suche</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Handlung</string>
+    <string id="30500">Fanart</string>
 </strings>

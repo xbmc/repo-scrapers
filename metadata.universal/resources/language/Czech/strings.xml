@@ -12,9 +12,9 @@
     <string id="30006">Povolit upoutávky z HD-Trailers.net</string>
     <string id="30008">Upřednostňovaný jazyk názvu z</string>
     <string id="30009">Povolit upoutávky z themoviedb.org</string>
-    <string id="30011">Grafika</string>
+    <string id="30011">Plagát</string>
     <string id="30012">Upoutávky</string>
-    <string id="30013">Získat názvy sad (kolekcí) z themoviedb.org</string>
+    <string id="30013">Získat název sady (kolekce) z themoviedb.org</string>
     <string id="30014">Získat děj z</string>
     <string id="30015">Získat obsazení / režiséry / scénáristy z</string>
     <string id="30016">Zdroje děje</string>
@@ -43,12 +43,22 @@
     <string id="30042">Získat hlášku z</string>
     <string id="30043">Upřednostňovaný jazyk hlášek</string>
     <string id="30044">Získat 250 nejlépe hodnocených IMDb</string>
-    <string id="30045">Získat přehled z IMDb</string>
+    <string id="30045">Získat přehled z</string>
+    <string id="30046">Preferovaný jazyk názvu sady (kolekce)</string>
+    <string id="30047">Zdroje plakátů</string>
     <string id="30100">Hodnocení</string>
     <string id="30110">Generovat hodnocení pomocí</string>
     <string id="30115">Použít skóre agregované z</string>
-    <string id="30120">Použít shodu kritiků jako přehled filmu</string>
     <string id="30200">Zásluhy</string>
     <string id="30201">Získat studio z</string>
     <string id="30202">Získat zemi z</string>
+    <string id="30300">Hledat</string>
+    <string id="30301">themoviedb.org</string>
+    <string id="30302">IMDb</string>
+    <string id="30303">Používaný stroj vyhledávání</string>
+    <string id="30304">Druhotný jazyk vyhledávání (další k americké angličtině)</string>
+    <string id="30400">Děj</string>
+    <string id="30401">Děj / Slogan / Souhrn</string>
+    <string id="30500">Fanart</string>
+    <string id="30501">Zdroje Fanart</string>
 </strings>

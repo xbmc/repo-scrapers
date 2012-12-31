@@ -12,9 +12,8 @@
     <string id="30006">Разреши ползването на трейлъри от HD-Trailers.net</string>
     <string id="30008">Предпочитам заглавията да са на (език)</string>
     <string id="30009">Разреши ползването на трейлъри от themoviedb.org</string>
-    <string id="30011">Изображения</string>
     <string id="30012">Трейлъри</string>
-    <string id="30013">Сваляне имената на поредиците от themoviedb.org</string>
+    <string id="30013">Сваляй заглавията на поредиците от themoviedb.org</string>
     <string id="30014">Сваляй сюжета от</string>
     <string id="30015">Сваляй Участници, Режисьор и Сценарист от</string>
     <string id="30016">Източници на сюжет</string>
@@ -40,8 +39,20 @@
     <string id="30039">Разреши ползването на трейлъри trakt.tv</string>
     <string id="30040">Изик за жанровете</string>
     <string id="30041">Предпочитам трейлърите да са на (език)</string>
+    <string id="30044">Сваля и заеманото мястото в класацията IMDb TOP250</string>
+    <string id="30046">Предпочитам заглавията на поредиците на (език)</string>
     <string id="30100">Рейтинг</string>
     <string id="30110">Генериране на рейтинг чрез</string>
     <string id="30115">Ползване на събрания резултата от</string>
     <string id="30200">Заслуги</string>
+    <string id="30201">Сваляй имената на студиата от</string>
+    <string id="30202">Сваляй дъжавите от</string>
+    <string id="30300">Търси</string>
+    <string id="30301">themoviedb.org</string>
+    <string id="30302">IMDb</string>
+    <string id="30303">Ползване на следната търсачка</string>
+    <string id="30304">Второстепенен език за търсене (допълнение към en-us)</string>
+    <string id="30400">Сюжет</string>
+    <string id="30500">Fanart</string>
+    <string id="30501">Източници на Fanart</string>
 </strings>

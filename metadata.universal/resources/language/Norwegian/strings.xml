@@ -4,7 +4,16 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30011">Artwork</string>
+    <string id="30001">Skru på fanart fra themoviedb.org</string>
+    <string id="30002">Skru på posters fra themoviedb.org</string>
+    <string id="30005">Få trailere fra YouTube</string>
+    <string id="30006">Skru på trailere fra HD-Trailers.net</string>
+    <string id="30009">Skru på trailere fra themoviedb.org</string>
+    <string id="30012">Trailere</string>
     <string id="30100">Vurdering</string>
     <string id="30200">Anerkjennelser</string>
+    <string id="30300">Søk</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Handling</string>
+    <string id="30500">Fanart</string>
 </strings>

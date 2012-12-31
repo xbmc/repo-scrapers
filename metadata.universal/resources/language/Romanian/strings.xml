@@ -12,9 +12,7 @@
     <string id="30006">Obţine trailere de la HD-Trailers.net</string>
     <string id="30008">Limbă preferată pentru nume de la</string>
     <string id="30009">Activează trailere de la themoviedb.org</string>
-    <string id="30011">Artă</string>
     <string id="30012">Trailere</string>
-    <string id="30013">Obține Alege nume (colecții) de la themoviedb.org</string>
     <string id="30014">Obține intrigă de la</string>
     <string id="30015">Obține distribuție/ regizori/ scenariști de la</string>
     <string id="30016">Surse intrigă</string>
@@ -43,12 +41,14 @@
     <string id="30042">Obține sloganul de la</string>
     <string id="30043">Limbă preferată pentru slogan</string>
     <string id="30044">Obține clasare IMDb TOP250</string>
-    <string id="30045">Obține prezentare de la IMDb</string>
     <string id="30100">Notă</string>
     <string id="30110">Evaluare generată folosind</string>
     <string id="30115">Folosește scor agregat de la</string>
-    <string id="30120">Folosește consensul criticilor ca prezentare film</string>
     <string id="30200">Autori</string>
     <string id="30201">Obține studio de la</string>
     <string id="30202">Obține țară de la</string>
+    <string id="30300">Caută</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Intrigă</string>
+    <string id="30500">Fanart</string>
 </strings>

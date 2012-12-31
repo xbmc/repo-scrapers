@@ -4,8 +4,12 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30011">Artwork</string>
+    <string id="30011">Póster</string>
     <string id="30012">Trailers</string>
     <string id="30100">Calificación</string>
     <string id="30200">Créditos</string>
+    <string id="30300">Buscar</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Argumento</string>
+    <string id="30500">Fanart</string>
 </strings>

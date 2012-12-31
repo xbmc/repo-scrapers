@@ -6,4 +6,8 @@
 <strings>
     <string id="30100">Ocena</string>
     <string id="30200">Zasluge</string>
+    <string id="30300">Pretraži</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Opis</string>
+    <string id="30500">Zanimljiva slika</string>
 </strings>
