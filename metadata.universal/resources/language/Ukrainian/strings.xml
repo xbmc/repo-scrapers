@@ -6,4 +6,8 @@
 <strings>
     <string id="30100">Рейтинг</string>
     <string id="30200">Автори</string>
+    <string id="30300">Пошук</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Сюжет</string>
+    <string id="30500">Фанарт</string>
 </strings>

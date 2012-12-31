@@ -4,6 +4,51 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30001">Stel ondersteunerkuns vanaf themoviedb.org in staat</string>
+    <string id="30002">Stel plakkate vanaf themoviedb.org in staat</string>
+    <string id="30003">Stel plakkate vanaf IMPAwards in staat</string>
+    <string id="30004">Stel plakkate vanaf MoviePosterDB in staat</string>
+    <string id="30005">Kry Voorskoue direk vanaf YouTube</string>
+    <string id="30006">Stel voorskoue vanaf HD-Trailers.net in staat</string>
+    <string id="30008">     Verkose Titel Taal vanaf</string>
+    <string id="30009">Stel voorskoue vanaf themoviedb.org in staat</string>
+    <string id="30012">Voorskoue</string>
+    <string id="30014">Kry Plot vanaf</string>
+    <string id="30015">Kry Rolverdeling / Direkteure / Skrywers vanaf</string>
+    <string id="30016">Plot Bronne</string>
+    <string id="30020">     Verkose Plot Taal</string>
+    <string id="30021">Kry Graderings vanaf</string>
+    <string id="30022">Kry Genres vanaf</string>
+    <string id="30023">Kry Titel vanaf</string>
+    <string id="30024">Titel Bronne</string>
+    <string id="30025">Rolverdeling en Erkennings Bronne</string>
+    <string id="30026">Genres Bronne</string>
+    <string id="30027">     Verkose Titel Taal</string>
+    <string id="30028">Voorskou Bronne</string>
+    <string id="30029">Fliek Versamelings</string>
+    <string id="30030">Gradering Bronne</string>
+    <string id="30031">Sertifikasie Verstellings</string>
+    <string id="30032">Kry Sertifikasie vanaf</string>
+    <string id="30033">     Verkose Sertifikasie Land</string>
+    <string id="30034">     Verkose Duimnaelskets Taal</string>
+    <string id="30035">Sertifikasie Voorvoegsel</string>
+    <string id="30036">Stel plakkate vanaf IMDb in staat</string>
+    <string id="30037">Stel plakkate vanaf trakt.tv in staat</string>
+    <string id="30038">Stel ondersteunerkuns vanaf trakt.tv in staat</string>
+    <string id="30039">Stel voorskoue vanaf trakt.tv in staat</string>
+    <string id="30040">     Genre Taal</string>
+    <string id="30041">     Verkose Voorskou Taal</string>
+    <string id="30042">Kry Etiketlyn vanaf</string>
+    <string id="30043">     Verkose Etiketlyn Taal</string>
+    <string id="30044">Kry IMDb TOP250 Ranglys</string>
     <string id="30100">Gradering</string>
+    <string id="30110">     Gradering Gegenereer Deur</string>
+    <string id="30115">     Gebruik die Telling Versamel vanaf</string>
     <string id="30200">Krediete</string>
+    <string id="30201">Kry Ateljee vanaf</string>
+    <string id="30202">Kry Land vanaf</string>
+    <string id="30300">Soek</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Plot</string>
+    <string id="30500">Ondersteunerkuns</string>
 </strings>

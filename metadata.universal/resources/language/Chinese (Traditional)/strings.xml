@@ -4,12 +4,23 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30011">圖片</string>
+    <string id="30005">直接從 YouTube 取得電影預告片</string>
     <string id="30012">預告片</string>
-    <string id="30024">標題來源</string>
-    <string id="30026">分類來源</string>
+    <string id="30016">劇情大綱來源</string>
+    <string id="30024">標題資訊來源</string>
+    <string id="30025">演員 &amp; 工作人員資訊來源</string>
+    <string id="30026">分類資訊來源</string>
+    <string id="30027">     首選標題語言</string>
     <string id="30028">預告片來源</string>
+    <string id="30029">系列電影</string>
     <string id="30030">評等來源</string>
-    <string id="30100">評等</string>
-    <string id="30200">改機者</string>
+    <string id="30031">分級設定</string>
+    <string id="30035">分級前綴</string>
+    <string id="30040">     類型語言</string>
+    <string id="30100">評分</string>
+    <string id="30200">工作人員</string>
+    <string id="30300">搜尋</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">簡介</string>
+    <string id="30500">Fanart</string>
 </strings>

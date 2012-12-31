@@ -6,4 +6,8 @@
 <strings>
     <string id="30100">Ocjena</string>
     <string id="30200">Zasluge</string>
+    <string id="30300">Traži</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Radnja</string>
+    <string id="30500">Fanart</string>
 </strings>

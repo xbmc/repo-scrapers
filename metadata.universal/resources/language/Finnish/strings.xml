@@ -4,6 +4,11 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30011">Juliste</string>
     <string id="30100">Arvosana</string>
     <string id="30200">Tekijät</string>
+    <string id="30300">Etsi</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Juoni</string>
+    <string id="30500">Fanitaide</string>
 </strings>

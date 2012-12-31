@@ -4,6 +4,36 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30001">Habilitar fanart de themoviedb.org</string>
+    <string id="30002">Habilitar os posters dende themoviedb.org</string>
+    <string id="30003">Habilitar os posters dende IMPAwards</string>
+    <string id="30004">Habilitar os posters dende MoviePosterDB</string>
+    <string id="30005">Obter os Avances directamente do YouTube</string>
+    <string id="30006">Obter os Avances de HD-Trailers.net</string>
+    <string id="30008">Idioma preferido do título de</string>
+    <string id="30009">Habilitar os Avances dende themoviedb.org</string>
+    <string id="30012">Avances</string>
+    <string id="30014">Obter o argumento dende</string>
+    <string id="30015">Obter Reparto / Director / Guionista dende</string>
+    <string id="30016">Fontes do argumento</string>
+    <string id="30020">Idioma preferido do argumento</string>
+    <string id="30021">Obter as puntuacións dende</string>
+    <string id="30022">Obter os xéneros dende</string>
+    <string id="30023">Obter o título dende</string>
+    <string id="30024">Fontes dos títulos</string>
+    <string id="30025">Fontes do reparto e créditos</string>
+    <string id="30026">Fontes dos xéneros</string>
+    <string id="30027">Idioma preferido do título</string>
+    <string id="30028">Fontes dos Avances</string>
+    <string id="30029">Coleccións de filmes</string>
+    <string id="30030">Fontes das puntuacións</string>
+    <string id="30031">Axustes da certificación</string>
     <string id="30100">Valoración</string>
     <string id="30200">Créditos</string>
+    <string id="30201">Obter o estudio dende</string>
+    <string id="30202">Obter o país dende</string>
+    <string id="30300">Búsqueda</string>
+    <string id="30302">IMDB</string>
+    <string id="30400">Sinopse</string>
+    <string id="30500">Cartel</string>
 </strings>

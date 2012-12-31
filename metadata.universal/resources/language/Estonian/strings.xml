@@ -4,8 +4,12 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30011">Kunst</string>
+    <string id="30011">Poster</string>
     <string id="30012">Treilerid</string>
     <string id="30100">Hinne</string>
     <string id="30200">Tiitrid</string>
+    <string id="30300">Otsi</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Sisu</string>
+    <string id="30500">Fännipildid</string>
 </strings>

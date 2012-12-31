@@ -12,9 +12,9 @@
     <string id="30006">Habilitar trailers de HD-Trailers.net</string>
     <string id="30008">Idioma preferido para el título de</string>
     <string id="30009">Habilitar trailers de themoviedb.org</string>
-    <string id="30011">Imágenes</string>
+    <string id="30011">Póster</string>
     <string id="30012">Trailers</string>
-    <string id="30013">Obtener títulos de colección desde themoviedb.org</string>
+    <string id="30013">Obtener nombre de colección desde themoviedb.org</string>
     <string id="30014">Obtener el argumento de</string>
     <string id="30015">Obtener Actores / Directores / Escritores de</string>
     <string id="30016">Fuentes para el argumento</string>
@@ -43,12 +43,22 @@
     <string id="30042">Obtener eslogan desde</string>
     <string id="30043">Idioma preferido para el eslógan</string>
     <string id="30044">Obtener ranking TOP250 de IMDb</string>
-    <string id="30045">Obtener desde IMDb</string>
+    <string id="30045">Obtener resumen desde</string>
+    <string id="30046">Nombre de idioma de colección preferido</string>
+    <string id="30047">Fuentes de pósters</string>
     <string id="30100">Valoración</string>
     <string id="30110">Valoración generada usando</string>
     <string id="30115">Usar la valoración combinada de</string>
-    <string id="30120">Usar consenso de críticos como resumen de película</string>
     <string id="30200">Créditos</string>
     <string id="30201">Obtener estudio desde</string>
     <string id="30202">Obtener país desde</string>
+    <string id="30300">Buscar</string>
+    <string id="30301">themoviedb.org</string>
+    <string id="30302">IMDb</string>
+    <string id="30303">Motor de búsqueda a usar</string>
+    <string id="30304">Idioma de búsqueda secundario (en adición a en-us)</string>
+    <string id="30400">Argumento</string>
+    <string id="30401">Argumento / Eslogan / Resumen</string>
+    <string id="30500">Fanart</string>
+    <string id="30501">Fuentes de fanart</string>
 </strings>

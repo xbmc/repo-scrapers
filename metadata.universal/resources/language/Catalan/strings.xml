@@ -4,8 +4,11 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30011">Art</string>
     <string id="30012">Tràilers</string>
     <string id="30100">Valoració</string>
     <string id="30200">Crèdits</string>
+    <string id="30300">Cerca</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Trama</string>
+    <string id="30500">Fanart</string>
 </strings>

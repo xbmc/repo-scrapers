@@ -12,9 +12,8 @@
     <string id="30006">Gebruik trailers van HD-Trailers.net</string>
     <string id="30008">Voorkeurstaal voor Titels</string>
     <string id="30009">Gebruik Trailers van themoviedb.org</string>
-    <string id="30011">Afbeeldingen</string>
+    <string id="30011">Poster</string>
     <string id="30012">Trailers</string>
-    <string id="30013">Get Set (Collectie) Titels van themoviedb.org</string>
     <string id="30014">Haal verhaallijn van</string>
     <string id="30015">Haal Cast / Regisseurs / Auteurs van</string>
     <string id="30016">Plotbronnen</string>
@@ -43,12 +42,14 @@
     <string id="30042">Haal motto van</string>
     <string id="30043">Voorkeurstaal motto</string>
     <string id="30044">Haal IMDb TOP250 plaatsing</string>
-    <string id="30045">Haal de verhaallijn van IMDb</string>
     <string id="30100">Score</string>
     <string id="30110">Rating gegenereerd met behulp van</string>
     <string id="30115">Gebruik de samengevoegde score van</string>
-    <string id="30120">Gebruik de consensus van critici als filmsamenvatting</string>
     <string id="30200">Credits</string>
     <string id="30201">Haal filmstudio op van</string>
     <string id="30202">Haal landkeuze op van</string>
+    <string id="30300">Zoeken</string>
+    <string id="30302">IMDb</string>
+    <string id="30400">Plot</string>
+    <string id="30500">Fanart</string>
 </strings>
