@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.musicvideos.theaudiodb.com"
        name="TheAudioDb.com for Music Videos"
-       version="1.0.2"
+       version="1.0.3"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -27,6 +27,7 @@
     <summary lang="he">theaudiodb.com סקרייפר וידאו קליפ</summary>
     <summary lang="hu">theaudiodb.com videóklip leolvasó</summary>
     <summary lang="it">Lo scraper di video musicali theaudiodb.com</summary>
+    <summary lang="ja">theaudiodb.com 音楽ビデオスクレーパー</summary>
     <summary lang="ko">야후! 뮤직 비디오 스크래퍼</summary>
     <summary lang="lt">theaudiodb.com vaizdo klipų Scraper</summary>
     <summary lang="mk">theaudiodb.com Music Video Scraper</summary>
@@ -44,6 +45,7 @@
     <summary lang="th">ตัวดึงข้อมูลวิดีโอเพลง theaudiodb.com</summary>
     <summary lang="zh">theaudiodb.com音乐电视刮削器</summary>
     <description lang="af">Laai Musiek Video informasie af</description>
+    <description lang="am">የሙዚቃ ቪዲዮ መረጃ ማውረጃ</description>
     <description lang="be">Download Music Video information</description>
     <description lang="bg">Сваля информация за музикални клипове</description>
     <description lang="ca">Baixa informació de videos musicals</description>
@@ -61,6 +63,7 @@
     <description lang="he">הורד מידע וידאו קליפ</description>
     <description lang="hu">Videóklip információk letöltése a theaudiodb.com webhelyről</description>
     <description lang="it">Scarica informazioni Video Musicale</description>
+    <description lang="ja">音楽ビデオの情報をダウンロード</description>
     <description lang="ko">뮤직 비디오 정보 다운로드</description>
     <description lang="lt">Atsisiusti vaizdo klipų informaciją</description>
     <description lang="mk">Превземи информации за музичко видео</description>
