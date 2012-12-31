@@ -4,5 +4,7 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30000">Habilitar Fanart</string>
+    <string id="30001">Obter miniaturas dende HTBackdrops</string>
     <string id="30002">Idioma</string>
 </strings>

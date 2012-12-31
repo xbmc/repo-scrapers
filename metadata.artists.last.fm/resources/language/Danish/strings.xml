@@ -4,7 +4,7 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30000">Aktivér fankunst</string>
-    <string id="30001">Hent minibilleder fra HTBackdrops</string>
+    <string id="30000">Aktiver fankunst</string>
+    <string id="30001">Hent miniaturebilleder fra HTBackdrops</string>
     <string id="30002">Sprog</string>
 </strings>
