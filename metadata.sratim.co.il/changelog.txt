@@ -1,3 +1,13 @@
+[B]1.3.1[/B]
+- revert changes to querying due to issues
+
+[B]1.3.0[/B]
+- fix rating and votes from sratim
+- improve querying match
+- fix cast scraping
+- thanks to Daniel Dwek
+
+
 [B]1.2.0[/B]
 - fix extraction of director, genres, english title, studio due to changes in sratim website
 - add YouTube trailers
