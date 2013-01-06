@@ -1,0 +1,57 @@
+[B]1.3.1[/B]
+- revert changes to querying due to issues
+
+[B]1.3.0[/B]
+- add support to frodo
+- fix rating and votes from sratim
+- improve querying match
+- fix cast scraping
+- thanks to Daniel Dwek
+
+
+[B]1.2.0[/B]
+- fix extraction of director, genres, english title, studio due to changes in sratim website
+- add YouTube trailers
+- remove hdTrailers.net trailers
+- add MoviePosterDB thumbs
+- remove Google fanart
+
+[B]1.1.9[/B]
+- fix extracting TMDB thumbs
+
+[B]1.1.8[/B]
+- fix plot scrapping
+- fix runtime scrapping
+- added option to choose language of title (eng/heb)
+
+[B]1.1.7[/B]
+- Added .Nfo file support (will take imdb url from .nfo file and fetch movie
+with it) - done by hagai.co@gmail.com
+- Added option to get thumbs from TMDB / Sratim
+- changed settings format for rating
+- added options for fan art instead of true/false
+
+[B]1.1.6[/B]
+- fix thumb scrapping (due to changes in sratim.co.il format)
+
+[B]1.1.5[/B]
+- fix plot scrapping (done by vtrh83@gmail.com)
+
+[B]1.1.4[/B]
+- fix another movie names issue
+
+[B]1.1.3[/B]
+- fix movie names issue after sratim changed format
+- support movie names for movies without year
+
+[B]1.1.2[/B]
+- support new search results
+- fix non-imdb rating
+
+[B]1.1.1[/B]
+- support new movie-profile page
+- add trailers from hd-trailers.net
+- add original title
+
+[B]1.1.0[/B]
+- big pile of fixes, should work now after long time!
