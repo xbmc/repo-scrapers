@@ -1,3 +1,6 @@
+[B]2.1.6[/B]
+- fixed: year won't scrape when using TMDb search
+
 [B]2.1.5[/B]
 - changed: added 'TV Special' to search results
 
