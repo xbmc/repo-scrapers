@@ -81,5 +81,6 @@
     <description lang="sv">Ladda ner musikvideoinformation</description>
     <description lang="th">ดาวน์โหลดข้อมูลวิดีโอเพลง</description>
     <description lang="zh">从Last.fm下载音乐电视信息</description>
+    <broken>broken due to last.fm suspended XBMC API Account</broken>
   </extension>
 </addon>
