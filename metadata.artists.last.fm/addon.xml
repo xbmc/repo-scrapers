@@ -78,5 +78,6 @@
     <description lang="th">ดาวน์โหลดข้อมูลเพลง จาก www.last.fm</description>
     <description lang="zh">从www.last.fm下载音乐资料</description>
     <platform>all</platform>
+    <broken>broken due to last.fm suspended XBMC API Account</broken>
   </extension>
 </addon>
