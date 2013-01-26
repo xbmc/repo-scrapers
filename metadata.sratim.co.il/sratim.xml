@@ -11,12 +11,12 @@
 		</RegExp>
 	</ImdbNfoToSratimLink>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://sratim.co.il/browse.php?cs=movies&q=\1|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://sratim.co.il/browse.php?cs=movies&q=\1&uy=$$2&fy=$$2|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;" dest="3">
 			<expression noclean="1" />
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
-		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;Yes&quot;&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.sratim.co.il/view.php?id=\1|User-Agent=Mozilla%2F4.0%20(compatible%3B%20MSIE%207.0%3B%20Windows%20NT%206.0)&lt;/url&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" clear="yes" noclean="1">&lt;a href="view.php\?id=([0-9]+)[^"]*".title="([^"]*)"</expression>
 			</RegExp>
