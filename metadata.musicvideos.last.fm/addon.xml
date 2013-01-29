@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.musicvideos.last.fm"
        name="Last.fm for Music Videos"
-       version="1.0.3"
+       version="1.0.4"
        provider-name="Team XBMC">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -81,6 +81,5 @@
     <description lang="sv">Ladda ner musikvideoinformation</description>
     <description lang="th">ดาวน์โหลดข้อมูลวิดีโอเพลง</description>
     <description lang="zh">从Last.fm下载音乐电视信息</description>
-    <broken>broken due to last.fm suspended XBMC API Account</broken>
   </extension>
 </addon>
