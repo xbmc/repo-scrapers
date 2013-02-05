@@ -1,3 +1,7 @@
+[B]1.5.3[/B]
+
+- Mejoradas tanto la búsqueda en Google como la obtención de información extra
+
 [B]1.5.2[/B]
 
 - Añadida la capacidad de selección del mejor resultado en IMDB
