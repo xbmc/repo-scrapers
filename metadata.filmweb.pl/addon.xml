@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.filmweb.pl"
        name="Filmweb"
-       version="1.2.3"
-       provider-name="smuto">
+       version="2.0.0"
+       provider-name="smuto, Regss">
   <requires>
-    <import addon="xbmc.metadata" version="1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="1.0.6"/>
-    <import addon="metadata.common.imdb.com" version="1.0.4"/>
-    <import addon="plugin.video.youtube" />
+    <import addon="xbmc.metadata" version="2.1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.8.0"/>
+    <import addon="metadata.common.imdb.com" version="2.6.0"/>
+    <import addon="plugin.video.youtube" version="2.9.1" optional="true"/>
   </requires>
   <extension point="xbmc.metadata.scraper.movies"
              language="pl"
