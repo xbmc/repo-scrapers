@@ -17,10 +17,10 @@
   <category label="30400">
     <setting type="lsep" label="30401"/>
       <setting type="sep"/>
-      <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|Rotten Tomatoes|trakt.tv|OFDb.de|port.hu" id="plotsource" default="IMDb"/>
+      <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|Rotten Tomatoes|trakt.tv|OFDb.de|port.hu|Rotten Tomatoes / Critics' Consensus" id="plotsource" default="IMDb"/>
       <setting label="30020" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
-      <setting label="30042" type="labelenum" values="IMDb|themoviedb.org" id="taglinesource" default="IMDb"/>
+      <setting label="30042" type="labelenum" values="IMDb|themoviedb.org|None" id="taglinesource" default="IMDb"/>
       <setting label="30043" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
       <setting label="30045" type="labelenum" values="IMDb|Rotten Tomatoes / Critics' Consensus|None" id="outlinesource" default="IMDb"/>

@@ -76,11 +76,14 @@
 	</GetAKASearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp conditional="imdbsearch" input="$$1" output="\2" dest="19">
+				<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+			</RegExp>
 			<RegExp conditional="imdbsearch" input="$$1" output="\1" dest="19">
 				<expression fixchars="1" trim="1">&lt;br/&gt;&lt;span\sclass=&quot;title-extra&quot;&gt;([^&lt;]*)&lt;i&gt;\(original title\)</expression>
 			</RegExp>
 			<RegExp conditional="imdbsearch" input="$$1" output="\2" dest="20">
-				<expression>&lt;meta name=&quot;title&quot;\scontent=&quot;([^&quot;]*?)\s\([^\(]*?([0-9]{4})\)</expression>
+				<expression>&lt;meta name=&quot;title&quot;\scontent=&quot;([^&quot;]*?)\s\([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 			</RegExp>
 			<RegExp conditional="tmdbsearch" input="$$1" output="\1" dest="2">
 				<expression noclean="1">&quot;id&quot;:([0-9]*),&quot;imdb_id</expression>
@@ -171,6 +174,9 @@
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetTMDBLangPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
+			</RegExp>
+			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetRTCConsensusToPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>Rotten Tomatoes / Critics' Consensus</expression>
 			</RegExp>
 			<RegExp input="$INFO[taglinesource]" output="&lt;chain function=&quot;GetIMDBTaglineById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
