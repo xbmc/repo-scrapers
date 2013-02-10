@@ -1,3 +1,8 @@
+[B]2.3.0[/B]
+- fixed: various original title fixes
+- fixed: year won't scrape in certain cases
+- added: option to insert IMDb Outline as plot
+
 [B]2.2.0[/B]
 - fixed: original title won't scrape
 - fixed: year in case of TV Movies
