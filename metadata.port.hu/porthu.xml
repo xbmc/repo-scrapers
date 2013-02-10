@@ -84,7 +84,7 @@
 			<!--Call GetIMDBDetails function-->
 			<RegExp input="$$10" output="\1" dest="5+">
 				<!--Create imdb URL based on the fetched imdb ID-->
-				<RegExp input="$$9" output="&lt;url cache=&quot;tt\1-main.html&quot; function=&quot;GetIMDBDetails&quot;&gt;http://akas.imdb.com/title/tt\1/&lt;/url&gt;" dest="10">
+				<RegExp input="$$9" output="&lt;url cache=&quot;tt\1-main.html&quot; function=&quot;GetIMDBDetails&quot;&gt;http://akas.imdb.com/title/tt\1/|accept-language=en-us&lt;/url&gt;" dest="10">
 					<expression />
 				</RegExp>
 				<expression noclean="1" />
@@ -108,7 +108,7 @@
 			</RegExp>
 			<!--Get original title from imdb.com and store it in buffer 18 for future use-->
 			<RegExp input="$$1" output="\2" dest="18">
-				<expression>&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+					<expression fixchars="2">&lt;meta\sname=&quot;title&quot;\scontent=&quot;(IMDb\s-\s)?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 			</RegExp>
 			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5+">
