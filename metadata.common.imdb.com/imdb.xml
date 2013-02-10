@@ -1,34 +1,34 @@
 ﻿<scraperfunctions>
 	<GetIMDBGenresById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBGenres&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBGenres&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBGenresById>
 	<ParseIMDBGenres dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="2">
-				<expression repeat="yes">tt_str_gnr&quot;\s>\s([^&gt;]+)</expression>
+				<expression repeat="yes">tt_stry_gnr&quot;\s>\s([^&lt;]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBGenres>
 
 	<GetIMDBRatingById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBRating&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBRating&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBRatingById>
 	<ParseIMDBRating dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="2">
-				<expression>&lt;span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+).*?&gt;.*?title=&quot;([0-9,]+)\s</expression>
+				<expression>&lt;span\sitemprop=&quot;ratingValue&quot;&gt;([0-9.]+).*?&gt;.*?title=&quot;([0-9,]+)\s</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBRating>
 
 	<GetIMDBTOP250ById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTOP250&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTOP250&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTOP250ById>
@@ -42,7 +42,7 @@
 	</ParseIMDBTOP250>
 
 	<GetIMDBStudioById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBStudio&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBStudio&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBStudioById>
@@ -56,7 +56,7 @@
 	</ParseIMDBStudio>
 
 	<GetIMDBCountryById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCountry&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCountry&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCountryById>
@@ -70,35 +70,35 @@
 	</ParseIMDBCountry>
 
 	<GetMetaCriticRatingById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseMetaCriticRating&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseMetaCriticRating&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetMetaCriticRatingById>
 	<ParseMetaCriticRating dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="2">
-				<expression>&lt;a href=&quot;criticreviews&quot;&gt;(\d)(\d*)</expression>
+				<expression>&lt;a\shref=&quot;criticreviews[^&quot;]*?&quot;\stitle[^&gt;]*?&gt;\s(\d)(\d*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseMetaCriticRating>
 
 	<GetIMDBPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBPlotById>
 	<ParseIMDBPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;h2&gt;Storyline&lt;/h2&gt;\s+&lt;div\sclass=&quot;inline canwrap&quot;\sitemprop=&quot;description&quot;&gt;\s+&lt;p&gt;(.*?)&lt;[^a/]</expression>
+				<expression fixchars="1" trim="1">&lt;h2&gt;Storyline&lt;/h2&gt;\s+&lt;div\sclass=&quot;inline\scanwrap&quot;\sitemprop=&quot;description&quot;&gt;\s+&lt;p&gt;(.*?)&lt;[^a/]</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBPlot>
 
 	<GetIMDBTaglineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTaglineById>
@@ -112,7 +112,7 @@
 	</ParseIMDBTagline>
 
 	<GetIMDBOutlineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutline&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutline&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBOutlineById>
@@ -126,7 +126,7 @@
 	</ParseIMDBOutline>
 
 	<GetIMDBCastById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCast&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCast&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCastById>
@@ -149,7 +149,7 @@
 	</ParseIMDBCast>
 
 	<GetIMDBDirectorsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBDirectors&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBDirectors&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBDirectorsById>
@@ -166,7 +166,7 @@
 	</ParseIMDBDirectors>
 
 	<GetIMDBWritersById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBWriters&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBWriters&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBWritersById>
@@ -183,7 +183,7 @@
 	</ParseIMDBWriters>
 
 	<GetIMDBFullCastById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullCast&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullCast&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullCastById>
@@ -203,7 +203,7 @@
 	</ParseIMDBFullCast>
 
 	<GetIMDBFullDirectorsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullDirectors&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullDirectors&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullDirectorsById>
@@ -220,14 +220,14 @@
 	</ParseIMDBFullDirectors>
 
 	<GetIMDBFullWritersById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullWriters&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBFullWriters&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullWritersById>
 	<ParseIMDBFullWriters dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">Writing credits(.*?)name="</expression>
+				<expression noclean="1">Writing\scredits(.*?)name="</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
 				<expression repeat="yes" fixchars="1">&lt;a href=&quot;/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
@@ -237,14 +237,14 @@
 	</ParseIMDBFullWriters>
 
 	<GetIMDBThumbsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-posters.html&quot; function=&quot;ParseIMDBThumbs&quot;&gt;http://akas.imdb.com/title/$$1/posters&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-posters.html&quot; function=&quot;ParseIMDBThumbs&quot;&gt;http://akas.imdb.com/title/$$1/posters|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBThumbsById>
 	<ParseIMDBThumbs dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1_SX1024_SY1024_\2" dest="4">
-				<expression noclean="1,2">&lt;a name=&quot;poster&quot;.*?src=&quot;(.*?)_S.*?(.jpg)&quot;.*?&lt;/a&gt;</expression>
+				<expression noclean="1,2">&lt;a\sname=&quot;poster&quot;.*?src=&quot;(.*?)_S.*?(.jpg)&quot;.*?&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$4" output="&lt;thumb aspect=&quot;poster&quot;&gt;\1&lt;/thumb&gt;" dest="6">
 				<expression noclean="1">(.*?_SX[0-9]+_SY[0-9]+_.jpg)</expression>
@@ -254,18 +254,18 @@
 	</ParseIMDBThumbs>
 
 	<GetIMDBUSACert dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;http://akas.imdb.com/title/$$1/&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;http://akas.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBUSACert>
 	<ParseIMDBUSACert dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?&lt;span itemprop=&quot;contentRating&quot;&gt;Rated\s([^&lt;]*)</expression>
+			<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?&lt;span\sitemprop=&quot;contentRating&quot;&gt;Rated\s([^&lt;]*)</expression>
 		</RegExp>
 	</ParseIMDBUSACert>
 
 	<GetIMDBCountryCert dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBCountryCert&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBCountryCert&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCountryCert>
@@ -276,7 +276,7 @@
 	</ParseIMDBCountryCert>
 
 	<GetIMDBAKATitlesById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBAKATitles&quot;&gt;http://akas.imdb.com/title/$$1/combined&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBAKATitles&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBAKATitlesById>
@@ -287,13 +287,13 @@
 			</RegExp>
 			<RegExp input="$$10" output="\1" dest="4">
 				<RegExp input="$$1" output="\2" dest="9">
-					<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})\)</expression>
+					<expression fixchars="2">&lt;meta\sname=&quot;title&quot;\scontent=&quot;(IMDb\s-\s)?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 				</RegExp>
 				<RegExp input="$$9" output="\1" dest="10">
 					<expression />
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+Hong Kong [&lt;em&gt;][^&quot;]+English</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+Hong Kong\s[&lt;em&gt;][^&quot;]+English</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
@@ -311,25 +311,25 @@
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English title\)(&lt;/em&gt;)?(,|&lt;)( |b)</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English\stitle\)(&lt;/em&gt;)?(,|&lt;)( |b)</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English title\)(&lt;/em&gt;)? (&lt;em&gt;)?\(imdb</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&quot;]+International\s(&lt;em&gt;)?\(English\stitle\)(&lt;/em&gt;)? (&lt;em&gt;)?\(imdb</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression fixchars="1" clear="yes">&lt;a href=&quot;/country/[^&gt;]+&gt;(UK&lt;/a&gt;&lt;/div&gt;)</expression>
+					<expression fixchars="1" clear="yes">&lt;a\shref=&quot;/country/[^&gt;]+&gt;(UK&lt;/a&gt;&lt;/div&gt;)</expression>
 				</RegExp>
 				<RegExp input="$$12" output="$$9" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression clear="yes">&lt;a href=&quot;/country/[^&gt;]+&gt;(USA&lt;/a&gt;&lt;/div&gt;)</expression>
+					<expression clear="yes">&lt;a\shref=&quot;/country/[^&gt;]+&gt;(USA&lt;/a&gt;&lt;/div&gt;)</expression>
 				</RegExp>
 				<RegExp input="$$12" output="$$9" dest="10">
 					<expression>(.+)</expression>
@@ -347,7 +347,7 @@
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((new title))</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((new\stitle))</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
@@ -364,13 +364,13 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="4">
-				<expression fixchars="1">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+$INFO[imdbakatitles]\s(&lt;em&gt;)?\((imdb display)</expression>
+				<expression fixchars="1">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+$INFO[imdbakatitles]\s(&lt;em&gt;)?\((imdb\sdisplay)</expression>
 			</RegExp>
 			<RegExp input="$$4" output="\1" dest="2">
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="5">
-				<expression>&lt;a href=&quot;/country/[^&gt;]+&gt;($INFO[imdbakatitles])</expression>
+				<expression>&lt;a\shref=&quot;/country/[^&gt;]+&gt;($INFO[imdbakatitles])</expression>
 			</RegExp>
 			<RegExp input="$$5" output="$$9" dest="4">
 				<expression>($INFO[imdbakatitles])</expression>

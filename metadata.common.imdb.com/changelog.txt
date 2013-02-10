@@ -1,3 +1,15 @@
+[B]2.7.4[/B]
+- fixed: MetaCritic Score
+
+[B]2.7.3[/B]
+- fixed: orginal title won't scrape in some cases
+
+[B]2.7.2[/B]
+- changed: make sure to parse the intended page
+
+[B]2.7.1[/B]
+- fixed: IMDb genre after layout change
+
 [B]2.7.0[/B]
 - fixed: IMDb scraping after layout changes
 

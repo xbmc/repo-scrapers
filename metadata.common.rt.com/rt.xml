@@ -18,20 +18,6 @@
 		</RegExp>
 	</GetRTRatingById>
 
-	<!-- Get Rotten Tomatoes URL from IMDb ID for outline -->
-	<GetRTOutlineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTOutline&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
-			<expression>([0-9]{7})</expression>
-		</RegExp>
-	</GetRTOutlineById>
-
-	<!-- Get Rotten Tomatoes URL from IMDb ID for plot -->
-	<GetRTPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTPlot&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
-			<expression>([0-9]{7})</expression>
-		</RegExp>
-	</GetRTPlotById>
-
 	<!-- TomatoMeter from All Critics -->
 	<ParseRTTomAll dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
@@ -69,6 +55,11 @@
 	</ParseRTAveTop>
 
 	<!-- Critics' Consensus -->
+	<GetRTOutlineById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTOutline&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTOutlineById>
 	<ParseRTOutline dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1">critic_consensus&quot;&gt;([^&lt;]+)&lt;/p&gt;</expression>
@@ -78,7 +69,27 @@
 		</RegExp>
 	</ParseRTOutline>
 
+	<!-- Critics' Consensus -->
+	<GetRTCConsensusToPlotById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTCConsensusToPlot&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTCConsensusToPlotById>
+	<ParseRTCConsensusToPlot dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">critic_consensus&quot;&gt;([^&lt;]+)&lt;/p&gt;</expression>
+		</RegExp>
+		<RegExp input="$$5" output="" dest="5">
+			<expression>&lt;details&gt;&lt;plot&gt;No consensus yet.&lt;/plot&gt;&lt;/details&gt;</expression>
+		</RegExp>
+	</ParseRTCConsensusToPlot>
+
 	<!-- Plot -->
+	<GetRTPlotById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTPlot&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTPlotById>
 	<ParseRTPlot dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1\2&lt;/plot&gt;&lt;/details&gt;" dest="5">
 			<expression trim="1">class=&quot;movie_synopsis&quot; itemprop=&quot;description&quot;&gt;[^\w]*([^\n]*)[^&gt;]*&gt;\s([^~&lt;]*)</expression>
