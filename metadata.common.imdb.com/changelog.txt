@@ -1,3 +1,6 @@
+[B]2.7.3[/B]
+- fixed: orginal title won't scrape in some cases
+
 [B]2.7.2[/B]
 - changed: make sure to parse the intended page
 
