@@ -1,3 +1,7 @@
+[B]2.7.5[/B]
+- fixed: OutlineToPlot function
+- fixed: USACert
+
 [B]2.7.4[/B]
 - fixed: MetaCritic Score
 
