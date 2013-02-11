@@ -170,7 +170,7 @@
 				<expression>Rotten Tomatoes / Critics' Consensus</expression>
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>IMDb</expression>
+				<expression>^IMDb$</expression>
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetTMDBLangPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
@@ -178,7 +178,7 @@
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetRTCConsensusToPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>Rotten Tomatoes / Critics' Consensus</expression>
 			</RegExp>
-			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetIMDBOutlineById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetIMDBOutlineToPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb Outline</expression>
 			</RegExp>
 			<RegExp input="$INFO[taglinesource]" output="&lt;chain function=&quot;GetIMDBTaglineById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">

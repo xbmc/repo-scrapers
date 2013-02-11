@@ -1,3 +1,6 @@
+[B]2.3.1[/B]
+- fixed: properly implement option to insert IMDb Outline as plot
+
 [B]2.3.0[/B]
 - fixed: various original title fixes
 - fixed: year won't scrape in certain cases
