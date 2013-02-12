@@ -1,11 +1,4 @@
-[B]1.0.3[/B]
-- Remove languages and ordering settings
+[B]1.0.4[/B]
+- added aspect attribute
+- added uniqueid tag
 
-[B]1.0.2[/B]
-- Minor Tweaks
-
-[B]1.0.1[/B]
-- Fix Banners and Actors
-
-[B]1.0[/B]
-- Initial Version
