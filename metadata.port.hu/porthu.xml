@@ -149,7 +149,7 @@
 			</RegExp>
 			<!--Get genres from imdb.com and translate them to Hungarian if selected-->
 			<RegExp conditional="hungenre" input="$$1" output="\1" dest="17">
-				<expression repeat="yes">itemprop=&quot;genre&quot;[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+				<expression repeat="yes">tt_stry_gnr&quot;\s>\s([^&lt;]+)</expression>
 			</RegExp>
 			<RegExp input="$$17" output="&lt;genre&gt;Akció&lt;/genre&gt;" dest="5+">
 				<expression noclean="1">Action</expression>
