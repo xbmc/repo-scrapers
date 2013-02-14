@@ -57,6 +57,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">Search Engine to Use</string>
     <string id="30304">     Secondary Search Language (In Addition to en-us)</string>
+    <string id="30305">     Include All Movie Categories</string>
+    <string id="30306">Warning:</string>
+    <string id="30307">Enabling All Movie Categories will greatly reduce the search accuracy !!!</string>
     <string id="30400">Plot</string>
     <string id="30401">Plot / Tagline / Outline</string>
     <string id="30500">Fanart</string>
