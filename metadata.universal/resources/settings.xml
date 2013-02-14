@@ -3,14 +3,14 @@
   <category label="128">
     <setting type="sep"/>
       <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="IMDb"/>
-      <setting label="30008" type="labelenum" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
-      <setting label="30027" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
+      <setting label="30008" type="select" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
+      <setting label="30027" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
     <setting type="sep"/>
       <setting label="30022" type="labelenum" values="IMDb|themoviedb.org|trakt.tv" id="genressource" default="IMDb"/>
-      <setting label="30040" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbgenreslanguage" default="en" visible="eq(-1,1)"/>
+      <setting label="30040" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbgenreslanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
       <setting label="30013" type="bool" id="tmdbset" default="true"/>
-      <setting label="30046" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbsetlanguage" default="en" enable="!eq(-1,false)"/>
+      <setting label="30046" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbsetlanguage" default="en" enable="!eq(-1,false)"/>
     <setting type="sep"/>
   </category>
 
@@ -18,10 +18,10 @@
     <setting type="lsep" label="30401"/>
       <setting type="sep"/>
       <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|Rotten Tomatoes|trakt.tv|OFDb.de|port.hu|Rotten Tomatoes / Critics' Consensus|IMDb Outline" id="plotsource" default="IMDb"/>
-      <setting label="30020" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
+      <setting label="30020" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
       <setting label="30042" type="labelenum" values="IMDb|themoviedb.org|None" id="taglinesource" default="IMDb"/>
-      <setting label="30043" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
+      <setting label="30043" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
       <setting label="30045" type="labelenum" values="IMDb|Rotten Tomatoes / Critics' Consensus|None" id="outlinesource" default="IMDb"/>
     <setting type="sep"/>
@@ -43,7 +43,7 @@
     <setting label="30037" type="bool" id="trakttvposter" default="false"/>
     <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
-    <setting label="30034" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbthumblanguage" default="en" enable="!eq(-1,false)"/>
+    <setting label="30034" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbthumblanguage" default="en" enable="!eq(-1,false)"/>
     <setting type="sep"/>
     <setting label="30003" type="bool" id="impawards" default="false"/>
     <setting type="sep"/>
@@ -65,10 +65,10 @@
   <category label="30012">
     <setting label="30028" type="lsep"/>
     <setting type="sep"/>
-    <setting label="30006" type="labelenum" values="No|480p|720p|1080p" id="TrailerQ" default="No"/>
+    <setting label="30006" type="select" values="No|480p|720p|1080p" id="TrailerQ" default="No"/>
     <setting type="sep"/>
     <setting label="30009" type="bool" id="tmdbtrailer" default="true"/>
-    <setting label="30041" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtrailerlanguage" default="en" enable="!eq(-1,false)"/>
+    <setting label="30041" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtrailerlanguage" default="en" enable="!eq(-1,false)"/>
     <setting type="sep"/>
     <setting label="30039" type="bool" id="trakttvtrailer" default="false"/>
     <setting type="sep"/>
@@ -87,8 +87,8 @@
     <setting type="sep"/>
     <setting type="lsep" label="30031"/>
     <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
-      <setting label="30033" type="labelenum" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
-      <setting label="30033" type="labelenum" values="au|bg|br|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|us|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>/>
+      <setting label="30033" type="select" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
+      <setting label="30033" type="select" values="au|bg|br|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|us|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>/>
       <setting type="sep"/>
     <setting label="30035" type="text" id="certprefix" default="Rated "/>
     <setting type="sep"/>
@@ -100,8 +100,11 @@
     <setting label="30301" type="bool" id="tmdbsearch" default="false" enable="!eq(2,true)"/>
     <setting type="sep"/>
     <setting label="30302" type="bool" id="imdbsearch" default="true" enable="!eq(-2,true)"/>
-    <setting label="30304" type="labelenum" values="bg-bg|cs-cz|el-gr|es-ar|da-dk|de-at|de-de|fi-fi|fr-fr|hr-hr|he-il|hu-hu|it-it|ja-jp|nb-no|nl-nl|pl-pl|pt-pt|ro-ro|ru-ru|se-se|sl-si|sr-rs|th-th|tr-tr|None" id="imdbsearchlanguage" default="None" visible="!eq(-1,false)"/>
+    <setting label="30304" type="select" values="bg-bg|cs-cz|el-gr|es-ar|da-dk|de-at|de-de|fi-fi|fr-fr|hr-hr|he-il|hu-hu|it-it|ja-jp|nb-no|nl-nl|pl-pl|pt-pt|ro-ro|ru-ru|se-se|sl-si|sr-rs|th-th|tr-tr|None" id="imdbsearchlanguage" default="None" visible="!eq(-1,false)"/>
+    <setting label="30305" type="bool" id="fullimdbsearch" default="false" visible="!eq(-2,false)"/>
     <setting type="sep"/>
+    <setting type="lsep" label="30306" visible="!eq(-2,false)"/>
+    <setting type="lsep" label="30307" visible="!eq(-3,false)"/>
   </category>
 
 </settings>
