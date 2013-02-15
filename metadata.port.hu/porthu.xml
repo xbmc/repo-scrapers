@@ -110,6 +110,9 @@
 			<RegExp input="$$1" output="\2" dest="18">
 					<expression fixchars="2">&lt;meta\sname=&quot;title&quot;\scontent=&quot;(IMDb\s-\s)?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 			</RegExp>
+			<RegExp input="$$1" output="\1" dest="18">
+				<expression fixchars="1" trim="1">&lt;br/&gt;&lt;span\sclass=&quot;title-extra&quot;&gt;([^&lt;]*)&lt;i&gt;\(original title\)</expression>
+			</RegExp>
 			<!--Append Original Title to originaltitle tag if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;originaltitle&gt;$$18&lt;/originaltitle&gt;" dest="5+">
 				<expression>Magyar$</expression>

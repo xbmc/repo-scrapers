@@ -1,3 +1,6 @@
+[B]1.9.4[/B]
+- fixed: Hungarian title will be scraped instead of original title in some cases
+
 [B]1.9.3[/B]
 - fixed: Hungarian Genre
 
