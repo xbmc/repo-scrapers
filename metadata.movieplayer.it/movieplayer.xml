@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2012-12-17" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2013-02-15" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -67,6 +67,10 @@
 					<expression>&lt;year&gt;([^/"]*)&lt;/year&gt;</expression>
 				</RegExp>
 				<expression />
+			</RegExp>
+			<!--Durata film-->
+			<RegExp input="$$1" output="&lt;runtime&gt;\2&lt;/runtime&gt;" dest="13+">
+				<expression trim="1" noclean="1"> datetime="([^"]*)"&gt;([0-9]*) min&lt;/time&gt;</expression>
 			</RegExp>
 			<!--Tagline-->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="13+">
@@ -143,11 +147,31 @@
 				<expression />
 			</RegExp>
 			<!--Cast-->
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBScaledCastById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
 			</RegExp>
 			<!--Regia-->
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+			<!--IMDB top250-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBTOP250ById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+			<!--IMDB Studio-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBStudioById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+			<!--Paese di origine-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBCountryById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+			<!--Certificazione USA-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBUSACert&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+			<!--AKA Titles-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBAKATitlesById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
 			</RegExp>
 			<!--Sceneggiatura-->
@@ -166,26 +190,14 @@
 			<RegExp conditional="FanartTMDB" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-main.html&quot; function=&quot;IMDBLocal&quot;&gt;www.imdb.com/title/$$2&lt;/url&gt;" dest="6+">
+			<!--<RegExp input="$$2" output="&lt;url cache=&quot;$$2-main.html&quot; function=&quot;IMDBLocal&quot;&gt;www.imdb.com/title/$$2&lt;/url&gt;" dest="6+">
 				<expression />
-			</RegExp>
+			</RegExp>-->
 			<expression noclean="1" />
 		</RegExp>
 	</IMDBChains>
 	<IMDBLocal dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5+">
-			<!--IMDB MPAA-->
-			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="6+">
-				<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?&lt;span itemprop="contentRating"&gt;([^&lt;]*)</expression>
-			</RegExp>
-			<!--IMDB studio-->
-			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="6+">
-				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
-			</RegExp>
-			<!--IMDB top250-->
-			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="6+">
-				<expression>Top 250 #([0-9]*)&lt;/</expression>
-			</RegExp>
 			<!--Durata-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="6+">
 				<expression trim="1">&lt;h4[^&gt;]*?&gt;Runtime:&lt;/h4&gt;[^0-9]*([0-9]+)</expression>
