@@ -1,3 +1,6 @@
+[B]2.6.1[/B]
+Disable last.fm options because last.fm is now truncating biogs
+
 [B]2.6.0[/B]
 Added: option to fetch discography and artist life span from TheAudioDb.com
 
