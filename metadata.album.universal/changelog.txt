@@ -1,3 +1,6 @@
+[B]1.7.2[/B]
+Fix settings after last.fm removal
+
 [B]1.7.1[/B]
 Disable last.fm options because last.fm is now truncating biogs
 
