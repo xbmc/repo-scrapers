@@ -18,7 +18,7 @@
       <setting label="30016" type="labelenum" values="TheAudioDb.com|None" id="biogfbsource" default="None"/>
       <setting label="30015" type="labelenum" values="en|de|es|fr|it|cn|jp|ru|pt|se|nl|hu" id="tadbartistlanguage" default="en" visible="eq(-1,0)"/>
       <setting type="sep"/>
-      <setting label="30020" type="labelenum" values="MusicBrainz|allmusic.com|None" id="lifespanfbsource" default="None"/>
+      <setting label="30020" type="labelenum" values="TheAudioDb.com|MusicBrainz|allmusic.com|None" id="lifespanfbsource" default="None"/>
       <setting type="sep"/>
       <setting label="30018" type="labelenum" values="TheAudioDb.com|allmusic.com|None" id="genresfbsource" default="None"/>
       <setting label="30019" type="labelenum" values="allmusic.com|None" id="stylesfbsource" default="None"/>
