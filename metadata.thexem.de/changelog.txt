@@ -1,3 +1,6 @@
+[B]1.0.5[/B]
+- updated tvdb parts
+
 [B]1.0.4[/B]
 - added aspect attribute
 - added uniqueid tag
