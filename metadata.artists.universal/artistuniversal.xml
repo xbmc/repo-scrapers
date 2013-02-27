@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2012-05-28">
+<scraper framework="1.1" date="2013-02-27">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://www.musicbrainz.org/ws/2/artist/\1?inc=url-rels&lt;/url&gt;" dest="3">
 			<expression>http://musicbrainz.org/artist/(.+)</expression>
@@ -41,7 +41,7 @@
 			</RegExp>
 			<!--AMGID - Artist-->
 			<RegExp input="$$1" output="\2" dest="9">
-				<expression noclean="1">&gt;&lt;relation type=&quot;allmusic&quot;&gt;&lt;target&gt;http://(www.)?allmusic.com/artist/([^&lt;]*)</expression>
+				<expression noclean="1">&gt;http://(www.)?allmusic.com/artist/([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="5">
 				<expression noclean="1">&lt;artist(?:\stype=&quot;[^&quot;]*&quot;)* id=&quot;[^&quot;]*&quot;&gt;&lt;name&gt;([^&lt;]*)</expression>

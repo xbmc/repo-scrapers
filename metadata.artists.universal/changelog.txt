@@ -1,3 +1,6 @@
+[B]2.6.3[/B]
+Fixed: AMGData
+
 [B]2.6.2[/B]
 Added: option to fall back on artist life span from TheAudioDb.com
 
