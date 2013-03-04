@@ -6,16 +6,16 @@
 		</RegExp>
 	</CreateSearchUrl>
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url&gt;http://api.douban.com/movie/subject/imdb/tt\1&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url&gt;http://api.douban.com/v2/movie/imdb/tt\1&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="3">
 			<expression>imdb....?/title/tt([0-9]*)</expression>
 		</RegExp>
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url&gt;http://api.douban.com/movie/subject/imdb/tt\1&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url&gt;http://api.douban.com/v2/movie/imdb/tt\1&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="3">
 			<expression>imdb....?/Title\?([0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 - \3 (\4)&lt;/title&gt;&lt;url&gt;http://api.douban.com/movie/subject/\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 - \3 (\4)&lt;/title&gt;&lt;url&gt;http://api.douban.com/v2/movie/subject/\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">&quot;title&quot;:&quot;(.+?)&quot;,&quot;url&quot;:&quot;http:\\/\\/movie.douban.com\\/subject\\/([0-9]+)\\/[^&quot;]*&quot;,&quot;sub_title&quot;:&quot;(.*?)&quot;,&quot;year&quot;:&quot;([0-9]+)&quot;</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -27,37 +27,49 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression>&lt;db:attribute lang=&quot;zh_CN&quot; name=&quot;aka&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+				<expression>&quot;title&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression>&lt;db:attribute name=&quot;title&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+				<expression>&quot;original_title&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>&lt;db:attribute name=&quot;year&quot;&gt;([0-9]+)&lt;/db:attribute&gt;</expression>
+				<expression>&quot;year&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression>&lt;db:attribute name=&quot;movie_duration&quot;&gt;([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-				<expression>numRaters="([0-9]+)"</expression>
+				<expression>&quot;ratings_count&quot;:(\d+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression>average="(.+?)"</expression>
+				<expression>&quot;average&quot;:(\d+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">&lt;db:attribute name=&quot;movie_type&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression>&quot;genres&quot;:\[(.+?)\]</expression>
+			</RegExp>
+			<RegExp input="$$8" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression fixchars="1">&lt;summary&gt;(.+?)&lt;/summary&gt;</expression>
+				<expression>&quot;summary&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<expression repeat="yes">&lt;db:attribute name=&quot;director&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression clear="yes">&quot;directors&quot;:\[(.+?)\]</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<expression repeat="yes">&lt;db:attribute name=&quot;writer&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+			<RegExp input="$$8" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<expression repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes">&lt;db:attribute name=&quot;cast&quot;&gt;(.+?)&lt;/db:attribute&gt;</expression>
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression clear="yes">&quot;writers&quot;:\[(.+?)\]</expression>
+			</RegExp>
+			<RegExp input="$$8" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<expression repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="8">
+				<expression clear="yes">&quot;casts&quot;:\[(.+?)\]</expression>
+			</RegExp>
+			<RegExp input="$$8" output="&lt;actor&gt;&lt;thumb&gt;http://\1/img/celebrity/large/\2.jpg&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes">&quot;large&quot;:&quot;http:\\/\\/(.+?)\\/img\\/celebrity\\/large\\/(\d+).jpg&quot;.+?&quot;name&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp conditional="movieposterdb" input="$$1" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression>&lt;db:attribute name=&quot;imdb&quot;&gt;http://www.imdb.com/title/tt([0-9]+)</expression>
