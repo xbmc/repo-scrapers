@@ -1,3 +1,6 @@
+[B]1.5.2[/B]
+- Changed: Dropped the www from thetvdb URLs
+
 [B]1.5.1[/B]
 - Updated: Versioning for xbmc.metadata
 
