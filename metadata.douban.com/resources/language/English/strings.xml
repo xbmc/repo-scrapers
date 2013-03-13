@@ -2,4 +2,5 @@
 <strings>
     <string id="30000">Enable posters from MoviePosterDB</string>
     <string id="30001">Enable fanart from themoviedb.org</string>
+    <string id="30002">Enable Trailer</string>
 </strings>
