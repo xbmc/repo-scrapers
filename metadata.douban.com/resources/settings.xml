@@ -2,4 +2,5 @@
 <settings>
     <setting label="30000" type="bool" id="movieposterdb" default="false"/>
     <setting label="30001" type="bool" id="tmdbfanart" default="false"/>
+    <setting label="30002" type="bool" id="trailer" default="true"/>
 </settings>
