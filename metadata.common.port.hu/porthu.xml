@@ -49,7 +49,7 @@
 	<ParsePortHUPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression>&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
+				<expression clear="yes">&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-en-$$8.json&quot;&gt;http://api.themoviedb.org/3/movie/$$8?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;language=en&lt;/url&gt;" dest="2">
 				<expression>^$</expression>
