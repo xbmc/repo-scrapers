@@ -1,3 +1,6 @@
+[B]1.0.5[/B]
+- fixed: support decimal in rating
+
 [B]1.0.4[/B]
 - changed: treat search results as sorted
 - updated: support MoviePosterDB posters and themoviedb fanarts again
