@@ -39,7 +39,7 @@
 				<expression>&quot;ratings_count&quot;:(\d+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression>&quot;average&quot;:(\d+)</expression>
+				<expression>&quot;average&quot;:([\d\.]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression>&quot;genres&quot;:\[(.+?)\]</expression>
