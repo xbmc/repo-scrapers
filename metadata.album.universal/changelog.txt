@@ -1,3 +1,6 @@
+[B]1.7.3[/B]
+Fixed: album won't find some times (thanks and credits to crankylemur)
+
 [B]1.7.2[/B]
 Fix settings after last.fm removal
 
