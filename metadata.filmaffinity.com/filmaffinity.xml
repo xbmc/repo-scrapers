@@ -27,9 +27,14 @@
 			<RegExp conditional="!GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\3)&lt;/title&gt;&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" noclean="1,2,3">&lt;a href=&quot;/es/film([0-9]*)\.html&quot;&gt;([^&lt;]*)&lt;/a&gt;[^\(]*\(([0-9]{4})</expression>
 			</RegExp>
+			<!-- en caso de que haya más de 10 páginas de resultados en FA asumimos un error en la búsqueda -->
+			<!-- y reseteamos los resultados para forzar que XBMC repita la búsqueda con el encoding adecuado -->
+			<RegExp conditional="!GoogleAdvSearch" input="$$1" output="" dest="5">
+				<expression>page=10</expression>
+			</RegExp>
 			<!-- búsqueda de google -->
 			<RegExp conditional="GoogleAdvSearch" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.filmaffinity.com/es/film\1.html&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression>/film([0-9]*)[^&gt;]*&gt;(.*?)&lt;/a&gt;</expression>
+				<expression repeat="yes">/film([0-9]*).html&amp;[^&gt;]*&gt;(.*?)( - [&lt;F].*?)?&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -322,7 +327,7 @@
 			</RegExp>
 
 			<!-- obtención de información extra de IMDB (top250, rating, etc) -->
-			<RegExp conditional="ExtraIMDB" input="$$6" output="&lt;url function=&quot;GetImdbStuff&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp conditional="ExtraIMDB" input="$$6" output="&lt;url function=&quot;GetImdbStuff&quot;&gt;http://www.imdb.com/title/tt\1/combined&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			
@@ -370,22 +375,22 @@
 
 			<!-- obtención de Top250 -->
 			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="6">
-				<expression>Top 250 #([0-9]*)&lt;/</expression>
+				<expression>Top 250: #([0-9]+)</expression>
 			</RegExp>
 
 			<!-- obtención de ratings MPAA -->
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="6+">
-				<expression noclean="1">span itemprop=&quot;contentRating&quot;&gt;([^&lt;]*)</expression>
+				<expression>MPAA.*?class=&quot;info-content&quot;&gt;([^&lt;]+)</expression>
 			</RegExp>
 
 			<!-- obtención de puntuación y número de votos -->
 			<RegExp conditional="IMDBRatings" input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6+">
-				<expression>span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+)&lt;/span&gt;.*?title=&quot;([0-9,]+)\s</expression>
+				<expression>class=&quot;starbar-meta&quot;.*?([0-9\.]+).*?href=&quot;ratings&quot;[^&gt;]+&gt;([0-9,]+)</expression>
 			</RegExp>
 
 			<!-- obtención de eslogan -->
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="6+">
-				<expression>&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
+				<expression>Tagline:.*?class=&quot;info-content&quot;&gt;([^&lt;]+)</expression>
 			</RegExp>
 
 			<expression noclean="1" />
