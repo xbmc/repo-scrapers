@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2013-02-15" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2013-02-18" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -168,10 +168,6 @@
 			</RegExp>
 			<!--Certificazione USA-->
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBUSACert&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
-				<expression />
-			</RegExp>
-			<!--AKA Titles-->
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBAKATitlesById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
 			</RegExp>
 			<!--Sceneggiatura-->
