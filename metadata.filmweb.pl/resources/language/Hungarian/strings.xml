@@ -1,5 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Borító minőség</string>
-    <string id="30001">Teljes szereposztás</string>
+    <string id="30001">Szereplők származó TMDb</string>
+    <string id="30003">Teljes leírás</string>
+    <string id="30004">Szívesebben leírása a DVD kiadás</string>
+    <string id="30008">Használja a címe az eredeti</string>
+    <string id="30009">Ellenőrizze az összes kapcsolatot a fájlból NFO</string>
 </strings>

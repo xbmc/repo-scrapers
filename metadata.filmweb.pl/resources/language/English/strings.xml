@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Cover Quality</string>
-    <string id="30001">Full cast</string>
-    <string id="30002">Use iMDB rating</string>
-    <string id="30003">Prefer DVD Plot</string>
-    <string id="30007">IMDb Actor Thumb(s) Size</string>
+    <string id="30001">Full cast from TMDb</string>
+    <string id="30003">Full Plot</string>
+    <string id="30004">Prefer DVD Plot</string>
     <string id="30008">Use original title</string>
-    <string id="30009">Use NFOURL by filmweb.id only</string>
+    <string id="30009">Check all links from NFO file</string>
 </strings>

@@ -1,9 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Pobieraj wszystkie dostępne okładki</string>
-    <string id="30001">Pełna obsada z IMDb</string>
-    <string id="30002">Ocena z IMDb</string>
-    <string id="30003">Preferuj opis dla wydania DVD</string>
-    <string id="30007">Wielkość zdjęć aktorów z IMDb</string>
+    <string id="30001">Pełna obsada z TMDb</string>
+    <string id="30003">Pełny opis</string>
+    <string id="30004">Preferuj opis dla wydania DVD</string>
     <string id="30008">Użyj tytułu oryginalnego</string>
+    <string id="30009">Sprawdź wszystkie linki z pliku NFO</string>
 </strings>

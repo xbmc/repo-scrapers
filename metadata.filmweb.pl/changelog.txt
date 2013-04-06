@@ -1,5 +1,7 @@
-﻿[B]1.2.1[/B]
-- poprawka: ocena z imdb poprzez współdzielone funkcje 
+[B]2.0.0[/B]
+- całkowicie przepisany i zmodyfikowany scraper 
+[B]1.2.1[/B]
+- poprawka: ocena z imdb poprzez współdzielone funkcje
 [B]1.2.0[/B]
 - poprawka: imdb ID z literkami tt
 [B]1.1.1[/B]
