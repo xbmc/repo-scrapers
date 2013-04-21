@@ -1,3 +1,7 @@
+[B]1.5.6[/B]
+
+- Soporte para la actualización de la web de filmaffinity
+
 [B]1.5.5[/B]
 
 - Mejorada la búsqueda de títulos en filmaffinity con caracteres especiales
