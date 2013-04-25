@@ -1,3 +1,6 @@
+[B]2.4.2[/B]
+- fixed: original title once again
+
 [B]2.4.1[/B]
 - fixed: original title once again
 

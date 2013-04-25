@@ -83,7 +83,7 @@
 				<expression fixchars="2">&lt;meta name=&quot;title&quot; content=&quot;(IMDb - )?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="19">
-				<expression fixchars="1" trim="1">&lt;br/&gt;&lt;span\sclass=&quot;title-extra&quot;\sitemprop=&quot;name&quot;&gt;([^&lt;]*)&lt;i&gt;\(original\stitle\)</expression>
+				<expression fixchars="1" trim="1">&lt;br/&gt;&lt;span\sclass=&quot;title-extra&quot;\sitemprop=&quot;name&quot;&gt;\s*&quot;([^&quot;]*)&quot;\s*&lt;i&gt;\(original\stitle\)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\2" dest="20">
 				<expression>&lt;meta name=&quot;title&quot;\scontent=&quot;([^&quot;]*?)\s\([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
