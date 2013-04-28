@@ -4,6 +4,7 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30115">     Use the Score Aggregated from</string>
     <string id="30200">ምስጋና </string>
     <string id="30300">መፈለጊያ</string>
     <string id="30302">IMDb</string>

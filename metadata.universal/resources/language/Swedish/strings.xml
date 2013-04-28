@@ -57,6 +57,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">Sökmotor att använda</string>
     <string id="30304">     Sekundärt sökspråk (utöver en-us)</string>
+    <string id="30305">Inkludera alla filmkategorier</string>
+    <string id="30306">Varning:</string>
+    <string id="30307">Aktivering av Alla filmer kategorin kommer att drastiskt reducera söknoggrannheten !!!</string>
     <string id="30400">Handling</string>
     <string id="30401">Handling / Slogan / Sammanfattning</string>
     <string id="30500">Fanart</string>

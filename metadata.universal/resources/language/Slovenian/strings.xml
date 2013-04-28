@@ -12,6 +12,7 @@
     <string id="30006">Vključi napovednike s HD-Trailers.net</string>
     <string id="30008">Jezik naslovov z</string>
     <string id="30009">Vključi napovednike s themoviedb.org</string>
+    <string id="30011">Plakat</string>
     <string id="30012">Napovedniki</string>
     <string id="30014">Prenesi zgodbo z</string>
     <string id="30015">Prenesi Igralce / Režiserje / Scenariste z</string>
@@ -41,6 +42,7 @@
     <string id="30042">Prenesi moto z</string>
     <string id="30043">Jezik mota</string>
     <string id="30044">Prenesi IMDb TOP250</string>
+    <string id="30047">Viri plakatov</string>
     <string id="30100">Ocena</string>
     <string id="30110">Ocene generirane z</string>
     <string id="30115">Uporabi točke z</string>
@@ -48,6 +50,7 @@
     <string id="30201">Prenesi studio z</string>
     <string id="30202">Prenesi državo z</string>
     <string id="30300">Išči</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30400">Zgodba</string>
     <string id="30500">Ozadje</string>

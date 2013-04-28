@@ -42,7 +42,7 @@
     <string id="30041">선호하는 예고편 언어</string>
     <string id="30042">태그라인 가져오기</string>
     <string id="30043">선호하는 태그라인 언어</string>
-    <string id="30044">IMDB 탑250 순위 가져오기</string>
+    <string id="30044">IMDB TOP250 순위 가져오기</string>
     <string id="30045">개요 가져오기</string>
     <string id="30046">시리즈(컬렉션) 제목 선호 언어</string>
     <string id="30047">포스터 소스</string>
@@ -57,8 +57,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">사용할 검색 엔진</string>
     <string id="30304">두 번째 검색 언어 (en-us 외)</string>
+    <string id="30306">경고:</string>
     <string id="30400">줄거리</string>
     <string id="30401">줄거리 / 태그라인 / 개요</string>
-    <string id="30500">팬아트 (Fanart)</string>
+    <string id="30500">팬아트</string>
     <string id="30501">팬아트 소스</string>
 </strings>

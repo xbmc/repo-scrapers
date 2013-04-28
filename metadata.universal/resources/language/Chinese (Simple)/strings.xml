@@ -14,6 +14,7 @@
     <string id="30009">启用themoviedb.org预告片</string>
     <string id="30011">海报</string>
     <string id="30012">预告片</string>
+    <string id="30013">从themoviedb.org获取影片集（系列）名</string>
     <string id="30014">获取剧情于</string>
     <string id="30015">获取演员/导演/编剧于</string>
     <string id="30016">剧情信息来源</string>
@@ -42,6 +43,9 @@
     <string id="30042">获取标语于</string>
     <string id="30043">首选标语语言</string>
     <string id="30044">获取IMDB TOP250排名</string>
+    <string id="30045">简介获取于</string>
+    <string id="30046">首选影片集（系列）名语言</string>
+    <string id="30047">海报来源</string>
     <string id="30100">评分</string>
     <string id="30110">评分产生于</string>
     <string id="30115">使用合计分数于</string>
@@ -49,7 +53,15 @@
     <string id="30201">获取出品人于</string>
     <string id="30202">获取国家于</string>
     <string id="30300">查找</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">使用的搜索引擎</string>
+    <string id="30304">第二搜索语言（除英语外）</string>
+    <string id="30305">包括所有电影分类</string>
+    <string id="30306">注意：</string>
+    <string id="30307">启用所有电影分类将极大降低搜索的准确性！</string>
     <string id="30400">剧情简介</string>
+    <string id="30401">剧情/标语/简介</string>
     <string id="30500">同人画</string>
+    <string id="30501">同人画来源</string>
 </strings>

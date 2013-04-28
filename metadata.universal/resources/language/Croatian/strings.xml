@@ -4,9 +4,19 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30011">Plakat</string>
+    <string id="30012">Najave</string>
+    <string id="30026">Izvor žanra</string>
+    <string id="30029">Zbirka filmova</string>
+    <string id="30031">Opcije certifikata</string>
+    <string id="30032">Preuzmi certifikat sa</string>
+    <string id="30035">Dodatni certifikat</string>
+    <string id="30040">Jezik žanra</string>
+    <string id="30044">Preuzmi IMDb TOP250 rangiranih</string>
     <string id="30100">Ocjena</string>
     <string id="30200">Zasluge</string>
     <string id="30300">Traži</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30400">Radnja</string>
     <string id="30500">Fanart</string>

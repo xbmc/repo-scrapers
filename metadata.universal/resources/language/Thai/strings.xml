@@ -14,6 +14,7 @@
     <string id="30009">ใช้ตัวอย่างภาพยนตร์จาก themoviedb.org</string>
     <string id="30011">โปสเตอร์</string>
     <string id="30012">หนังตัวอย่าง</string>
+    <string id="30013">รับชื่อชุด (คอลเล็คชั่น) จาก themoviedb.org</string>
     <string id="30014">ดึงเรื่องย่อจาก</string>
     <string id="30015">ดึงรายชื่อนักแสดง/ผู้กำกับ/ผู้เขียนบทจาก</string>
     <string id="30016">แหล่งที่มาของเรื่องย่อ</string>
@@ -42,6 +43,9 @@
     <string id="30042">ใช้คำโปรยจาก</string>
     <string id="30043">ภาษาของคำโปรยที่ต้องการ</string>
     <string id="30044">ดึงข้อมูลการจัดอันดับ TOP250 จาก IMDb</string>
+    <string id="30045">รับ โครงเรื่อง จาก</string>
+    <string id="30046">     ใช้ชื่อ ชุด (คอลเล็คชั่น) ในภาษา</string>
+    <string id="30047">แหล่ง โปสเตอร์</string>
     <string id="30100">เรตติ้ง</string>
     <string id="30110">การจัดอันดับถูกสร้างขึ้น</string>
     <string id="30115">ใช้คะแนนรวมจาก</string>
@@ -49,7 +53,15 @@
     <string id="30201">ใช้ชื่อสตูดิโอจาก</string>
     <string id="30202">ใช้ชื่อประเทศจาก</string>
     <string id="30300">ค้นหา</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">ระบบค้นข้อมูลที่ใช้</string>
+    <string id="30304">     ภาษาที่ใช้ค้นหาลำดับสอง (นอกจาก en-us)</string>
+    <string id="30305">รวมถึงหมวดหมู่ภาพยนต์ทั้งหมด</string>
+    <string id="30306">คำเตือน:</string>
+    <string id="30307">การเปิดใช้ ทุกหมวดหมู่ภาพยนตร์ จะลดความแม่นยำในการค้นหาเป็นอย่างยิ่ง !!!</string>
     <string id="30400">เรื่องย่อ</string>
+    <string id="30401">เรื่องย่อ / คำโปรย / โครงเรื่อง</string>
     <string id="30500">แฟนอาร์ต</string>
+    <string id="30501">แหล่ง แฟนอาร์ต</string>
 </strings>

@@ -14,6 +14,7 @@
     <string id="30009">Activer les bandes-annonces de themoviedb.org</string>
     <string id="30011">Poster</string>
     <string id="30012">Bandes-annonces</string>
+    <string id="30013">Récupérer le nom de la saga (collection) depuis themoviedb.org</string>
     <string id="30014">Récupérer le synopsis depuis</string>
     <string id="30015">Récupérer la distribution, les réalisateurs et les scénaristes depuis</string>
     <string id="30016">Sources des synopsis</string>
@@ -42,6 +43,8 @@
     <string id="30042">Récupérer le slogan depuis</string>
     <string id="30043">Langue préférée des slogans</string>
     <string id="30044">Récupérer le TOP250 IMDb</string>
+    <string id="30045">Récupérer les grandes lignes depuis</string>
+    <string id="30046">Langue préférée pour le nom des sagas (collections)</string>
     <string id="30047">Source de posters</string>
     <string id="30100">Classement</string>
     <string id="30110">Note générée depuis</string>
@@ -53,7 +56,12 @@
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Moteur de recherche à utiliser</string>
+    <string id="30304">Langue secondaire de recherche (en plus de en-us)</string>
+    <string id="30305">Inclure toutes les catégories de films</string>
+    <string id="30306">Attention :</string>
+    <string id="30307">Inclure toutes les catégories de films va considérablement diminuer l'efficacité de la recherche !!!</string>
     <string id="30400">Résumé</string>
+    <string id="30401">Résumé / Mots clé / Grandes lignes</string>
     <string id="30500">Fanart</string>
     <string id="30501">Sources de fanart</string>
 </strings>

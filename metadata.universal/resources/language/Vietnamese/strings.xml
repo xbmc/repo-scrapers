@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Vietnamese language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/vi/ -->
+<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+
+<strings>
+    <string id="30001">Lấy fanart từ themoviedb.org</string>
+    <string id="30002">Lấy poster từ themoviedb.org</string>
+    <string id="30003">Lấy poster từ IMPAwards</string>
+    <string id="30004">Lấy poster từ MoviePosterDB</string>
+    <string id="30005">Lấy phim giới thiệu trực tiếp từ YouTube</string>
+    <string id="30006">Lấy phim giới thiệu từ nguồn HD-Trailers.net</string>
+    <string id="30008">Ưu tiên chọn ngôn ngữ cho tiêu đề phim từ</string>
+    <string id="30009">Lấy phim giới thiệu từ themoviedb.org</string>
+    <string id="30011">Poster</string>
+    <string id="30012">Phim giới thiệu</string>
+    <string id="30013">Lấy tên bộ (bộ sưu tập) từ themoviedb.org</string>
+    <string id="30014">Lấy cốt truyện từ</string>
+    <string id="30015">Lấy Diễn viên / Đạo Diễn / Biên kịch từ</string>
+    <string id="30016">Nguồn cốt truyện</string>
+    <string id="30020">Ưu tiên lấy cốt truyện trên ngôn ngữ</string>
+    <string id="30021">Lấy chấm điểm từ</string>
+    <string id="30022">Lấy thể loại từ</string>
+    <string id="30023">Lấy tên phim từ</string>
+    <string id="30024">Nguồn tên phim</string>
+    <string id="30025">Nguồn Diễn viên &amp; Credit</string>
+    <string id="30026">Nguồn thể loại</string>
+    <string id="30027">Ưu tiên lấy tên phim trên ngôn ngữ</string>
+    <string id="30028">Nguồn phim giới thiệu</string>
+    <string id="30029">Bộ sưu tập phim</string>
+    <string id="30030">Nguồn chấm điểm</string>
+    <string id="30031">Cài đặt chứng chỉ</string>
+    <string id="30032">Lấy chứng chỉ từ</string>
+    <string id="30033">Ưu tiên chứng chỉ của quốc gia</string>
+    <string id="30034">Ưu tiên ngôn ngữ đại diện</string>
+    <string id="30035">Đầu chứng chỉ</string>
+    <string id="30036">Lấy poster từ IMDb</string>
+    <string id="30037">Lấy poster từ trakt.tv</string>
+    <string id="30038">Lấy fanart từ trakt.tv</string>
+    <string id="30039">Lấy phim giới thiệu từ trakt.tv</string>
+    <string id="30040">Ngôn ngữ cho thể loại</string>
+    <string id="30041">Ưu tiên lấy phim giới thiệu trên ngôn ngữ</string>
+    <string id="30042">Lấy thông điệp phim từ</string>
+    <string id="30043">Ưu tiên lấy thông điệp phim trên ngôn ngữ</string>
+    <string id="30044">Lấy xếp hạng top 250 IMDB</string>
+    <string id="30045">Lấy trình bày sơ lược từ</string>
+    <string id="30046">Ưu tiên lấy tên bộ (bộ sưu tập) trên ngôn ngữ</string>
+    <string id="30047">Nguồn poster</string>
+    <string id="30100">Chấm điểm</string>
+    <string id="30110">Chấm điểm bởi</string>
+    <string id="30115">Sử dụng điểm gộp lại từ</string>
+    <string id="30200">Credit</string>
+    <string id="30201">Lấy studio từ</string>
+    <string id="30202">Lấy quốc gia từ</string>
+    <string id="30300">Tìm kiếm</string>
+    <string id="30301">themoviedb.org</string>
+    <string id="30302">IMDb</string>
+    <string id="30303">Dùng máy tìm kiếm</string>
+    <string id="30304">Ngôn ngữ thứ hai để tìm kiếm (Ngoài tiếng anh en-us)</string>
+    <string id="30305">Gộp Tất Cả Mục Phim</string>
+    <string id="30306">Cảnh báo:</string>
+    <string id="30307">Bật chức năng Gộp Tất Cả Mục Phim sẽ làm giảm độ chính xác của việc tìm kiếm</string>
+    <string id="30400">Cốt truyện</string>
+    <string id="30401">Cốt truyện / Thông điệp / Sơ lược</string>
+    <string id="30500">Fanart</string>
+    <string id="30501">Nguồn fanart</string>
+</strings>

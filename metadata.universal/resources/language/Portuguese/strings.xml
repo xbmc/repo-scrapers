@@ -14,7 +14,7 @@
     <string id="30009">Activar trailers de themoviedb.org</string>
     <string id="30011">Póster</string>
     <string id="30012">Trailers</string>
-    <string id="30013">Obter Nome da Coleção a partir de themoviedb.org</string>
+    <string id="30013">Obter Nome do Conjunto a partir de themoviedb.org</string>
     <string id="30014">Obter Enredo de</string>
     <string id="30015">Obter Elenco / Realizadores / Argumentistas de</string>
     <string id="30016">Fontes de Enredo</string>
@@ -44,7 +44,7 @@
     <string id="30043">Idioma Preferido para Slogan</string>
     <string id="30044">Obter Classificação IMDb TOP250</string>
     <string id="30045">Obter Resumo A Partir De</string>
-    <string id="30046">Linguagem Preferida para Nome da Coleção</string>
+    <string id="30046">     Idioma Preferido para Nome do Conjunto</string>
     <string id="30047">Origens dos Posters</string>
     <string id="30100">Avaliação</string>
     <string id="30110">Gerar Avaliação Através De</string>
@@ -56,7 +56,10 @@
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Motor de Busca a Utilizar</string>
-    <string id="30304">Linguagem de Pesquisa Secundária (Para Além de en-us)</string>
+    <string id="30304">     Idioma de Pesquisa Secundário (Para Além de en-us)</string>
+    <string id="30305">     Incluir Todas As Categorias de Filmes</string>
+    <string id="30306">Aviso:</string>
+    <string id="30307">Activar Todas as Categorias de Filmes irá reduzir muito a precisão !!!</string>
     <string id="30400">Enredo</string>
     <string id="30401">Enredo / Slogan / Resumo</string>
     <string id="30500">Fanart</string>

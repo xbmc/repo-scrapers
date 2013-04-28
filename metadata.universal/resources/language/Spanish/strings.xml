@@ -14,6 +14,7 @@
     <string id="30009">Usar los avances de películas de themoviedb.org</string>
     <string id="30011">Poster</string>
     <string id="30012">Avances de películas</string>
+    <string id="30013">Obtener el nombre del conjunto (colección) de themoviedb.org</string>
     <string id="30014">Usar el argumento encontrado en</string>
     <string id="30015">Usar la información del reparto encontrada en</string>
     <string id="30016">Fuentes para el argumento</string>
@@ -42,6 +43,9 @@
     <string id="30042">Obtener el eslogan desde</string>
     <string id="30043">Idioma preferido para el eslógan</string>
     <string id="30044">Obtener ranking TOP250 de IMDb</string>
+    <string id="30045">Obtener sinopsis de</string>
+    <string id="30046">Idioma preferido para el conjunto (colección)</string>
+    <string id="30047">Fuentes de Posters</string>
     <string id="30100">Valoración</string>
     <string id="30110">Valoración generado usando</string>
     <string id="30115">Usar la valoración agregada de</string>
@@ -49,7 +53,15 @@
     <string id="30201">Obtener estudio de</string>
     <string id="30202">Obtener país de</string>
     <string id="30300">Buscar</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Motor de búsqueda a usar</string>
+    <string id="30304">Idioma de búsqueda secundario (además de en-us)</string>
+    <string id="30305">Incluir todas las categorías de películas</string>
+    <string id="30306">Advertencia:</string>
+    <string id="30307">Al activar todas las categorías de películas, se reducirá la precisión de la búsqueda !!!</string>
     <string id="30400">Argumento</string>
+    <string id="30401">Argumento / Lema / Sinopsis</string>
     <string id="30500">Fanart</string>
+    <string id="30501">Fuentes de Fanart</string>
 </strings>

@@ -4,9 +4,24 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30001">從themoviedb.org取得電影資訊</string>
+    <string id="30002">從themoviedb.org取得電影海報</string>
+    <string id="30003">從IMPAwards取得電影海報</string>
+    <string id="30004">從MoviePosterDB取得電影海報</string>
     <string id="30005">直接從 YouTube 取得電影預告片</string>
+    <string id="30006">從HD-Trailers.net取得預告片</string>
+    <string id="30008">喜好的標題語言</string>
+    <string id="30009">從themoviedb.org取得預告片</string>
+    <string id="30011">海報</string>
     <string id="30012">預告片</string>
+    <string id="30013">從themoviedb.org取得套裝 (合輯) 名稱</string>
+    <string id="30014">取得劇照從</string>
+    <string id="30015">取得演員/導演/編劇從</string>
     <string id="30016">劇情大綱來源</string>
+    <string id="30020">喜好的劇照語言</string>
+    <string id="30021">取得評價從</string>
+    <string id="30022">取得類別從</string>
+    <string id="30023">取得標題從</string>
     <string id="30024">標題資訊來源</string>
     <string id="30025">演員 &amp; 工作人員資訊來源</string>
     <string id="30026">分類資訊來源</string>
@@ -15,12 +30,38 @@
     <string id="30029">系列電影</string>
     <string id="30030">評等來源</string>
     <string id="30031">分級設定</string>
+    <string id="30032">取得認證從</string>
+    <string id="30033">喜好的認證國家</string>
+    <string id="30034">喜好的縮圖語言</string>
     <string id="30035">分級前綴</string>
+    <string id="30036">從IMDb啟用海報</string>
+    <string id="30037">從trakt.tv啟用海報</string>
+    <string id="30038">從trakt.tv啟用電影資料庫</string>
+    <string id="30039">從trakt.tv啟用預告片</string>
     <string id="30040">     類型語言</string>
+    <string id="30041">喜好的預告片語言</string>
+    <string id="30042">取得標語從</string>
+    <string id="30043">喜好的標語語言</string>
+    <string id="30044">取得IMDb評價的前250大排名</string>
+    <string id="30045">取得大綱從</string>
+    <string id="30046">喜好的套裝 (合輯) 名稱語言</string>
+    <string id="30047">海報來源</string>
     <string id="30100">評分</string>
+    <string id="30110">評價從...產生</string>
+    <string id="30115">使用總和評分從..</string>
     <string id="30200">工作人員</string>
+    <string id="30201">取得影片工作室從</string>
+    <string id="30202">取得國家從</string>
     <string id="30300">搜尋</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">要使用的搜尋引擎</string>
+    <string id="30304">第二搜尋語言 (除了en-us美式英文之外)</string>
+    <string id="30305">包括所有電影類別</string>
+    <string id="30306">警告：</string>
+    <string id="30307">啟用所有電影類別將會降低搜尋的準確度</string>
     <string id="30400">簡介</string>
+    <string id="30401">劇照/標語/大綱</string>
     <string id="30500">Fanart</string>
+    <string id="30501">電影資訊來源</string>
 </strings>

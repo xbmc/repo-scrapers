@@ -4,7 +4,7 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30001">Activează artă a fanilior de la themoviedb.org</string>
+    <string id="30001">Activează ecranul media de la themoviedb.org</string>
     <string id="30002">Activează postere de la themoviedb.org</string>
     <string id="30003">Activează postere de la IMPAwards</string>
     <string id="30004">Activează postere de la MoviePosterDB</string>
@@ -12,7 +12,9 @@
     <string id="30006">Obţine trailere de la HD-Trailers.net</string>
     <string id="30008">Limbă preferată pentru nume de la</string>
     <string id="30009">Activează trailere de la themoviedb.org</string>
+    <string id="30011">Poster</string>
     <string id="30012">Trailere</string>
+    <string id="30013">Obținere nume Set (Colecție) de pe themoviedb.org</string>
     <string id="30014">Obține intrigă de la</string>
     <string id="30015">Obține distribuție/ regizori/ scenariști de la</string>
     <string id="30016">Surse intrigă</string>
@@ -41,6 +43,9 @@
     <string id="30042">Obține sloganul de la</string>
     <string id="30043">Limbă preferată pentru slogan</string>
     <string id="30044">Obține clasare IMDb TOP250</string>
+    <string id="30045">Obțineți Ideile principale de la</string>
+    <string id="30046">Colecțiile preferate Nume Limba</string>
+    <string id="30047">Surse Postere</string>
     <string id="30100">Notă</string>
     <string id="30110">Evaluare generată folosind</string>
     <string id="30115">Folosește scor agregat de la</string>
@@ -48,7 +53,15 @@
     <string id="30201">Obține studio de la</string>
     <string id="30202">Obține țară de la</string>
     <string id="30300">Caută</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Motor de căutare</string>
+    <string id="30304">Limba secundară pentru căutare (În plus față de en-us)</string>
+    <string id="30305">Include toate categoriile filmelor</string>
+    <string id="30306">Atenție:</string>
+    <string id="30307">Activând toate categoriile de filme reduce substanțial acuratețea căutării!!! </string>
     <string id="30400">Intrigă</string>
+    <string id="30401">Intrigă/Linii principale/Scurtă descriere</string>
     <string id="30500">Fanart</string>
+    <string id="30501">Surse Fanart</string>
 </strings>

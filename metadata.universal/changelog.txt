@@ -1,5 +1,5 @@
 [B]2.4.2[/B]
-- fixed: original title once again
+- updated language files from Transifex
 
 [B]2.4.1[/B]
 - fixed: original title once again

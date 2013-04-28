@@ -57,6 +57,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">מנוע חיפוש לשימוש</string>
     <string id="30304">     שפת חיפוש משנית (בנוסף על en-us)</string>
+    <string id="30305">לכלול את כל קטגוריות הסרטים</string>
+    <string id="30306">אזהרה:</string>
+    <string id="30307">הפעלת כל קטגוריות הסרטים תפחית באופן משמעותי את דיוק החיפוש !!!!</string>
     <string id="30400">עלילה</string>
     <string id="30401">עלילה / מילות מפתח / תקציר</string>
     <string id="30500">פאנארט</string>

@@ -4,11 +4,16 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30011">Cartell</string>
     <string id="30012">Tràilers</string>
+    <string id="30047">Font dels cartells</string>
     <string id="30100">Valoració</string>
     <string id="30200">Crèdits</string>
+    <string id="30202">Obté el país de</string>
     <string id="30300">Cerca</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30306">Advertència:</string>
     <string id="30400">Trama</string>
     <string id="30500">Fanart</string>
 </strings>

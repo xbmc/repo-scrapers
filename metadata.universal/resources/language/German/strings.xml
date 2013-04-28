@@ -10,10 +10,11 @@
     <string id="30004">Aktiviere Poster von MoviePosterDB</string>
     <string id="30005">Hole Trailer direkt von YouTube</string>
     <string id="30006">Aktiviere Trailer von HD-Trailers.net</string>
-    <string id="30008">Bevorzugte Sprache</string>
+    <string id="30008">Bevorzugte Titel Sprache von</string>
     <string id="30009">Aktiviere Trailer von themoviedb.org</string>
     <string id="30011">Poster</string>
     <string id="30012">Trailer</string>
+    <string id="30013">Lade Set (Kollektion) Name von themoviedb.org</string>
     <string id="30014">Lade Handlung von</string>
     <string id="30015">Lade Besetzung / Regisseure / Autoren von</string>
     <string id="30016">Handlungs Quellen</string>
@@ -30,9 +31,9 @@
     <string id="30030">Bewertungs Quellen</string>
     <string id="30031">Altersfreigabe Einstellungen</string>
     <string id="30032">Lade Altersfreigabe von</string>
-    <string id="30033">Bevorzugtes Altersfreibaben Land</string>
+    <string id="30033">Bevorzugtes Altersfreigaben Land</string>
     <string id="30034">Bevorzugte Thumbnail Sprache</string>
-    <string id="30035">Zertifizierungsprefix</string>
+    <string id="30035">Zertifizierungspräfix</string>
     <string id="30036">Aktiviere Poster von IMDb</string>
     <string id="30037">Aktiviere Poster von trakt.tv</string>
     <string id="30038">Aktiviere Fanart von trakt.tv</string>
@@ -42,6 +43,9 @@
     <string id="30042">Hole Motto von</string>
     <string id="30043">Bevorzugte Tagline Sprache</string>
     <string id="30044">Hole IMDb TOP 250 Rangliste</string>
+    <string id="30045">Beziehe Überblick von</string>
+    <string id="30046">Bevorzugte Set-(Kollektions)Namen Sprache</string>
+    <string id="30047">Poster Quellen</string>
     <string id="30100">Bewertung</string>
     <string id="30110">Bewertung erstellt mit</string>
     <string id="30115">Nutze die Bewertung aggregiert von</string>
@@ -49,7 +53,15 @@
     <string id="30201">Hole Studio von </string>
     <string id="30202">Hole Land von </string>
     <string id="30300">Suche</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Zu nutzende Such Engine</string>
+    <string id="30304">Sekundäre Such Sprache (Zusätzlich zu en-us)</string>
+    <string id="30305">Inkludiere alle Filmkategorien</string>
+    <string id="30306">Warnung:</string>
+    <string id="30307">Das Aktivieren aller Filmkategorien wird die Suchgenauigkeit beträchtlich vermindern !!!</string>
     <string id="30400">Handlung</string>
+    <string id="30401">Handlung / Tagline / Überblick</string>
     <string id="30500">Fanart</string>
+    <string id="30501">Fanart Quellen</string>
 </strings>

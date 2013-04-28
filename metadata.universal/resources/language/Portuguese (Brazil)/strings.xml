@@ -57,6 +57,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">Mecanismo de Busca a ser usado</string>
     <string id="30304">    Idioma Secundário na Busca (Em adição ao en-us)</string>
+    <string id="30305">Incluir todas as Categorias de Filmes</string>
+    <string id="30306">Aviso:</string>
+    <string id="30307">Ativar incluir todas as categorias de filmes irá reduzir a precisão da busca!!!</string>
     <string id="30400">Enredo</string>
     <string id="30401">Enredo/Linha da Tag/Descrição</string>
     <string id="30500">Fanart</string>

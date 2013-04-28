@@ -14,7 +14,7 @@
     <string id="30009">Aktiver trailere fra themoviedb.org</string>
     <string id="30011">Plakat</string>
     <string id="30012">Trailere</string>
-    <string id="30013">Hent Sæt (Samling) Navn fra themoviedb.org</string>
+    <string id="30013">Hent navne på Sæt (samlinger) fra themoviedb.org</string>
     <string id="30014">Få Handling fra</string>
     <string id="30015">Hent Medvirkende / Instruktører / Forfattere fra</string>
     <string id="30016">Plot-Kilder</string>
@@ -43,9 +43,9 @@
     <string id="30042">Hent Undertitel fra</string>
     <string id="30043">Foretrukket sprog til Undertitel</string>
     <string id="30044">Hent IMDb TOP250 Rangliste</string>
-    <string id="30045">Hent Beskrivelse fra</string>
-    <string id="30046">Foretrukne Sæt (Samling) Navn Sprog</string>
-    <string id="30047">Plakat Kilder</string>
+    <string id="30045">Hent opsummering fra</string>
+    <string id="30046">Foretrukket sprog til navne på Sæt (samlinger) </string>
+    <string id="30047">Kilder til Plakater</string>
     <string id="30100">Bedømmelse</string>
     <string id="30110">Bedømmelse genereret ved hjælp af</string>
     <string id="30115">Anvend Score indsamlet fra</string>
@@ -55,10 +55,10 @@
     <string id="30300">Søg</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
-    <string id="30303">Søgemaskine at bruge</string>
-    <string id="30304">Sekundær sprog for søgning (Sammen med en-US)</string>
+    <string id="30303">Søgemaskine der skal anvendes</string>
+    <string id="30304">Sekundært sprog for søgning (Udover en-us)</string>
     <string id="30400">Handling</string>
-    <string id="30401">Plot / Stikord / Besrkivelse</string>
+    <string id="30401">Handling / Undertitel / Opsummering</string>
     <string id="30500">Fankunst</string>
-    <string id="30501">Fanart Kilder</string>
+    <string id="30501">Kilder til Fankunst</string>
 </strings>
