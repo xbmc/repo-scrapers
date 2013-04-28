@@ -150,13 +150,13 @@
 				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="&lt;formed&gt;\2 (\1)&lt;/formed&gt;" dest="11">
-				<expression noclean="1">intFormedYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
+				<expression fixchars="2" noclean="1">intFormedYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;disbanded&gt;\1&lt;/disbanded&gt;" dest="11+">
 				<expression noclean="1">strDisbanded&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;born&gt;\2 (\1)&lt;/born&gt;" dest="11">
-				<expression noclean="1">intBornYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
+				<expression fixchars="2" noclean="1">intBornYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="11+">
 				<expression noclean="1">intDiedYear&quot;:&quot;([^&quot;]*)</expression>
@@ -191,13 +191,13 @@
 				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="&lt;formed&gt;\2 (\1)&lt;/formed&gt;" dest="11">
-				<expression noclean="1">intFormedYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
+				<expression fixchars="2" noclean="1">intFormedYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;disbanded&gt;\1&lt;/disbanded&gt;" dest="11+">
 				<expression noclean="1">strDisbanded&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;born&gt;\2 (\1)&lt;/born&gt;" dest="11">
-				<expression noclean="1">intBornYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
+				<expression fixchars="2" noclean="1">intBornYear&quot;:&quot;([^&quot;]*).*?strCountry&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="11+">
 				<expression noclean="1">intDiedYear&quot;:&quot;([^&quot;]*)</expression>
