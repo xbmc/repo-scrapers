@@ -1,3 +1,6 @@
+[B]1.5.4[/B]
+- Updated: language files from Transifex
+
 [B]1.5.3[/B]
 - Fixed: Language tag caching - round two (thx and credits to pgit)
 
