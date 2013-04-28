@@ -1,3 +1,6 @@
+[B]2.6.5[/B]
+Updated language files from Transifex
+
 [B]2.6.4[/B]
 Changed: tighten search query and trust musicbrainz results sorting
 
