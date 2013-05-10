@@ -1,3 +1,6 @@
+[B]2.4.3[/B]
+- Changed poster and fanart priority
+
 [B]2.4.2[/B]
 - updated language files from Transifex
 
