@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="11" date="2013-02-18" name="MoviePlayer.it" content="movies" language="en">
+﻿<?xml version="1.0" encoding="UTF-8"?><scraper framework="11" date="2013-02-18" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -27,7 +27,7 @@
 		</RegExp>
 		<RegExp conditional="Bing" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url cache=&quot;MoviePlayerPage.html&quot; spoof=&quot;http://www.movieplayer.it/adv/interstitial/2.html?next=/film/\1_\2/&quot;&gt;http://www.movieplayer.it/film/\1_\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
-				<expression repeat="yes">http://www\.movieplayer\.it/film/([^_]*)_([0-9]+)/[^&gt;]*&gt;([^\(]*)\(([^\)]*)\)</expression>
+				<expression repeat="yes">http://www\.movieplayer\.it/film/([^_]*)_([0-9]+)/"(.*?)"&gt;([^_]*) - film ([0-9]+) -</expression>
 			</RegExp>
 			<expression clear="yes" trim="1" noclean="1" />
 		</RegExp>
