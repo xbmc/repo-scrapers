@@ -1,3 +1,6 @@
+[B]1.0.6[/B]
+- fixed: can't get full information by imdb id (nfo)
+
 [B]1.0.5[/B]
 - fixed: support decimal in rating
 
