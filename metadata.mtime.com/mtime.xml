@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2011-03-13">
+<scraper framework="1.1" date="2013-05-27">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression clear="yes" noclean="1">(http://www.mtime.com/movie/[0-9]*)</expression>
 		</RegExp>
 	</NfoUrl>
-	<CreateSearchUrl dest="3" SearchStringEncoding="gb2312">
+	<CreateSearchUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;http://m.mtime.com/search/?q=\1&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
@@ -41,7 +41,7 @@
 			<RegExp input="$$1" output="&lt;country&gt;\2&lt;/country&gt;" dest="5+">
 				<expression repeat="yes">href=&quot;http://(search.mtime.com/movie/section/area/|movie.mtime.com/movie/search/section/\?nation=)[^&gt;]*&gt;([^&lt;]*).nbsp</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-rating.html&quot; function=&quot;GetRating&quot;&gt;$$3rating/summary.html&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-rating.html&quot; function=&quot;GetRating&quot;&gt;http://service.mtime.com/database/databaseService.m?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Community.Controls.CommunityPages.DatabaseService&Ajax_CallBackMethod=LoadData2&Ajax_CallBackArgument0=1&Ajax_CallBackArgument1=\1&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
@@ -52,6 +52,9 @@
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression>&lt;!-- 剧情介绍 --&gt;.*?&lt;p&gt;(.*?)&lt;/p&gt;</expression>
+			</RegExp>
+			<RegExp conditional="trailer" input="$$1" output="&lt;url function=&quot;GetTrailer&quot;&gt;http://api.mtime.com/trailer/getvideo.aspx?vid=\1&lt;/url&gt;" dest="5+">
+				<expression>http://movie.mtime.com/\d+/trailer/(\d+)\.html</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;http://movie.m.mtime.com/$$2/plots.html&lt;/url&gt;" dest="5+">
 				<expression/>
@@ -71,6 +74,11 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>	
+	<GetTrailer clearbuffers="no" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
+			<expression>&quot;flv&quot;:&quot;([^&quot;]+)&quot;</expression>
+		</RegExp>
+	</GetTrailer>
 	<GetPlot clearbuffers="no" dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="2">
@@ -93,7 +101,7 @@
 	<GetRating clearbuffers="no" dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="2">
-				<expression clear="yes">全部会员.*?class=&quot;score&quot;&gt;([0-9.]+)&lt;/span&gt;.*?class=&quot;vote&quot;&gt;([0-9]+)&lt;/span&gt;</expression>
+				<expression clear="yes">&quot;rating&quot;:([\d\.]+),&quot;ratingCount&quot;:(\d+),</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -104,19 +112,19 @@
 				<expression clear="yes" noclean="1">演员 Actor：(.*?)&lt;/ul&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\1.jpg&lt;/thumb&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="2">
-				<expression clear="yes" repeat="yes" noclean="1" trim="2,4">&lt;img alt=&quot;[^&quot;]*&quot; src=&quot;([^_]*)_22X22.jpg&quot;/&gt;&lt;/a&gt;&lt;a href=&quot;.*?&quot;&gt;([^&lt;]*)&lt;/a&gt;([^\.]*\.\.\.\.([^&lt;]*)&lt;/em&gt;|.*?)&lt;/li&gt;</expression>
+				<expression clear="yes" repeat="yes" noclean="1" trim="2,4">&lt;img alt=&quot;[^&quot;]*&quot; src=&quot;([^_]*)_22X22.jpg&quot;/&gt;&lt;/a&gt;&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;/a&gt;(.*?\.\.\.\.([^&lt;]*)&lt;/em&gt;|.*?)&lt;/li&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression clear="yes" noclean="1">导演 Director：(.*?)&lt;/ul&gt;</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;director&gt;\1&lt;/director&gt;" dest="2+">
-				<expression repeat="yes">&lt;li&gt;[^&lt;]*&lt;a href=&quot;.*?&quot;&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes">&lt;li&gt;[^&lt;]*&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression clear="yes" noclean="1">编剧 Writer：(.*?)&lt;/ul&gt;</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
-				<expression repeat="yes">&lt;li&gt;[^&lt;]*&lt;a href=&quot;.*?&quot;&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes">&lt;li&gt;[^&lt;]*&lt;a href=[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>

@@ -1,0 +1,30 @@
+[B]1.1.2[/B]
+- fixed: can't get rating after site change
+- added: option to get trailer
+
+[B]1.1.1[/B]
+- fixed: can't get search list due to return with gzip mode
+
+[B]1.1.0[/B]
+- change to use internal search by mtime.com
+
+[B]1.0.9[/B]
+- updated to get title, originaltitle, year and genre after site change
+
+[B]1.0.8[/B]
+- fixed GetSearchResults expression
+
+[B]1.0.7[/B]
+- added originaltitle
+
+[B]1.0.6[/B]
+- fixed: can't get title and year for some movie
+
+[B]1.0.5[/B]
+- fixed for site change, added to get studio
+
+[B]1.0.4[/B]
+- added polish translation. thanks to kolabor
+
+[B]1.0.0[/B]
+- Initial version
