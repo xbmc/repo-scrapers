@@ -1,4 +1,5 @@
 Changelog:
+29/05/2013 - Search fixed
 14/05/2013 - Fixed Bing results string
 01/04/2013 - Removed AKA titles
 15/02/2012 - Removed Local IMDB function and added some details retrieving from metadata.common.imdb.com and fixed cast
