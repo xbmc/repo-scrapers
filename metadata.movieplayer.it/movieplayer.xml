@@ -70,10 +70,10 @@
 			</RegExp>
 			<!--IMDB details-->
 			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="13+">
-				<RegExp input="$$13" output="\1%20" dest="9">
+				<RegExp input="$$13" output="\1" dest="9">
 					<expression clear="yes" noclean="1" encode="1">&lt;originaltitle&gt;([^/"]*)&lt;/originaltitle&gt;</expression>
 				</RegExp>
-				<RegExp input="$$13" output="(\1)" dest="9+">
+				<RegExp conditional="Year" input="$$13" output="%20(\1)" dest="9+">
 					<expression>&lt;year&gt;([^/"]*)&lt;/year&gt;</expression>
 				</RegExp>
 				<expression />
