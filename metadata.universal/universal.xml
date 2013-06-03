@@ -250,9 +250,6 @@
 			<RegExp conditional="trakttvfanart" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="ytrailer" input="$$1" output="&lt;chain function=&quot;GetYoutubeTrailer&quot;&gt;$$19=$$20&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
 			<RegExp conditional="tmdbtrailer" input="$$2" output="&lt;chain function=&quot;GetTMDBLangTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>

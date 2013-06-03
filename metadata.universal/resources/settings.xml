@@ -72,8 +72,6 @@
     <setting type="sep"/>
     <setting label="30039" type="bool" id="trakttvtrailer" default="false"/>
     <setting type="sep"/>
-    <setting label="30005" type="bool" id="ytrailer" default="false"/>
-    <setting type="sep"/>
   </category>
 
   <category label="30100">
