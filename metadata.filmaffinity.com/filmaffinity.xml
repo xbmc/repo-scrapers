@@ -180,21 +180,21 @@
 			</RegExp>
 
 			<!-- hd-trailers 480p -->
-			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$5" output="\1" dest="6">
 					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
 				</RegExp>
 				<expression>HD-Trailers\(480p\)</expression>
 			</RegExp>
 			<!-- hd-trailers 720p -->
-			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$5" output="\1" dest="6">
 					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
 				</RegExp>
 				<expression>HD-Trailers\(720p\)</expression>
 			</RegExp>
 			<!-- hd-trailers 1080p -->
-			<RegExp input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="EnableHDTrailers" input="$INFO[HDTrailersQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$6&lt;/chain&gt;" dest="5+">
 				<RegExp input="$$5" output="\1" dest="6">
 					<expression noclean="1">&lt;originaltitle&gt;([^&lt;]*)</expression>
 				</RegExp>
