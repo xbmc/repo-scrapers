@@ -46,7 +46,7 @@
 
 			<!-- obtención de título FA -->
 			<RegExp input="$$1" conditional="!EnableOriginalTitles" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
-				<expression trim="1" noclean="1">main-title&quot;&gt;[^&gt;]*?&gt;(.*?)(\(AKA|&lt;)</expression>
+				<expression trim="1">&lt;h1[^&gt;]*&gt;(.*?)(\(AKA|&lt;/)</expression>
 			</RegExp>
 
 			<!-- obtención de título original -->
@@ -130,14 +130,14 @@
 			<!-- obtención de puntuación y número de votos de filmaffinity (si búsqueda rápida) -->
 			<RegExp conditional="EnableFastSearch" input="$$9" output="\1" dest="5+">
 				<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;&lt;votes&gt;\3&lt;/votes&gt;" dest="9">
-					<expression>movie-rat-avg.*?([1-9]),([0-9]).*?([0-9\.]+)</expression>
+					<expression>movie-rat-avg[^0-9]*?([0-9]),([0-9]).*?movie-count-rat[^0-9]*?([0-9\.]+)</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
 			<!-- obtención de puntuación y número de votos de filmaffinity (si no IMDB) -->
 			<RegExp conditional="!IMDBRatings" input="$$9" output="\1" dest="5+">
 				<RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;&lt;votes&gt;\3&lt;/votes&gt;" dest="9">
-					<expression>movie-rat-avg.*?([1-9]),([0-9]).*?([0-9\.]+)</expression>
+					<expression>movie-rat-avg[^0-9]*?([0-9]),([0-9]).*?movie-count-rat[^0-9]*?([0-9\.]+)</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
