@@ -1,3 +1,7 @@
+[B]1.5.8[/B]
+
+- Revisada la obtención de títulos y puntuaciones de la web de filmaffinity
+
 [B]1.5.7[/B]
 
 - Revisada la búsqueda condicional de HDTrailers
