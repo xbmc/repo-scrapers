@@ -1,3 +1,6 @@
+[B]3.2.0[/B]
+Added: An attempt to handle dash and exclamation mark in the artist name
+
 [B]3.1.0[/B]
 Added: Polish for theaudiodb.com language selection
 Removed: htbackdrops.com scraping since site is dead for a good while
