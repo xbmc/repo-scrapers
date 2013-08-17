@@ -26,8 +26,8 @@
 	<Parse480pTrailer dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<!--fetch 480p trailer link from hdtrailers.net-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_480p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_480p_dl.mov&quot;\srel=&quot;lightbox\[res480p</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_480p_dl.mov)"\srel=&quot;lightbox\[res480p</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -35,12 +35,12 @@
 	<Parse720pTrailer dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<!--Fallback to fetch 480p trailer link if 720p is not available-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_480p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_480p_dl.mov&quot;\srel=&quot;lightbox\[res480p</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_480p_dl.mov)"\srel=&quot;lightbox\[res480p</expression>
 			</RegExp>
 			<!--Fetch 720p trailer link from hdtrailers.net-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_720p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_720p_dl.mov&quot;\srel=&quot;lightbox\[res720p</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_720p_dl.mov)"\srel=&quot;lightbox\[res720p</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -48,16 +48,16 @@
 	<Parse1080pTrailer dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<!--Fallback to fetch 480p trailer link if 720p and 1080p are not available-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_480p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_480p_dl.mov&quot;\srel=&quot;lightbox\[res480p</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_480p_dl.mov)"\srel=&quot;lightbox\[res480p</expression>
 			</RegExp>
-			<!--Fallback to fetch 720p trailer link if 1080p is not available-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_720p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_720p_dl.mov&quot;\srel=&quot;lightbox\[res720p</expression>
+			<!--Fetch 720p trailer link from hdtrailers.net-->
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_720p_dl.mov)"\srel=&quot;lightbox\[res720p</expression>
 			</RegExp>
 			<!--Fetch 1080p trailer link from hdtrailers.net-->
-			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/pdlext/aol/brightcove/ame/\1_1080p_dl.mov&lt;/trailer&gt;" dest="6">
-				<expression noclean="1">http://pdl\.stream\.aol\.com/pdlext/aol/brightcove/ame/([^&quot;]*?)_1080p_dl.mov&quot;\srel=&quot;lightbox\[res1080p</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://pdl.stream.aol.com/\1&lt;/trailer&gt;" dest="6">
+				<expression noclean="1">http://pdl\.stream\.aol\.com/([^&quot;]*?_1080p_dl.mov)"\srel=&quot;lightbox\[res1080p</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
