@@ -1,3 +1,6 @@
+[B]1.1.3[/B]
+- fixed: can't get search list because site change
+
 [B]1.1.2[/B]
 - fixed: can't get rating after site change
 - added: option to get trailer
