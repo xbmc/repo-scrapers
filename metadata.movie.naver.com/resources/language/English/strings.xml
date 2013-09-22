@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<strings>
-    <string id="30000">Enable Full Synopsis</string>
-    <string id="30001">Select Poster from Photos</string>
-    <string id="30002">Select Fanart from Photos</string>
-    <string id="30003">Prefer TMDB Fanart In Priority</string>
-    <string id="30004">Enable Voting Number</string>
-</strings>

@@ -1,9 +1,0 @@
-1.0.4
-
-Changes
-- version fix
-
-1.0.3
-
-Changes
-- Initial addon version
