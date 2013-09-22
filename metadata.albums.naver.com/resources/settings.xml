@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<settings>
-    <setting label="30000" type="bool" id="enFullReview" default="false"/>
-    <setting label="30001" type="bool" id="enKoccaReview" default="false"/>
-    <setting label="30002" type="bool" id="srchByArtist" default="true"/>
-    <setting label="30003" type="bool" id="srchByAlbum" default="true"/>
-</settings>
