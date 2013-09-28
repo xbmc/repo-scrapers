@@ -95,6 +95,9 @@
 			<RegExp input="$INFO[albumratingsource]" output="&lt;url function=&quot;GetAMGAlbumRating&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
+			<RegExp input="$INFO[albumratingsource]" output="&lt;chain function=&quot;GetTADBAlbumRatingByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
+				<expression>TheAudioDb.com</expression>
+			</RegExp>
 			<RegExp input="$INFO[albumstylessource]" output="&lt;url function=&quot;GetAMGAlbumStyles&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
