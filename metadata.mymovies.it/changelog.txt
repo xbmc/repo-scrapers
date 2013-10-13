@@ -1,3 +1,6 @@
+[B]2.0.2[/B]
+- Added mymovies.it internal search, this option is acctivable in setting (thanks to mario.diraimondo for the patch - see issue 13)
+
 [B]2.0.1[/B]
 - Fixed trailer: Update regex for change in some films pages
 - Added setting category: For more user-friendly scraper settings

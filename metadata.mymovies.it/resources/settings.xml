@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
+	<category label="30400">
+	    <!-- <setting label="30400" type="lsep" /> -->
+	    <setting label="30401" type="bool" id="google" default="true"/>
+	</category>
+	
     <category label="30000">
 	    <!-- <setting label="30000" type="lsep" /> -->
 	    <setting label="30001" type="bool" id="fullcredits" default="true"/>
