@@ -1,4 +1,5 @@
 Changelog:
+23/10/2013 - Fixed IMDB ID
 29/05/2013 - Search fixed and tuned Year, for non corresponding year between MP & IMDB
 14/05/2013 - Fixed Bing results string
 01/04/2013 - Removed AKA titles

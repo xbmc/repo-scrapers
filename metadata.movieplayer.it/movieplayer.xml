@@ -142,11 +142,11 @@
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5+">
 			<!--ID titolo IMDB su buffer 2-->
 			<RegExp input="$$1" output="\1" dest="2">
-				<expression>/title/([t0-9]*)</expression>
+				<expression>&lt;a href="/title/([t0-9]*)/.ref_=fn_tt_tt_1"</expression>
 			</RegExp>
 			<!--ID-->
 			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="6+">
-				<expression>/title/([t0-9]*)</expression>
+				<expression>&lt;a href="/title/([t0-9]*)/.ref_=fn_tt_tt_1"</expression>
 			</RegExp>
 			<!--IMDB rating-->
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
