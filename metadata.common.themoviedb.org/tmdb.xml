@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <scraperfunctions>
-
 	<GetTMDBCertificationsByIdChain dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBCertifications&quot; cache=&quot;tmdb-cert-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1/releases?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;language=$INFO[tmdbcertcountry]&lt;/url&gt;" dest="5">
