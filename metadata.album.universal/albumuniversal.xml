@@ -80,9 +80,6 @@
 			<RegExp input="$INFO[albumreviewsource]" output="&lt;url function=&quot;GetAMGAlbumReview&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
-			<RegExp input="$INFO[albumreviewsource]" output="&lt;chain function=&quot;GetLastFMAlbumReviewByAlbumAndArtist&quot;&gt;$$7::$$8::$$7::$$8&lt;/chain&gt;" dest="5+">
-				<expression>last.fm</expression>
-			</RegExp>
 			<RegExp input="$INFO[albumreviewsource]" output="&lt;chain function=&quot;GetTADBAlbumReviewByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
 				<expression>TheAudioDb.com</expression>
 			</RegExp>
@@ -114,9 +111,6 @@
 				<expression noclean="1" />
 			</RegExp>
 			<RegExp conditional="allmusicalbumthumbs" input="$$1" output="&lt;url function=&quot;GetAMGAlbumThumbs&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<RegExp conditional="lastfmalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetLastFMAlbumThumbs&quot;&gt;$$7::$$8::$$7::$$8&lt;/chain&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
 			<expression noclean="1" />
