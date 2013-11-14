@@ -96,5 +96,10 @@
     <description lang="zh">本刮削器支持从以下网站获取信息：MusicBrainz、last.fm、allmusic.com和amazon.de，并从以下网站获取艺术图片：fanart.tv、last.fm和allmusic.com。你可以指定每一项内容的来源网站。&#10;&#10;初始结果总是先从MusicBrainz获取。如果MusicBrainz网站没有到allmusic和/或amazon.de的外部链接，则无法获取allmusic.com的/或amazon.de的信息（当然你能很容易地加入缺失的链接）。</description>
     <description lang="zh_TW">本搜刮器支援從以下網站取得資訊：MusicBrainz、last.fm、allmusic.com和amazon.de，並從以下網站取得專輯照片：fanart.tv、last.fm和allmusic.com。您並可以指定每一項內容的來源網站。&#10;&#10;初始搜尋結果總是先從MusicBrainz取得。如果MusicBrainz網站沒有加入到allmusic和/或amazon.de的外部連結，則無法取得allmusic.com的/或amazon.de的信息(當然您能很輕易地加入遺失的連結)。</description>
     <platform>all</platform>
+    <website></website>
+    <source></source>
+    <email></email>
+    <forum>http://forum.xbmc.org/showthread.php?tid=133547</forum>
+    <license>GPL v2.0</license>
   </extension>
 </addon>

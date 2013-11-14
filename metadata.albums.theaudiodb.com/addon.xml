@@ -88,5 +88,10 @@
     <description lang="zh">TheAudioDB.com是一个社区驱动的音乐资料库。我们的目标是简单、便利和精确的提供网络音乐元数据。我们提供访问数据库的API，以支持多种流行的HTPC和移动应用程序，为你提供无障碍的最佳音乐体验。</description>
     <description lang="zh_TW">TheAudioDB.com是一個社群導向的音樂資料庫。我們的目標是簡單、便利和精確的提供網路音樂源數據資料。我們提供訪問數據資料的API，以支持多種流行的HTPC和手機應用程式，為您提供無障礙的最佳音樂體驗。</description>
     <platform>all</platform>
+    <website>http://www.theaudiodb.com/</website>
+    <source></source>
+    <email></email>
+    <forum>http://forum.xbmc.org/showthread.php?tid=136051</forum>
+    <license>GPL v2.0</license>
   </extension>
 </addon>

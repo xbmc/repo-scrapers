@@ -91,5 +91,10 @@
     <description lang="zh">本刮削器从以下站点获取信息：IMDb、TMDb、Rotten Tomatoes、Trakt.tv、OFDb.de。初始结果总是先从TMDb获取，然后可以针对不同项目分别设置从不同站点获取信息。</description>
     <description lang="zh_TW">Universal Scraper是現今可客製化程度最高的搜括器，並從以下的支援網站取得資訊：IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de。這​​是目前XBMC團隊的旗艦搜括器。它總以 TMDb或IMDB (根據設定值) 當作初始搜尋的網站，但可以單獨在每一個獨立的選項設定你要得網站並取得指定的相關資訊。</description>
     <platform>all</platform>
+    <website></website>
+    <source></source>
+    <email></email>
+    <forum>http://forum.xbmc.org/showthread.php?tid=129821</forum>
+    <license>GPL v2.0</license>
   </extension>
 </addon>
