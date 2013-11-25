@@ -1,3 +1,35 @@
+[B]2.2.1[/B]
+Fixed: Include albums of any status in search results
+
+[B]2.2.0[/B]
+Added: 2 new languages
+Removed: last.fm completely
+
+[B]2.1.0[/B]
+Added: option to fetch album Rating from TheAudioDB.com
+
+[B]2.0.0[/B]
+Added: ResolveIDToUrl
+Fixed: album won't find some times (thanks and credits to crankylemur & ezechiel1917)
+
+[B]1.7.6[/B]
+Updated language files from Transifex
+
+[B]1.7.5[/B]
+Re-aply changes in 1.7.3 what lost in space with 1.7.4
+
+[B]1.7.4[/B]
+Changed: tighten search query and trust musicbrainz results sorting
+
+[B]1.7.3[/B]
+Fixed: album won't find some times (thanks and credits to crankylemur)
+
+[B]1.7.2[/B]
+Fix settings after last.fm removal
+
+[B]1.7.1[/B]
+Disable last.fm options because last.fm is now truncating biogs
+
 [B]1.7.0[/B]
 Added: option to select language from TheAudioDB.com
 Added back the option to scrape from last.fm
