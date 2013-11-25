@@ -1,3 +1,6 @@
+[B]2.2.1[/B]
+Fixed: Include albums of any status in search results
+
 [B]2.2.0[/B]
 Added: 2 new languages
 Removed: last.fm completely
