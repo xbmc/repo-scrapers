@@ -1,3 +1,6 @@
+[B]2.2.2[/B]
+Fixed: Re-prioritize Official albums in search results
+
 [B]2.2.1[/B]
 Fixed: Include albums of any status in search results
 
