@@ -12,6 +12,8 @@
       <setting label="30013" type="bool" id="tmdbset" default="true"/>
       <setting label="30046" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbsetlanguage" default="en" enable="!eq(-1,false)"/>
     <setting type="sep"/>
+      <setting label="30048" type="labelenum" values="themoviedb.org|None" id="tmdbtags" default="None"/>
+    <setting type="sep"/>
   </category>
 
   <category label="30400">

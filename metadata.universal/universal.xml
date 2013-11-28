@@ -232,6 +232,9 @@
 			<RegExp conditional="tmdbset" input="$$2" output="&lt;chain function=&quot;GetTMDBLangSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
+			<RegExp input="$INFO[tmdbtags]" output="&lt;chain function=&quot;GetTMDBTagsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>themoviedb.org</expression>
+			</RegExp>
 			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>

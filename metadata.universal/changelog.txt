@@ -1,3 +1,6 @@
+[B]2.5.0[/B]
+- added: support to save keywords as tags from TMDb
+
 [B]2.4.5[/B]
 - fixed: RT critics concensus won't be scraped as plot
 
