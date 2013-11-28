@@ -191,7 +191,7 @@
 				<expression>themoviedb.org</expression>
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetRTPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>Rotten Tomatoes</expression>
+				<expression>^Rotten Tomatoes$</expression>
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetOFDbPlotByIMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>OFDb.de</expression>

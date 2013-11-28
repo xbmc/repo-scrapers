@@ -1,3 +1,6 @@
+[B]2.4.5[/B]
+- fixed: RT critics concensus won't be scraped as plot
+
 [B]2.4.4[/B]
 - Removed broken direct youtube trailer scraping
 
