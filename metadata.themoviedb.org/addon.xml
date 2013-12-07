@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org"
        name="The Movie Database"
-       version="3.7.3"
+       version="3.7.4"
        provider-name="Team XBMC">
   <requires>
-    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="xbmc.metadata" version="2.1.0"/>
     <import addon="metadata.common.themoviedb.org" version="2.8.0"/>
     <import addon="metadata.common.hdtrailers.net" version="1.0.7"/>
     <import addon="metadata.common.imdb.com" version="2.6.0"/>
@@ -101,5 +101,10 @@
     <description lang="zh">themoviedb.org是一个开放和自由的电影数据库。它完全由象你一样的用户来掌控。TMDb每月为上百万用户提供服务，并通过强大的API界面为许多流行的媒体中心系统如XBMC提供电影资料、封面海报和同人画以丰富用户的体验。</description>
     <description lang="zh_TW">themoviedb.org是一個免費和開放的電影資料庫。它是完全由與您一樣的廣大使用者來更新資訊。 TMDb目前擁有數以百萬計的使用人次並且有著強大的API，許多受歡迎的媒體中心平台像XBMC藉由TMDb獲取電影的數據資料庫，海報和影片資訊，以豐富使用者體驗。</description>
     <platform>all</platform>
+    <website></website>
+    <source></source>
+    <email></email>
+    <forum></forum>
+    <license>GPL v2.0</license>
   </extension>
 </addon>
