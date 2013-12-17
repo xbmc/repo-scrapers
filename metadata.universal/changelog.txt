@@ -1,3 +1,6 @@
+[B]2.5.1[/B]
+- updated: TMDb API URLs
+
 [B]2.5.0[/B]
 - added: support to save keywords as tags from TMDb
 
