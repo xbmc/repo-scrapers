@@ -2,7 +2,7 @@
 <settings>
 	<category label="30400">
 	    <!-- <setting label="30400" type="lsep" /> -->
-	    <setting label="30401" type="bool" id="google" default="true"/>
+	    <setting label="30401" type="bool" id="google" default="false"/>
 	</category>
 	
     <category label="30000">

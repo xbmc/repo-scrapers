@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.mymovies.it"
        name="MyMovies.it"
-       version="2.0.2"
+       version="2.0.3"
        provider-name="muttley">
   <requires>
     <import addon="xbmc.metadata" version="1.0"/>
@@ -34,6 +34,10 @@ Enjoy!
     <description lang="kr">MyMovies.it 에서 영화 정보 다운로드</description>
     <description lang="pt">Descarregar informação de filmes de www.mymovies.it</description>
     <disclaimer>If the scraper is very slow, disable setting tagged with "(slow)".</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007</license>
+    <forum>http://forum.xbmc.org/showthread.php?t=58141</forum>
+    <website>http://code.google.com/p/mymovies-xbmc-scraper/</website>
+    <source>http://code.google.com/p/mymovies-xbmc-scraper/source/checkout</source>
     <platform>all</platform>
   </extension>
 </addon>
