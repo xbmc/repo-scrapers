@@ -15,8 +15,9 @@
     <summary lang="en">SerialZone.cz TV Series Scraper</summary>
     <summary lang="cs">SerialZone.cz Stahovac</summary>
     <description lang="en">Info scraper for SerialZone.cz. SerialZone contains description of czech and international TV/Movie series, episodes and actors in czech language.</description>
-    <description lang="cs">StahovaÄ informacÃ­ o serialech z SerialZone.cz. SerialZone obsahuje popisy ÄeskÃ½ch i mezinÃ¡rodnÃ­ch seriÃ¡lÅ¯, jejich epizod a hercÅ¯ v ÄeskÃ©m jazyce. 
+    <description lang="cs">Stahovaè informací o serialech z SerialZone.cz. SerialZone obsahuje popisy èeskıch i mezinárodních seriálù, jejich epizod a hercù v èeském jazyce. 
 </description>
     <platform>all</platform>
+    <broken>deprecated</broken>
   </extension>
 </addon>
