@@ -238,7 +238,7 @@
 				<expression clear="yes" noclean="1">&quot;crew&quot;:\[([^\]]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;,&quot;department&quot;:&quot;Directing&quot;,&quot;job&quot;:&quot;Director&quot;</expression>
+				<expression repeat="yes" fixchars="1">&quot;department&quot;:&quot;Directing&quot;,&quot;id&quot;:[0-9]*,&quot;job&quot;:&quot;Director&quot;,&quot;name&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -258,7 +258,7 @@
 				<expression clear="yes" noclean="1">&quot;crew&quot;:\[([^\]]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;,&quot;department&quot;:&quot;Writing&quot;,</expression>
+				<expression repeat="yes" fixchars="1">&quot;department&quot;:&quot;Writing&quot;,&quot;id&quot;:[0-9]*,&quot;job&quot;:&quot;Writer&quot;,&quot;name&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
