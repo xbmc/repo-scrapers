@@ -1,3 +1,6 @@
+[B]2.0.4[/B]
+- Fixed GetMovieTrailer for retrive italian trailer. (Issue 15: Alcuni trailer sono in inglese...)
+
 [B]2.0.3[/B]
 - Set mymovies.it internal search as default. Added <forum>, <website> and <source> tags for new xbmc addon section (addons.xbmc.org)
 
