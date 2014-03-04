@@ -4,6 +4,6 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30004">Omogućite Fanart-s iz fanart.tv</string>
-    <string id="30005">Omogućite Umjetnine iz fanart.tv</string>
+    <string id="30004">Omogući slike omota Izvođača s fanart.tv</string>
+    <string id="30005">Omogućite minijature izvođača s fanart.tv</string>
 </strings>

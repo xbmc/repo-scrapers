@@ -4,6 +4,6 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30004">Activa fanarts d'artistes de fanart.tv</string>
-    <string id="30005">Activa miniatures d'artistes de fanart.tv</string>
+    <string id="30004">Habilita els fanarts d'artistes de fanart.tv</string>
+    <string id="30005">Habilita les miniatures d'artistes de fanart.tv</string>
 </strings>
