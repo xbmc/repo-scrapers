@@ -1,3 +1,6 @@
+[B]2.2.3[/B]
+Updated language files from Transifex
+
 [B]2.2.2[/B]
 Fixed: Re-prioritize Official albums in search results
 
