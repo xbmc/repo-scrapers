@@ -53,6 +53,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">Søkemotor</string>
     <string id="30304">     Sekundært språk å søke for (i tillegg til en-us)</string>
+    <string id="30305">Inkluder Alle Filmkategorier</string>
+    <string id="30306">Advarsel:</string>
+    <string id="30307">Søket vil bli unøyaktig ved å slå på Alle Filmkategorier</string>
     <string id="30400">Handling</string>
     <string id="30401">Handling / slagord / referat</string>
     <string id="30500">Fanart</string>

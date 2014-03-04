@@ -46,6 +46,7 @@
     <string id="30045">Hent opsummering fra</string>
     <string id="30046">Foretrukket sprog til navne på Sæt (samlinger) </string>
     <string id="30047">Kilder til Plakater</string>
+    <string id="30048">Hent stikord og gem som etiket fra</string>
     <string id="30100">Bedømmelse</string>
     <string id="30110">Bedømmelse genereret ved hjælp af</string>
     <string id="30115">Anvend Score indsamlet fra</string>
@@ -57,6 +58,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">Søgemaskine der skal anvendes</string>
     <string id="30304">Sekundært sprog for søgning (Udover en-us)</string>
+    <string id="30305">Inkluderer alle filmkategorier</string>
+    <string id="30306">Advarsel:</string>
+    <string id="30307">Inkludering af alle filmkategorier vil kraftigt reducere søgenøjagtigheden!</string>
     <string id="30400">Handling</string>
     <string id="30401">Handling / Undertitel / Opsummering</string>
     <string id="30500">Fankunst</string>

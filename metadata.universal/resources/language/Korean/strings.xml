@@ -46,6 +46,7 @@
     <string id="30045">개요 가져오기</string>
     <string id="30046">시리즈(컬렉션) 제목 선호 언어</string>
     <string id="30047">포스터 소스</string>
+    <string id="30048">키워드를 태그로 저장하기</string>
     <string id="30100">평점</string>
     <string id="30110">평점 생성</string>
     <string id="30115">점수 총계 사용</string>
@@ -57,7 +58,9 @@
     <string id="30302">IMDb</string>
     <string id="30303">사용할 검색 엔진</string>
     <string id="30304">두 번째 검색 언어 (en-us 외)</string>
+    <string id="30305">모든 영화 분류를 포함시킴</string>
     <string id="30306">경고:</string>
+    <string id="30307">모든 영화 종류를 포람시키는것은 검색 결과 정확도를 상당히 낮춥니다 !!!</string>
     <string id="30400">줄거리</string>
     <string id="30401">줄거리 / 태그라인 / 개요</string>
     <string id="30500">팬아트</string>

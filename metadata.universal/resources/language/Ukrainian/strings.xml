@@ -4,7 +4,18 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30001">Включити малюнки з themoviedb.org</string>
+    <string id="30002">Включити постери з themoviedb.org</string>
+    <string id="30003">Включити постери з IMPAwards</string>
+    <string id="30004">Включити постери з MoviePosterDB</string>
+    <string id="30005">Отримати трейлери безпосередньо з YouTube</string>
+    <string id="30006">Включити трейлери з HD-Trailers.net</string>
+    <string id="30008">     Бажана мова назв з</string>
+    <string id="30009">Включити трейлери з themoviedb.org</string>
     <string id="30012">Трейлери</string>
+    <string id="30022">Отримати жанри з</string>
+    <string id="30023">Отримати назви з</string>
+    <string id="30024">Джерело назв</string>
     <string id="30100">Рейтинг</string>
     <string id="30200">Автори</string>
     <string id="30300">Пошук</string>

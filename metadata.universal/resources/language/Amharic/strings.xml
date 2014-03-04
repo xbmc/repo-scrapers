@@ -4,8 +4,15 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
+    <string id="30023">አርእስት ማግኛ ከ </string>
+    <string id="30024">የ አርእስት ምንጮች</string>
+    <string id="30027">የ ተመረጠው የ አርእስት ቋንቋ</string>
+    <string id="30029">የ ሙቪ ስብስብ </string>
+    <string id="30031">ምስክር ወረቀት ማሰናጃዎች</string>
+    <string id="30032">ምስክር ወረቀት ያግኙ ከ </string>
     <string id="30115">     Use the Score Aggregated from</string>
     <string id="30200">ምስጋና </string>
     <string id="30300">መፈለጊያ</string>
     <string id="30302">IMDb</string>
+    <string id="30306">ማስጠንቀቂያ:</string>
 </strings>

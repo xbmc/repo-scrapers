@@ -4,16 +4,16 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30001">Włącz fanart z themoviedb.org</string>
-    <string id="30002">Włącz plakaty z themoviedb.org</string>
-    <string id="30003">Włącz plakaty z IMPAwards</string>
-    <string id="30004">Włącz plakaty z MoviePosterDB</string>
-    <string id="30005">Pobierz trailery prosto z YouTube</string>
+    <string id="30001">Włącz pobieranie fanart z themoviedb.org</string>
+    <string id="30002">Włącz pobieranie plakatów z themoviedb.org</string>
+    <string id="30003">Włącz pobieranie plakatów z IMPAwards</string>
+    <string id="30004">Włącz pobieranie plakatów z MoviePosterDB</string>
+    <string id="30005">Pobierz zwiastuny prosto z YouTube </string>
     <string id="30006">Włącz zwiastuny z HD-Trailers.net</string>
     <string id="30008">Preferowany język tytułu z</string>
-    <string id="30009">Włącz trailery z themoviedb.org</string>
+    <string id="30009">Włącz zwiastuny z themoviedb.org </string>
     <string id="30011">Plakat</string>
-    <string id="30012">Trailery</string>
+    <string id="30012">Zwiastuny </string>
     <string id="30013">Pobieraj nazwę zestawu (kolekcji) z themoviedb.org</string>
     <string id="30014">Pobierz fabułę z </string>
     <string id="30015">Pobierz obsadę / reżyserów / scenarzystów z </string>
@@ -26,7 +26,7 @@
     <string id="30025">Źródła obsady i napisów</string>
     <string id="30026">Źródła gatunków</string>
     <string id="30027">Preferowany język tytułu</string>
-    <string id="30028">Źródła trailerów</string>
+    <string id="30028">Źródła zwiastunów </string>
     <string id="30029">Kolekcje filmowe</string>
     <string id="30030">Źródła oceny</string>
     <string id="30031">Ustawienia certyfikacji</string>
@@ -37,9 +37,9 @@
     <string id="30036">Włącz plakaty z IMDb</string>
     <string id="30037">Włącz plakaty z trakt.tv</string>
     <string id="30038">Włącz fanart z trakt.tv</string>
-    <string id="30039">Włącz trailery z trakt.tv</string>
+    <string id="30039">Włącz zwiatuny z trakt.tv </string>
     <string id="30040">Język gatunku</string>
-    <string id="30041">Preferowany język trailerów</string>
+    <string id="30041">Preferowany język zwiastunów </string>
     <string id="30042">Pobierz opis z</string>
     <string id="30043">Preferowany język puenty</string>
     <string id="30044">Pobierz ranking IMDb Top 250</string>

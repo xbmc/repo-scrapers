@@ -10,12 +10,18 @@
     <string id="30004">MoviePosterDB のポスターを有効に</string>
     <string id="30005">YouTube から予告編を直接取得</string>
     <string id="30006">HD-Trailers.net の予告編を有効に</string>
+    <string id="30008">タイトル言語の優先取得先</string>
     <string id="30009">themoviedb.org の予告編を有効に</string>
     <string id="30012">予告編</string>
     <string id="30014">あらすじの取得元：</string>
+    <string id="30015">出演者 / 監督 / 作者情報の取得先</string>
+    <string id="30016">あらすじの取得先</string>
+    <string id="30020">あらすじの優先言語</string>
     <string id="30021">評価の取得元：</string>
     <string id="30022">ジャンルの取得元：</string>
     <string id="30023">タイトルの取得元：</string>
+    <string id="30024">タイトルの取得先</string>
+    <string id="30025">出演者とクレジット情報の取得先</string>
     <string id="30029">映画コレクション</string>
     <string id="30036">IMDb のポスターを有効に</string>
     <string id="30037">trakt.tv のポスターを有効に</string>
@@ -29,6 +35,8 @@
     <string id="30202">製作国情報の取得元：</string>
     <string id="30300">検索</string>
     <string id="30302">IMDb</string>
+    <string id="30305">全ムービーカテゴリーを含める</string>
+    <string id="30306">警告:</string>
     <string id="30400">ストーリー</string>
     <string id="30500">Fanart</string>
 </strings>

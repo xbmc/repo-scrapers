@@ -4,18 +4,19 @@
 <!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
 
 <strings>
-    <string id="30001">Vključi ozadja s themoviedb.org</string>
-    <string id="30002">Vključi plakate s themoviedb.org</string>
+    <string id="30001">Vključi grafike z themoviedb.org</string>
+    <string id="30002">Vključi plakate z themoviedb.org</string>
     <string id="30003">Vključi plakate z IMPAwards</string>
     <string id="30004">Vkjuči plakate z MoviePosterDB</string>
     <string id="30005">Prenesi napovednike direktno z YouTubea</string>
     <string id="30006">Vključi napovednike s HD-Trailers.net</string>
     <string id="30008">Jezik naslovov z</string>
-    <string id="30009">Vključi napovednike s themoviedb.org</string>
+    <string id="30009">Vključi napovednike z themoviedb.org</string>
     <string id="30011">Plakat</string>
     <string id="30012">Napovedniki</string>
-    <string id="30014">Prenesi zgodbo z</string>
-    <string id="30015">Prenesi Igralce / Režiserje / Scenariste z</string>
+    <string id="30013">Prenesi ime zbirke (seta) z themoviedb.org</string>
+    <string id="30014">Prenesi povzetek z</string>
+    <string id="30015">Prenesi igralce / režiserje / scenariste z</string>
     <string id="30016">Viri zgodb</string>
     <string id="30020">Jezik zgodb</string>
     <string id="30021">Prenesi ocene z</string>
@@ -41,8 +42,11 @@
     <string id="30041">Jezik napovednikov</string>
     <string id="30042">Prenesi moto z</string>
     <string id="30043">Jezik mota</string>
-    <string id="30044">Prenesi IMDb TOP250</string>
+    <string id="30044">Prenesi položaj na IMDb TOP250</string>
+    <string id="30045">Prenesi oris zgodbe z</string>
+    <string id="30046">Jezik imena zbirke (seta)</string>
     <string id="30047">Viri plakatov</string>
+    <string id="30048">Prenesi ključne besede in jih shrani kot značke z</string>
     <string id="30100">Ocena</string>
     <string id="30110">Ocene generirane z</string>
     <string id="30115">Uporabi točke z</string>
@@ -52,6 +56,13 @@
     <string id="30300">Išči</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
-    <string id="30400">Zgodba</string>
-    <string id="30500">Ozadje</string>
+    <string id="30303">Ponudnik iskanja</string>
+    <string id="30304">Dodatni jezik iskanja (poleg en-us)</string>
+    <string id="30305">Vključi vse kategorije filmov</string>
+    <string id="30306">Opozorilo:</string>
+    <string id="30307">Vključitev vseh kategorij filmov lahko močno poslabša natančnost iskanja!!!</string>
+    <string id="30400">Povzetek</string>
+    <string id="30401">Povzetek / Moto / Oris zgodbe</string>
+    <string id="30500">Grafike</string>
+    <string id="30501">Viri grafik</string>
 </strings>

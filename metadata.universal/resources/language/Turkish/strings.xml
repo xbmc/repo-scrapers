@@ -11,11 +11,26 @@
     <string id="30005">Fragmanları doğrudan YouTube'dan alın</string>
     <string id="30006">HD-Trailers.net fragmanlarını etkinleştir</string>
     <string id="30009">themoviedb.org fragmanlarını etkinleştir</string>
+    <string id="30011">Poster</string>
     <string id="30012">Fragmanlar</string>
+    <string id="30021">Değerlendirmeleri şuradan al</string>
+    <string id="30022">Tarzı Şuradan Al</string>
+    <string id="30023">Başlığı Şuradan Al</string>
+    <string id="30024">Başlık Kaynağı</string>
+    <string id="30027">Tercih Edilen Başlık Dili</string>
+    <string id="30028">Fragman Kaynakları</string>
+    <string id="30029">Film Koleksiyonları</string>
+    <string id="30030">Derecelendirme Kaynakları</string>
+    <string id="30031">Sertifika Ayarları</string>
+    <string id="30032">Sertifikaları Şuradan Al</string>
+    <string id="30036">IMDb posterlerini etkinleştir</string>
+    <string id="30037">trakt.tv posterlerini etkinleştir</string>
+    <string id="30047">Poster Kaynakları</string>
     <string id="30100">Derecelendirme</string>
     <string id="30200">Jenerik</string>
     <string id="30300">Ara</string>
     <string id="30302">IMDb</string>
+    <string id="30306">Uyarı:</string>
     <string id="30400">İçerik</string>
     <string id="30500">Fanart</string>
 </strings>
