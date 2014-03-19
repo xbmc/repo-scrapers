@@ -1,3 +1,6 @@
+[B]1.1.4[/B]
+- fixed for site change
+
 [B]1.1.3[/B]
 - fixed: can't get search list because site change
 
