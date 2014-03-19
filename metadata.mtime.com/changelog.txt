@@ -1,3 +1,7 @@
+[B]1.1.5[/B]
+- fixed: can't get some actor message
+- get more movie post
+
 [B]1.1.4[/B]
 - fixed for site change
 

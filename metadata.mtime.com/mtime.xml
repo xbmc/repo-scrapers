@@ -103,7 +103,7 @@
 				<expression clear="yes" noclean="1">演员 Actor(.*?)&lt;/dl&gt;\s*&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\2.jpg&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="2">
-				<expression repeat="yes">&lt;div class=&quot;actor_tit&quot;&gt;\s*(&lt;div class=&quot;pic_58&quot;&gt;.*?src=&quot;([^_]*)_58X58.jpg&quot; /&gt;&lt;/a&gt;\s*|)&lt;h3&gt;(.*?)&lt;/h3&gt;.*?&lt;h3&gt;(.*?)&lt;/h3&gt;</expression>
+				<expression repeat="yes">&lt;div class=&quot;actor_tit&quot;&gt;\s*(&lt;div class=&quot;pic_58&quot;&gt;.*?src=&quot;([^_]*)_58X58.jpg&quot; /&gt;\s*&lt;/a&gt;\s*|)&lt;h3&gt;(.*?)&lt;/h3&gt;.*?&lt;h3&gt;(.*?)&lt;/h3&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression clear="yes" noclean="1">导演 Director(.*?)&lt;/div&gt;</expression>
@@ -123,7 +123,7 @@
 	<GetMtimePoster dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\2_170X250.jpg&quot;&gt;\2_680X1000.jpg&lt;/thumb&gt;" dest="6">
-				<expression clear="yes" repeat="yes" noclean="1">&quot;title&quot;:&quot;(正式海报|海报).*?&quot;img_220&quot;:&quot;(http://img[^_]*)_[0-9X]+.jpg&quot;</expression>
+				<expression clear="yes" repeat="yes" noclean="1">&quot;title&quot;:&quot;(正式海报|海报|预告海报|角色海报).*?&quot;img_220&quot;:&quot;(http://img[^_]*)_[0-9X]+.jpg&quot;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
