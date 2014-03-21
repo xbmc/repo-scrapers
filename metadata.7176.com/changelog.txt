@@ -1,4 +1,7 @@
-﻿[B]1.0.9[/B]
+﻿[B]1.1.0[/B]
+- Mark service broken due to shutting down website
+
+[B]1.0.9[/B]
 - 修正：网站变化造成导演、编剧、演员表无法
   fixed: site change cause can't get director, writer and actor
 
