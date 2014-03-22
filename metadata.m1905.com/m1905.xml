@@ -6,14 +6,14 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3" SearchStringEncoding="UTF-8">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.m1905.com/search/?type=film&amp;amp;q=\1&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.m1905.com/search/index-p-type-film-q-\1.html&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.m1905.com/mdb/film/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;h3 class=&quot;fl&quot;&gt;&lt;a href=&quot;http://www.m1905.com/mdb/film/([0-9]+)/&quot; target=&quot;_blank&quot; class=&quot;blue_fa f14 fb&quot;&gt;(.*?)&lt;/a&gt;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 \3&lt;/title&gt;&lt;url&gt;http://www.m1905.com/mdb/film/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;h2 class=&quot;title-mv&quot;.*?&lt;a href=&quot;http://www.m1905.com/mdb/film/([0-9]+)/&quot;[^&gt;]*&gt;(.*?)&lt;b&gt;(.*?)&lt;/b&gt;</expression>
 			</RegExp>
 			<expression clear="yes" noclean="1"/>
 		</RegExp>
@@ -24,10 +24,13 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression>&lt;div class=&quot;laMovName&quot;.*?&lt;a href=[^&gt;]+&gt;(.*?)&lt;/a&gt;</expression>
+				<expression>&lt;div class=&quot;laMovName&quot;.*?&lt;a [^&gt;]+&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
+				<expression>&lt;div class=&quot;laMovName&quot;.*?&lt;div class=&quot;fl&quot;&gt;.*?&lt;a [^&gt;]+&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>上映日期:&lt;/strong&gt;&lt;a [^&gt;]+&gt;([0-9]+)&lt;/a&gt;</expression>
+				<expression>&lt;div class=&quot;laMovName&quot;.*?\(&lt;a href=[^&gt;]+&gt;([0-9]+)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1 " dest="6">
 				<expression clear="yes" noclean="1">地区:&lt;/strong&gt;(.*?)&lt;/li&gt;</expression>
@@ -35,8 +38,8 @@
 			<RegExp input="$$6" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression repeat="yes">&lt;a [^&gt;]+&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-rating.html&quot; function=&quot;GetRating&quot;&gt;http://www.m1905.com/pubfunc/score_rating_20110624.php?score_type=movie&amp;amp;movieid=$$2&amp;amp;mydo=ajax&lt;/url&gt;" dest="5+">
-				<expression/>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="5+">
+				<expression>&lt;span class=&quot;score&quot;&gt;([\.\d]*)&lt;/span&gt;.*?id=&quot;rating_num&quot;&gt;(\d*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1 " dest="6">
 				<expression clear="yes" noclean="1">类型:&lt;/strong&gt;(.*?)&lt;/li&gt;</expression>
@@ -62,14 +65,6 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>	
-	<GetRating clearbuffers="no" dest="5">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;rating&gt;\2&lt;/rating&gt;&lt;votes&gt;\1&lt;/votes&gt;" dest="2">
-				<expression>([0-9]*)\|([\.0-9]*)\|</expression>
-			</RegExp>
-			<expression noclean="1"/>
-		</RegExp>
-	</GetRating>
 	<GetFullcredits dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
