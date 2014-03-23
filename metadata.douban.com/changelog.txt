@@ -1,3 +1,9 @@
+[B]1.0.7[/B]
+- changed: use douban API v2 search
+- added: get country
+- added: get writer
+- fixed: can't get posts and fanarts because site change
+
 [B]1.0.6[/B]
 - fixed: can't get full information by imdb id (nfo)
 
