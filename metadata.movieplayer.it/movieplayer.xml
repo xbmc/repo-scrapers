@@ -99,8 +99,8 @@
 				<expression>&lt;div class="poster"&gt;[^_]*src="([^_]*)_medium.jpg</expression>
 			</RegExp>
 			<!--Trailer-->
-			<RegExp input="$$1" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="13+">
-				<expression>file: "([^"]+)"</expression>
+			<RegExp input="$$1" output="&lt;trailer&gt;http://nl.video.\1&lt;/trailer&gt;" dest="13+">
+				<expression>setupObject.file = "http://nl.video.([^"]*)";</expression>
 			</RegExp>
 			<!--Posters-->
 			<RegExp conditional="AltPosters" input="$$1" output="&lt;url cache=&quot;\MoviePlayerFoto.html&quot; spoof=&quot;http://www.movieplayer.it/adv/interstitial/2.html?next=/film/\1/&quot; function=&quot;GetMPPosters&quot;&gt;http://www.movieplayer.it/film/\1/foto/&lt;/url&gt;" dest="13+">
