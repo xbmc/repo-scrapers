@@ -2,7 +2,10 @@
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
       <RegExp input="$$1" output="\1" dest="2">
-				<expression noclean="12" />
+				<expression noclean="1,2" />
+			</RegExp>
+      <RegExp input="$$2" output="\1" dest="2">
+				<expression noclean="1,2">%5b.*%5d(.*)</expression>
 			</RegExp>
       <RegExp input="$$2" output="\1:\2" dest="2">
 				<expression noclean="1,2">(.*)：(.*)</expression>
@@ -44,7 +47,7 @@
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
 				</RegExp>
         <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">The (.*)</expression>
+				  <expression noclean="1">^The (.*)</expression>
 			  </RegExp>
 				<expression>1</expression>
 			</RegExp>
@@ -57,7 +60,7 @@
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
 				</RegExp>
         <RegExp conditional="titleEliminateThe" input="$$6" output="\1" dest="6">
-				  <expression noclean="1">The (.*)</expression>
+				  <expression noclean="1">^The (.*)</expression>
 			  </RegExp>
 				<RegExp input="$$6" output=" (\1)" dest="4+">
 				  <expression />
@@ -70,7 +73,7 @@
 					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;</expression>
 				</RegExp>
         <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">The (.*)</expression>
+				  <expression noclean="1">^The (.*)</expression>
 			  </RegExp>
 				<RegExp input="$$1" output=" (\1)" dest="4+">
 					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
