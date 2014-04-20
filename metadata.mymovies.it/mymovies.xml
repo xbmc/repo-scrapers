@@ -145,12 +145,21 @@
 			<!-- Thumbs -->
 			<!-- Low res thumb get from first (scheda) film page -->
 			<RegExp conditional="!thumbs" input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
-				<expression cs="true" noclean="1">&lt;img style=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot; width=&quot;150px&quot; alt=&quot;Locandina</expression>
+				<expression cs="true" noclean="1">&lt;img(?:.*?)style=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot; width=&quot;150px&quot; alt=&quot;Locandina</expression>
 			</RegExp>
+
 			<!-- Get all film thumbs -->
-			<RegExp conditional="thumbs" input="$$1" output="&lt;url function=&quot;GetMovieThumbs&quot;&gt;\1&lt;/url&gt;" dest="5+">
-				<expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Poster [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Poster&lt;/a&gt;&lt;/td&gt;</expression>
-			</RegExp>
+            <RegExp conditional="thumbs" input="$$8" output="\1" dest="5+">
+                <!-- Get Always low res on main page -->
+                <RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="8">
+                    <expression cs="true" noclean="1">&lt;img(?:.*?)style=&quot;[^&quot;]+&quot; src=&quot;([^&quot;]+)&quot; width=&quot;150px&quot; alt=&quot;Locandina</expression>
+                </RegExp>
+                <!-- Check Poster page existence...if exist overwrite poster in low res-->
+                <RegExp input="$$1" output="&lt;url function=&quot;GetMovieThumbs&quot;&gt;\1&lt;/url&gt;" dest="8">
+                    <expression noclean="1">&lt;td class=&quot;rec_link_disattivo&quot;&gt;&lt;a title=&quot;Poster [^&quot;]+&quot; href=&quot;([^&quot;]+)&quot;&gt;Poster&lt;/a&gt;&lt;/td&gt;</expression>
+                </RegExp>
+                <expression noclean="1" />
+            </RegExp>
 
 			<!-- Trailer -->
 			<RegExp conditional="trailer" input="$$1" output="&lt;url function=&quot;GetMovieTrailer&quot;&gt;\1&lt;/url&gt;" dest="5+">
@@ -163,6 +172,11 @@
 				<RegExp input="$$5" output="\1" dest="4">
 					<expression noclean="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
 				</RegExp>
+                <!-- Italian title + (year) for search (aka imdb) -->
+                <RegExp input="$$5" output="&lt;titleyear4search&gt;$$4 (\1)&lt;/titleyear4search&gt;" dest="5+">
+                    <expression>&lt;year&gt;([^&lt;]+)&lt;/year&gt;</expression>
+                </RegExp>
+
 				<!-- Original film title: not always present -->
 				<RegExp input="$$1" output="\1" dest="3">
 					<expression cs="true" noclean="1" clear="yes">Titolo originale[^&gt;]+&gt;([^&lt;]+)&lt;</expression>
@@ -185,16 +199,16 @@
 				<expression noclean="1" />
 			</RegExp>
 			
-			<!--MPAA, studio and ratings from IMDB -->
-			<RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdbinfo.html&quot; function=&quot;GetIMDBInfoByTitle&quot;&gt;http://www.google.com/search?q=site:imdb.com%20&quot;\1&quot;&lt;/url&gt;" dest="5+">
-				<expression noclean="1">&lt;originaltitleforimdb&gt;([^&lt;]+)&lt;/originaltitleforimdb&gt;</expression>
-			</RegExp>
+			<!--MPAA, studio, ratings... from IMDB -->
+            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetIMDBInfoByTitle&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
+                <expression encode="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
+            </RegExp>
 
 			<!-- Tmdb Backdrops from IMDB -->
-			<RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdbinfo.html&quot; function=&quot;GetTMDBFanartByTitle&quot;&gt;http://www.google.com/search?q=site:imdb.com%20&quot;\1&quot;&lt;/url&gt;" dest="5+">
-				<expression noclean="1">&lt;originaltitleforimdb&gt;([^&lt;]+)&lt;/originaltitleforimdb&gt;</expression>
-			</RegExp>
-			
+            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetTMDBFanartByTitle&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
+                <expression encode="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
+            </RegExp>
+
             <!-- Plot: It is used for report many information... -->
             <!-- Custum function are used only for see all buffer -->
             <!-- I buffer della GetDetails non sono visibili alle funzioni custom e non risco a trovare un approccio differente per appendere informazioni al plot -->
@@ -268,40 +282,46 @@
 		</RegExp>
 	</GetMovieCast>
 
-	<GetTMDBFanartByTitle dest="6">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;&lt;/details&gt;" dest="6">
-			<expression>/title/([t0-9]*)</expression>
+    <GetTMDBFanartByTitle dest="6">
+        <RegExp input="$$5" output="&lt;details&gt;&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;&lt;/details&gt;" dest="6">
+            <RegExp input="$$1" output="\1" dest="4">
+                <expression noclean="1">&lt;table class=&quot;findList&quot;(.*?)&lt;/div</expression>
+            </RegExp>
+            <RegExp input="$$4" output="\1" dest="5">
+                <expression noclean="1">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/</expression>
+            </RegExp>
+            <expression noclean="1" />
+        </RegExp>
+    </GetTMDBFanartByTitle>
+
+    <GetIMDBInfoByTitle dest="6">
+        <RegExp input="$$1" output="\1" dest="2">
+            <expression noclean="1">&lt;table class=&quot;findList&quot;(.*?)&lt;/div</expression>
+        </RegExp>
+        <RegExp input="$$2" output="\1" dest="3">
+            <expression noclean="1">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/</expression>
+        </RegExp>
+        <expression noclean="1" />
+
+        <RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="6">
+            <RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;\1&lt;/chain&gt;" dest="5">
+                <expression/>
+            </RegExp>
+            <RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBCountryCert&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+                <expression/>
+			</RegExp>
+            <RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBTOP250ById&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
+            <RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBStudioById&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+                <expression/>
+			</RegExp>
+            <RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBCountryById&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+                <expression/>
+			</RegExp>
+            <expression noclean="1"/>
 		</RegExp>
-	</GetTMDBFanartByTitle>
-	
-	<GetIMDBInfoByTitle dest="6">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseImdbData&quot;&gt;http://akas.imdb.com/title/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/details&gt;" dest="6">
-			<expression>/title/([t0-9]*)</expression>
-		</RegExp>
-	</GetIMDBInfoByTitle>
-	
-	<ParseImdbData dest="5">
-		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<!-- All regex are get from imdb scraper -->		
-			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="6+">
-				<expression>Top 250 #([0-9]*)&lt;/</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="6+">
-				<expression>MPAA&lt;/a&gt;\)&lt;/h4&gt;\n?([^&lt;]*)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="6+">
-				<expression repeat="yes">&lt;a href="/country/[^&gt;]+&gt;([^&lt;]+)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="6+">
-				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
-			</RegExp>
-			<!-- I can't use pulbic function GetIMDBRatingById :( -->
-		   	<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="6+">
-				<expression>&lt;span itemprop=&quot;ratingValue&quot;&gt;([0-9.]+).*?&gt;.*?title=&quot;([0-9,]+)\s</expression>
-			</RegExp>
-		   <expression noclean="1"/>
-		</RegExp>
-	</ParseImdbData>
+    </GetIMDBInfoByTitle>
 
 	<GetMovieFullCast dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">

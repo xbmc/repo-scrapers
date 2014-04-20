@@ -1,3 +1,8 @@
+[B]2.1.0[/B]
+- Better (i hope) search for fan artand imdb info (use imdb.aka for search)
+- Include and use metadata.common.imdb.com
+- Migrate source on GitHub (https://github.com/elbowz/mymovies-xbmc-scraper)
+
 [B]2.0.4[/B]
 - Fixed GetMovieTrailer for retrive italian trailer. (Issue 15: Alcuni trailer sono in inglese...)
 
