@@ -1,5 +1,5 @@
 v1.5.7
-- Fix caching
+- Fixed: append language to CreateSearchUrl cache file
 
 v1.5.6
 - Updated: language files from Transifex
