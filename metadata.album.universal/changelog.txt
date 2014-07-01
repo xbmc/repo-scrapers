@@ -1,3 +1,6 @@
+[B]2.2.4[/B]
+Fix album releases with the "Packaging" field populated on MB (thanks and credits to elrodro83)
+
 [B]2.2.3[/B]
 Updated language files from Transifex
 
