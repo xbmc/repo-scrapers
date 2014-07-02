@@ -1,3 +1,9 @@
+[B]1.3.3[/B]
+- Fixed actors thumb fetch.
+- Fixed Full cast option.
+- Added Youtube Trailer fetch from sratim.co.il (with Hebrew subs) as first priority and tmdb.org as a second priority.
+- BIG THANKS to MeatHook for making the changes!
+
 [B]1.3.2[/B]
 - add year to search query (if exist in name)
 - make results sorted (match is much better)

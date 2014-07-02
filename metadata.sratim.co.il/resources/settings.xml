@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
 	<setting label="30000" type="bool" id="fullcredits" default="false" />
-	<setting label="30001" type="labelenum" values="YouTube|None" id="trailersFrom" default="YouTube" />
+    <setting label="30001" type="bool" id="trailer" default="true" />
 	<setting label="30002" type="labelenum" values="MovieDB|None" id="fanart" default="MovieDB" />
 	<setting label="30003" type="labelenum" values="Sratim|TMDB|MoviePosterDB" id="thumbFrom" default="Sratim" />
 	<setting label="30004" type="labelenum" values="IMDB|Sratim" id="ratingFrom" default="IMDB"/>
