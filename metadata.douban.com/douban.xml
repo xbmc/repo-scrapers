@@ -21,7 +21,7 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 - \2 (\3)&lt;/title&gt;&lt;url&gt;http://api.douban.com/v2/movie/subject/\4&lt;/url&gt;&lt;id&gt;\4&lt;/id&gt;&lt;/entity&gt;" dest="3+">
-				<expression repeat="yes">&quot;title&quot;:&quot;([^&quot;]*)&quot;,&quot;collect_count&quot;:\d*,&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;subtype&quot;:&quot;movie&quot;,&quot;year&quot;:&quot;(\d*)&quot;,&quot;images&quot;:\{[^\}]*\},&quot;alt&quot;:&quot;[^&quot;]*&quot;,&quot;id&quot;:&quot;(\d*)&quot;</expression>
+				<expression repeat="yes">&quot;title&quot;:&quot;([^&quot;]*)&quot;,&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;subtype&quot;:&quot;movie&quot;,&quot;directors&quot;:\[[^\]]*\],&quot;year&quot;:&quot;(\d*)&quot;,&quot;images&quot;:\{[^\}]*\},&quot;alt&quot;:&quot;[^&quot;]*&quot;,&quot;id&quot;:&quot;(\d*)&quot;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -32,52 +32,52 @@
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression>&quot;title&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1">&quot;title&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression>&quot;original_title&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1">&quot;original_title&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression>&quot;year&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1">&quot;year&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-				<expression>&quot;ratings_count&quot;:(\d+)</expression>
+				<expression noclean="1">&quot;ratings_count&quot;:(\d+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
-				<expression>&quot;average&quot;:([\d\.]+)</expression>
+				<expression noclean="1">&quot;average&quot;:([\d\.]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression>&quot;genres&quot;:\[(.+?)\]</expression>
+				<expression noclean="1">&quot;genres&quot;:\[(.+?)\]</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
-				<expression repeat="yes">&quot;(.+?)&quot;</expression>
+				<expression noclean="1" repeat="yes">&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression>&quot;countries&quot;:\[(.+?)\]</expression>
+				<expression noclean="1">&quot;countries&quot;:\[(.+?)\]</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
-				<expression repeat="yes">&quot;(.+?)&quot;</expression>
+				<expression noclean="1" repeat="yes">&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression>&quot;summary&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1">&quot;summary&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes">&quot;directors&quot;:\[(.+?)\]</expression>
+				<expression noclean="1" clear="yes">&quot;directors&quot;:\[(.+?)\]</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<expression repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1" repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes">&quot;writers&quot;:\[(.+?)\]</expression>
+				<expression noclean="1" clear="yes">&quot;writers&quot;:\[(.+?)\]</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<expression repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
+				<expression noclean="1" repeat="yes">&quot;name&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
-				<expression clear="yes">&quot;casts&quot;:\[(.+?)\]</expression>
+				<expression noclean="1" clear="yes">&quot;casts&quot;:\[(.+?)\]</expression>
 			</RegExp>
-			<RegExp input="$$8" output="&lt;actor&gt;&lt;thumb&gt;http://\1/img/celebrity/large/\2.jpg&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes">&quot;large&quot;:&quot;http:\\/\\/(.+?)\\/img\\/celebrity\\/large\\/(\d+).jpg&quot;.+?&quot;name&quot;:&quot;(.+?)&quot;</expression>
+			<RegExp input="$$8" output="&lt;actor&gt;&lt;thumb&gt;http://\2/img/celebrity/large/\3.jpg&lt;/thumb&gt;&lt;name&gt;\4&lt;/name&gt;&lt;/actor&gt;" dest="5+">
+				<expression noclean="1" repeat="yes">&quot;avatars&quot;:(null,|.*?&quot;large&quot;:&quot;http:\\/\\/(.+?)\\/img\\/celebrity\\/large\\/(.+?).jpg&quot;.*?)&quot;alt&quot;:.+?&quot;name&quot;:&quot;(.+?)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;\1-poster.html&quot; function=&quot;GetPoster&quot;&gt;http://movie.douban.com/subject/\1/photos?type=R&lt;/url&gt;" dest="5+">
 				<expression/>

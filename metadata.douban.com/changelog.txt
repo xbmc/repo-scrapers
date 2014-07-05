@@ -1,3 +1,8 @@
+[B]1.0.8[/B]
+- fixed: can't get search list due to API change
+- fixed: can't get cast infomation
+- fixed: scrape error under OSX
+
 [B]1.0.7[/B]
 - changed: use douban API v2 search
 - added: get country
