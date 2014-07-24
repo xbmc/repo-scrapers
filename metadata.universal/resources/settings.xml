@@ -42,6 +42,8 @@
   <category label="30011">
     <setting type="lsep" label="30047"/>
     <setting type="sep"/>
+    <setting label="30502" type="bool" id="fanarttvposter" default="false"/>
+    <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
     <setting label="30034" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbthumblanguage" default="en" enable="!eq(-1,false)"/>
     <setting type="sep"/>
@@ -57,6 +59,8 @@
 
   <category label="30500">
     <setting type="lsep" label="30501"/>
+    <setting type="sep"/>
+    <setting label="30503" type="bool" id="fanarttvfanart" default="false"/>
     <setting type="sep"/>
     <setting label="30001" type="bool" id="fanart" default="true"/>
     <setting type="sep"/>
