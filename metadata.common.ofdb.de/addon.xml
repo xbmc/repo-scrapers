@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.common.ofdb.de"
-       name="OFDb.de common scraper functions"
+       name="OFDb.de Scraper Library"
        version="1.0.3"
        provider-name="Olympia, Team-XBMC">
   <requires>

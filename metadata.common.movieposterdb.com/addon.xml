@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.common.movieposterdb.com"
-       name="MoviePosterDB common scraper functions"
+       name="MoviePosterDB Scraper Library"
         version="1.1.1"
        provider-name="Team XBMC">
   <requires>
@@ -10,7 +10,6 @@
              library="movieposterdb.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">MoviePosterDB Scraper Library</summary>
     <summary lang="hu">MoviePosterDB leolvasó-könyvtár</summary>
     <summary lang="kr">MoviePosterDB 스크래퍼 라이브러리</summary>

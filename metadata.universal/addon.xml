@@ -6,15 +6,15 @@
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
     <import addon="metadata.common.fanart.tv" version="3.1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="2.9.0"/>
-    <import addon="metadata.common.movieposterdb.com" version="1.0.5"/>
-    <import addon="metadata.common.imdb.com" version="2.7.0"/>
-    <import addon="metadata.common.impa.com" version="1.0.3"/>
-    <import addon="metadata.common.hdtrailers.net" version="1.0.7"/>
+    <import addon="metadata.common.hdtrailers.net" version="2.0.5"/>
+    <import addon="metadata.common.imdb.com" version="2.7.8"/>
+    <import addon="metadata.common.impa.com" version="1.1.2"/>
+    <import addon="metadata.common.movieposterdb.com" version="1.1.1"/>
+    <import addon="metadata.common.ofdb.de" version="1.0.3"/>
+    <import addon="metadata.common.port.hu" version="1.0.3"/>
     <import addon="metadata.common.rt.com" version="1.4.0"/>
-    <import addon="metadata.common.ofdb.de" version="1.0.0"/>
-    <import addon="metadata.common.trakt.tv" version="1.0.0"/>
-    <import addon="metadata.common.port.hu" version="1.0.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.12.1"/>
+    <import addon="metadata.common.trakt.tv" version="1.1.2"/>
   </requires>
   <extension point="xbmc.metadata.scraper.movies"
              language="en"

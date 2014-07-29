@@ -13,5 +13,10 @@
     <summary lang="en">TMDB TV show Scraper</summary>
     <description lang="en">themoviedb.org is a free and open movie database. It's completely user driven by people like you. TMDb is currently used by millions of people every month and with their powerful API, it is also used by many popular media centers like XBMC to retrieve Movie Metadata, Posters and Fanart to enrich the user's experience.</description>
     <platform>all</platform>
+    <website></website>
+    <source></source>
+    <email></email>
+    <forum>http://forum.xbmc.org/showthread.php?tid=200504</forum>
+    <license>GPL v2.0</license>
   </extension>
 </addon>

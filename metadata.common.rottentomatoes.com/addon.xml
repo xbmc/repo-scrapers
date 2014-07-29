@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.common.rottentomatoes.com"
-       name="Rottentomatoes common scraper functions"
+       name="Rottentomatoes Scraper Library"
        version="1.0.1"
        provider-name="Team XBMC">
   <requires>
@@ -10,7 +10,6 @@
              library="rt.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="en">RT Scraper Library</summary>
     <summary lang="hu">RT leolvasó-könyvtár</summary>
     <summary lang="kr">RT 스크래퍼 라이브러리</summary>

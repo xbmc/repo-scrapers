@@ -5,7 +5,7 @@
        provider-name="Team XBMC, w00dst0ck">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
-    <import addon="metadata.common.themoviedb.org" version="1.0.7"/>
+    <import addon="metadata.common.themoviedb.org" version="3.7.8"/>
   </requires>
   <extension point="xbmc.metadata.scraper.movies"
              language="de"

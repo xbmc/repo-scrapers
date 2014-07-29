@@ -10,7 +10,6 @@
              library="porthu.xml"/>
   <extension point="xbmc.addon.metadata">
     <platform>all</platform>
-    <minversion>20000</minversion>
     <summary lang="bg">Библиотека за сваляне на инф. от port.hu</summary>
     <summary lang="en">port.hu Scraper Library</summary>
     <summary lang="es">Scraper de peliculas de port.hu</summary>
