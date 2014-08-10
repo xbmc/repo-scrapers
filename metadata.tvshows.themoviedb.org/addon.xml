@@ -2,7 +2,7 @@
 <addon id="metadata.tvshows.themoviedb.org"
        name="The Movie Database"
        version="1.0.0"
-       provider-name="Team XBMC">
+       provider-name="Team-Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
   </requires>
@@ -11,7 +11,7 @@
              library="tmdb.xml"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">TMDB TV show Scraper</summary>
-    <description lang="en">themoviedb.org is a free and open movie database. It's completely user driven by people like you. TMDb is currently used by millions of people every month and with their powerful API, it is also used by many popular media centers like XBMC to retrieve Movie Metadata, Posters and Fanart to enrich the user's experience.</description>
+    <description lang="en">themoviedb.org is a free and open movie database. It's completely user driven by people like you. TMDb is currently used by millions of people every month and with their powerful API, it is also used by many popular media centers like Kodi to retrieve Movie Metadata, Posters and Fanart to enrich the user's experience.</description>
     <platform>all</platform>
     <website></website>
     <source></source>

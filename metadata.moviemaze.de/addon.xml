@@ -2,7 +2,7 @@
 <addon id="metadata.moviemaze.de"
        name="MovieMaze"
        version="1.0.18"
-       provider-name="Team XBMC, w00dst0ck">
+       provider-name="Team-Kodi, w00dst0ck">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
     <import addon="metadata.common.themoviedb.org" version="3.7.8"/>

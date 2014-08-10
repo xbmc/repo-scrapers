@@ -2,7 +2,7 @@
 <addon id="metadata.common.ofdb.de"
        name="OFDb.de Scraper Library"
        version="1.0.3"
-       provider-name="Olympia, Team-XBMC">
+       provider-name="Olympia, Team-Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
   </requires>
