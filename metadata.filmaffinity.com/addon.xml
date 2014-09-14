@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon  id="metadata.filmaffinity.com"
 	name="FilmAffinity"
-	version="1.5.8"
-	provider-name="hectorZiN|MaDDoGo|agjacome|pancheto">
+	version="1.6.0"
+	provider-name="hectorZiN|MaDDoGo|agjacome|pancheto|xbmcero">
 	<requires>
 	    <import addon="xbmc.metadata" version="2.1.0"/>
 	    <import addon="metadata.common.themoviedb.org" version="2.9.2"/>

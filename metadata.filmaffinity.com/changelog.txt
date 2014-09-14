@@ -1,6 +1,24 @@
+[B]1.6.0[/B]
+
+- Modificada la codificación del scraper a UTF-8
+- Actualizada la URL de Google con el https
+- Modificada la búsqueda de FilmAffinity para utilizar la versión móvil
+- Añadida la opción de obtener el eslogan y la calificación por edades de TMDB
+- Reestructuradas las secciones de opciones de extras IMDB y TMDB
+- Mejorada la búsqueda en trakt.tv
+- Añadida la búsqueda en fanart.tv
+- Añadida detección del IMDBid a través de nfourl
+- Modificada la búsqueda de IMDB para utilizar funciones propias de su scraper
+- Revisada la obtención de posters y trailers de FilmAffinity
+- Revisado el refinado de la búsqueda en IMDB por apellido de director
+
+[B]1.5.9[/B]
+
+- Revisada la obtención de año, dirección, guión y título original de la web de FilmAffinity
+
 [B]1.5.8[/B]
 
-- Revisada la obtención de títulos y puntuaciones de la web de filmaffinity
+- Revisada la obtención de títulos y puntuaciones de la web de FilmAffinity
 
 [B]1.5.7[/B]
 
@@ -8,11 +26,11 @@
 
 [B]1.5.6[/B]
 
-- Soporte para la actualización de la web de filmaffinity
+- Soporte para la actualización de la web de FilmAffinity
 
 [B]1.5.5[/B]
 
-- Mejorada la búsqueda de títulos en filmaffinity con caracteres especiales
+- Mejorada la búsqueda de títulos en FilmAffinity con caracteres especiales
 - Mejorada la búsqueda de títulos en google permitiendo múltiples resultados
 
 [B]1.5.4[/B]
@@ -36,13 +54,13 @@
 - Añadida la búsqueda de información adicional buscando en cascada dentro de IMDB
 - Añadida la selección de trailers de TheMovieDB (gracias XBMCERO)
 - Añadida la selección de idioma para los posters de TheMovieDB (gracias XBMCERO)
-- Revisada la descarga de póster de filmaffinity
-- Añadida opción de descarga rápida de póster principal de filmaffinity (gracias XBMCERO)
+- Revisada la descarga de póster de FilmAffinity
+- Añadida opción de descarga rápida de póster principal de FilmAffinity (gracias XBMCERO)
 - Añadida la descarga de póster y fanart the trackt.tv
 - Añadido mostrar título original
 - Mejorada la búsqueda principal usando la búsqueda de google
 - Opciones de configuración revisadas y reordenadas (gracias XBMCERO y davidmuma)
-- Priorizados los posters de otras páginas sobre los de filmaffinity en caso de ser seleccionados
+- Priorizados los posters de otras páginas sobre los de FilmAffinity en caso de ser seleccionados
 - Eliminado soporte de Alpacine ya que la página ha dejado de funcionar
 
 [B]1.4.5[/B]
@@ -51,7 +69,7 @@
 
 [B]1.4.4[/B]
 
-- Mejorada la obtención de guionistas desde filmaffinity.
+- Mejorada la obtención de guionistas desde FilmAffinity.
 - Mejorada la obtención de productoras desde filmaffintiy.
 - Corregido bug en descarga de primera productora cuando miniaturas de estudio está activo.
 - Añadido soporte completamente funcional para descargas de posters de Alpacine.
@@ -60,10 +78,10 @@
 [B]1.4.3[/B]
 
 - Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a Lechu)
-- Mejorada la búsqueda de miniaturas y posters en filmaffinity (gracias a Lechu)
-- Corregida, una vez más, la lectura de los votos de filmaffinity (gracias a Lechu)
+- Mejorada la búsqueda de miniaturas y posters en FilmAffinity (gracias a Lechu)
+- Corregida, una vez más, la lectura de los votos de FilmAffinity (gracias a Lechu)
 - Corregida la descarga de sinopsis para ciertas películas (gracias a agjacome)
-- Cambiado el icono de filmaffinity para que sea igual que el rediseño de su web (gracias Lechu)
+- Cambiado el icono de FilmAffinity para que sea igual que el rediseño de su web (gracias Lechu)
 
 [B]1.4.2[/B]
 
@@ -75,7 +93,7 @@
 
 [B]1.4[/B]
 
-- Arreglados los fallos que daba filmaffinity en la última actualización (aporte de agjacome, otra vez muchas gracias!)
+- Arreglados los fallos que daba FilmAffinity en la última actualización (aporte de agjacome, otra vez muchas gracias!)
 
 [B]1.3.4[/B]
 
@@ -95,7 +113,7 @@
 
 - Arreglados problemas con expresiones regulares
 - Añadida una opción para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
-- Añadida la opción de escoger la descarga de trailers (desde filmaffinity o desde HD-Trailers.net
+- Añadida la opción de escoger la descarga de trailers (desde FilmAffinity o desde HD-Trailers.net
 - Editado el menú de configuracion del scraper
 - Código comentado para entender mejor las funciones
 - Varios problemas pequeños arreglados
@@ -116,7 +134,7 @@
 - Adaptado el scraper con las nuevas funciones <chain>.
 - Añadido descarga de posters desde TheMovieDB.
 - Eliminada opción sin uso.
-- Arreglado problema con los posters de filmaffinity.
+- Arreglado problema con los posters de FilmAffinity.
 
 [B]1.1.0[/B]
 
