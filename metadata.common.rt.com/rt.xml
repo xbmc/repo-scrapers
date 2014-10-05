@@ -62,7 +62,7 @@
 	</GetRTOutlineById>
 	<ParseRTOutline dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">critic_consensus&quot;&gt;([^&lt;]+)&lt;/p&gt;</expression>
+			<expression noclean="1">Critics\sConsensus:&lt;/span&gt;\s([^&lt;]+)&lt;/p&gt;</expression>
 		</RegExp>
 		<RegExp input="$$5" output="" dest="5">
 			<expression>&lt;details&gt;&lt;outline&gt;No consensus yet.&lt;/outline&gt;&lt;/details&gt;</expression>
@@ -77,7 +77,7 @@
 	</GetRTCConsensusToPlotById>
 	<ParseRTCConsensusToPlot dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">critic_consensus&quot;&gt;([^&lt;]+)&lt;/p&gt;</expression>
+			<expression noclean="1">Critics\sConsensus:&lt;/span&gt;\s([^&lt;]+)&lt;/p&gt;</expression>
 		</RegExp>
 		<RegExp input="$$5" output="" dest="5">
 			<expression>&lt;details&gt;&lt;plot&gt;No consensus yet.&lt;/plot&gt;&lt;/details&gt;</expression>
