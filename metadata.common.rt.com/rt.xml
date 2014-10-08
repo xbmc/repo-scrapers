@@ -21,7 +21,7 @@
 	<!-- TomatoMeter from All Critics -->
 	<ParseRTTomAll dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;all-critics-numbers&quot;.*?([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
 		</RegExp>
 	</ParseRTTomAll>
 
@@ -29,10 +29,10 @@
 	<ParseRTTomTop dest="5">
 		<!--Grabs All Critics first in case Top Critics is empty-->
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;all-critics-numbers&quot;.*?([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;top-critics-numbers&quot;.*?([0-9]+).*?Critic Reviews: ([0-9]+)</expression>
+			<expression noclean="1">&quot;top-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
 		</RegExp>
 	</ParseRTTomTop>
 
@@ -50,7 +50,7 @@
 			<expression noclean="1">&quot;all-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Reviews Counted:.*?([0-9]+)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;top-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Critic Reviews: ([0-9]+)</expression>
+			<expression noclean="1">&quot;top-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Critic Reviews:\s([0-9]+)</expression>
 		</RegExp>
 	</ParseRTAveTop>
 
@@ -62,7 +62,7 @@
 	</GetRTOutlineById>
 	<ParseRTOutline dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">Critics\sConsensus:&lt;/span&gt;\s([^&lt;]+)&lt;/p&gt;</expression>
+			<expression trim="1" noclean="1">Critics\sConsensus:&lt;/span&gt;\s*([^&lt;]+)&lt;/p&gt;</expression>
 		</RegExp>
 		<RegExp input="$$5" output="" dest="5">
 			<expression>&lt;details&gt;&lt;outline&gt;No consensus yet.&lt;/outline&gt;&lt;/details&gt;</expression>
@@ -77,7 +77,7 @@
 	</GetRTCConsensusToPlotById>
 	<ParseRTCConsensusToPlot dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">Critics\sConsensus:&lt;/span&gt;\s([^&lt;]+)&lt;/p&gt;</expression>
+			<expression trim="1" noclean="1">Critics\sConsensus:&lt;/span&gt;\s*([^&lt;]+)&lt;/p&gt;</expression>
 		</RegExp>
 		<RegExp input="$$5" output="" dest="5">
 			<expression>&lt;details&gt;&lt;plot&gt;No consensus yet.&lt;/plot&gt;&lt;/details&gt;</expression>
@@ -92,7 +92,7 @@
 	</GetRTPlotById>
 	<ParseRTPlot dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1\2&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<expression trim="1">class=&quot;movie_synopsis&quot; itemprop=&quot;description&quot;&gt;[^\w]*([^\n]*)[^&gt;]*&gt;\s([^~&lt;]*)</expression>
+			<expression trim="1">&lt;h2&gt;Movie Info&lt;/h2&gt;[^\w]*([^\n]*)[^&gt;]*&gt;\s([^~&lt;]*)</expression>
 		</RegExp>
 	</ParseRTPlot>
 </scraperfunctions>

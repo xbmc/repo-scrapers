@@ -1,3 +1,6 @@
+[B]1.5.0[/B]
+- Fixed: many data won't scraper due to site layout changes
+
 [B]1.4.1[/B]
 - Fixed: critics' consensus won't scrape
 
