@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Romanian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ro/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Romanian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/ro/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
-    <string id="30004">Obţine artă fani artişti de la fanart.tv</string>
-    <string id="30005">Obţine imagini reduse artişti de la fanart.tv</string>
+    <string id="30004">Activează Artist Fanarts de la fanart.tv</string>
+    <string id="30005">Activează Artist Thumbs de la fanart.tv</string>
 </strings>
