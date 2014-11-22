@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Slovak language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/sk/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Slovak language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/sk/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Povoliť FanArt-y zo stránky themoviedb.org</string>
@@ -13,7 +13,7 @@
     <string id="30008">Preferovaný jazyk Titulu z</string>
     <string id="30009">Povoliť upútavky na film zo stránky themoviedb.org</string>
     <string id="30011">Plagát</string>
-    <string id="30012">Upútavky na film</string>
+    <string id="30012">Ukážky</string>
     <string id="30013">Názov Kolekcie filmov získať z themoviedb.org</string>
     <string id="30014">Obsah filmu získať z</string>
     <string id="30015">Obsadenie / Režisérov / Scenáristov získať z </string>
@@ -62,6 +62,6 @@
     <string id="30307">Zapnutie voľby Všetky filmové kategórie značne zníži presnosť vyhľadávania !!!</string>
     <string id="30400">Obsah</string>
     <string id="30401">Obsah / Stručné info / Prehľad</string>
-    <string id="30500">FanArt</string>
+    <string id="30500">Fanart</string>
     <string id="30501">Zdroje FanArt-ov</string>
 </strings>

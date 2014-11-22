@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Norwegian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/no/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Norwegian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/no/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Hent fanart fra themoviedb.org</string>
@@ -12,15 +12,19 @@
     <string id="30006">Hent trailere fra HD-Trailers.net</string>
     <string id="30008">     Foretrekk tittel fra</string>
     <string id="30009">Hent trailere fra themoviedb.org</string>
-    <string id="30011">Plakater</string>
+    <string id="30011">Plakat</string>
     <string id="30012">Trailere</string>
     <string id="30013">Hent navn på samlinger fra themoviedb.org</string>
     <string id="30014">Hent handlig fra</string>
     <string id="30015">Hent rolleliste / regissør / forfatter Fra </string>
+    <string id="30016">Plotkilder</string>
     <string id="30020">     Foretrukket språk</string>
     <string id="30021">Hent rangeringer fra</string>
     <string id="30022">Hent sjanger fra</string>
     <string id="30023">Hent tittel fra</string>
+    <string id="30024">Tittelkilder</string>
+    <string id="30025">Kastet og Rulletekst Kilder</string>
+    <string id="30026">Genrekilder</string>
     <string id="30027">     Foretrekk tittel fra</string>
     <string id="30028">Kilder</string>
     <string id="30029">Filmsamlinger</string>
@@ -42,6 +46,7 @@
     <string id="30045">Hent referat fra</string>
     <string id="30046">     Foretrukket språk</string>
     <string id="30047">Ressurser for plakater</string>
+    <string id="30048">Får nøkkelord og lagrer som tagger fra</string>
     <string id="30100">Rangering/aldersgrense</string>
     <string id="30110">Rangering Generert Bruker</string>
     <string id="30115">Bruk Resultatet Opptjent fra</string>

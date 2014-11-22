@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Bulgarian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/bg/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Bulgarian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/bg/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Разреши ползването на фанарт от themoviedb.org</string>
@@ -29,8 +29,8 @@
     <string id="30028">Източници за трейлъра</string>
     <string id="30029">Филмови поредици</string>
     <string id="30030">Източници за рейтинга</string>
-    <string id="30031">Настройки за възрастова група</string>
-    <string id="30032">Получавай възрастовата група от</string>
+    <string id="30031">Настройки за категорията</string>
+    <string id="30032">Получавай категорията от</string>
     <string id="30033">Категоризирай според стандарта в</string>
     <string id="30034">Предпочитан език за миниатюрите</string>
     <string id="30035">Представка за категорията</string>
@@ -46,13 +46,13 @@
     <string id="30045">Получавай пояснения от</string>
     <string id="30046">Предпочитан език за заглавията на поредиците</string>
     <string id="30047">Източници за постера</string>
-    <string id="30048">Получавай и съхранявай ключови думи и етикети от</string>
+    <string id="30048">Съхранявай като етикети ключовите думи от</string>
     <string id="30100">Рейтинг</string>
     <string id="30110">Генериране на рейтинг чрез</string>
     <string id="30115">Ползвай средната оценка от</string>
     <string id="30200">Заслуги</string>
     <string id="30201">Получавай имената на студиата от</string>
-    <string id="30202">Получавай дъжавите от</string>
+    <string id="30202">Получавай държавите от</string>
     <string id="30300">Търсене</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
@@ -64,5 +64,7 @@
     <string id="30400">Сюжет</string>
     <string id="30401">Сюжет/Мото/Пояснения</string>
     <string id="30500">Фанарт</string>
-    <string id="30501">Източници за фанарта</string>
+    <string id="30501">Източници на фанарт</string>
+    <string id="30502">Разреши ползването на постери от fanart.tv</string>
+    <string id="30503">Разреши ползването на фанарт от fanart.tv</string>
 </strings>

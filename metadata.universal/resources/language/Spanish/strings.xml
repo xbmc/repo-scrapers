@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Spanish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/es/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Spanish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/es/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Usar imágenes hechas por usuarios de themoviedb.org</string>
@@ -12,8 +12,8 @@
     <string id="30006">Usar los avances de películas de HD-Trailers.net</string>
     <string id="30008">Idioma preferido para el título</string>
     <string id="30009">Usar los avances de películas de themoviedb.org</string>
-    <string id="30011">Poster</string>
-    <string id="30012">Avances de películas</string>
+    <string id="30011">Póster</string>
+    <string id="30012">Trailers</string>
     <string id="30013">Obtener el nombre del conjunto (colección) de themoviedb.org</string>
     <string id="30014">Usar el argumento encontrado en</string>
     <string id="30015">Usar la información del reparto encontrada en</string>
@@ -46,7 +46,8 @@
     <string id="30045">Obtener sinopsis de</string>
     <string id="30046">Idioma preferido para el conjunto (colección)</string>
     <string id="30047">Fuentes de Posters</string>
-    <string id="30100">Valoración</string>
+    <string id="30048">Obtener palabras clave y Salve como Etiquetas de</string>
+    <string id="30100">Rating</string>
     <string id="30110">Valoración generado usando</string>
     <string id="30115">Usar la valoración agregada de</string>
     <string id="30200">Créditos</string>
@@ -64,4 +65,6 @@
     <string id="30401">Argumento / Lema / Sinopsis</string>
     <string id="30500">Fanart</string>
     <string id="30501">Fuentes de Fanart</string>
+    <string id="30502">Usar pósteres de fanart.tv</string>
+    <string id="30503">Usar fanart de fanart.tv</string>
 </strings>

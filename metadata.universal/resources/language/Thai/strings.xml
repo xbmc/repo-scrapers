@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Thai language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/th/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Thai language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/th/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">ใช้แฟนอาร์ตจาก themoviedb.org</string>
     <string id="30002">ใช้ภาพโปสเตอร์จาก themoviedb.org</string>
     <string id="30003">ใช้ภาพโปสเตอร์จาก IMPAwards</string>
     <string id="30004">ใช้ภาพโปสเตอร์จาก MoviePosterDB</string>
-    <string id="30005">แสดงตัวอย่างภาพยนตร์จาก YouTube โดยตรง</string>
+    <string id="30005">ดึงตัวอย่างภาพยนตร์จาก YouTube โดยตรง</string>
     <string id="30006">ใช้ตัวอย่างภาพยนตร์จาก HD-Trailers.net</string>
     <string id="30008">ภาษาของชื่อภาพยนตร์ที่ต้องการจาก</string>
     <string id="30009">ใช้ตัวอย่างภาพยนตร์จาก themoviedb.org</string>

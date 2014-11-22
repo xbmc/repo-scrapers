@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Czech language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/cs/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Czech language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/cs/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Povolit fanart z themoviedb.org</string>
@@ -46,6 +46,7 @@
     <string id="30045">Získat přehled z</string>
     <string id="30046">Preferovaný jazyk názvu sady (kolekce)</string>
     <string id="30047">Zdroje plakátů</string>
+    <string id="30048">Stáhni klíčová slova a ulož je jako tagy z</string>
     <string id="30100">Hodnocení</string>
     <string id="30110">Generovat hodnocení pomocí</string>
     <string id="30115">Použít skóre agregované z</string>
@@ -64,4 +65,6 @@
     <string id="30401">Děj / Slogan / Souhrn</string>
     <string id="30500">Fanart</string>
     <string id="30501">Zdroje Fanart</string>
+    <string id="30502">Povolit plagáty z trakt.tv</string>
+    <string id="30503">Povolit fanart z trakt.tv</string>
 </strings>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- French (Canada) language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/fr_CA/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <string id="30001">Activer le fanart de themoviedb.org</string>
+    <string id="30002">Activer les affiches de themoviedb.org</string>
+    <string id="30003">Activer les affiches de IMPAwards</string>
+    <string id="30004">Activer les affiches de MoviePosterDB</string>
+    <string id="30005">Obtenir les bandes-annonces directement sur YouTube</string>
+    <string id="30006">Activer les bandes-annonces de HD-Trailers.net</string>
+    <string id="30008">Langue préférée pour le titre provenant de</string>
+    <string id="30009">Activer les bandes-annonces de themoviedb.org</string>
+    <string id="30011">Affiche</string>
+    <string id="30012">Bandes-annonces</string>
+    <string id="30013">Obtenir les noms des sagas (collection) sur themoviedb.org</string>
+    <string id="30014">Obtenir l'intrigue sur</string>
+    <string id="30015">Obtenir la distribution/les réalisateurs/les scripteurs de</string>
+    <string id="30016">Sources des intrigues</string>
+    <string id="30020">Langue préférée pour l'intrigue</string>
+    <string id="30021">Obtenir les évaluations sur</string>
+    <string id="30022">Obtenir les genres sur</string>
+    <string id="30023">Obtenir le titre sur</string>
+    <string id="30024">Sources pour les titres</string>
+    <string id="30025">Sources pour la distribution et les crédits</string>
+    <string id="30026">Sources pour les genres</string>
+    <string id="30027">Langue préférée pour le titre</string>
+    <string id="30028">Sources des bandes-annonces</string>
+    <string id="30029">Collections de films</string>
+    <string id="30030">Sources des évaluations</string>
+    <string id="30031">Paramètres de certification</string>
+    <string id="30032">Obtenir les certifications sur</string>
+    <string id="30033">Pays de certification préféré</string>
+    <string id="30034">Langue préférée pour les imagettes</string>
+    <string id="30035">Préfixe de la certification</string>
+    <string id="30036">Activer les affiches d'IMDb</string>
+    <string id="30037">Activer les affiches de trakt.tv</string>
+    <string id="30038">Activer les fanarts de trakt.tv</string>
+    <string id="30039">Activer les bandes annonces de trakt.tv</string>
+    <string id="30040">Langue pour le genre</string>
+    <string id="30041">Langue préférée pour les bandes annonces</string>
+    <string id="30042">Obtenir le slogan sur</string>
+    <string id="30043">Langue préférée pour le slogan</string>
+    <string id="30044">Obtenir le classement des 250 1ers sur IMDb</string>
+    <string id="30045">Obtenir le résumé sur</string>
+    <string id="30046">Langue préférée pour les noms de sagas (collections)</string>
+    <string id="30047">Sources des affiches</string>
+    <string id="30048">Obtenir les mots-clefs et les enregistrer comme balises sur</string>
+    <string id="30100">Évaluation</string>
+    <string id="30110">Produire l'évaluation d'après</string>
+    <string id="30115">Utiliser le score agrégé de</string>
+    <string id="30200">Crédits</string>
+    <string id="30201">Obtenir le studio sur</string>
+    <string id="30202">Obtenir le pays sur</string>
+    <string id="30300">Rechercher</string>
+    <string id="30301">themoviedb.org</string>
+    <string id="30302">IMDb</string>
+    <string id="30303">Moteur de recherche à utiliser</string>
+    <string id="30304">Langue secondaire de recherche (en plus de en-us)</string>
+    <string id="30305">Inclure toutes les catégories de films</string>
+    <string id="30306">Avertissement :</string>
+    <string id="30307">Activer toutes les catégories de films va considérablement réduire la précision des résultats de recherche!!!</string>
+    <string id="30400">Intrigue</string>
+    <string id="30401">Intrigue/Slogan/Résumé</string>
+    <string id="30500">Fanart</string>
+    <string id="30501">Sources de fanarts</string>
+    <string id="30502">Activer les affiches de fanart.tv</string>
+    <string id="30503">Activer les fanarts de fanart.tv</string>
+</strings>

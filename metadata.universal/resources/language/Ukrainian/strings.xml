@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Ukrainian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/uk/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Ukrainian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/uk/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Включити малюнки з themoviedb.org</string>
@@ -12,15 +12,34 @@
     <string id="30006">Включити трейлери з HD-Trailers.net</string>
     <string id="30008">     Бажана мова назв з</string>
     <string id="30009">Включити трейлери з themoviedb.org</string>
+    <string id="30011">Постер</string>
     <string id="30012">Трейлери</string>
+    <string id="30014">Отримати сюжет з</string>
+    <string id="30016">Джерела сюжетів</string>
+    <string id="30020">Бажана мова сюжету</string>
+    <string id="30021">Отримати рейтинги з</string>
     <string id="30022">Отримати жанри з</string>
     <string id="30023">Отримати назви з</string>
     <string id="30024">Джерело назв</string>
+    <string id="30026">Джерело жанрів</string>
+    <string id="30027">Бажана мова назв</string>
+    <string id="30028">Джерела трейлерів</string>
+    <string id="30030">Джерела рейтингів</string>
+    <string id="30036">Включити постери з IMDb</string>
+    <string id="30037">Включити постери з trakt.tv</string>
+    <string id="30038">Включити обкладинки з trakt.tv</string>
+    <string id="30039">Включити трейлери з trakt.tv</string>
+    <string id="30041">Бажана мова трейлерів</string>
+    <string id="30047">Джерела постерів</string>
     <string id="30100">Рейтинг</string>
     <string id="30200">Автори</string>
     <string id="30300">Пошук</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Використовувана пошукова система</string>
+    <string id="30304">Додаткова мова для пошуку (окрім en-us)</string>
     <string id="30306">Застереження:</string>
     <string id="30400">Сюжет</string>
     <string id="30500">Фанарт</string>
+    <string id="30501">Джерела обкладинок</string>
 </strings>

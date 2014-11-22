@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Russian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ru/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Russian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/ru/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Включить обложку с themoviedb.org</string>
@@ -46,6 +46,7 @@
     <string id="30045">Получать аннотации с</string>
     <string id="30046">Желаемый язык имени набора (коллекции)</string>
     <string id="30047">Источники постера</string>
+    <string id="30048">Получать ключевые слова и сохранять их как теги из</string>
     <string id="30100">Рейтинг</string>
     <string id="30110">Рейтинг создан с помощью</string>
     <string id="30115">Используется средняя оценка из</string>
@@ -62,6 +63,8 @@
     <string id="30307">Точность поиска значительно снизится, если искать во всех категориях фильмов</string>
     <string id="30400">Сюжет</string>
     <string id="30401">Сюжет/Слоган/Аннотация</string>
-    <string id="30500">Фанарт</string>
+    <string id="30500">фанарт</string>
     <string id="30501">Источники фанарта</string>
+    <string id="30502">Включить постеры с fanart.tv</string>
+    <string id="30503">Включить обложки с fanart.tv</string>
 </strings>

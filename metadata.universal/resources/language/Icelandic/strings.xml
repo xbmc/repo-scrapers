@@ -1,15 +1,68 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Icelandic language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/is/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Icelandic language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/is/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
+    <string id="30001">Virkja aðdáendamyndverk frá themoviedb.org</string>
+    <string id="30002">Virkja veggspjöld frá themoviedb.org</string>
+    <string id="30003">Virkja veggspjöld frá IMPAwards</string>
+    <string id="30004">Virkja veggspjöld frá MoviePosterDB</string>
+    <string id="30005">Fá kynningarmyndband beint frá YouTube</string>
+    <string id="30006">Virkja kynningarmyndband frá HD-Trailers.net</string>
+    <string id="30008">Æskilegt tungumál titils frá</string>
+    <string id="30009">Virkja kynningarmyndbönd frá themoviedb.org</string>
     <string id="30011">Veggspjald</string>
-    <string id="30012">Sýnishorn</string>
+    <string id="30012">Kynningarmyndband</string>
+    <string id="30013">Fá nafn á setti (samsafni) frá themoviedb.org</string>
+    <string id="30014">Fá Söguþráð frá</string>
+    <string id="30015">Fá Leikara / Leikstjóra / Handritahöfunda frá</string>
+    <string id="30016">Veitur söguþráða</string>
+    <string id="30020">Æskilegt tungumál söguþráðar</string>
+    <string id="30021">Fá Stjörnugjöf frá</string>
+    <string id="30022">Fá Flokkun frá</string>
+    <string id="30023">Fá Titil frá</string>
+    <string id="30024">Veitur titla</string>
+    <string id="30025">Veitur fyrir Leikara og Kredit</string>
+    <string id="30026">Veitur Flokkunar</string>
+    <string id="30027">Æskilegt Tungumál Titils</string>
+    <string id="30028">Veitur Kynningarmyndbands</string>
+    <string id="30029">Kvikmyndasamsöfn</string>
+    <string id="30030">Veitur Stjörnugjafar</string>
+    <string id="30031">Stillingar Aldursvottunar</string>
+    <string id="30032">Fá Aldursvottun frá</string>
+    <string id="30033">Æskilegt Aldursvottunar-land</string>
+    <string id="30034">Æskilegt smámynda-tungumál</string>
+    <string id="30035">Forskeyti Aldursvottunar</string>
+    <string id="30036">Virkja veggspjöld frá IMDb</string>
+    <string id="30037">Virkja veggspjöld frá trakt.tv</string>
+    <string id="30038">Virkja aðdáendamyndverk frá trakt.tv</string>
+    <string id="30039">Virkja kynningarmyndbönd frá trakt.tv</string>
+    <string id="30040">Tungumál Flokkunar</string>
+    <string id="30041">Æskilegt tungumál Kynningarmyndbanda</string>
+    <string id="30042">Fá Merkilínu frá</string>
+    <string id="30043">Æskilegt tungumál Merkilínu</string>
+    <string id="30044">Ná í IMDb TOP250 Stjörnugjöf</string>
+    <string id="30045">Fá Yfirlit frá</string>
+    <string id="30046">Æskilegt tungumál á nöfnum á settum (samsöfnum)</string>
+    <string id="30047">Veitur Veggspjalda</string>
+    <string id="30048">Fá Leitarorð og vista sem Merkimiða frá</string>
     <string id="30100">Stjörnugjöf</string>
+    <string id="30110">Stjörnugjöf búin til með</string>
+    <string id="30115">Nota Einkunnagjöf útreiknaða frá</string>
     <string id="30200">Þakkir</string>
+    <string id="30201">Fá Myndver frá</string>
+    <string id="30202">Fá Land frá</string>
     <string id="30300">Leita</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Leitarvél sem er notuð</string>
+    <string id="30304">Vara leitartungumál (fyrir utan en-us)</string>
+    <string id="30305">Hafa með alla Kvikmyndaflokka</string>
+    <string id="30306">Aðvörun:</string>
+    <string id="30307">Að virkja alla Kvikmyndaflokkun mun hafa mjög neikvæð áhrif á nákvæmni leitar !!!</string>
     <string id="30400">Söguþráður</string>
-    <string id="30500">Aðdáendamyndir</string>
+    <string id="30401">Söguþráður / Merkilína / Yfirlit</string>
+    <string id="30500">Aðdáendamyndverk</string>
+    <string id="30501">Veitur aðdáendamyndverka</string>
 </strings>

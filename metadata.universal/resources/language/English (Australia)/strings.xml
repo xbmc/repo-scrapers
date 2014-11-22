@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Spanish (Mexico) language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/es_MX/ -->
+<!-- English (Australia) language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/en_AU/ -->
 <!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
-    <string id="30011">Póster</string>
+    <string id="30011">Poster</string>
     <string id="30012">Trailers</string>
-    <string id="30100">Calificación</string>
-    <string id="30200">Créditos</string>
-    <string id="30300">Buscar</string>
+    <string id="30100">Rating</string>
+    <string id="30200">Credits</string>
+    <string id="30300">Search</string>
     <string id="30302">IMDb</string>
-    <string id="30400">Argumento</string>
+    <string id="30400">Plot</string>
     <string id="30500">Fanart</string>
 </strings>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Galician language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/gl/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Galician language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/gl/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Habilitar fanart de themoviedb.org</string>
-    <string id="30002">Habilitar os posters dende themoviedb.org</string>
-    <string id="30003">Habilitar os posters dende IMPAwards</string>
-    <string id="30004">Habilitar os posters dende MoviePosterDB</string>
+    <string id="30002">Habilitar os pósters dende themoviedb.org</string>
+    <string id="30003">Habilitar os pósters dende IMPAwards</string>
+    <string id="30004">Habilitar os pósters dende MoviePosterDB</string>
     <string id="30005">Obter os Avances directamente do YouTube</string>
     <string id="30006">Obter os Avances de HD-Trailers.net</string>
     <string id="30008">Idioma preferido do título de</string>
@@ -62,7 +62,9 @@
     <string id="30306">Atención:</string>
     <string id="30307">Ao Activar Todas as Categorias de Filmes reducirá en grande medida a precisión da busca !!!</string>
     <string id="30400">Sinopse</string>
-    <string id="30401">Argumento / Slogan / Resumo</string>
+    <string id="30401">Sinopse / Slogan / Resumo</string>
     <string id="30500">Cartel</string>
     <string id="30501">Fontes Fanart</string>
+    <string id="30502">Habilitar pósters de fanart.tv</string>
+    <string id="30503">Habilitar fanart de fanart.tv</string>
 </strings>

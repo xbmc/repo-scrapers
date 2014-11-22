@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Swedish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/sv/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Swedish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/sv/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Aktivera fanart från themoviedb.org</string>
@@ -47,7 +47,7 @@
     <string id="30046">     Föredraget språk på samlingsnamn</string>
     <string id="30047">Posterkällor</string>
     <string id="30048">Hämta nyckelord och spara som tagg från</string>
-    <string id="30100">Betyg</string>
+    <string id="30100">Rating</string>
     <string id="30110">     Generera betyg från</string>
     <string id="30115">     Betyg summerad från</string>
     <string id="30200">Medverkande</string>
@@ -65,4 +65,6 @@
     <string id="30401">Handling / Slogan / Sammanfattning</string>
     <string id="30500">Fanart</string>
     <string id="30501">Fanartkällor</string>
+    <string id="30502">Aktivera omslag från fanart.tv</string>
+    <string id="30503">Aktivera omslag fanart från fanart.tv</string>
 </strings>

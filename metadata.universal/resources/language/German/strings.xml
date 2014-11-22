@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- German language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/de/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- German language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/de/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
-    <string id="30001">Aktiviere Fanart von themoviedb.org</string>
-    <string id="30002">Aktiviere Poster von themoviedb.org</string>
-    <string id="30003">Aktiviere Poster von IMPAwards</string>
-    <string id="30004">Aktiviere Poster von MoviePosterDB</string>
-    <string id="30005">Lade Trailers direkt von YouTube</string>
-    <string id="30006">Aktiviere Trailers von HD-Trailers.net</string>
+    <string id="30001">Fanart von themoviedb.org aktivieren</string>
+    <string id="30002">Poster von themoviedb.org aktivieren</string>
+    <string id="30003">Poster von IMPAwards aktivieren</string>
+    <string id="30004">Poster von MoviePosterDB aktivieren</string>
+    <string id="30005">Trailers direkt von YouTube laden</string>
+    <string id="30006">Trailers von HD-Trailers.net aktivieren</string>
     <string id="30008">Bevorzugte Sprache für Titel von</string>
-    <string id="30009">Aktiviere Trailers von themoviedb.org</string>
+    <string id="30009">Trailer von themoviedb.org aktivieren</string>
     <string id="30011">Poster</string>
-    <string id="30012">Trailers</string>
-    <string id="30013">Lade Sammlungsname (Kollektion) von themoviedb.org</string>
+    <string id="30012">Filmvorschauen</string>
+    <string id="30013">Sammlungsname (Kollektion) von themoviedb.org laden</string>
     <string id="30014">Lade Handlung von</string>
     <string id="30015">Lade Besetzung / Regisseure / Autoren von</string>
-    <string id="30016">Handlungs Quellen</string>
+    <string id="30016">Handlungsquellen</string>
     <string id="30020">Bevorzugte Sprache für Handlung</string>
     <string id="30021">Lade Bewertungen von</string>
     <string id="30022">Lade Genres von</string>
     <string id="30023">Lade Titel von</string>
-    <string id="30024">Titel Quellen</string>
+    <string id="30024">Titelquellen</string>
     <string id="30025">Besetzungs- &amp; Abspannquellen</string>
-    <string id="30026">Genre Quellen</string>
-    <string id="30027">Bevorzugte Sprache für Titel</string>
-    <string id="30028">Trailer Quellen</string>
+    <string id="30026">Genrequellen</string>
+    <string id="30027">Bevorzugte Titelsprache</string>
+    <string id="30028">Filmvorschauquellen</string>
     <string id="30029">Filmsammlungen</string>
-    <string id="30030">Bewertungs Quellen</string>
-    <string id="30031">Altersfreigabe Einstellungen</string>
+    <string id="30030">Bewertungsquellen</string>
+    <string id="30031">Altersfreigabeeinstellungen</string>
     <string id="30032">Lade Altersfreigabe von</string>
     <string id="30033">Bevorzugtes Land für Altersfreigaben</string>
-    <string id="30034">Bevorzugte Vorschaubild-Sprache</string>
-    <string id="30035">Zertifizierungspräfix</string>
-    <string id="30036">Aktiviere Poster von IMDb</string>
-    <string id="30037">Aktiviere Poster von trakt.tv</string>
-    <string id="30038">Aktiviere Fanart von trakt.tv</string>
-    <string id="30039">Aktiviere Trailers von trakt.tv</string>
-    <string id="30040">Genre Sprache</string>
-    <string id="30041">Bevorzugte Trailer Sprache</string>
+    <string id="30034">Bevorzugte Vorschaubildsprache</string>
+    <string id="30035">Altersfreigabenpräfix</string>
+    <string id="30036">Poster von IMDb aktivieren</string>
+    <string id="30037">Poster von trakt.tv aktivieren</string>
+    <string id="30038">Fanart von trakt.tv aktivieren</string>
+    <string id="30039">Trailer von trakt.tv aktivieren</string>
+    <string id="30040">Sprachgenre</string>
+    <string id="30041">Bevorzugte Filmvorschausprache</string>
     <string id="30042">Lade Motto von</string>
     <string id="30043">Bevorzugte Tagline Sprache</string>
-    <string id="30044">Lade IMDb TOP 250 Rangliste</string>
+    <string id="30044">IMDb TOP 250 Rangliste laden</string>
     <string id="30045">Lade Handlungsumriss von</string>
     <string id="30046">Bevorzugte Sprache für Sammlungsnamen (Kollektion)</string>
-    <string id="30047">Poster Quellen</string>
+    <string id="30047">Posterquellen</string>
     <string id="30048">Schlüsselwörter abholen und als Schlagwörter speichern von</string>
-    <string id="30100">Bewertung</string>
+    <string id="30100">Wertung</string>
     <string id="30110">Bewertung erstellt mit</string>
     <string id="30115">Nutze die Bewertung aggregiert von</string>
     <string id="30200">Mitwirkungen</string>
     <string id="30201">Lade Studio von </string>
-    <string id="30202">Laden Land von </string>
+    <string id="30202">Lade Land von </string>
     <string id="30300">Suche</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
-    <string id="30303">Zu nutzende Suchmaschine</string>
+    <string id="30303">Zu verwendende Suchmaschine</string>
     <string id="30304">Sekundäre Suchsprache (Zusätzlich zu en-us)</string>
     <string id="30305">Beziehe alle Filmkategorien mit ein</string>
     <string id="30306">Warnung:</string>
@@ -64,5 +64,7 @@
     <string id="30400">Handlung</string>
     <string id="30401">Handlung / Tagline / Handlungsumriss</string>
     <string id="30500">Fanart</string>
-    <string id="30501">Fanart Quellen</string>
+    <string id="30501">Fanartquellen</string>
+    <string id="30502">Poster von fanart.tv aktivieren</string>
+    <string id="30503">Fanart von fanart.tv aktivieren</string>
 </strings>

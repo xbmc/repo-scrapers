@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Macedonian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/mk/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Macedonian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/mk/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Овозможи сликички од themoviedb.org</string>
@@ -13,7 +13,7 @@
     <string id="30008">Префериран јазик на превод од</string>
     <string id="30009">Овозможи трејлери од themoviedb.org</string>
     <string id="30011">Постер</string>
-    <string id="30012">Трејлери</string>
+    <string id="30012">Трејлер</string>
     <string id="30013">Превземи име за групата (колекцијата) од themoviedb.org</string>
     <string id="30014">Превземи кратка содржина (сиже) од</string>
     <string id="30015">Превземи улоги / режија / сценаристи од</string>
@@ -62,6 +62,6 @@
     <string id="30307">Вклучувањето на сите категорри на филмови, во голема мера ќе ја намали точноста на пребарувањето !!!</string>
     <string id="30400">Заплет</string>
     <string id="30401">Запет / Приказна / Кратка содржина</string>
-    <string id="30500">Други слики</string>
+    <string id="30500">Зан. слика</string>
     <string id="30501">Извори на други слики</string>
 </strings>

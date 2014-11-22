@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Hungarian language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/hu/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Hungarian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/hu/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Fanartképek letöltése a themoviedb.org-ról</string>
@@ -47,7 +47,7 @@
     <string id="30046">Előnyben részesített szettnév nyelv</string>
     <string id="30047">Poszterek forrása</string>
     <string id="30048">Kulcsszavak és ezek Mentése Címkeként ebből:</string>
-    <string id="30100">Minősítés</string>
+    <string id="30100">Korhatár</string>
     <string id="30110">Az értékelést készítette:</string>
     <string id="30115">Azon pontszámok használata melyek innen adódtak össze:</string>
     <string id="30200">Készítők</string>
@@ -61,8 +61,10 @@
     <string id="30305">Minden filmkategóriát  hozzáad</string>
     <string id="30306">Figyelem:</string>
     <string id="30307">Az összes filmkategória engedélyezése, csökkenteni fogja a keresési találatok pontosságát !!!</string>
-    <string id="30400">Tartalom</string>
+    <string id="30400">Ismertetö</string>
     <string id="30401">Tartalom/leírás</string>
-    <string id="30500">Fanartkép</string>
+    <string id="30500">Fanart</string>
     <string id="30501">Fanart források</string>
+    <string id="30502">Poszterek engedélyezése a fanart.tv-ről</string>
+    <string id="30503">Fanartok engedélyezése a fanart.tv-ről</string>
 </strings>

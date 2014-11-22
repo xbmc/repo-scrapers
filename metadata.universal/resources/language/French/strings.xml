@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- French language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/fr/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- French language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/fr/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Activer les fanarts de themoviedb.org</string>
-    <string id="30002">Activer les affiches de themoviedb.org</string>
+    <string id="30002">Activer les affiches themoviedb.org</string>
     <string id="30003">Activer les affiches de IMPAwards</string>
     <string id="30004">Activer les affiches de MoviePosterDB</string>
     <string id="30005">Récupérer les bandes-annonces depuis YouTube</string>
-    <string id="30006">Activer les bandes-annonces de HD-Trailers.net</string>
+    <string id="30006">Activer les bandes-annonces depuis HD-Trailers.net</string>
     <string id="30008">Langue de titre préférée de</string>
     <string id="30009">Activer les bandes-annonces de themoviedb.org</string>
     <string id="30011">Poster</string>
-    <string id="30012">Bandes-annonces</string>
+    <string id="30012">Bande-annonce</string>
     <string id="30013">Récupérer le nom de la saga (collection) depuis themoviedb.org</string>
     <string id="30014">Récupérer le synopsis depuis</string>
     <string id="30015">Récupérer la distribution, les réalisateurs et les scénaristes depuis</string>
@@ -46,7 +46,8 @@
     <string id="30045">Récupérer les grandes lignes depuis</string>
     <string id="30046">Langue préférée pour le nom des sagas (collections)</string>
     <string id="30047">Source de posters</string>
-    <string id="30100">Classement</string>
+    <string id="30048">Récupère les mots-clés et sauvegarde comme tags depuis</string>
+    <string id="30100">Note</string>
     <string id="30110">Note générée depuis</string>
     <string id="30115">Utiliser la note moyenne depuis</string>
     <string id="30200">Crédits</string>
@@ -64,4 +65,6 @@
     <string id="30401">Résumé / Mots clé / Grandes lignes</string>
     <string id="30500">Fanart</string>
     <string id="30501">Sources de fanart</string>
+    <string id="30502">Activer les posters depuis fanart.tv</string>
+    <string id="30503">Activer les fond d'écran depuis fanart.tv</string>
 </strings>

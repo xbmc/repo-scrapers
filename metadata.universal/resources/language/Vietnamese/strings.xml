@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Vietnamese language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/vi/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Vietnamese language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/vi/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Lấy fanart từ themoviedb.org</string>
@@ -52,7 +52,7 @@
     <string id="30200">Credit</string>
     <string id="30201">Lấy studio từ</string>
     <string id="30202">Lấy quốc gia từ</string>
-    <string id="30300">Tìm kiếm</string>
+    <string id="30300">Tìm Kiếm</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Dùng máy tìm kiếm</string>

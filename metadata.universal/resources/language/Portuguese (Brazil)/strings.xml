@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Portuguese (Brazil) language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/pt_BR/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Portuguese (Brazil) language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/pt_BR/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Ativar fanart de themoviedb.org</string>
@@ -12,7 +12,7 @@
     <string id="30006">Ativar trailers de HD-Trailers.net</string>
     <string id="30008">     Linguagem preferida para o título</string>
     <string id="30009">Ativar trailers de themoviedb.org</string>
-    <string id="30011">Poster</string>
+    <string id="30011">Cartaz</string>
     <string id="30012">Trailers</string>
     <string id="30013">Obter Nome do Set (Coletânea) no themoviedb.org</string>
     <string id="30014">Obter Enredo de</string>
@@ -47,13 +47,13 @@
     <string id="30046">     Idioma Preferido Nome no Nome do Set (Coletânea)</string>
     <string id="30047">Fontes de Posters</string>
     <string id="30048">Obter palavras chaves e salvar como Tags de</string>
-    <string id="30100">Nota</string>
+    <string id="30100">Classificação</string>
     <string id="30110">    Avaliação gerada usando</string>
     <string id="30115">   Use o agregador de escore de</string>
     <string id="30200">Créditos</string>
     <string id="30201">Obter Estúdio de</string>
     <string id="30202">Obter País de</string>
-    <string id="30300">Buscar</string>
+    <string id="30300">Procurar</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Mecanismo de Busca a ser usado</string>
@@ -61,8 +61,10 @@
     <string id="30305">Incluir todas as Categorias de Filmes</string>
     <string id="30306">Aviso:</string>
     <string id="30307">Ativar incluir todas as categorias de filmes irá reduzir a precisão da busca!!!</string>
-    <string id="30400">Enredo</string>
+    <string id="30400">Sinopse</string>
     <string id="30401">Enredo/Linha da Tag/Descrição</string>
     <string id="30500">Fanart</string>
     <string id="30501">Fontes de Fanarts</string>
+    <string id="30502">Habilitar pôsteres de fanart.tv</string>
+    <string id="30503">Habilitar fanart de fanart.tv</string>
 </strings>

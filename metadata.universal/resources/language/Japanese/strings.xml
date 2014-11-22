@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Japanese language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ja/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Japanese language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/ja/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
-    <string id="30001">themoviedb.org のファンアートを有効に</string>
-    <string id="30002">themoviedb.org のポスターを有効に</string>
-    <string id="30003">IMPAwards のポスターを有効に</string>
-    <string id="30004">MoviePosterDB のポスターを有効に</string>
+    <string id="30001">themoviedb.org からファンアートを取得</string>
+    <string id="30002">themoviedb.org からポスターを取得</string>
+    <string id="30003">IMPAwards からポスターを取得</string>
+    <string id="30004">MoviePosterDB からポスターを取得</string>
     <string id="30005">YouTube から予告編を直接取得</string>
-    <string id="30006">HD-Trailers.net の予告編を有効に</string>
+    <string id="30006">HD-Trailers.net から予告編を取得</string>
     <string id="30008">タイトル言語の優先取得先</string>
-    <string id="30009">themoviedb.org の予告編を有効に</string>
+    <string id="30009">themoviedb.org から予告編を取得</string>
     <string id="30012">予告編</string>
     <string id="30014">あらすじの取得元：</string>
     <string id="30015">出演者 / 監督 / 作者情報の取得先</string>
@@ -38,5 +38,5 @@
     <string id="30305">全ムービーカテゴリーを含める</string>
     <string id="30306">警告:</string>
     <string id="30400">ストーリー</string>
-    <string id="30500">Fanart</string>
+    <string id="30500">ファンアート</string>
 </strings>

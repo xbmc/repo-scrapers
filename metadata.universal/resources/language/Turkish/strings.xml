@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Turkish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/tr/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Turkish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/tr/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">themoviedb.org fanartlarını etkinleştir</string>
@@ -10,6 +10,7 @@
     <string id="30004">MoviePosterDB posterlerini etkinleştir</string>
     <string id="30005">Fragmanları doğrudan YouTube'dan alın</string>
     <string id="30006">HD-Trailers.net fragmanlarını etkinleştir</string>
+    <string id="30008">Tercih Edilen Başlık Dili</string>
     <string id="30009">themoviedb.org fragmanlarını etkinleştir</string>
     <string id="30011">Poster</string>
     <string id="30012">Fragmanlar</string>
@@ -23,14 +24,25 @@
     <string id="30030">Derecelendirme Kaynakları</string>
     <string id="30031">Sertifika Ayarları</string>
     <string id="30032">Sertifikaları Şuradan Al</string>
+    <string id="30033">Tercih Edilen Sertifika Ülkesi</string>
+    <string id="30034">Tercih Edilen Küçük Resim Dili</string>
+    <string id="30035">Sertifika Öneki</string>
     <string id="30036">IMDb posterlerini etkinleştir</string>
     <string id="30037">trakt.tv posterlerini etkinleştir</string>
+    <string id="30038">trakt.tv fanart'ını etkinleştir</string>
+    <string id="30039">trakt.tv fragmanlarını etkinleştir</string>
+    <string id="30040">Tarz Dili</string>
+    <string id="30041">Tercih Edilen Fragman Dili</string>
     <string id="30047">Poster Kaynakları</string>
     <string id="30100">Derecelendirme</string>
     <string id="30200">Jenerik</string>
     <string id="30300">Ara</string>
+    <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
+    <string id="30303">Kullanılacak Arama Motoru</string>
+    <string id="30304">İkincil Arama Dili (en-us'in yanı sıra)</string>
     <string id="30306">Uyarı:</string>
     <string id="30400">İçerik</string>
     <string id="30500">Fanart</string>
+    <string id="30501">Fanart Kaynakları</string>
 </strings>

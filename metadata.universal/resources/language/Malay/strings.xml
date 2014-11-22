@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Malay language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ms/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Malay language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/ms/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Benarkan Seni Peminat Artis dari themovie.org</string>
@@ -53,7 +53,7 @@
     <string id="30200">Penghargaan</string>
     <string id="30201">Dapatkan Studio dari</string>
     <string id="30202">Dapatkan Negara dari</string>
-    <string id="30300">Gelintar</string>
+    <string id="30300">Cari</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Enjin Gelintar yang Digunakan</string>

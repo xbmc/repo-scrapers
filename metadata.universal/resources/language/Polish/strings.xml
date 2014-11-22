@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Polish language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/pl/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Polish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/pl/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
-    <string id="30001">Włącz pobieranie fanart z themoviedb.org</string>
-    <string id="30002">Włącz pobieranie plakatów z themoviedb.org</string>
-    <string id="30003">Włącz pobieranie plakatów z IMPAwards</string>
-    <string id="30004">Włącz pobieranie plakatów z MoviePosterDB</string>
-    <string id="30005">Pobierz zwiastuny prosto z YouTube </string>
-    <string id="30006">Włącz zwiastuny z HD-Trailers.net</string>
+    <string id="30001">Używaj tapet z themoviedb.org</string>
+    <string id="30002">Pobieraj plakaty z themoviedb.org</string>
+    <string id="30003">Pobieraj plakaty z IMPAwards</string>
+    <string id="30004">Pobieraj plakaty z MoviePosterDB</string>
+    <string id="30005">Pobieraj zwiastuny bezpośrednio z YouTube </string>
+    <string id="30006">Pobieraj zwiastuny z HD-Trailers.net</string>
     <string id="30008">Preferowany język tytułu z</string>
-    <string id="30009">Włącz zwiastuny z themoviedb.org </string>
+    <string id="30009">Pobieraj zwiastuny z themoviedb.org </string>
     <string id="30011">Plakat</string>
     <string id="30012">Zwiastuny </string>
-    <string id="30013">Pobieraj nazwę zestawu (kolekcji) z themoviedb.org</string>
-    <string id="30014">Pobierz fabułę z </string>
-    <string id="30015">Pobierz obsadę / reżyserów / scenarzystów z </string>
+    <string id="30013">Pobieraj nazwę serii (kolekcji) z themoviedb.org</string>
+    <string id="30014">Pobieraj fabułę z </string>
+    <string id="30015">Pobieraj obsadę / reżyserów / scenarzystów z </string>
     <string id="30016">Źródła fabuły</string>
     <string id="30020">Preferowany język fabuły</string>
-    <string id="30021">Pobierz ocenę z </string>
-    <string id="30022">Pobierz gatunek z </string>
-    <string id="30023">Pobierz tytuł z</string>
+    <string id="30021">Pobieraj ocenę z </string>
+    <string id="30022">Pobieraj gatunek z </string>
+    <string id="30023">Pobieraj tytuł z</string>
     <string id="30024">Źródła tytułów</string>
     <string id="30025">Źródła obsady i napisów</string>
     <string id="30026">Źródła gatunków</string>
@@ -29,39 +29,42 @@
     <string id="30028">Źródła zwiastunów </string>
     <string id="30029">Kolekcje filmowe</string>
     <string id="30030">Źródła oceny</string>
-    <string id="30031">Ustawienia certyfikacji</string>
-    <string id="30032">Pobieraj certyfikacje z </string>
-    <string id="30033">Preferowany kraj certyfikacji</string>
-    <string id="30034">Preferowany język miniatury</string>
-    <string id="30035">Prefiks certyfikacji</string>
-    <string id="30036">Włącz plakaty z IMDb</string>
-    <string id="30037">Włącz plakaty z trakt.tv</string>
-    <string id="30038">Włącz fanart z trakt.tv</string>
-    <string id="30039">Włącz zwiatuny z trakt.tv </string>
+    <string id="30031">Ustawienia kategorii wiekowej</string>
+    <string id="30032">Pobieraj kategorie wiekowe z</string>
+    <string id="30033">Preferowany kraj kategorii wiekowej</string>
+    <string id="30034">Preferowany język miniatur</string>
+    <string id="30035">Prefiks kategorii wiekowej</string>
+    <string id="30036">Pobieraj plakaty z IMDb</string>
+    <string id="30037">Pobieraj plakaty z trakt.tv</string>
+    <string id="30038">Pobieraj plakaty z trakt.tv</string>
+    <string id="30039">Pobieraj zwiastuny z trakt.tv </string>
     <string id="30040">Język gatunku</string>
     <string id="30041">Preferowany język zwiastunów </string>
-    <string id="30042">Pobierz opis z</string>
-    <string id="30043">Preferowany język puenty</string>
-    <string id="30044">Pobierz ranking IMDb Top 250</string>
-    <string id="30045">Pobieraj zarys z </string>
-    <string id="30046">Preferowany język nazwy zestawu (kolekcji)</string>
+    <string id="30042">Pobieraj motto z</string>
+    <string id="30043">Preferowany język motto</string>
+    <string id="30044">Pobieraj miejsce w rankingu IMDb Top 250</string>
+    <string id="30045">Pobieraj zarys fabuły z </string>
+    <string id="30046">Preferowany język nazwy serii (kolekcji)</string>
     <string id="30047">Źródła plakatu</string>
+    <string id="30048">Pobieraj słowa kluczowe i zapisuj jako znaczniki z</string>
     <string id="30100">Ocena</string>
-    <string id="30110">Generuj ocene używając</string>
-    <string id="30115">Użyj oceny zagregowanej z </string>
+    <string id="30110">Generuj ocenę używając</string>
+    <string id="30115">Używaj oceny sumarycznej z </string>
     <string id="30200">Autorzy</string>
-    <string id="30201">Pobierz wytwórnię z</string>
-    <string id="30202">Pobierz kraj z</string>
+    <string id="30201">Pobieraj wytwórnię filmową z</string>
+    <string id="30202">Pobieraj kraj z</string>
     <string id="30300">Szukaj</string>
     <string id="30301">themoviedb.org</string>
     <string id="30302">IMDb</string>
     <string id="30303">Źródło wyszukiwania</string>
-    <string id="30304">Drugi język wyszukiwania (w uzupełnieniu do en-us)</string>
+    <string id="30304">Alternatywny język wyszukiwania (w uzupełnieniu do en-us)</string>
     <string id="30305">We wszystkich kategoriach filmowych</string>
     <string id="30306">Ostrzeżenie:</string>
-    <string id="30307">Włączenie wszystkich kategorii filmowych znacząco zmniejszy dokładność wyszukiwania!</string>
-    <string id="30400">Opis</string>
-    <string id="30401">Fabuła /  Puenta / Zarys</string>
-    <string id="30500">Fanart</string>
-    <string id="30501">Źródło fanartu</string>
+    <string id="30307">Zaznaczenie wszystkich kategorii filmowych znacząco zmniejszy dokładność wyszukiwania!</string>
+    <string id="30400">Fabuła</string>
+    <string id="30401">Fabuła /  Motto / Zarys</string>
+    <string id="30500">Tapeta</string>
+    <string id="30501">Źródło tapet</string>
+    <string id="30502">Pobieraj plakaty z fanart.tv</string>
+    <string id="30503">Pobieraj tapety z fanart.tv</string>
 </strings>

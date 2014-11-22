@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Dutch language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/nl/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Dutch language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/nl/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Gebruik fanart van themoviedb.org</string>
@@ -28,7 +28,7 @@
     <string id="30027">Voorkeurstaal voor Titel </string>
     <string id="30028">Bronnen voor trailers</string>
     <string id="30029">Filmcollecties</string>
-    <string id="30030">Bronnen voor Ratings</string>
+    <string id="30030">Bronnen voor waarderingen</string>
     <string id="30031">Certificeringsinstellingen</string>
     <string id="30032">Haal Certificering bij</string>
     <string id="30033">Voorkeursland voor certificering</string>
@@ -47,8 +47,8 @@
     <string id="30046">Voorkeur Set (Collectie) Naam Taal</string>
     <string id="30047">Poster Bronnen</string>
     <string id="30048">Verkrijg trefwoorden en sla op als tags van</string>
-    <string id="30100">Score</string>
-    <string id="30110">Rating gegenereerd met behulp van</string>
+    <string id="30100">Waardering</string>
+    <string id="30110">Waardering gegenereerd met behulp van</string>
     <string id="30115">Gebruik de samengevoegde score van</string>
     <string id="30200">Credits</string>
     <string id="30201">Haal filmstudio op van</string>
@@ -65,4 +65,6 @@
     <string id="30401">Plot / Slogan / Beschrijving</string>
     <string id="30500">Fanart</string>
     <string id="30501">Fanart bronnen</string>
+    <string id="30502">Gebruik posters van fanart.tv</string>
+    <string id="30503">Gebruik fanart van fanart.tv</string>
 </strings>

@@ -1,3 +1,6 @@
+[B]2.6.1[/B]
+- updated language files from Transifex
+
 [B]2.6.0[/B]
 - added: support to get movieart from fanart.tv
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
-<!-- Catalan language-Team URL: http://www.transifex.com/projects/p/XBMC-Main-Frodo/language/ca/ -->
-<!-- Report language file syntax bugs at: http://trac.xbmc.org/ -->
+<!-- Catalan language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/ca/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
 
 <strings>
     <string id="30001">Habilita el fanart de themoviedb.org</string>
@@ -57,7 +57,7 @@
     <string id="30305">Inclou totes les categories de pel·lícules</string>
     <string id="30306">Advertència:</string>
     <string id="30307">Habilitant totes les categories de pel·lícules reduirà en gran mesura la precisió de la cerca!</string>
-    <string id="30400">Argument</string>
+    <string id="30400">Trama</string>
     <string id="30401">Argument / Lema / Sinopsi</string>
     <string id="30500">Fanart</string>
     <string id="30501">Fonts del fanart</string>
