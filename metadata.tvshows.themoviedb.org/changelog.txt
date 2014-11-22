@@ -1,3 +1,6 @@
+[B]1.0.1[/B]
+- updated language files from Transifex
+
 [B]1.0.0[/B]
 
 - Initial version
