@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.artists.theaudiodb.com"
        name="TheAudioDb Artist Scraper"
-       version="1.0.8"
+       version="1.0.9"
        provider-name="XBMC Foundation">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -53,7 +53,6 @@
     <summary lang="ta_IN">TheAudioDb கலைஞர் சுரண்டி</summary>
     <summary lang="uk">Здирач бази даних виконавців аудіо</summary>
     <summary lang="vi">Trình lấy dữ liệu Nghệ sĩ từ TheAudioDb</summary>
-    <summary lang="vi_VN">Chương trình lấy dữ liệu Nghệ sĩ từ TheAudioDb</summary>
     <summary lang="zh">TheAudioDb 艺人资料</summary>
     <summary lang="zh_TW">TheAudioDb演出者搜括器</summary>
     <description lang="af">TheAudioDB.com is 'n gemeenskaps gedrewe databasis van oudio vrystellings. Dit is ons mikpunt om die mees eenvoudige, maklikste om te gebruik en akkurate bron van Musiek metadata op die web te wees. Ons verskaf ook 'n API vir toegang tot ons stoorplek van data sodat dit in vele gewilde HTPC en Mobiele programme gebruik kan word om jou die beste moontlike oudio ondervinding te gee sonder die moeite.</description>
