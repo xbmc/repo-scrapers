@@ -44,6 +44,12 @@
 			<RegExp input="$$3" output="&lt;chain function=&quot;GetTADBAlbumGenresByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetTADBAlbumStylesByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetTADBAlbumMoodsByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
 			<RegExp input="$$3" output="&lt;chain function=&quot;GetTADBAlbumTracksByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>

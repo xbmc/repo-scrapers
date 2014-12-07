@@ -1,3 +1,6 @@
+[B]1.1.0[/B]
+Added: Styles and Moods
+
 [B]1.0.7[/B]
 Updated language files from Transifex
 
