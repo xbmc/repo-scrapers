@@ -56,6 +56,12 @@
 			<RegExp input="$$9" output="&lt;chain function=&quot;GetTADBArtistGenresByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
+			<RegExp input="$$9" output="&lt;chain function=&quot;GetTADBArtistStylesByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$9" output="&lt;chain function=&quot;GetTADBArtistMoodsByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
 			<RegExp input="$$9" output="&lt;chain function=&quot;GetTADBDiscographyByID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
