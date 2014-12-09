@@ -1,3 +1,6 @@
+[B]1.9.7[/B]
+- fixed: Search results, there might be some bugs still
+
 [B]1.9.5[/B]
 - fixed: Hungarian title will be scraped instead of original title in some cases once again
 
