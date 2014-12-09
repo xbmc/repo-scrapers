@@ -78,9 +78,6 @@
 				<expression />
 			</RegExp>
 			<!--Get director from port.hu-->
-			<RegExp input="$$1" output="&lt;director&gt;\3&lt;/director&gt;" dest="5+">
-				<expression>rendez.:&amp;nbsp;&lt;/span&gt;&lt;span class="txt"&gt;&lt;a(.*?)target="_top"&gt;(&lt;strong&gt;)?(.*?)(&lt;/strong&gt;)?&lt;/a&gt;&lt;/span&gt;</expression>
-			</RegExp>
 			<!--Call GetIMDBDetails function-->
 			<RegExp input="$$10" output="\1" dest="5+">
 				<!--Create imdb URL based on the fetched imdb ID-->
@@ -217,6 +214,9 @@
 			<!--Get studio from imdb.com-->
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
 				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<!--Get credits from imdb.com-->
 			<RegExp conditional="!fullcredits" input="$$11" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
