@@ -1,3 +1,6 @@
+[B]1.6.0[/B]
+- Changed: Force selected language even if title on another language is being used for the search query
+
 [B]1.5.9[/B]
 - Updated: language files from Transifex
 
