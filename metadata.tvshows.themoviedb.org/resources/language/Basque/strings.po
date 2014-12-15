@@ -1,7 +1,7 @@
 # Kodi Media Center language file
 # Addon Name: The Movie Database
 # Addon id: metadata.tvshows.themoviedb.org
-# Addon Provider: Team-Kodi
+# Addon Provider: XBMC Foundation
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
