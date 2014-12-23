@@ -1,3 +1,5 @@
+[B]2.2.1[/B]
+- Poprawka: kodowanie znaków w tagline
 [B]2.2.0[/B]
 - Poprawka: Wyniki wyszukiwania, Filmweb ID, Tytuł, Oryginalny Tytuł, Rok, Tagline, Outline, Akorzy, Trailer, Opisy, Fanart
 - Dodano: Trailer z TMDb jeśli nie ma na filmweb
