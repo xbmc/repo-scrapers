@@ -14,7 +14,7 @@
     $$10 - Trailer
     $$9  - Aktorzy
 !-->
-<scraper framework="1.1" date="2014-12-23">
+<scraper framework="1.1" date="2014-12-26">
     
     <!-- Sprawdza plik NFO !-->
     <NfoUrl dest="3">
@@ -380,11 +380,11 @@
             <RegExp input="$$6" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="7">
                 <expression fixchars="1">hoverOpacity[^&lt;]+&lt;[^&gt;]+text&quot;?&gt;(.*?)&lt;/p</expression>
             </RegExp>
-            <RegExp input="$$6" output="&lt;plot&gt;\1 [opis dystrybutora]&lt;/plot&gt;" dest="7">
-                <expression fixchars="1">hoverOpacity[^&lt;]+&lt;[^&gt;]+text&quot;?&gt;(.*?)&lt;/p[^&lt;]+&lt;[^&lt;]+&lt;[^&lt;]+&lt;[^&lt;]+&gt;\[opis dystrybutora</expression>
+            <RegExp input="$$6" output="&lt;plot&gt;\2 \3&lt;/plot&gt;" dest="7">
+                <expression fixchars="2">hoverOpacity&quot;? id=&quot;?([0-9]+)&quot;?&gt;[^&gt;]+&gt;(.*?)&lt;/p[^\[]+(\[opis[^\]]+\]).*?ToUpdate=\1</expression>
             </RegExp>
-            <RegExp input="$$6" output="&lt;plot&gt;\1 [opis dystrybutora DVD]&lt;/plot&gt;" dest="7">
-                <expression fixchars="1">hoverOpacity[^&lt;]+&lt;[^&gt;]+text&quot;?&gt;(.*?)&lt;/p[^&lt;]+&lt;[^&lt;]+&lt;[^&lt;]+&lt;[^&lt;]+&gt;\[opis dystrybutora dvd</expression>
+            <RegExp input="$$6" output="&lt;plot&gt;\2 [opis dystrybutora DVD]&lt;/plot&gt;" dest="7">
+                <expression fixchars="2">hoverOpacity&quot;? id=&quot;?([0-9]+)&quot;?&gt;[^&gt;]+&gt;(.*?)&lt;/p[^\[]+\[opis dystrybutora dvd.*?ToUpdate=\1</expression>
             </RegExp>
             <expression noclean="1" />
         </RegExp>
