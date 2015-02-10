@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon
+   id="metadata.atmovies.com.tw"
+   name="AtMovies Movie Scraper"
+   version="1.4.7"
+   provider-name="Vincent Lu">
+  <requires>
+	<import addon="xbmc.metadata"                   version="2.1.0"/>
+	<import addon="metadata.common.themoviedb.org"  version="2.8.0"/>
+	<import addon="metadata.common.imdb.com"        version="2.6.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies" language="zh" library="AtMovies.xml"/>
+  <extension point="xbmc.addon.metadata">
+  	<summary lang="en">AtMovies Traditional Chinese Movie Scraper</summary>
+    	<summary lang="zh">開眼電影網 正體中文電影資訊 Scraper</summary>
+    	<description lang="en">AtMovies a free and open movie database in Traditional Chinese. This scraper downloads movie details from AtMovies. Part of the information will be downloaded from IMDB and TMDB..</description>
+	<description lang="zh">開眼電影網（@movies），www.atmovies.com.tw 是一個提供電影資訊與相關資訊的中文網站。設置於臺灣。創立於2000年5月。2004年起由「天下網路股份有限公司」負責經營。
+網站內容以電影相關資訊為主，包括最新電影、劇情簡介、演員資料、影評、幕後花絮、票房排行、戲院放映時刻表、電視節目訊息電視等訊息，也是台灣第一個提供完整戲院時刻查詢的網站。
+請參考"更新日誌"內相關功能說明
+有關 Scraper 的任何問題或建議, 
+請至 http://1somethings.blogspot.tw/search/label/AtMovies 
+	</description>
+  	<disclaimer lang="en">Feel free to use this scraper, but at your own risk</disclaimer>
+  	<disclaimer lang="zh">本Scarper為個人興趣所為,公開僅為互相學習目的,並未用於任何商業用途,所有資料來源智慧財產權皆屬於原始公司,使用者需自負相關責任</disclaimer>
+    	<language>zh</language>
+    	<platform>all</platform>
+    	<license>GPL v2.0</license>
+    	<forum></forum>
+    	<website>http://1somethings.blogspot.tw/search/label/AtMovies</website>
+    	<email>angp.tw@gmail.com</email>
+    	<source>https://github.com/angp/metadata.atmovies.com.tw</source>
+  </extension>
+</addon>

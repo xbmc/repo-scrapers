@@ -1,0 +1,23 @@
+[B]2.0.0[/B]
+Updated Scraper.
+Added type of album EP/Full/Single...
+Added album release date.
+Removed LastFM thumbs
+Removed HBTBackdrop thumbs
+Added Spanish translation.
+First version provided by farlight
+
+[B]1.0.4[/B]
+last release by spiff
+
+[B]1.0.3[/B]
+Added new icon.
+
+[B]1.0.2[/B]
+Added Hungarian translation.
+
+[B]1.0.1[/B]
+Scraper libraries changed. No functional changes
+
+[B]1.0.0[/B]
+Initial commit.

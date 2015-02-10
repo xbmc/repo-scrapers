@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.cinemarx.ro"
+       name="cinemarx"
+       version="1.1.0"
+       provider-name="ancalex">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.1.4"/>
+    <import addon="metadata.common.imdb.com" version="2.1.9"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="ro"
+             library="cinemarx.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">cinemagia.ro Movie Scraper</summary>
+    <summary lang="hu">cinemagia.ro filmadat leolvasó</summary> 
+    <summary lang="pl">Scraper filmów cinemagia.ro</summary>
+    <summary lang="pt">Scraper de filmes de cinemagia.ro</summary>
+    <description lang="en">Download Movie information from www.cinemarx.ro</description>
+    <description lang="hu">Film információk letöltése a www.cinemarx.ro webhelyről</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.cinemarx.ro</description>
+    <description lang="pt">Descarregar informação de filmes de www.cinemarx.ro</description>
+    <platform>all</platform>
+  </extension>
+</addon>

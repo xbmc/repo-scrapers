@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.port.hu"
+       name="Port.hu"
+       version="1.9.8"
+       provider-name="Olympia">
+  <requires>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+    <import addon="metadata.common.themoviedb.org" version="2.2.0"/>
+    <import addon="metadata.common.movieposterdb.com" version="1.0.5"/>
+    <import addon="metadata.common.imdb.com" version="2.1.9"/>
+    <import addon="metadata.common.impa.com" version="1.0.3"/>
+    <import addon="metadata.common.hdtrailers.net" version="1.0.7"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="hu"
+             library="porthu.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">port.hu Movie Scraper</summary>
+    <summary lang="hu">Filminformáció a port.hu portálról</summary>
+    <summary lang="kr">port.hu 영화 스크래퍼</summary>
+    <summary lang="pl">Scraper filmów port.hu</summary>
+    <summary lang="pt">Scraper de filmes port.hu</summary>
+    <description lang="en">Download Movie information from www.port.hu and complete it with information from imdb.com.
+PORT.hu collects its programme information data from official and primary sources such as TV channels, cinemas, theatres and film distributors on the one hand and also creates some of its own content, like reviews of films, photos of concerts, buildings and restaurants as well as videos of theatre performances.The collected data are constantly updated on a 24 hour basis, which makes PORT.hu the most up to date programme information portal.</description>
+    <description lang="hu">Filminformáció letöltése a port.hu portálról, mely kiegészítésre kerül az imdb.com-ról.
+A PORT.hu a leglátogatottabb hazai kulturális programajánló portál. Az oldal célja, hogy segítséget nyújtson a kikapcsolódás megtervezéséhez, és ennek megfelelően igyekszik a lehető legteljesebb formában bemutatni a programlehetőségeket. Az oldalak tartalmi minőségének garanciája, hogy a PORT.hu a kulturális programinformációk egyik legnagyobb beszállítója.</description>
+    <description lang="kr">www.port.hu 와 imdb.com 에서 영화 정보 다운로드
+PORT.hu 는 티비 채널, 영화사, 극장, 영화 배급사에서 공식 정보를 수집하고 영화 리뷰, 콘서트/건물/식당 사진, 극장 공연 비디오 같은 자체 컨텐츠도 포함하고 있습니다. 정보가 매일 업데이트되서 항상 최신 정보를 유지합니다.</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.port.hu uzupełnionych o detale z imdb.com.</description>
+    <description lang="pt">Descarregue informação de filmes de www.port.hu e complete-a com informação de imdb.com.
++PORT.hu obtém a informação de fontes oficiais, canais de TV, teatros, cinemas e distribuidores de filmes. Também cria o seu próprio conteúdo, como críticas independentes, reportagens fotográficas de concertos e peças de teatro. A informação obtida é permanentemente actualizada, o que faz de PORT.hu o mais actualizado portal de programação.</description>
+    <platform>all</platform>
+  </extension>
+</addon>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Portuguese (Brazil) language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/pt_BR/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <string id="30000">Geral</string>
+    <string id="30001">Opções Gerais</string>
+    <string id="30002">Mostrar títulos em linguagem original</string>
+    <string id="30003">Compatibilidade dom Logos de Estúdio</string>
+    <string id="30004">Procura Avançada</string>
+    <string id="30005">Usar Procurar no Google (leia a documentação)</string>
+    <string id="30006">Documentação</string>
+    <string id="30007">Busca Avançada Sobre Google</string>
+    <string id="30008">Mostrar Changelog</string>
+    <string id="30020">Posters</string>
+    <string id="30021">Fontes Posters</string>
+    <string id="30022">Poster principal Filmaffinity (download rápido)</string>
+    <string id="30023">Posters TheMovieDB</string>
+    <string id="30024">-&gt; Linguagem posters TheMovieDB</string>
+    <string id="30025">Posters MoviePosterDB</string>
+    <string id="30026">Posters IMDB</string>
+    <string id="30027">Posters IMPAwards </string>
+    <string id="30028">Posters Trackt</string>
+    <string id="30029">Extra Posters FilmAffinity</string>
+    <string id="30040">FanArts</string>
+    <string id="30041">Fontes FanArts</string>
+    <string id="30042">Fanarts TheMovieDB</string>
+    <string id="30043">Trackt FanArts</string>
+    <string id="30060">Trailers</string>
+    <string id="30061">Fontes Trailers</string>
+    <string id="30062">Trailer FilmAffinity</string>
+    <string id="30063">Trailers TheMovieDB</string>
+    <string id="30064">-&gt;Linguagem Trailer TheMovieDB</string>
+    <string id="30065">Trailer HD-Trailers</string>
+    <string id="30066"> -&gt; HD-Trailers qualidade</string>
+    <string id="30080">Extra</string>
+    <string id="30081">Títulos  das Coleções</string>
+    <string id="30082">Pegar Títulos da Coletâneas (coleções) do TheMovieDB</string>
+    <string id="30083">-&gt;Linguagem Preferida dos Títulos nas Coletâneas (Coleções)</string>
+    <string id="30084">Fontes IMDB</string>
+    <string id="30085">Use Elenco Inteiro IMDB (ator, papel e imagem)</string>
+    <string id="30086">Informação Extra (Slogan, MPAA, Top 250)</string>
+    <string id="30087">Usar classificação do IMDB</string>
+    <string id="30100">(debug)Procurar informações somente de Filmaffinitiy (rápido)</string>
+</strings>

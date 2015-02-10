@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2010-10-22">
+	<CreateSearchUrl SearchStringEncoding="utf-8" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.disneyinfo.nl/zoeken.php?s=\1&amp;amp;Zoek=+Zoek+&lt;/url&gt;" dest="3">
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://www.disneyinfo.nl/\1&lt;/url&gt;&lt;/entity&gt;" dest="3">
+				<expression repeat="yes" noclean="5"> title='Netherlands' alt='' /&gt;&lt;/td&gt;&lt;td class='row\d*' width='79%'&gt;&lt;a href="(dvddetail.php\?film=(\d*))"&gt;([^&lt;]*)&lt;/a&gt;&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://www.disneyinfo.nl/\1&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+				<expression> title='Netherlands' alt='' /&gt;&lt;/td&gt;&lt;td class='row\d*' width='79%'&gt;&lt;a href="(videodetail.php\?film=(\d*))"&gt;([^&lt;]*)&lt;/a&gt;&lt;/td&gt;</expression>
+			</RegExp>
+			<expression noclean="1,2,3,4,5,6,7,8,9" />
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails clearbuffers="no" dest="3">
+		<RegExp input="$$3" output=" &lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="3">
+				<expression>&lt;b&gt;Title:&lt;/b&gt;&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="3+">
+				<expression>&lt;b&gt;Year:&lt;/b&gt;&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="3+">
+				<expression>Synopsis&lt;/th&gt;.*&lt;td width='100\%' class='row1' colspan='2'&gt;(.*?)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;http://www.imdb.com/title/tt\1&lt;/chain&gt;" dest="3+">
+				<expression>imdb.com/title/tt(\d*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;http://www.imdb.com/title/tt\1&lt;/chain&gt;" dest="3+">
+				<expression>imdb.com/title/tt(\d*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="3+">
+				<expression>&lt;b&gt;Average:&lt;/b&gt;&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;([^&lt;]*) \(Votes</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="3+">
+				<expression repeat="yes">&lt;b&gt;Genre:&lt;/b&gt;&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;&lt;a href[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$4" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;/actor&gt;" dest="3+">
+				<RegExp input="$$1" output="\1" dest="4">
+					<expression noclean="1">&lt;th colspan='2'&gt;Cast&lt;/th&gt;.*?&lt;td valign='top' class='row1' width='50%'&gt;.*&lt;td valign='top' class='row1' width='50%'&gt;(.*)&lt;th colspan='2'&gt;Bonusmaterial&lt;/th&gt;</expression>
+				</RegExp>
+				<expression repeat="yes" noclean="4">([^&lt;&gt;]*?) - (.*?)&lt;br /&gt;</expression>
+			</RegExp>
+			<RegExp conditional="AddToSet" input="" output="&lt;set&gt;$INFO[SetName]&lt;/set&gt;" dest="3+">
+				<expression />
+			</RegExp>
+			<RegExp conditional="AddToGenre" input="" output="&lt;genre&gt;$INFO[GenreName]&lt;/genre&gt;" dest="3+">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetDetails>
+</scraper>

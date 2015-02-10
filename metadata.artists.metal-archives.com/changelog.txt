@@ -1,0 +1,22 @@
+[B]2.0.0[/B]
+Updated Scraper libraries
+logo band and thumb collected
+Additional (if available) full-bio collected
+User can choose in config to retrieve all band releases and not only full-albums in artist discography
+Added Spanish translation.
+First version provided by farlight
+
+[B]1.0.4[/B]
+last release by spiff
+
+[B]1.0.3[/B]
+New icon.
+
+[B]1.0.2[/B]
+Added Hungarian translation.
+
+[B]1.0.1[/B]
+Scraper libraries changed. No functional changes
+
+[B]1.0.0[/B]
+Initial commit.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strings>
+    <string id="30000">Cast</string>
+    <string id="30001">Full cast with photo (slow)</string>
+    <string id="30002">Producer(s)</string>
+    <string id="30003">Actors</string>
+    <string id="30004">Filmmakers</string>
+    <string id="30005">Cast separators</string>
+        
+    <string id="30100">Votes</string>
+    <string id="30101">In 10esimi</string>
+    <string id="30102">Direct vote, critics and the public (as outline)</string>
+    <string id="30205">Vote, studio, mpaa, top250 from imdb (slow)</string>
+    
+    <string id="30200">Multimedia</string>
+    <string id="30201">All posters (slow)</string>
+    <string id="30202">In Hi-Res</string>
+    <string id="30203">Trailer (slow)</string>
+    <string id="30204">TMDB Backdrops (slow)</string>
+    
+    <string id="30300">Append to Plot</string>
+    <string id="30301">Critique (slow)</string>
+    <string id="30302">Audience critique (slow)</string>
+    <string id="30303">Forum comments (slow)</string>
+    <string id="30304">Famous film phrases (slow)</string>
+    
+    <string id="30400">Generals</string>
+    <string id="30401">Use Google for search</string>
+</strings>

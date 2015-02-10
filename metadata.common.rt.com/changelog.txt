@@ -1,0 +1,23 @@
+[B]1.5.0[/B]
+- Fixed: many data won't scraper due to site layout changes
+
+[B]1.4.1[/B]
+- Fixed: critics' consensus won't scrape
+
+[B]1.4.0[/B]
+- Added: Common function to grab critics' consensus to 'plot' of movie
+
+[B]1.3.0[/B]
+- Added: Common function to grab plot
+
+[B]1.2.0[/B]
+- Fixed: All Critics score scraping (thanks freakshow33)
+
+[B]1.1.1[/B]
+- Fixed: 'No consensus yet.' at Rotten Tomatoes returns no value for correct fallback to IMDb outline
+
+[B]1.1.0[/B]
+- Added: Grab critics' consensus to 'outline' of movie
+
+[B]1.0.1[/B]
+- Added: Scraper now fallsback to All Critics ratings if Top Critics is unavailable

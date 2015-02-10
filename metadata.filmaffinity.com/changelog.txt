@@ -1,0 +1,160 @@
+[B]1.6.2[/B]
+
+- Revisada la carga de información de ficheros .nfo
+- Revisada la obtención del póster principal de FilmAffinity
+
+[B]1.6.1[/B]
+
+- Añadida la posibilidad de elegir entre la web móvil o principal de FilmAffinity
+- Revisados los patrones de búsqueda en FilmAffinity
+
+[B]1.6.0[/B]
+
+- Modificada la codificación del scraper a UTF-8
+- Actualizada la URL de Google con el https
+- Modificada la búsqueda de FilmAffinity para utilizar la versión móvil
+- Añadida la opción de obtener el eslogan y la calificación por edades de TMDB
+- Reestructuradas las secciones de opciones de extras IMDB y TMDB
+- Mejorada la búsqueda en trakt.tv
+- Añadida la búsqueda en fanart.tv
+- Añadida detección del IMDBid a través de nfourl
+- Modificada la búsqueda de IMDB para utilizar funciones propias de su scraper
+- Revisada la obtención de posters y trailers de FilmAffinity
+- Revisado el refinado de la búsqueda en IMDB por apellido de director
+
+[B]1.5.9[/B]
+
+- Revisada la obtención de año, dirección, guión y título original de la web de FilmAffinity
+
+[B]1.5.8[/B]
+
+- Revisada la obtención de títulos y puntuaciones de la web de FilmAffinity
+
+[B]1.5.7[/B]
+
+- Revisada la búsqueda condicional de HDTrailers
+
+[B]1.5.6[/B]
+
+- Soporte para la actualización de la web de FilmAffinity
+
+[B]1.5.5[/B]
+
+- Mejorada la búsqueda de títulos en FilmAffinity con caracteres especiales
+- Mejorada la búsqueda de títulos en google permitiendo múltiples resultados
+
+[B]1.5.4[/B]
+
+- Mejorada la obtención de información extra (Top 250, calificación MPAA, eslogan, puntuación y número de votos) de IMDB
+
+[B]1.5.3[/B]
+
+- Mejoradas tanto la búsqueda en Google como la obtención de información extra
+
+[B]1.5.2[/B]
+
+- Añadida la capacidad de selección del mejor resultado en IMDB
+
+[B]1.5.1[/B]
+
+- Actualización de la búsqueda de información en IMDB
+
+[B]1.5.0[/B]
+
+- Añadida la búsqueda de información adicional buscando en cascada dentro de IMDB
+- Añadida la selección de trailers de TheMovieDB (gracias XBMCERO)
+- Añadida la selección de idioma para los posters de TheMovieDB (gracias XBMCERO)
+- Revisada la descarga de póster de FilmAffinity
+- Añadida opción de descarga rápida de póster principal de FilmAffinity (gracias XBMCERO)
+- Añadida la descarga de póster y fanart the trackt.tv
+- Añadido mostrar título original
+- Mejorada la búsqueda principal usando la búsqueda de google
+- Opciones de configuración revisadas y reordenadas (gracias XBMCERO y davidmuma)
+- Priorizados los posters de otras páginas sobre los de FilmAffinity en caso de ser seleccionados
+- Eliminado soporte de Alpacine ya que la página ha dejado de funcionar
+
+[B]1.4.5[/B]
+
+- Añadida la posibilidad de descargar información de colecciones de TheMovieDB.
+
+[B]1.4.4[/B]
+
+- Mejorada la obtención de guionistas desde FilmAffinity.
+- Mejorada la obtención de productoras desde filmaffintiy.
+- Corregido bug en descarga de primera productora cuando miniaturas de estudio está activo.
+- Añadido soporte completamente funcional para descargas de posters de Alpacine.
+- Eliminados todos los espacios en blanco extras en todos los textos descargados.
+
+[B]1.4.3[/B]
+
+- Mejorada la búsqueda para usar el año y corregidas limitaciones de búsqueda en google (gracias a Lechu)
+- Mejorada la búsqueda de miniaturas y posters en FilmAffinity (gracias a Lechu)
+- Corregida, una vez más, la lectura de los votos de FilmAffinity (gracias a Lechu)
+- Corregida la descarga de sinopsis para ciertas películas (gracias a agjacome)
+- Cambiado el icono de FilmAffinity para que sea igual que el rediseño de su web (gracias Lechu)
+
+[B]1.4.2[/B]
+
+- Arreglada duración de la película y el país (gracias XBMCSPAIN)
+
+[B]1.4.1[/B]
+
+- Actualizada información al inglés y borrado archivos para adaptarse a las reglas de addons (Thanks Olympia)
+
+[B]1.4[/B]
+
+- Arreglados los fallos que daba FilmAffinity en la última actualización (aporte de agjacome, otra vez muchas gracias!)
+
+[B]1.3.4[/B]
+
+- Arregladas otra vez las votaciones, espero que imdb no cambie más el diseño...
+
+[B]1.3.3[/B]
+
+- Añadida la posibilidad de descargar posters desde Alpacine (No implementado al 100%).
+- Arreglado problema con puntuación en imdb.
+
+[B]1.3.1[/B]
+
+- Arreglado problema con los géneros.
+- Arreglado problema con el numero de votaciones (no cogía los ceros)
+
+[B]1.3[/B]
+
+- Arreglados problemas con expresiones regulares
+- Añadida una opción para escoger de donde descargar el reparto (eliminadas opciones auxiliares)
+- Añadida la opción de escoger la descarga de trailers (desde FilmAffinity o desde HD-Trailers.net
+- Editado el menú de configuracion del scraper
+- Código comentado para entender mejor las funciones
+- Varios problemas pequeños arreglados
+
+[B]1.2.4[/B]
+
+- Arreglado un error de regex.
+
+[B]1.2.3[/B]
+
+- Arreglados los tags rotos a causa de la remodelación de la pagina web de imdb.
+
+[B]1.2.1[/B]
+- Added Hungarian translation.
+
+[B]1.2.0[/B]
+
+- Adaptado el scraper con las nuevas funciones <chain>.
+- Añadido descarga de posters desde TheMovieDB.
+- Eliminada opción sin uso.
+- Arreglado problema con los posters de FilmAffinity.
+
+[B]1.1.0[/B]
+
+- Arreglado un problema que no dejaba configurar correctamente el scraper.
+- Añadidas traducciones y mejorados ajustes.
+
+[B]1.0.2[/B]
+
+- Adaptado al nuevo formato de Addons.
+
+[B]1.0.0[/B]
+
+- Scraper Inicial

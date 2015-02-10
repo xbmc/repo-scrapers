@@ -1,0 +1,47 @@
+Changelog:
+16/09/2013 - Fixed for new movieplayer site layout, thanks to maxgalbusera
+25/03/2014 - Fixed trailer scraping
+23/10/2013 - Fixed IMDB ID
+29/05/2013 - Search fixed and tuned Year, for non corresponding year between MP & IMDB
+14/05/2013 - Fixed Bing results string
+01/04/2013 - Removed AKA titles
+15/02/2012 - Removed Local IMDB function and added some details retrieving from metadata.common.imdb.com and fixed cast
+17/12/2012 - Fixed IMDB search URL
+18/09/2012 - Updated for the new Movieplayer site layout
+16/01/2012 - Updated local IMDB string, moved Genre to official imdb.common. Tuned Bing search with (film %date%)
+05/09/2011 - Tuning of year & originaltitle regexp
+11/08/2011 - added "" to bing search, fixed original title and mpaa fields.
+07/08/2011 - updated main scraper to use new MoviePlayer layout .
+07/08/2011 - Removed optional IMDB, now it's used by default to retrieve all data except plot,tagline,outline,fanart and poster.
+07/08/2011 - Commit test.
+14/07/2011 - Fixed IMDb missing stuff and some cosmetics.
+13/07/2011 - Added Results per page and "Year" option in settings, but it's best to keep it off.
+Optimized the cache for IMDb and tmdb and other fixes
+09/07/2011 - Almost completely rewritten: Bing is now the default search engine, all the infos by default are taken from movieplayer.it the user will enable the other features. 
+Many, many fixes.....
+07/03/2011 - Fixed Google search results.
+13/02/2011 - Fixed studio's logos retrieving only one studio from imdb.
+25/10/2010 - Fixed Trailers (it was deleted by mistake)
+23/10/2010 - Adjusted the MP search, but Google engine is better and more reliable as it doesn't need the exact movie name. So Google is the default again and we don't hammer MP site either. Fixed the .nfo url too (tnx to Spiff)
+14/10/2010 - Finally added the movieplayer.it own search (they removed the base64 encoding). Added one option in settings for Google search and anothe rone to get just one or more Posters from MP. Added Polish Translation. The version bump now to 1.1.0 :P
+29/09/2010 - Updated GetImdbStuff function to match IMDb latest site changes
+28/08/2010 - Reduced movieplayer.it fanarts pages just to the summary one to improve speed
+27/08/2010 - Changed the search string for better results. Version now is 1.0.9
+10/08/2010bis - Added hungarian strings, fixed addon.xml order descprition new version now 1.0.8 one step fwd from xbmc repo as it should be
+10/08/2010 - Created git repository new version is 1.07
+29/07/2010 - Fixed Plot because of another site code change.
+20/07/2010 - Small optmizations for better results; slightly mods to plot, tagline and outline; some small fixes for Xbmc Dharma
+18/07/2010 - Updated to match the latest changes to the site (again)
+21/04/2010 - Updated to match the latest changes to the site
+05/03/2010 - Added Fanart collector and fixed Actors bug
+04/01/2010 - Improved the Google search adding the "Year" to the "CreateSearchUrl" and "sorted=yes" to the "GetSearchResults"
+02/01/2010 - Removed "Cimi's" search and left only the Google one.
+04/12/2009 - Fixed TMDB Fanarts and Thumbs broken due to Camelot beta changes in "common" folder
+20/11/2009 - Added option to retreive up to 4 pages of results from mp.it it' will take longer obviously.
+17/11/2009 - Added staright MP search (tnx Cimi for the great help), still possible to use Google search enabling it in the scraper settings.
+16/11/2009 - cleanup of results title names for future XBMC filtering of duplicated entries (r24674 )
+15/11/2009 - fixed "outline" problem with the Rapier skin, it actually contain the plot and not the curiosity anymore.
+14/11/2009 - changed search url with myown google custom search to have more results
+12/11/2009 - changed method to retrieve the IMDb ID and the so the MPAA, studio, rating and Fanart
+09/11/2009 - added scraping of MPAA, studio, and ratings from IMDb (enabled by default, if disabled it will retrieve thos from movieplayer.it but the datas will probably be unusable by skins that use MPAA and studo icons)
+04/11/2009 - added download of TMDB Posters and Fanarts and fixed their selection in settings

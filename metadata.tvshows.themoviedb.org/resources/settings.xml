@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30005" type="bool" id="keeporiginaltitle" default="false"/>
+    <setting label="30000" type="bool" id="fanart" default="true"/>
+    <setting label="30002" type="labelenum" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|th|tr|zh" id="language" default="en"/>
+</settings>

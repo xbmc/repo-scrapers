@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<category label="30000">
+		<setting label="30001" type="lsep" />
+		<setting label="30009" type="bool" id="FAmobile" default="false" />
+		<setting label="30002" type="bool" id="EnableOriginalTitles" default="false" />
+		<setting label="30003" type="bool" id="StudioFlagsON" default="true" />
+		<setting label="30004" type="lsep" />
+		<setting label="30005" type="bool" id="GoogleAdvSearch" default="false" />
+		<setting label="30006" type="lsep" />
+		<setting label="30007" type="action" action="RunScript($CWD/lib/viewer.py,GoogleAdvancedSearch)" default="" />
+		<setting label="30008" type="action" action="RunScript($CWD/lib/viewer.py,changelog)" default="" />
+	</category>
+	<category label="30020">
+		<setting label="30021" type="lsep" />
+		<setting label="30022" type="bool" id="FirstFilmAffinityPoster" default="true" />
+		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" default="false" />
+		<setting label="30023" type="bool" id="EnableTMDBPoster" default="false" />
+		<setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<setting label="30025" type="bool" id="EnableMoviePosterDB" default="false" />
+		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
+		<setting label="30027" type="bool" id="EnableIMPAwards" default="false" />
+		<setting label="30028" type="bool" id="EnableTraktPoster" default="false" />
+		<setting label="30029" type="bool" id="EnableFanartTvPoster" default="false" />
+	</category>
+	<category label="30040">
+		<setting label="30041" type="lsep" />
+		<setting label="30042" type="bool" id="EnableTMDBFanArt" default="true" />
+		<setting label="30043" type="bool" id="EnableTraktFanArt" default="false" />
+		<setting label="30044" type="bool" id="EnableFanartTvFanart" default="false" />
+	</category>
+	<category label="30060">
+		<setting label="30061" type="lsep" />
+		<setting label="30062" type="bool" id="EnableFATrailer" default="true" />
+		<setting label="30063" type="bool" id="EnableTMDBTrailer" default="false" />
+		<setting label="30064" type="labelenum" id="tmdbtrailerlanguage" default="es" enable="eq(-1,true)" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh"/>
+		<setting label="30065" type="bool" id="EnableHDTrailers" default="false" />
+		<setting label="30066" type="labelenum" id="HDTrailersQ" default="HD-Trailers(480p)" enable="eq(-1,true)" values="HD-Trailers(480p)|HD-Trailers(720p)|HD-Trailers(1080p)" />	
+	</category>
+	<category label="30080">
+		<setting label="30081" type="lsep" />
+		<setting label="30082" type="bool" id="EnableTMDBSet" default="true" />
+		<setting label="30083" type="labelenum" id="tmdbsetlanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<setting label="30084" type="bool" id="EnableTMDBTagline" default="true" />
+		<setting label="30085" type="labelenum" id="tmdbtaglinelanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<setting label="30086" type="bool" id="EnableTMDBCertifications" default="true" />
+		<setting label="30087" type="labelenum" id="tmdbcertcountry" default="us" enable="eq(-1,true)" values="au|bg|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|th|tr|us|zh" />
+		<setting label="certprefix" type="text" id="certprefix" default="Rated " visible="false"/>
+	</category>
+	<category label="30100">
+		<setting label="30101" type="lsep" />
+		<setting label="30102" type="bool" id="IMDBCast" default="true" />
+		<setting label="30105" type="bool" id="IMDBMPAA" default="true" />
+		<setting label="30106" type="bool" id="IMDBRatings" default="false" />
+		<setting label="30107" type="bool" id="IMDBTagline" default="false" />
+		<setting label="30104" type="bool" id="IMDBTop250" default="false" />
+	</category>
+</settings>

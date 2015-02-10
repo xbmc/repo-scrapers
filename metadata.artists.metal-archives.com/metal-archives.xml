@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<scraper thumb="" date="2014-08-12" framework="1.1" name="">
+    <NfoUrl dest="3">
+        <RegExp dest="3" output="&lt;url&gt;http://www.\1&lt;/url&gt;" input="$$1">
+            <expression>(metal-archives.com/.*)</expression>
+        </RegExp>
+    </NfoUrl>
+    <CreateArtistSearchUrl dest="3">
+        <RegExp dest="3" output="&lt;url&gt;http://www.metal-archives.com/search/ajax-band-search/?field=name&amp;amp;query=\1&lt;/url&gt;" input="$$1">
+            <expression/>
+        </RegExp>
+    </CreateArtistSearchUrl>
+    <GetArtistSearchResults dest="8">
+        <RegExp dest="8" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" input="$$5">
+            <RegExp dest="5+" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" input="$$1">
+                <expression repeat="yes" noclean="1">&lt;a href=\\&quot;([^&quot;]*bands[^&quot;]*)\\&quot;&gt;([^&lt;]*)&lt;/a&gt;</expression>
+            </RegExp>
+            <expression noclean="1"></expression>
+        </RegExp>
+    </GetArtistSearchResults>
+    <GetArtistDetails dest="3">
+        <RegExp dest="3" output="&lt;details&gt;\1&lt;/details&gt;" input="$$5">
+            <RegExp dest="9" output="\1" input="$$1">
+                <expression>bandName = &quot;(.*?)&quot;;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;name&gt;\1&lt;/name&gt;" input="$$9">
+                <expression/>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;genre&gt;\1&lt;/genre&gt;" input="$$1">
+                <expression repeat="yes">&lt;dt&gt;Genre:&lt;/dt&gt;[^&gt;]*&gt;(.*?)&lt;/dd&gt;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;mood&gt;\1&lt;/mood&gt;" input="$$1">
+                <expression repeat="yes">&lt;dt&gt;Lyrical themes:&lt;/dt&gt;[^&gt;]*&gt;(.*?)&lt;/dd&gt;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;yearsactive&gt;\1&lt;/yearsactive&gt;" input="$$1">
+                <expression>&lt;dt&gt;Years active:&lt;/dt&gt;[^&gt;]*&gt;\s+(.*?)\s+&lt;/dd&gt;</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;formed&gt;\1&lt;/formed&gt;" input="$$10">
+                <RegExp dest="10" output="\1" input="$$1">
+                    <expression>&lt;dt&gt;Location:&lt;/dt&gt;[^&gt;]*&gt;(.+?)&lt;/dd&gt;</expression>
+                </RegExp>
+                <RegExp dest="10+" output=" (\1)" input="$$1">
+                    <expression>&lt;dt&gt;Country of origin:&lt;/dt&gt;.+?&quot;&gt;(.+?)&lt;/a&gt;</expression>
+                </RegExp>
+                <RegExp dest="10+" output=" - \1" input="$$1">
+                    <expression>&lt;dt&gt;Formed in:&lt;/dt&gt;[^&gt;]*&gt;([0-9]+)&lt;/dd&gt;</expression>
+                </RegExp>
+                <expression/>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;url function=&quot;GetLargeBio&quot;&gt;http://www.metal-archives.com/band/read-more/id/\1&lt;/url&gt;" input="$$7">
+                <RegExp dest="7" output="\1" input="$$1">
+                    <expression>var bandId = ([0-9]+);</expression>
+                </RegExp>
+                <expression/>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;chain function=&quot;GetHTBFanart&quot;&gt;\1&lt;/chain&gt;" input="$$9" conditional="htbfanart">
+                <expression/>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;chain function=&quot;GetHTBThumbs&quot;&gt;\1&lt;/chain&gt;" input="$$2" conditional="htbthumbs">
+                <expression/>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;thumb&gt;\1&lt;/thumb&gt;" input="$$1" conditional="maartistthumbs">
+                <expression>src=&quot;(http://www.metal-archives.com/images[^&quot;]*logo.[jpeginf]+)[^&quot;]?</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;thumb&gt;\1&lt;/thumb&gt;" input="$$1" conditional="maartistthumbs">
+                <expression>src=&quot;(http://www.metal-archives.com/images[^&quot;]*photo.jpg)[^&quot;]?</expression>
+            </RegExp>
+            <RegExp dest="5+" output="&lt;url function=&quot;GetAlbum&quot;&gt;\1&lt;/url&gt;" input="$$1">
+                <expression>href=&quot;(http://www.metal-archives.com/band/discography/id/[0-9]+/tab/all)&quot;&gt;</expression>
+            </RegExp>
+            <expression noclean="1"></expression>
+        </RegExp>
+    </GetArtistDetails>
+    <GetAlbum dest="5">
+        <RegExp dest="5" output="&lt;details&gt;\1&lt;/details&gt;" input="$$6">
+            <RegExp dest="6+" output="&lt;album&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;/album&gt;" input="$$1" conditional="!getalldisc">
+                <expression repeat="yes" noclean="1">&quot; class=&quot;(album)&quot;&gt;(.*?)&lt;.*?&gt;([0-9]+)&lt;</expression>
+            </RegExp>
+            <RegExp dest="6+" output="&lt;album&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;/album&gt;" input="$$1" conditional="getalldisc">
+                <expression repeat="yes" noclean="1">&quot; class=&quot;(album|other|single)&quot;&gt;(.*?)&lt;.*?&gt;([0-9]+)&lt;</expression>
+            </RegExp>
+            <expression noclean="1"></expression>
+        </RegExp>
+    </GetAlbum>
+    <GetLargeBio dest="5">
+        <RegExp dest="5" output="&lt;details&gt;\1&lt;/details&gt;" input="$$7">
+            <RegExp dest="7" output="&lt;biography&gt;\1&lt;/biography&gt;" input="$$1">
+                <expression>(.*)</expression>
+            </RegExp>
+            <expression noclean="1"></expression>
+        </RegExp>
+    </GetLargeBio>
+</scraper>

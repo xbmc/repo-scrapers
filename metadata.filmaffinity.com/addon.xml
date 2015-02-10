@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon  id="metadata.filmaffinity.com"
+	name="FilmAffinity"
+	version="1.6.2"
+	provider-name="hectorZiN|agjacome|xbmcero|pancheto|MaDDoGo">
+	<requires>
+	    <import addon="xbmc.metadata" version="2.1.0"/>
+	    <import addon="metadata.common.themoviedb.org" version="2.9.2"/>
+	    <import addon="metadata.common.movieposterdb.com" version="1.1.0"/>
+	    <import addon="metadata.common.impa.com" version="1.1.0"/>
+	    <import addon="metadata.common.imdb.com" version="2.7.6"/>
+	    <import addon="metadata.common.hdtrailers.net" version="1.0.8"/>
+	    <import addon="plugin.video.youtube" version="3.4.4"/>
+	</requires>
+	<extension point="xbmc.metadata.scraper.movies"
+	             language="es"
+	             library="filmaffinity.xml"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="be">FilmAffinity Movie Scraper</summary>
+		<summary lang="el">Scraper Ταινιών FilmAffinity</summary>
+		<summary lang="en">FilmAffinity Movie Scraper</summary>
+		<summary lang="es">Scraper de Películas de Filmaffinity</summary>
+		<summary lang="hu">FilmAffinity filmadat leolvasó</summary>
+		<summary lang="ko">FilmAffinity 영화 스크래퍼</summary>
+		<summary lang="pl">Scraper filmów FilmAffinity</summary>
+		<summary lang="pt">Scraper de filmes FilmAffinity</summary>
+		<summary lang="pt_BR">Scraper Filmes FilmAffinity</summary>
+		<summary lang="sv">FilmAffinity filmskrapa</summary>
+		<description lang="be">Download Movie information from www.filmaffinity.com</description>
+		<description lang="el">Λήψη πληροφοριών για Ταινίες από το www.filmaffinity.com</description>
+		<description lang="en">Download Movie information from www.filmaffinity.com</description>
+		<description lang="es">Scraper que usa la versión española de Filmaffinity para descargar información de películas en español, ayudándose de varias páginas para ampliar la información.        					Gracias a XBMCSPAIN por el soporte y ayudas, sin vosotros esto sería más complicado aún.</description>
+		<description lang="hu">Film információk letöltése a www.filmaffinity.com-ról</description>
+		<description lang="ko">www.filmaffinity.com 에서 영화 정보 다운로드</description>
+		<description lang="pl">Pobieraj informacje o filmach z www.filmaffinity.com</description>
+		<description lang="pt">Descarregar informação de filmes de www.filmaffinity.com</description>
+		<description lang="pt_BR">Download informações de filmes de www.filmaffinity.com</description>
+		<description lang="sv">Ladda ner filminformation från www.filmaffinity.com</description>
+		<disclaimer lang="es">Se recomienda configurar antes de usar.</disclaimer>
+		<platform>all</platform>
+		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<language>es</language>
+	    	<forum>http://xbmcspain.com/foro</forum>
+	    	<website>http://xbmcspain.com/</website>
+	    	<email></email>
+	    	<source>https://github.com/MaDDoGo/metadata.filmaffinity.com</source>
+	</extension>
+</addon>

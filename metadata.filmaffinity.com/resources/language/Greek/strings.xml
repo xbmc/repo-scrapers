@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Greek language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/el/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <string id="30000">Γενικά</string>
+    <string id="30001">Γενικές Επιλογές</string>
+    <string id="30002">Εμφάνιση τίτλων στην αρχική τους γλώσσα</string>
+    <string id="30003">Συμβατότητα με λογότυπα των Στούντιο</string>
+    <string id="30004">Προηγμένη Αναζήτηση</string>
+    <string id="30005">Χρήση αναζήτησης Google (διαβάστε τη βοήθεια)</string>
+    <string id="30006">Βοήθεια</string>
+    <string id="30007">Σχετικά με την προηγμένη αναζήτηση Google</string>
+    <string id="30008">Προβολή αρχείου καταγραφής αλλαγών</string>
+    <string id="30020">Αφίσες</string>
+    <string id="30021">Πηγές Αφισών</string>
+    <string id="30022">Βασική αφίσα Filmaffinity (ταχεία λήψη)</string>
+    <string id="30023">Αφίσες από TheMovieDB</string>
+    <string id="30024"> -&gt; Γλώσσα αφισών TheMovieDB</string>
+    <string id="30025">Αφίσες από MoviePosterDB</string>
+    <string id="30026">Αφίσες από IMDb</string>
+    <string id="30027">Αφίσες από IMPAwards</string>
+    <string id="30028">Αφίσες από Trackt</string>
+    <string id="30029">Επιπλέον αφίσες από FilmAffinity</string>
+    <string id="30040">FanArt</string>
+    <string id="30041">Πηγές FanArt</string>
+    <string id="30042">FanArt από TheMovieDB</string>
+    <string id="30043">FanArt από Trackt</string>
+    <string id="30060">Διαφημιστικά</string>
+    <string id="30061">Πηγές Διαφημιστικών</string>
+    <string id="30062">Διαφημιστικό από FilmAffinity</string>
+    <string id="30063">Διαφημιστικά από TheMovieDB</string>
+    <string id="30064"> -&gt; Γλώσσα διαφημιστικών TheMovieDB</string>
+    <string id="30065">Διαφημιστικά από HD-Trailers</string>
+    <string id="30066"> -&gt; Ποιότητα διαφημιστικών HD-Trailers</string>
+    <string id="30080">Επιπλέον</string>
+    <string id="30081">Τίτλοι Ομάδων Ταινιών</string>
+    <string id="30082">Τίτλοι Ομάδων Ταινιών από TheMovieDB</string>
+    <string id="30083"> -&gt; Προτιμώμενη Γλώσσα Τίτλων Ομάδων Ταινιών</string>
+    <string id="30084">Πηγές IMDb</string>
+    <string id="30085">Χρήση πλήρους διανομής από IMDb (ηθοποιοί, ρόλοι και φωτογραφίες)</string>
+    <string id="30086">Επιπλέον πληροφορίες (Σλόγκαν, Καταλληλότητα, Κορυφαία 250)</string>
+    <string id="30087">Χρήση αξιολόγησης IMDb</string>
+    <string id="30100">(Εντοπισμός σφαλμάτων)Αναζήτηση πληροφοριών μόνο από Filmaffinity (πιο γρήγορο)</string>
+</strings>

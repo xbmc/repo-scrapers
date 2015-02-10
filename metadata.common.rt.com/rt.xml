@@ -1,0 +1,98 @@
+﻿<scraperfunctions>
+	<!-- Get Rotten Tomatoes URL from IMDb ID for ratings -->
+	<GetRTRatingById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRT$$10&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$INFO[tomato]" output="Tom" dest="10">
+				<expression>TomatoMeter</expression>
+			</RegExp>
+			<RegExp input="$INFO[tomato]" output="Ave" dest="10">
+				<expression>Average Rating</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="All" dest="10+">
+				<expression>All Critics</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="Top" dest="10+">
+				<expression>Top Critics</expression>
+			</RegExp>
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTRatingById>
+
+	<!-- TomatoMeter from All Critics -->
+	<ParseRTTomAll dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
+		</RegExp>
+	</ParseRTTomAll>
+
+	<!-- TomatoMeter from Top Critics -->
+	<ParseRTTomTop dest="5">
+		<!--Grabs All Critics first in case Top Critics is empty-->
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
+		</RegExp>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;top-critics-numbers&quot;.*?&quot;ratingValue&quot;&gt;([0-9]+).*?Reviews Counted:.*?([0-9]+)</expression>
+		</RegExp>
+	</ParseRTTomTop>
+
+	<!-- Average Rating from All Critics -->
+	<ParseRTAveAll dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Reviews Counted:.*?([0-9]+)</expression>
+		</RegExp>
+	</ParseRTAveAll>
+
+	<!-- Average Rating from Top Critics -->
+	<ParseRTAveTop dest="5">
+		<!--Grabs All Critics first in case Top Critics is empty-->
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;all-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Reviews Counted:.*?([0-9]+)</expression>
+		</RegExp>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;top-critics-numbers&quot;.*?Average.*?([0-9.]+).*?Critic Reviews:\s([0-9]+)</expression>
+		</RegExp>
+	</ParseRTAveTop>
+
+	<!-- Critics' Consensus -->
+	<GetRTOutlineById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTOutline&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTOutlineById>
+	<ParseRTOutline dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;/details&gt;" dest="5">
+			<expression trim="1" noclean="1">Critics\sConsensus:&lt;/span&gt;\s*([^&lt;]+)&lt;/p&gt;</expression>
+		</RegExp>
+		<RegExp input="$$5" output="" dest="5">
+			<expression>&lt;details&gt;&lt;outline&gt;No consensus yet.&lt;/outline&gt;&lt;/details&gt;</expression>
+		</RegExp>
+	</ParseRTOutline>
+
+	<!-- Critics' Consensus -->
+	<GetRTCConsensusToPlotById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTCConsensusToPlot&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTCConsensusToPlotById>
+	<ParseRTCConsensusToPlot dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<expression trim="1" noclean="1">Critics\sConsensus:&lt;/span&gt;\s*([^&lt;]+)&lt;/p&gt;</expression>
+		</RegExp>
+		<RegExp input="$$5" output="" dest="5">
+			<expression>&lt;details&gt;&lt;plot&gt;No consensus yet.&lt;/plot&gt;&lt;/details&gt;</expression>
+		</RegExp>
+	</ParseRTCConsensusToPlot>
+
+	<!-- Plot -->
+	<GetRTPlotById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRTPlot&quot; cache=&quot;\1-rt.html&quot;&gt;http://www.rottentomatoes.com/alias?type=imdbid&amp;s=\1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTPlotById>
+	<ParseRTPlot dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1\2&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<expression trim="1">&lt;h2&gt;Movie Info&lt;/h2&gt;[^\w]*([^\n]*)[^&gt;]*&gt;\s([^~&lt;]*)</expression>
+		</RegExp>
+	</ParseRTPlot>
+</scraperfunctions>

@@ -1,0 +1,23 @@
+[B]1.1.0[/B]
+Added: Styles and Moods
+
+[B]1.0.7[/B]
+Updated language files from Transifex
+
+[B]1.0.6[/B]
+Updated language files from Transifex
+
+[B]1.0.4[/B]
+Updated language files from Transifex
+
+[B]1.0.3[/B]
+Updated language files from Transifex
+
+[B]1.0.2[/B]
+Updated language files from Transifex
+
+[B]1.0.1[/B]
+Tuned: Artist Splitter
+
+[B]1.0.0[/B]
+Initial version

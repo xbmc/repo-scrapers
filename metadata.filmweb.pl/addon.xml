@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.filmweb.pl"
+        name="Filmweb"
+        version="2.2.2"
+        provider-name="Regss|smuto">
+    <requires>
+        <import addon="xbmc.metadata" version="2.1.0"/>
+        <import addon="metadata.common.themoviedb.org" version="2.8.0"/>
+        <import addon="plugin.video.youtube" version="2.9.1" optional="true"/>
+    </requires>
+    <extension point="xbmc.metadata.scraper.movies"
+        language="pl"
+        library="filmweb.xml"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Filmweb Movie Scraper</summary>
+        <summary lang="pl">Scraper filmowy Filmweb.pl</summary>
+        <description lang="en">Download Movie information from www.filmweb.pl</description>
+        <description lang="pl">Pobiera informacje o filmie ze strony www.filmweb.pl</description>
+        <platform>all</platform>
+    </extension>
+</addon>

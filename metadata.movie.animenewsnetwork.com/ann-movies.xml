@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2010-03-26">
+	<include>common/tmdb.xml</include>
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;\1.html&quot;&gt;http://www.animenewsnetwork.com/encyclopedia/anime.php?id=\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
+			<expression>animenewsnetwork.com/encyclopedia/anime.php\?id=([0-9]*)</expression>
+		</RegExp>
+	</NfoUrl>
+
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$6" output="&lt;url&gt;http://api.bing.com/xml.aspx?AppId=16E50AB9947899C41433EB944C60174737855036&amp;Sources=web&amp;xmltype=attributebased&amp;Query=\1+movie+-&quot;number+of+episodes&quot;+site%3Aanimenewsnetwork.com%2Fencyclopedia&lt;/url&gt;" dest="3">
+			<RegExp input="$$1" output="$$1%20%2dEND" dest="5">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$5" output="\1%20" dest="6">
+				<expression repeat="yes" noclean="1">(.*?)%20%2d</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</CreateSearchUrl>
+
+	<GetSearchResults dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;Yes&quot;&gt;\1&lt;/results&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;url cache=&quot;\2.html&quot;&gt;http://www.animenewsnetwork.com/encyclopedia/anime.php?id=\2&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes">&lt;web:WebResult Title=&quot;([^&gt;&quot;]+?)&quot; [^&gt;]* Url=&quot;http://www.animenewsnetwork.com/encyclopedia/anime.php\?id=([0-9]+?)&quot; [^&gt;]*&gt;</expression>
+			</RegExp>
+			<expression clear="yes" noclean="1"/>
+		</RegExp>
+	</GetSearchResults>
+
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression repeat="yes">&quot;/encyclopedia/search/genreresults\?w=movies&amp;a=AA&amp;a=OC&amp;a=TA&amp;a=MA&amp;g=([^/&amp;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
+				<expression>Age rating:&lt;/STRONG&gt;[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<expression>Plot Summary:&lt;/STRONG&gt;[^&gt;]*&gt;(.*?)&lt;/DIV&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
+				<expression>Weighted mean:&lt;/B&gt; ([^\s]*) \(</expression>
+			</RegExp>
+			<RegExp input="$$2" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression>Running time:&lt;/STRONG&gt;[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Get the first set of Vintage dates only -->			
+			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="5+">
+				<expression>Vintage:&lt;/STRONG&gt;[^&gt;]*&gt;([^&lt;\s]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>Vintage:&lt;/STRONG&gt;[^&gt;]*&gt;([0-9]{4})</expression>
+			</RegExp>
+
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1" clear="yes">Animation Production&lt;/B&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
+				<expression repeat="yes">company.php[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1" clear="yes">&lt;b&gt;Director&lt;/b&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<expression repeat="yes">people.php[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1" clear="yes">&lt;b&gt;Script&lt;/b&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<expression repeat="yes">people.php[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1" clear="yes">&lt;b&gt;Screenplay&lt;/b&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
+				<expression repeat="yes">people.php[^&gt;]*&gt;([^&lt;]*)</expression>
+			</RegExp>
+
+			<!-- Japanese only cast (ID could be used to get photo in the future) -->
+			<RegExp conditional="!allcasts" input="$$6" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="6">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression noclean="1">Japanese cast(.*?)bar_horiz\.gif</expression>
+				</RegExp>	
+				<expression repeat="yes" noclean="3">class=ENTAB&gt;&lt;A.*? HREF=&quot;people.php\?id=([0-9]+?)&quot;&gt;([^&lt;]*)&lt;/A&gt; &lt;I&gt;as&lt;/I&gt;.*?&lt;nobr&gt;&lt;B&gt;(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;/div&gt;|&lt;/small&gt;&lt;/div&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;/div&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;/div&gt;)</expression>
+			</RegExp>
+			<!-- All language casts -->
+			<RegExp conditional="allcasts" input="$$1" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="6">	
+				<expression repeat="yes" noclean="3">CLASS=ENTAB&gt;&lt;A.*? HREF=&quot;people.php\?id=([0-9]+?)&quot;&gt;([^&lt;]*)&lt;/A&gt; &lt;I&gt;as&lt;/I&gt;.*?&lt;nobr&gt;&lt;B&gt;(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;/div&gt;|&lt;/small&gt;&lt;/div&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;/div&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;/div&gt;)</expression>
+			</RegExp>
+			<!-- Casts code cleanup -->
+			<RegExp input="$$6" output="\1" dest="7">
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="7">
+				<expression repeat="yes" noclean="1">(.*?)&lt;u&gt;[^&lt;]*&lt;/u&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="7+">
+				<expression noclean="1">.*&lt;u&gt;[^&lt;]*&lt;/u&gt;(.*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="\1" dest="6">
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp input="$$7" output="\1, " dest="6">
+				<expression repeat="yes" noclean="1">(.*?)(&lt;/B&gt;&lt;/nobr&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="\2" dest="6+">
+				<expression noclean="2">.*(&lt;/B&gt;&lt;/nobr&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/B&gt;&lt;/nobr&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;|&lt;/small&gt;&lt;span.*?/span&gt;&lt;BR&gt;&lt;nobr&gt;&lt;B&gt;)(.*)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes">&lt;actor&gt;&lt;name&gt;(.*?)&lt;/name&gt;&lt;role&gt;(.*?)&lt;/role&gt;&lt;/actor&gt;</expression>
+			</RegExp>
+
+			<RegExp conditional="fanart" input="$$7" output="&lt;url cache=&quot;$$2-tmdb-search.xml&quot; function=&quot;GetFanart&quot;&gt;http://api.themoviedb.org/2.1/Movie.search/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="\1+" dest="7">
+					<expression repeat="yes" trim="1">([^\s]+)</expression>
+				</RegExp>
+				<expression noclean="1"/>
+			</RegExp>
+
+			<RegExp conditional="!poster" input="$$1" output="&lt;thumb&gt;http://www.animenewsnetwork.com/thumbnails/fit200x200/encyc/\1&lt;/thumb&gt;" dest="5+">
+				<expression>/thumbnails/fit200x200/encyc/([^']*)</expression>
+			</RegExp>
+			<RegExp conditional="poster" input="$$7" output="&lt;url cache=&quot;$$2-tmdb-search.xml&quot; function=&quot;GetPoster&quot;&gt;http://api.themoviedb.org/2.1/Movie.search/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression trim="1">page_header&quot;&gt;([^\(&lt;]*)</expression>
+				</RegExp>
+				<RegExp input="$$6" output="\1+" dest="7">
+					<expression repeat="yes" trim="1">([^\s]+)</expression>
+				</RegExp>
+				<expression noclean="1"/>
+			</RegExp>
+			<RegExp conditional="poster" input="$$1" output="&lt;url cache=&quot;$$2.html&quot; function=&quot;GetANNThumbnail&quot;&gt;Fallback to ANN Thumbnail&lt;/url&gt;" dest="5+">
+				<expression/>
+			</RegExp>
+
+			<expression noclean="1"/>
+		</RegExp>
+	</GetDetails>
+
+	<GetFanart dest="3">
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;tmdb-\1.xml&quot; function=&quot;GetTMDBFanartById&quot;&gt;http://api.themoviedb.org/2.1/Movie.getInfo/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+	</GetFanart>
+
+	<GetPoster dest="3">
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;url cache=&quot;tmdb-\1.xml&quot; function=&quot;GetTMDBThumbsById&quot;&gt;http://api.themoviedb.org/2.1/Movie.getInfo/en/xml/57983e31fb435df4df77afb854740ea9/\1&lt;/url&gt;&lt;/details&gt;" dest="3">
+			<expression>&lt;id&gt;([0-9]*)&lt;/id&gt;</expression>
+		</RegExp>
+	</GetPoster>
+
+	<GetANNThumbnail dest="3">
+		<RegExp input="$$1" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;&lt;thumb&gt;http://www.animenewsnetwork.com/thumbnails/fit200x200/encyc/\1&lt;/thumb&gt;&lt;/details&gt;" dest="3">
+			<expression>/thumbnails/fit200x200/encyc/([^']*)</expression>
+		</RegExp>
+	</GetANNThumbnail>
+
+</scraper>
