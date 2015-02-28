@@ -6,14 +6,14 @@
 		</RegExp>
 	</NfoUrl>
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://m.mtime.com/search/?q=\1&lt;/url&gt;" dest="3">
-			<expression noclean="1"/>
+		<RegExp input="$$1" output="&lt;url&gt;http://m.mtime.cn/Service/callback.mi?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Mobile.Pages.CallbackService&Ajax_CallBackMethod=RemoteCallbackSameDomain&Ajax_CallBackArgument0=%2FShowtime%2FSearchVoice.api%3Fkeyword%3D\1&lt;/url&gt;" dest="3">
+			<expression noclean="1" encode="1"/>
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 - \4 \3&lt;/title&gt;&lt;url gzip=&quot;yes&quot;&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="3+">
-				<expression repeat="yes">&lt;div&gt; &lt;p&gt;&lt;a href="http://movie.[^/]+/([0-9]+)/"&gt;(.+?)&lt;/a&gt;(.+?)&lt;a href="http://movie.[^/]+/[0-9]+/"&gt;(.+?)&lt;/a&gt;&lt;/p&gt; &lt;/div&gt;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 (\4) - \3&lt;/title&gt;&lt;url gzip=&quot;yes&quot;&gt;http://movie.mtime.com/\1/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="3+">
+				<expression repeat="yes">&quot;id&quot;:(\d+),&quot;name&quot;:&quot;([^&quot;]+)&quot;,&quot;nameEn&quot;:&quot;([^&quot;]+)&quot;.*?&quot;rYear&quot;:(\d+)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -53,7 +53,7 @@
 			<RegExp conditional="trailer" input="$$1" output="&lt;url function=&quot;GetTrailer&quot;&gt;http://api.mtime.com/trailer/getvideo.aspx?vid=\1&lt;/url&gt;" dest="5+">
 				<expression>&quot;url&quot;:&quot;http://video.mtime.com/(\d+)/\?mid=</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;http://movie.m.mtime.com/$$2/plots.html&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;http://m.mtime.cn/Service/callback.mi?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Mobile.Pages.CallbackService&Ajax_CallBackMethod=RemoteCallbackSameDomain&Ajax_CallBackArgument0=%2Fmovie%2FDetail.api%3FmovieId%3D$$2&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetFullcredits&quot;&gt;$$3fullcredits.html&lt;/url&gt;" dest="5+">
@@ -74,11 +74,8 @@
 		</RegExp>
 	</GetTrailer>
 	<GetPlot clearbuffers="no" dest="5">
-		<RegExp input="$$2" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="2">
-				<expression repeat="yes">&lt;p class="intro"&gt;(.*?)&lt;/p&gt;</expression>
-			</RegExp>
-			<expression noclean="1"/>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<expression>&quot;content&quot;:&quot;(.*?)&quot;,&quot;</expression>
 		</RegExp>
 	</GetPlot>
 	<GetDetailsPage clearbuffers="no" dest="5">
