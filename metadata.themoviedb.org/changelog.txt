@@ -1,3 +1,6 @@
+[B]3.7.12[/B]
+- cache api response when using imdb based lookups
+
 [B]3.7.11[/B]
 - updated language files from Transifex
 
