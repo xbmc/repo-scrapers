@@ -1,3 +1,6 @@
+[B]1.7.2[/B]
+- Updated: handle artwork via GetArt chain
+
 [B]1.7.1[/B]
 - Updated: language files from Transifex
 
