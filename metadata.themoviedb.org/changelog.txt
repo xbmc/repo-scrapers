@@ -1,3 +1,11 @@
+[B]3.7.12[/B]
+- fixed: further fixes to the broken search results due to API changes
+- fixed: broken search results due to API changes
+- added extra languages for selection
+- changed language to a selection list
+- fixed: movie certification won't scrape
+- cache api response when using imdb based lookups
+
 [B]3.7.11[/B]
 - updated language files from Transifex
 
