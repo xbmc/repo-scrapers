@@ -1,3 +1,6 @@
+[B]1.1.1[/B]
+- fixed: scraping of episode names in certain languages
+
 [B]1.1.0[/B]
 - added extra languages for selection
 - changed language to a selection list
