@@ -14,7 +14,7 @@
     $$10 - Trailer
     $$9  - Aktorzy
 !-->
-<scraper framework="1.1" date="2014-12-26">
+<scraper framework="1.1" date="2015-06-08">
     
     <!-- Sprawdza plik NFO !-->
     <NfoUrl dest="3">
@@ -404,7 +404,7 @@
                 <expression noclean="1" clear="yes">class=&quot;pageBox filmCastBox&quot;&gt;(.*?).filmCastBox .rolePhoto</expression>
             </RegExp>
             <RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\4.1.\5&lt;/thumb&gt;&lt;name&gt;\7&lt;/name&gt;&lt;role&gt;\8&lt;/role&gt;&lt;/actor&gt;" dest="7">
-                <expression repeat="yes" trim="7,8" fixchars="7,8" clear="yes">&lt;tr[^:]+data-role=([0-9]+)[^:]+td[^:]+:[^:]+src=&quot;((([^\.]+\.[^\.]+\.[^\.]+)\.2\.(jpg))|([^&quot;]+svg))&quot;[^:]+&lt;td&gt;(.*?)&lt;/td&gt;[^&gt;]+&gt;(.*?)&lt;/td.*?value=\1</expression>
+                <expression repeat="yes" trim="7,8" fixchars="7,8" clear="yes">&lt;tr[^:]+data-role=.?([0-9]+)[^:]+td[^:]+:[^:]+src=&quot;((([^\.]+\.[^\.]+\.[^\.]+)\.2\.(jpg))|([^&quot;]+svg))&quot;[^:]+&lt;td&gt;(.*?)&lt;/td&gt;[^&gt;]+&gt;(.*?)&lt;/td.*?value=.?\1</expression>
             </RegExp>
             <expression noclean="1" />
         </RegExp>

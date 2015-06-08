@@ -1,3 +1,5 @@
+[B]2.2.3[/B]
+- Poprawka: pobieranie obsady
 [B]2.2.2[/B]
 - Poprawka: pobieranie opisu
 [B]2.2.1[/B]
