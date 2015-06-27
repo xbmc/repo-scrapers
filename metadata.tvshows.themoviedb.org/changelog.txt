@@ -1,3 +1,6 @@
+[B]1.2.0[/B]
+- added: scraping of ratings and votes
+
 [B]1.1.2[/B]
 - fixed: broken search and art scraping
 
