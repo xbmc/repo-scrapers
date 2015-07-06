@@ -102,6 +102,7 @@
     <setting type="lsep" label="30303"/>
     <setting type="sep"/>
     <setting label="30301" type="bool" id="tmdbsearch" default="false" enable="!eq(2,true)"/>
+    <setting label="30308" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbsearchlanguage" default="en" visible="eq(-1,true)"/>
     <setting type="sep"/>
     <setting label="30302" type="bool" id="imdbsearch" default="true" enable="!eq(-2,true)"/>
     <setting label="30304" type="select" values="bg-bg|cs-cz|el-gr|es-ar|da-dk|de-at|de-de|fi-fi|fr-fr|hr-hr|he-il|hu-hu|it-it|ja-jp|nb-no|nl-nl|pl-pl|pt-pt|ro-ro|ru-ru|se-se|sl-si|sr-rs|th-th|tr-tr|None" id="imdbsearchlanguage" default="None" visible="!eq(-1,false)"/>
