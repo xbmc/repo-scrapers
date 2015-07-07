@@ -260,7 +260,11 @@ msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
 msgstr ""
 
-#empty strings from id 30308 to 30399
+msgctxt "#30308"
+msgid "     Preferred Search Language"
+msgstr ""
+
+#empty strings from id 30309 to 30399
 
 msgctxt "#30400"
 msgid "Plot"
