@@ -1,3 +1,6 @@
+[B]1.9.9[/B]
+- fixed: Title, Plot and Studio after site layout changes
+
 [B]1.9.8[/B]
 - fixed: Director scraping
 

@@ -45,7 +45,7 @@
 			</RegExp>
 			<!--Get Hungarian Title from port.hu and store it in buffer 20 for future use-->
 			<RegExp input="$$1" output="\1" dest="20">
-				<expression>class="blackbigtitle"&gt;([^&lt;]*)</expression>
+				<expression>&lt;meta property="og:title" content="([^"]*)"/</expression>
 			</RegExp>
 			<!--Append Hungarian Title from Bufer 20 if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$20&lt;/title&gt;" dest="5">
@@ -53,7 +53,7 @@
 			</RegExp>
 			<!--Get plot from port.hu-->
 			<RegExp input="$$1" output="\1" dest="15">
-				<expression>&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
+				<expression>&lt;div id="text_articol"&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$15" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;tt$$9&lt;/chain&gt;" dest="5+">
 				<expression>^$</expression>
@@ -212,8 +212,8 @@
 				<expression repeat="yes" noclean="1">(Anime|Fantasy|Horror|Musical|Sci-Fi|Sport|Thriller|Western)</expression>
 			</RegExp>
 			<!--Get studio from imdb.com-->
-			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
-				<expression>"/company/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBStudioById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<RegExp input="$$11" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
