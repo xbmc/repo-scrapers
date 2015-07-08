@@ -43,7 +43,7 @@ msgstr ""
 #empty string with id 30007
 
 msgctxt "#30008"
-msgid "     Preferred Title Language from"
+msgid "Preferred Title Language from"
 msgstr ""
 
 msgctxt "#30009"
@@ -79,7 +79,7 @@ msgstr ""
 #empty strings from id 30017 to 30019
 
 msgctxt "#30020"
-msgid "     Preferred Plot Language"
+msgid "Preferred Plot Language"
 msgstr ""
 
 msgctxt "#30021"
@@ -107,7 +107,7 @@ msgid "Genres Sources"
 msgstr ""
 
 msgctxt "#30027"
-msgid "     Preferred Title Language"
+msgid "Preferred Title Language"
 msgstr ""
 
 msgctxt "#30028"
@@ -131,11 +131,11 @@ msgid "Get Certification From"
 msgstr ""
 
 msgctxt "#30033"
-msgid "     Preferred Certification Country"
+msgid "Preferred Certification Country"
 msgstr ""
 
 msgctxt "#30034"
-msgid "     Preferred Thumb Language"
+msgid "Preferred Thumb Language"
 msgstr ""
 
 msgctxt "#30035"
@@ -159,11 +159,11 @@ msgid "Enable trailers from trakt.tv"
 msgstr ""
 
 msgctxt "#30040"
-msgid "     Genre Language"
+msgid "Genre Language"
 msgstr ""
 
 msgctxt "#30041"
-msgid "     Preferred Trailer Language"
+msgid "Preferred Trailer Language"
 msgstr ""
 
 msgctxt "#30042"
@@ -171,7 +171,7 @@ msgid "Get Tagline From"
 msgstr ""
 
 msgctxt "#30043"
-msgid "     Preferred Tagline Language"
+msgid "Preferred Tagline Language"
 msgstr ""
 
 msgctxt "#30044"
@@ -183,7 +183,7 @@ msgid "Get Outline From"
 msgstr ""
 
 msgctxt "#30046"
-msgid "     Preferred Set (Collection) Name Language"
+msgid "Preferred Set (Collection) Name Language"
 msgstr ""
 
 msgctxt "#30047"
@@ -203,13 +203,13 @@ msgstr ""
 #empty strings from id 30101 to 30109
 
 msgctxt "#30110"
-msgid "     Rating Generated Using"
+msgid "Rating Generated Using"
 msgstr ""
 
 #empty strings from id 30111 to 30114
 
 msgctxt "#30115"
-msgid "     Use the Score Aggregated from"
+msgid "Use the Score Aggregated from"
 msgstr ""
 
 #empty strings from id 30116 to 30199
@@ -245,11 +245,11 @@ msgid "Search Engine to Use"
 msgstr ""
 
 msgctxt "#30304"
-msgid "     Secondary Search Language (In Addition to en-us)"
+msgid "Secondary Search Language (In Addition to en-us)"
 msgstr ""
 
 msgctxt "#30305"
-msgid "     Include All Movie Categories"
+msgid "Include All Movie Categories"
 msgstr ""
 
 msgctxt "#30306"
@@ -261,7 +261,7 @@ msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!
 msgstr ""
 
 msgctxt "#30308"
-msgid "     Preferred Search Language"
+msgid "Preferred Search Language"
 msgstr ""
 
 #empty strings from id 30309 to 30399
