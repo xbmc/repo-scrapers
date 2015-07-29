@@ -24,14 +24,17 @@
 			</RegExp>
 			<!--Search results if search thrown directly to the movie page-->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 \3&lt;/title&gt;&lt;year&gt;$$9&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=$$7&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
-				<expression clear="yes" noclean="1">class="blackbigtitle"&gt;([^&lt;]*)(&lt;/span&gt;\n&lt;br/&gt;&lt;span class="txt"&gt;([^&lt;]*))?</expression>
+				<expression clear="yes" noclean="1">&lt;div class=&quot;title-container&quot;&gt;\s*&lt;h1&gt;([^&lt;]*)&lt;span&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1 \3&lt;/title&gt;&lt;year&gt;$$9&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=$$7&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<expression clear="yes" noclean="1">&lt;div class=&quot;title-container&quot;&gt;\s*&lt;h1&gt;[^&lt;]*&lt;span&gt;\s/([^/]*)/&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Search results if there are multiple matches-->
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\4&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2" target="_top"&gt;[^&lt;]*[^&gt;]*&gt; \(([^\)]*)?.*?((br|19\d\d|20\d\d)\))? &lt;</expression>
+				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2&quot; target=&quot;_top&quot;&gt;[^&lt;]*[^&gt;]*&gt; \(([^\)]*)?.*?((br|19\d\d|20\d\d)\))? &lt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\5&lt;/year&gt;&lt;url&gt;http://www.port.hu/pls/fi/films.film_page?i_where=2&amp;i_film_id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2" target="_top"&gt;(?:\()?([^&lt;\)]*)[^&gt;]*&gt;( \([^\)]*)?.*?((br|19\d\d|20\d\d)\))? &lt;</expression>
+				<expression repeat="yes" noclean="1">i_film_id=([\d]*)&amp;amp;i_city_id=-1&amp;amp;i_county_id=-1&amp;amp;i_topic_id=2&quot; target=&quot;_top&quot;&gt;(?:\()?([^&lt;\)]*)[^&gt;]*&gt;( \([^\)]*)?.*?((br|19\d\d|20\d\d)\))? &lt;</expression>
 			</RegExp>
 			<expression clear="yes" noclean="1" />
 		</RegExp>
@@ -41,11 +44,11 @@
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-2&quot; standalone=&quot;yes&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--Get imdb ID from port.hu-->
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression clear="yes">i_param=([0-9]*)" target="top"&gt;IMDb&lt;/a&gt;&lt;/span&gt;</expression>
+				<expression clear="yes">i_param=([0-9]*)&quot; target="top"&gt;IMDb&lt;/a&gt;&lt;/span&gt;</expression>
 			</RegExp>
 			<!--Get Hungarian Title from port.hu and store it in buffer 20 for future use-->
 			<RegExp input="$$1" output="\1" dest="20">
-				<expression>&lt;meta property="og:title" content="([^"]*)"/</expression>
+				<expression>&lt;div class=&quot;title-container&quot;&gt;\s*&lt;h1&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<!--Append Hungarian Title from Bufer 20 if labelenum = Magyar-->
 			<RegExp input="$INFO[titlelang]" output="&lt;title&gt;$$20&lt;/title&gt;" dest="5">
@@ -53,7 +56,7 @@
 			</RegExp>
 			<!--Get plot from port.hu-->
 			<RegExp input="$$1" output="\1" dest="15">
-				<expression>&lt;div id="text_articol"&gt;\n&lt;span class="txt"&gt;(.*?)&lt;/span&gt;</expression>
+				<expression>&lt;div id=&quot;text_articol&quot;&gt;\n&lt;span class="txt&quot;&gt;(.*?)&lt;/span&gt;</expression>
 			</RegExp>
 			<RegExp input="$$15" output="&lt;chain function=&quot;GetIMDBPlotById&quot;&gt;tt$$9&lt;/chain&gt;" dest="5+">
 				<expression>^$</expression>
@@ -63,11 +66,11 @@
 			</RegExp>
 			<!--Get the first sentence of the plot from port.hu as an outline-->
 			<RegExp input="$$1" output="&lt;outline&gt;\1.&lt;/outline&gt;" dest="5+">
-				<expression>&lt;div class="separator"&gt;&lt;/div&gt;\n&lt;span class="txt"&gt;(.{180,}?)[.?!]</expression>
+				<expression>&lt;div class=&quot;separator"&gt;&lt;/div&gt;\n&lt;span class=&quot;txt&quot;&gt;(.{180,}?)[.?!]</expression>
 			</RegExp>
 			<!--Get certification from port.hu if Hungarian cerrtification is selected in settings-->
 			<RegExp conditional="hunmpaa" input="$$1" output="&lt;mpaa&gt;\1 \2&lt;/mpaa&gt;" dest="5+">
-				<expression>&lt;img alt="\(\d{2}\)" title="(\d{2})(.*?)"</expression>
+				<expression>&lt;img alt=&quot;\(\d{2}\)&quot; title=&quot;(\d{2})(.*?)"</expression>
 			</RegExp>
 			<!--Get year from port.hu and store it in buffer 14 for future use-->
 			<RegExp input="$$1" output="\1" dest="14">
