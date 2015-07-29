@@ -259,18 +259,6 @@
 			<RegExp conditional="tmdbtrailer" input="$$11" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--Call Get480pTrailer if 480p selected for HD-Trailers.net-->
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
-				<expression>480p</expression>
-			</RegExp>
-			<!--Call Get720pTrailer if 720p selected for HD-Trailers.net-->
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
-				<expression>720p</expression>
-			</RegExp>
-			<!--Call Get1080pTrailer if 1080p selected for HD-Trailers.net-->
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$18&lt;/chain&gt;" dest="5+">
-				<expression>1080p</expression>
-			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBDetails>

@@ -20,7 +20,6 @@
   </category>
 
   <category label="30012">
-    <setting label="30007" type="labelenum" values="nem|480p|720p|1080p" id="TrailerQ" default="nem"/>
     <setting label="30013" type="bool" id="tmdbtrailer" default="true"/>
   </category>
 </settings>
