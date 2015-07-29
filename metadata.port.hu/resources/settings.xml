@@ -13,7 +13,6 @@
     <setting label="30004" type="bool" id="tmdbboritok" default="true"/>
     <setting label="30010" type="labelenum" values="hu|en" id="language" default="hu" enable="eq(-1,true)"/>
     <setting type="sep"/>
-    <setting label="30005" type="bool" id="impawardsboritok" default="false"/>
     <setting label="30006" type="bool" id="movieposterdbboritok" default="false"/>
     <setting type="sep"/>
     <setting label="30003" type="bool" id="tmdbfanart" default="true"/>

@@ -252,10 +252,6 @@
 			<RegExp conditional="movieposterdbboritok" input="$$11" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<!--Call GetIMPALink-->
-			<RegExp conditional="impawardsboritok" input="$$11" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
-				<expression />
-			</RegExp>
 			<RegExp conditional="tmdbtrailer" input="$$11" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$11&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
