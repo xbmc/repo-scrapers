@@ -49,8 +49,6 @@
     <setting type="sep"/>
     <setting label="30037" type="bool" id="trakttvposter" default="false"/>
     <setting type="sep"/>
-    <setting label="30003" type="bool" id="impawards" default="false"/>
-    <setting type="sep"/>
     <setting label="30004" type="bool" id="movieposterdb" default="false"/>
     <setting type="sep"/>
     <setting label="30036" type="bool" id="imdbthumbs" default="false"/>

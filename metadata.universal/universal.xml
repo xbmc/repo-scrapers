@@ -281,9 +281,6 @@
 			<RegExp conditional="trakttvposter" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="impawards" input="$$2" output="&lt;chain function=&quot;GetIMPAThumbsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
 			<RegExp conditional="movieposterdb" input="$$2" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>

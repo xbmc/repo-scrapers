@@ -24,10 +24,6 @@ msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
 msgstr "Poszterképek letöltés a themoviedb.org-ról"
 
-msgctxt "#30003"
-msgid "Enable posters from IMPAwards"
-msgstr "Poszterképek letöltés az IMPAwards-ról"
-
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
 msgstr "Poszterképek letöltés a MoviePosterDB-ról"

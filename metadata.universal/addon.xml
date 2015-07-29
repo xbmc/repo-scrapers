@@ -7,7 +7,6 @@
     <import addon="xbmc.metadata" version="2.1.0"/>
     <import addon="metadata.common.fanart.tv" version="3.1.0"/>
     <import addon="metadata.common.imdb.com" version="2.7.8"/>
-    <import addon="metadata.common.impa.com" version="1.1.2"/>
     <import addon="metadata.common.movieposterdb.com" version="1.1.1"/>
     <import addon="metadata.common.ofdb.de" version="1.0.3"/>
     <import addon="metadata.common.port.hu" version="1.0.3"/>
