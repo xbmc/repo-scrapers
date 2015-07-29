@@ -51,8 +51,6 @@
     <setting type="sep"/>
     <setting label="30004" type="bool" id="movieposterdb" default="false"/>
     <setting type="sep"/>
-    <setting label="30036" type="bool" id="imdbthumbs" default="false"/>
-    <setting type="sep"/>
   </category>
 
   <category label="30500">

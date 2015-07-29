@@ -138,10 +138,6 @@ msgctxt "#30035"
 msgid "Certification Prefix"
 msgstr ""
 
-msgctxt "#30036"
-msgid "Enable posters from IMDb"
-msgstr ""
-
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
 msgstr ""

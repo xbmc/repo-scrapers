@@ -128,10 +128,6 @@ msgctxt "#30035"
 msgid "Certification Prefix"
 msgstr "Hitelesítési előtag"
 
-msgctxt "#30036"
-msgid "Enable posters from IMDb"
-msgstr "Poszterek engedélyezése az IMDb.com-ről"
-
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
 msgstr "Poszterek engedélyezése a trakt.tv-ről"

@@ -1,6 +1,7 @@
 [B]2.6.4[/B]
 - removed: option to scrape trailers from hd-trailers.net (it was broken)
 - removed: option to scrape posters from IMPAwards (it was broken)
+- removed: option to scrape posters from IMDb (it was broken)
 - changed: settings clean-up (thanks to Miki)
 - added: option to keep Original Title for TMDB (thanks to Miki)
 - added: support for TMDB URLs in NFO files (thanks to Miki)
