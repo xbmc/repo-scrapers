@@ -36,9 +36,7 @@ msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
 msgstr ""
 
-msgctxt "#30006"
-msgid "Enable trailers from HD-Trailers.net"
-msgstr ""
+#empty string with id 30006
 
 #empty string with id 30007
 

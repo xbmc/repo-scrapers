@@ -71,8 +71,6 @@
   <category label="30012">
     <setting label="30028" type="lsep"/>
     <setting type="sep"/>
-    <setting label="30006" type="select" values="No|480p|720p|1080p" id="TrailerQ" default="No"/>
-    <setting type="sep"/>
     <setting label="30009" type="bool" id="tmdbtrailer" default="true"/>
     <setting label="30041" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh" id="tmdbtrailerlanguage" default="en" enable="eq(-1,true)"/>
     <setting type="sep"/>

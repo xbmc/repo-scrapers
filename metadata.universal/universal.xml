@@ -302,15 +302,6 @@
 			<RegExp conditional="trakttvtrailer" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet480p&quot;&gt;$$19&lt;/chain&gt;" dest="5+">
-				<expression>480p</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet720p&quot;&gt;$$19&lt;/chain&gt;" dest="5+">
-				<expression>720p</expression>
-			</RegExp>
-			<RegExp input="$INFO[TrailerQ]" output="&lt;chain function=&quot;GetHDTrailersnet1080p&quot;&gt;$$19&lt;/chain&gt;" dest="5+">
-				<expression>1080p</expression>
-			</RegExp>
 			<RegExp conditional="imdbthumbs" input="$$2" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>

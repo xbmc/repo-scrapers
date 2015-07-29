@@ -36,10 +36,6 @@ msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
 msgstr "Filmelőzetesek letöltése közvetlenül a YouTube-ról"
 
-msgctxt "#30006"
-msgid "Enable trailers from HD-Trailers.net"
-msgstr "Filmelőzetesek letöltése a HD-Trailers.net-ről"
-
 msgctxt "#30008"
 msgid "     Preferred Title Language from"
 msgstr "Filmcím a következő országból:"

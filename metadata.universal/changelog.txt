@@ -1,3 +1,10 @@
+[B]2.6.4[/B]
+- removed: option to scrape trailers from hd-trailers.net (it was broken)
+- changed: settings clean-up (thanks to Miki)
+- added: option to keep Original Title for TMDB (thanks to Miki)
+- added: support for TMDB URLs in NFO files (thanks to Miki)
+- added: preferred search language for TMDB (thanks to Miki)
+
 [B]2.6.3[/B]
 - fixed: broken tmdb search after API changes
 
