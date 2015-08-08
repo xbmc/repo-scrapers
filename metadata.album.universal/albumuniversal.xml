@@ -122,14 +122,14 @@
 			<RegExp input="$INFO[albumthemessource]" output="&lt;url function=&quot;GetAMGAlbumThemes&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression>allmusic.com</expression>
 			</RegExp>
-			<RegExp conditional="fanarttvalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetFanartTvAlbumThumbsByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
+			<RegExp conditional="fanarttvalbumthumbs" input="$$4" output="&lt;chain function=&quot;GetFanartTvAlbumThumbsByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="tadbalbumthumbs" input="$$1" output="&lt;chain function=&quot;GetTADBAlbumThumbsByMBID&quot;&gt;$$4&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
+			<RegExp conditional="tadbalbumthumbs" input="$$4" output="&lt;chain function=&quot;GetTADBAlbumThumbsByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp conditional="allmusicalbumthumbs" input="$$1" output="&lt;url function=&quot;GetAMGAlbumThumbs&quot; cache=&quot;mb-$$4-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/$$4?inc=url-rels&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
+			<RegExp conditional="allmusicalbumthumbs" input="$$4" output="&lt;url function=&quot;GetAMGAlbumThumbs&quot; cache=&quot;mb-\1-rg.xml&quot;&gt;http://musicbrainz.org/ws/2/release-group/\1?inc=url-rels&lt;/url&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>

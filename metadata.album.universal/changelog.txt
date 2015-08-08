@@ -1,3 +1,6 @@
+[B]2.4.3[/B]
+Changed: Don't query artwork when mbid is missing (workaround - proper fix is needed)
+
 [B]2.4.2[/B]
 Fixed: Revert changes done in 2.4.1
 
