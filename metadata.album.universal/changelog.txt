@@ -1,3 +1,6 @@
+[B]2.4.2[/B]
+Fixed: Revert changes done in 2.4.1
+
 [B]2.4.1[/B]
 Fixed: Proper scraping of "Official" releases that may have a "disambiguation" attribute in musicbrainz.
 
