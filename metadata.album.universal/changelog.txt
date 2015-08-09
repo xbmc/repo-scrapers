@@ -1,3 +1,6 @@
+[B]2.5.0[/B]
+Removed: amazon.de review
+
 [B]2.4.4[/B]
 Fixed: Won't scrape MBID randomly
 Re-introduced: Proper scraping of "Official" releases that may have a "disambiguation" attribute in musicbrainz.
