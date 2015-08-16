@@ -176,9 +176,6 @@
 			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetTMDBRatingByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetTRAKTTVRatingByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>trakt.tv</expression>
-			</RegExp>
 			<RegExp conditional="imdbtop250" input="$$2" output="&lt;chain function=&quot;GetIMDBTOP250ById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
@@ -187,9 +184,6 @@
 			</RegExp>
 			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetTMDBLangGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
-			</RegExp>
-			<RegExp input="$INFO[genressource]" output="&lt;chain function=&quot;GetTRAKTTVGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>trakt.tv</expression>
 			</RegExp>
 			<RegExp input="$INFO[studiosource]" output="&lt;chain function=&quot;GetIMDBStudioById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
@@ -233,9 +227,6 @@
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetOFDbPlotByIMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>OFDb.de</expression>
 			</RegExp>
-			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetTRAKTTVPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>trakt.tv</expression>
-			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetPortHUPlotByTitleAndYear&quot;&gt;$$19::$$20::$$2&lt;/chain&gt;" dest="5+">
 				<expression>port.hu</expression>
 			</RegExp>
@@ -278,9 +269,6 @@
 			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="trakttvposter" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
 			<RegExp conditional="movieposterdb" input="$$2" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
@@ -290,13 +278,7 @@
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="trakttvfanart" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
 			<RegExp conditional="tmdbtrailer" input="$$2" output="&lt;chain function=&quot;GetTMDBLangTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
-			<RegExp conditional="trakttvtrailer" input="$$2" output="&lt;chain function=&quot;GetTRAKTTVTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
