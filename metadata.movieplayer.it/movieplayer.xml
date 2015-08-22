@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><scraper framework="11" date="2014-09-16" name="MoviePlayer.it" content="movies" language="en">
+<?xml version="1.0" encoding="UTF-8"?><scraper framework="11" date="2015-08-09" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -27,7 +27,7 @@
 		</RegExp>
 		<RegExp conditional="Bing" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url cache=&quot;MoviePlayerPage.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1_\2/&quot;&gt;http://www.movieplayer.it/film/\1_\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
-				<expression repeat="yes">http://(?:www\.)?movieplayer\.it/film/([^_]*)_([0-9]+)/"[^&gt;]+>(.+?)\s*-\s*film\s*([0-9]+)</expression>
+				<expression repeat="yes">http://(?:www\.)?movieplayer\.it/film/([^_]*)_([0-9]+)/"[^>]+>(.+?)\(([0-9]+)\)\s*-\s*Film\s*</expression>
 			</RegExp>
 			<expression clear="yes" trim="1" noclean="1" />
 		</RegExp>
@@ -127,7 +127,7 @@
 						</span>
 					</p>
 				-->
-				<expression noclean="1">&lt;p itemprop="description"[^&gt;]+&gt;(.+?)&lt;/p&gt;</expression>
+				<expression noclean="1">&lt;p itemprop="description"[^&gt;]*&gt;(.+?)&lt;/p&gt;</expression>
 			</RegExp>
 
 			<!--Poster-->
@@ -140,7 +140,7 @@
                     Da trasformare in: <thumb>\1_jpg_600x800_crop_q85.jpg</thumb>
                     (Movieplayer fornisce un'immagine dimensionata a seconda dell'url richiesto)
 				-->
-				<expression noclean="1">&lt;div class="film-poster"&gt;\s*&lt;img.+?src="([^_"]+)</expression>
+				<expression noclean="1">&lt;div class="film-poster"&gt;\s*&lt;img.+?src="(.+?)_jpg</expression>
 			</RegExp>
 
 			<!--Trailer-->

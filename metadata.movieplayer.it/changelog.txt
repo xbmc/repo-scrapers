@@ -1,5 +1,6 @@
 Changelog:
-16/09/2013 - Fixed for new movieplayer site layout, thanks to maxgalbusera
+09/08/2015 - Fixes for search, description, and poster
+16/09/2014 - Fixed for new movieplayer site layout, thanks to maxgalbusera
 25/03/2014 - Fixed trailer scraping
 23/10/2013 - Fixed IMDB ID
 29/05/2013 - Search fixed and tuned Year, for non corresponding year between MP & IMDB
