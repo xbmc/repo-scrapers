@@ -1,3 +1,9 @@
+[B]1.6.3[/B]
+
+- Revisada la búsqueda de director
+- Revisada la búsqueda de puntuación FA
+- Revisada la búsqueda en ficheros .nfo
+
 [B]1.6.2[/B]
 
 - Revisada la carga de información de ficheros .nfo
