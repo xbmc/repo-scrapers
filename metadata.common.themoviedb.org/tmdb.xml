@@ -326,7 +326,7 @@
 				<expression clear="yes" noclean="1">&quot;production_companies&quot;:\[([^\]]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="2">
-				<expression trim="1" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)</expression>
+				<expression trim="1" fixchars="1" repeat="yes">&quot;name&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
