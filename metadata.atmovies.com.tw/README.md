@@ -25,6 +25,6 @@ Yahoo!奇摩電影 scraper: https://github.com/angp/metadata.tw.movie.yahoo.com
 
 直接下載:
 
-AtMovies: https://github.com/angp/metadata.atmovies.com.tw/releases/download/atmovies_v1.4.7/metadata.atmovies.com.tw_v.1.4.7.zip
+AtMovies: https://github.com/angp/metadata.atmovies.com.tw/releases/download/atmovies_v1.5.1/metadata.atmovies.com.tw_v.1.5.1.zip
 
 Yahoo!Movie : https://github.com/angp/metadata.tw.movie.yahoo.com/archive/yahoo_v1.0.3.zip

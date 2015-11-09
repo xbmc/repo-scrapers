@@ -5,10 +5,11 @@
 	<string id="30002">Use TMDB Thumbs</string>
 	<string id="30003">Use TMDB Fanart</string>
 	<string id="30004">Use TMDB cast data first</string>
-	<string id="30010">Chinese Title</string>
-	<string id="30011">English Title</string>
-	<string id="30012">Chinese Title (English Title)</string>
-	<string id="30013">English Title (Chinese Title)</string>
+  <string id="30009">"ChineseTile EnglishTitle"(Atmovies's Original sytle)</string>
+	<string id="30010">"ChineseTitle"</string>
+	<string id="30011">"EnglishTitle"</string>
+	<string id="30012">"ChineseTitle (EnglishTitle)"</string>
+	<string id="30013">"EnglishTitle (ChineseTitle)"</string>
 	<string id="30020">Don't use genre data</string>
 	<string id="30021">Use TMDB Genre(English)</string>
 	<string id="30022">Use TMDB Genre(Chinese Translated)</string>

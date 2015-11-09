@@ -5,10 +5,11 @@
 	<string id="30002">使用 TMDB 海报</string>
 	<string id="30003">使用 TMDB 剧照</string>
 	<string id="30004">优先使用 TMDB 演员表</string>
-	<string id="30010">中文片名</string>
-	<string id="30011">英文片名</string>
-	<string id="30012">中文片名 (英文片名)</string>
-	<string id="30013">英文片名 (中文片名)</string>
+  <string id="30009">"中文片名 英文片名(Atmovies原始格式)"</string>
+	<string id="30010">"中文片名"</string>
+	<string id="30011">"英文片名"</string>
+	<string id="30012">"中文片名 (英文片名)"</string>
+	<string id="30013">"英文片名 (中文片名)"</string>
 	<string id="30020">不使用分类资料</string>
 	<string id="30021">使用 TMDB 分类(英文)</string>
 	<string id="30022">使用 TMDB 分类(中文翻译)</string>

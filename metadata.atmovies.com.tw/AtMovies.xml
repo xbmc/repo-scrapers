@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2013-09-10" name="New Scraper" content="movies" language="en">
+<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2015-11-06" name="New Scraper" content="movies" language="en">
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
-      <RegExp input="$$1" output="\1" dest="2">
+			<RegExp input="$$1" output="\1" dest="2">
 				<expression noclean="1,2" />
 			</RegExp>
-      <RegExp input="$$2" output="\1" dest="2">
+			<RegExp input="$$2" output="\1" dest="2">
 				<expression noclean="1,2">%5b.*%5d(.*)</expression>
 			</RegExp>
-      <RegExp input="$$2" output="\1:\2" dest="2">
+			<RegExp input="$$2" output="\1:\2" dest="2">
 				<expression noclean="1,2">(.*)：(.*)</expression>
 			</RegExp>
-			<expression/>
+			<expression />
 		</RegExp>
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
@@ -23,62 +23,51 @@
 	</GetSearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<!--film_id-->
+			<!--film_id (put buffer 9)-->
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression>filmid=([\w]*)"&gt;推薦人數</expression>
+				<expression>filmid=([\w]*)"</expression>
 			</RegExp>
-			<!--imdb ID with tt-->
+			<!--imdb ID with tt (put buffer 2)-->
 			<RegExp input="$$1" output="tt\1" dest="2">
 				<expression>http://us.imdb.com/Title\?(\d+)</expression>
 			</RegExp>
+			<!--output <id>tt123454</id> to buffer 5-->
 			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression />
 			</RegExp>
-			<!--title chinese-->
-			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
+			<!--title ( get ChineseTitle from title ) put to buffer 3-->
+			<RegExp input="$$1" output="\1" dest="3">
+				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
+			</RegExp>
+			<!--title ( get EnglishTitle from title ) put to buffer 4-->
+			<RegExp input="$$1" output="\2" dest="4">
+				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
+			</RegExp>
+			<RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
+				<expression noclean="1">^The (.*)</expression>
+			</RegExp>
+			<!--title chineseTitle EnglishTitle (origin style ) append to buffer 5-->
+			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$6&lt;/title&gt;" dest="5+">
+				<RegExp input="$$1" output="\1" dest="6">
+					<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s]*&lt;</expression>
 				</RegExp>
 				<expression>0</expression>
 			</RegExp>
-			<!--title english-->
-			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
-				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
+			<!--title chineseTitle (chinese only) append to buffer 5-->
+			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$3&lt;/title&gt;" dest="5+">
 				<expression>1</expression>
 			</RegExp>
-			<!--title chinese (english)-->
+			<!--title englishTitle (english only) append to buffer 5-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
-				</RegExp>
-				<RegExp input="$$1" output="\1" dest="6">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[ \s]*&lt;/span&gt;</expression>
-				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$6" output="\1" dest="6">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
-				<RegExp input="$$6" output=" (\1)" dest="4+">
-				  <expression />
-				</RegExp>
 				<expression>2</expression>
 			</RegExp>
-			<!--title english (chinese)-->
-			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4&lt;/title&gt;" dest="5+">
-				<RegExp input="$$1" output="\1" dest="4">
-					<expression trim="1" noclean="1">&lt;span class="at12b_gray"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;</expression>
-				</RegExp>
-        <RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
-				  <expression noclean="1">^The (.*)</expression>
-			  </RegExp>
-				<RegExp input="$$1" output=" (\1)" dest="4+">
-					<expression trim="1" noclean="1">&lt;span class="at21b"&gt;[\s]*(.+?)[\s]*&lt;/span&gt;&lt;br&gt;</expression>
-				</RegExp>
+			<!--title chineseTitle (englishTitle) append to buffer 5-->
+			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$3 ($$4)&lt;/title&gt;" dest="5+">
 				<expression>3</expression>
+			</RegExp>
+			<!--title englishTitle (chineseTitle) append to buffer 5-->
+			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$4 ($$3)&lt;/title&gt;" dest="5+">
+				<expression>4</expression>
 			</RegExp>
 			<!--year-->
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
@@ -86,24 +75,24 @@
 			</RegExp>
 			<!--runtime-->
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
-				<expression>&lt;B&gt;片長：([\d]+)分&amp;nbsp;</expression>
+				<expression>&lt;li&gt;片長：([\d]+)分</expression>
 			</RegExp>
 			<!--outline-->
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="5+">
-				<expression>&lt;font class=at11 color=606060&gt;[\s]*(.*?)[\s]*&lt;/font&gt;</expression>
+				<expression>&lt;ul class="runtime"&gt;.*&lt;/ul&gt;[.\s]*(.*)[.\s]*&lt;(ul class="runtime"&gt;[.\s]*&lt;/ul&gt;|/div&gt;[.\s]*&lt;!-- movie_poster end --&gt;)</expression>
 			</RegExp>
 			<!--plot-->
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression trim="1">&lt;div class="sub_content"[^&gt;]*&gt;[ \n\r\t\cM]+(.*?)[ \n\r\t\cM]+&lt;/div&gt;</expression>
+				<expression trim="1">劇情簡介[\s]*&lt;br&gt;[\s]*(.*?)[\s]*&lt;/div&gt;[\s]*&lt;!-- Story info end --&gt;</expression>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="5+">
-				<expression trim="1">&lt;b&gt;出　　品：&lt;/b&gt;[\s]*(.*?)[\s]*&lt;BR&gt;</expression>
+				<expression trim="1">&lt;LI&gt;&lt;b&gt;出　　品：&lt;/b&gt;[\s]*(.*?)[\s]*&lt;LI&gt;&lt;b&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression trim="1">&lt;BR&gt;&lt;b&gt;出&amp;nbsp;&amp;nbsp;品&amp;nbsp;&amp;nbsp;國：&lt;/b&gt;(.[^&lt;]*)&lt;BR&gt;</expression>
+				<expression trim="1">&lt;LI&gt;&lt;b&gt;出&amp;nbsp;&amp;nbsp;品&amp;nbsp;&amp;nbsp;國：&lt;/b&gt;(.[^&lt;]*)[\s]*&lt;LI&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;country&gt;\1&lt;/country&gt;" dest="5+">
 				<expression />
@@ -135,7 +124,7 @@
 			<RegExp conditional="useTMDBCastFirst" input="$$6" output="1" dest="8">
 				<expression>China</expression>
 			</RegExp>
-      <RegExp conditional="useTMDBCastFirst" input="$$6" output="0" dest="8">
+			<RegExp conditional="useTMDBCastFirst" input="$$6" output="0" dest="8">
 				<expression>USA</expression>
 			</RegExp>
 			<RegExp conditional="useTMDBCastFirst" input="$$8" output="&lt;chain function=&quot;GetTMDBCastByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
@@ -257,8 +246,8 @@
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
-	</ParseFanart>  
-  <!-- 請注意, 此 TMDB api_key 為我個人為此 scraper 所申請, 若要使用在別處, 請自行至 TMDB (www.themoviedb.org) 免費申請, 謝謝 -->
+	</ParseFanart>
+	<!-- 請注意, 此 TMDB api_key 為我個人為此 scraper 所申請, 若要使用在別處, 請自行至 TMDB (www.themoviedb.org) 免費申請, 謝謝 -->
 	<GetZhGenresByTMDBId dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;TranslateTMDBGenres&quot; cache=&quot;tmdb-en-\1.json&quot;&gt;http://api.themoviedb.org/3/movie/\1?api_key=d955d8f02a3f2480a51881fe4c96f10e&amp;amp;language=en&lt;/url&gt;" dest="5">
@@ -405,3 +394,4 @@
 		</RegExp>
 	</TranslateTMDBGenres>
 </scraper>
+
