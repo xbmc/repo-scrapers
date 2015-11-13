@@ -1,5 +1,5 @@
-[B]2.6.5[/B]
-- removed: trakttv
+[B]2.6.6[/B]
+- fixed: broken TMDB search results due to API changes
 
 [B]2.6.4[/B]
 - removed: option to scrape trailers from hd-trailers.net (it was broken)
