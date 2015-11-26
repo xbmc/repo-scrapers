@@ -72,8 +72,8 @@
     <setting type="lsep" label="30030"/>
     <setting type="sep"/>
     <setting label="30021" type="labelenum" values="IMDb|Rotten Tomatoes|MetaCritic|themoviedb.org" id="mratingsource" default="IMDb"/>
-    <setting label="30110" subsetting="true" type="labelenum" values="TomatoMeter|Average Rating" id="tomato" default="TomatoMeter" visible="eq(-2,1)"/>
-    <setting label="30115" subsetting="true" type="labelenum" values="All Critics|Top Critics" id="allcritics" default="All Critics" visible="eq(-3,1)"/>
+    <setting label="30110" subsetting="true" type="labelenum" values="TomatoMeter|Average Rating" id="tomato" default="TomatoMeter" visible="eq(-1,1)"/>
+    <setting label="30115" subsetting="true" type="labelenum" values="All Critics|Audience Score" id="allcritics" default="All Critics" visible="eq(-2,1)"/>
     <setting type="sep"/>
     <setting label="30044" type="bool" id="imdbtop250" default="true"/>
     <setting type="sep"/>

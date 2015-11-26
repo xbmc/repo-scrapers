@@ -1,3 +1,7 @@
+[B]2.7.0[/B]
+- fixed: Rotten Tomato info won't scrape
+- fixed: IMDb TOP250 won't scrape
+
 [B]2.6.7[/B]
 - fixed: broken TMDB search results due to API changes for real
 
