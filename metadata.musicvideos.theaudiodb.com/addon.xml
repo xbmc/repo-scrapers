@@ -113,5 +113,6 @@
     <website></website>
     <email></email>
     <source></source>
+    <broken>Set broken due to website overload. Please use other scraper.</broken>
   </extension>
 </addon>
