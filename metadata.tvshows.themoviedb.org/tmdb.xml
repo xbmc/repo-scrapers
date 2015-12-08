@@ -37,11 +37,11 @@
 
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;http://api.themoviedb.org/3/tv/\2?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3">
-				<expression repeat="yes">&quot;first_air_date&quot;:&quot;([0-9]+).*?&quot;id&quot;:([0-9]*),.*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;http://api.themoviedb.org/3/tv/\1?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3">
+				<expression repeat="yes">&quot;id&quot;:([0-9]*),.*?&quot;first_air_date&quot;:&quot;([0-9]+).*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;http://api.themoviedb.org/3/tv/\1?api_key=57983e31fb435df4df77afb854740ea9&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
-				<expression repeat="yes">&quot;first_air_date&quot;:null.*?&quot;id&quot;:([0-9]*),.*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
+				<expression repeat="yes">&quot;id&quot;:([0-9]*),.*?&quot;first_air_date&quot;:null.*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
