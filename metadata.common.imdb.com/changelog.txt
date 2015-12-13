@@ -1,3 +1,6 @@
+[B]2.8.1[/B]
+- fixed: potential PCRE error due to non-clean regexp
+
 [B]2.8.0[/B]
 - fixed: won't scrape IMDb TOP250
 
