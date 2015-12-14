@@ -304,6 +304,9 @@
 				<RegExp input="$$1" output="\2" dest="9">
 					<expression fixchars="2">&lt;meta\sname=&quot;title&quot;\scontent=&quot;(IMDb\s-\s)?(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 				</RegExp>
+				<RegExp input="$$1" output="\1" dest="9">
+					<expression fixchars="1">class=&quot;originalTitle&quot;&gt;([^&lt;]*)</expression>
+				</RegExp>
 				<RegExp input="$$9" output="\1" dest="10">
 					<expression />
 				</RegExp>
