@@ -1,3 +1,6 @@
+[B]2.7.1[/B]
+- fixed: Keep Original Title for foreign movies
+
 [B]2.7.0[/B]
 - fixed: Rotten Tomato info won't scrape
 - fixed: IMDb TOP250 won't scrape
