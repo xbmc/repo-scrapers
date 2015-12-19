@@ -1,3 +1,6 @@
+[B]1.2.2[/B]
+- Update author name
+
 [B]1.2.1[/B]
 - fixed: broken search results after API changes
 
