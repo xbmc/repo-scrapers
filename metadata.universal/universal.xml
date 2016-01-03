@@ -132,7 +132,7 @@
 				<RegExp input="$$1" output="\1" dest="17">
 					<expression noclean="1">&quot;id&quot;:[0-9]*,&quot;imdb_id&quot;:&quot;([^&quot;]*)</expression>
 				</RegExp>
-				<expression>themoviedb.org</expression>
+				<expression>IMDb</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="19">
 				<expression fixchars="1">&quot;original_title&quot;:&quot;([^&quot;]*)</expression>
