@@ -1,3 +1,6 @@
+[B]2.8.0[/B]
+- Update
+
 [B]2.7.2[/B]
 - Update author name
 
