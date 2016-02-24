@@ -1,0 +1,13 @@
+.git
+.gz
+.hg
+.idea
+.project
+.pydevproject
+.travis.yml
+*.pyo
+*.tar
+*.xcf
+*.zip
+**/.git
+Thumbs.db
