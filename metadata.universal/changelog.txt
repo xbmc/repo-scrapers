@@ -1,3 +1,6 @@
+[B]2.8.1[/B]
+- added: pt-br and sr languages on user request
+
 [B]2.8.0[/B]
 - Update
 
