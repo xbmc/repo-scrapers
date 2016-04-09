@@ -250,7 +250,7 @@
 	
 	<GetMovieTrailer dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;trailer&gt;\1&lt;/trailer&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;streams&quot;:[^&quot;]+&quot;file&quot;: &quot;([^&quot;]+)&quot;,</expression>
+			<expression noclean="1" clear="yes">sources: \[{ type: &apos;video/[^&apos;]+&apos;, src: &apos;([^&apos;]+)&apos;</expression>
 		</RegExp>
 	</GetMovieTrailer>
 

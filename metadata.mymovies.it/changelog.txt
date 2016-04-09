@@ -1,5 +1,8 @@
+[B]2.2.0[/B]
+- Fixed GetMovieTrailer, thanks to elmon-tan (https://github.com/elbowz/mymovies-xbmc-scraper/pull/2)
+
 [B]2.1.0[/B]
-- Better (i hope) search for fan artand imdb info (use imdb.aka for search)
+- Better (i hope) search for fan art and imdb info (use imdb.aka for search)
 - Include and use metadata.common.imdb.com
 - Migrate source on GitHub (https://github.com/elbowz/mymovies-xbmc-scraper)
 
