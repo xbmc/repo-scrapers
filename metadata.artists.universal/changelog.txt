@@ -1,3 +1,6 @@
+[B]3.7.2[/B]
+Fixed: another try to fix all scenarios for mbid resolution
+
 [B]3.7.1[/B]
 Fixed: mbid resolution under certain scenarios
 
