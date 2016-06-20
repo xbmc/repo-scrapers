@@ -1,3 +1,6 @@
+[B]1.1.1[/B]
+- fixed: posts and fanarts url changed
+
 [B]1.1.0[/B]
 - changed: use themoviedb posters instead of MoviePosterDB
 

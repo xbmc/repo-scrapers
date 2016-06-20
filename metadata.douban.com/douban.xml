@@ -79,10 +79,10 @@
 			<RegExp input="$$8" output="&lt;actor&gt;&lt;thumb&gt;http://\2/img/celebrity/large/\3.jpg&lt;/thumb&gt;&lt;name&gt;\4&lt;/name&gt;&lt;/actor&gt;" dest="5+">
 				<expression noclean="1" repeat="yes">&quot;avatars&quot;: (null|.*?&quot;large&quot;: &quot;http://(.+?)\\/img\\/celebrity\\/large\\/(.+?).jpg&quot;[^\}]*\}), &quot;name&quot;: &quot;(.+?)&quot;</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;\1-poster.html&quot; function=&quot;GetPoster&quot;&gt;http://movie.douban.com/subject/\1/photos?type=R&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;url cache=&quot;\1-poster.html&quot; function=&quot;GetPoster&quot;&gt;https://movie.douban.com/subject/\1/photos?type=R&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!tmdbfanart" input="$$2" output="&lt;url cache=&quot;\1-fanart.html&quot; function=&quot;GetFanart&quot;&gt;http://movie.douban.com/subject/\1/photos?type=S&lt;/url&gt;" dest="5+">
+			<RegExp conditional="!tmdbfanart" input="$$2" output="&lt;url cache=&quot;\1-fanart.html&quot; function=&quot;GetFanart&quot;&gt;https://movie.douban.com/subject/\1/photos?type=S&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url function=&quot;GetDetailsByIMDBId&quot;&gt;http://movie.douban.com/subject/\1&lt;/url&gt;" dest="5+">
@@ -117,7 +117,7 @@
 	<GetPoster dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\1thumb\2&quot;&gt;\1raw\2|Referer=http://movie.douban.com/&lt;/thumb&gt;" dest="6">
-				<expression repeat="yes" noclean="1,2">&lt;div class=&quot;cover&quot;&gt;\s*&lt;a href=&quot;http://movie.douban.com/photos/photo/[0-9]+/&quot;&gt;\s*&lt;img src=&quot;(http://[^/]+/view/photo/)thumb(/public/[^\.]+\.jpg)&quot; /&gt;</expression>
+				<expression repeat="yes" noclean="1,2">&lt;div class=&quot;cover&quot;&gt;\s*&lt;a href=&quot;https://movie.douban.com/photos/photo/[0-9]+/&quot;&gt;\s*&lt;img src=&quot;(https://[^/]+/view/photo/)thumb(/public/[^\.]+\.jpg)&quot; /&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -125,7 +125,7 @@
 	<GetFanart dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;thumb preview=&quot;\1thumb\2&quot;&gt;\1raw\2|Referer=http://movie.douban.com/&lt;/thumb&gt;" dest="6">
-				<expression repeat="yes" noclean="1,2">&lt;div class=&quot;cover&quot;&gt;\s*&lt;a href=&quot;http://movie.douban.com/photos/photo/[0-9]+/&quot;&gt;\s*&lt;img src=&quot;(http://[^/]+/view/photo/)thumb(/public/[^\.]+\.jpg)&quot; /&gt;</expression>
+				<expression repeat="yes" noclean="1,2">&lt;div class=&quot;cover&quot;&gt;\s*&lt;a href=&quot;https://movie.douban.com/photos/photo/[0-9]+/&quot;&gt;\s*&lt;img src=&quot;(https://[^/]+/view/photo/)thumb(/public/[^\.]+\.jpg)&quot; /&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
