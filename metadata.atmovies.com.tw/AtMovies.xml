@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2015-11-06" name="New Scraper" content="movies" language="en">
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/search.cfm?action=home&amp;amp;fr=atmovies-cfm&amp;amp;type=F&amp;amp;search_term=\1&lt;/url&gt;" dest="3">
+		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/?action=search&amp;amp;fr=search-page&amp;amp;enc=UTF-8&amp;amp;type=F&amp;amp;search_term=\1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="2">
 				<expression noclean="1,2" />
 			</RegExp>
@@ -15,8 +15,8 @@
 	</CreateSearchUrl>
 	<GetSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://search.atmovies.com.tw/search/redirect.cfm?p=F&amp;d=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
-				<expression repeat="yes" trim="1">&lt;LI&gt;&lt;font class=at9 color=#FF0000&gt;電影&lt;/font&gt;&lt;a href="redirect.cfm\?p=F&amp;d=(.[^"]*)" class=at11&gt;(.[^&lt;]*) &lt;/a&gt; &lt;font class=at9 color=#606060&gt;(.[0-9][^&lt;]*)&lt;/font&gt;</expression>
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url&gt;http://search.atmovies.com.tw/F/\1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes" trim="1">&lt;header&gt;[\s]*&lt;font color=#FF0000&gt;電影&lt;/font&gt;[\s]*&lt;a href="/F/(.[^"]*)" class="title big"&gt;(.[^&lt;]*) &lt;/a&gt;[\s]*&lt;font color=#606060&gt;(.[0-9][^&lt;]*)&lt;/font&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -160,7 +160,7 @@
 		</RegExp>
 	</GetDetails>
 	<GetDirectorById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseDirector&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseDirector&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetDirectorById>
@@ -173,7 +173,7 @@
 		</RegExp>
 	</ParseDirector>
 	<GetCreditsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseCredits&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseCredits&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetCreditsById>
@@ -189,7 +189,7 @@
 		</RegExp>
 	</ParseCredits>
 	<GetCastById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseCast&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-cast.html&quot; function=&quot;ParseCast&quot;&gt;http://app.atmovies.com.tw/movie/movie.cfm?action=cast&amp;film_id=$$1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetCastById>
@@ -216,33 +216,33 @@
 		</RegExp>
 	</ParseActor>
 	<GetThumbsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-images.html&quot; function=&quot;ParseThumbs&quot;&gt;http://gallery.photowant.com/b/gallery.cfm?action=poster&amp;filmid=$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url spoof=&quot;http://app2.atmovies.com.tw/&quot; cache=&quot;$$1-images.html&quot; function=&quot;ParseThumbs&quot;&gt;http://app2.atmovies.com.tw/poster/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetThumbsById>
 	<ParseThumbs dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes" noclean="1">劇照&lt;/a&gt;\&amp;nbsp;\s*&lt;/font&gt;&lt;/DIV&gt;\s*&lt;BR&gt;\s*(.*?)\s*&lt;BR&gt;</expression>
+				<expression clear="yes" noclean="1">&lt;div class=showphoto&gt;[\s]*&lt;h2&gt;【海報】&lt;/h2&gt;\s*(.*?)\s*&lt;/div&gt;</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;\1/ps_\2&quot;&gt;\1/px_\2&lt;/thumb&gt;" dest="2">
-				<expression repeat="yes">&lt;a href=".[^\"]*"&gt;\s*&lt;img src="(.[^\"]*)/ps_(.[^\"]*)"</expression>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; spoof=&quot;http://app2.atmovies.com.tw/&quot; preview=&quot;\2&quot;&gt;\1&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes">&lt;a href="(.[^\"]*)".[^&gt;]*&gt;\s*&lt;img src="(.[^\"]*)"</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseThumbs>
 	<GetFanartById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-fanart.html&quot; function=&quot;ParseFanart&quot;&gt;http://gallery.photowant.com/b/gallery.cfm?action=still&amp;filmid=$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url spoof=&quot;http://app2.atmovies.com.tw&quot; cache=&quot;$$1-fanart.html&quot; function=&quot;ParseFanart&quot;&gt;http://app2.atmovies.com.tw/photo/$$1&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetFanartById>
 	<ParseFanart dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes" noclean="1">劇照&lt;/a&gt;\&amp;nbsp;\s*&lt;/font&gt;&lt;/DIV&gt;\s*&lt;BR&gt;\s*(.*?)\s*&lt;BR&gt;</expression>
+				<expression clear="yes" noclean="1">&lt;div class=showphoto&gt;[\s]*&lt;h2&gt;【劇照】&lt;/h2&gt;\s*(.*?)\s*&lt;/UL&gt;\s*&lt;/div&gt;</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;thumb preview=&quot;\1/fs_\2&quot;&gt;\1/fx_\2&lt;/thumb&gt;" dest="2">
-				<expression repeat="yes">&lt;a href=".[^\"]*"&gt;\s*&lt;img src="(.[^\"]*)/fs_(.[^\"]*)"</expression>
+			<RegExp input="$$7" output="&lt;thumb spoof=&quot;http://app2.atmovies.com.tw/photo&quot; preview=&quot;\2|Referer=http%3a%2f%2fapp2.atmovies.com.tw%2fphoto&quot;&gt;\1|Referer=http%3a%2f%2fapp2.atmovies.com.tw%2fphoto&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes">&lt;a href="(.[^\"]*)".[^&gt;]*&gt;\s*&lt;img src="(.[^\"]*)"&gt;&lt;/a&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
