@@ -54,10 +54,10 @@
 			<RegExp input="$$3" output="&lt;url cache=&quot;bestanime-$$2.htm&quot; function=&quot;GetBestanimeId&quot;&gt;\1&lt;/url&gt;" dest="4+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url function=&quot;GetTvdbIdByUrl&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=ko&lt;/url&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTvdbIdByUrl&quot;&gt;https://www.thetvdb.com/api/GetSeries.php?seriesname=\1&amp;language=ko&lt;/url&gt;" dest="4+">
 				<expression trim="1" encode="1">&lt;td[^&gt;]*&gt;&lt;img[^&gt;]*&gt;\s*¿µÁ¦&lt;/td&gt;\s*&lt;td[^&gt;]*&gt;(.*?)&lt;/td&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;anime-list.xml&quot; function=&quot;GetTvdbIdFromTbl&quot;&gt;http://xbmc-korean.googlecode.com/svn/trunk/tools/bestanime/anime-list.xml&lt;/url&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;anime-list.xml&quot; function=&quot;GetTvdbIdFromTbl&quot;&gt;https://xbmc-korean.googlecode.com/svn/trunk/tools/bestanime/anime-list.xml&lt;/url&gt;" dest="4+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$3" output="&lt;url cache=&quot;bestanime-$$2.htm&quot; function=&quot;GetTvdbDetails&quot;&gt;\1&lt;/url&gt;" dest="4+">
@@ -113,7 +113,7 @@
 			<RegExp input="$$8" output="&lt;episode&gt;\1&lt;/episode&gt;" dest="4+">
 				<expression>&lt;EpisodeNumber&gt;([^&lt;]*)&lt;/EpisodeNumber&gt;</expression>
 			</RegExp>
-			<RegExp input="$$8" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
+			<RegExp input="$$8" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
 				<expression>&lt;filename&gt;([^&lt;]+)&lt;/filename&gt;</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="4+">
@@ -188,16 +188,16 @@
 	</GetTvdbIdFromTbl>
 	<GetTvdbDetails clearbuffers="no" dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbExtraDetails&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbExtraDetails&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbPosters&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbPosters&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbFanart&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbFanart&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!useAgent" input="$$1" output="&lt;episodeguide&gt;&lt;url cache=&quot;$$19.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
+			<RegExp conditional="!useAgent" input="$$1" output="&lt;episodeguide&gt;&lt;url cache=&quot;$$19.xml&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
@@ -216,13 +216,13 @@
 	</GetTvdbExtraDetails>
 	<GetTvdbPosters clearbuffers="no" dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.thetvdb.com/banners/_cache/\1&quot;&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;https://www.thetvdb.com/banners/_cache/\1&quot;&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4">
 				<expression repeat="yes">&lt;BannerPath&gt;([^&gt;]*)&lt;/BannerPath&gt;\s*&lt;BannerType&gt;poster&lt;/BannerType&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.thetvdb.com/banners/_cache/\1&quot;&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;https://www.thetvdb.com/banners/_cache/\1&quot;&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
 				<expression repeat="yes">&lt;BannerPath&gt;([^&gt;]*)&lt;/BannerPath&gt;\s*&lt;BannerType&gt;season&lt;/BannerType&gt;.*?&lt;Season&gt;$$20&lt;/Season&gt;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.thetvdb.com/banners/_cache/\1&quot;&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;https://www.thetvdb.com/banners/_cache/\1&quot;&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
 				<expression repeat="yes">&lt;BannerPath&gt;([^&gt;]*)&lt;/BannerPath&gt;\s*&lt;BannerType&gt;series&lt;/BannerType&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -231,7 +231,7 @@
 	<GetTvdbFanart clearbuffers="no" dest="3">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$5" output="&lt;fanart&gt;\1&lt;/fanart&gt;" dest="4">
-				<RegExp input="$$1" output="&lt;thumb preview=&quot;http://www.thetvdb.com/banners/_cache/\1&quot;&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="5">
+				<RegExp input="$$1" output="&lt;thumb preview=&quot;https://www.thetvdb.com/banners/_cache/\1&quot;&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="5">
 					<expression repeat="yes">&lt;BannerPath&gt;([^&gt;]*)&lt;/BannerPath&gt;\s*&lt;BannerType&gt;fanart&lt;/BannerType&gt;</expression>
 				</RegExp>
 				<expression noclean="1"/>
