@@ -34,11 +34,11 @@
 				<expression trim="1">/([^/]+)/review.php</expression>
 			</RegExp>
 			<!-- MPAA -->
-			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;MPAA&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;MPAA&quot;&gt;https://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
 				<expression>imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!-- TOP250 -->
-			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;TOP&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;TOP&quot;&gt;https://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
 				<expression>imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!-- YEAR -->
@@ -49,14 +49,14 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression noclean="1">полнометражный фильм, ([^м]+) мин</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;RUNTIME&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;RUNTIME&quot;&gt;https://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" clear="no">imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!-- RATING -->
 			<RegExp input="$$1" output="&lt;url function=&quot;GetRating&quot;&gt;http://www.world-art.ru/$$7/votes_history.php?id=$$2&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;GetRatingAndVotes&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;GetRatingAndVotes&quot;&gt;https://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" clear="no">imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!-- GENRE -->
@@ -67,7 +67,7 @@
 			<RegExp input="$$1" output="&lt;url function=&quot;GetStudios&quot;&gt;http://www.world-art.ru/$$7/$$7_full_production.php?id=$$2&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;GetIMDBStudios&quot;&gt;http://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-imdb.html&quot; function=&quot;GetIMDBStudios&quot;&gt;https://www.imdb.com/title/tt\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" clear="no">imdb.com/title/tt([0-9]*)</expression>
 			</RegExp>
 			<!-- DIRECTORS, WRITERS, ACTORS -->
