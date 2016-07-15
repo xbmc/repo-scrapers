@@ -1,6 +1,6 @@
 <scraperfunctions>
     <GetYoutubeTrailer dest="3">
-    <RegExp input="$$6" output="&lt;details&gt;&lt;url function=&quot;ParseSDTrailer&quot; cache=&quot;youtubetrailers-\1.xml&quot;&gt;http://www.youtube.com/results?search_query=%22\1%22+$$9+trailer+hd+-peek+-remake+-deutsch+-fan-made&amp;search_duration=short&amp;hl=fr-FR&amp;persist_hl=1&lt;/url&gt;&lt;/details&gt;" dest="3">
+    <RegExp input="$$6" output="&lt;details&gt;&lt;url function=&quot;ParseSDTrailer&quot; cache=&quot;youtubetrailers-\1.xml&quot;&gt;https://www.youtube.com/results?search_query=%22\1%22+$$9+trailer+hd+-peek+-remake+-deutsch+-fan-made&amp;search_duration=short&amp;hl=fr-FR&amp;persist_hl=1&lt;/url&gt;&lt;/details&gt;" dest="3">
 
       <RegExp input="$$6" output="\1%C3%A0\2" dest="6">
         <RegExp input="$$6" output="\1%C3%A2\2" dest="6">
