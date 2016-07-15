@@ -198,7 +198,7 @@
             </RegExp>
             
             <!-- TMDbSearch - Wyszukuje TMDbID na TMDb !-->
-            <RegExp input="$$16" output="&lt;url function=&quot;TMDbSearch&quot;&gt;http://api.themoviedb.org/3/search/movie?api_key=1009b5cde25c7b0692d51a7db6e49cbd&amp;query=\1&lt;/url&gt;" dest="5+">
+            <RegExp input="$$16" output="&lt;url function=&quot;TMDbSearch&quot;&gt;https://api.themoviedb.org/3/search/movie?api_key=1009b5cde25c7b0692d51a7db6e49cbd&amp;query=\1&lt;/url&gt;" dest="5+">
                 <expression encode="1" />
             </RegExp>
             
@@ -215,7 +215,7 @@
     <TMDbSearch clearbuffers="no" dest="3">
         <RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
             <!-- Zapisuje TMDb ID i jeśli istnieje wyszukuje IMDb ID !-->
-            <RegExp input="$$6" output="&lt;url cache=&quot;tmdb-en-\1.json&quot; function=&quot;TMDbIDtoIMDbID&quot;&gt;http://api.themoviedb.org/3/movie/\1?api_key=1009b5cde25c7b0692d51a7db6e49cbd&lt;/url&gt;" dest="5">
+            <RegExp input="$$6" output="&lt;url cache=&quot;tmdb-en-\1.json&quot; function=&quot;TMDbIDtoIMDbID&quot;&gt;https://api.themoviedb.org/3/movie/\1?api_key=1009b5cde25c7b0692d51a7db6e49cbd&lt;/url&gt;" dest="5">
                 <!-- Pierwsze znalezione ID !-->
                 <RegExp input="$$1" output="\1" dest="6">
                     <expression clear="yes">&quot;id&quot;:([0-9]+),&quot;</expression>
@@ -248,7 +248,7 @@
             <RegExp input="$$16" output="\1" dest="14">
                 <expression encode="1" />
             </RegExp>
-            <RegExp input="$$18" output="&lt;url function=&quot;GoogleSearch&quot;&gt;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=$$14+site:imdb.com&amp;hl=pl&lt;/url&gt;" dest="5">
+            <RegExp input="$$18" output="&lt;url function=&quot;GoogleSearch&quot;&gt;https://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=$$14+site:imdb.com&amp;hl=pl&lt;/url&gt;" dest="5">
                 <expression>^$</expression>
             </RegExp>
             <expression noclean="1" />
@@ -264,7 +264,7 @@
             </RegExp>
             
             <!-- Jeśli na TMDb nie istnieje IMDb ID wyszukuje na google !-->
-            <RegExp input="$$5" output="&lt;url function=&quot;GoogleSearch&quot;&gt;http://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=$$14+site:imdb.com&amp;hl=pl&lt;/url&gt;" dest="5">
+            <RegExp input="$$5" output="&lt;url function=&quot;GoogleSearch&quot;&gt;https://ajax.googleapis.com/ajax/services/search/web?v=1.0&amp;q=$$14+site:imdb.com&amp;hl=pl&lt;/url&gt;" dest="5">
                 <expression>^$</expression>
             </RegExp>
             <expression noclean="1" />
@@ -447,7 +447,7 @@
                 <expression>source src=&quot;([^&quot;]+)&quot; type=.video/quicktime</expression>
             </RegExp>
             <RegExp input="$$5" output="plugin://plugin.video.youtube/?action=play_video&videoid=\1" dest="4">
-                <expression>&quot;http://www.youtube.com/v/([^&quot;]+)&quot;</expression>
+                <expression>&quot;https://www.youtube.com/v/([^&quot;]+)&quot;</expression>
             </RegExp>
             <expression />
         </RegExp>
