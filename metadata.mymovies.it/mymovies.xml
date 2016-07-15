@@ -13,7 +13,7 @@
 	</NfoUrl>
 
 	<CreateSearchUrl dest="3">
-		<RegExp conditional="google" input="$$1" output="&lt;url&gt;http://www.google.it/search?q=\1$$4+site:mymovies.it|User-Agent=Mozilla/5.0 (X11; Linux x86_64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1&lt;/url&gt;" dest="3">
+		<RegExp conditional="google" input="$$1" output="&lt;url&gt;https://www.google.it/search?q=\1$$4+site:mymovies.it|User-Agent=Mozilla/5.0 (X11; Linux x86_64; rv:7.0.1) Gecko/20100101 Firefox/7.0.1&lt;/url&gt;" dest="3">
 			<!-- Add film year, stored in $$2 for default by xbmc -->
 			<RegExp input="$$2" output="%20(\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
@@ -200,12 +200,12 @@
 			</RegExp>
 			
 			<!--MPAA, studio, ratings... from IMDB -->
-            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetIMDBInfoByTitle&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
+            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetIMDBInfoByTitle&quot;&gt;https://www.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
                 <expression encode="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
             </RegExp>
 
 			<!-- Tmdb Backdrops from IMDB -->
-            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetTMDBFanartByTitle&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
+            <RegExp conditional="imdb" input="$$5" output="&lt;url cache=&quot;imdb-aka-result.html&quot; function=&quot;GetTMDBFanartByTitle&quot;&gt;https://www.imdb.com/find?q=\1&amp;s=tt|accept-language=it-it&lt;/url&gt;" dest="5+">
                 <expression encode="1">&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
             </RegExp>
 
