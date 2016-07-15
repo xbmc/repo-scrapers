@@ -8,7 +8,7 @@
   </NfoUrl>
   
   <CreateSearchUrl clearbuffers="no" dest="4">  
-    <RegExp conditional="Google" input="$$4" output="&lt;url gzip=&quot;yes&quot;&gt;http://www.google.com/search?q=site:anidb.net\1&amp;filter=0&lt;/url&gt;" dest="4">
+    <RegExp conditional="Google" input="$$4" output="&lt;url gzip=&quot;yes&quot;&gt;https://www.google.com/search?q=site:anidb.net\1&amp;filter=0&lt;/url&gt;" dest="4">
       <RegExp input="$$1" output="+\1" dest="4">
         <expression clear="yes" repeat="yes">(?i)(?:%[a-f0-9]{2})*([a-z0-9]+)?</expression>
       </RegExp>
@@ -29,10 +29,10 @@
     <RegExp input="$$4" output="&lt;results&gt;\1&lt;/results&gt;" dest="4">
       <RegExp conditional="Google" input="$$4" output="\1" dest="4">
         <RegExp conditional="Google" input="$$1" output="&lt;url function=&quot;GetSearchResultsExt&quot; gzip=&quot;yes&quot; cache=&quot;\1.xml&quot;&gt;http://api.anidb.net:9001/httpapi?request=anime&amp;client=xbmcscrap&amp;clientver=1&amp;protover=1&amp;aid=\1&lt;/url&gt;" dest="4">
-          <expression clear="yes" repeat="yes">(?i)&lt;a href=&quot;http://anidb\.net/perl-bin/animedb\.pl\?show=anime&amp;amp;aid=(\d+)&quot;</expression>
+          <expression clear="yes" repeat="yes">(?i)&lt;a href=&quot;https://anidb\.net/perl-bin/animedb\.pl\?show=anime&amp;amp;aid=(\d+)&quot;</expression>
         </RegExp>
         <RegExp conditional="Google" input="$$1" output="&lt;url function=&quot;GetSearchResultsExt&quot; gzip=&quot;yes&quot; cache=&quot;\1.xml&quot;&gt;http://api.anidb.net:9001/httpapi?request=anime&amp;client=xbmcscrap&amp;clientver=1&amp;protover=1&amp;aid=\1&lt;/url&gt;" dest="4+">
-          <expression repeat="yes">(?i)&lt;a href=&quot;http://anidb\.net/a(\d+)&quot;</expression>
+          <expression repeat="yes">(?i)&lt;a href=&quot;https://anidb\.net/a(\d+)&quot;</expression>
         </RegExp>
         <expression noclean="1"/>
       </RegExp> 
@@ -418,11 +418,11 @@
       <RegExp input="$$6" output="\1" dest="6">
         <expression noclean="1">(?:\*\s?)?(.*)</expression>
       </RegExp>
-      <RegExp input="$$6" output="\1 http://anidb.net/a666 []" dest="6">
+      <RegExp input="$$6" output="\1 https://anidb.net/a666 []" dest="6">
         <expression/>
       </RegExp>
       <RegExp input="$$6" output="\1\2" dest="6">
-        <expression repeat="yes" noclean="1,2">(?i)(.*?)http://anidb.net/[a-z]+[0-9]+\s\[([^]]*)]</expression>
+        <expression repeat="yes" noclean="1,2">(?i)(.*?)https://anidb.net/[a-z]+[0-9]+\s\[([^]]*)]</expression>
       </RegExp>
       <RegExp input="$$6" output="\1 [url=][/url]" dest="6">
         <expression/>
@@ -442,11 +442,11 @@
       <RegExp input="$$6" output="\1" dest="6">
         <expression repeat="yes" noclean="1">(?i)(.*?)(?:(\[)|(\()|\*)(?(2)[^]]|(?(3)[^)]|[^*]))*$$10(?(2)[^]]|(?(3)[^)]|[^*]))*(?(2)\]|(?(3)\)|\*))</expression>
       </RegExp>
-      <RegExp input="$$6" output="\1 [http://]" dest="6">
+      <RegExp input="$$6" output="\1 [https://]" dest="6">
         <expression/>
       </RegExp>
       <RegExp input="$$6" output="\1" dest="6">
-        <expression repeat="yes" noclean="1">(?i)(.*?)(?:(\[)|(\()|\*)\s*http://(?(2)[^]]|(?(3)[^)]|[^*]))*(?(2)\]|(?(3)\)|\*))</expression>
+        <expression repeat="yes" noclean="1">(?i)(.*?)(?:(\[)|(\()|\*)\s*https://(?(2)[^]]|(?(3)[^)]|[^*]))*(?(2)\]|(?(3)\)|\*))</expression>
       </RegExp>
       <RegExp input="$$6" output="\1 [animenewsnetwork]" dest="6">
         <expression/>
@@ -460,11 +460,11 @@
       <RegExp input="$$6" output="\1" dest="6">
         <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[^\r\n]*$$10[: ]*$$11[^\r\n]*</expression>
       </RegExp>
-      <RegExp input="$$6" output="\n\1\nfrom http://\n" dest="6">
+      <RegExp input="$$6" output="\n\1\nfrom https://\n" dest="6">
         <expression/>
       </RegExp>
       <RegExp input="$$6" output="\1" dest="6">
-        <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[^\r\n]*$$10[: ]*http://[^\r\n]*</expression>
+        <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[^\r\n]*$$10[: ]*https://[^\r\n]*</expression>
       </RegExp>
       <RegExp input="$$6" output="\n\1\nann summary\n" dest="6">
         <expression/>
@@ -472,11 +472,11 @@
       <RegExp input="$$6" output="\1" dest="6">
         <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[^\r\n]*$$11[ ]*(?:summary|decription)[^\r\n]*</expression>
       </RegExp>
-      <RegExp input="$$6" output="\n\1\nhttp://\n" dest="6">
+      <RegExp input="$$6" output="\n\1\nhttps://\n" dest="6">
         <expression/>
       </RegExp>
       <RegExp input="$$6" output="\1" dest="6">
-        <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[ ]*http://[^\r\n ]*</expression>
+        <expression repeat="yes" noclean="1">(?i)(.*?)\r?\n[ ]*https://[^\r\n ]*</expression>
       </RegExp>
       <RegExp input="$$6" output="\n\1\nanimenfo\n" dest="6">
         <expression/>
@@ -521,10 +521,10 @@
       <RegExp input="$$1" output="\1" dest="6">
         <expression clear="yes" noclean="1">(?i)&lt;characters&gt;(.*?)&lt;/characters&gt;</expression>
       </RegExp>
-      <RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;thumb&gt;http://img7.anidb.net/pics/anime/\2&lt;/thumb&gt;&lt;/actor&gt;" dest="16">
+      <RegExp input="$$6" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;thumb&gt;https://img7.anidb.net/pics/anime/\2&lt;/thumb&gt;&lt;/actor&gt;" dest="16">
         <expression clear="yes" repeat="yes">(?i)&lt;character.*?type=&quot;main character in&quot;[^&gt;]*&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;seiyuu[^&gt;]*picture=&quot;([^&quot;]*)&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;.*?&lt;/character&gt;</expression>
       </RegExp>
-      <RegExp conditional="!OnlyMainCast" input="$$6" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;thumb&gt;http://img7.anidb.net/pics/anime/\2&lt;/thumb&gt;&lt;/actor&gt;" dest="16+">
+      <RegExp conditional="!OnlyMainCast" input="$$6" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;thumb&gt;https://img7.anidb.net/pics/anime/\2&lt;/thumb&gt;&lt;/actor&gt;" dest="16+">
         <expression repeat="yes">(?i)&lt;character.*?type=&quot;secondary cast in&quot;[^&gt;]*&gt;.*?&lt;name&gt;([^&lt;]*)&lt;/name&gt;.*?&lt;seiyuu[^&gt;]*picture=&quot;([^&quot;]*)&quot;[^&gt;]*&gt;([^&lt;]*)&lt;/seiyuu&gt;.*?&lt;/character&gt;</expression>
       </RegExp>
       <RegExp input="$$17" output="\1" dest="16+">
@@ -640,7 +640,7 @@
       <RegExp input="" output="" dest="15">
         <expression clear="yes"/>
       </RegExp>
-      <RegExp conditional="Posters" input="$$1" output="&lt;thumb&gt;http://img7.anidb.net/pics/anime/\1&lt;/thumb&gt;" dest="15">
+      <RegExp conditional="Posters" input="$$1" output="&lt;thumb&gt;https://img7.anidb.net/pics/anime/\1&lt;/thumb&gt;" dest="15">
         <expression>(?i)&lt;picture&gt;([^&lt;]+)&lt;/picture&gt;</expression>
       </RegExp>
       <RegExp conditional="Posters" input="$$17" output="\1" dest="15+">
@@ -664,7 +664,7 @@
       <RegExp input="$$19" output="\1" dest="19">
         <expression clear="yes">(?i)tvdbid=&quot;([^&quot;]*)&quot;</expression>
       </RegExp>
-      <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="6">
+      <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="6">
         <expression>(\d+)</expression>
       </RegExp>
       <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataReturnAPI&quot; cache=&quot;$$20.xml&quot;&gt;&amp;&lt;/url&gt;" dest="6">
@@ -696,7 +696,7 @@
   -->
 
   <GetTVDBLookupAPI clearbuffers="no" dest="4">
-    <RegExp input="$$9" output="&lt;details&gt;&lt;url function=&quot;GetFanartAPI&quot; cache=&quot;tvdb-s$$20-\1.xml&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&lt;/url&gt;&lt;/details&gt;" dest="4">
+    <RegExp input="$$9" output="&lt;details&gt;&lt;url function=&quot;GetFanartAPI&quot; cache=&quot;tvdb-s$$20-\1.xml&quot;&gt;https://www.thetvdb.com/api/GetSeries.php?seriesname=\1&lt;/url&gt;&lt;/details&gt;" dest="4">
       <RegExp input="$$1" output="\1" dest="5">
         <expression clear="yes" trim="1">(?i)&lt;title.*?type=&quot;main&quot;&gt;([^&lt;]+)&lt;/title&gt;</expression>
       </RegExp>
@@ -784,7 +784,7 @@
 
   <GetTVDBLookupLoopAPI clearbuffers="no" dest="4">
     <RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-      <RegExp input="$$8" output="&lt;url function=&quot;GetFanartAPI&quot; cache=&quot;tvdb-s$$20-\1.xml&quot;&gt;http://www.thetvdb.com/api/GetSeries.php?seriesname=\1&lt;/url&gt;" dest="5">
+      <RegExp input="$$8" output="&lt;url function=&quot;GetFanartAPI&quot; cache=&quot;tvdb-s$$20-\1.xml&quot;&gt;https://www.thetvdb.com/api/GetSeries.php?seriesname=\1&lt;/url&gt;" dest="5">
         <RegExp input="$$18" output="\1" dest="8">
           <expression clear="yes" noclean="1">(?i)&lt;title&gt;([^&lt;]+)&lt;/title&gt;</expression>
         </RegExp>
@@ -821,7 +821,7 @@
       <RegExp input="$$20" output="&lt;url function=&quot;GetTVDBLookupLoopAPI&quot; cache=&quot;\1.xml&quot;&gt;&amp;&lt;/url&gt;" dest="4">
         <expression clear="yes"/>
       </RegExp>
-      <RegExp input="$$1" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4">
+      <RegExp input="$$1" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4">
         <expression>(?i)&lt;seriesid&gt;(\d+)&lt;/seriesid&gt;</expression>
       </RegExp>
       <RegExp input="$$1" output="&lt;anime anidbid=&quot;$$20&quot; tvdbid=&quot;\1&quot; defaulttvdbseason=&quot;1&quot;&gt;&lt;name&gt;$$20&lt;/name&gt;&lt;/anime&gt;" dest="5">
@@ -863,28 +863,28 @@
       <RegExp input="$$1" output="\1" dest="5">
         <expression clear="yes" noclean="1">(?i)&lt;Banners&gt;(.*?)&lt;/Banners&gt;</expression>
       </RegExp>
-      <RegExp conditional="Fanarts" input="$$6" output="&lt;fanart url=&quot;http://thetvdb.com/banners/&quot;&gt;\1&lt;/fanart&gt;" dest="16+">
+      <RegExp conditional="Fanarts" input="$$6" output="&lt;fanart url=&quot;https://thetvdb.com/banners/&quot;&gt;\1&lt;/fanart&gt;" dest="16+">
         <RegExp input="$$5" output="&lt;thumb dim=&quot;\2&quot; colors=&quot;\3&quot; preview=&quot;_cache/\1&quot;&gt;\1&lt;/thumb&gt;" dest="6">
           <expression clear="yes" repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;fanart&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;([^&lt;]*)&lt;/BannerType2&gt;[^&lt;]*&lt;Colors&gt;([^&lt;]*)&lt;/Colors&gt;</expression>
         </RegExp>
         <expression noclean="1">(.+)</expression>
       </RegExp>
-      <RegExp conditional="Posters" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="15+">
+      <RegExp conditional="Posters" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="15+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;poster&lt;/BannerType&gt;</expression>
       </RegExp>
-      <RegExp conditional="Posters" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="15+">
+      <RegExp conditional="Posters" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="15+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;season&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;season&lt;/BannerType2&gt;</expression>
       </RegExp>
-      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
+      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;season&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;seasonwide&lt;/BannerType2&gt;</expression>
       </RegExp>
-      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
+      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;graphical&lt;/BannerType2</expression>
       </RegExp>
-      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
+      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;text&lt;/BannerType2</expression>
       </RegExp>
-      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;http://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
+      <RegExp conditional="Banners" input="$$5" output="&lt;thumb&gt;https://thetvdb.com/banners/\1&lt;/thumb&gt;" dest="14+">
         <expression repeat="yes">(?i)&lt;BannerPath&gt;([^&lt;]*)&lt;/BannerPath&gt;[^&lt;]*&lt;BannerType&gt;series&lt;/BannerType&gt;[^&lt;]*&lt;BannerType2&gt;blank&lt;/BannerType2</expression>
       </RegExp>
       <RegExp input="" output="" dest="4">
@@ -1052,7 +1052,7 @@
       <RegExp input="$$7" output="\1" dest="4+">
         <expression repeat="yes" noclean="1">(?i)(&lt;(title|runtime|aired|credits|director|plot|thumb)[^&gt;]*&gt;.*?&lt;/\2&gt;)</expression>
       </RegExp>
-      <RegExp conditional="ExtraDetails" input="$$17" output="&lt;url function=&quot;GetEpisodeExtraDetailsDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4+">
+      <RegExp conditional="ExtraDetails" input="$$17" output="&lt;url function=&quot;GetEpisodeExtraDetailsDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;https://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4+">
         <RegExp input="$$6" output="\1" dest="17">
           <expression clear="yes">(?i)tvdbid=&quot;([^&quot;]*)&quot;</expression>
         </RegExp>
@@ -1133,10 +1133,10 @@
       <RegExp input="$$1" output="\1" dest="6">
         <expression clear="yes" noclean="1">(?i)(&lt;episode&gt;\s*(?:&lt;([^&gt;]+)&gt;[^&lt;]*&lt;/\2&gt;\s*)*?&lt;episodename&gt;[^&lt;]+&lt;/episodename&gt;\s*(?:&lt;([^&gt;]+)&gt;[^&lt;]*&lt;/\3&gt;\s*)*?&lt;episodenumber&gt;$$13&lt;/episodenumber&gt;\s*(?:&lt;([^&gt;]+)&gt;[^&lt;]*&lt;/\4&gt;\s*)*?&lt;seasonnumber&gt;$$16&lt;/seasonnumber&gt;\s*(?:&lt;([^&gt;]+)&gt;[^&lt;]*&lt;/\5&gt;\s*)*?&lt;/episode&gt;)</expression>
       </RegExp>
-      <RegExp input="$$5" output="&lt;thumb&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4">
+      <RegExp input="$$5" output="&lt;thumb&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4">
         <expression clear="yes">(?i)&lt;filename&gt;([^&lt;]+)&lt;/filename&gt;</expression>
       </RegExp>
-      <RegExp input="$$13-$$6" output="&lt;thumb&gt;http://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
+      <RegExp input="$$13-$$6" output="&lt;thumb&gt;https://www.thetvdb.com/banners/\1&lt;/thumb&gt;" dest="4+">
         <expression>(?i)\d+-.*?&lt;filename&gt;([^&lt;]+)&lt;/filename&gt;</expression>
       </RegExp>
       <RegExp input="$$5" output="\1" dest="7">

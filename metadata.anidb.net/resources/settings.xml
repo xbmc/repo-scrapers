@@ -4,8 +4,8 @@
     <setting label="30000" type="bool" id="Google" default="false"/>
     <setting label="30005" type="labelenum" id="IdFrom" values="AniDB.net|TheTVDB.com" default="AniDB.net"/>
     <setting type="sep"/>
-    <setting label="30001" type="text" id="AnimeListUrl" default="http://sites.google.com/site/anidblist/anidb.xml"/>
-    <setting label="30002" type="text" id="AnimeMappingUrl" default="http://sites.google.com/site/anidblist/anime-list.xml"/>
+    <setting label="30001" type="text" id="AnimeListUrl" default="https://sites.google.com/site/anidblist/anidb.xml"/>
+    <setting label="30002" type="text" id="AnimeMappingUrl" default="https://sites.google.com/site/anidblist/anime-list.xml"/>
     <setting label="30003" type="bool" id="PersonalAnimeMapping" default="false"/>
     <setting label="30004" type="text" id="PersonalAnimeMappingUrl" default="http://localhost/pers-anime-list.xml" enable="eq(-1,true)"/>
   </category>
