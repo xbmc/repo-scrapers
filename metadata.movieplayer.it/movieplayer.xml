@@ -11,7 +11,7 @@
 			</RegExp-->
 			<expression noclean="1" />
 		</RegExp>
-		<RegExp conditional="Bing" input="$$1" output="&lt;url&gt;http://it.bing.com/search?q=&quot;\1$$4&quot;+site%3Amovieplayer.it%2Ffilm%2F+-site%3Amovieplayer.it%2Ffilm%2Fnews%2F+-site%3Amovieplayer.it%2Ffilm%2Farticoli%2F+-site%3Amovieplayer.it%2Ffilm%2Fprossimamente%2F+-site%3Amovieplayer.it%2Ffilm%2Fboxoffice%2F&amp;count=$INFO[count]&lt;/url&gt;" dest="3">
+		<RegExp conditional="Bing" input="$$1" output="&lt;url&gt;https://it.bing.com/search?q=&quot;\1$$4&quot;+site%3Amovieplayer.it%2Ffilm%2F+-site%3Amovieplayer.it%2Ffilm%2Fnews%2F+-site%3Amovieplayer.it%2Ffilm%2Farticoli%2F+-site%3Amovieplayer.it%2Ffilm%2Fprossimamente%2F+-site%3Amovieplayer.it%2Ffilm%2Fboxoffice%2F&amp;count=$INFO[count]&lt;/url&gt;" dest="3">
 			<RegExp conditional="Year" input="$$2" output="%20(film+\1)" dest="4">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -87,7 +87,7 @@
 			</RegExp>
 
 			<!--IMDB details-->
-			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="13+">
+			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;https://www.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="13+">
 				<RegExp input="$$13" output="\1" dest="9">
 					<expression clear="yes" noclean="1" encode="1">&lt;originaltitle&gt;([^/"]*)&lt;/originaltitle&gt;</expression>
 				</RegExp>

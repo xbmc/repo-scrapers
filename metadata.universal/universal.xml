@@ -2,23 +2,23 @@
 <scraper framework="1.1" date="2014-07-24">
 	<NfoUrl dest="3">
 		<RegExp input="$INFO[searchservice]" output="$$16" dest="3">
-			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\2.json&quot;&gt;http://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/details&gt;" dest="16">
+			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\2.json&quot;&gt;https://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;\2&lt;/id&gt;&lt;/details&gt;" dest="16">
 				<expression clear="yes" noclean="1">(themoviedb.org/movie/)([0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-tt\1.json&quot;&gt;http://api.tmdb.org/3/movie/tt\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="16">
+			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-tt\1.json&quot;&gt;https://api.tmdb.org/3/movie/tt\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="16">
 				<expression>imdb....?/title/tt([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-tt\1.json&quot;&gt;http://api.tmdb.org/3/movie/tt\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="16">
+			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-tt\1.json&quot;&gt;https://api.tmdb.org/3/movie/tt\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;&lt;/details&gt;" dest="16">
 				<expression>imdb....?/Title\?t{0,2}([0-9]+)</expression>
 			</RegExp>
 			<expression>themoviedb.org</expression>
 		</RegExp>
 
 		<RegExp input="$INFO[searchservice]" output="$$16" dest="3">
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;http://akas.imdb.com/title/tt\1|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16">
 				<expression clear="yes" noclean="1">imdb....?/Title\?([0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;http://akas.imdb.com/title/tt\1|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16+">
 				<expression noclean="1">imdb....?/title/tt([0-9]*)</expression>
 			</RegExp>
 			<expression>IMDb</expression>
@@ -26,7 +26,7 @@
 	</NfoUrl>
 	<CreateSearchUrl dest="3" clearbuffers="no">
 		<RegExp input="$INFO[searchservice]" output="$$17" dest="3">
-			<RegExp input="$$1" output="&lt;url&gt;http://api.tmdb.org/3/search/movie?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;query=\1&amp;amp;year=$$4&lt;/url&gt;" dest="17">
+			<RegExp input="$$1" output="&lt;url&gt;https://api.tmdb.org/3/search/movie?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;query=\1&amp;amp;year=$$4&lt;/url&gt;" dest="17">
 				<RegExp input="$$2" output="\1" dest="4">
 					<expression clear="yes">(.+)</expression>
 				</RegExp>
@@ -35,7 +35,7 @@
 			<expression>themoviedb.org</expression>
 		</RegExp>
 		<RegExp input="$INFO[searchservice]" output="$$17" dest="3">
-			<RegExp input="$$1" output="&lt;url&gt;http://akas.imdb.com/find?q=\1&amp;s=tt|accept-language=en-us&lt;/url&gt;" dest="17">
+			<RegExp input="$$1" output="&lt;url&gt;https://www.imdb.com/find?q=\1&amp;s=tt|accept-language=en-us&lt;/url&gt;" dest="17">
 				<RegExp input="$$2" output="%20(\1)" dest="4">
 					<expression clear="yes">(.+)</expression>
 				</RegExp>
@@ -50,13 +50,13 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$INFO[searchservice]" output="$$17" dest="8">
 			<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="17">
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\2.json&quot;&gt;http://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\2.json&quot;&gt;https://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5">
 					<expression repeat="yes">&quot;release_date&quot;:&quot;([0-9]+)-.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;[^&quot;]*&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;,&quot;title&quot;:&quot;([^&quot;]*)&quot;</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\2.json&quot;&gt;http://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\2.json&quot;&gt;https://api.tmdb.org/3/movie/\2?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
 					<expression repeat="yes">&quot;release_date&quot;:&quot;([0-9]+)-.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\1.json&quot;&gt;http://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;url cache=&quot;tmdb-$INFO[language]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
 					<expression repeat="yes">&quot;release_date&quot;:null.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;</expression>
 				</RegExp>
 				<expression noclean="1" />
@@ -69,25 +69,25 @@
 				<RegExp input="$$1" output="\1" dest="7">
 					<expression clear="yes">/title/([t0-9]*)/(combined|faq|releaseinfo|vote)</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;http://akas.imdb.com/title/$$7|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
 					<expression clear="yes" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;http://akas.imdb.com/title/$$7|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 					<expression fixchars="2" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?[^&quot;]*?(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\).*?Also Known As:&lt;/h4&gt;([^\n]*)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="4">
 					<expression noclean="1">&lt;table class=&quot;findList&quot;(.*?)&lt;/div</expression>
 				</RegExp>
-				<RegExp conditional="fullimdbsearch" input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp conditional="fullimdbsearch" input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 					<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*(?:\([IV]+\) )?\([^\(]*?([0-9]{4})[^\)]*\)\s(?:\(TV\sMovie\)\s|\(TV\sSpecial\)\s|\(Video\)\s|\(Short\)\s|\(TV\sMini-Series\)\s|\(TV\sSeries\)\s|\(TV\sShort\)\s|\(Short\)\s|\(Short\)\s)?&lt;</expression>
 				</RegExp>
-				<RegExp conditional="!fullimdbsearch" input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp conditional="!fullimdbsearch" input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 					<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*(?:\([IV]+\) )?\([^\(]*?([0-9]{4})[^\)]*\)\s(?:\(TV\sMovie\)\s|\(TV\sSpecial\)\s|\(Video\)\s)?&lt;</expression>
 				</RegExp>
-				<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 					<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*(?:\([IV]+\) )?\([^\(]*?([0-9]{4})[^\)]*\)\s&lt;br/&gt;aka\s&lt;i&gt;&quot;([^&quot;]*)</expression>
 				</RegExp>
-				<RegExp input="$INFO[imdbsearchlanguage]" output="&lt;url function=&quot;GetAKASearchResults&quot;&gt;http://akas.imdb.com/find?q=$$9&amp;s=tt|accept-language=$INFO[imdbsearchlanguage]&lt;/url&gt;" dest="5+">
+				<RegExp input="$INFO[imdbsearchlanguage]" output="&lt;url function=&quot;GetAKASearchResults&quot;&gt;https://www.imdb.com/find?q=$$9&amp;s=tt|accept-language=$INFO[imdbsearchlanguage]&lt;/url&gt;" dest="5+">
 					<expression>^(?:bg-bg|cs-cz|el-gr|es-ar|da-dk|de-at|de-de|fi-fi|fr-fr|hr-hr|he-il|hu-hu|it-it|ja-jp|nb-no|nl-nl|pl-pl|pt-pt|ro-ro|ru-ru|se-se|sl-si|sr-rs|th-th|tr-tr)$</expression>
 				</RegExp>
 				<expression clear="yes" noclean="1"/>
@@ -102,7 +102,7 @@
 			<RegExp input="$$1" output="\1" dest="4">
 				<expression noclean="1">&lt;table class=&quot;findList&quot;(.*?)&lt;/div</expression>
 			</RegExp>
-			<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;http://akas.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
+			<RegExp input="$$4" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;\1-main.html&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="5">
 				<expression repeat="yes" noclean="1,2">&lt;td\sclass=&quot;result_text&quot;&gt;\s&lt;a\shref=&quot;/title/([t0-9]*)/[^&gt;]*&gt;(?:&amp;#x22;)?([^&lt;]*?)(?:&amp;#x22;)?&lt;/a&gt;\s*(?:\([IV]+\) )?\([^\(]*?([0-9]{4})[^\)]*\)\s(?:\(TV Movie\) )?&lt;</expression>
 			</RegExp>
 			<expression clear="yes" noclean="1"/>

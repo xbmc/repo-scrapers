@@ -2,7 +2,7 @@
 <scraper framework="1.1" date="2013-05-29">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;$INFO[mbsite]/ws/2/artist/\1?inc=url-rels&lt;/url&gt;" dest="3">
-			<expression>http://musicbrainz.org/artist/(.+)</expression>
+			<expression>https://musicbrainz.org/artist/(.+)</expression>
 		</RegExp>
 	</NfoUrl>
 	<ResolveIDToUrl dest="3">

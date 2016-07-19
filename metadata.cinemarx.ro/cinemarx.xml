@@ -112,7 +112,7 @@
 				<expression noclean="1" />
 			</RegExp>
 			<!--IMDB search-->
-			<RegExp input="$$4" output="&lt;url function=&quot;GetIMDBRatingTMDBThumbnailFanart&quot;&gt;http://www.google.com/search?hl=en&amp;as_q=\1&amp;ft=i&amp;as_sitesearch=imdb.com&amp;as_qdr=all&amp;as_occt=any&amp;num=1&lt;/url&gt;" dest="5+">
+			<RegExp input="$$4" output="&lt;url function=&quot;GetIMDBRatingTMDBThumbnailFanart&quot;&gt;https://www.google.com/search?hl=en&amp;as_q=\1&amp;ft=i&amp;as_sitesearch=imdb.com&amp;as_qdr=all&amp;as_occt=any&amp;num=1&lt;/url&gt;" dest="5+">
 				<RegExp input="imdb/title $$11 $$12 $$13" output="\1" dest="4">
 					<expression noclean="1" encode="1" />
 				</RegExp>
@@ -132,7 +132,7 @@
 		<RegExp input="$$4" output="&lt;details&gt;$$4&lt;/details&gt;" dest="5">
 			<!--save IMDB ID-->
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression noclean="1">http://www.imdb.com/title/(tt[0-9]*)</expression>
+				<expression noclean="1">https://www.imdb.com/title/(tt[0-9]*)</expression>
 			</RegExp>
 			<!--rating from IMDB-->
 			<RegExp conditional="imdbrating" input="" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$7&lt;/chain&gt;" dest="4">

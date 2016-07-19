@@ -334,8 +334,8 @@
 			<RegExp input="$$1" output="\1" dest="4">
 				<expression noclean="1">&lt;h\d&gt;Photo\sGallery&lt;/h\d&gt;(.*?)&lt;h2\sclass=&quot;artist-name&quot;</expression>
 			</RegExp>
-			<RegExp input="$$4" output="&lt;thumb&gt;http://cps-static.rovicorp.com/3/JPG_1080/\1&lt;/thumb&gt;" dest="2">
-				<expression repeat="yes" noclean="1">&lt;img src=&quot;http://cps-static.rovicorp.com/3/JPG_[^/]*/([^&quot;]*)</expression>
+			<RegExp input="$$4" output="&lt;thumb&gt;https://cps-static.rovicorp.com/3/JPG_1080/\1&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&lt;img src=&quot;https://cps-static.rovicorp.com/3/JPG_[^/]*/([^&quot;]*)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -504,8 +504,8 @@
 	</GetAMGAlbumThumbsByAMGID>
 	<ParseAMGAlbumThumbs dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;thumb&gt;http://cps-static.rovicorp.com/3/JPG_500/\1&lt;/thumb&gt;" dest="2">
-				<expression noclean="1">&quot;http://cps-static.rovicorp.com/3/JPG_[^/]*/([^&quot;]*)</expression>
+			<RegExp input="$$1" output="&lt;thumb&gt;https://cps-static.rovicorp.com/3/JPG_500/\1&lt;/thumb&gt;" dest="2">
+				<expression noclean="1">&quot;https://cps-static.rovicorp.com/3/JPG_[^/]*/([^&quot;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
