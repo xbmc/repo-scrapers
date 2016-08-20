@@ -1,6 +1,7 @@
+[B]2.2.7[/B]
+- Poprawka: wyszukiwanie filmów
 [B]2.2.6[/B]
 - Poprawka: zmiany w addon.xml
-
 [B]2.2.5[/B]
 - Poprawka: miniaturki aktorów
 - Poprawka: pobieranie studia z filmweb

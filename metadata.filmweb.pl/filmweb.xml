@@ -14,7 +14,7 @@
     $$10 - Trailer
     $$9  - Aktorzy
 !-->
-<scraper framework="1.1" date="2015-09-17">
+<scraper framework="1.1" date="2016-08-16">
     
     <!-- Sprawdza plik NFO !-->
     <NfoUrl dest="3">
@@ -35,9 +35,9 @@
     
     <!-- Tworzy adresy URL dla znalezionych pozycji !-->
     <GetSearchResults dest="8">
-        <RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+        <RegExp input="$$5" output="&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
             <RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 / \4&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
-                <expression repeat="yes" fixchars="2,4" trim="2,4">li id=&quot;?film_([0-9]+)[^_]+&lt;h3&gt;([^_]+)&lt;/a&gt;[^_]+\(([0-9]+)\)[^_]+title=&quot;?([^&quot;]+)&quot;[^_]+dropdownTarget</expression>
+                <expression repeat="yes" fixchars="2,4" trim="2,4">li id=&quot;?film_([0-9]+)[^_]+&lt;h3&gt;([^_]+)&lt;/a&gt;[^_]+\(([0-9]+)\).*?title=&quot;?([^&quot;]+)&quot;.*?\1</expression>
             </RegExp>
             <expression noclean="1" />
         </RegExp>
@@ -446,7 +446,7 @@
             <RegExp input="$$5" output="\1" dest="4">
                 <expression>source src=&quot;([^&quot;]+)&quot; type=.video/quicktime</expression>
             </RegExp>
-            <RegExp input="$$5" output="plugin://plugin.video.youtube/?action=play_video&videoid=\1" dest="4">
+            <RegExp input="$$5" output="plugin://plugin.video.youtube/?action=play_video&amp;videoid=\1" dest="4">
                 <expression>&quot;http://www.youtube.com/v/([^&quot;]+)&quot;</expression>
             </RegExp>
             <expression />
