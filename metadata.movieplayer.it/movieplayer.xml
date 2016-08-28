@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="2.1.0" date="2016-08-28" name="MoviePlayer.it" content="movies" language="en">
+	<NfoUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
+			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
+		</RegExp>
+	</NfoUrl>
+	
+	<CreateSearchUrl dest="3">
+		<RegExp conditional="!Bing" input="$$1" output="&lt;url&gt;http://www.movieplayer.it/ricerca/?t=film&amp;q=\1&amp;ct=film.film&lt;/url&gt;" dest="3">
+			<!--RegExp conditional="Year" input="$$2" output="%20(\1)" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp-->
+			<expression noclean="1" />
+		</RegExp>
+		<RegExp conditional="Bing" input="$$1" output="&lt;url&gt;http://it.bing.com/search?q=&quot;\1&quot;+&quot;$$4&quot;+site%3Amovieplayer.it%2F&amp;count=$INFO[count]&lt;/url&gt;" dest="3">
+			<!--Film year, stored in $$2 by default by xbmc/kodi-->
+			<RegExp conditional="Year" input="$$2" output="(\1)" dest="4">
+				<expression clear="yes">(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</CreateSearchUrl>
+	
+	<GetSearchResults dest="8">
+		<RegExp conditional="!Bing" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3  (\4)&lt;/title&gt;&lt;url cache=&quot;MoviePlayerPage.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1_\2/&quot;&gt;http://www.movieplayer.it/film/\1_\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
+ 				<expression repeat="yes" trim="1" >&lt;a href="/film/([^_]*?)_([0-9]+?)/"&gt;([^&lt;]+?)&lt;/a&gt;.+?&lt;/h3&gt;.+?&lt;span class="search-entry-date search-hidden-xs"&gt;.+?&lt;/span&gt;(.+?)&lt;/span&gt;</expression>
+			</RegExp>
+			<expression clear="yes" trim="1" noclean="1" />
+		</RegExp>
+		<RegExp conditional="Bing" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8"> 
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url cache=&quot;MoviePlayerPage.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1_\2/&quot;&gt;http://www.movieplayer.it/film/\1_\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
+				<expression repeat="yes" trim="1" >&lt;h2&gt;&lt;a href="http://(?:www\.)?movieplayer\.it/film/([^"][^_]*)_([0-9]+)/"[^&gt;]+&gt;(.+?)\(.*?([0-9]+).*?\s*-.*?&lt;/h2&gt;</expression> 
+			</RegExp>
+			<expression clear="yes" trim="1" noclean="1" />
+		</RegExp>
+	</GetSearchResults>
+	
+  <!-- GetDetails
+    $$1  = HTML result from http://movieplayer.it/film/lultima-tempesta_40322/
+    $$3  = Result of GetDetails
+    
+      <details>
+        <title></title>
+        <year></year>
+        <director></director>
+        <top250></top250>
+        <mpaa></mpaa>
+        <tagline></tagline>
+        <runtime></runtime>
+        <thumb></thumb>
+        <credits></credits>
+        <rating></rating>
+        <votes></votes>
+        <genre></genre>
+        <actor>
+          <name></name>
+          <role></role>
+        </actor>
+        <outline></outline>
+        <plot></plot>
+      </details>    
+  -->
+
+	<!-- GetDetails from  Movieplayer 
+    $$1  = HTML result from (e.g) http://movieplayer.it/film/lultima-tempesta_40322/
+    $$13 = Result in Buffer 3
+  -->
+	<GetDetails dest="3">
+		<RegExp input="$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+	
+			<!--Italian Title and Year from MoviePlayer-->
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;" dest="13">
+				<!-- HTML to match: 
+        <meta charset="utf-8">
+        <title>L'ultima tempesta (2016) - Film - Movieplayer.it</title>
+				-->
+			  <expression clear="yes" noclean="1" trim="1">&lt;meta charset="utf-8"&gt;[\n\r\s]+&lt;title&gt;([^&lt;]+)\(([0-9]+)\)\s*-</expression>
+			</RegExp>			
+	
+			<!-- Prepare originaltitle for IMDB access -->
+			<RegExp input="$$4" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="13+">
+				<!--Use Italian title -->
+				<RegExp input="$$1" output="\1" dest="4">
+			    <expression clear="yes" noclean="1" trim="1">&lt;meta charset="utf-8"&gt;[\n\r\s]+&lt;title&gt;([^&lt;]+)\([0-9]+\)\s*-</expression>
+				</RegExp>
+				<!--Try to get original title from MoviePlayer-->
+				<RegExp input="$$1" output="\1" dest="3">
+					<!-- HTML to match:  
+						<span class="film-extra-info-label">orginal title:</span>
+						<span class="film-extra-info-value">nomefilmoriginale</span>
+					-->
+					<expression cs="true" clear="yes" noclean="1">&lt;span class="film-extra-info-label"&gt;Titolo originale:&lt;/span&gt;\s*&lt;span class="film-extra-info-value"&gt;([^&lt;]+)&lt;/span&gt;</expression>
+				</RegExp>	
+				<!--If original title exists overwrite Italian title-->
+				<RegExp input="$$3" output="\1" dest="4">
+					<expression>(.+)</expression>
+				</RegExp>
+			  <!-- IMDB doesn't like II or III or IV in the title, so replace them with numbers -->                                	
+			  <RegExp input="$$4" output="\1 2" dest="4">                                                                        	
+			  	<expression>^(.+) II$</expression>                                                                               	
+			  </RegExp>                                                                                                          	
+			  <RegExp input="$$4" output="\1 3" dest="4">                                                                        	
+			  	<expression>^(.+) III$</expression>                                                                              	
+			  </RegExp>                                                                                                          	
+			  <RegExp input="$$4" output="\1 4" dest="4">                                                                        	
+			  	<expression>^(.+) IV$</expression>                                                                               	
+			  </RegExp>				                                                                                                   	
+			  <expression noclean="1" />    
+			</RegExp>
+	
+	  	<!--Director from Movieplayer-->                                                                                     	
+		  <RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="13+">                                         	
+			  <!-- HTML to match:                                                                                              	
+				   <a href="/personaggi/craig-gillespie_93305/" itemprop="director">Craig Gillespie</a>					                     	
+			  -->                                                                                                                  	
+				<expression trim="1" noclean="1">itemprop="director"&gt;([^&lt;]+)&lt;/a&gt;</expression>                            
+		  </RegExp> 
+	
+			<!--Film duration from Movieplayer--> 
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="13+">
+				<!-- HTML HTML to match: 
+					time itemprop="duration" datetime="PT117M">117 minuti</time>
+				-->
+				<expression trim="1" noclean="1">&lt;time itemprop="duration"[^&gt;]+&gt;([0-9]*) minuti&lt;/time&gt;</expression>
+			</RegExp>
+	
+			<!--Plot from Movieplayer --> 
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="13+">
+			 <!-- HTML to match:  
+					<p itemprop="description" class="expandable-text">
+						descrizione
+						<span class="read-more">... <a href="#">leggi tutto</a></span>
+						<span class="details" style="display: none;">
+							Dio, Serse; e Artemisia, la vendicativa comandante della Marina persiana.
+							<span class="re-collapse"> <a href="#"></a></span>
+						</span>
+					</p>
+					Note : stop collecting at <br> (line break html tag) because Kodi aborts the scraper when present in the Plot (bug?).
+					       Possible improvement : skip <br> during Plot collection
+				-->
+				<expression noclean="1">&lt;p itemprop="description"[^&gt;]*&gt;(.+?)(&lt;br&gt;|&lt;/p&gt;)</expression>
+			</RegExp>
+	
+			<!--Poster from Movieplayer-->
+			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;\1\_\2\_600x800_crop_q85.jpg&lt;/thumb&gt;" dest="13+">	
+				<!-- HTML to match: 
+            <div class="film-poster"> 
+                        <img src-1="(max-width: 767px) http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_100x148_crop_q85.jpg"
+                             src-2="http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_191x283_crop_q85.jpg"
+                             src="http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_100x148_crop_q85.jpg"
+                             class="image-responsive prograsync-image" 
+                             alt="Locandina di L&#39;ultima tempesta" itemprop="image">                
+                <noscript>
+                    <img src="http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_191x283_crop_q85.jpg" class="image-responsive">
+                    or
+                    src="http://images.movieplayer.it/t/images/2015/10/08/schermata-2015-10-06-alle-162244_png_100x148_crop_q85.jpg"
+                </noscript>
+            </div>
+            Note : jpg_600x800_crop_q85 because Movieplayer provides an image with size requested in the url
+        -->					
+				<expression noclean="1">&lt;div class="film-poster"&gt;\s*&lt;img.+?src="([hH].*?)_([Jj][Pp][Gg]|[Pp][Nn][Gg]|[Jj][Pp][Ee][Gg])_</expression>				
+			</RegExp>
+	
+	  	<!--Actors from Movieplayer-->
+			<RegExp input="$$5" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;/actor&gt;" dest="13+">                            	
+			  <!-- HTML to match:                                                                                                                   	
+           <span class="film-info-label">Attori</span>                                                                                             
+           </div>                                                                                                                                
+             <div class="film-info-col">                                                                                                         
+              <a href="/personaggi/chris-pine_22316/">Chris Pine</a>,                                                                            
+              <a href="/personaggi/casey-affleck_3150/">Casey Affleck</a>                                                                        
+             </div>		                                                                                                                           
+			  -->		
+		      <RegExp input="$$1" output="\1" dest="5">                                                                                                                  
+			      <expression trim="1" noclean="1">&lt;span class="film-info-label"&gt;Attori&lt;/span&gt;.*?"&gt;(.*?)&lt;/div&gt;</expression>                           
+		      </RegExp>	                                                                                                                                              
+	     <expression repeat="yes"  trim="1" noclean="1">&lt;a[^&lt;]+"&gt;((.*?))&lt;/a&gt;</expression>                                        	           
+		  </RegExp>                                                                                                   	                                               
+	
+	  	<!--Genres from Movieplayer-->                                                                                            
+			<RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="13+">                           	
+			  <!-- HTML to match:                                                                                                                    	
+         <div class="film-info-col">
+           <span class="film-info-label">Genere</span>
+            </div>
+             <div class="film-info-col">
+              Drammatico, Thriller, Storico
+             </div>	                                                             	
+			  -->
+		      <RegExp input="$$1" output="\1" dest="5">                                                                                                                        
+			      <expression trim="1" noclean="1">&lt;span class="film-info-label"&gt;Genere&lt;/span&gt;.*?"&gt;(.*?)/div&gt;</expression>                       	             
+		      </RegExp>                                                                                                                       
+			  <expression repeat="yes"  trim="1" noclean="1">(.*?)[,|&lt;]</expression>                                        	
+			</RegExp> 
+	
+	  	<!--Rating from Movieplayer if requested --> 
+ 			<RegExp input="$INFO[RatingS]"  output="$$10" dest="13+">
+			  <!-- HTML to match                                                                                                                    	
+				  <span class="film-header-vote-label" itemprop="ratingValue">                                                                           	
+				     3.0                                                                                                                               	
+          </span>				                                                                                                                           
+			  --> 
+			     <RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="10">
+			    	<expression trim="1" noclean="1">itemprop="ratingValue"&gt;([^&lt;]+)&lt;/span&gt;</expression>    
+			     </RegExp>
+				<expression>Movieplayer</expression>
+			</RegExp>	
+			
+	  	<!--Rating from Movieplayer & IMDB if requested -->			
+ 			<RegExp input="$INFO[RatingS]"  output="$$10" dest="13+">
+			  <!-- HTML to match                                                                                                                    	
+				  <span class="film-header-vote-label" itemprop="ratingValue">                                                                           	
+				     3.0                                                                                                                               	
+          </span>				                                                                                                                           
+			  -->
+			     <RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;0&lt;/votes&gt;" dest="10">
+			    	<expression trim="1" noclean="1">itemprop="ratingValue"&gt;([^&lt;]+)&lt;/span&gt;</expression>    
+			     </RegExp>
+				<expression>Movieplayer & IMDb</expression>
+			</RegExp>	
+					  
+			<!--Tagline (non più presente in movieplayer?)
+			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="13+">
+				<expression noclean="1">&lt;span class="subheading"&gt;([^"]*)&lt;/span&gt; </expression>
+			</RegExp>-->
+
+			<!--Outline (non più presente in movieplayer?)
+			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="13+">
+				<expression noclean="1">&lt;h3&gt;Perché vederlo:&lt;/h3&gt;[^&lt;]*&lt;p&gt;([^&lt;]+)&lt;/p&gt;</expression>
+			</RegExp>-->
+			
+		                                          <!-- TAKE NOW OTHER INFOS's FROM IMDB SWITCHING TO IMDB SITE HTML PAGES)  -->
+
+			<!--IMDB details -->
+			<RegExp input="$$9" output="&lt;url cache=&quot;IMDB_Search.html&quot; function=&quot;IMDBChains&quot;&gt;http://akas.imdb.com/find?q=\1&amp;s=tt&lt;/url&gt;" dest="13+">
+				<RegExp input="$$13" output="\1" dest="9">
+					<expression clear="yes" noclean="1" encode="1">&lt;originaltitle&gt;([^/"]*)&lt;/originaltitle&gt;</expression>
+				</RegExp>
+				<RegExp conditional="Year" input="$$13" output="%20(\1)" dest="9+">
+					<expression>&lt;year&gt;([^/"]*)&lt;/year&gt;</expression>
+				</RegExp>
+				<expression />
+			</RegExp>
+
+		                                          <!-- TAKE NOW OTHER INFO FROM MOVIPLAYER SWITCHING TO OTHER MOVIPLAYER HTML PAGES)  -->
+
+			<!--Writers from MoviePlayer -->
+			<RegExp input="$$1" output="&lt;url cache=&quot;\MoviePlayerWriters.html&quot; spoof=&quot;http://www.movieplayer.it/\1/&quot; function=&quot;GetMPWriters&quot;&gt;http://www.movieplayer.it/film/\1/cast/&lt;/url&gt;" dest="13+">
+				<expression>href="/film/([^/]*)/cast/"</expression>
+			</RegExp>
+			
+			<!--Fanart from Movieplayer  -->
+			<RegExp conditional="Fan" input="$$1" output="&lt;url cache=&quot;\MoviePlayerFanart.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1/&quot; function=&quot;GetMPFanart&quot;&gt;http://www.movieplayer.it/film/\1/galleria/?tipologia=foto-di-scena&lt;/url&gt;" dest="13+">
+				<expression>href="/film/([^/]*)/galleria/"</expression>
+			</RegExp>
+
+	
+			<!--Posters(others) from MoviePlayer -->	
+			<RegExp conditional="AltPosters" input="$$1" output="&lt;url cache=&quot;\MoviePlayerPosters.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1/&quot; function=&quot;GetMPPosters&quot;&gt;http://www.movieplayer.it/film/\1/galleria/?tipologia=manifesti-e-poster&lt;/url&gt;" dest="13+">
+				<expression>href="/film/([^/]*)/galleria/"</expression>
+			</RegExp>		
+
+			<!--Trailer from MoviePlayer -->	
+			  <!-- HTML to match:                                                                                                                    	
+			      <div class="header-video-container">
+                <div class="header-video-wrapper">
+                    <iframe src="http://ntv.movieplayer.it/embed/LWBoo4" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+            </div>		                                                            	
+			-->		
+				<RegExp input="$$1" output="&lt;url cache=&quot;\MoviePlayerTrailer.html&quot; spoof=&quot;\1/&quot; function=&quot;GetMPTrailer&quot;&gt;\1&lt;/url&gt;" dest="13+">
+				<expression>&lt;div class="header-video-wrapper"&gt;.*?src="([^"]+)"</expression>
+			</RegExp>	
+			
+			<expression noclean="1" />	
+		</RegExp>
+	</GetDetails>	
+	
+	<!--  F U N C T I O N S  -->
+
+	<!-- GetWriters from  Movieplayer 
+    $$1  = HTML result from http://movieplayer.it/film/lultima-tempesta_40322/cast/
+    $$2  = Result in Buffer 13
+  -->
+	<GetMPWriters dest="13">
+				<!-- HTML to match 
+          <span class="cast-list-role">Sceneggiatura</span>
+           <span class="cast-list-name">                                    
+           <a href="/personaggi/eric-johnson_76930/">Eric Johnson</a>		
+				-->
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="13+">
+			   <RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
+				   <expression repeat="yes" trim="1" noclean="1">&lt;span class="cast-list-role"&gt;Sceneggiatura&lt;/span&gt;.*?/"&gt;(.+?)&lt;/a&gt;</expression>
+			   </RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetMPWriters>
+	
+	<!-- GetFanart from  Movieplayer	
+    $$1  = HTML result from http://movieplayer.it/film/lultima-tempesta_40322/galleria/?tipologia=foto-di-scena
+    $$2  = Temporary buffer for moving the result in Buffer 13
+  -->
+	<GetMPFanart dest="13">
+			<!-- HTML to match
+         <li>
+          <a href="/foto/lultima-tempesta-rachel-brosnahan-e-holly-grainger-in-una-scena-del-film_420645/" data-gallery-page="1" data-gallery-index="0" title="L&#39;ultima tempesta: Rachel Brosnahan e Holly Grainger in una scena del film">
+            <img src-1="(max-width: 480px) http://images.movieplayer.it/t/images/2016/02/25/lultima_tempesta_rachel_brosnahan_holliday_grainger_jpg_115x115_crop_q85.jpg"
+                src="http://images.movieplayer.it/t/images/2016/02/25/lultima_tempesta_rachel_brosnahan_holliday_grainger_jpg_221x221_crop_q85.jpg"
+                or
+                src="http://images.movieplayer.it/t/images/2015/10/08/schermata-2015-10-06-alle-162244_png_100x148_crop_q85.jpg"
+                class="image-responsive prograsync-image image-gallery-image"
+                alt="L&#39;ultima tempesta: Rachel Brosnahan e Holly Grainger in una scena del film" title="L&#39;ultima tempesta: Rachel Brosnahan e Holly Grainger in una scena del film"> 
+              <div class="border"></div>
+            </a>
+        </li>
+      -->
+		<RegExp input="$$2" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="13+">
+			<RegExp input="$$1" output="&lt;thumb preview=&quot;http://images.movieplayer.it/t/\1\2.jpg&quot;&gt;http://images.movieplayer.it/\1.\3&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&lt;a href="/foto/.*?src="http://images.movieplayer.it/t/(.*?)(_([Jj][Pp][Gg]|[Pp][Nn][Gg]|[Jj][Pp][Ee][Gg])_[^\.]+)\.jpg"</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetMPFanart>
+	
+	<!-- GetPosters from  Movieplayer 
+    $$1  = HTML result from http://movieplayer.it/film/lultima-tempesta_40322/galleria/?tipologia=manifesti-e-poster
+    $$2  = Temporary buffer for moving the result in Buffer 13
+  -->
+	<GetMPPosters dest="13">
+				<!-- HTML to match: 
+        <li>
+          <a href="/foto/locandina-di-lultima-tempesta_420150/" data-gallery-page="1" data-gallery-index="0" title="Locandina di L&#39;ultima tempesta">
+            <img src-1="(max-width: 480px) http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_115x115_crop_q85.jpg"
+                src="http://images.movieplayer.it/t/images/2016/02/22/tempesta_jpg_221x221_crop_q85.jpg"
+                class="image-responsive prograsync-image image-gallery-image"
+                alt="Locandina di L&#39;ultima tempesta" title="Locandina di L&#39;ultima tempesta">                         
+            
+              <div class="border"></div>
+            </a>
+        </li>
+        -->				
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="13+">
+			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;http://images.movieplayer.it/t/\1\2.jpg&quot;&gt;http://images.movieplayer.it/\1.\3&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&lt;a href="/foto/.*?src="http://images.movieplayer.it/t/(.*?)(_([Jj][Pp][Gg]|[Pp][Nn][Gg]|[Jj][Pp][Ee][Gg])_[^\.]+)\.jpg"</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetMPPosters>
+	<!-- Get Trailer from  Movieplayer
+    $$1  = HTML result from (e.g) http://ntv.movieplayer.it/embed/LWBoo4"
+    $$2  = Temporary buffer for moving the result in Buffer 13
+  -->
+	<GetMPTrailer dest="13">
+			<!-- HTML to match
+            mp4: [
+                  ['Start', 'http://video2.netaddiction.it/media/videos/ready/2014/05/07/LWBoo4/LWBoo4-360p.mp4'],  
+      -->
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="13+">
+			<RegExp input="$$1" output="&lt;trailer&gt;\1&lt;/trailer&gt;" dest="2">				
+			  <expression noclean="1">mp4:\s*\[.*?\['Start'[^']+?'([^']+?)'\],</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetMPTrailer>
+	
+	<!-- IMDBChains from  IMDB and TMDB if requested by settings 
+    $$1  = HTML result from http://akas.imdb.com/find?q=OriginalTitle%20(Year)&s=tt
+    $$6  = Temporary buffer for moving the result in Buffer 5
+  -->
+	<IMDBChains dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5+">
+
+			<!-- IMDB Title ID  on buffer 2 -->
+			<RegExp input="$$1" output="\1" dest="2">
+				<expression>&lt;a href="/title/([t0-9]*)/.ref_=fn_tt_tt_1"</expression>
+			</RegExp>
+
+			<!--IMDB Title ID -->
+			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="6+">
+				<expression>&lt;a href="/title/([t0-9]*)/.ref_=fn_tt_tt_1"</expression>
+			</RegExp>
+
+			<!--Rating from IMDB if requested -->
+			<RegExp input="$INFO[RatingS]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression>IMDb</expression>
+  		</RegExp>
+			<!--Rating from Movieplayer & IMDB if requested -->
+			<RegExp input="$INFO[RatingS]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression>Movieplayer & IMDb</expression>
+  		</RegExp>
+  		
+			<!--Cast-->	
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>		
+
+			<!-- top250 from IMDB-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBTOP250ById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--Cine Studio from IMDB -->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBStudioById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--Original country from IMDB-->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBCountryById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--USA certification from IMDB -->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBUSACert&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--Posters from IMDB -->
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--Posters from TMDB-->
+			<RegExp conditional="posterTMDB" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+
+			<!--Fanart from TMDB -->
+			<RegExp conditional="FanartTMDB" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>			
+
+			<!--Regia
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBDirectorsById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+      -->
+
+			<!--Sceneggiatura
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBWritersById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+      -->
+
+			<!--IMDB Genre
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBGenresById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression />
+			</RegExp>
+      -->
+
+			<!--<RegExp input="$$2" output="&lt;url cache=&quot;$$2-main.html&quot; function=&quot;IMDBLocal&quot;&gt;www.imdb.com/title/$$2&lt;/url&gt;" dest="6+">
+				<expression />
+			</RegExp>-->
+			<expression noclean="1" />
+		</RegExp>
+	</IMDBChains>		
+<!--
+	<IMDBLocal dest="5">
+		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5+">
+			< !--Durata-- >
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="6+">
+				<expression trim="1">&lt;h4[^&gt;]*?&gt;Runtime:&lt;/h4&gt;[^0-9]*([0-9]+)</expression>
+			</RegExp>
+			< !--Country-- >
+			<RegExp input="$$1" output="&lt;country&gt;\1&lt;/country&gt;" dest="6+">
+				<expression>"/country/[^&gt;]+&gt;([^&lt;]+)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</IMDBLocal>		
+-->
+</scraper>
