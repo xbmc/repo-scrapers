@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30003">Get all Posters from Movieplayer.it</string>
-    <string id="30004">Get Posters from TMDB too (in English)</string>
-    <string id="30005">Get Fanarts from TMDB.com (HD)</string>
-    <string id="30006">Get Fanarts from Movieplayer.it (SD)</string>
-    <string id="30007">Include the movie's "Year" in the search</string>
-    <string id="30008">Search using Bing</string>
-    <string id="30009">Results per page: </string>
+    <string id="30001">Search using Bing</string>
+    <string id="30002">Include the movie's "Year" in the search</string>
+    <string id="30003">Results per page: </string>
+    <string id="30004">Get all Posters from Movieplayer.it</string>
+    <string id="30005">Get Fanarts from Movieplayer.it (SD)</string>
+    <string id="30006">Get Posters from TMDB too (in English)</string>
+    <string id="30007">Get Fanarts from TMDB too (HD)</string>
+    <string id="30008">Get Rating from </string> 
 </strings>

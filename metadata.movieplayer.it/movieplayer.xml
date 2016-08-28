@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="2.0" date="2016-08-24" name="MoviePlayer.it" content="movies" language="en">
+<scraper framework="2.1.0" date="2016-08-28" name="MoviePlayer.it" content="movies" language="en">
 	<NfoUrl dest="3">
 		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression trim="1" noclean="1">(http://www\.movieplayer\.it/film/[^_]+_[0-9]+/)</expression>
@@ -31,7 +31,7 @@
 		</RegExp>
 		<RegExp conditional="Bing" input="$$7" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot; standalone=&quot;yes&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8"> 
 			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3 (\4)&lt;/title&gt;&lt;url cache=&quot;MoviePlayerPage.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1_\2/&quot;&gt;http://www.movieplayer.it/film/\1_\2/&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="7">
-				<expression repeat="yes" trim="1" >&lt;h2&gt;&lt;a href="http://(?:www\.)?movieplayer\.it/film/([^"][^_]*)_([0-9]+)/"[^&gt;]+&gt;(.+?)\(([0-9]+).*?\s*-.*?&lt;/h2&gt;</expression> 
+				<expression repeat="yes" trim="1" >&lt;h2&gt;&lt;a href="http://(?:www\.)?movieplayer\.it/film/([^"][^_]*)_([0-9]+)/"[^&gt;]+&gt;(.+?)\(.*?([0-9]+).*?\s*-.*?&lt;/h2&gt;</expression> 
 			</RegExp>
 			<expression clear="yes" trim="1" noclean="1" />
 		</RegExp>
@@ -195,16 +195,32 @@
 			  <expression repeat="yes"  trim="1" noclean="1">(.*?)[,|&lt;]</expression>                                        	
 			</RegExp> 
 	
-	  	<!--Rating from Movieplayer-->                                                                                                           	
-		  <RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="13+">                                                                 	
+	  	<!--Rating from Movieplayer if requested --> 
+ 			<RegExp input="$INFO[RatingS]"  output="$$10" dest="13+">
 			  <!-- HTML to match                                                                                                                    	
 				  <span class="film-header-vote-label" itemprop="ratingValue">                                                                           	
 				     3.0                                                                                                                               	
           </span>				                                                                                                                           
-			  -->                                                                                                                                      	
-				<expression trim="1" noclean="1">itemprop="ratingValue"&gt;([^&lt;]+)&lt;/span&gt;</expression>                                          
-		  </RegExp>  
-		  
+			  --> 
+			     <RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="10">
+			    	<expression trim="1" noclean="1">itemprop="ratingValue"&gt;([^&lt;]+)&lt;/span&gt;</expression>    
+			     </RegExp>
+				<expression>Movieplayer</expression>
+			</RegExp>	
+			
+	  	<!--Rating from Movieplayer & IMDB if requested -->			
+ 			<RegExp input="$INFO[RatingS]"  output="$$10" dest="13+">
+			  <!-- HTML to match                                                                                                                    	
+				  <span class="film-header-vote-label" itemprop="ratingValue">                                                                           	
+				     3.0                                                                                                                               	
+          </span>				                                                                                                                           
+			  -->
+			     <RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;0&lt;/votes&gt;" dest="10">
+			    	<expression trim="1" noclean="1">itemprop="ratingValue"&gt;([^&lt;]+)&lt;/span&gt;</expression>    
+			     </RegExp>
+				<expression>Movieplayer & IMDb</expression>
+			</RegExp>	
+					  
 			<!--Tagline (non più presente in movieplayer?)
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="13+">
 				<expression noclean="1">&lt;span class="subheading"&gt;([^"]*)&lt;/span&gt; </expression>
@@ -239,7 +255,7 @@
 			<RegExp conditional="Fan" input="$$1" output="&lt;url cache=&quot;\MoviePlayerFanart.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1/&quot; function=&quot;GetMPFanart&quot;&gt;http://www.movieplayer.it/film/\1/galleria/?tipologia=foto-di-scena&lt;/url&gt;" dest="13+">
 				<expression>href="/film/([^/]*)/galleria/"</expression>
 			</RegExp>
-			<expression noclean="1" />
+
 	
 			<!--Posters(others) from MoviePlayer -->	
 			<RegExp conditional="AltPosters" input="$$1" output="&lt;url cache=&quot;\MoviePlayerPosters.html&quot; spoof=&quot;http://www.movieplayer.it/film/\1/&quot; function=&quot;GetMPPosters&quot;&gt;http://www.movieplayer.it/film/\1/galleria/?tipologia=manifesti-e-poster&lt;/url&gt;" dest="13+">
@@ -257,7 +273,8 @@
 				<RegExp input="$$1" output="&lt;url cache=&quot;\MoviePlayerTrailer.html&quot; spoof=&quot;\1/&quot; function=&quot;GetMPTrailer&quot;&gt;\1&lt;/url&gt;" dest="13+">
 				<expression>&lt;div class="header-video-wrapper"&gt;.*?src="([^"]+)"</expression>
 			</RegExp>	
-	
+			
+			<expression noclean="1" />	
 		</RegExp>
 	</GetDetails>	
 	
@@ -365,6 +382,15 @@
 				<expression>&lt;a href="/title/([t0-9]*)/.ref_=fn_tt_tt_1"</expression>
 			</RegExp>
 
+			<!--Rating from IMDB if requested -->
+			<RegExp input="$INFO[RatingS]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression>IMDb</expression>
+  		</RegExp>
+			<!--Rating from Movieplayer & IMDB if requested -->
+			<RegExp input="$INFO[RatingS]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
+				<expression>Movieplayer & IMDb</expression>
+  		</RegExp>
+  		
 			<!--Cast-->	
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />
@@ -417,11 +443,6 @@
 			</RegExp>
       -->
 
-			<!--IMDB rating
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
-				<expression />
-  		</RegExp>
-      -->
 			<!--IMDB Genre
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetIMDBGenresById&quot;&gt;$$2&lt;/chain&gt;" dest="6+">
 				<expression />

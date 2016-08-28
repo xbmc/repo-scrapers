@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Search using Google (inaccurate but faster)</string>
-    <string id="30001">Pobieraj klasyfikację MPAA, studio i ocenę z IMDb</string>
-    <string id="30002">Pełna obsada (wolne)</string>
-    <string id="30003">Get alternative Posters from Movieplayer.it</string>    
-    <string id="30004">Pobieraj również plakaty z TMDB</string>
-    <string id="30005">Pobieraj fanart z TMDB.com (HD)</string>
-    <string id="30006">Pobieraj fanart z Movieplayer.it (SD)</string>
+    <string id="30001">Użyj do wyszukiwania Bing</string>
+    <string id="30002">Dołącz rok w badaniach</string>
+    <string id="30003">Wyników na stronie:</string>
+    <string id="30004">Pobierz wszystkie Plakaty Movieplayer.it</string>    
+    <string id="30005">Pobieraj fanart z Movieplayer.it (SD)</string>
+    <string id="30006">Pobieraj również plakaty z TMDB</string>
+    <string id="30007">Pobieraj fanart z TMDB (HD)</string>
+    <string id="30008">Weź opinie klientów </string>
 </strings>

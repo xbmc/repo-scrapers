@@ -1,5 +1,9 @@
 Changelog:
-24/08/2016 - Ver 2.0 - Fixed for new movieplayer site layout and re-organized for getting as much as possible info from movieplayer. All others from IMDB and TMDB.
+28/08/2016 - Ver 2.1.0 
+             Fixed for better matching <title> tag in GetSearchResults using Bing
+             Take rating from Movieplayer | Movieplayer & IMDb | IMDb
+24/08/2016 - Ver 2.0.0 
+             Fixed for new movieplayer site layout and re-organized for getting as much as possible info from movieplayer. All others from IMDB and TMDB.
              Works much better using Bing search engine.
              Rename folder or file name to be exactly identical to movie title present in movieplayer.it. 
              In case scraping is not correct or fanart is missing, try adding the Year at the end of folder or file name (e.g <movie title> - <Year>)

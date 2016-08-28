@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <strings>
-    <string id="30000">Search using Google (inaccurate but faster)</string>
-    <string id="30001">MPAA besorolás, studió az IMDb-ről</string>
-    <string id="30002">Teljes szereposztás (lassú)</string>
-    <string id="30003">Get alternative Posters from Movieplayer.it</string>
-    <string id="30004">TMDB poszterek (angolul)</string>
-    <string id="30005">TMDB.com fanartképek (HD)</string>
-    <string id="30006">Movieplayer.it fanartképek (SD)</string>
+    <string id="30001">Használja Bing keresni</string>
+    <string id="30002">Tartalmazza az év kutatás</string>
+    <string id="30003">Találatok száma oldalanként:</string>
+    <string id="30004">Letöltés minden poszterek Movieplayer.it</string>
+    <string id="30005">Letöltés az összes háttérrel fanartképek Movieplayer.it (SD)</string>
+    <string id="30006">Letöltés poszterek   TMDB (Angol)</string>
+    <string id="30007">Letöltés fanartképek TMDB (HD)</string>
+    <string id="30008">Vegye Értékelések -tól </string>     
+    
 </strings>
