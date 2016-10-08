@@ -1,5 +1,0 @@
-[B]1.0.1[/B]
-- Fixed: Plot won't scrape due to site layout changes
-
-[B]1.0.0[/B]
-- Initial version

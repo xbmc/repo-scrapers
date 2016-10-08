@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<settings>
-    <setting label="30000" type="bool" id="thepos" default="true"/>
-    <setting label="30001" type="bool" id="fanart" default="true"/>
-    <setting label="30002" type="bool" id="imdbcast" default="true"/>
-    <setting label="30003" type="bool" id="imdbdir" default="false"/>
-    <setting label="30004" type="bool" id="imdbcred" default="false"/>
-</settings>
