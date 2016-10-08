@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<strings>
-    <!-- settings labels -->
-    <string id="30000">Add movies to a Set</string>
-    <string id="30001">Set name</string>
-    <string id="30002">Add movies to a Genre</string>
-    <string id="30003">Genre name</string>
-</strings>
-

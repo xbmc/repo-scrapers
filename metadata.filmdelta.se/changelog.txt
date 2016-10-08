@@ -1,2 +1,0 @@
-1.0.7
-Added setting to use original title instead of swedish one
