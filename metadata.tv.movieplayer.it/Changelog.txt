@@ -1,9 +1,0 @@
-Changelog:
-
-
-
-07/03/2011 - Fixed Google search results.
-13/02/2011 - Fixed search url.
-08/11/2010 - Fixed TVDB fanarts.
-29/08/2010 - Added NfoUrl that was missing. Added TVDB Id to be used for Logo  downloader script and maybe others.
-10/08/2010 - Initial commit to github rev. 1.0.5

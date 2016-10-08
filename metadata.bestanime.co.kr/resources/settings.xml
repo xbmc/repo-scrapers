@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<settings>
-    <setting label="30000" type="bool" id="useSynopsis" default="false"/>
-    <setting label="30001" type="bool" id="useAgent" default="false"/>
-</settings>

@@ -1,8 +1,0 @@
-[B]1.1.0[/B]
-- MusicBrainz - version 2 of XML web service
-[B]1.0.4[/B]
-- new icon thx to freezy
-[B]1.0.3[/B]
-- added nfo support
-[B]1.0.0[/B]
-- Initial import into addons repository
