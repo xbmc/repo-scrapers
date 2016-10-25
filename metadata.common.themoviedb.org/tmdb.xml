@@ -312,6 +312,46 @@
 		</RegExp>
 	</ParseTMDBRating>
 
+	<GetTMDBRatingsByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBRatings&quot; cache=&quot;tmdb-$INFO[language]-\1.json&quot;&gt;http://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTMDBRatingsByIdChain>
+	<ParseTMDBRatings dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;themoviedb&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="2">
+				<expression noclean="1">&quot;vote_average&quot;:([^,]*),&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="2+">
+				<expression noclean="1">&quot;vote_count&quot;:([0-9]+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTMDBRatings>
+
+	<GetTMDBRatingsByIdAsDefChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBRatingsAsDef&quot; cache=&quot;tmdb-$INFO[language]-\1.json&quot;&gt;http://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTMDBRatingsByIdAsDefChain>
+	<ParseTMDBRatingsAsDef dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="2">
+				<expression noclean="1">&quot;vote_average&quot;:([^,]*),&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="2+">
+				<expression noclean="1">&quot;vote_count&quot;:([0-9]+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTMDBRatingsAsDef>
+
 	<GetTMDBStudioByIdChain dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBStudio&quot; cache=&quot;tmdb-en-\1.json&quot;&gt;http://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=en&lt;/url&gt;" dest="5">
@@ -558,4 +598,20 @@
 		</RegExp>
 	</ParseTMDBBaseImageURL>
 
+	<GetTMDBPremieredByIdChain dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBPremiered&quot; cache=&quot;tmdb-$INFO[tmdbtitlelanguage]-\1.json&quot;&gt;http://api.tmdb.org/3/movie/\1?api_key=f7f51775877e0bb6703520952b3c7840&amp;amp;language=$INFO[tmdbtitlelanguage]&lt;/url&gt;" dest="5">
+				<expression />
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTMDBPremieredByIdChain>
+	<ParseTMDBPremiered dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="2">
+				<expression noclean="1">&quot;release_date&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTMDBPremiered>
 </scraperfunctions>

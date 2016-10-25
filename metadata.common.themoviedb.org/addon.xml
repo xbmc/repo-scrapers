@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.common.themoviedb.org"
        name="The Movie Database Scraper Library"
-       version="2.14.0"
+       version="2.15.0"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -36,5 +36,8 @@
     <description lang="ru">Загружать миниатюры и фанарт с www.themoviedb.org</description>
     <description lang="se">Ladda ner miniatyrer och fanart från www.themoviedb.org</description>
     <description lang="zh">从www.themoviedb.org下载海报和同人画</description>
+	<news>v2.15.0
+- Added function to retrieve ratings with the new layout - needs Krypton or newer
+- Added function to retrieve premiered date</news>
   </extension>
 </addon>
