@@ -1,3 +1,6 @@
+[B]1.9.0[/B]
+- Added: uniqueids and ratings with their name
+
 [B]1.8.4[/B]
 - Added: Runtime for tvshows - needs Krypton or newer
 
