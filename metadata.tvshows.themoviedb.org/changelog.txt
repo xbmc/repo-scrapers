@@ -1,3 +1,6 @@
+[B]1.3.2[/B]
+- added: uniqueids and ratings with their name - needs Krypton or newer
+
 [B]1.3.1[/B]
 - added: scraping of mpaa certifications
 
