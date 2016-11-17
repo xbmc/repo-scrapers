@@ -1,2 +1,5 @@
+[B]1.0.1[/B]
+- added: function to retrieve ratings with the new layout - needs Krypton or newer
+
 [B]1.0.0[/B]
 - Initial Release
