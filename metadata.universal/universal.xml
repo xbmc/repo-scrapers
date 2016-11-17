@@ -122,7 +122,7 @@
 			<RegExp input="$$1" output="\2" dest="20">
 				<expression>&lt;meta name=&quot;title&quot;\scontent=&quot;([^&quot;]*?)\s\([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 			</RegExp>
-			<RegExp input="$INFO[searchservice]" output="$$17" dest="2">
+			<RegExp input="$INFO[searchservice]" output="$$17" dest="15">
 				<RegExp input="$$1" output="\1" dest="17">
 					<expression noclean="1">&quot;id&quot;:([0-9]*),&quot;imdb_id</expression>
 				</RegExp>
@@ -140,14 +140,17 @@
 			<RegExp input="$$1" output="\1" dest="20">
 				<expression noclean="1">&quot;release_date&quot;:&quot;([0-9]+)-</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5">
+			<RegExp input="$$2" output="&lt;uniqueid type=&quot;imdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression/>
+			</RegExp>
+			<RegExp input="$$15" output="&lt;uniqueid type=&quot;themoviedb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$19" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$20" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
-				<expression/>
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBPremieredByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression />
 			</RegExp>
 			<RegExp input="$INFO[titlesource]" output="&lt;chain function=&quot;GetIMDBAKATitlesById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
@@ -167,17 +170,29 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression trim="1">&lt;h4[^&gt;]*?&gt;Runtime:&lt;/h4&gt;[^0-9]*([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetIMDBRatingsByIdAsDef&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>IMDb</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetMetaCriticRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetMetaCriticRatingsByIdAsDef&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>MetaCritic</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetRTRatingById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetRTRatingsByIdAsDef&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>Rotten Tomatoes</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetTMDBRatingByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetTMDBRatingsByIdAsDefChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
+			</RegExp>
+			<RegExp conditional="alsoimdb" input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetIMDBRatingsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>(?!^IMDb$)(^.*$)</expression>
+			</RegExp>
+			<RegExp conditional="alsometa" input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetMetaCriticRatingsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>^(?!^MetaCritic$)(^.*$)</expression>
+			</RegExp>
+			<RegExp conditional="alsorotten" input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetRTRatingsById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>^(?!^Rotten\ Tomatoes$)(^.*$)</expression>
+			</RegExp>
+			<RegExp conditional="alsotmdb" input="$INFO[mratingsource]" output="&lt;chain function=&quot;GetTMDBRatingsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+				<expression>^(?!^themoviedb.org$)(^.*$)</expression>
 			</RegExp>
 			<RegExp conditional="imdbtop250" input="$$2" output="&lt;chain function=&quot;GetIMDBTOP250ById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />

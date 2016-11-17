@@ -79,7 +79,7 @@ msgid "Preferred Plot Language"
 msgstr ""
 
 msgctxt "#30021"
-msgid "Get Ratings from"
+msgid "Get Default ratings from"
 msgstr ""
 
 msgctxt "#30022"
@@ -198,7 +198,21 @@ msgctxt "#30110"
 msgid "Rating Generated Using"
 msgstr ""
 
-#empty strings from id 30111 to 30114
+msgctxt "#30111"
+msgid "Get Also ratings from IMDb"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Get Also ratings from Rotten Tomatoes"
+msgstr ""
+
+msgctxt "#30113"
+msgid "Get Also ratings from MetaCritic"
+msgstr ""
+
+msgctxt "#30114"
+msgid "Get Also ratings from themoviedb.org"
+msgstr ""
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"

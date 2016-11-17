@@ -1,3 +1,7 @@
+[B]2.9.0[/B]
+- Added uniqueids and ratings with their name
+- Added premiered date scraping
+
 [B]2.8.1[/B]
 - added: pt-br and sr languages on user request
 
