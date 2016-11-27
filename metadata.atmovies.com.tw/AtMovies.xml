@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><scraper framework="1.1" date="2015-11-06" name="New Scraper" content="movies" language="en">
+<?xml version="1.0" encoding="UTF-8"?><scraper framework="1.1" date="2015-11-06" name="New Scraper" content="movies" language="en">
 	<CreateSearchUrl dest="3">
 		<RegExp input="$$2" output="&lt;url spoof=&quot;http://search.atmovies.com.tw&quot; post=&quot;true&quot;&gt;http://search.atmovies.com.tw/search/?action=search&amp;amp;fr=search-page&amp;amp;enc=UTF-8&amp;amp;type=F&amp;amp;search_term=\1|User-Agent=Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36&lt;/url&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="2">
-				<expression noclean="1,2" />
+				<expression noclean="1,2"/>
 			</RegExp>
-			<RegExp input="$$2" output="\1" dest="2">
+			<RegExp input="$$1" output="\1" dest="2">
 				<expression noclean="1,2">%5b.*%5d(.*)</expression>
 			</RegExp>
 			<RegExp input="$$2" output="\1:\2" dest="2">
-				<expression noclean="1,2">(.*)：(.*)</expression>
+				<expression noclean="1,2">(.*)%ef%bc%9a(.*)</expression>
 			</RegExp>
 			<expression />
 		</RegExp>
@@ -37,11 +37,11 @@
 			</RegExp>
 			<!--title ( get ChineseTitle from title ) put to buffer 3-->
 			<RegExp input="$$1" output="\1" dest="3">
-				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
+				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;[\s]*&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
 			</RegExp>
 			<!--title ( get EnglishTitle from title ) put to buffer 4-->
 			<RegExp input="$$1" output="\2" dest="4">
-				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
+				<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;[\s]*&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s](.+?)[\s]*&lt;</expression>
 			</RegExp>
 			<RegExp conditional="titleEliminateThe" input="$$4" output="\1" dest="4">
 				<expression noclean="1">^The (.*)</expression>
@@ -49,7 +49,7 @@
 			<!--title chineseTitle EnglishTitle (origin style ) append to buffer 5-->
 			<RegExp input="$INFO[titleFormat]" output="&lt;title&gt;$$6&lt;/title&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="6">
-					<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s]*&lt;</expression>
+					<expression trim="1" noclean="1">&lt;div class="filmTitle"&gt;[\s]*&lt;!-- filmTitle --&gt;[\s]*(.+?)[\s]*&lt;</expression>
 				</RegExp>
 				<expression>0</expression>
 			</RegExp>

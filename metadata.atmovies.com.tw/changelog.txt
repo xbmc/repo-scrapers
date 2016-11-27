@@ -1,3 +1,6 @@
+Version 1.6.3 (Sep 20 2016)
+ - 因應Atmovies網頁改動, 修正無法取得片名的問題
+
 Version 1.6.1 (Jun 20 2016)
  - 修正無法下載 AtMovies 劇照的問題
 
