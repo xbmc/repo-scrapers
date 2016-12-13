@@ -35,7 +35,7 @@
 <!--- Go over all the following points, and put an `x` in all the boxes that apply like this: [X] -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
 - [ ] My code follows the [add-on rules](http://kodi.wiki/view/Add-on_rules) and [piracy stance](http://kodi.wiki/view/Official:Forum_rules#Piracy_Policy) of this project. 
-- [ ] I have read the [CONTRIBUTING](https://github.com/xbmc/repo-plugins/blob/master/CONTRIBUTING.md) document
+- [ ] I have read the [CONTRIBUTING](https://github.com/xbmc/repo-scrapers/blob/master/CONTRIBUTING.md) document
 - [ ] Each add-on submission should be a single commit with using the following style: [plugin.video.foo] v1.0.0
 
 Additional information :
