@@ -1,3 +1,13 @@
+[B]2.3.0[/B]
+- Dodano: więcej fallback'ów do TMDb
+- Dodano: możliwość kontroli nad pobieranymi okładkami
+- Poprawka: przeredagowano większość funkcji
+- Poprawka: odnajdywanie filmweb id dla niektórych filmów
+- Poprawka: odnajdywanie tytułów na TMDb
+- Poprawka: wyrzucone niedziałające funkcje odnajdywania tytułów na google
+[B]2.2.8[/B]
+- Poprawka: pobieranie polskiej okładki
+- Poprawka: pobieranie obsady
 [B]2.2.7[/B]
 - Poprawka: wyszukiwanie filmów
 [B]2.2.6[/B]
