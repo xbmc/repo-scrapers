@@ -1,3 +1,5 @@
+1.2.00:
+- A lot of fixes.
 1.0.37:
 - Fixed orinal movie name scraping (remezen at xbmc.ru)
 1.0.36:

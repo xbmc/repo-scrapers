@@ -1,4 +1,4 @@
-Kinopoisk.ru movie scraper for XBMC
+Kinopoisk.ru movie scraper for Kodi
 ===================================
 
 Description
