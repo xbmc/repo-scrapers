@@ -9,9 +9,8 @@
 		<setting type="sep" />
 		<setting label="30105" type="bool" id="search_imdb_ID" default="true"/>
 		<setting label="30106" type="bool" id="use_world_premier" default="true" enable="eq(-1,true)"/>
-		<setting label="30107" type="bool" id="google_search" default="false" enable="eq(-2,true)"/>
-		<setting label="30108" type="bool" id="fanart" default="true" enable="eq(-3,true)"/>
-		<setting label="30109" type="bool" id="tmdb_poster" default="true" enable="eq(-4,true)"/>
+		<setting label="30108" type="bool" id="fanart" default="true" enable="eq(-2,true)"/>
+		<setting label="30109" type="bool" id="tmdb_poster" default="true" enable="eq(-3,true)"/>
 	</category>
 	<category label="30200" >
 		<setting label="30201" type="bool" id="download_trailer" default="true"/>
