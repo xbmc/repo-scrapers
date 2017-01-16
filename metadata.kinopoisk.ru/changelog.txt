@@ -1,3 +1,10 @@
+1.3.00:
+- changed xml encoding to utf-8.
+- Minimum supported version is XBMC 13.x Gotham now.
+- Removed a lot of old workarounds.
+- Get TMDB data event if a moive has no IMDB id.
+- Fixed search results is some cases.
+- General clean-up and optimization.
 1.2.00:
 - A lot of fixes.
 1.0.37:
