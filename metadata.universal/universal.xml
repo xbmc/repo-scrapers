@@ -158,7 +158,13 @@
 			<RegExp input="$INFO[certificationssource]" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
 			</RegExp>
-			<RegExp input="$INFO[certificationssource]" output="&lt;chain function=&quot;GetIMDBCountryCert&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[certificationssource]" output="$$14" dest="5+">
+				<RegExp input="$$1" output="&lt;chain function=&quot;GetIMDBCountryCert&quot;&gt;$$2&lt;/chain&gt;" dest="14">
+					<expression/>
+				</RegExp>
+				<RegExp input="$INFO[imdbcertcountry]" output="&lt;chain function=&quot;GetIMDBUSACert&quot;&gt;$$2&lt;/chain&gt;" dest="14">
+					<expression>USA</expression>
+				</RegExp>
 				<expression>IMDb</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
