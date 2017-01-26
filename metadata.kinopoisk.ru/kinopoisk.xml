@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="WINDOWS-1251"?>
+<?xml version="1.0" encoding="utf-8"?>
 <scraper date="2017-01-01" framework="1.1">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;\1|User-Agent=Mozilla/5.0%20%28compatible%3B%20MSIE%209.0%3B%20Windows%20NT%206.1%3B%20Trident/5.0%29&amp;Accept-Language=ru-RU&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;\1&lt;/url&gt;" dest="3">
 			<expression noclean="1">(https?://www\.kinopoisk\.ru/film/[0-9]*/)</expression>
 		</RegExp>
 	</NfoUrl>
-	<!-- Формируем поисковый URl -->
-	<CreateSearchUrl SearchStringEncoding="CP1251" dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;https://www.kinopoisk.ru/index.php?level=7&amp;from=forma&amp;result=adv&amp;m_act%5Bfrom%5D=forma&amp;m_act%5Bwhat%5D=content&amp;m_act%5Bfind%5D=\1&amp;m_act%5Byear%5D=$$2|User-Agent=Mozilla/5.0%20%28compatible%3B%20MSIE%209.0%3B%20Windows%20NT%206.1%3B%20Trident/5.0%29&amp;Accept-Language=ru-RU&lt;/url&gt;" dest="3">
+	<!-- Р¤РѕСЂРјРёСЂСѓРµРј РїРѕРёСЃРєРѕРІС‹Р№ URl -->
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;https://www.kinopoisk.ru/s/type/film/list/1/find/\1/m_act%5Byear%5D/$$2/&lt;/url&gt;" dest="3">
 			<expression noclean="1"/>
 		</RegExp>
 	</CreateSearchUrl>
-	<!-- Выбираем найденные совпадения -->
+	<!-- Р’С‹Р±РёСЂР°РµРј РЅР°Р№РґРµРЅРЅС‹Рµ СЃРѕРІРїР°РґРµРЅРёСЏ -->
 	<GetSearchResults dest="8">
-		<RegExp input="$$5" output="&lt;?xml encoding=&quot;windows-1251&quot;?&gt;&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
-			<!--Код если найден единственный вариант-->
+		<RegExp input="$$5" output="&lt;results sorted=&quot;yes&quot;&gt;\1&lt;/results&gt;" dest="8">
+			<!--РљРѕРґ РµСЃР»Рё РЅР°Р№РґРµРЅ РµРґРёРЅСЃС‚РІРµРЅРЅС‹Р№ РІР°СЂРёР°РЅС‚-->
 			<RegExp input="$$7" output="&lt;entity&gt;\1&lt;/entity&gt;" dest="5+">
 				<RegExp input="$$6" output="&lt;title&gt;\1&lt;/title&gt;" dest="7">
 					<RegExp input="$$1" output="\1&amp;nbsp;" dest="6">
@@ -27,42 +27,30 @@
 						<expression trim="1">(.*)</expression>
 					</RegExp>
 					<RegExp conditional="search_originaltitle" input="$$1" output=" [\1]" dest="6+">
-						<expression>itemprop="alternativeHeadline"&gt;(.*?)&lt;/span&gt;</expression>
+						<expression>itemprop="alternativeHeadline"&gt;([^&lt;]+)&lt;/span&gt;</expression>
 					</RegExp>
 					<expression noclean="1"/>
 				</RegExp>
 				<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="7+">
 					<expression>&lt;a href="/lists/m_act%5Byear%5D/(\d+)/"</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla/5.0%20%28compatible%3B%20MSIE%209.0%3B%20Windows%20NT%206.1%3B%20Trident/5.0%29&amp;Accept-Language=ru-RU&lt;/url&gt;" dest="7+">
+				<RegExp input="$$1" output="&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/level/1/film/\1/sr/1//url&gt;" dest="7+">
 					<expression>&lt;a href="/film/(\d+)/cast/"&gt;</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
-			<!--Код если найдено несколько вариантов-->
-			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla/5.0%20%28compatible%3B%20MSIE%209.0%3B%20Windows%20NT%206.1%3B%20Trident/5.0%29&amp;Accept-Language=ru-RU&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"[^&gt;]*?&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;</expression>
+			<!--РљРѕРґ РµСЃР»Рё РЅР°Р№РґРµРЅРѕ РЅРµСЃРєРѕР»СЊРєРѕ РІР°СЂРёР°РЅС‚РѕРІ-->
+			<RegExp conditional="!search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/film/\1/&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" fixchars="2,3">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"[^&gt;]*?&gt;(.+?)&lt;/a&gt;[^&gt;]*?(?:class="year"&gt;(\d{4})(?:[^&lt;]*?)&lt;)?</expression>
 			</RegExp>
-			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/level/1/film/\1/sr/1/|User-Agent=Mozilla/5.0%20%28compatible%3B%20MSIE%209.0%3B%20Windows%20NT%206.1%3B%20Trident/5.0%29&amp;Accept-Language=ru-RU&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-				<expression repeat="yes">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"[^&gt;]*?&gt;(.+?)&lt;/a&gt;[^&gt;]*?class="year"&gt;(\d+)&lt;.*?class="gray"&gt;(?:(?:\d+ мин)|)(.*?)(?:(?:, \d+ мин)|)&lt;</expression>
+			<RegExp conditional="search_originaltitle" input="$$1" output="&lt;entity&gt;&lt;title&gt;\2 [\4]&lt;/title&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;kinopoisk-mainurl-\1&quot;&gt;https://www.kinopoisk.ru/film/\1/&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+				<expression repeat="yes" fixchars="2,3,4">&lt;p class="name"&gt;&lt;a href="/level/1/film/(\d+)/sr/1/"[^&gt;]*?&gt;(.+?)&lt;/a&gt;[^&gt;]*?(?:class="year"&gt;(\d{4})(?:[^&lt;]*?)&lt;/span&gt;)?&lt;/p&gt;.*?class="gray"&gt;(?:(?:\d+ РјРёРЅ)|)(.*?)(?:(?:, \d+ РјРёРЅ)|)&lt;</expression>
 			</RegExp>
-			<!-- fix html entities from titles-->
-			<RegExp conditional="search_originaltitle" input="$$5" output="\1[]&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
-				<expression noclean="1"/>
-			</RegExp>
-			<RegExp conditional="!search_originaltitle" input="$$5" output="\1&amp;laquo;&amp;raquo;&amp;nbsp;" dest="5">
-				<expression noclean="1"/>
-			</RegExp>
-			<RegExp input="$$5" output="\1 " dest="5">
-				<expression noclean="1" repeat="yes">(.*?)&amp;nbsp;</expression>
-			</RegExp>
-			<RegExp input="$$5" output="\1&amp;#xBB;" dest="5">
-				<expression repeat="yes" noclean="1">(.*?)&amp;raquo;</expression>
-			</RegExp>
-			<RegExp input="$$5" output="\1&amp;#xAB;" dest="5">
-				<expression repeat="yes" noclean="1">(.*?)&amp;laquo;</expression>
-			</RegExp>
+			<!-- clear [] if there is no original title -->
 			<RegExp conditional="search_originaltitle" input="$$5" output="\1" dest="5">
+				<RegExp input="$$5" output="\1[]" dest="5">
+					<expression noclean="1"/>
+				</RegExp>
 				<expression repeat="yes" noclean="1">(.*?)\[\]</expression>
 			</RegExp>
 			<RegExp conditional="search_originaltitle" input="$$5" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url&gt;\3&lt;/url&gt;&lt;/entity&gt;" dest="5">
@@ -73,39 +61,39 @@
 		</RegExp>
 	</GetSearchResults>
 	<GetDetails clearbuffers="no" dest="3">
-		<!-- Используемые буфферы
-				$$11 - название фильма
-				$$12 - оригинальное название фильма
-				$$13 - год с kinopoisk
-				$$14 - год премьеры
-				$$15 - количество голосов на imdb
-				$$17 - русский фильм (true/false)
-				$$18 - год используемый для поиска
-				$$19 - название фильма используемое для поиска
-				$$20 - строка для поиска imdb id (формат: количество голосов:::год:::название)
+		<!-- РСЃРїРѕР»СЊР·СѓРµРјС‹Рµ Р±СѓС„С„РµСЂС‹
+				$$11 - РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
+				$$12 - РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРµ РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР°
+				$$13 - РіРѕРґ СЃ kinopoisk
+				$$14 - РіРѕРґ РїСЂРµРјСЊРµСЂС‹
+				$$15 - РєРѕР»РёС‡РµСЃС‚РІРѕ РіРѕР»РѕСЃРѕРІ РЅР° imdb
+				$$17 - СЂСѓСЃСЃРєРёР№ С„РёР»СЊРј (true/false)
+				$$18 - РіРѕРґ РёСЃРїРѕР»СЊР·СѓРµРјС‹Р№ РґР»СЏ РїРѕРёСЃРєР°
+				$$19 - РЅР°Р·РІР°РЅРёРµ С„РёР»СЊРјР° РёСЃРїРѕР»СЊР·СѓРµРјРѕРµ РґР»СЏ РїРѕРёСЃРєР°
+				$$20 - СЃС‚СЂРѕРєР° РґР»СЏ РїРѕРёСЃРєР° imdb id (С„РѕСЂРјР°С‚: РєРѕР»РёС‡РµСЃС‚РІРѕ РіРѕР»РѕСЃРѕРІ:::РіРѕРґ:::РЅР°Р·РІР°РЅРёРµ)
 		-->
-		<RegExp input="$$5" output="&lt;?xml encoding=&quot;windows-1251&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<!--TITLE (to UTF8)-->
 			<RegExp input="$$1" output="\1" dest="3">
 				<expression trim="1">&lt;h1 class=&quot;moviename-big&quot; itemprop=&quot;name&quot;&gt;(.+?)&lt;/h1&gt;</expression>
 			</RegExp>
-			<RegExp input="$$3" output="&lt;chain function=&quot;TitleToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5">
+			<RegExp input="$$3" output="&lt;chain function=&quot;TitleClean&quot;&gt;\1&lt;/chain&gt;" dest="5">
 				<expression/>
 			</RegExp>
 			<!--ORIGINALTITLE (to UTF8)-->
 			<RegExp input="$$1" output="\1" dest="2">
 				<expression trim="1">itemprop="alternativeHeadline"&gt;([^&lt;]*)&lt;/span&gt;</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;OriginaltitleToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;OriginalTitleClean&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression>(.+)</expression>
 			</RegExp>
-			<!-- проверяем русский фильм -->
+			<!-- РїСЂРѕРІРµСЂСЏРµРј СЂСѓСЃСЃРєРёР№ С„РёР»СЊРј -->
 			<RegExp input="$$2" output="no origtitle" dest="4">
 				<expression trim="1">^$</expression>
 			</RegExp>
 			<RegExp input="$$4" output="$$6" dest="4">
 				<RegExp input="$$3" output="rus" dest="6">
-					<expression trim="1">[а-яА-Я]</expression>
+					<expression trim="1">[Р°-СЏРђ-РЇ]</expression>
 				</RegExp>
 				<expression trim="1">no origtitle</expression>
 			</RegExp>
@@ -130,7 +118,7 @@
 			<RegExp input="$$1" output="\1" dest="14">
 				<expression>href=&quot;/film/[0-9]+/dates/&quot;[^&gt;]*&gt;[^&lt;]*([0-9]{4})&lt;/a&gt;</expression>
 			</RegExp>
-			<!-- количество голосов на imdb id -->
+			<!-- РєРѕР»РёС‡РµСЃС‚РІРѕ РіРѕР»РѕСЃРѕРІ РЅР° imdb id -->
 			<RegExp input="$$1" output="\1 " dest="15">
 				<expression>&lt;div style="color:#999;font:100 11px tahoma, verdana"&gt;[^\(]*\(([^\)]+)\)&lt;/div&gt;</expression>
 			</RegExp>
@@ -138,14 +126,14 @@
 				<expression repeat="yes">(\d+) </expression>
 			</RegExp>
 			<!-- try get IMDBID-->
-			<RegExp input="$$20" output="&lt;chain function=&quot;PrepareGetIMDBID&quot;&gt;XBMC need some data&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$20" output="&lt;chain function=&quot;PrepareGetIMDBID&quot;&gt;&lt;/chain&gt;" dest="5+">
 				<expression noclean="1"/>
 			</RegExp>
 			<!--TOP250-->
 			<RegExp input="$$1" output="&lt;top250&gt;\1&lt;/top250&gt;" dest="5+">
-				<expression>Топ250: &lt;a href="/level/20/#([0-9]+)</expression>
+				<expression>РўРѕРї250: &lt;a href="/level/20/#([0-9]+)</expression>
 			</RegExp>
-			<!--Рейтинг MPAA-->
+			<!--Р РµР№С‚РёРЅРі MPAA-->
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
 				<expression>/images/mpaa/([^.]+)[.]gif</expression>
 			</RegExp>
@@ -157,7 +145,7 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression>&lt;td class="time" id="runtime"&gt;([0-9]+)</expression>
 			</RegExp>
-			<!--Рейтинг и голоса -->
+			<!--Р РµР№С‚РёРЅРі Рё РіРѕР»РѕСЃР° -->
 			<RegExp input="$INFO[RatingSource]" output="$$2" dest="5+">
 				<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;" dest="2">
 					<expression>IMDb: ([0-9.]+) \(([0-9\s]+)\)&lt;/div&gt;</expression>
@@ -181,22 +169,16 @@
 				<expression repeat="yes">&lt;a href=&quot;/lists/m_act%5Bgenre%5D/\d+/&quot;[&gt;]([^&lt;]+)</expression>
 			</RegExp>
 			<!--PLOT and OUTLINE-->
-			<!-- and fixing paragraphs in html and cp1251 entities -->
+			<!-- and fixing paragraphs in html entities -->
 			<RegExp input="none" output="" dest="2">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;PlotToUTF8&quot;&gt;\1&lt;/chain&gt;" dest="5+">
-				<RegExp input="$$1" output="\1&amp;#151;&amp;#133;&amp;nbsp;&amp;nbsp;&amp;#133;&lt;=end=&gt;" dest="2">
+			<RegExp input="$$2" output="&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
+				<RegExp input="$$1" output="\1&amp;#151;&amp;#133;&lt;=end=&gt;" dest="2">
 					<expression noclean="1">itemprop=&quot;description&quot;&gt;(.*?)&lt;/div&gt;</expression>
 				</RegExp>
 				<RegExp input="$$2" output="\1[CR]" dest="2">
 					<expression repeat="yes" noclean="1" trim="1">(.*?)(?:&lt;br /&gt;\r\n&lt;br /&gt;\r\n|&lt;br /&gt;&lt;br /&gt;|&lt;br&gt;&lt;br&gt;|&lt;=end=&gt;)</expression>
-				</RegExp>
-				<RegExp input="$$2" output="\1&amp;hellip;" dest="2">
-					<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;&amp;#133;</expression>
-				</RegExp>
-				<RegExp input="$$2" output="\1 " dest="2">
-					<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;</expression>
 				</RegExp>
 				<RegExp input="$$2" output="\1&amp;hellip;" dest="2">
 					<expression repeat="yes" noclean="1">(.*?)&amp;#133;</expression>
@@ -204,7 +186,7 @@
 				<RegExp input="$$2" output="\1&amp;mdash;" dest="2">
 					<expression repeat="yes" noclean="1">(.*?)&amp;#151;</expression>
 				</RegExp>
-				<expression>(.*)&amp;mdash;</expression>
+				<expression fixchars="1">(.*)&amp;mdash;</expression>-->
 			</RegExp>
 			<!--STUDIO-->
 			<RegExp input="$$1" output="&lt;url cache=&quot;kinopoisk-studio-\2&quot; function=&quot;STUDIOS&quot;&gt;https://www.kinopoisk.ru\1&lt;/url&gt;" dest="5+">
@@ -214,7 +196,7 @@
 			<RegExp input="$$1" output="&lt;url cache=&quot;kinopoisk-cast-\2&quot; function=&quot;PEOPLE&quot;&gt;https://www.kinopoisk.ru\1&lt;/url&gt;" dest="5+">
 				<expression>(/film/(\d+)/cast/)</expression>
 			</RegExp>
-			<!--POSTERS Берем с кинопоиска сначала картинку с титульной, потом обложки, потом просто постеры -->
+			<!--POSTERS Р‘РµСЂРµРј СЃ РєРёРЅРѕРїРѕРёСЃРєР° СЃРЅР°С‡Р°Р»Р° РєР°СЂС‚РёРЅРєСѓ СЃ С‚РёС‚СѓР»СЊРЅРѕР№, РїРѕС‚РѕРј РѕР±Р»РѕР¶РєРё, РїРѕС‚РѕРј РїСЂРѕСЃС‚Рѕ РїРѕСЃС‚РµСЂС‹ -->
 			<RegExp conditional="posters_from_kinopoisk" input="$$1" output="&lt;thumb preview=&quot;\2&quot;&gt;\3\1&lt;/thumb&gt;" dest="5+">
 				<expression>class=&quot;popupBigImage&quot;[^&gt;]*&apos;(/images/[^&gt;]*jpg)&apos;[^&gt;]*&gt;[^&gt;]*((https?://[^/&gt;]*)/[^&gt;]*[.]jpg)</expression>
 			</RegExp>
@@ -288,49 +270,49 @@
 		</RegExp>
 	</GMP_SINGLE>
 	<GetTrailers clearbuffers="no" dest="4">
-		<!-- Используемые буфферы
-			$$10 - RegexpExpression, возвращающее блоки трейлеров: {1} HTML-блок всего ролика {2} Что угодно, если русский, либо пусто {3} Название
-			$$11 - RegexpExpression, возвращающее сами трейлеры:   {1} Что угодно, если ролик HD, либо пусто {2} ссылка на ролик {3} качество - "Высокое качество" и т.д.
-			$$19 - русские трейлеры
-			$$20 - нерусские трейлеры
+		<!-- РСЃРїРѕР»СЊР·СѓРµРјС‹Рµ Р±СѓС„С„РµСЂС‹
+			$$10 - RegexpExpression, РІРѕР·РІСЂР°С‰Р°СЋС‰РµРµ Р±Р»РѕРєРё С‚СЂРµР№Р»РµСЂРѕРІ: {1} HTML-Р±Р»РѕРє РІСЃРµРіРѕ СЂРѕР»РёРєР° {2} Р§С‚Рѕ СѓРіРѕРґРЅРѕ, РµСЃР»Рё СЂСѓСЃСЃРєРёР№, Р»РёР±Рѕ РїСѓСЃС‚Рѕ {3} РќР°Р·РІР°РЅРёРµ
+			$$11 - RegexpExpression, РІРѕР·РІСЂР°С‰Р°СЋС‰РµРµ СЃР°РјРё С‚СЂРµР№Р»РµСЂС‹:   {1} Р§С‚Рѕ СѓРіРѕРґРЅРѕ, РµСЃР»Рё СЂРѕР»РёРє HD, Р»РёР±Рѕ РїСѓСЃС‚Рѕ {2} СЃСЃС‹Р»РєР° РЅР° СЂРѕР»РёРє {3} РєР°С‡РµСЃС‚РІРѕ - "Р’С‹СЃРѕРєРѕРµ РєР°С‡РµСЃС‚РІРѕ" Рё С‚.Рґ.
+			$$19 - СЂСѓСЃСЃРєРёРµ С‚СЂРµР№Р»РµСЂС‹
+			$$20 - РЅРµСЂСѓСЃСЃРєРёРµ С‚СЂРµР№Р»РµСЂС‹
 		-->
-		<RegExp input="" output="&lt;!-- ролик --&gt;([^!]*?&lt;div style=&quot;position: relative&quot;&gt;[^&lt;]*(?:&lt;div[^&gt;]*(flag2)&quot;)*[^!]*?class=&quot;all&quot;&gt;([^&lt;]+).*?)&lt;!-- /ролик --&gt;" dest="10">
+		<RegExp input="" output="&lt;!-- СЂРѕР»РёРє --&gt;([^!]*?&lt;div style=&quot;position: relative&quot;&gt;[^&lt;]*(?:&lt;div[^&gt;]*(flag2)&quot;)*[^!]*?class=&quot;all&quot;&gt;([^&lt;]+).*?)&lt;!-- /СЂРѕР»РёРє --&gt;" dest="10">
 			<expression/>
 		</RegExp>
 		<RegExp input="" output="&lt;td width=20&gt;(?:&lt;img src=&quot;https?://[^&quot;]+/icon-(hd)2.gif&quot;)*[^&lt;]*&lt;/td[^&lt;]*&lt;td[^&lt;]*&lt;a href=&quot;(?:.*?)&amp;type=trailer&amp;link=([^&quot;]+)&quot;[^&gt;]*?&gt;(?:&lt;b&gt;)*(.+?)(?:&lt;/b&gt;)*&lt;/a&gt;" dest="11">
 			<expression/>
 		</RegExp>
-		<!-- Собираем всё видео -->
+		<!-- РЎРѕР±РёСЂР°РµРј РІСЃС‘ РІРёРґРµРѕ -->
 		<RegExp input="$$1" output="&lt;trailer tilte=&quot;\3&quot; flag=&quot;\2&quot;&gt;&lt;html&gt;\1&lt;/html&gt;&lt;/trailer&gt;" dest="3">
 			<expression repeat="yes" noclean="1">$$10</expression>
 		</RegExp>
 		
-		<!-- Оставляем только трейлеры и тизеры-->
+		<!-- РћСЃС‚Р°РІР»СЏРµРј С‚РѕР»СЊРєРѕ С‚СЂРµР№Р»РµСЂС‹ Рё С‚РёР·РµСЂС‹-->
 		<RegExp input="$$3" output="\1" dest="2">
-			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[Тт]рейлер[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
+			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[РўС‚]СЂРµР№Р»РµСЂ[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
 		</RegExp>		
 		<RegExp input="$$3" output="\1" dest="2+">
-			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[Тт]изер[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
+			<expression repeat="yes" noclean="1">(&lt;trailer tilte=&quot;[^&quot;]*[РўС‚]РёР·РµСЂ[^&quot;]*&quot;.*?&lt;/trailer&gt;)</expression>
 		</RegExp>		
-		<!-- Если трейлеры и тизеры не найдены, берем все подряд -->
+		<!-- Р•СЃР»Рё С‚СЂРµР№Р»РµСЂС‹ Рё С‚РёР·РµСЂС‹ РЅРµ РЅР°Р№РґРµРЅС‹, Р±РµСЂРµРј РІСЃРµ РїРѕРґСЂСЏРґ -->
 		<RegExp conditional="GetAnyVideo" input="$$2" output="$$3" dest="2">
 			<expression noclean="1">^$</expression>
 		</RegExp>		
-		<!-- Берем с русским флажком -->
+		<!-- Р‘РµСЂРµРј СЃ СЂСѓСЃСЃРєРёРј С„Р»Р°Р¶РєРѕРј -->
 		<RegExp input="$$2" output="\1" dest="3">
 			<expression noclean="1" repeat="yes" clear="yes">(&lt;trailer tilte=&quot;[^&quot;]*&quot; flag=&quot;[^&quot;]+&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 		</RegExp>
 		<RegExp input="$$3" output="&lt;trailer lang=&quot;ru&quot; type=&quot;\1&quot; quality=&quot;\3&quot;&gt;\2&lt;/trailer&gt;" dest="19">
 			<expression repeat="yes">$$11</expression>
 		</RegExp>
-		<!-- Берем без русского флажка -->
+		<!-- Р‘РµСЂРµРј Р±РµР· СЂСѓСЃСЃРєРѕРіРѕ С„Р»Р°Р¶РєР° -->
 		<RegExp input="$$2" output="\1" dest="3+">
 			<expression noclean="1" repeat="yes" clear="yes">(&lt;trailer tilte=&quot;[^&quot;]*&quot; flag=&quot;&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 		</RegExp>
 		<RegExp input="$$3" output="&lt;trailer lang=&quot;&quot; type=&quot;\1&quot; quality=&quot;\3&quot;&gt;\2&lt;/trailer&gt;" dest="20">
 			<expression repeat="yes">$$11</expression>
 		</RegExp>
-		<!-- В зависимости от настроек, сортируем либо русские и нерусские отдельно, либо всей кучей -->
+		<!-- Р’ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РЅР°СЃС‚СЂРѕРµРє, СЃРѕСЂС‚РёСЂСѓРµРј Р»РёР±Рѕ СЂСѓСЃСЃРєРёРµ Рё РЅРµСЂСѓСЃСЃРєРёРµ РѕС‚РґРµР»СЊРЅРѕ, Р»РёР±Рѕ РІСЃРµР№ РєСѓС‡РµР№ -->
 		<RegExp input="$INFO[TrailerPriority]" output="&lt;details&gt;&lt;chain function=&quot;SortTrailers&quot;&gt;foreign&lt;/chain&gt;&lt;chain function=&quot;SortTrailers&quot;&gt;russian&lt;/chain&gt;&lt;/details&gt;" dest="4+">
 			<expression>0</expression>
 		</RegExp>
@@ -348,69 +330,68 @@
 		<RegExp input="$$1" output="$$19$$20" dest="5">
 			<expression clear="no">all</expression>
 		</RegExp>
-		<!-- Перемещаем HD в начало списка, ограничивая и сортируя по качеству -->
+		<!-- РџРµСЂРµРјРµС‰Р°РµРј HD РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°, РѕРіСЂР°РЅРёС‡РёРІР°СЏ Рё СЃРѕСЂС‚РёСЂСѓСЏ РїРѕ РєР°С‡РµСЃС‚РІСѓ -->
 		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Высокое[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Р’С‹СЃРѕРєРѕРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression clear="yes">3</expression>
 		</RegExp>
 		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4+">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Среднее[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;РЎСЂРµРґРЅРµРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression>3|2</expression>
 		</RegExp>
 		<RegExp input="$INFO[HdTrailerMaxQ]" output="$$6" dest="4+">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;Низкое[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;[^&quot;]+&quot; quality=&quot;РќРёР·РєРѕРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression>3|2|1</expression>
 		</RegExp>
-		<!-- В конец списка помещаем "не HD" ролики, ограничивая и сортируя по качеству -->
+		<!-- Р’ РєРѕРЅРµС† СЃРїРёСЃРєР° РїРѕРјРµС‰Р°РµРј "РЅРµ HD" СЂРѕР»РёРєРё, РѕРіСЂР°РЅРёС‡РёРІР°СЏ Рё СЃРѕСЂС‚РёСЂСѓСЏ РїРѕ РєР°С‡РµСЃС‚РІСѓ -->
 		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Высокое[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Р’С‹СЃРѕРєРѕРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression>3</expression>
 		</RegExp>
 		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Среднее[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;РЎСЂРµРґРЅРµРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression>3|2</expression>
 		</RegExp>
 		<RegExp input="$INFO[SdTrailerMaxQ]" output="$$6" dest="4+">
 			<RegExp input="$$5" output="\1" dest="6">
-				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;Низкое[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
+				<expression repeat="yes" noclean="1" clear="yes">(&lt;trailer lang=&quot;[^&quot;]*&quot; type=&quot;&quot; quality=&quot;РќРёР·РєРѕРµ[^&quot;]*&quot;&gt;.*?&lt;/trailer&gt;)</expression>
 			</RegExp>
 			<expression>3|2|1</expression>
 		</RegExp>
-		<RegExp input="" output="&lt;?xml encoding=&quot;windows-1251&quot;?&gt;&lt;details&gt;$$4&lt;/details&gt;" dest="4">
+		<RegExp input="" output="&lt;details&gt;$$4&lt;/details&gt;" dest="4">
 			<expression/>
 		</RegExp>
 	</SortTrailers>
 	<STUDIOS dest="4">
-		<RegExp input="$$8" output="&lt;?xml encoding=&quot;windows-1251&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="4">
+		<RegExp input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="\1" dest="7">
-				<expression noclean="1">&lt;b&gt;Производство:&lt;/b&gt;(.*?)&lt;/table&gt;</expression>
+				<expression noclean="1">&lt;b&gt;РџСЂРѕРёР·РІРѕРґСЃС‚РІРѕ:&lt;/b&gt;(.*?)&lt;/table&gt;</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;studio&gt;\1&lt;/studio&gt;" dest="7">
 				<expression repeat="yes">&lt;a href="/lists/m_act%5Bstudio%5D/\d+/" class="all"&gt;(.+?)&lt;/a&gt;</expression>
 			</RegExp>
-			<!--fix &nbsp-->
+			<!-- remove &nbsp -->
 			<RegExp input="$$7" output="\1&amp;nbsp;" dest="7">
 				<expression noclean="1"/>
 			</RegExp>
 			<RegExp input="$$7" output="\1 " dest="8">
 				<expression noclean="1" repeat="yes">(.*?)&amp;nbsp;</expression>
 			</RegExp>
-			<!-- -->
 			<expression noclean="1"/>
 		</RegExp>
 	</STUDIOS>
 	<PEOPLE dest="10">
-		<RegExp input="$$7" output="&lt;?xml encoding=&quot;windows-1251&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="10">
+		<RegExp input="$$7" output="&lt;details&gt;\1&lt;/details&gt;" dest="10">
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression clear="yes" noclean="1">&lt;a name=&quot;actor&quot;&gt;(.*?)&lt;a name</expression>
 			</RegExp>
@@ -418,12 +399,12 @@
 				<expression repeat="yes" trim="3">title=&quot;/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)&quot; alt=.+?&quot;name&quot;&gt;&lt;a href=&quot;/name/\d+/&quot;&gt;(.*?)&lt;/a&gt;.+?&quot;role&quot;&gt;[. ]*([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<RegExp conditional="rus_actor_names" input="$$9" output="&lt;n&gt;\2&lt;r&gt;\3&lt;t&gt;https://st.kp.yandex.net/images/actor/\1&lt;/e&gt;" dest="9">
-				<expression repeat="yes" trim="3">title=&quot;/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)&quot; alt=.+?&quot;name&quot;&gt;&lt;a href=&quot;/name/\d+/&quot;&gt;([а-яА-Я][^&lt;]*)&lt;/a&gt;.*?&quot;role&quot;&gt;[. ]*([^&lt;]*)&lt;</expression>
+				<expression repeat="yes" trim="3">title=&quot;/images/(?:sm_actor/([0-9]+.jpg)|no-poster.gif)&quot; alt=.+?&quot;name&quot;&gt;&lt;a href=&quot;/name/\d+/&quot;&gt;([Р°-СЏРђ-РЇ][^&lt;]*)&lt;/a&gt;.*?&quot;role&quot;&gt;[. ]*([^&lt;]*)&lt;</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;thumb&gt;\3&lt;/thumb&gt;&lt;/actor&gt;" dest="7">
-				<expression repeat="yes" trim="3">&lt;n&gt;([^&lt;]+)&lt;r&gt;(?:играет |)([^&lt;,]+)[^&lt;]*&lt;t&gt;(?:(https?://st.kp.yandex.net/images/actor/[0-9]+.jpg)&lt;/e&gt;|https?://st.kp.yandex.net/images/actor/&lt;/e&gt;)</expression>
+				<expression repeat="yes" trim="3">&lt;n&gt;([^&lt;]+)&lt;r&gt;(?:РёРіСЂР°РµС‚ |)([^&lt;,]+)[^&lt;]*&lt;t&gt;(?:(https?://st.kp.yandex.net/images/actor/[0-9]+.jpg)&lt;/e&gt;|https?://st.kp.yandex.net/images/actor/&lt;/e&gt;)</expression>
 			</RegExp>
-			<!-- убираем &nbsp; из ролей актёров -->
+			<!-- СѓР±РёСЂР°РµРј &nbsp; РёР· СЂРѕР»РµР№ Р°РєС‚С‘СЂРѕРІ -->
 			<RegExp input="$$7" output="\1&amp;nbsp;" dest="7">
 				<expression noclean="1"/>
 			</RegExp>
@@ -447,7 +428,7 @@
 		</RegExp>
 	</PEOPLE>
 	<GetIMDBData dest="4">
-		<RegExp input="$$3" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="4">
+		<RegExp input="$$3" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;" dest="3">
 				<expression/>
 			</RegExp>
@@ -467,9 +448,18 @@
 		<RegExp input="none" output="" dest="4">
 			<expression/>
 		</RegExp>
-		<RegExp input="none" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;$$2&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;chain function=&quot;GetIMDBData&quot;&gt;\1&lt;/chain&gt;" dest="2">
-				<expression clear="yes">imdb_id":"([^"]*)"</expression>
+		<RegExp input="none" output="&lt;details&gt;$$2&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="3">
+				<expression clear="yes">&quot;imdb_id&quot;:&quot;([^&quot;]*)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$3" output="$$2" dest="3">
+				<RegExp input="$$1" output="\1" dest="2">
+					<expression>&quot;id&quot;:&quot;([0-9]*)&quot;</expression>
+				</RegExp>
+				<expression>^$</expression>
+			</RegExp>
+			<RegExp input="$$3" output="&lt;chain function=&quot;GetIMDBData&quot;&gt;\1&lt;/chain&gt;" dest="2">
+				<expression/>
 			</RegExp>
 			<expression/>
 		</RegExp>
@@ -478,18 +468,18 @@
 		<RegExp input="none" output="" dest="4">
 			<expression/>
 		</RegExp>
-		<RegExp input="$$2" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<!-- выбираем по названию фильма -->
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<!-- РІС‹Р±РёСЂР°РµРј РїРѕ РЅР°Р·РІР°РЅРёСЋ С„РёР»СЊРјР° -->
 			<RegExp input="$$3" output="$$6" dest="3">
-				<!-- по оригинальному названию и дате релиза -->
+				<!-- РїРѕ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРјСѓ РЅР°Р·РІР°РЅРёСЋ Рё РґР°С‚Рµ СЂРµР»РёР·Р° -->
 				<RegExp input="$$1" output="&lt;id&gt;\2&lt;/id&gt;&lt;title&gt;\3&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;" dest="6">
 					<expression repeat="yes" clear="yes">&quot;release_date&quot;:&quot;([0-9]+)-.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;</expression>
 				</RegExp>
-				<!-- по названию и дате релиза -->
+				<!-- РїРѕ РЅР°Р·РІР°РЅРёСЋ Рё РґР°С‚Рµ СЂРµР»РёР·Р° -->
 				<RegExp input="$$1" output="&lt;id&gt;\2&lt;/id&gt;&lt;title&gt;\3&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;" dest="6+">
 					<expression repeat="yes">&quot;release_date&quot;:&quot;([0-9]+)-.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;[^&quot;]*&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;,&quot;title&quot;:&quot;([^&quot;]*)&quot;</expression>
 				</RegExp>
-				<!-- по оригинальному названию и без релиза -->
+				<!-- РїРѕ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРјСѓ РЅР°Р·РІР°РЅРёСЋ Рё Р±РµР· СЂРµР»РёР·Р° -->
 				<RegExp input="$$1" output="&lt;id&gt;\1&lt;/id&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;null&lt;/year&gt;" dest="6+">
 					<expression repeat="yes">&quot;release_date&quot;:null.*?&quot;id&quot;:([0-9]*),&quot;original_title&quot;:&quot;([^&quot;]*)&quot;,&quot;original_language&quot;:&quot;[^&quot;]*&quot;</expression>
 				</RegExp>
@@ -498,7 +488,7 @@
 			<RegExp input="$$3" output="\1" dest="7">
 				<expression clear="yes">&lt;id&gt;(\d+)&lt;/id&gt;&lt;title&gt;($$11|$$19)&lt;/title&gt;&lt;year&gt;($$18|null)&lt;/year&gt;</expression>
 			</RegExp>
-			<!-- выбираем первое если не нашли по названию -->
+			<!-- РІС‹Р±РёСЂР°РµРј РїРµСЂРІРѕРµ РµСЃР»Рё РЅРµ РЅР°С€Р»Рё РїРѕ РЅР°Р·РІР°РЅРёСЋ -->
 			<RegExp input="$$7" output="$$6" dest="7">
 				<RegExp input="$$1" output="\2" dest="6">
 					<expression clear="yes">&quot;id&quot;:([0-9]*),</expression>
@@ -525,127 +515,68 @@
 			<expression/>
 		</RegExp>
 		<RegExp conditional="use_world_premier" input="none" output="$$14" dest="18">
+			<!-- if world premier is empty then fallback to production year -->
+			<RegExp conditional="use_world_premier" input="$$14" output="$$13" dest="14">
+				<expression>^$</expression>
+			</RegExp>
 			<expression/>
-		</RegExp>
-		<RegExp input="$$15" output="0" dest="15">
-			<expression>^$</expression>
 		</RegExp>
 		<RegExp input="none" output="$$15:::$$18:::$$19" dest="20">
-			<expression/>
-		</RegExp>
-		<RegExp input="none" output="" dest="6">
-			<expression/>
-		</RegExp>
-		<RegExp input="none" output="" dest="7">
-			<expression/>
-		</RegExp>
-		<RegExp input="none" output="" dest="8">
-			<expression/>
-		</RegExp>
-		<RegExp conditional="search_imdb_ID" input="$$8" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$20" output="&lt;url function=&quot;SearchIMDBId&quot;&gt;http://api.tmdb.org/3/search/movie?api_key=b7390ebddcff90de173e664795cbea5b&amp;amp;query=\3&amp;amp;year=\2&lt;/url&gt;" dest="8">
-				<expression noclean="1" encode="3">(\d+):::(\d+):::(.+)</expression>
+			<RegExp input="$$15" output="0" dest="15">
+				<expression>^$</expression>
 			</RegExp>
-			<expression noclean="1"/>
+			<expression/>
+		</RegExp>
+		<RegExp conditional="search_imdb_ID" input="$$8" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$20" output="&lt;url function=&quot;SearchIMDBId&quot;&gt;http://api.tmdb.org/3/search/movie?api_key=b7390ebddcff90de173e664795cbea5b&amp;amp;query=\3&amp;amp;year=\2&lt;/url&gt;" dest="8">
+				<expression noclean="1" encode="3" clear="yes">(\d+):::(\d+):::(.+)</expression>
+			</RegExp>
+			<expression noclean="1">(.+)</expression>
 		</RegExp>
 	</PrepareGetIMDBID>
-	<!-- UTF8 chain functions -->
-	<TitleToUTF8 clearbuffers="no" dest="4">
+	<!-- clean chain functions -->
+	<TitleClean clearbuffers="no" dest="4">
 		<RegExp input="none" output="" dest="4">
 			<expression/>
 		</RegExp>
-		<RegExp input="$$11" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="\1&amp;laquo;&amp;raquo;&amp;nbsp;" dest="11">
-				<expression noclean="1"/>
+		<RegExp input="$$11" output="&lt;details&gt;&lt;title&gt;\1&lt;/title&gt;&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="11">
+				<expression fixchars="1"/>
 			</RegExp>
-			<RegExp input="$$11" output="\1 " dest="11">
-				<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;</expression>
-			</RegExp>
-			<RegExp input="$$11" output="\1&amp;#xBB;" dest="11">
-				<expression repeat="yes" noclean="1">(.*?)&amp;raquo;</expression>
-			</RegExp>
-			<RegExp input="$$11" output="\1&amp;#xAB;" dest="11">
-				<expression repeat="yes" noclean="1">(.*?)&amp;laquo;</expression>
-			</RegExp>
-			<RegExp input="$$11" output="\1" dest="11">
-				<expression noclean="1">(.*)&amp;#xAB;</expression>
-			</RegExp>
-			<!-- удалем мусор -->
+			<!-- СѓРґР°Р»РµРј РјСѓСЃРѕСЂ -->
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*?), The$</expression>
 			</RegExp>
 			<RegExp input="$$11" output="\1" dest="11">
-				<expression noclean="1">(.*?) в 3D$</expression>
+				<expression noclean="1">(.*?) РІ 3D$</expression>
 			</RegExp>
 			<RegExp input="$$11" output="\1" dest="11">
 				<expression noclean="1">(.*?) 3D$</expression>
 			</RegExp>
-			<!-- название для поиска imdb id -->
+			<!-- РЅР°Р·РІР°РЅРёРµ РґР»СЏ РїРѕРёСЃРєР° imdb id -->
 			<RegExp input="$$11" output="\1" dest="19">
 				<expression noclean="1"/>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
-	</TitleToUTF8>
-	<OriginaltitleToUTF8 clearbuffers="no" dest="4">
+	</TitleClean>
+	<OriginalTitleClean clearbuffers="no" dest="4">
 		<RegExp input="none" output="" dest="4">
 			<expression/>
 		</RegExp>
-		<RegExp input="$$12" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;&lt;originaltitle&gt;\1&lt;/originaltitle&gt;&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="\1&amp;laquo;&amp;raquo;&amp;nbsp;" dest="12">
-				<expression noclean="1"/>
+		<RegExp input="$$12" output="&lt;details&gt;&lt;originaltitle&gt;\1&lt;/originaltitle&gt;&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="12">
+				<expression fixchars="1"/>
 			</RegExp>
-			<RegExp input="$$12" output="\1 " dest="12">
-				<expression repeat="yes" noclean="1">(.*?)&amp;nbsp;</expression>
-			</RegExp>
-			<RegExp input="$$12" output="\1&amp;#xBB;" dest="12">
-				<expression repeat="yes" noclean="1">(.*?)&amp;raquo;</expression>
-			</RegExp>
-			<RegExp input="$$12" output="\1&amp;#xAB;" dest="12">
-				<expression repeat="yes" noclean="1">(.*?)&amp;laquo;</expression>
-			</RegExp>
-			<RegExp input="$$12" output="\1" dest="12">
-				<expression noclean="1">(.*)&amp;#xAB;</expression>
-			</RegExp>
-			<!-- удалем мусор -->
+			<!-- СѓРґР°Р»РµРј РјСѓСЃРѕСЂ -->
 			<RegExp input="$$12" output="\1" dest="12">
 				<expression noclean="1">(.*?) 3D$</expression>
 			</RegExp>
-			<!-- если есть оригинальное название для поиска imdb id -->
+			<!-- РµСЃР»Рё РµСЃС‚СЊ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРµ РЅР°Р·РІР°РЅРёРµ РґР»СЏ РїРѕРёСЃРєР° imdb id -->
 			<RegExp input="$$12" output="\1" dest="19">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
-	</OriginaltitleToUTF8>
-	<PlotToUTF8 dest="4">
-		<RegExp input="none" output="" dest="4">
-			<expression/>
-		</RegExp>
-		<RegExp input="$$1" output="\1&amp;hellip;&amp;mdash;&amp;laquo;&amp;raquo;" dest="1">
-			<expression noclean="1"/>
-		</RegExp>
-		<RegExp input="$$1" output="\1&amp;#xBB;" dest="1">
-			<expression repeat="yes" noclean="1">(.*?)&amp;raquo;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="\1&amp;#xAB;" dest="1">
-			<expression repeat="yes" noclean="1">(.*?)&amp;laquo;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="\1" dest="1">
-			<expression noclean="1">(.*)&amp;#xAB;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="\1&amp;#8212;" dest="1">
-			<expression repeat="yes" noclean="1">(.*?)&amp;mdash;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="\1&amp;#8230;" dest="1">
-			<expression repeat="yes" noclean="1">(.*?)&amp;hellip;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="\1" dest="1">
-			<expression noclean="1">(.*)&amp;#8230;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="&lt;?xml encoding=&quot;utf-8&quot;?&gt;&lt;details&gt;&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="4">
-			<expression/>
-		</RegExp>
-	</PlotToUTF8>
-	<!-- END UTF8 functions -->
+	</OriginalTitleClean>
 </scraper>
