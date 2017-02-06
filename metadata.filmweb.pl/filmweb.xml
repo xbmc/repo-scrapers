@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
     GLOBALNE:
     $$20 - Filmweb ID
@@ -8,18 +8,15 @@
     $$15 - Rok
     $$11 - URL do filmu
 !-->
-<scraper framework="1.1" date="2017-01-03">
+<scraper framework="1.1" date="2017-01-10">
     
     <!-- Sprawdza plik NFO !-->
     <NfoUrl dest="3">
         <RegExp conditional="NFOUrl" input="$$1" output="&lt;url&gt;http://www.filmweb.pl/\1&lt;/url&gt;" dest="3">
-            <expression>filmweb.pl/((film/)?([-a-zA-Z0-9@:%\._\+~#=]+))</expression>
+            <expression>filmweb.pl/((film/)?([-a-zA-Z0-9@:%\._\+~#=\?]+))</expression>
         </RegExp>
         <RegExp conditional="NFOUrl" input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;" dest="3">
             <expression>^([0-9]+)$</expression>
-        </RegExp>
-        <RegExp conditional="NFOUrl" input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;" dest="3">
-            <expression>Film.id:([0-9]+)</expression>
         </RegExp>
     </NfoUrl>
     
@@ -59,14 +56,14 @@
             </RegExp>
             
             <!-- FILMWEB URL !-->
-            <RegExp input="$$1" output="http://www.filmweb.pl\1" dest="11">
-                <expression>v:Review-aggregate&quot;? href=&quot;([^&quot;]+)&quot;</expression>
+            <RegExp input="$$1" output="\1" dest="11">
+                <expression>og:url&quot; content=&quot;([^&quot;]+)&quot;</expression>
             </RegExp>
             
             <!-- TITLE !-->
             <RegExp input="$$6" output="\1" dest="5+">
                 <RegExp input="$$1" output="\1" dest="17">
-                    <expression fixchars="1">v:name&quot;?[^&gt;]+&gt;([^&lt;]+)&lt;</expression>
+                    <expression fixchars="1" clear="yes">&lt;h1[^&gt;]+filmTitle[^&gt;]+&gt;[^&gt;]+&gt;([^&lt;]+)&lt;</expression>
                 </RegExp>
                 <RegExp conditional="!UseOriginalTitle" input="$$17" output="&lt;title&gt;\1&lt;/title&gt;" dest="6">
                     <expression />
@@ -173,8 +170,11 @@
                     <expression clear="yes">(.+)</expression>
                 </RegExp>
                 <!-- FILMWEB DIRECTOR !-->
-                <RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="6">
-                    <expression repeat="yes" fixchars="1">v:directedBy&quot;&gt;([^&lt;]+)&lt;</expression>
+                <RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="6">
+                    <RegExp input="$$1" output="\1" dest="7">
+                        <expression noclean="1" clear="yes">reżyseria:(.*?)&lt;/ul&gt;</expression>
+                    </RegExp>
+                    <expression repeat="yes" fixchars="1">&gt;([^&lt;]+)&lt;/a</expression>
                 </RegExp>
                 <expression noclean="1">(.+)</expression>
             </RegExp>
@@ -238,7 +238,7 @@
                 </RegExp>
                 <!-- FILMWEB RATING !-->
                 <RegExp input="$$1" output="&lt;rating&gt;\1.\2&lt;/rating&gt;" dest="6">
-                    <expression>v:average&quot;&gt; ([0-9]*),([0-9]*)&lt;</expression>
+                    <expression>ratingValue&quot;&gt; ([0-9]*),([0-9]*)&lt;</expression>
                 </RegExp>
                 <expression noclean="1">(.+)</expression>
             </RegExp>
@@ -251,7 +251,7 @@
                 </RegExp>
                 <!-- FILMWEB VOTES !-->
                 <RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="6">
-                    <expression>v:votes&quot;&gt;([^&lt;]+)</expression>
+                    <expression>ratingCount&quot;&gt;([^&lt;]+)</expression>
                 </RegExp>
                 <expression noclean="1">(.+)</expression>
             </RegExp>
@@ -309,10 +309,10 @@
                 </RegExp>
                 <!-- FILMWEB PLOT !-->
                 <RegExp conditional="!GetDVDPlot" input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="6">
-                    <expression fixchars="1">v:summary&quot;&gt;(.*?)&lt;/</expression>
+                    <expression fixchars="1">itemprop=&quot;?description&quot;?&gt;(.*?)&lt;/</expression>
                 </RegExp>
                 <RegExp conditional="GetDVDPlot" input="$$1" output="&lt;url function=&quot;DVD_PLOT&quot;&gt;$$11/descs&lt;/url&gt;" dest="6">
-                    <expression fixchars="1">v:summary&quot;&gt;(.*?)&lt;/</expression>
+                    <expression fixchars="1">itemprop=&quot;?description&quot;?&gt;(.*?)&lt;/</expression>
                 </RegExp>
                 <expression noclean="1">(.+)</expression>
             </RegExp>

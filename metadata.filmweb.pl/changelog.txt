@@ -1,3 +1,9 @@
+[B]2.3.3[/B]
+- Poprawka: ogólne po zmianach na filmweb.pl
+[B]2.3.2[/B]
+- Poprawka: pobieranie polskiego tytułu
+[B]2.3.1[/B]
+- Poprawka: rozpoznawanie danych w plikach nfo
 [B]2.3.0[/B]
 - Dodano: więcej fallback'ów do TMDb
 - Dodano: możliwość kontroli nad pobieranymi okładkami
