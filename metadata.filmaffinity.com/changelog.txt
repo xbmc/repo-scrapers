@@ -1,3 +1,7 @@
+[B]1.7.2[/B]
+
+- Revisada la búsqueda de año en FA
+
 [B]1.7.1[/B]
 
 - Revisada la búsqueda avanzada de título en FA
