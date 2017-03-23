@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.musicvideos.theaudiodb.com"
        name="TheAudioDb.com for Music Videos"
-       version="1.2.9"
+       version="1.3.3"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -12,6 +12,7 @@
              language="en"
              library="tadb.xml"/>
   <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
     <summary lang="af">theaudiodb.com Musiek Video Skraper</summary>
     <summary lang="be">theaudiodb.com Music Video Scraper</summary>
     <summary lang="bg">Сваля инф. за музикални клипове от theaudiodb.com</summary>
@@ -70,9 +71,9 @@
     <description lang="da">Hent Musikvideo-information</description>
     <description lang="de">Dieser Scraper lädt Musikvideoinformationen von TheAudioDB.com herunter. Aufgrund diverser Suchschwierigkeiten erwartet der Scraper derzeit, dass Ordner/Dateinamen als 'Künstler - Songname' formatiert werden, andernfalls wird er keine Ergebnisse zurückliefern.</description>
     <description lang="el">Λήψη πληροφοριών Μουσικών Βίντεο</description>
-    <description lang="en">This scraper is downloading Music Video information from TheAudioDB.com. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results.</description>
-    <description lang="en_NZ">This scraper is downloading Music Video information from TheAudioDB.com. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results.</description>
-    <description lang="en_US">This scraper is downloading Music Video information from TheAudioDB.com. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results.</description>
+    <description lang="en">This scraper downloads Music Video information from TheAudioDB.com website. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results. It is important to note the space between the hyphen.</description>
+    <description lang="en_NZ">This scraper downloads Music Video information from TheAudioDB.com website. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results. It is important to note the space between the hyphen.</description>
+    <description lang="en_US">This scraper downloads Music Video information from TheAudioDB.com website. Due to various search difficulties the scraper currently expects the folder/filename to be formatted as 'artist - trackname' otherwise it will not return results. It is important to note the space between the hyphen.</description>
     <description lang="es">Descarga información del videoclip</description>
     <description lang="es_AR">Descarga información del Video Clip</description>
     <description lang="es_MX">Descarga Información de Vídeos de Músca</description>
@@ -110,9 +111,16 @@
     <description lang="zh_TW">此搜括器是從 TheAudioDB.com下載取得音樂影片資訊。因為各種不同搜尋變數，此搜括器目前須將資料夾／檔案名稱 重新命名為 "演出者－歌曲資訊"否則將無法正常取得專輯資料。帶有'-"符號的演出者或歌曲資訊也有極高可能無法找到。</description>
     <license>GPL v2.0</license>
     <forum>http://forum.xbmc.org/showthread.php?tid=136105</forum>
-    <website></website>
-    <email></email>
-    <source></source>
-    <broken>Broken due to website overload. Please use other scraper.</broken>
+    <website>www.theaudiodb.com</website>
+    <email>zag@kodi.tv</email>
+	<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+	</assets>
+	<news>Fixed artist apostrophes</news>
+    <source>https://github.com/zag2me/metadata.musicvideos.theaudiodb.com</source>
   </extension>
 </addon>
