@@ -1,3 +1,8 @@
+[B]1.7.3[/B]
+
+- Revisadas las búsquedas de título original,
+  duración, género, guión y país en FA
+
 [B]1.7.2[/B]
 
 - Revisada la búsqueda de año en FA
