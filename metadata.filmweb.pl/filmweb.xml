@@ -8,18 +8,15 @@
     $$15 - Rok
     $$11 - URL do filmu
 !-->
-<scraper framework="1.1" date="2017-01-03">
+<scraper framework="1.1" date="2017-01-10">
     
     <!-- Sprawdza plik NFO !-->
     <NfoUrl dest="3">
         <RegExp conditional="NFOUrl" input="$$1" output="&lt;url&gt;http://www.filmweb.pl/\1&lt;/url&gt;" dest="3">
-            <expression>filmweb.pl/((film/)?([-a-zA-Z0-9@:%\._\+~#=]+))</expression>
+            <expression>filmweb.pl/((film/)?([-a-zA-Z0-9@:%\._\+~#=\?]+))</expression>
         </RegExp>
         <RegExp conditional="NFOUrl" input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;" dest="3">
             <expression>^([0-9]+)$</expression>
-        </RegExp>
-        <RegExp conditional="NFOUrl" input="$$1" output="&lt;url cache=&quot;filmweb-\1&quot;&gt;http://www.filmweb.pl/Film?id=\1&lt;/url&gt;" dest="3">
-            <expression>Film.id:([0-9]+)</expression>
         </RegExp>
     </NfoUrl>
     
