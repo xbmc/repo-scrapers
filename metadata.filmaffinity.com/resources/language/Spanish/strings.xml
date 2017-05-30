@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Spanish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/es/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+	<string id="30000">General</string>
+	<string id="30001">Opciones generales</string>
+	<string id="30009">Usar versión móvil de FilmAffinity</string>
+	<string id="30002">Mostrar títulos en su idioma original</string>
+	<string id="30003">Compatibilidad con miniaturas de Estudio</string>
+	<string id="30004">Búsqueda avanzada</string>
+	<string id="30005">Usar búsqueda en Google (leer antes la documentación)</string>
+	<string id="30006">Documentación</string>
+	<string id="30007">Acerca de la búsqueda avanzada de Google</string>
+	<string id="30008">Ver registro de cambios</string>
+	<string id="30020">Posters</string>
+	<string id="30021">Servicios de Posters</string>
+	<string id="30022">Poster principal de FilmAffinity (descarga rápida)</string>
+	<string id="30023">Posters de TMDb</string>
+	<string id="30024"> - Idioma de los posters de TMDb</string>
+	<string id="30025">Posters de MoviePosterDB</string>
+	<string id="30026">Posters de IMDb</string>
+	<string id="30027">Posters de IMPAwards</string>
+	<string id="30028">Posters de Trackt</string>
+	<string id="30029">Posters de Fanart.tv</string>
+	<string id="30039">Posters extra de FilmAffinity</string>
+	<string id="30040">FanArts</string>
+	<string id="30041">Servicios de FanArts</string>
+	<string id="30042">FanArts de TMDb</string>
+	<string id="30043">FanArts de Trackt</string>
+	<string id="30044">FanArts de Fanart.tv</string>
+	<string id="30060">Trailers</string>
+	<string id="30061">Servicios de Trailers</string>
+	<string id="30062">Trailer de FilmAffinity</string>
+	<string id="30063">Trailer de TMDb</string>
+	<string id="30064"> - Idioma del trailer de TMDb</string>
+	<string id="30065">Trailer de HD-Trailers</string>
+	<string id="30066"> - Calidad del trailer de HD-Trailers</string>
+	<string id="30080">TMDb</string>
+	<string id="30081">Servicios de TMDb</string>
+	<string id="30082">Obtener títulos de colecciones de TMDb</string>
+	<string id="30083"> - Idioma de los títulos de colecciones de TMDb</string>
+	<string id="30084">Usar eslogan de TMDb</string>
+	<string id="30085"> - Idioma del eslogan de TMDb</string>
+	<string id="30086">Usar clasificación por edades (MPAA) de TMDb</string>
+	<string id="30087"> - País de la clasificación</string>
+	<string id="30100">IMDb</string>
+	<string id="30101">Servicios de IMDb</string>
+	<string id="30102">Usar reparto completo de IMDb (actor, rol y foto)</string>
+	<string id="30105">Usar clasificación por edades (MPAA US) de IMDb</string>
+	<string id="30106">Usar puntuaciones de IMDb</string>
+	<string id="30107">Usar eslogan de IMDb (US)</string>
+	<string id="30104">Obtener Top 250 de IMDb</string>
+</strings>
