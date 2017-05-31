@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Belarusian language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/be/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <string id="30000">General</string>
+    <string id="30001">General Options</string>
+    <string id="30002">Show titles in their original language</string>
+    <string id="30003">Compatibility with Studio logos</string>
+    <string id="30004">Advanced Search</string>
+    <string id="30005">Use Google search (read the documentation)</string>
+    <string id="30006">Documentation</string>
+    <string id="30007">About Google advanced search</string>
+    <string id="30008">Show changelog</string>
+    <string id="30020">Posters</string>
+    <string id="30021">Posters Sources</string>
+    <string id="30022">Filmaffinity main poster (quick download)</string>
+    <string id="30023">TheMovieDB posters</string>
+    <string id="30024"> -&gt; TheMovieDB posters language</string>
+    <string id="30025">MoviePosterDB posters</string>
+    <string id="30026">IMDB posters</string>
+    <string id="30027">IMPAwards posters</string>
+    <string id="30028">Trackt posters</string>
+    <string id="30029">FilmAffinity extra posters</string>
+    <string id="30040">FanArts</string>
+    <string id="30041">FanArts Sources</string>
+    <string id="30042">TheMovieDB FanArts</string>
+    <string id="30043">Trackt FanArts</string>
+    <string id="30060">Trailers</string>
+    <string id="30061">Trailers Sources</string>
+    <string id="30062">FilmAffinity Trailer</string>
+    <string id="30063">TheMovieDB Trailers</string>
+    <string id="30064"> -&gt; TheMovieDB trailer language</string>
+    <string id="30065">Trailer HD-Trailers</string>
+    <string id="30066"> -&gt; HD-Trailers quality</string>
+    <string id="30080">Extra</string>
+    <string id="30081">Collections Titles</string>
+    <string id="30082">Get Set (Collection) Titles from TheMovieDB</string>
+    <string id="30083"> -&gt; Preferred Set (Collection) Titles Language</string>
+    <string id="30084">IMDB Sources</string>
+    <string id="30085">Use IMDB full cast (actor, rol and picture)</string>
+    <string id="30086">Extra information (Slogan, MPAA, Top 250)</string>
+    <string id="30087">Use IMDB ratings</string>
+    <string id="30100">(debug)Search info only from Filmaffinity (faster)</string>
+</strings>
