@@ -61,7 +61,7 @@
 			<RegExp input="$$7" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;&lt;uniqueid type=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
@@ -90,6 +90,15 @@
 			</RegExp>
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
 				<expression>&quot;vote_count&quot;:([0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;ratings&gt;&lt;rating name=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="7">
+					<expression>&quot;vote_average&quot;:([^&quot;]*)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="7+">
+					<expression>&quot;vote_count&quot;:([0-9]+)</expression>
+				</RegExp>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
 				<expression>&quot;rating&quot;:"([^"]*)"</expression>
@@ -177,7 +186,7 @@
 			<RegExp input="$$1" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="5+">
 				<expression>"air_date":"([^"]*)"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;uniqueid&gt;\1&lt;/uniqueid&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression>"id":([0-9]+),"production_code"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
@@ -185,6 +194,15 @@
 			</RegExp>
 			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
 				<expression>&quot;vote_count&quot;:([0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;ratings&gt;&lt;rating name=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="7">
+					<expression>&quot;vote_average&quot;:([^&quot;]*)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="7+">
+					<expression>&quot;vote_count&quot;:([0-9]+)</expression>
+				</RegExp>
+				<expression noclean="1">(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression clear="yes" fixchars="1">"overview":"([^\{]+?)","id"</expression>
