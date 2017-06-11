@@ -239,9 +239,6 @@
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetOFDbPlotByIMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>OFDb.de</expression>
 			</RegExp>
-			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetPortHUPlotByTitleAndYear&quot;&gt;$$19::$$20::$$2&lt;/chain&gt;" dest="5+">
-				<expression>port.hu</expression>
-			</RegExp>
 			<RegExp input="$INFO[creditssource]" output="&lt;chain function=&quot;GetIMDBCastById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>^IMDb$</expression>
 			</RegExp>
