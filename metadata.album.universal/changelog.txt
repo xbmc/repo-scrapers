@@ -1,3 +1,6 @@
+[B]2.7.1[/B]
+Fixed: Won't scrape MBID randomly
+
 [B]2.7.0[/B]
 Added: ability to define MusicBrainz mirror
 
