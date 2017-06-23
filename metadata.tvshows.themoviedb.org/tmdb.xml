@@ -384,7 +384,7 @@
 
 	<GetTVDBWideBanners dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTVDBWideBanners&quot; cache=&quot;tvdb-\1-banners.xml&quot;&gt;http://thetvdb.com/api/1D62F2F90030C444/series/\1/banners.xml&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTVDBWideBanners&quot; cache=&quot;tvdb-\1-banners.xml&quot;&gt;http://thetvdb.com/api/439DFEBA9D3059C6/series/\1/banners.xml&lt;/url&gt;" dest="5">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />

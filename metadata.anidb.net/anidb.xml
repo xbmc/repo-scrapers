@@ -664,7 +664,7 @@
       <RegExp input="$$19" output="\1" dest="19">
         <expression clear="yes">(?i)tvdbid=&quot;([^&quot;]*)&quot;</expression>
       </RegExp>
-      <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="6">
+      <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/en.zip&lt;/url&gt;" dest="6">
         <expression>(\d+)</expression>
       </RegExp>
       <RegExp input="$$19" output="&lt;url function=&quot;GetFanartDataReturnAPI&quot; cache=&quot;$$20.xml&quot;&gt;&amp;&lt;/url&gt;" dest="6">
@@ -821,7 +821,7 @@
       <RegExp input="$$20" output="&lt;url function=&quot;GetTVDBLookupLoopAPI&quot; cache=&quot;\1.xml&quot;&gt;&amp;&lt;/url&gt;" dest="4">
         <expression clear="yes"/>
       </RegExp>
-      <RegExp input="$$1" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4">
+      <RegExp input="$$1" output="&lt;url function=&quot;GetFanartDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/en.zip&lt;/url&gt;" dest="4">
         <expression>(?i)&lt;seriesid&gt;(\d+)&lt;/seriesid&gt;</expression>
       </RegExp>
       <RegExp input="$$1" output="&lt;anime anidbid=&quot;$$20&quot; tvdbid=&quot;\1&quot; defaulttvdbseason=&quot;1&quot;&gt;&lt;name&gt;$$20&lt;/name&gt;&lt;/anime&gt;" dest="5">
@@ -1052,7 +1052,7 @@
       <RegExp input="$$7" output="\1" dest="4+">
         <expression repeat="yes" noclean="1">(?i)(&lt;(title|runtime|aired|credits|director|plot|thumb)[^&gt;]*&gt;.*?&lt;/\2&gt;)</expression>
       </RegExp>
-      <RegExp conditional="ExtraDetails" input="$$17" output="&lt;url function=&quot;GetEpisodeExtraDetailsDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/en.zip&lt;/url&gt;" dest="4+">
+      <RegExp conditional="ExtraDetails" input="$$17" output="&lt;url function=&quot;GetEpisodeExtraDetailsDataAPI&quot; cache=&quot;tvdb-$$20.xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/en.zip&lt;/url&gt;" dest="4+">
         <RegExp input="$$6" output="\1" dest="17">
           <expression clear="yes">(?i)tvdbid=&quot;([^&quot;]*)&quot;</expression>
         </RegExp>

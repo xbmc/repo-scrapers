@@ -188,16 +188,16 @@
 	</GetTvdbIdFromTbl>
 	<GetTvdbDetails clearbuffers="no" dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbExtraDetails&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbExtraDetails&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$19/all/ko.zip&lt;/url&gt;" dest="5">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbPosters&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbPosters&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbFanart&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;$$19.xml&quot; function=&quot;GetTvdbFanart&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$19/all/ko.zip&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!useAgent" input="$$1" output="&lt;episodeguide&gt;&lt;url cache=&quot;$$19.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$19/all/ko.zip&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
+			<RegExp conditional="!useAgent" input="$$1" output="&lt;episodeguide&gt;&lt;url cache=&quot;$$19.xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$19/all/ko.zip&lt;/url&gt;&lt;/episodeguide&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
