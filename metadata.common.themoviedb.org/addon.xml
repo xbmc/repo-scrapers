@@ -36,5 +36,8 @@
     <description lang="ru">Загружать миниатюры и фанарт с www.themoviedb.org</description>
     <description lang="se">Ladda ner miniatyrer och fanart från www.themoviedb.org</description>
     <description lang="zh">从www.themoviedb.org下载海报和同人画</description>
+	<news>v2.15.0
+- Added function to retrieve ratings with the new layout - needs Krypton or newer
+- Added function to retrieve premiered date</news>
   </extension>
 </addon>
