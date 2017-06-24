@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.mtime.com"
+       name="MTime"
+       version="1.1.7"
+       provider-name="Taxigps">
+  <requires>
+    <import addon="xbmc.metadata" version="1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.movies"
+             language="zh"
+             library="mtime.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Mtime Movie Scraper</summary>
+    <summary lang="hu">Mtime filmadat leolvasó</summary>
+    <summary lang="kr">Mtime 영화 스크래퍼</summary>
+    <summary lang="nl">Mtime Film Scraper</summary>
+    <summary lang="pl">Scraper filmów Mtime</summary>
+    <summary lang="pt">Scraper de filmes Mtime</summary>
+    <summary lang="se">Mtime Filmskrapa</summary>
+    <summary lang="zh">Mtime电影刮削器</summary>
+    <description lang="en">Download Movie information from www.mtime.com. Mtime is the largest movie portal in China. Found in 2004, Mtime provides top four movie services in China: largest movie/TV database in Chinese: largest movie review and rating: the only nationwide movie theater and Showtime search; and the largest movie marketing and promotion services.</description>
+    <description lang="hu">Film információk letöltése a www.mtime.com webhelyről</description>
+    <description lang="kr">www.mtime.com 에서 영화 정보 다운로드</description>
+    <description lang="nl">Download film informatie van www.mtime.com</description>
+    <description lang="pl">Pobieraj informacje o filmach z www.mtime.com</description>
+    <description lang="pt">Descarregar informação de filmes de www.mtime.com</description>
+    <description lang="se">Ladda ner filminformation från www.mtime.com</description>
+    <description lang="zh">从时光网www.mtime.com下载电影资料。时光网是国内做的比较好的专业电影网，面向广大网民提供电影信息资料的在线浏览和搜索服务，并提供个人主页、博客、网络相册的创建以及通过个人主页联系建立虚拟社交圈的在线网络服务。时光网还是国内各大网络媒体的内容提供商和国内外知名电影厂商的服务提供商。</description>
+    <platform>all</platform>
+  </extension>
+</addon>
