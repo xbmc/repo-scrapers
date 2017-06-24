@@ -1,3 +1,6 @@
+[B]1.1.3[/B]
+- fixed: can't install due to obsolete requires
+
 [B]1.1.2[/B]
 - fixed: api changed to https
 
