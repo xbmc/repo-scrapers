@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.common.imdb.com"
        name="IMDB Scraper Library"
-       version="2.8.7"
+       version="2.8.8"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -28,5 +28,7 @@
     <description lang="pl">Pobieraj informacje o filmach z www.imdb.com</description>
     <description lang="pt">Descarregar informação de filmes de www.imdb.com</description>
     <description lang="se">Ladda ner filminformation från www.imdb.com</description>
+	<news>v2.8.8
+- Added function to retrieve ratings with the new layout - needs Krypton or newer</news>
   </extension>
 </addon>

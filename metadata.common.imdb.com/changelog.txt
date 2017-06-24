@@ -1,3 +1,6 @@
+[B]2.8.8[/B]
+- added: function to retrieve ratings with the new layout - needs Krypton or newer
+
 [B]2.8.7[/B]
 - fixed: IMDb countries
 
