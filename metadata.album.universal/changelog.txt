@@ -1,3 +1,8 @@
+[B]2.7.2[/B]
+Added: Return "relevance" for album search results, from Musicbrainz "score".
+Added: Return Musicbrainz release group id in album details
+Bump to using metadata.common.musicbrainz.org" v2.1.2
+
 [B]2.7.1[/B]
 Fixed: Won't scrape MBID randomly
 
