@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.1" date="2013-05-29">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;$INFO[mbsite]/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;mb-\1-album.xml&quot;&gt;$INFO[mbsite]/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;" dest="3">
 			<expression>release/(.+)</expression>
 		</RegExp>
 	</NfoUrl>
 	<ResolveIDToUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;$INFO[mbsite]/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;mb-\1-album.xml&quot;&gt;$INFO[mbsite]/ws/2/release/\1?inc=recordings+release-groups+artists+labels+ratings&lt;/url&gt;" dest="3">
 			<expression>(.+)</expression>
 		</RegExp>
 	</ResolveIDToUrl>
