@@ -1,3 +1,36 @@
+[B]1.7.5[/B]
+
+- Eliminada la obtención de posters de movieposterdb
+
+[B]1.7.4[/B]
+
+- Cambiadas las rutas http por https en FA
+
+[B]1.7.3[/B]
+
+- Revisadas las búsquedas de título original,
+  duración, género, guión y país en FA
+
+[B]1.7.2[/B]
+
+- Revisada la búsqueda de año en FA
+
+[B]1.7.1[/B]
+
+- Revisada la búsqueda avanzada de título en FA
+- Revisada la búsqueda de título original en FA
+- Corregida la búsqueda de género para no incluir topics
+
+[B]1.7.0[/B]
+
+- Búsqueda unificada tanto en FA como en FA mobile
+- Se mantiene la elección de FA o FA mobile para dar redundancia
+
+[B]1.6.4[/B]
+
+- Revisada la búsqueda de país
+- Limpiadas las referencias a IMPA - HDTrailers
+
 [B]1.6.3[/B]
 
 - Revisada la búsqueda de director

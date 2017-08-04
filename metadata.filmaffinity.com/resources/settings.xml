@@ -17,9 +17,7 @@
 		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" default="false" />
 		<setting label="30023" type="bool" id="EnableTMDBPoster" default="false" />
 		<setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
-		<setting label="30025" type="bool" id="EnableMoviePosterDB" default="false" />
 		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
-		<setting label="30027" type="bool" id="EnableIMPAwards" default="false" />
 		<setting label="30028" type="bool" id="EnableTraktPoster" default="false" />
 		<setting label="30029" type="bool" id="EnableFanartTvPoster" default="false" />
 	</category>
@@ -34,8 +32,6 @@
 		<setting label="30062" type="bool" id="EnableFATrailer" default="true" />
 		<setting label="30063" type="bool" id="EnableTMDBTrailer" default="false" />
 		<setting label="30064" type="labelenum" id="tmdbtrailerlanguage" default="es" enable="eq(-1,true)" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh"/>
-		<setting label="30065" type="bool" id="EnableHDTrailers" default="false" />
-		<setting label="30066" type="labelenum" id="HDTrailersQ" default="HD-Trailers(480p)" enable="eq(-1,true)" values="HD-Trailers(480p)|HD-Trailers(720p)|HD-Trailers(1080p)" />	
 	</category>
 	<category label="30080">
 		<setting label="30081" type="lsep" />
