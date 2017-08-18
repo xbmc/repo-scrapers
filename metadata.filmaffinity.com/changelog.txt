@@ -1,3 +1,7 @@
+[B]1.7.6[/B]
+
+- Revisada la búsqueda de trailers en FA
+
 [B]1.7.5[/B]
 
 - Eliminada la obtención de posters de movieposterdb
