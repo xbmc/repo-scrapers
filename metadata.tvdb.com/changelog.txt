@@ -1,3 +1,9 @@
+[B]2.0.0[/B]
+- Updated: Complete rewrite for TVDB API 2.0
+- Added: Language fallback options
+- Added: Merged DVD order split-episodes
+- Added: Pseudo-absolute order for when not specified by TVDB
+
 [B]1.8.4[/B]
 - Added: Runtime for tvshows - needs Krypton or newer
 
