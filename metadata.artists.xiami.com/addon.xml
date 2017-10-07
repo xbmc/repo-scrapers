@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.artists.xiami.com"
+       name="Xiami Artist Scraper"
+       version="1.0.0"
+       provider-name="Taxigps">
+  <requires>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.artists"
+             language="zh"
+             library="xiami.xml"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Xiami Artist Scraper</summary>
+    <summary lang="zh">虾米音乐歌手信息刮削器</summary>
+    <description lang="en">Download artist information from xiami.com</description>
+    <description lang="zh">虾米音乐是阿里巴巴旗下网站，提供高品质音乐MP3的个性化推荐、发布、P2P下载服务，以及线下音乐活动等互动内容。</description>
+    <platform>all</platform>
+    <license>GPL v2.0</license>
+    <source>https://github.com/taxigps/metadata.artists.xiami.com</source>
+  </extension>
+</addon>

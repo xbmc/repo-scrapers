@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2017-10-04">
+	<CreateArtistSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.xiami.com/search/artist?key=$$4&lt;/url&gt;" dest="3">
+			<RegExp input="$$1" output="\1" dest="4">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1/\2\3" dest="7">
+				<expression noclean="1">(.+)([-!])(.+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression noclean="1">(.+)(?:Ft%2e|Feat%2e|%20Ft\.|%20Feat\.|%20and%20)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="\1" dest="4">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="4">
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</CreateArtistSearchUrl>
+	<GetArtistSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">&lt;div class=&quot;artist_item100_block&quot;&gt;.+?&lt;p class=&quot;name&quot;&gt;.+? href=&quot;(.+?)&quot; title=&quot;(.+?)&quot;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistSearchResults>
+	<GetArtistDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;url cache=&quot;\1-artist.html&quot; function=&quot;ParseProfile&quot;&gt;http://www.xiami.com/artist/\1&lt;/url&gt;" dest="5">
+				<expression noclean="1">&lt;a href=&quot;/artist/([^&quot;]*)&quot; class=&quot;&quot;&gt;档案&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url cache=&quot;artist.html&quot; function=&quot;ParseProfile&quot;&gt;\1&lt;/url&gt;" dest="5">
+				<expression noclean="1">&lt;a href=&quot;([^&quot;]*)&quot;\s*&gt;&lt;i class=&quot;G_ico12 icon_files&quot;&gt;&lt;/i&gt;档案&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression noclean="1" trim="1" repeat="yes">/genre/detail/sid/.+?&gt;\s*(.*?) (.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">&lt;a id=&quot;cover_lightbox&quot;\s*href=&quot;(.+?)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;album&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;/album&gt;" dest="5+">
+				<expression repeat="yes">&lt;div class=&quot;album_item100_block&quot;&gt;.+?&lt;p class=&quot;name&quot;&gt;(.+?)&lt;/p&gt;.+?&lt;p class=&quot;year&quot;&gt;([0-9]+)</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetArtistDetails>
+	<ParseProfile dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="6">
+				<expression>&lt;div class=&quot;clearfix&quot; id=&quot;artist-record&quot;&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="6+">
+				<expression>&lt;div class=&quot;profile&quot;&gt;\s*&lt;h3&gt;.+?的艺人档案&lt;/h3&gt;(.*?)&lt;/div&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="2">
+				<expression>&lt;h3&gt;(.+?)的艺人档案&lt;/h3&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;born&gt;\2&lt;/born&gt;" dest="2+">
+				<expression>(出生日期：|出生日期 )([0-9]+年[0-9]+月[0-9]+日)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;born&gt;\1年\2月\3日&lt;/born&gt;" dest="2+">
+				<expression trim="1,2,3">([0-9\s]+)年([0-9\s]+)月([0-9\s]+)日出生</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="2+">
+				<expression fixchars="1"/>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</ParseProfile>
+</scraper>
