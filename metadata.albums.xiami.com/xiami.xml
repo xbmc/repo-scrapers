@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2017-10-04">
+	<CreateAlbumSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://www.xiami.com/search/album?key=\1%20$$4&lt;/url&gt;" dest="3">
+			<RegExp input="$$2" output="\1" dest="4">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp input="$$2" output="\1" dest="6">
+				<expression noclean="1">(.+)(?:%20Ft%2e|%20Feat%2e|%20Ft\.|%20Feat\.|%20and%20)</expression>
+			</RegExp>
+			<RegExp input="$$6" output="\1" dest="4">
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</CreateAlbumSearchUrl>
+	<GetAlbumSearchResults dest="8">
+		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;year&gt;\4&lt;/year&gt;&lt;artist&gt;\3&lt;/artist&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;\1&lt;/url&gt;&lt;/entity&gt;" dest="5">
+				<expression repeat="yes">&lt;div class=&quot;album_item100_block&quot;&gt;.+?&lt;p class=&quot;name&quot;&gt;\s*&lt;a href=&quot;(.+?)&quot; title=&quot;(.+?)&quot;&gt;.+?&lt;a class=&quot;singer&quot;.+?&gt;(.+?)&lt;/a&gt;.+?&lt;p class=&quot;year&quot;&gt;(.+?)&lt;/p&gt;</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetAlbumSearchResults>
+	<GetAlbumDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression>&lt;h1 property=&quot;v:itemreviewed&quot;&gt;(.*?)&lt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;artist&gt;\1&lt;/artist&gt;" dest="5+">
+				<expression>艺人：&lt;/td&gt;\s*&lt;td valign=&quot;top&quot;&gt;(.*?)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;review&gt;\1&lt;/review&gt;" dest="5+">
+				<expression fixchars="1">&lt;span property=&quot;v:summary&quot;&gt;(.*?)&lt;/span&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="5+">
+				<expression noclean="1">&lt;div id=&quot;album_cover&quot;&gt;.+?href=&quot;(.*?)&quot;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>发行时间：&lt;/td&gt;\s*&lt;td valign=&quot;top&quot;&gt;([0-9]+)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;releasedate&gt;\1&lt;/releasedate&gt;" dest="5+">
+				<expression>发行时间：&lt;/td&gt;\s*&lt;td valign=&quot;top&quot;&gt;(.*?)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<expression noclean="1" trim="1" repeat="yes">&lt;a href=&quot;/genre/detail/sid/.+?&gt;(.*?) (.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;style&gt;\1&lt;/style&gt;" dest="5+">
+				<expression noclean="1" trim="1">专辑类别：&lt;/td&gt;\s*&lt;td valign=&quot;top&quot;&gt;(.*?)&lt;/td&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5+">
+				<expression>&lt;em property=&quot;v:value&quot;&gt;(.*?)&lt;/em&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;track&gt;&lt;position&gt;\1&lt;/position&gt;&lt;title&gt;\2&lt;/title&gt;&lt;/track&gt;" dest="5+">
+				<expression repeat="yes" fixchars="2" trim="2">&lt;td class=&quot;trackid&quot;&gt;([0-9]+)&lt;/td&gt;\s*&lt;td class=&quot;song_name&quot;&gt;\s*&lt;a .+?&gt;(.*?)&lt;/a&gt;</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp> 
+	</GetAlbumDetails> 
+</scraper> 
