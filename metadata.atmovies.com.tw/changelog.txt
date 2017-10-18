@@ -1,3 +1,9 @@
+Version 1.6.5 (Oct 18 2017)
+ - 因應Atmovies內容網頁改動, 修正 scraper 無法取得使用的問題
+
+Version 1.6.4 (Jan 8 2017) Thank TingYuYan
+ - 新增從 nfo 檔案直接讀取 atmovies 網頁網址的功能 (因某些有冒號的電影名稱會無法正常的被搜尋，故須使用此功能)
+ 
 Version 1.6.3 (Sep 20 2016)
  - 因應Atmovies網頁改動, 修正無法取得片名的問題
 
