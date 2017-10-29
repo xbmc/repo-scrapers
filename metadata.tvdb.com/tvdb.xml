@@ -410,10 +410,10 @@
 			
 			<!-- Backwards-compatibility code.  Scraper will still fail if/when the old URLs 404 (or similar), as this function just won't be run. -->
 			<RegExp input="$$2" output="&lt;url function=&quot;GetEpisodeList&quot; post=&quot;yes&quot; cache=&quot;auth.json&quot;&gt;https://api.thetvdb.com/login?{&quot;apikey&quot;:&quot;439DFEBA9D3059C6&quot;,&quot;id&quot;:\1}|Content-Type=application/json&lt;/url&gt;" dest="5">
-				<expression>http://thetvdb.com/api/.+/series/(\d+)/all/</expression>
+				<expression>http://(?:www\.)?thetvdb\.com/api/.+/series/(\d+)/all/</expression>
 			</RegExp>
 			<RegExp input="$$2" output="https://api.thetvdb.com/login?{&quot;apikey&quot;:&quot;439DFEBA9D3059C6&quot;,&quot;id&quot;:\1}|Content-Type=application/json" dest="2">
-				<expression>http://thetvdb.com/api/.+/series/(\d+)/all/</expression>
+				<expression>http://(?:www\.)?thetvdb\.com/api/.+/series/(\d+)/all/</expression>
 			</RegExp>
 		<expression noclean="1"/>
 		</RegExp>

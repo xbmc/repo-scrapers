@@ -1,3 +1,6 @@
+[B]2.0.1[/B]
+- Fixed: Backwards-compatibility code
+
 [B]2.0.0[/B]
 - Updated: Complete rewrite for TVDB API 2.0
 - Added: Language fallback options
