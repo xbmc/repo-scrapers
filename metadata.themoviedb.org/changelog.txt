@@ -1,3 +1,6 @@
+[B]3.9.6[/B]
+- Change HTTP links to HTTPS
+
 [B]3.9.4[/B]
 - Fixed after API layout changes
 
