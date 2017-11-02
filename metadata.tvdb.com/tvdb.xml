@@ -65,7 +65,7 @@
 				<expression noclean="1"/>
 			</RegExp>
 			<RegExp conditional="usefallbacklanguage" input="$INFO[language]" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;$INFO[fallbacklanguage]&lt;/chain&gt;&lt;url function=&quot;GetSearchResultsAuth&quot; cache=&quot;search-$$5-$INFO[fallbacklanguage].json&quot;&gt;https://api.thetvdb.com/search/series?name=$$5|Authorization=Bearer%20$$19&amp;Accept-Language=$INFO[fallbacklanguage]&lt;/url&gt;" dest="4+">
-				<expression>(?!^\Q$INFO[fallbacklanguage]\E$)</expression>
+				<expression>^(?!\Q$INFO[fallbacklanguage]\E$)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -297,6 +297,15 @@
 			<RegExp input="$$1" output="&lt;url function=&quot;LoadArt&quot; cache=&quot;$$18-art-\1-$$16.json&quot;&gt;https://api.thetvdb.com/series/$$18/images/query?keyType=\1|Authorization=Bearer%20$$19&amp;Accept-Language=$$16&lt;/url&gt;" dest="4">
 				<expression clear="yes" repeat="yes">"keyType": "([^"]+)"</expression>
 			</RegExp>
+			<RegExp conditional="usefallbacklanguage" input="$INFO[fallbacklanguage]" output="$$5" dest="4+">
+				<RegExp input="" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;$INFO[fallbacklanguage]&lt;/chain&gt;" dest="5">
+					<expression noclean="1"/>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;url function=&quot;LoadArt&quot; cache=&quot;$$18-art-\1-$INFO[fallbacklanguage].json&quot;&gt;https://api.thetvdb.com/series/$$18/images/query?keyType=\1|Authorization=Bearer%20$$19&amp;Accept-Language=$INFO[fallbacklanguage]&lt;/url&gt;" dest="5+">
+					<expression repeat="yes">"keyType": "([^"]+)"</expression>
+				</RegExp>
+				<expression>^(?!\Q$$16\E$|en$)</expression>
+			</RegExp>
 			<RegExp input="$$16" output="$$5" dest="4+">
 				<RegExp input="" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;en&lt;/chain&gt;" dest="5">
 					<expression noclean="1"/>
@@ -345,7 +354,8 @@
 																				+  (3 * number(subKey='blank'))
 																				+  (4 * number(subKey))"/>
 							<xsl:sort data-type="number" order="ascending" select="(1 * number(language='$INFO[language]'))
-																				+  (2 * number(language!='$INFO[language]'))"/>
+																				+  (2 * number((language='$INFO[fallbacklanguage]') and ('$INFO[language]'!='$INFO[fallbacklanguage]')))
+																				+  (3 * number((language!='$INFO[language]') and (language!='$INFO[fallbacklanguage]')))"/>
 							<xsl:sort data-type="number" order="descending" select="average"/>
 						</xsl:apply-templates>
 						<xsl:apply-templates select="Banner[((keyType='poster') or (keyType='series')) and (generate-id()=generate-id(key('BannersById', id)[1]))]" mode="allseasons"/>
@@ -635,7 +645,7 @@
 			<RegExp input="$$2|" output="&lt;url function=&quot;GetEpisodeDetailsAuth&quot; cache=&quot;episode-\1-$INFO[language].json&quot;&gt;https://api.thetvdb.com/episodes/\1|Authorization=Bearer%20$$19&amp;amp;Accept-Language=$INFO[language]&lt;/url&gt;" dest="5">
 				<expression noclean="1" repeat="yes">(\d+)\|</expression>
 			</RegExp>
-			<RegExp input="$$1" output="" dest="11">
+			<RegExp input="$$1" output="" dest="13">
 				<expression clear="yes"/>
 			</RegExp>
 			<expression noclean="1"/>
@@ -688,6 +698,15 @@
 			<RegExp input="$$1" output="&lt;absoluteNumber&gt;\1&lt;/absoluteNumber&gt;" dest="10+">
 				<expression>"absoluteNumber": (?:(\d+)|null),</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;airsAfterSeason&gt;\1&lt;/airsAfterSeason&gt;" dest="10+">
+				<expression>"airsAfterSeason": (?:(\d+)|null),</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;airsBeforeSeason&gt;\1&lt;/airsBeforeSeason&gt;" dest="10+">
+				<expression>"airsBeforeSeason": (?:(\d+)|null),</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;airsBeforeEpisode&gt;\1&lt;/airsBeforeEpisode&gt;" dest="10+">
+				<expression>"airsBeforeEpisode": (?:(\d+)|null),</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;siteRating&gt;\1&lt;/siteRating&gt;" dest="10+">
 				<expression>"siteRating": (?:([\d\.]+)|null),</expression>
 			</RegExp>
@@ -718,7 +737,7 @@
 				</RegExp>
 				<expression fixchars="1" repeat="yes">([^,"]+)[,"\s]+</expression>
 			</RegExp>
-			<RegExp input="$$9" output="\1" dest="11+">
+			<RegExp input="$$9" output="\1" dest="13+">
 				<RegExp input="$$14" output="&lt;Episode&gt;$$10&lt;/Episode&gt;" dest="9">
 					<expression clear="yes">^$</expression>
 				</RegExp>
@@ -756,7 +775,7 @@
 				</RegExp>
 				<expression>missingplot</expression>
 			</RegExp>
-			<RegExp input="$$10" output="&lt;Episode&gt;\1&lt;/Episode&gt;" dest="11+">
+			<RegExp input="$$10" output="&lt;Episode&gt;\1&lt;/Episode&gt;" dest="13+">
 				<expression noclean="1"/>
 			</RegExp>
 			<expression noclean="1"/>
@@ -767,15 +786,23 @@
 			<RegExp input="$$1" output="" dest="5">
 				<expression clear="yes"/>
 			</RegExp>
-			<XSLT input="&lt;Data&gt;$$11&lt;/Data&gt;" output="\1" dest="5">
+			<XSLT input="&lt;Data&gt;&lt;current&gt;$$13&lt;/current&gt;&lt;all&gt;$$11&lt;/all&gt;&lt;/Data&gt;" output="\1" dest="5">
 				<xsl:stylesheet version = "1.0"
 						xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<xsl:output indent="yes"/>
 					<xsl:strip-space elements="*"/>
-					<xsl:key name="EpisodesByDVDnumber" match="Episode" use="concat(dvdSeason,',',substring-before(dvdEpisodeNumber,'.'))"/>
+					<xsl:key name="EpisodesByDVDnumber" match="current/Episode" use="concat(dvdSeason,',',substring-before(dvdEpisodeNumber,'.'))"/>
 					<xsl:variable name="SeasonCounts">
 						<xsl:if test="'$INFO[absolutenumber]'='true'">$$12</xsl:if>
 					</xsl:variable>
+
+					<xsl:variable name="episode-list" select="concat('$$2','|')" />
+					<xsl:variable name="FirstEpisode" select="Data/current/Episode[id=substring-before($episode-list,'|')]" />
+					<xsl:variable name="single-episode" select="substring-after($episode-list,'|')=''" />
+					<xsl:variable name="AirsBeforeEpisode" select="Data/all/Episode[(SeasonNumber=$FirstEpisode/airsBeforeSeason) and (EpisodeNumber=$FirstEpisode/airsBeforeEpisode)]"/>
+					<xsl:variable name="AirsAfterEpisode" select="Data/all/Episode[(SeasonNumber=$FirstEpisode/airsAfterSeason + 1) and (EpisodeNumber=1)]"/>
+					<xsl:variable name="AfterSeasonCount" select="substring-before(substring-after($SeasonCounts, concat('|S', $FirstEpisode/airsAfterSeason + 1, '|')), '|')"/>
+
 					<xsl:variable name="title-divider" select="' / '"/>
 					<xsl:variable name="plot-divider" select="'&#10;----&#10;&#10;'" />
 
@@ -784,9 +811,10 @@
 					<xsl:template match="Episode"/>
 
 					<xsl:template match="Data">
-						<xsl:variable name="episode-list" select="concat('$$2','|')" />
-						<xsl:variable name="FirstEpisode" select="Episode[id=substring-before($episode-list,'|')]" />
-						<xsl:variable name="single-episode" select="substring-after($episode-list,'|')=''" />
+						<xsl:apply-templates select="current"/>
+					</xsl:template>
+
+					<xsl:template match="current">
 						<details>
 							<title>
 								<xsl:choose>
@@ -829,7 +857,6 @@
 												<xsl:choose>
 													<xsl:when test="$FirstEpisode/absoluteNumber!=''"><xsl:value-of select="$FirstEpisode/absoluteNumber"/></xsl:when>
 													<xsl:otherwise><xsl:value-of select="substring-before(substring-after($SeasonCounts, concat('|S', $FirstEpisode/airedSeason, '|')), '|') + $FirstEpisode/airedEpisodeNumber"/></xsl:otherwise>
-													<!-- <xsl:otherwise><xsl:value-of select="count(Episode[(airedSeason&lt;$FirstEpisode/airedSeason) and (airedSeason&gt;0)]) + $FirstEpisode/airedEpisodeNumber"/></xsl:otherwise> -->
 												</xsl:choose>
 											</episode>
 											<season>1</season>
@@ -863,35 +890,36 @@
 								</xsl:otherwise>
 							</xsl:choose>
 							<xsl:if test="$FirstEpisode/airedSeason=0">
-								<xsl:variable name="AirsBeforeEpisode" select="Episode[(airedSeason=$FirstEpisode/airsbefore_season) and (airedEpisodeNumber=$FirstEpisode/airsbefore_episode)]"/>
 								<xsl:choose>
 									<xsl:when test="'$INFO[dvdorder]'!='true'">
 										<xsl:choose>
 											<xsl:when test="'$INFO[absolutenumber]'='true'">
-												<xsl:if test="($FirstEpisode/airsbefore_season!='') or ($FirstEpisode/airsbefore_episode!='')">
+												<xsl:if test="($FirstEpisode/airsBeforeSeason!='') or ($FirstEpisode/airsBeforeEpisode!='')">
 													<displayepisode>
 														<xsl:choose>
 															<xsl:when test="$AirsBeforeEpisode and ($AirsBeforeEpisode/absoluteNumber!='')"><xsl:value-of select="$AirsBeforeEpisode/absoluteNumber"/></xsl:when>
-															<xsl:otherwise><xsl:value-of select="count(Episode[(airedSeason&lt;$AirsBeforeEpisode/airedSeason) and (airedSeason&gt;0)]) + $FirstEpisode/airsbefore_episode"/></xsl:otherwise>
+															<xsl:otherwise><xsl:value-of select="substring-before(substring-after($SeasonCounts, concat('|S', $AirsBeforeEpisode/SeasonNumber, '|')), '|') + $FirstEpisode/airsBeforeEpisode"/></xsl:otherwise>
 														</xsl:choose>
 													</displayepisode>
 													<displayseason>1</displayseason>
 												</xsl:if>
-												<xsl:if test="($FirstEpisode/airsafter_season!='')">
-													<xsl:variable name="AirsAfterEpisode" select="Episode[(airedSeason=$FirstEpisode/airsafter_season + 1) and (airedEpisodeNumber=1)]"/>
+												<xsl:if test="($FirstEpisode/airsAfterSeason!='') and ($AfterSeasonCount!='')">
 													<displayepisode>
 														<xsl:choose>
 															<xsl:when test="$AirsAfterEpisode and ($AirsAfterEpisode/absoluteNumber!='')"><xsl:value-of select="$AirsAfterEpisode/absoluteNumber"/></xsl:when>
-															<xsl:otherwise><xsl:value-of select="count(Episode[(airedSeason&lt;$FirstEpisode/airsafter_season + 1) and (airedSeason&gt;0)]) + 1"/></xsl:otherwise>
+															<xsl:otherwise><xsl:value-of select="$AfterSeasonCount + 1"/></xsl:otherwise>
 														</xsl:choose>
 													</displayepisode>
 													<displayseason>1</displayseason>
 												</xsl:if>
+												<xsl:if test="($FirstEpisode/airsAfterSeason!='') and ($AfterSeasonCount='')">
+													<displayafterseason>1</displayafterseason>
+												</xsl:if>
 											</xsl:when>
 											<xsl:otherwise>
-												<displayepisode><xsl:value-of select="$FirstEpisode/airsbefore_episode"/></displayepisode>
-												<displayseason><xsl:value-of select="$FirstEpisode/airsbefore_season"/></displayseason>
-												<displayafterseason><xsl:value-of select="$FirstEpisode/airsafter_season"/></displayafterseason>
+												<displayepisode><xsl:value-of select="$FirstEpisode/airsBeforeEpisode"/></displayepisode>
+												<displayseason><xsl:value-of select="$FirstEpisode/airsBeforeSeason"/></displayseason>
+												<displayafterseason><xsl:value-of select="$FirstEpisode/airsAfterSeason"/></displayafterseason>
 											</xsl:otherwise>
 										</xsl:choose>
 									</xsl:when>
@@ -902,11 +930,11 @@
 												<displayseason><xsl:value-of select="$AirsBeforeEpisode/dvdSeason"/></displayseason>
 											</xsl:when>
 											<xsl:otherwise>
-												<displayepisode><xsl:value-of select="$FirstEpisode/airsbefore_episode"/></displayepisode>
-												<displayseason><xsl:value-of select="$FirstEpisode/airsbefore_season"/></displayseason>
+												<displayepisode><xsl:value-of select="$FirstEpisode/airsBeforeEpisode"/></displayepisode>
+												<displayseason><xsl:value-of select="$FirstEpisode/airsBeforeSeason"/></displayseason>
 											</xsl:otherwise>
 										</xsl:choose>
-										<displayafterseason><xsl:value-of select="$FirstEpisode/airsafter_season"/></displayafterseason>
+										<displayafterseason><xsl:value-of select="$FirstEpisode/airsAfterSeason"/></displayafterseason>
 									</xsl:otherwise>
 								</xsl:choose>
 							</xsl:if>
@@ -1019,7 +1047,7 @@
 					</xsl:template>
 
 					<xsl:template match="Episode" mode="match">
-						<thumb>http://thetvdb.com/banners/<xsl:value-of select="filename"/></thumb>
+						<xsl:if test="filename!=''"><thumb>http://thetvdb.com/banners/<xsl:value-of select="filename"/></thumb></xsl:if>
 						<xsl:for-each select="credits|director|actor">
 							<xsl:copy-of select="."/>
 						</xsl:for-each>
