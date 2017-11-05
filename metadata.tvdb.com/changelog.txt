@@ -1,3 +1,8 @@
+[B]2.0.3[/B]
+- Fixed: IMDb series ratings
+- Changed: Added the www back to the artwork URLs
+- Changed: Turn fallback language on by default
+
 [B]2.0.2[/B]
 - Fixed: Special episode placement
 - Fixed: Episode thumbnails only when available
