@@ -64,7 +64,7 @@
 			<RegExp input="" output="&lt;url function=&quot;GetSearchResultsAuth&quot; cache=&quot;search-$$5-$INFO[language].json&quot;&gt;https://api.thetvdb.com/search/series?name=$$5|Authorization=Bearer%20$$19&amp;Accept-Language=$INFO[language]&lt;/url&gt;" dest="4">
 				<expression noclean="1"/>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$INFO[language]" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;$INFO[fallbacklanguage]&lt;/chain&gt;&lt;url function=&quot;GetSearchResultsAuth&quot; cache=&quot;search-$$5-$INFO[fallbacklanguage].json&quot;&gt;https://api.thetvdb.com/search/series?name=$$5|Authorization=Bearer%20$$19&amp;Accept-Language=$INFO[fallbacklanguage]&lt;/url&gt;" dest="4+">
+			<RegExp conditional="usefallbacklanguage1" input="$INFO[language]" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;$INFO[fallbacklanguage]&lt;/chain&gt;&lt;url function=&quot;GetSearchResultsAuth&quot; cache=&quot;search-$$5-$INFO[fallbacklanguage].json&quot;&gt;https://api.thetvdb.com/search/series?name=$$5|Authorization=Bearer%20$$19&amp;Accept-Language=$INFO[fallbacklanguage]&lt;/url&gt;" dest="4+">
 				<expression>^(?!\Q$INFO[fallbacklanguage]\E$)</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -165,7 +165,7 @@
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="4+">
 				<expression fixchars="1">"seriesName": "(.*)",\s+"aliases"</expression>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$$1" output="missingtitle|" dest="14">
+			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingtitle|" dest="14">
 				<expression clear="yes">"seriesName": null,\s+"aliases"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="4+">
@@ -186,17 +186,32 @@
 				</RegExp>
 				<expression noclean="1">(?!^$)(.*)</expression>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$$1" output="missingplot|" dest="14+">
+			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingplot|" dest="14+">
 				<expression>"overview": null,\s+"lastUpdated"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="4+">
 				<expression>"rating": "([^"]*)",</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="4+">
-				<expression>"siteRating": (?:(\d+(?:\.\d)?)|null)</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="4+">
-				<expression>"siteRatingCount": (?:(\d+)|null)\s+}</expression>
+			<RegExp input="$$5" output="\1" dest="4+">
+				<RegExp input="$$1" output="&lt;rating&gt;\1&lt;/rating&gt;" dest="5">
+					<expression clear="yes">"siteRating": (?:(\d+(?:\.\d)?)|null)</expression>
+				</RegExp>
+				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
+					<expression>"siteRatingCount": (?:(\d+)|null)\s+}</expression>
+				</RegExp>
+				<RegExp input="$INFO[RatingS]" output="$$6" dest="5">
+					<RegExp input="$$7" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$7&lt;/chain&gt;" dest="6">
+						<RegExp input="$$1" output="\1" dest="7">
+							<expression clear="yes">"imdbId": "(tt\d+)",</expression>
+						</RegExp>
+						<expression clear="yes">(?!^$)</expression>
+					</RegExp>
+					<RegExp conditional="fallback" input="$$7" output="$$5" dest="6">
+						<expression>^$</expression>
+					</RegExp>
+					<expression>IMDb</expression>
+				</RegExp>
+				<expression noclean="1"/>
 			</RegExp>
 			<RegExp input="$$5" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="4+">
 				<RegExp input="$$1" output="\1" dest="5">
@@ -252,7 +267,7 @@
 	</GetActors>
 	<ParseActors dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;thumb&gt;http://thetvdb.com/banners/\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;thumb&gt;http://www.thetvdb.com/banners/\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
 				<expression repeat="yes" fixchars="1,2">"name": "([^}]+)",\s+"role": "([^}]+)",\s+"sortOrder": (\d+),\s+"image": "([^"]+)",</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;/actor&gt;" dest="5+">
@@ -297,7 +312,7 @@
 			<RegExp input="$$1" output="&lt;url function=&quot;LoadArt&quot; cache=&quot;$$18-art-\1-$$16.json&quot;&gt;https://api.thetvdb.com/series/$$18/images/query?keyType=\1|Authorization=Bearer%20$$19&amp;Accept-Language=$$16&lt;/url&gt;" dest="4">
 				<expression clear="yes" repeat="yes">"keyType": "([^"]+)"</expression>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$INFO[fallbacklanguage]" output="$$5" dest="4+">
+			<RegExp conditional="usefallbacklanguage1" input="$INFO[fallbacklanguage]" output="$$5" dest="4+">
 				<RegExp input="" output="&lt;chain function=&quot;SwitchLanguage&quot;&gt;$INFO[fallbacklanguage]&lt;/chain&gt;" dest="5">
 					<expression noclean="1"/>
 				</RegExp>
@@ -339,7 +354,7 @@
 
 				<xsl:template match="Banners">
 					<details>
-						<fanart url="http://thetvdb.com/banners/">
+						<fanart url="http://www.thetvdb.com/banners/">
 							<xsl:apply-templates select="Banner[(keyType='fanart') and (generate-id()=generate-id(key('BannersById', id)[1]))]">
 								<xsl:sort data-type="number" order="descending" select="average"/>
 							</xsl:apply-templates>
@@ -382,7 +397,7 @@
 							<xsl:attribute name="type">season</xsl:attribute>
 							<xsl:attribute name="season"><xsl:value-of select="subKey"/></xsl:attribute>
 						</xsl:if>
-						<xsl:attribute name="language"><xsl:value-of select="language"/></xsl:attribute>http://thetvdb.com/banners/<xsl:value-of select="fileName"/>
+						<xsl:attribute name="language"><xsl:value-of select="language"/></xsl:attribute>http://www.thetvdb.com/banners/<xsl:value-of select="fileName"/>
 					</thumb>
 				</xsl:template>
 
@@ -396,7 +411,7 @@
 						</xsl:attribute>
 						<xsl:attribute name="type">season</xsl:attribute>
 						<xsl:attribute name="season">-1</xsl:attribute>
-						<xsl:attribute name="language"><xsl:value-of select="language"/></xsl:attribute>http://thetvdb.com/banners/<xsl:value-of select="fileName"/></thumb>
+						<xsl:attribute name="language"><xsl:value-of select="language"/></xsl:attribute>http://www.thetvdb.com/banners/<xsl:value-of select="fileName"/></thumb>
 				</xsl:template>
 
 			</xsl:stylesheet>
@@ -671,7 +686,7 @@
 			<RegExp input="$$1" output="&lt;episodeName&gt;\1&lt;/episodeName&gt;" dest="10+">
 				<expression fixchars="1">"episodeName": "(.*)",\s+"firstAired"</expression>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$$1" output="missingtitle|" dest="14">
+			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingtitle|" dest="14">
 				<expression clear="yes">"episodeName": null,\s+"firstAired"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;firstAired&gt;\1&lt;/firstAired&gt;" dest="10+">
@@ -686,7 +701,7 @@
 				</RegExp>
 				<expression noclean="1">(?!^$)(.*)</expression>
 			</RegExp>
-			<RegExp conditional="usefallbacklanguage" input="$$1" output="missingplot|" dest="14+">
+			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingplot|" dest="14+">
 				<expression fixchars="1">"overview": null,\s+"language"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;dvdSeason&gt;\1&lt;/dvdSeason&gt;" dest="10+">
@@ -1047,7 +1062,7 @@
 					</xsl:template>
 
 					<xsl:template match="Episode" mode="match">
-						<xsl:if test="filename!=''"><thumb>http://thetvdb.com/banners/<xsl:value-of select="filename"/></thumb></xsl:if>
+						<xsl:if test="filename!=''"><thumb>http://www.thetvdb.com/banners/<xsl:value-of select="filename"/></thumb></xsl:if>
 						<xsl:for-each select="credits|director|actor">
 							<xsl:copy-of select="."/>
 						</xsl:for-each>
