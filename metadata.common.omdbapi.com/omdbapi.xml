@@ -18,6 +18,44 @@
 		</RegExp>
 	</GetRTRatingById>
 
+	<!-- Get OMDBAPI URL from IMDb ID for ratings with new method -->
+	<GetRTRatingsById dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRT$$10New&quot; cache=&quot;\1-omdbapi.html&quot;&gt;http://www.omdbapi.com/?i=tt\1&amp;r=json&amp;tomatoes=true&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$INFO[tomato]" output="Tom" dest="10">
+				<expression>TomatoMeter</expression>
+			</RegExp>
+			<RegExp input="$INFO[tomato]" output="Ave" dest="10">
+				<expression>Average Rating</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="All" dest="10+">
+				<expression>All Critics</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="Aud" dest="10+">
+				<expression>Audience Score</expression>
+			</RegExp>
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTRatingsById>
+
+	<!-- Get OMDBAPI URL from IMDb ID for ratings with new method as default -->
+	<GetRTRatingsByIdAsDef dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseRT$$10NewDef&quot; cache=&quot;\1-omdbapi.html&quot;&gt;http://www.omdbapi.com/?i=tt\1&amp;r=json&amp;tomatoes=true&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$INFO[tomato]" output="Tom" dest="10">
+				<expression>TomatoMeter</expression>
+			</RegExp>
+			<RegExp input="$INFO[tomato]" output="Ave" dest="10">
+				<expression>Average Rating</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="All" dest="10+">
+				<expression>All Critics</expression>
+			</RegExp>
+			<RegExp input="$INFO[allcritics]" output="Aud" dest="10+">
+				<expression>Audience Score</expression>
+			</RegExp>
+			<expression>([0-9]{7})</expression>
+		</RegExp>
+	</GetRTRatingsByIdAsDef>
+
 	<!-- TomatoMeter from All Critics -->
 	<ParseRTTomAll dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;rating max=&quot;100&quot;&gt;\1&lt;/rating&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/details&gt;" dest="5">
@@ -45,6 +83,62 @@
 			<expression noclean="1">&quot;tomatoUserRating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoUserReviews&quot;:&quot;([^&quot;]+)</expression>
 		</RegExp>
 	</ParseRTAveAud>
+
+	<!-- TomatoMeter from All Critics with new format -->
+	<ParseRTTomAllNew dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometerallcritics&quot; max=&quot;100&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoMeter&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTTomAllNew>
+
+	<!-- TomatoMeter from Audience with new format -->
+	<ParseRTTomAudNew dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometerallaudience&quot; max=&quot;100&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoUserMeter&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoUserReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTTomAudNew>
+
+	<!-- Average Rating from All Critics with new format -->
+	<ParseRTAveAllNew dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometeravgcritics&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoRating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTAveAllNew>
+
+	<!-- Average Rating from Audience with new format-->
+	<ParseRTAveAudNew dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometeravgaudience&quot; max=&quot;5&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoUserRating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoUserReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTAveAudNew>
+
+	<!-- TomatoMeter from All Critics with new format as default -->
+	<ParseRTTomAllNewDef dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometerallcritics&quot; default=&quot;true&quot; max=&quot;100&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoMeter&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTTomAllNewDef>
+
+	<!-- TomatoMeter from Audience with new format as default -->
+	<ParseRTTomAudNewDef dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometerallaudience&quot; default=&quot;true&quot; max=&quot;100&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoUserMeter&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoUserReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTTomAudNewDef>
+
+	<!-- Average Rating from All Critics with new format as default -->
+	<ParseRTAveAllNewDef dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometeravgcritics&quot; default=&quot;true&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoRating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTAveAllNewDef>
+
+	<!-- Average Rating from Audience with new format as default -->
+	<ParseRTAveAudNewDef dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;ratings&gt;&lt;rating name=&quot;tomatometeravgaudience&quot; default=&quot;true&quot; max=&quot;5&quot;&gt;&lt;value&gt;\1&lt;/value&gt;&lt;votes&gt;\2&lt;/votes&gt;&lt;/rating&gt;&lt;/ratings&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;tomatoUserRating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;tomatoUserReviews&quot;:&quot;([^&quot;]+)</expression>
+		</RegExp>
+	</ParseRTAveAudNewDef>
 
 	<!-- Critics' Consensus -->
 	<GetRTOutlineById dest="5">
