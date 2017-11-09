@@ -204,7 +204,15 @@ msgctxt "#30115"
 msgid "Use the Score Aggregated from"
 msgstr ""
 
-#empty strings from id 30116 to 30199
+msgctxt "#30116"
+msgid "OMDB Api Key"
+msgstr ""
+
+msgctxt "#30117"
+msgid "Please Register Api Key on omdbapi.com and Add it Above"
+msgstr ""
+
+#empty strings from id 30118 to 30199
 
 msgctxt "#30200"
 msgid "Credits"

@@ -1,3 +1,8 @@
+[B]2.8.7[/B]
+- fixed: Rotten Tomato ratings are back via OMDBAPI.com; users will need to obtain individual API key on omdbapi.com and add it in settings
+- added: Keep Original title option for TMDB (thanks to AMoo-Miki)
+- fixed: search language in TMDB searches (thanks to AMoo-Miki)
+
 [B]2.8.6[/B]
 - fixed: search results might miss movies (thanks to scudlee)
 

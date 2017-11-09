@@ -4,7 +4,7 @@
     <setting type="sep"/>
     <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="IMDb"/>
     <setting label="30008" subsetting="true" type="select" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
-    <setting label="30027" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
+    <setting label="30027" subsetting="true" type="select" values="Keep Original|bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
     <setting type="sep"/>
     <setting label="30022" type="labelenum" values="IMDb|themoviedb.org" id="genressource" default="IMDb"/>
     <setting label="30040" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbgenreslanguage" default="en" visible="eq(-1,1)"/>
@@ -19,13 +19,13 @@
   <category label="30400">
     <setting type="lsep" label="30401"/>
     <setting type="sep"/>
-    <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|OFDb.de|IMDb Outline" id="plotsource" default="IMDb"/>
+    <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|OFDb.de|Rotten Tomatoes / Critics' Consensus|IMDb Outline" id="plotsource" default="IMDb"/>
     <setting label="30020" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbplotlanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
     <setting label="30042" type="labelenum" values="IMDb|themoviedb.org|None" id="taglinesource" default="IMDb"/>
     <setting label="30043" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
-    <setting label="30045" type="labelenum" values="IMDb|None" id="outlinesource" default="IMDb"/>
+    <setting label="30045" type="labelenum" values="IMDb|Rotten Tomatoes / Critics' Consensus|None" id="outlinesource" default="IMDb"/>
     <setting type="sep"/>
   </category>
 
@@ -70,7 +70,11 @@
   <category label="30100">
     <setting type="lsep" label="30030"/>
     <setting type="sep"/>
-    <setting label="30021" type="labelenum" values="IMDb|MetaCritic|themoviedb.org" id="mratingsource" default="IMDb"/>
+    <setting label="30021" type="labelenum" values="IMDb|Rotten Tomatoes|MetaCritic|themoviedb.org" id="mratingsource" default="IMDb"/>
+    <setting label="30110" subsetting="true" type="labelenum" values="TomatoMeter|Average Rating" id="tomato" default="TomatoMeter" visible="eq(-1,1)"/>
+    <setting label="30115" subsetting="true" type="labelenum" values="All Critics|Audience Score" id="allcritics" default="All Critics" visible="eq(-2,1)"/>
+    <setting label="30116" subsetting="true" type="text" id="omdbapikey" default="Please Enter Your OMDB API Key" visible="eq(-3,1)"/>
+    <setting type="lsep" label="30117" visible="eq(-4,1)"/>
     <setting type="sep"/>
     <setting label="30044" type="bool" id="imdbtop250" default="true"/>
     <setting type="sep"/>
