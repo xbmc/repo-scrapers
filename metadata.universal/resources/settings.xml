@@ -26,6 +26,7 @@
     <setting label="30043" subsetting="true" type="select" values="bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh" id="tmdbtaglinelanguage" default="en" visible="eq(-1,1)"/>
     <setting type="sep"/>
     <setting label="30045" type="labelenum" values="IMDb|Rotten Tomatoes / Critics' Consensus|None" id="outlinesource" default="IMDb"/>
+    <setting label="30116" subsetting="true" type="text" id="omdbapikey" default="Please Enter Your OMDB API Key" visible="eq(-1,1)"/>
     <setting type="sep"/>
   </category>
 

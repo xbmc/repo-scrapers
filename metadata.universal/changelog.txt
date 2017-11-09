@@ -1,5 +1,8 @@
+[B]2.8.8[/B
+- changed: added option to enter OMDB API KEY if only using RT consensus without the scores
+
 [B]2.8.7[/B]
-- fixed: Rotten Tomato ratings are back via OMDBAPI.com; users will need to obtain individual API key on omdbapi.com and add it in settings
+- fixed: Rotten Tomato ratings are back via omdbapi.com; users will need to obtain individual API key on omdbapi.com and add it in settings
 - added: Keep Original title option for TMDB (thanks to AMoo-Miki)
 - fixed: search language in TMDB searches (thanks to AMoo-Miki)
 
