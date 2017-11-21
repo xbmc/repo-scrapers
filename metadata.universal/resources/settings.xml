@@ -34,7 +34,7 @@
     <setting type="sep"/>
     <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="IMDb"/>
     <setting type="sep"/>
-    <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="IMDb"/>
+    <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="themoviedb.org"/>
     <setting type="sep"/>
     <setting label="30202" type="labelenum" values="IMDb|themoviedb.org" id="countrysource" default="IMDb"/>
     <setting type="sep"/>
