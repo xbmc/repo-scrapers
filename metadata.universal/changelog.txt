@@ -1,3 +1,6 @@
+[B]2.8.11[/B]
+- changed: split zh-cn and zh-tw
+
 [B]2.8.8[/B
 - changed: added option to enter OMDB API KEY if only using RT consensus without the scores
 
