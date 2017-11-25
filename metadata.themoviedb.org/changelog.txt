@@ -1,3 +1,6 @@
+[B]4.0.3[/B]
+- changed: split zh-cn and zh-tw
+
 [B]4.0.1[/B]
 - switched API queries to https
 
