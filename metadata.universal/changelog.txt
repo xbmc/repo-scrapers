@@ -1,3 +1,7 @@
+[B]4.0.0[/B]
+- updated: multiple ratings and uniqueids
+- changed: premiered date scraping
+
 [B]2.8.11[/B]
 - changed: split zh-cn and zh-tw
 
