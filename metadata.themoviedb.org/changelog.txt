@@ -1,3 +1,6 @@
+[B]5.0.1[/B]
+- changed: simplified ratings code
+
 [B]5.0.0[/B]
 Version bump for Krypton
 
