@@ -1,3 +1,6 @@
+[B]5.0.0[/B]
+Version bump for Krypton
+
 [B]4.0.3[/B]
 - changed: split zh-cn and zh-tw
 
