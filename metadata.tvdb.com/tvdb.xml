@@ -159,10 +159,10 @@
 			<RegExp input="" output="" dest="14">
 				<expression clear="yes"/>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tvdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tvdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="4">
 				<expression clear="yes">"id": (\d+),</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tmdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="4+">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;imdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="4+">
 				<expression>"imdbId": "(tt\d+)",</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="4+">
@@ -866,7 +866,7 @@
 									</xsl:otherwise>
 								</xsl:choose>
 							</plot>
-							<uniqueid type="tvdb"><xsl:value-of select="$FirstEpisode/id"/></uniqueid>
+							<uniqueid type="tvdb" default="true"><xsl:value-of select="$FirstEpisode/id"/></uniqueid>
 							<xsl:if test="$FirstEpisode/imdbId!=''"><uniqueid type="imdb"><xsl:value-of select="$FirstEpisode/imdbId"/></uniqueid></xsl:if>
 							<aired><xsl:value-of select="$FirstEpisode/firstAired"/></aired>
 							<xsl:choose>
