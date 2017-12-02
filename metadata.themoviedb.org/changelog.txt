@@ -1,3 +1,6 @@
+[B]5.0.2[/B]
+- changed: made tmdb uniqueid consistent with documentation
+
 [B]5.0.1[/B]
 - changed: simplified ratings code
 
