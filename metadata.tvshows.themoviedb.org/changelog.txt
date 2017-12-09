@@ -1,6 +1,9 @@
+[B]2.0.1[/B]
+- changed: tmdb rating name
+
 [B]2.0.0[/B]
-added: some missing languages
-changed: bump version for Kodi v17
+- added: some missing languages
+- changed: bump version for Kodi v17
 
 [B]1.4.0[/B]
 added: uniqueids and ratings with their name (requires Kodi v17 or newer) -thanks phate89

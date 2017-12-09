@@ -67,7 +67,7 @@
 			<RegExp input="$$7" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;&lt;uniqueid type=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;id&gt;\1&lt;/id&gt;&lt;uniqueid type=&quot;tmdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
@@ -186,10 +186,10 @@
 			<RegExp input="$$1" output="&lt;aired&gt;\1&lt;/aired&gt;" dest="5+">
 				<expression>"air_date":"([^"]*)"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;uniqueid type=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tmdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression>"id":([0-9]+),"production_code"</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;ratings&gt;&lt;rating name=&quot;themoviedb&quot; default=&quot;true&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;" dest="5+">
+			<RegExp input="$$7" output="&lt;ratings&gt;&lt;rating name=&quot;tmdb&quot; default=&quot;true&quot;&gt;\1&lt;/rating&gt;&lt;/ratings&gt;" dest="5+">
 				<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="7">
 					<expression>&quot;vote_average&quot;:([^&quot;]*)</expression>
 				</RegExp>
