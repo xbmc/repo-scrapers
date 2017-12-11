@@ -44,13 +44,13 @@
 	</GetSearchResults>
 	<GetDetails dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tmdb&quot; default=&quot;true&quot;&gt;$$2&lt;/uniqueid&gt;" dest="5">
-				<expression/>
-			</RegExp>
 			<RegExp input="$$1" output="\1" dest="11">
 				<expression clear="yes" noclean="1">&quot;id&quot;:[0-9]*,&quot;imdb_id&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
-			<RegExp input="$$11" output="&lt;uniqueid type=&quot;imdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+			<RegExp input="$$11|default=&quot;true&quot;" output="&lt;uniqueid type=&quot;tmdb&quot; \1&gt;$$2&lt;/uniqueid&gt;" dest="5">
+				<expression>^\|(default=&quot;true&quot;)|tt[0-9]+</expression>
+			</RegExp>
+			<RegExp input="$$11" output="&lt;uniqueid type=&quot;imdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
