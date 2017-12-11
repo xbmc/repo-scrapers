@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2017-08-07">
+<scraper framework="1.1" date="2017-12-10">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -55,7 +55,7 @@
 				<expression repeat="yes" noclean="1">(&lt;entity&gt;.+?([0-9]+)&lt;/id&gt;)&lt;/entity&gt;</expression>
 			</RegExp>
 			<!-- en caso de que haya más de 10 páginas de resultados en FA asumimos un error en la búsqueda -->
-			<!-- y reseteamos los resultados para forzar que XBMC repita la búsqueda con el encoding adecuado -->
+			<!-- y reseteamos los resultados para forzar que el sistema repita la búsqueda con el encoding adecuado -->
 			<RegExp conditional="!GoogleAdvSearch" input="$$1" output="" dest="5">
 				<expression>page=10</expression>
 			</RegExp>
@@ -113,7 +113,7 @@
 			<!-- dirección -->
 			<RegExp input="$$9" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
 				<RegExp input="$$1" output="\1  " dest="9">
-					<expression trim="1">Director&lt;/dt&gt;(.+?)&lt;/dd&gt;</expression>
+					<expression trim="1">Dirección&lt;/dt&gt;(.+?)&lt;/dd&gt;</expression>
 				</RegExp>
 				<expression repeat="yes" trim="1">(.+?),?\s\s+</expression>
 			</RegExp>
@@ -216,21 +216,24 @@
 			</RegExp>
 
 			<!-- descarga el poster principal de filmaffinity -->
+<!-- comentado por si algún día se soluciona
 			<RegExp conditional="FirstFilmAffinityPoster" input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;\2&lt;/thumb&gt;" dest="5+">
 				<expression noclean="1">(href|src)=&quot;(https://pics.filmaffinity.com/[^&quot;]+)</expression>
 			</RegExp>
-			
+-->			
 			<!-- descarga todos los posters que haya en filmaffinity -->
+<!-- comentado por si algún día se soluciona
 			<RegExp conditional="EnableFilmAffinityPosters" input="$$16" output="&lt;url function=&quot;GetFilmAffinityPosters&quot;&gt;https://www.filmaffinity.com/es/filmimages.php?movie_id=\1&lt;/url&gt;" dest="5+">
 				<expression noclean="1" />
 			</RegExp>
+-->			
 			
 			<!-- eliminamos todos los espacios en blanco que hayan aparecido por el camino -->
 			<RegExp input="$$5" output="\1 " dest="5">
 				<expression repeat="yes" noclean="1">(\S+)</expression>
 			</RegExp>
 			
-			<!-- y le devolvemos todos los detalles al señor XBMC -->
+			<!-- y le devolvemos todos los detalles al sistema -->
 			<expression noclean="1" />
 		</RegExp>
 	</GetDetails>
@@ -272,36 +275,6 @@
 				<expression noclean="1" />
 			</RegExp>
 			
-			<!-- obtención del poster de trakt.tv -->
-			<RegExp conditional="EnableTraktPoster" input="$$6" output="&lt;url cache=&quot;trakttv-tt$$6.json&quot; function=&quot;GetTraktPoster&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/tt$$6&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención del poster de fanart.tv -->
-			<RegExp conditional="EnableFanartTvPoster" input="$$6" output="&lt;url cache=&quot;fanarttv-tt$$6.json&quot; function=&quot;GetFanartTvPoster&quot;&gt;http://webservice.fanart.tv/v3/movies/tt\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención de los posters de IMDB -->
-			<RegExp conditional="EnableIMDBPosters" input="$$6" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención de los posters de TMDB -->
-			<RegExp conditional="EnableTMDBPoster" input="$$6" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			
-			<!-- obtención de los fanarts de trakt.tv -->
-			<RegExp conditional="EnableTraktFanArt" input="$$6" output="&lt;url cache=&quot;trakttv-tt$$6.json&quot; function=&quot;GetTraktFanart&quot;&gt;http://api.trakt.tv/movie/summary.json/be64291aafbbbe62fdc4f3aa0edb4073/tt\1&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención de los fanarts de fanart.tv -->
-			<RegExp conditional="EnableFanartTvFanart" input="$$6" output="&lt;url cache=&quot;fanarttv-tt$$6.json&quot; function=&quot;GetFanartTvFanart&quot;&gt;http://webservice.fanart.tv/v3/movies/tt\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			<!-- obtención de los fanarts de TMDB -->
-			<RegExp conditional="EnableTMDBFanArt" input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
-				<expression noclean="1" />
-			</RegExp>
-			
 			<!-- obtención del listado completo de actores de IMDB -->
 			<RegExp conditional="IMDBCast" input="$$6" output="&lt;chain function=&quot;GetIMDBFullCastById&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1" />
@@ -323,6 +296,33 @@
 				<expression noclean="1" />
 			</RegExp>
 
+			<!-- obtención de los posters de TMDB -->
+			<RegExp conditional="EnableTMDBPoster" input="$$6" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+			<!-- obtención de los posters de IMDB -->
+			<RegExp conditional="EnableIMDBPosters" input="$$6" output="&lt;url cache=&quot;imdb-tt$$6.json&quot; function=&quot;GetIMDBPoster&quot;&gt;http://www.theimdbapi.org/api/movie?movie_id=tt\1&lt;/url&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+<!-- comentado por si algún día se soluciona
+			<RegExp conditional="EnableIMDBPosters" input="$$6" output="&lt;chain function=&quot;GetIMDBThumbsById&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+-->
+			<!-- obtención del poster de fanart.tv -->
+			<RegExp conditional="EnableFanartTvPoster" input="$$6" output="&lt;url cache=&quot;fanarttv-tt$$6.json&quot; function=&quot;GetFanartTvPoster&quot;&gt;http://webservice.fanart.tv/v3/movies/tt\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+			
+			<!-- obtención de los fanarts de fanart.tv -->
+			<RegExp conditional="EnableFanartTvFanart" input="$$6" output="&lt;url cache=&quot;fanarttv-tt$$6.json&quot; function=&quot;GetFanartTvFanart&quot;&gt;http://webservice.fanart.tv/v3/movies/tt\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+			<!-- obtención de los fanarts de TMDB -->
+			<RegExp conditional="EnableTMDBFanArt" input="$$6" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1" />
+			</RegExp>
+			
 			<!-- obtención de título de colección de TMDB-->
 			<RegExp conditional="EnableTMDBSet" input="$$6" output="&lt;chain function=&quot;GetTMDBLangSetByIdChain&quot;&gt;tt\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1" />
@@ -361,25 +361,11 @@
 		</RegExp>
 	</GetFilmAffinityPosters>
 	
-	<!-- función para la obtención de poster de trakt.tv -->
-	<GetTraktPoster dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb aspect=&quot;poster&quot;&gt;\1&lt;/thumb&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;poster&quot;:&quot;(http://[^&quot;]+)</expression>
-		</RegExp>
-	</GetTraktPoster>
-	
-	<!-- función para la obtención de fanart de trakt.tv -->
-	<GetTraktFanart dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;fanart&gt;&lt;thumb&gt;\1&lt;/thumb&gt;&lt;/fanart&gt;&lt;/details&gt;" dest="5">
-			<expression noclean="1">&quot;fanart&quot;:&quot;(http://[^&quot;]+)</expression>
-		</RegExp>
-	</GetTraktFanart>
-	
 	<!-- función para la obtención de poster de fanart.tv -->
 	<GetFanartTvPoster dest="5">
 		<RegExp input="$$10" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot;&gt;\1&lt;/thumb&gt;" dest="10">
-				<expression repeat="yes" noclean="1">(http:[^&quot;]+?/movieposter/[^&quot;]+)</expression>
+				<expression repeat="yes" noclean="1">(http[^&quot;]+?/movieposter/[^&quot;]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -389,10 +375,17 @@
 	<GetFanartTvFanart dest="5">
 		<RegExp input="$$10" output="&lt;details&gt;&lt;fanart&gt;\1&lt;/fanart&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;thumb&gt;\1&lt;/thumb&gt;" dest="10">
-				<expression repeat="yes" noclean="1">(http:[^&quot;]+?/moviebackground/[^&quot;]+)</expression>
+				<expression repeat="yes" noclean="1">(http[^&quot;]+?/moviebackground/[^&quot;]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</GetFanartTvFanart>
+	
+	<!-- función para la obtención de poster de IMDB -->
+	<GetIMDBPoster dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;thumb aspect=&quot;poster&quot;&gt;\1&lt;/thumb&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1">&quot;large&quot;: &quot;(http[^&quot;]+)</expression>
+		</RegExp>
+	</GetIMDBPoster>
 	
 </scraper>

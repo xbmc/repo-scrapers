@@ -1,3 +1,16 @@
+[B]1.8.1[/B]
+
+- Revisada la búsqueda de posters en IMDB
+
+[B]1.8.0[/B]
+
+- Eliminada la búsqueda de posters en FA
+- Eliminada la búsqueda de posters en Trakt
+- Eliminada la búsqueda de fanart en Trakt
+- Revisada la búsqueda de posters y fanart en Fanart.tv
+- Revisada la búsqueda de posters en IMDB
+- Revisada la búsqueda de director
+
 [B]1.7.6[/B]
 
 - Revisada la búsqueda de trailers en FA
