@@ -13,18 +13,16 @@
 	</category>
 	<category label="30020">
 		<setting label="30021" type="lsep" />
-		<setting label="30022" type="bool" id="FirstFilmAffinityPoster" default="true" />
-		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" default="false" />
-		<setting label="30023" type="bool" id="EnableTMDBPoster" default="false" />
+		<setting label="30022" type="bool" id="FirstFilmAffinityPoster" enable="false" default="false" />
+		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" enable="false" default="false" />
+		<setting label="30023" type="bool" id="EnableTMDBPoster" default="true" />
 		<setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
-		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
-		<setting label="30028" type="bool" id="EnableTraktPoster" default="false" />
 		<setting label="30029" type="bool" id="EnableFanartTvPoster" default="false" />
+		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
 	</category>
 	<category label="30040">
 		<setting label="30041" type="lsep" />
 		<setting label="30042" type="bool" id="EnableTMDBFanArt" default="true" />
-		<setting label="30043" type="bool" id="EnableTraktFanArt" default="false" />
 		<setting label="30044" type="bool" id="EnableFanartTvFanart" default="false" />
 	</category>
 	<category label="30060">
