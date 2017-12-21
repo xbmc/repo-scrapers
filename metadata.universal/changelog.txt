@@ -1,3 +1,6 @@
+[B]2.8.12[/B]
+- fixed: changed USA to United States due to IMDb changes
+
 [B]2.8.11[/B]
 - changed: split zh-cn and zh-tw
 
