@@ -3,7 +3,7 @@
   <category label="128">
     <setting type="sep"/>
     <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="IMDb"/>
-    <setting label="30008" subsetting="true" type="select" values="Keep Original|USA / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
+    <setting label="30008" subsetting="true" type="select" values="Keep Original|United States / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
     <setting label="30027" subsetting="true" type="select" values="Keep Original|bg|cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh-cn|zh-tw" id="tmdbtitlelanguage" default="en" visible="eq(-2,1)"/>
     <setting type="sep"/>
     <setting label="30022" type="labelenum" values="IMDb|themoviedb.org" id="genressource" default="IMDb"/>
@@ -85,7 +85,7 @@
     <setting type="sep"/>
     <setting type="lsep" label="30031"/>
     <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
-    <setting label="30033" subsetting="true" type="select" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|USA|Venezuela" id="imdbcertcountry" default="USA" visible="eq(-1,0)"/>
+    <setting label="30033" subsetting="true" type="select" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|United States|Venezuela" id="imdbcertcountry" default="United States" visible="eq(-1,0)"/>
     <setting label="30033" subsetting="true" type="select" values="au|bg|br|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|us|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>/>
     <setting type="sep"/>
     <setting label="30035" type="text" id="certprefix" default="Rated "/>
