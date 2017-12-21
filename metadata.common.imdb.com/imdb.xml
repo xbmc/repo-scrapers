@@ -330,7 +330,7 @@
 	</GetIMDBUSACert>
 	<ParseIMDBUSACert dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>&gt;\s*USA:(P?G|PG-13|R|NC-17)&lt;/a&gt;</expression>
+			<expression>&gt;\s*United\sStates:(P?G|PG-13|R|NC-17)&lt;/a&gt;</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
 			<expression>MPAA&lt;/a&gt;:&lt;/h5&gt;&lt;div\sclass=&quot;info-content&quot;&gt;Rated\s(P?G|PG-13|R|NC-17)</expression>
@@ -345,7 +345,7 @@
 			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-combined.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;http://akas.imdb.com/title/$$1/combined|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="2">
 				<expression noclean="1"/>
 			</RegExp>
-			<expression>USA</expression>
+			<expression>United States</expression>
 		</RegExp>
 	</GetIMDBCountryCert>
 	<ParseIMDBCountryCert dest="5">
@@ -411,25 +411,25 @@
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="12">
-					<expression clear="yes">&lt;a\shref=&quot;/country/[^&gt;]+&gt;(USA&lt;/a&gt;&lt;/div&gt;)</expression>
+					<expression clear="yes">&lt;a\shref=&quot;/country/[^&gt;]+&gt;(United\sStates&lt;/a&gt;&lt;/div&gt;)</expression>
 				</RegExp>
 				<RegExp input="$$12" output="$$9" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+(USA(&lt;em&gt;)?&lt;br&gt;)</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+(United\sStates(&lt;em&gt;)?&lt;br&gt;)</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((English|imdb))</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((United\sStates)\s(&lt;em&gt;)?\((English|imdb))</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
-					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((USA)\s(&lt;em&gt;)?\((new\stitle))</expression>
+					<expression fixchars="1" clear="yes">&gt;\s*?&quot;([^&lt;]+)&quot;[^&lt;]+[&lt;em&gt;]?[^&quot;]+((United\sStates)\s(&lt;em&gt;)?\((new\stitle))</expression>
 				</RegExp>
 				<RegExp input="$$11" output="\1" dest="10">
 					<expression>(.+)</expression>
