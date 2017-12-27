@@ -1,3 +1,6 @@
+[B]2.9.6[/B]
+- fixed: movie title issues after IMDb layout changes
+
 [B]2.9.5[/B]
 - fixed: IMDb Full credits after IMDb layout changes
 
