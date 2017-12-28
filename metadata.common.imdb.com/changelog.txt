@@ -1,3 +1,6 @@
+[B]2.9.7[/B]
+- changed: attempt to scrape generic local title from IMDb if multiple are available
+
 [B]2.9.6[/B]
 - fixed: movie title issues after IMDb layout changes
 
