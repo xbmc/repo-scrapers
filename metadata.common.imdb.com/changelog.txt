@@ -1,3 +1,6 @@
+[B]2.9.9[/B]
+- fixed: Thumb for IMDb cast
+
 [B]2.9.8[/B]
 - fixed: IMDb outline for some movies
 
