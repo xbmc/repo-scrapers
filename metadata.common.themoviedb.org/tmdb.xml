@@ -215,14 +215,11 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetTMDBLangSetID>
-	<ParseTMDBSetOutline dest="5">
+	<ParseTMDBSetOutline dest="5" clearbuffers="no">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$4" output="&lt;set&gt;\1&lt;/set&gt;$$13$$14" dest="2">
-				<RegExp input="$$1" output="\1" dest="11">
+				<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="4">
 					<expression noclean="1">&quot;id&quot;:[0-9]+,&quot;name&quot;:&quot;([^&quot;]*)</expression>
-				</RegExp>
-				<RegExp input="$$11" output="&lt;name&gt;\1&lt;/name&gt;" dest="4">
-					<expression noclean="1" />
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="10">
 					<expression noclean="1">&quot;id&quot;:([0-9]+)</expression>
@@ -249,8 +246,8 @@
 	</ParseTMDBSetOutline>
 	<ParseFallbackTMDBSetOutline dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;&lt;set&gt;\1&lt;/set&gt;$$13$$14&lt;/details&gt;" dest="5">
-			<RegExp input="$$11" output="&lt;name&gt;\1&lt;/name&gt;" dest="2">
-				<expression noclean="1" />
+			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="2">
+				<expression noclean="1">&quot;id&quot;:[0-9]+,&quot;name&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;overview&gt;\1&lt;/overview&gt;" dest="2+">
 				<expression noclean="1">&quot;id&quot;:[0-9]+,&quot;name&quot;:&quot;[^&quot;]*&quot;,&quot;overview&quot;:&quot;([^&quot;]*)</expression>
