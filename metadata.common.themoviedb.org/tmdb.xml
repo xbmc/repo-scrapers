@@ -32,7 +32,7 @@
 				<expression />
 			</RegExp>
 			<RegExp input="$INFO[tmdbtitlelanguage]" output="$$2" dest="5">
-				<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBTitle&quot; cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;" dest="2">
+				<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBTitle&quot; cache=&quot;tmdb-$INFO[tmdbsetlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;" dest="2">
 					<expression/>
 				</RegExp>
 				<expression>Keep Original</expression>
@@ -649,6 +649,12 @@
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBPremiered&quot; cache=&quot;tmdb-$INFO[tmdbtitlelanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=$INFO[tmdbtitlelanguage]&lt;/url&gt;" dest="5">
 				<expression />
+			</RegExp>
+			<RegExp input="$INFO[tmdbtitlelanguage]" output="$$2" dest="5">
+				<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBPremiered&quot; cache=&quot;tmdb-$INFO[tmdbsetlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;" dest="2">
+					<expression/>
+				</RegExp>
+				<expression>Keep Original</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
