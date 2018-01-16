@@ -281,13 +281,10 @@
 			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBLangThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="movieposterdb" input="$$2" output="&lt;chain function=&quot;GetMoviePosterDBThumbs&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression/>
-			</RegExp>
 			<RegExp conditional="fanarttvfanart" input="$$2" output="&lt;chain function=&quot;GetFanartTvFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvclearlogo" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovielogoByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvclearlogo" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieClearlogoByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp conditional="fanarttvmoviebanner" input="$$2" output="&lt;chain function=&quot;GetFanartTvMoviebannerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">

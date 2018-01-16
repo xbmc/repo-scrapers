@@ -1,3 +1,6 @@
+[B]5.0.1[/B]
+- changed: added ee and fr-ca languages, some cleanup
+
 [B]5.0.0[/B]
 - added: Extra Artwork (e.g. clearlogos, banners, etc.) from fanart.tv
 
