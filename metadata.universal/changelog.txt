@@ -1,5 +1,5 @@
-[B]4.0.2[/B]
-- fixed: changed USA to United States in settings due to IMDb changes
+[B]4.1.0[/B]
+- changed: major code clean-up of tmdb common scraper library
 
 [B]4.0.1[/B]
 - fixed: tmdb uniqueids fix

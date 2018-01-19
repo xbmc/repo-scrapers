@@ -59,7 +59,7 @@
 			<RegExp conditional="keeporiginaltitle" input="$$9" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="!keeporiginaltitle" input="$$2" output="&lt;chain function=&quot;GetTMDBTitleByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="!keeporiginaltitle" input="$$2" output="&lt;chain function=&quot;GetTMDBTitleByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$9" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
@@ -83,13 +83,13 @@
 			<RegExp input="$$11|$INFO[RatingS]|default|$INFO[imdbanyway]" output="&lt;chain function=&quot;GetIMDBRatingsById&quot;&gt;$$11\1&lt;/chain&gt;" dest="5+">
 				<expression>tt[0-9]+\|(?:IMDb(\|default)|.*true$)</expression>
 			</RegExp>
-			<RegExp input="$INFO[RatingS]|default" output="&lt;chain function=&quot;GetTMDBRatingsByIdChain&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[RatingS]|default" output="&lt;chain function=&quot;GetTMDBRatingsByIdChain&quot;&gt;$$2::$INFO[language]\1&lt;/chain&gt;" dest="5+">
 				<expression>TMDb(\|default)|.*</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBStudioByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBStudioByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCountryByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCountryByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBDirectorsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
@@ -98,31 +98,31 @@
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBWitersByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2::$INFO[tmdbcertcountry]::$INFO[certprefix]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBPlotByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBPlotByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBTaglineByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBTaglineByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCastByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />
