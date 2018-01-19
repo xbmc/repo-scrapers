@@ -299,7 +299,7 @@
 			<RegExp conditional="fanarttvmoviediscart" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieDiscartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2::$INFO[tmdbthumblanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp conditional="tmdbtrailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2::$INFO[tmdbtrailerlanguage]&lt;/chain&gt;" dest="5+">
