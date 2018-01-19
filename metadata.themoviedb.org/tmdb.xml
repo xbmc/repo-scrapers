@@ -119,7 +119,7 @@
 			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">

@@ -1,3 +1,6 @@
+[B]2.9.1[/B]
+- changed: more cleanup and fixes
+
 [B]2.9.0[/B]
 - changed: major code clean-up of tmdb common scraper library
 

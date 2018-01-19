@@ -108,7 +108,7 @@
 			<RegExp conditional="tmdbthumbs" input="$$8" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;\1::zh&lt;/chain&gt;" dest="6+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="tmdbfanart" input="$$8" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="6+">
+			<RegExp conditional="tmdbfanart" input="$$8" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;\1::zh&lt;/chain&gt;" dest="6+">
 				<expression/>
 			</RegExp>
 			<expression noclean="1"/>
