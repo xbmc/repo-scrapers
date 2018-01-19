@@ -109,13 +109,13 @@
 			<RegExp input="$$9" output="&lt;chain function=&quot;GetCreditsById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBCertificationsByIdChain&quot;&gt;$$2::$INFO[tmdbcertcountry]::$INFO[certprefix]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBTaglineByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;chain function=&quot;GetTMDBTaglineByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp conditional="!useTMDBCastFirst" input="$$9" output="&lt;chain function=&quot;GetCastById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
@@ -140,14 +140,14 @@
 				<expression>1</expression>
 			</RegExp>
 			<!--genre english-->
-			<RegExp input="$INFO[genreFormat]" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp input="$INFO[genreFormat]" output="&lt;chain function=&quot;GetTMDBGenresByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression>1</expression>
 			</RegExp>
 			<!--genre chinese-->
 			<RegExp input="$INFO[genreFormat]" output="&lt;chain function=&quot;GetZhGenresByTMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>2</expression>
 			</RegExp>
-			<RegExp conditional="useTMDBThumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="useTMDBThumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<RegExp conditional="!useTMDBThumbs" input="$$9" output="&lt;chain function=&quot;GetThumbsById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
@@ -159,7 +159,7 @@
 			<RegExp conditional="!useTMDBFanart" input="$$9" output="&lt;chain function=&quot;GetFanartById&quot;&gt;$$9&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
-			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />

@@ -1,3 +1,6 @@
+[B]4.1.0[/B]
+- changed: major code clean-up of tmdb common scraper library
+
 [B]4.0.3[/B]
 - changed: split zh-cn and zh-tw
 
