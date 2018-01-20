@@ -2,7 +2,7 @@
 <settings>
 	<category label="30000">
 		<setting label="30001" type="lsep" />
-		<setting label="30009" type="bool" id="FAmobile" default="false" />
+		<!-- <setting label="30009" type="bool" id="FAmobile" default="false" /> -->
 		<setting label="30002" type="bool" id="EnableOriginalTitles" default="false" />
 		<setting label="30003" type="bool" id="StudioFlagsON" default="true" />
 		<setting label="30004" type="lsep" />
@@ -13,38 +13,41 @@
 	</category>
 	<category label="30020">
 		<setting label="30021" type="lsep" />
-		<setting label="30022" type="bool" id="FirstFilmAffinityPoster" enable="false" default="false" />
-		<setting label="30039" type="bool" id="EnableFilmAffinityPosters" enable="false" default="false" />
+		<!-- <setting label="30022" type="bool" id="FirstFilmAffinityPoster" enable="false" default="false" /> -->
+		<!-- <setting label="30039" type="bool" id="EnableFilmAffinityPosters" enable="false" default="false" /> -->
 		<setting label="30023" type="bool" id="EnableTMDBPoster" default="true" />
-		<setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<!-- <setting label="30024" type="labelenum" id="tmdbthumblanguage" default="es" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" /> -->
 		<setting label="30029" type="bool" id="EnableFanartTvPoster" default="false" />
-		<setting label="30026" type="bool" id="EnableIMDBPosters" default="false" />
-	</category>
-	<category label="30040">
+		<!-- <setting label="30026" type="bool" id="EnableIMDBPosters" default="false" /> -->
+	<!-- </category> -->
+	<!-- <category label="30040"> -->
 		<setting label="30041" type="lsep" />
 		<setting label="30042" type="bool" id="EnableTMDBFanArt" default="true" />
 		<setting label="30044" type="bool" id="EnableFanartTvFanart" default="false" />
-	</category>
-	<category label="30060">
+	<!-- </category> -->
+	<!-- <category label="30060"> -->
 		<setting label="30061" type="lsep" />
-		<setting label="30062" type="bool" id="EnableFATrailer" default="true" />
-		<setting label="30063" type="bool" id="EnableTMDBTrailer" default="false" />
-		<setting label="30064" type="labelenum" id="tmdbtrailerlanguage" default="es" enable="eq(-1,true)" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh"/>
+		<setting label="30063" type="bool" id="EnableTMDBTrailer" default="true" />
+		<setting label="30062" type="bool" id="EnableFATrailer" default="false" />
+		<!-- <setting label="30064" type="labelenum" id="tmdbtrailerlanguage" default="es" enable="eq(-1,true)" values="cs|da|de|el|en|es|fi|fr|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|tr|zh"/> -->
 	</category>
 	<category label="30080">
 		<setting label="30081" type="lsep" />
 		<setting label="30082" type="bool" id="EnableTMDBSet" default="true" />
-		<setting label="30083" type="labelenum" id="tmdbsetlanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<!-- <setting label="30083" type="labelenum" id="tmdbsetlanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" /> -->
 		<setting label="30084" type="bool" id="EnableTMDBTagline" default="true" />
-		<setting label="30085" type="labelenum" id="tmdbtaglinelanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" />
+		<!-- <setting label="30085" type="labelenum" id="tmdbtaglinelanguage" default="es" enable="eq(-1,true)" values="da|fi|nl|de|it|es|fr|pl|hu|el|tr|ru|he|ja|pt|zh|cs|sl|hr|ko|us|gb|sv|no" /> -->
 		<setting label="30086" type="bool" id="EnableTMDBCertifications" default="true" />
-		<setting label="30087" type="labelenum" id="tmdbcertcountry" default="us" enable="eq(-1,true)" values="au|bg|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|th|tr|us|zh" />
+		<!-- <setting label="30087" type="labelenum" id="tmdbcertcountry" default="us" enable="eq(-1,true)" values="au|bg|cs|da|de|el|es|fi|fr|gb|he|hr|hu|it|ja|ko|nl|no|pl|pt|ru|sl|sv|th|tr|us|zh" /> -->
+		<setting label="30088" type="bool" id="EnableTMDBCast" default="true" />
+		<setting label="30089" type="select" id="tmdblanguage" default="es" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-cn|zh-tw"/>
+		<setting label="30087" type="select" id="tmdbcertcountry" default="us" enable="eq(-3,true)" values="au|bg|br|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh"/>
 		<setting label="certprefix" type="text" id="certprefix" default="Rated " visible="false"/>
 	</category>
 	<category label="30100">
 		<setting label="30101" type="lsep" />
-		<setting label="30102" type="bool" id="IMDBCast" default="true" />
-		<setting label="30105" type="bool" id="IMDBMPAA" default="true" />
+		<!-- <setting label="30102" type="bool" id="IMDBCast" default="false" /> -->
+		<setting label="30105" type="bool" id="IMDBMPAA" default="false" />
 		<setting label="30106" type="bool" id="IMDBRatings" default="false" />
 		<setting label="30107" type="bool" id="IMDBTagline" default="false" />
 		<setting label="30104" type="bool" id="IMDBTop250" default="false" />
