@@ -1,0 +1,22 @@
+[B][COLOR=FFFF8C00]BUILD 0.0.3[/COLOR][/B]
+New: Add Pumpkin Theme - default theme in Aeon MQ 7.
+New: Add Black Theme - default theme in Aeon MQ 8.
+Improved: Compatibility with Aeon MQ 8.
+Changed: Some images have been replaced in order to preserve copyright.
+Fixed: All images have been converted to the sRGB color profile.
+
+Novo: Adicionado o Tema Abóbora - tema padrão da Aeon MQ 7.
+Novo: Adicionado o Tema Preto - tema padrão da Aeon MQ 8.
+Melhorado: Compatibilidade com a Aeon MQ 8.
+Alterado: Algumas imagens foram substituídas a fim de preservar os direitos autorais.
+Corrigido: Todas as imagens foram convertidas para o perfil de cores sRGB.
+
+[B][COLOR=FFFF8C00]BUILD 0.0.2[/COLOR][/B]
+Fixed: Add info file.
+
+Corrigido: Adicionado o arquivo info.
+
+[B][COLOR=FFFF8C00]BUILD 0.0.1[/COLOR][/B]
+New: Initial release.
+
+Novo: Versão inicial.
