@@ -1,3 +1,6 @@
+[B]3.0.1[/B]
+- fixed: USA Title won't scraped correctly under some circumstances, plot outline quirks, IMDB Posters
+
 [B]3.0.0[/B]
 - fixed: IMDb plot outline under some circumstances
 
