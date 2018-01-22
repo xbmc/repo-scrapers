@@ -291,3 +291,7 @@ msgstr ""
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
 msgstr ""
+
+msgctxt "#30504"
+msgid "Enable posters from IMDb"
+msgstr ""
