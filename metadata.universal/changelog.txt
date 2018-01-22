@@ -1,3 +1,6 @@
+[B]5.1.2[/B]
+- fixed: USA Title won't be scraped correctly under some circumstances, plot outline quirks, IMDB Posters
+
 [B]5.1.1[/B]
 - changed: more cleanup and fixes
 
