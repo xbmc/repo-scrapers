@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="resource.images.skinthemes.aeonmq" name="Skin Themes - Aeon MQ" version="0.0.3" provider-name="MarcosQui">
+	<extension point="kodi.resource.images" compile="false" type="skinthemes" />
+	<requires>
+		<import addon="kodi.resource" version="1.0.0"/>
+	</requires>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">Themes for skin Aeon MQ</summary>
+		<summary lang="pt_br">Temas para skin Aeon MQ</summary>
+		<description lang="en">Compatible with skin Aeon MQ 7 and higher.</description>
+		<description lang="pt_br">Compatível com skin Aeon MQ 7 e superior.</description>		
+		<platform>all</platform>
+	</extension>
+</addon>
