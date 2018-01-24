@@ -333,6 +333,9 @@
 	</GetIMDBUSACert>
 	<ParseIMDBUSACert dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
+			<expression>&gt;\s*United\sStates:(TV-(Y7?|P?G|14|MA))&lt;/a&gt;</expression>
+		</RegExp>
+		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
 			<expression>&gt;\s*United\sStates:(P?G|PG-13|R|NC-17)&lt;/a&gt;</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">

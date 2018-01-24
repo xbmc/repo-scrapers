@@ -1,3 +1,6 @@
+[B]3.0.2[/B]
+- Use TV certification in the absence of MPAA ones
+
 [B]3.0.1[/B]
 - fixed: USA Title won't scraped correctly under some circumstances, plot outline quirks, IMDB Posters
 
