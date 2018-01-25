@@ -214,7 +214,7 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$8" dest="5+">
-				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;http://api.themoviedb.org/3/tv/$$6/season/$$11/episode/$$10?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=en&lt;/url&gt;" dest="8">
+				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;http://api.themoviedb.org/3/tv/$$6/season/$$10/episode/$$11?api_key=ecbc86c92da237cb9faff6d3ddc4be6d&amp;amp;language=en&lt;/url&gt;" dest="8">
 					<expression clear="yes">^(?!en).*</expression>
 				</RegExp>
 				<expression>^$</expression>

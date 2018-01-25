@@ -1,3 +1,6 @@
+[B]3.0.1[/B]
+- fixed: typo causing season swapped with episode numbers (thanks tdf1970)
+
 [B]3.0.0[/B]
 - added: extra artwork (clearlogo, clearart, landscape, etc.) from fanart.tv; bumped version for Leia
 
