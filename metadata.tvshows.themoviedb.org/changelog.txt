@@ -1,3 +1,6 @@
+[B]2.0.2[/B]
+- fixed: typo causing season swapped with episode numbers (thanks tdf1970)
+
 [B]2.0.1[/B]
 - changed: tmdb rating name
 
