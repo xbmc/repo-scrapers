@@ -1,3 +1,6 @@
+[B]4.1.2[/B]
+- fixed: TMDb ratings
+
 [B]4.1.1[/B]
 - changed: more cleanup and fixes
 
