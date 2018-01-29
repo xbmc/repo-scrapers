@@ -185,8 +185,11 @@
 			<RegExp input="$INFO[mratingsource]|default|$INFO[alsometa]" output="&lt;chain function=&quot;GetMetaCriticRatingsById&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
 				<expression>MetaCritic(\|default)|true</expression>
 			</RegExp>
-			<RegExp input="$INFO[mratingsource]|default|$INFO[alsorotten]" output="&lt;chain function=&quot;GetRTRatingsById&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
-				<expression>Rotten Tomatoes(\|default)|true</expression>
+			<RegExp input="$INFO[mratingsource]|default=$INFO[tomato]" output="&lt;chain function=&quot;GetRTDefaultRatingById&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
+				<expression>Rotten Tomatoes(\|default=$INFO[tomato])</expression>
+			</RegExp>
+			<RegExp input="$INFO[alsootherrotten]|$INFO[alsorotten]" output="&lt;chain function=&quot;GetRTRatingsById&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
+				<expression>true|true</expression>
 			</RegExp>
 			<RegExp input="$INFO[mratingsource]|default|$INFO[alsotmdb]" output="&lt;chain function=&quot;GetTMDBRatingsByIdChain&quot;&gt;$$2::$INFO[tmdbsetlanguage]\1&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb\.org(\|default)|true</expression>
@@ -235,9 +238,6 @@
 			</RegExp>
 			<RegExp input="$INFO[taglinesource]" output="&lt;chain function=&quot;GetTMDBTaglineByIdChain&quot;&gt;$$2::$INFO[tmdbtaglinelanguage]&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
-			</RegExp>
-			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetRTPlotById&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
-				<expression>^Rotten Tomatoes$</expression>
 			</RegExp>
 			<RegExp input="$INFO[plotsource]" output="&lt;chain function=&quot;GetOFDbPlotByIMDBId&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>OFDb.de</expression>

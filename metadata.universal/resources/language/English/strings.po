@@ -226,7 +226,11 @@ msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
 msgstr ""
 
-#empty strings from id 30118 to 30199
+msgctxt "#30118"
+msgid "Also get non-default Rotten Tomatoes ratings"
+msgstr ""
+
+#empty strings from id 30119 to 30199
 
 msgctxt "#30200"
 msgid "Credits"
