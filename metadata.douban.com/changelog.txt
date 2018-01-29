@@ -1,3 +1,9 @@
+[B]1.1.6[/B]
+- fixed: avatars url for casts changed
+
+[B]1.1.5[/B]
+- changed tmdb common function
+
 [B]1.1.4[/B]
 - fixed: posts and fanarts url changed
 
