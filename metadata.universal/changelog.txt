@@ -1,3 +1,6 @@
+[B]5.1.4[/B]
+- fixed: missing language strings
+
 [B]5.1.3[/B]
 - fixed: Some issues with Rotten Tomatoes ratings
 
