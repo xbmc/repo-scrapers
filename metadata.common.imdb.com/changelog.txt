@@ -1,3 +1,6 @@
+[B]3.0.3[/B]
+- fixed: World-wide English title won't scraped correctly
+
 [B]3.0.2[/B]
 - Use TV certification in the absence of MPAA ones
 

@@ -407,6 +407,9 @@
 				<RegExp input="$$1" output="\1" dest="11">
 					<expression clear="yes">&lt;td&gt;World-wide\s\(English[^&gt;]+&gt;[^&gt;]+&gt;([^&lt;]+)</expression>
 				</RegExp>
+				<RegExp input="$$11" output="\1" dest="10">
+					<expression>(.+)</expression>
+				</RegExp>
 				<RegExp input="$$1" output="\1" dest="11">
 					<expression clear="yes">&lt;td&gt;USA&lt;[^&gt;]+&gt;[^&gt;]+&gt;([^&lt;]+)</expression>
 				</RegExp>
