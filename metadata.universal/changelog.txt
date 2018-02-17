@@ -1,3 +1,6 @@
+[B]5.1.6[/B]
+- workaround: Kodi Core settings bug to fix RT ratings
+
 [B]5.1.4[/B]
 - fixed: missing language strings
 
