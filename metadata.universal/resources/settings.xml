@@ -83,7 +83,7 @@
     <setting type="lsep" label="30031"/>
     <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
     <setting label="30033" subsetting="true" type="select" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|UK|Uruguay|United States|Venezuela" id="imdbcertcountry" default="United States" visible="eq(-1,0)"/>
-    <setting label="30033" subsetting="true" type="select" values="au|bg|br|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>/>
+    <setting label="30033" subsetting="true" type="select" values="au|bg|br|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>
     <setting type="sep"/>
     <setting label="30035" type="text" id="certprefix" default="Rated "/>
     <setting type="sep"/>
