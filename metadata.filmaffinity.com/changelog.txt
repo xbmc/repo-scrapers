@@ -1,3 +1,11 @@
+[B]1.9.2[/B]
+
+- Revisada la búsqueda de colecciones en TMDB
+
+[B]1.9.1[/B]
+
+- Actualizada la conexión con TMDB
+
 [B]1.9.0[/B]
 
 - Revisión general del scraper
