@@ -1,3 +1,6 @@
+[B]5.2.0[/B]
+- added: Language preference to fanart.tv posters
+
 [B]5.1.6[/B]
 - workaround: Kodi Core settings bug to fix RT ratings
 
