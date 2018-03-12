@@ -44,6 +44,7 @@
     <setting type="lsep" label="30047"/>
     <setting type="sep"/>
     <setting label="30502" type="bool" id="fanarttvposter" default="false"/>
+    <setting label="30034" subsetting="true" type="select" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-cn|zh-tw" id="fanarttvposterlanguage" default="en" enable="eq(-1,true)"/>
     <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
     <setting label="30034" subsetting="true" type="select" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-cn|zh-tw" id="tmdbthumblanguage" default="en" enable="eq(-1,true)"/>
