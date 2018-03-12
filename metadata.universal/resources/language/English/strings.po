@@ -131,7 +131,7 @@ msgid "Preferred Certification Country"
 msgstr ""
 
 msgctxt "#30034"
-msgid "Preferred Thumb Language"
+msgid "Preferred Poster Language"
 msgstr ""
 
 msgctxt "#30035"

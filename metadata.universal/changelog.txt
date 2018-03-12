@@ -1,3 +1,6 @@
+[B]4.1.6[/B]
+- added: Language preference to fanart.tv posters
+
 [B]4.1.5[/B]
 - harmonized OMDB API key settings with Leia
 
