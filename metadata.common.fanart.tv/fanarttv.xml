@@ -130,10 +130,13 @@
 		</RegExp>
 	</ParseFanartTvFanart>
 
-	<GetFanartTvThumbsByIdChain dest="4">
+	<GetFanartTvThumbsByIdChain clearbuffers="no" dest="4"> <!-- Expected chaining format= tmdb_id::language-->
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\2" dest="11">
+				<expression>(.+)::(.+)</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;url function=&quot;ParseFanartTvMoviePoster&quot; cache=&quot;fanarttv-\1.json&quot;&gt;https://webservice.fanart.tv/v3/movies/\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;" dest="5">
-				<expression />
+				<expression>(.+)::(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -150,7 +153,13 @@
 				<expression noclean="1">&quot;movieposter&quot;:\s\[(.*?)\}\s*\]</expression>
 			</RegExp>
 			<RegExp input="$$16" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;https://\1/preview/\2&quot;&gt;https://\1/fanart/\2&lt;/thumb&gt;" dest="13">
-				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)</expression>
+				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)&quot;,\s*&quot;lang&quot;:\s&quot;$$11&quot;</expression>
+			</RegExp>
+			<RegExp input="$$16" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;https://\1/preview/\2&quot;&gt;https://\1/fanart/\2&lt;/thumb&gt;" dest="13+">
+				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)&quot;,\s*&quot;lang&quot;:\s&quot;en&quot;</expression>
+			</RegExp>
+			<RegExp input="$$16" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;https://\1/preview/\2&quot;&gt;https://\1/fanart/\2&lt;/thumb&gt;" dest="13+">
+				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)&quot;,\s*&quot;lang&quot;:\s&quot;00&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
