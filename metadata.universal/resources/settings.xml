@@ -47,7 +47,7 @@
     <setting label="30034" subsetting="true" type="select" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-cn|zh-tw" id="fanarttvposterlanguage" default="en" visible="eq(-1,true)"/>
     <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
-    <setting label="30034" subsetting="true" type="select" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-cn|zh-tw" id="tmdbthumblanguage" default="en" visible="eq(-1,true)"/>
+    <setting label="30034" subsetting="true" type="select" values="ar|bg|bn|ca|ch|cs|da|de|el|en|eo|es|eu|fa|fi|fr|he|hi|hr|hu|id|it|ja|ka|ko|lt|lv|ml|nb|nl|no|pl|pt|ro|ru|sk|sl|sr|sv|ta|th|tr|uk|vi|zh" id="tmdbthumblanguage" default="en" enable="eq(-1,true)"/>
     <setting type="sep"/>
     <setting label="30504" type="bool" id="imdbthumbs" default="false"/>
     <setting type="sep"/>

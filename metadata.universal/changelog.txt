@@ -1,3 +1,6 @@
+[B]5.2.1[/B]
+- fixed: non-existing tmdb poster languages
+
 [B]5.2.0[/B]
 - added: Language preference to fanart.tv posters
 
