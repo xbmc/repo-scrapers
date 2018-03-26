@@ -188,7 +188,7 @@
 					<expression noclean="1">&quot;id&quot;:([0-9]+)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="9">
-					<expression noclean="1">&quot;id&quot;:[0-9]+,&quot;name&quot;:&quot;[^&quot;]*&quot;,&quot;overview&quot;:&quot;(.*?)&quot;,&quot;</expression>
+					<expression fixchars="1">&quot;id&quot;:[0-9]+,&quot;name&quot;:&quot;[^&quot;]*&quot;,&quot;overview&quot;:&quot;(.*?)&quot;,&quot;</expression>
 				</RegExp>
 				<RegExp input="$$9" output="&lt;overview&gt;\1&lt;/overview&gt;" dest="4+">
 					<expression>(.+)</expression>
