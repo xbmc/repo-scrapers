@@ -1,3 +1,6 @@
+[B]2.9.6[/B]
+- fixed: changed UK to United Kingdom due to IMDb changes for country certification
+
 [B]2.9.5[/B]
 - added: Language preference to fanart.tv posters
 
