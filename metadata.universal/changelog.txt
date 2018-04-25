@@ -1,3 +1,6 @@
+[B]2.9.7[/B]
+- fixed: won't find TMDb title without year under some circumstances
+
 [B]2.9.6[/B]
 - fixed: changed UK to United Kingdom due to IMDb changes for country certification
 
