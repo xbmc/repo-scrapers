@@ -287,19 +287,19 @@
 			<RegExp conditional="fanarttvfanart" input="$$2" output="&lt;chain function=&quot;GetFanartTvFanartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvclearlogo" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieClearlogoByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvclearlogo" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieClearlogoByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvmoviebanner" input="$$2" output="&lt;chain function=&quot;GetFanartTvMoviebannerByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvmoviebanner" input="$$2" output="&lt;chain function=&quot;GetFanartTvMoviebannerByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvmovielandscape" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieLandscapeByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvmovielandscape" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieLandscapeByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvclearart" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieClearartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvclearart" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieClearartByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
-			<RegExp conditional="fanarttvmoviediscart" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieDiscartByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
+			<RegExp conditional="fanarttvmoviediscart" input="$$2" output="&lt;chain function=&quot;GetFanartTvMovieDiscartByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2::$INFO[tmdbthumblanguage]&lt;/chain&gt;" dest="5+">
