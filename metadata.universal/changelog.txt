@@ -1,3 +1,6 @@
+[B]5.2.4[/B]
+- added: language filters for additional fanart.tv resource types
+
 [B]5.2.3[/B]
 - fixed: won't find TMDb title without year under some circumstances
 
