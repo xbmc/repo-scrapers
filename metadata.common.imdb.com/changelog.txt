@@ -1,3 +1,6 @@
+[B]3.0.5[/B]
+- fixed: IMDb cast and outline following IMDb layout changes
+
 [B]3.0.4[/B]
 - fixed: IMDb plot after IMDb layout changes
 

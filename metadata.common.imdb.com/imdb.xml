@@ -172,13 +172,13 @@
 	<ParseIMDBOutline dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">itemprop=&quot;description&quot;&gt;(.+?)&lt;div\sclass</expression>
+				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;div\sclass</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">itemprop=&quot;description&quot;&gt;(.+?)&lt;a\shref=&quot;/title/[^/]*/plotsummary[^&quot;]*&quot;\s*&gt;See</expression>
+				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;/title/[^/]*/plotsummary[^&quot;]*&quot;\s*&gt;See</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">itemprop=&quot;description&quot;&gt;(.+?)&lt;a\shref=&quot;[^&quot;]*&quot;\s*&gt;Add\sa\sPlot</expression>
+				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;[^&quot;]*&quot;\s*&gt;Add\sa\sPlot</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -192,7 +192,7 @@
 	<ParseIMDBOutlineToPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
-				<expression fixchars="1" trim="1">itemprop=&quot;description&quot;&gt;([^&lt;]+)&lt;</expression>
+				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;div\sclass</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -209,10 +209,10 @@
 				<expression noclean="1">&lt;table\sclass=&quot;cast_list&quot;&gt;(.*?)&lt;/table&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\2\3SX1024_SY1024_.jpg&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\5&lt;/role&gt;&lt;/actor&gt;" dest="7">
-				<expression repeat="yes" clear="yes" trim="3,4" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*&quot;\sclass=&quot;loadlate\shidden\s&quot;\sloadlate=&quot;([^&quot;]*)(_V..?_))[^&gt;]*.*?ter&quot;&gt;[^&gt;]*&gt;\n\s*(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
+				<expression repeat="yes" clear="yes" trim="3,4" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*&quot;\sclass=&quot;loadlate\shidden\s&quot;\sloadlate=&quot;([^&quot;]*)(_V..?_))[^&gt;]*.*?ter&quot;&gt;[^&gt;]*&gt;(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="7+">
-				<expression repeat="yes" trim="1,2,3" fixchars="3" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*\.png)&quot;\sclass=&quot;.*?&quot;\s/&gt;*.*?ter&quot;&gt;[^&gt;]*&gt;\n\s*(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
+				<expression repeat="yes" trim="1,2,3" fixchars="3" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*\.png)&quot;\sclass=&quot;.*?&quot;\s/&gt;*.*?ter&quot;&gt;[^&gt;]*&gt;(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;thumb&gt;\1&lt;/thumb&gt;\2&lt;/actor&gt;" dest="2+">
 				<expression repeat="yes" clear="yes" noclean="1,2,3">&lt;actor&gt;&lt;thumb&gt;(?:(http.*?)|_SX[0-9]+_SY[0-9]+_)?&lt;/thumb&gt;(.*?)&lt;/actor&gt;</expression>
