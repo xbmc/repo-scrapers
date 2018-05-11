@@ -1,3 +1,6 @@
+[B]3.0.6[/B]
+- fixed: try to limit world wide English to over ride proper USA title
+
 [B]3.0.5[/B]
 - fixed: IMDb cast and outline following IMDb layout changes
 
