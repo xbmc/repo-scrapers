@@ -1,3 +1,6 @@
+[B]4.1.1[/B]
+changed: dash is not replaced with /- any longer
+
 [B]4.1.0[/B]
 added: Artist type, gender and disambiguation from MusicBrainz
 
