@@ -1,3 +1,7 @@
+[B]1.9.3[/B]
+
+- Actualizada la conexión con TMDB
+
 [B]1.9.2[/B]
 
 - Revisada la búsqueda de colecciones en TMDB
