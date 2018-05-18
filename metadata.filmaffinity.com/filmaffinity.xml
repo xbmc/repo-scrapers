@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2018-03-10">
+<scraper framework="1.1" date="2018-05-10">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
@@ -55,6 +55,12 @@
 
 	<!-- obtención de los detalles de la película (algunos por duplicado para almacenaje y uso posterior) -->
 	<GetDetails dest="3" clearbuffers="no">
+		
+		<!-- variable que almacena la api key de TMDB -->
+		<!-- extraerla de addons/metadata.themoviedb.org/tmdb.xml -->
+		<RegExp input="" output="45ab4cebe57ae11c2ee50c87005ddfe8" dest="19">
+			<expression noclean="1" />
+		</RegExp>
 		
 		<!-- guarda el IMDBid si viene del nfourl -->
 		<RegExp input="$$3" output="\1" dest="15">
@@ -194,9 +200,9 @@
 					<expression repeat="yes">([\(a-zA-Z0-9&#192;-&#591;]+)</expression>
 				</RegExp>
 				<!-- búsqueda en TMDB -->
-				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=92db8778ccb39d825150332b0a46061d&amp;language=$INFO[tmdblanguage]&amp;query=\1" dest="9"> -->
-				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=92db8778ccb39d825150332b0a46061d&amp;language=$INFO[tmdblanguage]&amp;query=\1&amp;primary_release_year=$$13" dest="9"> -->
-				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=92db8778ccb39d825150332b0a46061d&amp;query=\1&amp;language=$INFO[tmdblanguage]&amp;year=$$13" dest="9">
+				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1" dest="9"> -->
+				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1&amp;primary_release_year=$$13" dest="9"> -->
+				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;query=\1&amp;language=$INFO[tmdblanguage]&amp;year=$$13" dest="9">
 					<!-- nos quedamos con el título sólo hasta encontrar (o no) una apertura de paréntesis -->
 					<RegExp input="$$9" output="\1" dest="9">
 						<expression>([^\(]+)</expression>
@@ -287,7 +293,7 @@
 			</RegExp>
 			
 			<!-- obtención del id de IMDB a través de TMDB -->
-			<RegExp input="$$7" output="<url cache=&quot;tmdb-$INFO[tmdblanguage]-\1.json&quot; function=&quot;GetTMDBIMDBid&quot;>https://api.themoviedb.org/3/movie/\1?api_key=92db8778ccb39d825150332b0a46061d&amp;language=$INFO[tmdblanguage]</url>" dest="5+">
+			<RegExp input="$$7" output="<url cache=&quot;tmdb-$INFO[tmdblanguage]-\1.json&quot; function=&quot;GetTMDBIMDBid&quot;>https://api.themoviedb.org/3/movie/\1?api_key=$$19&amp;language=$INFO[tmdblanguage]</url>" dest="5+">
 				<expression>([0-9]+)</expression>
 			</RegExp>
 			
@@ -302,7 +308,7 @@
 					<expression repeat="yes">([\(a-zA-Z0-9&#192;-&#591;]+)</expression>
 				</RegExp>
 				<!-- búsqueda en TMDB -->
-				<RegExp input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=92db8778ccb39d825150332b0a46061d&amp;query=\1&amp;language=$INFO[tmdblanguage]" dest="9">
+				<RegExp input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;query=\1&amp;language=$INFO[tmdblanguage]" dest="9">
 					<!-- nos quedamos con el título sólo hasta encontrar (o no) una apertura de paréntesis -->
 					<RegExp input="$$9" output="\1" dest="9">
 						<expression>([^\(]+)</expression>
