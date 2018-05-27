@@ -1,3 +1,6 @@
+[B]3.0.2[/B]
+- fixed: Spaces removed from json regexes
+
 [B]3.0.1[/B]
 - fixed: Uniqueids fixes
 
