@@ -521,6 +521,9 @@
 			<RegExp input="$$1" output="\2" dest="11">
 				<expression>(.+)::(.+)</expression>
 			</RegExp>
+			<RegExp input="$$1" output="\1" dest="13">
+				<expression>(.+)::(.+)</expression>
+			</RegExp>
 			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.tmdb.org/3/configuration?api_key=45ab4cebe57ae11c2ee50c87005ddfe8&lt;/url&gt;" dest="5">
 				<expression />
 			</RegExp>
@@ -530,7 +533,7 @@
 			<expression noclean="1" />
 		</RegExp>
 	</GetTMDBThumbsByIdChain>
-	<ParseTMDBThumbs dest="5">
+	<ParseTMDBThumbs clearbuffers="no" dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">&quot;posters&quot;:\[\{([^\]]*)</expression>
@@ -550,9 +553,24 @@
 			<RegExp input="$$9" output="$$10" dest="2">
 				<expression>^$</expression>
 			</RegExp>
+			<RegExp input="$$2" output="&lt;url function=&quot;ParseFallbackTMDBThumbs&quot;&gt;https://api.tmdb.org/3/movie/$$13/images?api_key=45ab4cebe57ae11c2ee50c87005ddfe8&lt;/url&gt;" dest="2">
+				<expression>^$</expression>
+			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseTMDBThumbs>
+
+	<ParseFallbackTMDBThumbs dest="5">
+		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="7">
+				<expression clear="yes" noclean="1">&quot;posters&quot;:\[\{([^\]]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;[^&quot;]*</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseFallbackTMDBThumbs>
 
 	<ParseTMDBBaseImageURL clearbuffers="no" dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;$$20&lt;/details&gt;" dest="4">
