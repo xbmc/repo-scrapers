@@ -1,3 +1,6 @@
+[B]3.0.4[/B]
+- fixed: artwork won't be scraped
+
 [B]3.0.3[/B]
 - fixed: Spaces fix 2
 
