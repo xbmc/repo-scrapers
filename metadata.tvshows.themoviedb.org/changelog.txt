@@ -1,3 +1,6 @@
+[B]2.0.5[/B]
+- use https to access thetvdb.com
+
 [B]2.0.4[/B]
 - fixed: scraping episodes with no air date
 
