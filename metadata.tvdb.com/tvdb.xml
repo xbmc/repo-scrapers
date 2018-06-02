@@ -118,8 +118,8 @@
 
 				<xsl:template name="split-aliases">
 					<xsl:param name="title-list"/>
-					<xsl:variable name="first" select="substring-after(substring-before($title-list, '&quot;, '), '&quot;')" />
-					<xsl:variable name="remaining" select="substring-after($title-list, '&quot;, ')" />
+					<xsl:variable name="first" select="substring-after(substring-before($title-list, '&quot;,'), '&quot;')" />
+					<xsl:variable name="remaining" select="substring-after($title-list, '&quot;,')" />
 					<xsl:if test="$first!=''">
 						<xsl:call-template name="entity">
 							<xsl:with-param name="title" select="$first"/>
@@ -336,7 +336,7 @@
 	<LoadArt dest="3" clearbuffers="no">		
 		<RegExp input="$$1" output="&lt;details&gt;&lt;!-- $$16 \1 loaded --&gt;&lt;/details&gt;" dest="3">
 			<RegExp input="$$1" output="&lt;Banner&gt;&lt;id&gt;\1&lt;/id&gt;&lt;keyType&gt;\2&lt;/keyType&gt;&lt;subKey&gt;\3&lt;/subKey&gt;&lt;fileName&gt;\4&lt;/fileName&gt;&lt;resolution&gt;\5&lt;/resolution&gt;&lt;average&gt;\6&lt;/average&gt;&lt;thumbnail&gt;\7&lt;/thumbnail&gt;&lt;language&gt;$$16&lt;/language&gt;&lt;/Banner&gt;" dest="10+">
-				<expression repeat="yes">"id":\s*?(\d+),\s*?"keyType":\s*?"([^"]+)",\s*?"subKey":\s*?"([^"]*)",\s*?"fileName":\s*?"([^"]+)",\s*?"resolution":\s*?"([^"]*)",\s*?"ratingsInfo":\s*?{\s*?"average":\s*?(?:([\d\.]+)|null),\s*?"count":\s*?\d+\s*?},\s*?"thumbnail":\s*?"([^"]+)"</expression>
+				<expression repeat="yes">"id":\s*?(\d+),\s*?"keyType":\s*?"([^"]+)",\s*?"subKey":\s*?"([^"]*)",\s*?"fileName":\s*?"([^"]+)",\s*?"resolution":\s*?"([^"]*)",\s*?"ratingsInfo":\s*?{\s*?"average":\s*?(?:([\d\.]+)|null),\s*?"count":\s*?\d+\s*?},\s*?"thumbnail":\s*?"([^"]*?)"</expression>
 			</RegExp>
 			<expression noclean="1">"keyType":\s*?"([^"]+)",</expression>
 		</RegExp>
