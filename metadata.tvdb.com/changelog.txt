@@ -1,3 +1,6 @@
+[B]2.0.9[/B]
+- Fixed: fanart preview
+
 [B]2.0.8[/B]
 - Fixed: artwork won't be scraped
 
