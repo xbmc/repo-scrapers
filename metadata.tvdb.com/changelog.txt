@@ -1,3 +1,7 @@
+[B]3.0.6[/B]
+- Fixed: artwork won't be scraped (again)
+- Fixed: Episode director/guest star mix-ups
+
 [B]3.0.5[/B]
 - fixed: fanart preview
 
