@@ -1,3 +1,6 @@
+[B]3.0.7[/B]
+- Fixed: Episode list changes
+
 [B]3.0.6[/B]
 - Fixed: artwork won't be scraped (again)
 - Fixed: Episode director/guest star mix-ups
