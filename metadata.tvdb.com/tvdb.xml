@@ -85,7 +85,7 @@
 	<!-- output: <results><entity><title>*</title><year>*</year><language>*</language><url>*</url><id>*</id></entity>*</results> -->
 	<GetSearchResultsAuth dest="6" clearbuffers="no">
 		<RegExp input="$$1" output="&lt;series&gt;&lt;id&gt;\3&lt;/id&gt;&lt;seriesName&gt;\4&lt;/seriesName&gt;&lt;aliases&gt;\1&lt;/aliases&gt;&lt;firstAired&gt;\2&lt;/firstAired&gt;&lt;/series&gt;" dest="4">
-			<expression repeat="yes" fixchars="1,4">"aliases":\s*?\[([^]]*)\],\s*?"banner":\s*?"[^"]*",\s*?"firstAired":\s*?"([^"]*)",\s*?"id":\s*?(\d+),\s*?"network":\s*?"[^"]*",\s*?"overview":\s*?(?:"[^}]*"|null),\s*?"seriesName":\s*?"([^}]*)",</expression>
+			<expression repeat="yes" fixchars="1,4">"aliases":\s*?\[([^]]*)\],\s*?"banner":\s*?"[^"]*",\s*?"firstAired":\s*?"([^"]*)",\s*?"id":\s*?(\d+),\s*?"network":\s*?"[^"]*",\s*?"overview":\s*?(?:"[^}]*"|null),\s*?"seriesName":\s*?"([^}]*)",\s*?"slug":\s*?"[^"]*"</expression>
 		</RegExp>
 		<RegExp input="" output="" dest="6">
 			<expression/>
@@ -488,8 +488,8 @@
 	</GetEpisodeListAuth>
 	<LoadEpisodeList dest="4" clearbuffers="no">
 		<RegExp input="" output="&lt;episodeguide&gt;&lt;/episodeguide&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;Episode&gt;&lt;absolute_number&gt;\1&lt;/absolute_number&gt;&lt;EpisodeNumber&gt;\2&lt;/EpisodeNumber&gt;&lt;SeasonNumber&gt;\3&lt;/SeasonNumber&gt;&lt;DVD_episodenumber&gt;\4&lt;/DVD_episodenumber&gt;&lt;DVD_season&gt;\5&lt;/DVD_season&gt;&lt;EpisodeName&gt;\6&lt;/EpisodeName&gt;&lt;FirstAired&gt;\7&lt;/FirstAired&gt;&lt;id&gt;\8&lt;/id&gt;&lt;Overview&gt;\9&lt;/Overview&gt;&lt;filename&gt;episodes/$$18/\8.jpg&lt;/filename&gt;&lt;/Episode&gt;" dest="11+">
-				<expression fixchars="6,9" repeat="yes">"absoluteNumber":\s*?(?:(\d+)|null),\s*?"airedEpisodeNumber":\s*?(\d+),\s*?"airedSeason":\s*?(\d+),\s*?"airedSeasonID":\s*?\d+,\s*?"dvdEpisodeNumber":\s*?(?:([\d\.]+)|null),\s*?"dvdSeason":\s*?(?:(\d+)|null),\s*?"episodeName":\s*?(?:"([^}]*)"|null),\s*?"firstAired":\s*?(?:"([^"]*)"|null),\s*?"id":\s*?(\d+),\s*?"language":\s*?{[^}]+},\s*?"lastUpdated":\s*?\d+,\s*?"overview":\s*?(?:"([^}]*)"|null)\s*?}</expression>
+			<RegExp input="$$1" output="&lt;Episode&gt;&lt;absolute_number&gt;\9&lt;/absolute_number&gt;&lt;EpisodeNumber&gt;\3&lt;/EpisodeNumber&gt;&lt;SeasonNumber&gt;\2&lt;/SeasonNumber&gt;&lt;DVD_episodenumber&gt;\8&lt;/DVD_episodenumber&gt;&lt;DVD_season&gt;\7&lt;/DVD_season&gt;&lt;EpisodeName&gt;\4&lt;/EpisodeName&gt;&lt;FirstAired&gt;\5&lt;/FirstAired&gt;&lt;id&gt;\1&lt;/id&gt;&lt;Overview&gt;\6&lt;/Overview&gt;&lt;filename&gt;\10&lt;/filename&gt;&lt;/Episode&gt;" dest="11+">
+				<expression fixchars="4,6" repeat="yes">{"id":\s*?(\d+),"airedSeason":\s*?(\d+),"airedSeasonID":\s*?\d+,"airedEpisodeNumber":\s*?(\d+),"episodeName":\s*?(?:"([^}]*)"|null),"firstAired":\s*?(?:"([^"]*)"|null),[^{]*?\s*?"overview":\s*?(?:"([^}]*)"|null),"language":\s*?{[^}]+},[^{]*?,"dvdSeason":\s*?(?:(\d+)|null),"dvdEpisodeNumber":\s*?(?:([\d\.]+)|null),"dvdChapter":\s*?(?:\d+|null),"absoluteNumber":\s*?(?:(\d+)|null),"filename":(?:"([^"]*)"|null),</expression>
 			</RegExp>
 			<RegExp input="$$11" output="yes" dest="20">
 				<expression clear="yes">(?!^$)</expression>
