@@ -1,3 +1,6 @@
+[B]3.0.6[/B]
+- Fixed: show overview
+
 [B]3.0.5[/B]
 - Fixed scraping after API layout changes
 
