@@ -1,3 +1,6 @@
+[B]1.3.14[/B]
+- Scraping now is really fixed after API layout changes
+
 [B]1.3.13[/B]
 - Fixed scraping after API layout changes
 
