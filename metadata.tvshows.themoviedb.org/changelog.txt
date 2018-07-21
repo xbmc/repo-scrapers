@@ -1,3 +1,6 @@
+[B]2.0.6[/B]
+- Fixed scraping after API layout changes
+
 [B]2.0.5[/B]
 - use https to access thetvdb.com
 

@@ -62,7 +62,7 @@
 				<expression/>
 			</RegExp>
 			<RegExp conditional="!keeporiginaltitle" input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5+">
-				<expression fixchars="1">"name":"([^"]*)","networks</expression>
+				<expression fixchars="1">"name":"([^"]*)","next</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;originaltitle&gt;\1&lt;/originaltitle&gt;" dest="5+">
 				<expression/>
@@ -113,7 +113,7 @@
 				<expression repeat="yes" fixchars="1">"name":"([^"]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression clear="yes" fixchars="1">"overview":"(.+?)","popularity"</expression>
+				<expression clear="yes" fixchars="1">"overview":"(.+?)","production_code"</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression>(.+)</expression>
@@ -151,7 +151,7 @@
 				<expression clear="yes">"season_number":([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;$$6&lt;/season&gt;&lt;url cache=&quot;tmdb-$$5-$INFO[language]-episode-s$$6e\3.json&quot;&gt;http://api.themoviedb.org/3/tv/$$5/season/$$6/episode/\3?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;$$5|$$6|\3&lt;/id&gt;&lt;/episode&gt;" dest="4">
-				<expression repeat="yes" clear="yes">"air_date":("([^"]+)"|null),"[^\]]*\],"episode_number":([0-9]+),"[^\]]*\],"name":"((?:[^"]|(?&lt;=\\)")*)",</expression>
+				<expression repeat="yes" clear="yes">"air_date":("([^"]+)"|null),"episode_number":([0-9]+),"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -275,20 +275,20 @@
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">"cast":\[([^\]]+)\]</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
-				<expression clear="yes" repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","gender":[^,]*,"id":[0-9]*,"name":"([^"]*)","order":([0-9]*),"profile_path":"([^"]*)"</expression>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\4&lt;/order&gt;&lt;thumb&gt;$$20original\3&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
+				<expression clear="yes" repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","id":[0-9]*,"name":"([^"]*)","gender":[^,]*,"profile_path":"([^"]*)","order":([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","gender":[^,]*,"id":[0-9]*,"name":"([^"]*)","order":([0-9]*),"profile_path":null</expression>
+				<expression repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","id":[0-9]*,"name":"([^"]*)","gender":[^,]*,"profile_path":null,"order":([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">"guest_stars":\[([^\]]+)\]</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;thumb&gt;$$20original\3&lt;/thumb&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","order":[0-9]*,"profile_path":"([^"]*)"</expression>
+				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","profile_path":"([^"]*)","order":[0-9]*</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","order":[0-9]*,"profile_path":null</expression>
+				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","profile_path":null,"order":[0-9]*</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
