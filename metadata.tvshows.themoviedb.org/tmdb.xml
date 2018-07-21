@@ -113,7 +113,7 @@
 				<expression repeat="yes" fixchars="1">"name":"([^"]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
-				<expression clear="yes" fixchars="1">"overview":"(.+?)","production_code"</expression>
+				<expression clear="yes" fixchars="1">original_name&quot;:&quot;[^&quot;]*&quot;,&quot;overview&quot;:&quot;(.+?)&quot;,&quot;popularity&quot;</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
 				<expression>(.+)</expression>
@@ -232,7 +232,7 @@
 	<ParseFallbackTMDBPlot dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="5">
-				<expression clear="yes" fixchars="1">"overview":"([^\{]*?)","(?:id|popularity)"</expression>
+				<expression clear="yes" fixchars="1">original_name&quot;:&quot;[^&quot;]*&quot;,"overview":"([^\{]*?)","(?:id|popularity)"</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
