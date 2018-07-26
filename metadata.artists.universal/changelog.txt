@@ -1,3 +1,6 @@
+[B]4.1.4[/B]
+changed: include some other valid MB artist types in the previous fix
+
 [B]4.1.3[/B]
 fixed: artist types sometimes scrapes incorrectly
 
