@@ -1,3 +1,6 @@
+[B]3.0.7[/B]
+- changed: removed one of the IMDb outline catch
+
 [B]3.0.6[/B]
 - fixed: try to limit world wide English to over ride proper USA title
 

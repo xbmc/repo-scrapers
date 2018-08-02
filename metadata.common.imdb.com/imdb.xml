@@ -175,9 +175,6 @@
 				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;div\sclass</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;/title/[^/]*/plotsummary[^&quot;]*&quot;\s*&gt;See</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
 				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;[^&quot;]*&quot;\s*&gt;Add\sa\sPlot</expression>
 			</RegExp>
 			<expression noclean="1" />
