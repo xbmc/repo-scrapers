@@ -46,6 +46,29 @@
 		</RegExp>
 	</ParseFanartTvArtistClearlogo>
 
+	<GetFanartTvArtistBannerByMBID dest="5" clearbuffers="no">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseFanartTvArtistBanner&quot; cache=&quot;fanarttv-artistimages-\1.json&quot;&gt;https://webservice.fanart.tv/v3/music/\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1" />
+		</RegExp>
+	</GetFanartTvArtistBannerByMBID>
+	<ParseFanartTvArtistBanner dest="5" clearbuffers="no">
+		<RegExp input="$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="" output="" dest="13">
+				<expression />
+			</RegExp>
+			<RegExp input="" output="" dest="16">
+				<expression />
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="16">
+				<expression noclean="1">&quot;musicbanner&quot;:\s\[(.*?)\}\s*\]</expression>
+			</RegExp>
+			<RegExp input="$$16" output="&lt;thumb aspect=&quot;banner&quot; preview=&quot;https://\1/preview/\2&quot;&gt;https://\1/fanart/\2&lt;/thumb&gt;" dest="13">
+				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseFanartTvArtistBanner>
+
 	<GetFanartTvArtistFanartsByMBID dest="5" clearbuffers="no">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseFanartTvArtistFanarts&quot; cache=&quot;fanarttv-artistimages-\1.json&quot;&gt;https://webservice.fanart.tv/v3/music/\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
@@ -97,6 +120,29 @@
 			<expression noclean="1" />
 		</RegExp>
 	</ParseFanartTvAlbumThumbs>
+
+	<GetFanartTvAlbumDiscartByMBID dest="5" clearbuffers="no">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url function=&quot;ParseFanartTvAlbumDiscart&quot; cache=&quot;fanarttv-albumimages-\1.json&quot;&gt;https://webservice.fanart.tv/v3/music/albums/\1?api_key=ed4b784f97227358b31ca4dd966a04f1&lt;/url&gt;&lt;/details&gt;" dest="5">
+			<expression noclean="1" />
+		</RegExp>
+	</GetFanartTvAlbumDiscartByMBID>
+	<ParseFanartTvAlbumDiscart dest="5" clearbuffers="no">
+		<RegExp input="$$13" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
+			<RegExp input="" output="" dest="13">
+				<expression />
+			</RegExp>
+			<RegExp input="" output="" dest="16">
+				<expression />
+			</RegExp>
+			<RegExp input="$$1" output="\1" dest="16">
+				<expression noclean="1">&quot;cdart&quot;:\s\[(.*?)\}\s*\]</expression>
+			</RegExp>
+			<RegExp input="$$16" output="&lt;thumb aspect=&quot;discart&quot; preview=&quot;https://\1/preview/\2&quot;&gt;https://\1/fanart/\2&lt;/thumb&gt;" dest="13">
+				<expression repeat="yes" noclean="1">&quot;id&quot;:\s&quot;\d*&quot;,\s*&quot;url&quot;:\s&quot;https://([^/]*)/fanart/([^&quot;]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseFanartTvAlbumDiscart>
 
 	<GetFanartTvFanartByIdChain dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
