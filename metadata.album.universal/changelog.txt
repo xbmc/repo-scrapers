@@ -1,3 +1,6 @@
+[B]3.1.0[/B]
+Added: scraping extra artwork from theaudiobdb.com
+
 [B]3.0.0[/B]
 Fixed: albums won't be found on MusicBrainz
 Added: scraping discart from fanart.tv

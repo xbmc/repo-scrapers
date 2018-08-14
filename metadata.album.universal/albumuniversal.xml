@@ -128,6 +128,15 @@
 			<RegExp conditional="tadbalbumthumbs" input="$$4" output="&lt;chain function=&quot;GetTADBAlbumThumbsByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
+			<RegExp conditional="tadbalbumdiscart" input="$$4" output="&lt;chain function=&quot;GetTADBAlbumDiscartByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp conditional="tadbalbumback" input="$$4" output="&lt;chain function=&quot;GetTADBAlbumBackByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
+			<RegExp conditional="tadbalbumspine" input="$$4" output="&lt;chain function=&quot;GetTADBAlbumSpineByMBID&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression noclean="1">(.+)</expression>
+			</RegExp>
 			<RegExp conditional="allmusicalbumthumbs" input="$$4" output="&lt;url function=&quot;GetAMGAlbumThumbs&quot; cache=&quot;mb-\1-rg.xml&quot;&gt;$INFO[mbsite]/ws/2/release-group/\1?inc=url-rels&lt;/url&gt;" dest="5+">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
