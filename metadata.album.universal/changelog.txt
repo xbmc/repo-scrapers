@@ -1,3 +1,6 @@
+[B]2.7.5[/B]
+Fixed: further fixes for search results
+
 [B]2.7.4[/B]
 Fixed: albums won't be found on MusicBrainz
 
