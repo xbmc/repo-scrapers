@@ -1,3 +1,6 @@
+[B]3.1.1[/B]
+Fixed: further fixes to search results
+
 [B]3.1.0[/B]
 Added: scraping extra artwork from theaudiobdb.com
 
