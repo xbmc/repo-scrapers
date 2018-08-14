@@ -125,3 +125,7 @@ msgstr ""
 msgctxt "#30027"
 msgid "Enable Artist Clearlogo from fanart.tv"
 msgstr ""
+
+msgctxt "#30028"
+msgid "Enable Artist Banner from fanart.tv"
+msgstr ""
