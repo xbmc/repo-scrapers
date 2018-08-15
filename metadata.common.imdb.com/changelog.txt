@@ -1,3 +1,6 @@
+[B]3.0.8[/B]
+- changed: another change to IMDb outline
+
 [B]3.0.7[/B]
 - changed: removed one of the IMDb outline catch
 
