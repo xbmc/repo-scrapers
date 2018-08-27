@@ -1,3 +1,6 @@
+[B]4.1.11[/B]
+- changed: adjust search result parsing
+
 [B]4.1.9[/B]
 - fixed: won't find TMDb title without year under some circumstances
 
