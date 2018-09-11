@@ -1,3 +1,6 @@
+[B]3.1.1[/B]
+- fixed: MetaCritic rating from IMDb
+
 [B]3.1.0[/B]
 - fixed: re-write most regular expressions following IMDb site layout changes
 
