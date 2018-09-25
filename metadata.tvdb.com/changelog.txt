@@ -1,3 +1,6 @@
+[B]3.0.10[/B]
+- Fixed: Use the year in the title as fallback when no firstAired field, to reduce mismatches
+
 [B]3.0.9[/B]
 - Fixed: Character encoding fixes (part 2)
 
