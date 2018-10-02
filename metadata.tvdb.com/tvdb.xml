@@ -180,7 +180,10 @@
 				<expression clear="yes">"seriesName":\s*?null,\s*?"aliases"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="4+">
-				<expression>"firstAired":\s*?"([^"]*)",</expression>
+				<expression>"firstAired":\s*?"([^"]+)",</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;url function=&quot;GetPremieredFromFirstEp&quot;&gt;https://api.thetvdb.com/series/$$2/episodes/query?airedSeason=1&amp;airedEpisode=1|Authorization=Bearer%20$$19&amp;amp;accept-language=$INFO[language]&lt;/url&gt;" dest="4+">
+				<expression>"firstAired":\s*?"",</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="4+">
 				<expression>"runtime":\s*?"([^"]*)",</expression>
@@ -248,6 +251,14 @@
 			<expression noclean="1" fixchars="1"/>
 		</RegExp>
 	</GetDetails>
+	<GetPremieredFromFirstEp dest="3" clearbuffers="no">
+		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="4">
+				<expression clear="yes">"firstAired":\s*?"([^"]+)"</expression>
+			</RegExp>
+			<expression noclean="1"/>
+		</RegExp>
+	</GetPremieredFromFirstEp>
 	<GetFallbackDetails dest="3" clearbuffers="no">
 		<RegExp input="$$4" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
 			<RegExp input="$$14" output="$$5" dest="4">
