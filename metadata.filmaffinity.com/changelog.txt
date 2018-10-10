@@ -1,3 +1,8 @@
+[B]1.9.4[/B]
+
+- Revisada la búsqueda de URL en ficheros .nfo
+- Actualizada la conexión con TMDB
+
 [B]1.9.3[/B]
 
 - Actualizada la conexión con TMDB

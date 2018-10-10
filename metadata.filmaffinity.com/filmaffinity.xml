@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scraper framework="1.1" date="2018-05-10">
+<scraper framework="1.1" date="2018-10-10">
 
 	<!--obtención de la url desde el fichero .nfo -->
 	<NfoUrl dest="3">
 		<RegExp input="$$5" output="&lt;url&gt;https://m.filmaffinity.com/es/movie.php?id=\1\2&lt;/url&gt;" dest="3">
-			<RegExp input="$$1" output="\2;" dest="5">
+			<RegExp input="$$1" output="\1;" dest="5">
 				<expression noclean="1">filmaffinity.com/[^/]+/[^0-9]+([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="#imdb\1" dest="5+">
@@ -58,7 +58,7 @@
 		
 		<!-- variable que almacena la api key de TMDB -->
 		<!-- extraerla de addons/metadata.themoviedb.org/tmdb.xml -->
-		<RegExp input="" output="45ab4cebe57ae11c2ee50c87005ddfe8" dest="19">
+		<RegExp input="" output="f090bb54758cabf231fb605d3e3e0468" dest="19">
 			<expression noclean="1" />
 		</RegExp>
 		
@@ -203,6 +203,7 @@
 				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1" dest="9"> -->
 				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;language=$INFO[tmdblanguage]&amp;query=\1&amp;primary_release_year=$$13" dest="9"> -->
 				<RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://api.themoviedb.org/3/search/movie?api_key=$$19&amp;query=\1&amp;language=$INFO[tmdblanguage]&amp;year=$$13" dest="9">
+				<!-- <RegExp conditional="!GoogleAdvSearch" input="$$9" output="https://www.themoviedb.org/search/movie?query=\1y:$$13&amp;language=$INFO[tmdblanguage]" dest="9"> -->
 					<!-- nos quedamos con el título sólo hasta encontrar (o no) una apertura de paréntesis -->
 					<RegExp input="$$9" output="\1" dest="9">
 						<expression>([^\(]+)</expression>
@@ -297,9 +298,8 @@
 				<expression>([0-9]+)</expression>
 			</RegExp>
 			
-			<!-- buscamos de nuevo en TMDB, pero esta vez sin año y con título original -->
-			<!-- saboteamos la función de búsqueda si existe TMDBid añadiéndolo antes de la url -->
-			<RegExp conditional="!GoogleAdvSearch" input="$$9" output="&lt;url function=&quot;GetIMDBid&quot;&gt;$$7\1&lt;/url&gt;" dest="5+">
+			<!-- si no hay TMDBid en $$7 buscamos de nuevo en TMDB, pero esta vez sin año y con título original -->
+			<RegExp conditional="!GoogleAdvSearch" input="$$7" output="&lt;url function=&quot;GetIMDBid&quot;&gt;$$9&lt;/url&gt;" dest="5+">
 				<!-- descomponemos en palabras el título y las unimos con "+" -->
 				<!-- título en español en $$11, título original en $$12 -->
 				<RegExp input="$$11" output="\1+" dest="9">
@@ -315,7 +315,7 @@
 					</RegExp>
 					<expression noclean="1" />
 				</RegExp>
-				<expression noclean="1" />
+				<expression>^$</expression>
 			</RegExp>
 			
 			<expression noclean="1" />
