@@ -240,7 +240,7 @@
 					<expression clear="yes">"siteRating":\s*?(?:(\d+(?:\.\d)?)|null)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="&lt;votes&gt;\1&lt;/votes&gt;" dest="5+">
-					<expression>"siteRatingCount":\s*?(?:(\d+)|null)\s*?}</expression>
+					<expression>"siteRatingCount":\s*?(?:(\d+)|null)\s*?,</expression>
 				</RegExp>
 				<RegExp input="$INFO[RatingS]" output="$$6" dest="5">
 					<RegExp input="$$7" output="&lt;chain function=&quot;GetIMDBRatingById&quot;&gt;$$7&lt;/chain&gt;" dest="6">
