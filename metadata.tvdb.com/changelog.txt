@@ -1,3 +1,6 @@
+[B]3.0.14[/B]
+- Fixed: Ratings for episodes not getting scraped
+
 [B]3.0.13[/B]
 - Added: Support slug URLs in nfo files
 
