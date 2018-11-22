@@ -9,7 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows"
              language="en"
-             library="tmdb.xml"/>
+             library="tmdb.xml"
+             cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="bg">Сваля инф. за ТВ Сериали от TMDB</summary>
     <summary lang="cs">TMDb zdroj  dat k seriálům </summary>
