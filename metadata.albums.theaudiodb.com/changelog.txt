@@ -1,3 +1,6 @@
+[B]1.2.3[/B]
+Fixed: switch links to https
+
 [B]1.2.1[/B]
 Fixed: won't get search results
 
