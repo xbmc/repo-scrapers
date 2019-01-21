@@ -268,6 +268,9 @@
 			<RegExp input="$INFO[creditssource]" output="&lt;chain function=&quot;GetTMDBWitersByIdChain&quot;&gt;$$2&lt;/chain&gt;" dest="5+">
 				<expression>themoviedb.org</expression>
 			</RegExp>
+			<RegExp input="$$2" output="&lt;url function=&quot;GetFanartTVSetArt&quot; cache=&quot;tmdb-$INFO[tmdbsetlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$$10&lt;/url&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
 			<RegExp conditional="tmdbset" input="$$2" output="&lt;chain function=&quot;GetTMDBSetByIdChain&quot;&gt;$$2::$INFO[tmdbsetlanguage]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
@@ -310,4 +313,38 @@
 			<expression noclean="1"/>
 		</RegExp>
 	</GetDetails>
+
+	<GetFanartTVSetArt clearbuffers="no" dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="\1" dest="12">
+				<expression clear="yes" noclean="1">&quot;belongs_to_collection&quot;:\{&quot;id&quot;:([0-9]+),&quot;name&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="" output="" dest="5">
+				<expression />
+			</RegExp>
+			<RegExp conditional="fanarttvsetposter" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetPosterByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetfanart" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetFanartByIdChain&quot;&gt;\1&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetclearlogo" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetClearlogoByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetclearart" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetClearartByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetmoviebanner" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetBannerByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetmovielandscape" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetLandscapeByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<RegExp conditional="fanarttvsetmoviediscart" input="$$12" output="&lt;chain function=&quot;GetFanartTvMovieSetDiscartByIdChain&quot;&gt;\1::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression>(.+)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetFanartTVSetArt>
+
 </scraper>

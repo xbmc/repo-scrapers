@@ -71,6 +71,23 @@
     <setting type="sep"/>
   </category>
 
+  <category label="30801">
+    <setting label="30802" type="bool" id="fanarttvsetposter" default="false"/>
+    <setting type="sep"/>
+    <setting label="30803" type="bool" id="fanarttvsetfanart" default="false"/>
+    <setting type="sep"/>
+    <setting label="30804" type="bool" id="fanarttvsetclearlogo" default="false"/>
+    <setting type="sep"/>
+    <setting label="30805" type="bool" id="fanarttvsetclearart" default="false"/>
+    <setting type="sep"/>
+    <setting label="30806" type="bool" id="fanarttvsetmoviebanner" default="false"/>
+    <setting type="sep"/>
+    <setting label="30807" type="bool" id="fanarttvsetmovielandscape" default="false"/>
+    <setting type="sep"/>
+    <setting label="30808" type="bool" id="fanarttvsetmoviediscart" default="false"/>
+    <setting type="sep"/>
+  </category>
+
   <category label="30012">
     <setting label="30028" type="lsep"/>
     <setting type="sep"/>
