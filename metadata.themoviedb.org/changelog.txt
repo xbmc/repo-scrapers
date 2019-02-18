@@ -1,3 +1,8 @@
+[B]5.1.5[/B]
+- changed: update language directory structure
+- added: website tag in addon.xml
+- added: assets tag in addon.xml
+
 [B]5.1.1[/B]
 - changed: more cleanup and fixes
 
