@@ -1,3 +1,6 @@
+[B]1.3.4[/B]
+- changed: switched to https
+
 [B]1.3.3[/B]
 - Fixed artist apostrophes (thx roura97311)
 
