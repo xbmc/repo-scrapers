@@ -1,3 +1,6 @@
+[B]5.1.6&5.1.7[/B]
+- changed: fixes for Chinese language 
+
 [B]5.1.5[/B]
 - changed: update language directory structure
 - added: website tag in addon.xml
