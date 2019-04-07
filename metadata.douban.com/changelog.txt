@@ -1,3 +1,6 @@
+[B]1.1.7[/B]
+- fixed: support posters for kodi 18
+
 [B]1.1.6[/B]
 - fixed: avatars url for casts changed
 
