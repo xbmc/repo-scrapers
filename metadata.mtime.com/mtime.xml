@@ -75,7 +75,7 @@
 	</GetTrailer>
 	<GetPlot clearbuffers="no" dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<expression fixchars="1">&lt;div class=&quot;plots_box&quot;&gt;.*?&lt;span class=&quot;first_letter&quot;&gt;(.*?)&lt;div&gt;</expression>
+			<expression fixchars="1">&lt;div class=&quot;plots_box&quot;&gt;.*?&lt;span class=&quot;first_letter&quot;&gt;(.*?)&lt;/div&gt;</expression>
 		</RegExp>
 	</GetPlot>
 	<GetDetailsPage clearbuffers="no" dest="5">
