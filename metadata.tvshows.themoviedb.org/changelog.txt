@@ -1,3 +1,8 @@
+[B]3.1.1[/B]
+- Changed: use new language directory structure
+- Added: website in addon.xml
+- Added: assets tag in addon.xml
+
 [B]3.1.0[/B]
 - Changed: re-use season files to reduce number of API calls for episode details
 - Added: small cache persistence

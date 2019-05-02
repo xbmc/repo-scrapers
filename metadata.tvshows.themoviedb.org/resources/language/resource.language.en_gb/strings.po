@@ -20,13 +20,13 @@ msgctxt "#30000"
 msgid "Enable Fanart"
 msgstr ""
 
-#empty string with id 30001
+# empty string with id 30001
 
 msgctxt "#30002"
 msgid "Preferred Language"
 msgstr ""
 
-#empty strings from id 30003 to 30004
+# empty strings from id 30003 to 30004
 
 msgctxt "#30005"
 msgid "Keep Original Title"
