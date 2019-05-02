@@ -1,3 +1,8 @@
+[B]3.0.15[/B]
+- Changed: use new language directory structure
+- Added: website in addon.xml
+- Added: assets tag in addon.xml
+
 [B]3.0.14[/B]
 - Fixed: Ratings for episodes not getting scraped
 
