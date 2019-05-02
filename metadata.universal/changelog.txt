@@ -1,3 +1,7 @@
+[B]5.3.1[/B]
+- changed: use new language directory structure
+- added: assets tag in addon.xml
+
 [B]5.3.0[/B]
 - added: artwork and extra artwork for movie sets (collections) from fanart.tv
 
