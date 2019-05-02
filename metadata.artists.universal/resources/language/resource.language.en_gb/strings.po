@@ -68,7 +68,7 @@ msgctxt "#30012"
 msgid "Get Artist Moods from"
 msgstr ""
 
-#empty string with id 30013
+# empty string with id 30013
 
 msgctxt "#30014"
 msgid "Get Artist Years Active from"
