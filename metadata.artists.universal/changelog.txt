@@ -1,3 +1,6 @@
+[B]3.7.56/B]
+fixed: allmusic scraping
+
 [B]3.7.5[/B]
 fixed: search results after MB API changes
 
