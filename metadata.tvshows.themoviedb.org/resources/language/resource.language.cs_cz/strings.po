@@ -27,3 +27,11 @@ msgstr "Upřednostňovaný jazyk"
 msgctxt "#30005"
 msgid "Keep Original Title"
 msgstr "Ponechat původní název"
+
+msgctxt "#30006"
+msgid "Get Artwork from themoviedb.org"
+msgstr "Získat obrázek z themoviedb.org"
+
+msgctxt "#30007"
+msgid "Get Extra Artwork from fanart.tv"
+msgstr "Získat další obrázek z fanart.tv"
