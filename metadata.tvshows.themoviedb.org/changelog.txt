@@ -1,3 +1,7 @@
+[B]3.1.2[/B]
+- Updated: Czech language
+- Fixed: Scraping TV Series ratings a votes
+
 [B]3.1.1[/B]
 - Changed: use new language directory structure
 - Added: website in addon.xml

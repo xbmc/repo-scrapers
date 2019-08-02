@@ -20,10 +20,30 @@ msgctxt "#30000"
 msgid "Enable Fanart"
 msgstr "Povolit Fanart"
 
+msgctxt "#30001"
+msgid "Prefer Trailer from HD-Trailers.net"
+msgstr "Upřednostňovat upoutávku z HD-Trailers.net"
+
 msgctxt "#30002"
 msgid "Preferred Language"
 msgstr "Upřednostňovaný jazyk"
 
+msgctxt "#30003"
+msgid "Default Rating from"
+msgstr "Výchozí hodnocení z"
+
+msgctxt "#30004"
+msgid "Enable Trailer (YouTube)"
+msgstr "Povolit upoutávku (YouTube)"
+
 msgctxt "#30005"
 msgid "Keep Original Title"
 msgstr "Ponechat původní název"
+
+msgctxt "#30006"
+msgid "Preferred Certification Country"
+msgstr "Upřednostňovaný stát poskytující certifikaci"
+
+msgctxt "#30007"
+msgid "Add also IMDb ratings"
+msgstr "Přidat také hodnocení IMDb"
