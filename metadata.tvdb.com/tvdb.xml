@@ -359,7 +359,7 @@
 					<expression noclean="1"/>
 				</RegExp>
 				<RegExp input="$$1" output="&lt;url function=&quot;LoadArt&quot; cache=&quot;$$18-art-\1-en.json&quot;&gt;https://api.thetvdb.com/series/$$18/images/query?keyType=\1|Authorization=Bearer%20$$19&amp;accept-language=en&lt;/url&gt;" dest="5+">
-					<expression repeat="yes">"keyType":\s*?"([^"]+)"</expression>
+					<expression repeat="yes">"keyType":\s*?"([^"]*)"</expression>
 				</RegExp>
 				<expression>^(?!en)</expression>
 			</RegExp>
