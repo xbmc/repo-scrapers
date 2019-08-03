@@ -1,3 +1,6 @@
+[B]2.0.19[/B]
+- Fix crash for empty artwork
+
 [B]2.0.18[/B]
 - Fixed: Ratings for episodes not getting scraped
 
