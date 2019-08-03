@@ -1,3 +1,6 @@
+[B]3.0.16[/B]
+- Fix crash for empty artwork
+
 [B]3.0.15[/B]
 - Changed: use new language directory structure
 - Added: website in addon.xml
