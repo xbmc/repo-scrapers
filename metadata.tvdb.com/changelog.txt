@@ -1,3 +1,6 @@
+[B]2.0.20[/B]
+- Fix addon.xml
+
 [B]2.0.19[/B]
 - Fix crash for empty artwork
 
