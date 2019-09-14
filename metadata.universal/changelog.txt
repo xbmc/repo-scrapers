@@ -1,3 +1,6 @@
+[B]4.1.13[/B]
+- fixed: search results
+
 [B]4.1.12[/B]
 - changed: use new language directory structure
 - added: assets tag in addon.xml
