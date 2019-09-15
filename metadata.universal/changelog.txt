@@ -1,3 +1,6 @@
+[B]2.9.11[/B]
+- fixed: search results for real
+
 [B]2.9.10[/B]
 - fixed: search results
 
