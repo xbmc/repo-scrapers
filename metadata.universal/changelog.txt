@@ -1,3 +1,6 @@
+[B]4.1.14[/B]
+- fixed: search results for real
+
 [B]4.1.13[/B]
 - fixed: search results
 
