@@ -1,3 +1,6 @@
+[B]5.3.4[/B]
+- fixed: search results
+
 [B]5.3.2[/B]
 - fixed: search results
 
