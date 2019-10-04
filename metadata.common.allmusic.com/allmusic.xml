@@ -362,7 +362,7 @@
 	</GetAMGAlbumThumbsByAMGID>
 	<ParseAMGAlbumThumbs dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;thumb&gt;https://cdn-s3.allmusic.com/release-covers/500/\1&lt;/thumb&gt;" dest="2">
+			<RegExp input="$$1" output="&lt;thumb aspect=&quot;thumb&quot;&gt;https://cdn-s3.allmusic.com/release-covers/500/\1&lt;/thumb&gt;" dest="2">
 				<expression noclean="1">&lt;img src=&quot;https://cdn-s3.allmusic.com/release-covers/500/([^&quot;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
