@@ -1,3 +1,6 @@
+[B]3.1.4[/B]
+- Added: Re-add the ability to grab all episode images
+
 [B]3.1.3[/B]
 - Fixed: GetSearchResults after some changes on TMDb
 
