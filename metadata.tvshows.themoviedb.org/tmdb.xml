@@ -15,7 +15,7 @@
 				<expression noclean="1">imdb....?/Title\?([0-9]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;http://api.themoviedb.org/3/find/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=tvdb_id&lt;/url&gt;" dest="5">
-				<expression noclean="1">http://(?:www\.)?thetvdb\.com/(?:index\.php)?\?tab=series&amp;id=([0-9]+)</expression>
+				<expression noclean="1">https?://(?:www\.)?thetvdb\.com/(?:index\.php)?\?tab=series&amp;id=([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;http://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression noclean="1">themoviedb\.org/tv/([0-9]+)</expression>
