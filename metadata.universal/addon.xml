@@ -107,6 +107,6 @@
     <description lang="zh_TW">Universal Scraper是現今可客製化程度最高的搜括器，並從以下的支援網站取得資訊：IMDb, TMDb, Rotten Tomatoes, Trakt.tv, OFDb.de。這​​是目前Kodi團隊的旗艦搜括器。它總以 TMDb或IMDB (根據設定值) 當作初始搜尋的網站，但可以單獨在每一個獨立的選項設定你要得網站並取得指定的相關資訊。</description>
     <platform>all</platform>
     <license>GPL v2.0</license>
-    <forum>http://forum.xbmc.org/showthread.php?tid=129821</forum>
+    <forum>https://forum.xbmc.org/showthread.php?tid=129821</forum>
   </extension>
 </addon>
