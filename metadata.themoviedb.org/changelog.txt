@@ -1,3 +1,6 @@
+[B]5.1.10[/B]
+- improved: search results to handle articles and the end of title
+
 [B]5.1.9[/B]
 - fixed: search results
 
