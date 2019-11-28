@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-"""Functions to interact with TV Maze API"""
+"""Functions to interact with TVmaze API"""
 
 from __future__ import absolute_import
 from pprint import pformat
@@ -36,7 +36,7 @@ CACHE_DIR = get_cache_directory()
 
 def _load_info(url, params=None):
     """
-    Load info from TV Maze
+    Load info from TVmaze
 
     :param url: API endpoint URL
     :param params: URL query params
@@ -48,7 +48,7 @@ def _load_info(url, params=None):
     if not response.ok:
         response.raise_for_status()
     json_response = response.json()
-    logger.debug('TV Maze response:\n{}'.format(pformat(json_response)))
+    logger.debug('TVmaze response:\n{}'.format(pformat(json_response)))
     return json_response
 
 
@@ -62,7 +62,7 @@ def search_show(title):
     try:
         return _load_info(SEARCH_URL, {'q': title})
     except HTTPError as exc:
-        logger.error('TV Maze returned an error: {}'.format(exc))
+        logger.error('TVmaze returned an error: {}'.format(exc))
         return ()
 
 
@@ -70,7 +70,7 @@ def filter_by_year(shows, year):
     """
     Filter a show by year
 
-    :param shows: the list of shows from TV Maze
+    :param shows: the list of shows from TVmaze
     :param year: premiere year
     :return: a found show or None
     """
@@ -81,11 +81,21 @@ def filter_by_year(shows, year):
     return None
 
 
+def load_episode_list(show_id):
+    """Load episode list from TVmaze API"""
+    episode_list_url = EPISODE_LIST_URL.format(show_id)
+    try:
+        return _load_info(episode_list_url, {'specials': '1'})
+    except HTTPError as exc:
+        logger.error('TVmaze returned an error: {}'.format(exc))
+        return ()
+
+
 def load_show_info(show_id):
     """
     Get full info for a single show
 
-    :param show_id: TV Maze show ID
+    :param show_id: TVmaze show ID
     :return: show info or None
     """
     show_info = cache.load_show_info_from_cache(show_id)
@@ -94,11 +104,13 @@ def load_show_info(show_id):
         params = {'embed[]': ['cast', 'seasons', 'images', 'crew']}
         try:
             show_info = _load_info(show_info_url, params)
-            episode_list_url = EPISODE_LIST_URL.format(show_id)
-            episode_list = _load_info(episode_list_url, {'specials': '1'})
         except HTTPError as exc:
-            logger.error('TV Maze returned an error: {}'.format(exc))
+            logger.error('TVmaze returned an error: {}'.format(exc))
             return None
+        episode_list = load_episode_list(show_id)
+        if isinstance(show_info['_embedded']['images'], list):
+            show_info['_embedded']['images'].sort(key=lambda img: img['main'],
+                                                  reverse=True)
         process_episode_list(show_info, episode_list)
         cache.cache_show_info(show_info)
     return show_info
@@ -116,7 +128,7 @@ def load_show_info_by_external_id(provider, show_id):
     try:
         return _load_info(SEARCH_BU_EXTERNAL_ID_URL, query)
     except HTTPError as exc:
-        logger.error('TV Maze returned an error: {}'.format(exc))
+        logger.error('TVmaze returned an error: {}'.format(exc))
         return None
 
 
@@ -137,7 +149,7 @@ def load_episode_info(show_id, episode_id):
             try:
                 episode_info = _load_info(url)
             except HTTPError as exc:
-                logger.error('TV Maze returned an error: {}'.format(exc))
+                logger.error('TVmaze returned an error: {}'.format(exc))
                 return None
         return episode_info
     return None
