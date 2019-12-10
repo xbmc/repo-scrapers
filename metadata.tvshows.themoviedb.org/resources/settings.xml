@@ -4,4 +4,7 @@
     <setting label="30006" type="bool" id="tmdbart" default="true"/>
     <setting label="30007" type="bool" id="fanarttvart" default="true"/>
     <setting label="30002" type="select" values="bg|cs|da|de|ee|el|en|es|fa|fa-ir|fi|fr|fr-ca|he|hr|hu|it|ja|ko|nl|no|pl|pt|pt-br|ru|sl|sr|sv|tr|zh-cn|zh-tw" id="language" default="en"/>
+    <setting label="30008" type="labelenum" values="Themoviedb|IMDb" id="RatingS" default="Themoviedb"/>
+	<setting label="30009" type="bool" id="fallback" subsetting="true" visible="eq(-1,1)" default="true"/>
+	<setting label="30010" type="bool" id="alsoimdb" subsetting="true" visible="eq(-2,0)" default="false"/>
 </settings>
