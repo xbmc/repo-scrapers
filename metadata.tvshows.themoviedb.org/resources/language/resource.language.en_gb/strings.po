@@ -39,3 +39,15 @@ msgstr ""
 msgctxt "#30007"
 msgid "Get Extra Artwork from fanart.tv"
 msgstr ""
+
+msgctxt "#30008"
+msgid "Get Default Rating from"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Also get ratings from themoviedb.org"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Also get ratings from IMDb"
+msgstr ""
