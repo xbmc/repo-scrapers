@@ -82,6 +82,9 @@
 			<RegExp input="$$10" output="&lt;id&gt;\1&lt;/id&gt;&lt;uniqueid type=&quot;tmdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression/>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetTVShowExtIDs&quot;&gt;$$10&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
 			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
 				<expression noclean="1">"first_air_date":"([0-9]+)-</expression>
 			</RegExp>
@@ -121,7 +124,7 @@
 				</RegExp>
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;" dest="5+">
 				<expression>&quot;rating&quot;:"([^"]*)"</expression>
 			</RegExp>
 			<RegExp input="$$10" output="&lt;chain function=&quot;GetCast&quot;&gt;$$10&lt;/chain&gt;" dest="5+">
@@ -307,6 +310,9 @@
 			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tmdb&quot; default=&quot;true&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
 				<expression>"id":([0-9]+),"name"</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;chain function=&quot;GetEpExtIDs&quot;&gt;$$6|$$10|$$11&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
 			<RegExp input="$$8" output="\1" dest="5+">
 				<RegExp input="$$1" output="&lt;value&gt;\1&lt;/value&gt;" dest="7">
 					<expression>&quot;vote_average&quot;:([^&quot;]*)</expression>
@@ -356,9 +362,51 @@
 		</RegExp>
 	</GetEpisodeDetails>
 
+	<GetEpExtIDs dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseEpExtIDs&quot; cache=&quot;tmdbids-\1\2\3&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2/episode/\3/external_ids?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+				<expression>^([0-9]+)\|([0-9]+)\|([0-9]+)$</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetEpExtIDs>
+
+	<ParseEpExtIDs dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tvdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5">
+				<expression>"tvdb_id":([0-9]+),</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;imdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+				<expression>imdb_id":"([^"]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseEpExtIDs>
+
+	<GetTVShowExtIDs dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTVShowExtIDs&quot; cache=&quot;tmdbids-\1&quot;&gt;https://api.themoviedb.org/3/tv/\1/external_ids?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en-US&lt;/url&gt;" dest="5">
+				<expression>^([0-9]+)$</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</GetTVShowExtIDs>
+
+	<ParseTVShowExtIDs dest="4">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;tvdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5">
+				<expression>"tvdb_id":([0-9]+),</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;uniqueid type=&quot;imdb&quot;&gt;\1&lt;/uniqueid&gt;" dest="5+">
+				<expression>imdb_id":"([^"]*)</expression>
+			</RegExp>
+			<expression noclean="1" />
+		</RegExp>
+	</ParseTVShowExtIDs>
+
 	<GetIMDbEpRating dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="4">
-			<RegExp input="$$1" output="&lt;url function=&quot;GetIMDbRatingByID&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2/episode/\3/external_ids?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetIMDbRatingByID&quot; cache=&quot;tmdbids-\1\2\3&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2/episode/\3/external_ids?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
 				<expression>^([0-9]+)\|([0-9]+)\|([0-9]+)$</expression>
 			</RegExp>
 			<expression noclean="1" />
