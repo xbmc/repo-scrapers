@@ -55,3 +55,7 @@ msgstr ""
 msgctxt "#30011"
 msgid "Certification Prefix"
 msgstr ""
+
+msgctxt "#30012"
+msgid "Certification Country"
+msgstr ""
