@@ -1,3 +1,6 @@
+[B]3.4.1[/B]
+- Fixed: Scraping episodes when no Air Date exists
+
 [B]3.4.0[/B]
 - Added: option to select certification country
 
