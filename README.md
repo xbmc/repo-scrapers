@@ -16,7 +16,6 @@ This branch is not used for public. Please use one of the other branches availab
 ## Other useful links
 
 * [Kodi wiki] (http://kodi.wiki/)
-* [Kodi bug tracker] (http://trac.kodi.tv)
 * [Kodi community forums] (http://forum.kodi.tv/)
 * [Kodi website] (http://kodi.tv)
 
