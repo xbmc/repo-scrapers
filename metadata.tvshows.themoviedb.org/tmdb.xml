@@ -278,7 +278,7 @@
 				<RegExp input="$$2" output="\1" dest="7">
 					<expression>^[0-9]+\|[0-9]+\|([0-9]+)</expression>
 				</RegExp>
-				<expression>({"air_date":"[^"]*","episode_number":$$7,"id":\d+,.+)</expression>
+				<expression>({"air_date":(?:"[^"]*"|null),"episode_number":$$7,"id":\d+,.+)</expression>
 			</RegExp>
 			<RegExp input="$$2" output="\1" dest="6">
 				<expression>^([0-9]+)\|</expression>
