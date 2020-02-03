@@ -1,3 +1,6 @@
+[B]3.4.2[/B]
+- Fixed: Unscraped episodes caused by Square brackets in plot (thanks scudlee)
+
 [B]3.4.1[/B]
 - Fixed: Scraping episodes when no Air Date exists
 
