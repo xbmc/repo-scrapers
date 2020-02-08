@@ -1,0 +1,37 @@
+# Kodi Media Center language file
+# Addon Name: Filmweb Scraper
+# Addon id: metadata.filmweb.pl
+# Addon Provider: Regss
+# Translators:
+# Regss <regss84@gmail.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Regss <regss84@gmail.com>, 2020\n"
+"Language-Team: English (United States) (https://www.transifex.com/movielib/teams/107210/en_US/)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30001"
+msgid "Get Trailer"
+msgstr "Get Trailer"
+
+msgctxt "#30002"
+msgid "Get full Cast"
+msgstr "Get full Cast"
+
+msgctxt "#30004"
+msgid "Use Original Title"
+msgstr "Use Original Title"
+
+msgctxt "#30005"
+msgid "Also get TMDb thumbs"
+msgstr "Also get TMDb thumbs"
+
+msgctxt "#30011"
+msgid "Search all NFO's"
+msgstr "Search all NFO's"
+
+msgctxt "#30012"
+msgid "Alternative search engine"
+msgstr "Alternative search engine"

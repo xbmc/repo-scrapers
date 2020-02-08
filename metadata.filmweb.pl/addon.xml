@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.filmweb.pl" name="Filmweb" version="2.4.0" provider-name="Regss">
+    <requires>
+        <import addon="xbmc.metadata" version="2.1.0"/>
+        <import addon="metadata.common.themoviedb.org" version="3.1.9"/>
+        <import addon="plugin.video.youtube" version="2.9.1" optional="true"/>
+    </requires>
+    <extension point="xbmc.metadata.scraper.movies" library="filmweb.xml"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_US">Filmweb Movie Scraper</summary>
+        <summary lang="pl_PL">Scraper filmowy Filmweb.pl</summary>
+        <description lang="en_US">Download Movie information from www.filmweb.pl</description>
+        <description lang="pl_PL">Pobiera informacje o filmie ze strony www.filmweb.pl</description>
+        <platform>all</platform>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+        <email>regss84@gmail.com</email>
+        <source>https://github.com/Regss/metadata.filmweb.pl</source>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
