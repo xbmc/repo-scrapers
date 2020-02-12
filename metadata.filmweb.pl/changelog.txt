@@ -1,0 +1,74 @@
+[B]2.4.0[/B]
+- Poprawka: dopasowanie do nowego layout'u
+[B]2.3.6[/B]
+- Poprawka: nowa wyszukiwarka
+- Poprawka: dopasowanie to scrapera TMDb
+- Dodano: Alternatywna wyszukiwarka
+[B]2.3.5[/B]
+- Poprawka: pobieranie opisu
+[B]2.3.4[/B]
+- Poprawka: pobieranie opisu
+[B]2.3.3[/B]
+- Poprawka: ogólne po zmianach na filmweb.pl
+[B]2.3.2[/B]
+- Poprawka: pobieranie polskiego tytułu
+[B]2.3.1[/B]
+- Poprawka: rozpoznawanie danych w plikach nfo
+[B]2.3.0[/B]
+- Dodano: więcej fallback'ów do TMDb
+- Dodano: możliwość kontroli nad pobieranymi okładkami
+- Poprawka: przeredagowano większość funkcji
+- Poprawka: odnajdywanie filmweb id dla niektórych filmów
+- Poprawka: odnajdywanie tytułów na TMDb
+- Poprawka: wyrzucone niedziałające funkcje odnajdywania tytułów na google
+[B]2.2.8[/B]
+- Poprawka: pobieranie polskiej okładki
+- Poprawka: pobieranie obsady
+[B]2.2.7[/B]
+- Poprawka: wyszukiwanie filmów
+[B]2.2.6[/B]
+- Poprawka: zmiany w addon.xml
+[B]2.2.5[/B]
+- Poprawka: miniaturki aktorów
+- Poprawka: pobieranie studia z filmweb
+- Poprawka: pobieranie trailerów
+[B]2.2.4[/B]
+- Poprawka: pobieranie tagline
+[B]2.2.3[/B]
+- Poprawka: pobieranie obsady
+[B]2.2.2[/B]
+- Poprawka: pobieranie opisu
+[B]2.2.1[/B]
+- Poprawka: kodowanie znaków w tagline
+[B]2.2.0[/B]
+- Poprawka: Wyniki wyszukiwania, Filmweb ID, Tytuł, Oryginalny Tytuł, Rok, Tagline, Outline, Akorzy, Trailer, Opisy, Fanart
+- Dodano: Trailer z TMDb jeśli nie ma na filmweb
+- Dodano: Obsada z TMDb jesśłi nie ma na filmweb
+[B]2.1.7[/B]
+- poprawka: okładka
+[B]2.1.6[/B]
+- poprawka: pobieranie filmweb id
+[B]2.1.5[/B]
+- poprawka: pobieranie okładki
+[B]2.1.4[/B]
+- ulepszenie: powiązanie filmweb.id z tmdb.id
+[B]2.1.3[/B]
+- powrót: wyszukiwarka web 
+[B]2.1.2[/B]
+- test: wyszukiwarka live
+[B]2.1.1[/B]
+- poprawka: wyszukiwarka, studio, opis 
+[B]2.1.0[/B]
+- optymalizacja - scraper oparty tylko na filmweb.pl i themoviedb.org 
+[B]2.0.0[/B]
+- całkowicie przepisany i zmodyfikowany scraper 
+[B]1.2.1[/B]
+- poprawka: ocena z imdb poprzez współdzielone funkcje
+[B]1.2.0[/B]
+- poprawka: imdb ID z literkami tt
+[B]1.1.1[/B]
+- dodana obsługa IMDB z pliku .nfo
+[B]1.1.0[/B]
+- Nowy portal, nowy scraper
+[B]1.0.0[/B]
+- Initial import into addons repository

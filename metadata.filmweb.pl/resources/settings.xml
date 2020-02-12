@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <setting label="30001" type="bool" id="GetTrailer" default="true" />
+    <setting label="30002" type="bool" id="GetFullActors" default="false" />
+    <setting label="30004" type="bool" id="UseOriginalTitle" default="false" />
+    <setting label="30005" type="bool" id="GetAlwaysTMDbThumb" default="false" />
+    <setting label="30011" type="bool" id="NFOUrl" default="true" />
+	<setting label="30012" type="bool" id="SearchAlt" default="false" />
+    <setting id="language" default="pl" />
+    <setting id="tmdbplotlanguage" default="pl" />
+    <setting id="tmdbcertcountry" default="us" />
+</settings>
