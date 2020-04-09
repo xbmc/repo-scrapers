@@ -1,3 +1,6 @@
+[B]2.9.13[/B]
+- fixed: imdb host
+
 [B]2.9.12[/B]
 - improved: search results to handle articles at the end of title
 
