@@ -1,3 +1,6 @@
+[B]5.1.11[/B]
+- added: belarusian language option
+
 [B]5.1.10[/B]
 - improved: search results to handle articles and the end of title
 
