@@ -534,7 +534,7 @@
 					<RegExp input="$$1" output="\1" dest="7">
 						<expression>"backdrops":\[([^\]]*)\]</expression>
 					</RegExp>
-					<expression repeat="yes">"file_path":"([^"]*)","height":([0-9]+)[^\}]*"width":([0-9]+)</expression>
+					<expression repeat="yes">"file_path":"([^"]*)","height":([0-9]+),"[^"]*":null[^\}]*"width":([0-9]+)</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
