@@ -1,3 +1,6 @@
+[B]5.2.0[/B]
+- added: Landscape scraping from tmdb
+
 [B]5.1.11[/B]
 - added: belarusian language option
 

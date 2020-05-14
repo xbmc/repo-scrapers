@@ -119,6 +119,9 @@
 			<RegExp conditional="fanart" input="$$2" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
+			<RegExp conditional="landscape" input="$$2" output="&lt;chain function=&quot;GetTMDBLandscapeByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
+				<expression />
+			</RegExp>
 			<RegExp conditional="trailer" input="$$2" output="&lt;chain function=&quot;GetTMDBTrailerByIdChain&quot;&gt;$$2::$INFO[language]&lt;/chain&gt;" dest="5+">
 				<expression />
 			</RegExp>
