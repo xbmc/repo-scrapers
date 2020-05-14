@@ -1,3 +1,6 @@
+[B]5.4.0[/B]
+- added: Landscape scraping from tmdb
+
 [B]5.3.6[/B]
 - fixed: imdb host
 
