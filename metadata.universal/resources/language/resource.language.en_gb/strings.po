@@ -338,6 +338,10 @@ msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
 msgstr ""
 
+msgctxt "#30707"
+msgid "Enable movie landscape from themoviedb.org"
+msgstr ""
+
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
 msgstr ""

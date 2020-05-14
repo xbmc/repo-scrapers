@@ -67,6 +67,8 @@
     <setting type="sep"/>
     <setting label="30705" type="bool" id="fanarttvmovielandscape" default="false"/>
     <setting type="sep"/>
+    <setting label="30707" type="bool" id="tmdbmovielandscape" default="false"/>
+    <setting type="sep"/>
     <setting label="30706" type="bool" id="fanarttvmoviediscart" default="false"/>
     <setting type="sep"/>
   </category>
