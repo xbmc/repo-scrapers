@@ -542,7 +542,7 @@
 				<expression clear="yes" repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:&quot;$$11</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;landscape&quot; preview=&quot;$$20w780\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
-				<expression clear="yes" repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:&quot;en</expression>
+				<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:&quot;en</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$9" dest="2">
 				<expression>(.+)</expression>
