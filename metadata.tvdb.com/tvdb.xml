@@ -188,10 +188,10 @@
 				<expression>"imdbId":\s*?"(tt\d+)",</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="4+">
-				<expression fixchars="1">"seriesName":\s*?"(.*)",\s*?"aliases"</expression>
+				<expression fixchars="1">"seriesName":\s*?"(.*)",\s*?"siteRating"</expression>
 			</RegExp>
 			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingtitle|" dest="14">
-				<expression clear="yes">"seriesName":\s*?null,\s*?"aliases"</expression>
+				<expression clear="yes">"seriesName":\s*?null,\s*?"siteRating"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;premiered&gt;\1&lt;/premiered&gt;" dest="4+">
 				<expression>"firstAired":\s*?"([^"]+)",</expression>
@@ -208,14 +208,14 @@
 			<RegExp input="$$7" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="4+">
 				<RegExp input="$$6\r" output="\1\n" dest="7">
 					<RegExp input="$$1" output="\1" dest="6">
-						<expression clear="yes" noclean="1">"overview":\s*?"(.*)",\s*?"lastUpdated"</expression>
+						<expression clear="yes" noclean="1">"overview":\s*?"(.*)",\s*?"poster"</expression>
 					</RegExp>
 					<expression clear="yes" repeat="yes" fixchars="1">(.*?)\\r</expression>
 				</RegExp>
 				<expression noclean="1">(?!^$)(.*)</expression>
 			</RegExp>
 			<RegExp conditional="usefallbacklanguage1" input="$$1" output="missingplot|" dest="14+">
-				<expression>"overview":\s*?null,\s*?"lastUpdated"</expression>
+				<expression>"overview":\s*?null,\s*?"poster"</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;mpaa&gt;\1&lt;/mpaa&gt;" dest="4+">
 				<expression>"rating":\s*?"([^"]*)",</expression>
