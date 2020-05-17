@@ -1,3 +1,6 @@
+[B]3.2.5[/B]
+- Fixed title and plot
+
 [B]2.1.4[/B]
 - Fixed: search results following yet another change in tvdb API response
 - Fixed: search results 
