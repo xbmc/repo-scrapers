@@ -1,5 +1,8 @@
+[B]3.2.6[/B]
+- Fixed episode title and plot
+
 [B]3.2.5[/B]
-- Fixed title and plot
+- Fixed show title and plot
 
 [B]3.2.4[/B]
 - Fixed: search results following yet another change in tvdb API response
