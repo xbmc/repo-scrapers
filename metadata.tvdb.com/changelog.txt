@@ -1,3 +1,6 @@
+[B]3.2.7[/B]
+- Fixed some episode plots still not get scraped
+
 [B]3.2.6[/B]
 - Fixed episode title and plot
 
