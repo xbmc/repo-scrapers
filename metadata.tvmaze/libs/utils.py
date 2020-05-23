@@ -17,64 +17,52 @@
 
 """Misc utils"""
 
-from __future__ import absolute_import
-import os
-from requests.sessions import Session
-from six import PY2, text_type
-import xbmc
-from xbmcaddon import Addon
-import xbmcvfs
+from __future__ import absolute_import, unicode_literals
 
-HEADERS = (
-    ('User-Agent', 'Kodi scraper for tvmaze.com by Roman V.M.; roman1972@gmail.com'),
-    ('Accept', 'application/json'),
-)
+import xbmc
+from six import PY2, text_type, binary_type
+from xbmcaddon import Addon
+
+try:
+    from typing import Text, Optional, Any, Dict  # pylint: disable=unused-import
+except ImportError:
+    pass
 
 ADDON_ID = 'metadata.tvmaze'
 ADDON = Addon()
 
 
-class logger:
+class logger:  # pylint: disable=invalid-name,old-style-class,no-init,missing-docstring
     log_message_prefix = '[{} ({})]: '.format(ADDON_ID, ADDON.getAddonInfo('version'))
 
     @staticmethod
     def log(message, level=xbmc.LOGDEBUG):
+        # type: (Text, int) -> None
+        if isinstance(message, binary_type):
+            message = message.decode('utf-8')
+        message = logger.log_message_prefix + message
         if PY2 and isinstance(message, text_type):
             message = message.encode('utf-8')
-        message = logger.log_message_prefix + message
         xbmc.log(message, level)
 
     @staticmethod
     def notice(message):
+        # type: (Text) -> None
         logger.log(message, xbmc.LOGNOTICE)
 
     @staticmethod
     def error(message):
+        # type: (Text) -> None
         logger.log(message, xbmc.LOGERROR)
 
     @staticmethod
     def debug(message):
+        # type: (Text) -> None
         logger.log(message, xbmc.LOGDEBUG)
 
 
-def get_requests_session():
-    """Create requests Session"""
-    session = Session()
-    session.headers.update(dict(HEADERS))
-    return session
-
-
-def get_cache_directory():
-    profile_dir = xbmc.translatePath(ADDON.getAddonInfo('profile'))
-    if PY2:
-        profile_dir = profile_dir.decode('utf-8')
-    cache_dir = os.path.join(profile_dir, 'cache')
-    if not xbmcvfs.exists(cache_dir):
-        xbmcvfs.mkdir(cache_dir)
-    return cache_dir
-
-
 def safe_get(dct, key, default=None):
+    # type: (Dict[Text, Any], Text, Any) -> Any
     """
     Get a key from dict
 

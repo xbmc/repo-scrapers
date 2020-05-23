@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvmaze"
   name="TVmaze"
-  version="1.0.1"
+  version="1.0.2"
   provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
@@ -22,9 +22,7 @@ We provide an API that can be used by anyone or service like Kodi to retrieve TV
     </assets>
     <website>https://www.tvmaze.com</website>
     <source>https://github.com/romanvm/kodi.tvmaze</source>
-    <news>1.0.0:
-- Fixed a bug with empty ratings.
-- Added a workaround for a Kodi bug when episoude guide URL from NFO is passed to a scraper.
-- Artwork is now sorted by main property.</news>
+    <news>1.0.2:
+- Fixed a workaround for Kodi episodeguide URL bug.</news>
   </extension>
 </addon>
