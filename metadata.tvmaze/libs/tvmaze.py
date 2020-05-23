@@ -17,12 +17,22 @@
 
 """Functions to interact with TVmaze API"""
 
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
+
 from pprint import pformat
+
+import requests
 from requests.exceptions import HTTPError
+
 from . import cache
-from .utils import get_requests_session, get_cache_directory, logger, safe_get
 from .data_utils import process_episode_list
+from .utils import logger, safe_get
+
+try:
+    from typing import Text, Optional, Union, List, Dict, Any  # pylint: disable=unused-import
+    InfoType = Dict[Text, Any]  # pylint: disable=invalid-name
+except ImportError:
+    pass
 
 SEARCH_URL = 'http://api.tvmaze.com/search/shows'
 SEARCH_BU_EXTERNAL_ID_URL = 'http://api.tvmaze.com/lookup/shows'
@@ -30,11 +40,16 @@ SHOW_INFO_URL = 'http://api.tvmaze.com/shows/{}'
 EPISODE_LIST_URL = 'http://api.tvmaze.com/shows/{}/episodes'
 EPISODE_INFO_URL = 'http://api.tvmaze.com/episodes/{}'
 
-SESSION = get_requests_session()
-CACHE_DIR = get_cache_directory()
+HEADERS = (
+    ('User-Agent', 'Kodi scraper for tvmaze.com by Roman V.M.; roman1972@gmail.com'),
+    ('Accept', 'application/json'),
+)
+SESSION = requests.Session()
+SESSION.headers.update(dict(HEADERS))
 
 
 def _load_info(url, params=None):
+    # type: (Text, Optional[Dict[Text, Union[Text, List[Text]]]]) -> Union[dict, list]
     """
     Load info from TVmaze
 
@@ -53,6 +68,7 @@ def _load_info(url, params=None):
 
 
 def search_show(title):
+    # type: (Text) -> List[InfoType]
     """
     Search a single TV show
 
@@ -63,10 +79,11 @@ def search_show(title):
         return _load_info(SEARCH_URL, {'q': title})
     except HTTPError as exc:
         logger.error('TVmaze returned an error: {}'.format(exc))
-        return ()
+        return []
 
 
 def filter_by_year(shows, year):
+    # type: (List[InfoType], Text) -> Optional[InfoType]
     """
     Filter a show by year
 
@@ -82,16 +99,18 @@ def filter_by_year(shows, year):
 
 
 def load_episode_list(show_id):
+    # type: (Text) -> List[InfoType]
     """Load episode list from TVmaze API"""
     episode_list_url = EPISODE_LIST_URL.format(show_id)
     try:
         return _load_info(episode_list_url, {'specials': '1'})
     except HTTPError as exc:
         logger.error('TVmaze returned an error: {}'.format(exc))
-        return ()
+        return []
 
 
 def load_show_info(show_id):
+    # type: (Text) -> Optional[InfoType]
     """
     Get full info for a single show
 
@@ -117,6 +136,7 @@ def load_show_info(show_id):
 
 
 def load_show_info_by_external_id(provider, show_id):
+    # type: (Text, Text) -> Optional[InfoType]
     """
     Load show info by external ID (TheTVDB or IMDB)
 
@@ -133,6 +153,7 @@ def load_show_info_by_external_id(provider, show_id):
 
 
 def load_episode_info(show_id, episode_id):
+    # type: (Text, Text) -> Optional[InfoType]
     """
     Load episode info
 
