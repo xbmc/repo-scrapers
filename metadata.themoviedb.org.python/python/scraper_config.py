@@ -7,6 +7,42 @@ def configure_scraped_details(details, settings):
     details = _configure_tags(details, settings)
     return details
 
+def configure_tmdb_artwork(details, settings):
+    if 'available_art' not in details:
+        return details
+
+    art = details['available_art']
+    if not settings.getSettingBool('fanart'):
+        if 'fanart' in art:
+            del art['fanart']
+        if 'set.fanart' in art:
+            del art['set.fanart']
+    if not settings.getSettingBool('landscape'):
+        if 'landscape' in art:
+            del art['landscape']
+        if 'set.landscape' in art:
+            del art['set.landscape']
+
+    return details
+
+_fanarttv_arttypes = ['fanart', 'poster', 'clearlogo', 'clearart', 'discart', 'banner', 'landscape', 'keyart']
+_fanarttv_arttypes += ['set.' + t for t in _fanarttv_arttypes]
+def configure_fanarttv_artwork(details, settings):
+    if 'available_art' not in details:
+        return details
+    art = details['available_art']
+    for arttype in _fanarttv_arttypes:
+        if arttype in art and not settings.getSettingBool('enable_fanarttv_' + arttype):
+            del art[arttype]
+
+    return details
+
+def is_fanarttv_configured(settings):
+    for arttype in _fanarttv_arttypes:
+        if settings.getSettingBool('enable_fanarttv_' + arttype):
+            return True
+    return False
+
 def _configure_rating_prefix(details, settings):
     if details['info'].get('mpaa'):
         details['info']['mpaa'] = settings.getSettingString('certprefix') + details['info']['mpaa']
