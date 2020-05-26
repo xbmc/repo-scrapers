@@ -27,6 +27,18 @@ def combine_scraped_details_info_and_ratings(original_details, additional_detail
             update_or_set(original_details, 'ratings', additional_details['ratings'])
     return original_details
 
+def combine_scraped_details_available_artwork(original_details, additional_details):
+    if additional_details and additional_details.get('available_art'):
+        available_art = additional_details['available_art']
+        if not original_details.get('available_art'):
+            original_details['available_art'] = available_art
+        else:
+            for arttype, artlist in available_art.items():
+                original_details['available_art'][arttype] = \
+                    artlist + original_details['available_art'].get(arttype, [])
+
+    return original_details
+
 def find_uniqueids_in_text(input_text):
     result = {}
     res = re.search(r'(themoviedb.org/movie/)([0-9]+)', input_text)

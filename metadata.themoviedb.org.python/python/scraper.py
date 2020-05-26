@@ -6,10 +6,13 @@ import xbmcgui
 import xbmcplugin
 
 from lib.tmdbscraper.tmdb import TMDBMovieScraper
+from lib.tmdbscraper.fanarttv import get_details as get_fanarttv_artwork
 from lib.tmdbscraper.imdbratings import get_details as get_imdb_details
 from lib.tmdbscraper.traktratings import get_trakt_ratinginfo
-from scraper_datahelper import combine_scraped_details_info_and_ratings, find_uniqueids_in_text, get_params
-from scraper_config import configure_scraped_details, PathSpecificSettings
+from scraper_datahelper import combine_scraped_details_info_and_ratings, \
+    combine_scraped_details_available_artwork, find_uniqueids_in_text, get_params
+from scraper_config import configure_scraped_details, PathSpecificSettings, \
+    configure_fanarttv_artwork, configure_tmdb_artwork, is_fanarttv_configured
 
 ADDON_SETTINGS = xbmcaddon.Addon()
 ID = ADDON_SETTINGS.getAddonInfo('id')
@@ -35,12 +38,7 @@ def search_for_movie(title, year, handle, settings):
         return
 
     for movie in search_results:
-        listitem = xbmcgui.ListItem(movie['title'], offscreen=True)
-        movie_year = movie['release_date'].split('-')[0] if movie.get('release_date') else None
-        if movie_year:
-            listitem.setInfo('video', {'year': movie_year})
-        if movie['poster_path']:
-            listitem.setArt({'thumb': movie['poster_path']})
+        listitem = _searchresult_to_listitem(movie)
         uniqueids = {'tmdb': str(movie['id'])}
         xbmcplugin.addDirectoryItem(handle=handle, url=build_lookup_string(uniqueids),
             listitem=listitem, isFolder=True)
@@ -53,25 +51,38 @@ def _strip_trailing_article(title):
             return title[:-len(article)]
     return title
 
+def _searchresult_to_listitem(movie):
+    movie_info = {'title': movie['title']}
+    movie_label = movie['title']
+
+    movie_year = movie['release_date'].split('-')[0] if movie.get('release_date') else None
+    if movie_year:
+        movie_label += ' ({})'.format(movie_year)
+        movie_info['year'] = movie_year
+
+    listitem = xbmcgui.ListItem(movie_label, offscreen=True)
+
+    listitem.setInfo('video', movie_info)
+    if movie['poster_path']:
+        listitem.setArt({'thumb': movie['poster_path']})
+
+    return listitem
+
 # Low limit because a big list of artwork can cause trouble in some cases
 # (a column can be too large for the MySQL integration),
 # and how useful is a big list anyway? Not exactly rhetorical, this is an experiment.
 IMAGE_LIMIT = 10
 
-def add_artworks(listitem, artworks, settings):
-    for poster in artworks['poster'][:IMAGE_LIMIT]:
-        listitem.addAvailableArtwork(poster['url'], "poster", poster['preview'])
+def add_artworks(listitem, artworks):
+    for arttype, artlist in artworks.items():
+        if arttype == 'fanart':
+            continue
+        for image in artlist[:IMAGE_LIMIT]:
+            listitem.addAvailableArtwork(image['url'], arttype)
 
-    for poster in artworks['set.poster'][:IMAGE_LIMIT]:
-        listitem.addAvailableArtwork(poster['url'], "set.poster", poster['preview'])
-
-    if settings.getSettingBool('fanart'):
-        fanart_to_set = [{'image': image['url'], 'preview': image['preview']}
-            for image in artworks['fanart'][:IMAGE_LIMIT]]
-        listitem.setAvailableFanart(fanart_to_set)
-
-        for fanart in artworks['set.fanart'][:IMAGE_LIMIT]:
-            listitem.addAvailableArtwork(fanart['url'], "set.fanart", fanart['preview'])
+    fanart_to_set = [{'image': image['url'], 'preview': image['preview']}
+        for image in artworks['fanart'][:IMAGE_LIMIT]]
+    listitem.setAvailableFanart(fanart_to_set)
 
 def get_details(input_uniqueids, handle, settings):
     details = get_tmdb_scraper(settings).get_details(input_uniqueids)
@@ -82,6 +93,8 @@ def get_details(input_uniqueids, handle, settings):
         xbmcgui.Dialog().notification(header, details['error'], xbmcgui.NOTIFICATION_WARNING)
         log(header + ': ' + details['error'], xbmc.LOGWARNING)
         return False
+
+    details = configure_tmdb_artwork(details, settings)
 
     if settings.getSettingString('RatingS') == 'IMDb' or settings.getSettingBool('imdbanyway'):
         imdbinfo = get_imdb_details(details['uniqueids'])
@@ -95,13 +108,21 @@ def get_details(input_uniqueids, handle, settings):
         traktinfo = get_trakt_ratinginfo(details['uniqueids'])
         details = combine_scraped_details_info_and_ratings(details, traktinfo)
 
+    if is_fanarttv_configured(settings):
+        fanarttv_info = get_fanarttv_artwork(details['uniqueids'],
+            settings.getSettingString('fanarttv_clientkey'),
+            settings.getSettingString('fanarttv_language'),
+            details['_info']['set_tmdbid'])
+        fanarttv_info = configure_fanarttv_artwork(fanarttv_info, settings)
+        details = combine_scraped_details_available_artwork(details, fanarttv_info)
+
     details = configure_scraped_details(details, settings)
 
     listitem = xbmcgui.ListItem(details['info']['title'], offscreen=True)
     listitem.setInfo('video', details['info'])
     listitem.setCast(details['cast'])
     listitem.setUniqueIDs(details['uniqueids'], 'tmdb')
-    add_artworks(listitem, details['available_art'], settings)
+    add_artworks(listitem, details['available_art'])
 
     for rating_type, value in details['ratings'].items():
         if 'votes' in value:
