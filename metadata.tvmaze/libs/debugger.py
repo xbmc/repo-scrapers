@@ -14,18 +14,30 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+Provides a context manager that writes extended debugging info
+in the Kodi log on unhandled exceptions
+"""
+from __future__ import absolute_import, unicode_literals
 
-from __future__ import absolute_import
 import inspect
 from contextlib import contextmanager
 from platform import uname
 from pprint import pformat
+
 import six
 import xbmc
+
 from .utils import logger
+
+try:
+    from typing import Text, Generator, Callable, Dict, Any  # pylint: disable=unused-import
+except ImportError:
+    pass
 
 
 def _format_vars(variables):
+    # type: (Dict[Text, Any]) -> Text
     """
     Format variables dictionary
 
@@ -45,6 +57,7 @@ def _format_vars(variables):
 
 @contextmanager
 def debug_exception(logger_func=logger.error):
+    # type: (Callable[[Text], None]) -> Generator[None]
     """
     Diagnostic helper context manager
 
@@ -79,8 +92,7 @@ def debug_exception(logger_func=logger.error):
         logger_func('System info: {0}'.format(uname()))
         logger_func('OS info: {0}'.format(xbmc.getInfoLabel('System.OSVersionInfo')))
         logger_func('Kodi version: {0}'.format(
-            xbmc.getInfoLabel('System.BuildVersion'))
-        )
+            xbmc.getInfoLabel('System.BuildVersion')))
         logger_func('File: {0}'.format(frame_info[1]))
         context = ''
         if frame_info[4] is not None:

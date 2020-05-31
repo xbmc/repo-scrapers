@@ -17,17 +17,43 @@
 
 """Cache-related functionality"""
 
-from __future__ import absolute_import
+from __future__ import absolute_import, unicode_literals
+
 import os
 from datetime import datetime, timedelta
-from six.moves import cPickle as pickle
-from .utils import get_cache_directory, logger
 
-CACHE_DIR = get_cache_directory()
-CACHING_DURATION = timedelta(hours=3)
+from six import PY2
+from six.moves import cPickle as pickle
+import xbmc
+import xbmcvfs
+
+from .utils import ADDON, logger
+
+try:
+    from typing import Optional, Text, Dict, Any  # pylint: disable=unused-import
+except ImportError:
+    pass
+
+
+CACHING_DURATION = timedelta(hours=3)  # type: timedelta
+
+
+def _get_cache_directory():  # pylint: disable=missing-docstring
+    # type: () -> Text
+    profile_dir = xbmc.translatePath(ADDON.getAddonInfo('profile'))
+    if PY2:
+        profile_dir = profile_dir.decode('utf-8')
+    cache_dir = os.path.join(profile_dir, 'cache')
+    if not xbmcvfs.exists(cache_dir):
+        xbmcvfs.mkdir(cache_dir)
+    return cache_dir
+
+
+CACHE_DIR = _get_cache_directory()  # type: Text
 
 
 def cache_show_info(show_info):
+    # type: (Dict[Text, Any]) -> None
     """
     Save show_info dict to cache
     """
@@ -41,6 +67,7 @@ def cache_show_info(show_info):
 
 
 def load_show_info_from_cache(show_id):
+    # type: (Text) -> Optional[Dict[Text, Any]]
     """
     Load show info from a local cache
 

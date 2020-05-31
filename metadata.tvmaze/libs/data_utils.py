@@ -18,10 +18,20 @@
 """Functions to process data"""
 
 from __future__ import absolute_import
+
 import re
 from collections import OrderedDict, namedtuple
+
 import six
+
 from .utils import safe_get
+
+try:
+    from typing import Optional, Text, Dict, List, Any  # pylint: disable=unused-import
+    from xbmcgui import ListItem  # pylint: disable=unused-import
+    InfoType = Dict[Text, Any]  # pylint: disable=invalid-name
+except ImportError:
+    pass
 
 TAG_RE = re.compile(r'<[^>]+>')
 SHOW_ID_REGEXPS = (
@@ -32,11 +42,19 @@ SHOW_ID_REGEXPS = (
 )
 SUPPORTED_ARTWORK_TYPES = {'poster', 'banner'}
 IMAGE_SIZES = ('large', 'original', 'medium')
+CLEAN_PLOT_REPLACEMENTS = (
+    ('<b>', '[B]'),
+    ('</b>', '[/B]'),
+    ('<i>', '[I]'),
+    ('</i>', '[/I]'),
+    ('</p><p>', '[CR]'),
+)
 
 UrlParseResult = namedtuple('UrlParseResult', ['provider', 'show_id'])
 
 
 def process_episode_list(show_info, episode_list):
+    # type: (InfoType, List[InfoType]) -> None
     """Convert embedded episode list to a dict"""
     episodes = OrderedDict()
     specials_list = []
@@ -54,15 +72,16 @@ def process_episode_list(show_info, episode_list):
 
 
 def _clean_plot(plot):
+    # type: (Text) -> Text
     """Replace HTML tags with Kodi skin tags"""
-    plot = plot.replace('<b>', '[B]').replace('</b>', '[/B]')
-    plot = plot.replace('<i>', '[I]').replace('</i>', '[/I]')
-    plot = plot.replace('</p><p>', '[CR]')
+    for repl in CLEAN_PLOT_REPLACEMENTS:
+        plot = plot.replace(repl[0], repl[1])
     plot = TAG_RE.sub('', plot)
     return plot
 
 
 def _set_cast(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Extract cast from show info dict"""
     cast = []
     for index, item in enumerate(show_info['_embedded']['cast'], 1):
@@ -84,15 +103,17 @@ def _set_cast(show_info, list_item):
 
 
 def _get_credits(show_info):
+    # type: (InfoType) -> List[Text]
     """Extract show creator(s) from show info"""
-    credits = []
+    credits_ = []
     for item in show_info['_embedded']['crew']:
         if item['type'].lower() == 'creator':
-            credits.append(item['person']['name'])
-    return credits
+            credits_.append(item['person']['name'])
+    return credits_
 
 
 def _set_unique_ids(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Extract unique ID in various online databases"""
     unique_ids = {'tvmaze': str(show_info['id'])}
     for key, value in six.iteritems(safe_get(show_info, 'externals', {})):
@@ -104,6 +125,7 @@ def _set_unique_ids(show_info, list_item):
 
 
 def _set_rating(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Set show rating"""
     if show_info['rating'] is not None and show_info['rating']['average'] is not None:
         rating = float(show_info['rating']['average'])
@@ -112,18 +134,20 @@ def _set_rating(show_info, list_item):
 
 
 def _extract_artwork_url(resolutions):
+    # type: (Dict[Text, Text]) -> Text
     """Extract image URL from the list of available resolutions"""
-    url = u''
+    url = ''
     for image_size in IMAGE_SIZES:
-        url = safe_get(resolutions, image_size, u'')
+        url = safe_get(resolutions, image_size, '')
         if not isinstance(url, six.text_type):
-            url = safe_get(url, 'url', u'')
+            url = safe_get(url, 'url', '')
             if url:
                 break
     return url
 
 
 def _add_season_info(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Add info for show seasons"""
     for season in show_info['_embedded']['seasons']:
         list_item.addSeason(season['number'], safe_get(season, 'name', ''))
@@ -136,6 +160,7 @@ def _add_season_info(show_info, list_item):
 
 
 def set_show_artwork(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Set available images for a show"""
     fanart_list = []
     for item in show_info['_embedded']['images']:
@@ -151,6 +176,7 @@ def set_show_artwork(show_info, list_item):
 
 
 def add_main_show_info(list_item, show_info, full_info=True):
+    # type: (ListItem, InfoType, bool) -> ListItem
     """Add main show info to a list item"""
     plot = _clean_plot(safe_get(show_info, 'summary', ''))
     video = {
@@ -166,7 +192,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
     }
     if show_info['network'] is not None:
         country = show_info['network']['country']
-        video['studio'] = u'{0} ({1})'.format(show_info['network']['name'], country['code'])
+        video['studio'] = '{0} ({1})'.format(show_info['network']['name'], country['code'])
         video['country'] = country['name']
     elif show_info['webChannel'] is not None:
         video['studio'] = show_info['webChannel']['name']
@@ -174,7 +200,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
         if show_info['webChannel']['country'] is not None:
             country = show_info['webChannel']['country']
             video['country'] = country['name']
-            video['studio'] += u' ({})'.format(country['code'])
+            video['studio'] += ' ({})'.format(country['code'])
     if show_info['premiered'] is not None:
         video['year'] = int(show_info['premiered'][:4])
         video['premiered'] = show_info['premiered']
@@ -196,6 +222,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
 
 
 def add_episode_info(list_item, episode_info, full_info=True):
+    # type: (ListItem, InfoType, bool) -> ListItem
     """Add episode info to a list item"""
     video = {
         'title': episode_info['name'],
@@ -223,6 +250,7 @@ def add_episode_info(list_item, episode_info, full_info=True):
 
 
 def parse_nfo_url(nfo):
+    # type: (Text) -> Optional[UrlParseResult]
     """Extract show ID from NFO file contents"""
     for regexp in SHOW_ID_REGEXPS:
         show_id_match = re.search(regexp, nfo, re.I)
