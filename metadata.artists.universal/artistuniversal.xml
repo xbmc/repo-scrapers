@@ -56,7 +56,7 @@
 				<expression noclean="1">&lt;artist.*?&lt;sort-name&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;type&gt;\1&lt;/type&gt;" dest="5+">
-				<expression noclean="1">&lt;artist.*?\stype=&quot;([Person|Group|Orchestra|Choir|Character|Other])&quot;</expression>
+				<expression noclean="1">&lt;artist.*?\stype=&quot;(Person|Group|Orchestra|Choir|Character|Other)&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;gender&gt;\1&lt;/gender&gt;" dest="5+">
 				<expression noclean="1">&lt;gender.*?&gt;([^&lt;]*)</expression>
