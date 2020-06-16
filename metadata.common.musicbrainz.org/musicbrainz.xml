@@ -31,16 +31,16 @@
 				<expression />
 			</RegExp>
 			<RegExp input="$$1" output="&lt;born&gt;\1&lt;/born&gt;" dest="11">
-			<expression>&lt;artist type=&quot;Person&quot;.*?&lt;life-span&gt;&lt;begin&gt;([^&lt;]*)</expression>
+			<expression>&lt;artist\sid[^>]*type=&quot;Person&quot;.*?&lt;life-span&gt;\s*&lt;begin&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;died&gt;\1&lt;/died&gt;" dest="11+">
-			<expression>&lt;artist type=&quot;Person&quot;.*?&lt;life-span&gt;&lt;begin&gt;[^&lt;]*&lt;/begin&gt;&lt;end&gt;([^&lt;]*)</expression>
+			<expression>&lt;artist\sid[^>]*type=&quot;Person&quot;.*?&lt;life-span&gt;&lt;begin&gt;[^&lt;]*&lt;/begin&gt;&lt;end&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;formed&gt;\1&lt;/formed&gt;" dest="11">
-			<expression>&lt;artist type=&quot;Group&quot;.*?&lt;life-span&gt;&lt;begin&gt;([^&lt;]*)</expression>
+			<expression>&lt;artist\sid[^>]*type=&quot;Group&quot;.*?&lt;life-span&gt;&lt;begin&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;disbanded&gt;\1&lt;/disbanded&gt;" dest="11+">
-			<expression>&lt;artist type=&quot;Group&quot;.*?&lt;life-span&gt;&lt;begin&gt;[^&lt;]*&lt;/begin&gt;&lt;end&gt;([^&lt;]*)</expression>
+			<expression>&lt;artist\sid[^>]*type=&quot;Group&quot;.*?&lt;life-span&gt;&lt;begin&gt;[^&lt;]*&lt;/begin&gt;&lt;end&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<RegExp input="$$11" output="$$12" dest="2">
 				<RegExp input="$INFO[lifespanfbsource]" output="&lt;chain function=&quot;GetAMGFallbackArtistLifeSpanByAMGID&quot;&gt;$$9&lt;/chain&gt;" dest="12">
