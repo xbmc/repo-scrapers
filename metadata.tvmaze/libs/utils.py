@@ -32,7 +32,7 @@ ADDON_ID = 'metadata.tvmaze'
 ADDON = Addon()
 
 
-class logger:  # pylint: disable=invalid-name,old-style-class,no-init,missing-docstring
+class logger:
     log_message_prefix = '[{} ({})]: '.format(ADDON_ID, ADDON.getAddonInfo('version'))
 
     @staticmethod
