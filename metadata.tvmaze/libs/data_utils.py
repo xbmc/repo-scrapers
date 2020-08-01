@@ -59,7 +59,9 @@ def process_episode_list(show_info, episode_list):
     episodes = OrderedDict()
     specials_list = []
     for episode in episode_list:
-        if episode['number']:
+        # xbmc/video/VideoInfoScanner.cpp ~ line 1010
+        # "episode 0 with non-zero season is valid! (e.g. prequel episode)"
+        if episode['number'] is not None:
             episodes[episode['id']] = episode
         else:
             specials_list.append(episode)
