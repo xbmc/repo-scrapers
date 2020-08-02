@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvmaze"
   name="TVmaze"
-  version="1.0.3"
+  version="1.0.4"
   provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
@@ -22,7 +22,10 @@ We provide an API that can be used by anyone or service like Kodi to retrieve TV
     </assets>
     <website>https://www.tvmaze.com</website>
     <source>https://github.com/romanvm/kodi.tvmaze</source>
-    <news>1.0.3:
+    <news>1.0.4:
+- Fixed a crash with non-ASCII show title in Python 2
+
+1.0.3:
 - Fixed a crash with non-ASCII studio name.
 
 1.0.2:

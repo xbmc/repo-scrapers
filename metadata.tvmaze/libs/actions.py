@@ -21,16 +21,16 @@ from __future__ import absolute_import, unicode_literals
 
 import sys
 
+import six
 import xbmcgui
 import xbmcplugin
-from six import itervalues
 from six.moves import urllib_parse
 
 from . import tvmaze, data_utils
 from .utils import logger
 
 try:
-    from typing import Optional, Text  # pylint: disable=unused-import
+    from typing import Optional, Text, Union, ByteString  # pylint: disable=unused-import
 except ImportError:
     pass
 
@@ -38,8 +38,10 @@ HANDLE = int(sys.argv[1])  # type: int
 
 
 def find_show(title, year=None):
-    # type: (Text, Optional[Text]) -> None
+    # type: (Union[Text, bytes], Optional[Text]) -> None
     """Find a show by title"""
+    if not isinstance(title, six.text_type):
+        title = title.decode('utf-8')
     logger.debug('Searching for TV show {} ({})'.format(title, year))
     search_results = tvmaze.search_show(title)
     if year is not None:
@@ -129,7 +131,7 @@ def get_episode_list(show_id):  # pylint: disable=missing-docstring
     else:
         show_info = tvmaze.load_show_info(show_id)
     if show_info is not None:
-        for episode in itervalues(show_info['episodes']):
+        for episode in six.itervalues(show_info['episodes']):
             list_item = xbmcgui.ListItem(episode['name'], offscreen=True)
             list_item = data_utils.add_episode_info(list_item, episode, full_info=False)
             encoded_ids = urllib_parse.urlencode(
