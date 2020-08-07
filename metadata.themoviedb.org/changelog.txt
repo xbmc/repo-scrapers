@@ -1,3 +1,6 @@
+[B]5.2.1[/B]
+- added: Estonian language option
+
 [B]5.2.0[/B]
 - added: Landscape scraping from tmdb
 
