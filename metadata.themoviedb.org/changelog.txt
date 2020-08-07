@@ -1,3 +1,6 @@
+[B]4.1.9[/B]
+- added: Estonian language option
+
 [B]4.1.8[/B]
 - added: belarusian language option
 
