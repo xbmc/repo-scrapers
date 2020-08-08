@@ -1,3 +1,6 @@
+[B]3.2.8[/B]
+- Added: Bulgarian, Belarusian and Estonian language option
+
 [B]3.2.7[/B]
 - Fixed some episode plots still not get scraped
 
