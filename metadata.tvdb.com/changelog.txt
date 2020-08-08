@@ -1,7 +1,10 @@
-[B]3.2.5[/B]
+[B]2.1.8[/B]
+- Added: Bulgarian, Belarusian and Estonian language option
+
+[B]2.1.7[/B]
 - Fixed episode title and plot not scraping
 
-[B]3.2.5[/B]
+[B]2.1.5[/B]
 - Fixed title and plot
 
 [B]2.1.4[/B]
