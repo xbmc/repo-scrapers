@@ -1,3 +1,7 @@
+[B]2.0.10[/B]
+- added: New language options to mirror the movie scraper version
+- added: Also parse https links for tvdb urls.
+
 [B]2.0.9[/B]
 - Fixed: GetSearchResults after some changes on TMDb
 
