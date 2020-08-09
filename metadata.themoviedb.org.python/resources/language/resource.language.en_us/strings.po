@@ -65,7 +65,7 @@ msgid "Add keywords as tags"
 msgstr ""
 
 msgctxt "#30012"
-msgid "Enable landscape from TMDb"
+msgid "Separate TMDb fanart with title to landscape"
 msgstr ""
 
 msgctxt "#30100"
