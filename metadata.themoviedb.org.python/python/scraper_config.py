@@ -12,15 +12,20 @@ def configure_tmdb_artwork(details, settings):
         return details
 
     art = details['available_art']
-    if not settings.getSettingBool('fanart'):
+    fanart_enabled = settings.getSettingBool('fanart')
+    if not fanart_enabled:
         if 'fanart' in art:
             del art['fanart']
         if 'set.fanart' in art:
             del art['set.fanart']
     if not settings.getSettingBool('landscape'):
         if 'landscape' in art:
+            if fanart_enabled:
+                art['fanart'] = art.get('fanart', []) + art['landscape']
             del art['landscape']
         if 'set.landscape' in art:
+            if fanart_enabled:
+                art['set.fanart'] = art.get('set.fanart', []) + art['set.landscape']
             del art['set.landscape']
 
     return details
