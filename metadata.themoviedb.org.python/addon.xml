@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org.python"
        name="The Movie Database Python"
-       version="1.2.0"
+       version="1.2.1"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -15,7 +15,11 @@
              library="python/scraper.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>v1.2.0 (2020-05-25)
+    <news>v1.2.1 (2020-08-08)
+- Fix: Prefer movies that exactly match search title and year
+- Fix: Change 'landscape from TMDb' option disabled behavior to keep titled fanart
+
+v1.2.0 (2020-05-25)
 - Feature: add extended artwork from Fanart.tv
 - Feature: separate 'fanart' images with language to 'landscape' art type</news>
     <summary lang="af_ZA">TMDB Fliek Skraper</summary>

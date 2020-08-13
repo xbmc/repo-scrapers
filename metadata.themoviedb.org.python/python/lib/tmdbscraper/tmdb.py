@@ -36,6 +36,15 @@ class TMDBMovieScraper(object):
                 return _format_error_message(ex)
             result = response['results']
         urls = self.urls
+
+        def is_best(item):
+            return item['title'].lower() == title and (
+                not year or item.get('release_date', '').startswith(year))
+        if result and not is_best(result[0]):
+            best_first = next((item for item in result if is_best(item)), None)
+            if best_first:
+                result = [best_first] + [item for item in result if item is not best_first]
+
         for item in result:
             if item.get('poster_path'):
                 item['poster_path'] = urls['preview'] + item['poster_path']
@@ -225,7 +234,7 @@ def _get_cast_members(casts, casttype, department, jobs):
     result = []
     if casttype in casts:
         for cast in casts[casttype]:
-            if cast['department'] == department and cast['job'] in jobs:
+            if cast['department'] == department and cast['job'] in jobs and cast['name'] not in result:
                 result.append(cast['name'])
     return result
 
