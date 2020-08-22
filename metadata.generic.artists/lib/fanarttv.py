@@ -22,7 +22,6 @@ def fanarttv_artistart(data):
         if thumbs:
             artistdata['thumb'] = thumbs
     if 'musicbanner' in data:
-        artistdata['banner'] = data['musicbanner'][0]['url']
         for item in data['musicbanner']:
             extradata = {}
             extradata['image'] = item['url']
@@ -30,7 +29,6 @@ def fanarttv_artistart(data):
             extradata['aspect'] = 'banner'
             extras.append(extradata)
     if 'hdmusiclogo' in data:
-        artistdata['clearlogo'] = data['hdmusiclogo'][0]['url']
         for item in data['hdmusiclogo']:
             extradata = {}
             extradata['image'] = item['url']
@@ -38,7 +36,6 @@ def fanarttv_artistart(data):
             extradata['aspect'] = 'clearlogo'
             extras.append(extradata)
     elif 'musiclogo' in data:
-        artistdata['clearlogo'] = data['musiclogo'][0]['url']
         for item in data['musiclogo']:
             extradata = {}
             extradata['image'] = item['url']
