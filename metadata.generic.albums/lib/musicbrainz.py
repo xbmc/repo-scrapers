@@ -140,14 +140,12 @@ def musicbrainz_albumart(data):
             thumbdata['aspect'] = 'thumb'
             thumbs.append(thumbdata)
         if 'Back' in item['types']:
-            albumdata['back'] = item['image']
             backdata = {}
             backdata['image'] = item['image']
             backdata['preview'] = item['thumbnails']['small']
             backdata['aspect'] = 'back'
             extras.append(backdata)
         if 'Medium' in item['types']:
-            albumdata['discart'] = item['image']
             discartdata = {}
             discartdata['image'] = item['image']
             discartdata['preview'] = item['thumbnails']['small']
@@ -155,7 +153,6 @@ def musicbrainz_albumart(data):
             extras.append(discartdata)
         # exculde spine+back images
         if 'Spine' in item['types'] and len(item['types']) == 1:
-            albumdata['spine'] = item['image']
             spinedata = {}
             spinedata['image'] = item['image']
             spinedata['preview'] = item['thumbnails']['small']
