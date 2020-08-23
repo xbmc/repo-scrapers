@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-AUDIODBKEY = '58424d43204d6564696120'
+AUDIODBKEY = '95424d43204d6564696538'
 AUDIODBURL = 'https://www.theaudiodb.com/api/v1/json/%s/%s'
 AUDIODBSEARCH = 'searchalbum.php?s=%s&a=%s'
 AUDIODBDETAILS = 'album-mb.php?i=%s'
@@ -22,7 +22,7 @@ ALLMUSICURL = 'https://www.allmusic.com/%s'
 ALLMUSICSEARCH = 'search/albums/%s+%s'
 ALLMUSICDETAILS = '%s/releases'
 
-FANARTVKEY = 'ed4b784f97227358b31ca4dd966a04f1'
+FANARTVKEY = '88ca41db0d6878929f1f9771eade41fd'
 FANARTVURL = 'https://webservice.fanart.tv/v3/music/albums/%s?api_key=%s'
 
 WIKIDATAURL = 'https://www.wikidata.org/wiki/Special:EntityData/%s.json'

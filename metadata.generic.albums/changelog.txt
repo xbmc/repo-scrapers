@@ -1,3 +1,9 @@
+v1.0.12
+- don't populate the art table, this is handled by kodi now
+
+v1.0.11
+- use our own api keys
+
 v1.0.10
 - option for less accurate results
 

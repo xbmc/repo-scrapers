@@ -92,10 +92,9 @@ class Scraper():
         self.parse_settings(settings)
         # this is just for backward compitability with xml based scrapers https://github.com/xbmc/xbmc/pull/11632
         if action == 'resolveid':
-            # get the musicbrainz details
+            # return the result
             result = self.resolve_mbid(key)
-            if result:
-                self.return_resolved(result)
+            self.return_resolved(result)
         # search for artist name / album title matches
         elif action == 'find':
             # try musicbrainz first
@@ -178,10 +177,9 @@ class Scraper():
             # check if there is a musicbrainz url in the nfo file
             mbalbumid = nfo_geturl(nfo)
             if mbalbumid:
-                # get the musicbrainz details
+                # return the result
                 result = self.resolve_mbid(mbalbumid)
-                if result:
-                    self.return_nfourl(result)
+                self.return_nfourl(result)
         xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
     def parse_settings(self, data):
@@ -413,7 +411,8 @@ class Scraper():
         return result
 
     def return_search(self, data):
-        for count, item in enumerate(data):
+        items = []
+        for item in data:
             listitem = xbmcgui.ListItem(item['album'], offscreen=True)
             listitem.setArt({'thumb': item['thumb']})
             listitem.setProperty('album.artist', item['artist_description'])
@@ -428,7 +427,9 @@ class Scraper():
                 url['mbreleasegroupid'] = item['mbreleasegroupid']
             if 'dcalbumid' in item:
                 url['dcalbumid'] = item['dcalbumid']
-            xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=json.dumps(url), listitem=listitem, isFolder=True)
+            items.append((json.dumps(url), listitem, True))
+        if items:
+            xbmcplugin.addDirectoryItems(handle=int(sys.argv[1]), items=items)
 
     def return_nfourl(self, item):
         listitem = xbmcgui.ListItem(offscreen=True)
@@ -485,24 +486,6 @@ class Scraper():
             listitem.setProperty('album.rating', item['rating'])
         if 'votes' in item:
             listitem.setProperty('album.votes', item['votes'])
-        art = {}
-        if 'discart' in item:
-            art['discart'] = item['discart']
-        if 'multidiscart' in item:
-            for k, v in item['multidiscart'].items():
-                discart = 'discart%s' % k
-                art[discart] = v[0]['image']
-        if 'back' in item:
-            art['back'] = item['back']
-        if 'spine' in item:
-            art['spine'] = item['spine']
-        if '3dcase' in item:
-            art['3dcase'] = item['3dcase']
-        if '3dflat' in item:
-            art['3dflat'] = item['3dflat']
-        if '3dface' in item:
-            art['3dface'] = item['3dface']
-        listitem.setArt(art)
         if 'thumb' in item:
             listitem.setProperty('album.thumbs', str(len(item['thumb'])))
             for count, thumb in enumerate(item['thumb']):
