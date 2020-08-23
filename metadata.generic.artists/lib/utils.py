@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-AUDIODBKEY = '58424d43204d6564696120'
+AUDIODBKEY = '95424d43204d6564696538'
 AUDIODBURL = 'https://www.theaudiodb.com/api/v1/json/%s/%s'
 AUDIODBSEARCH = 'search.php?s=%s'
 AUDIODBDETAILS = 'artist-mb.php?i=%s'
@@ -19,7 +19,7 @@ DISCOGSDISCOGRAPHY = 'artists/%s/releases?sort=format&page=1&per_page=100&key=%s
 
 ALLMUSICURL = 'https://www.allmusic.com/search/artists/%s'
 
-FANARTVKEY = 'ed4b784f97227358b31ca4dd966a04f1'
+FANARTVKEY = '88ca41db0d6878929f1f9771eade41fd'
 FANARTVURL = 'https://webservice.fanart.tv/v3/music/%s?api_key=%s'
 
 WIKIDATAURL = 'https://www.wikidata.org/wiki/Special:EntityData/%s.json'

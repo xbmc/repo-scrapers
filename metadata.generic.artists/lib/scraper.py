@@ -92,10 +92,9 @@ class Scraper():
         self.parse_settings(settings)
         # this is just for backward compitability with xml based scrapers https://github.com/xbmc/xbmc/pull/11632
         if action == 'resolveid':
-            # get the musicbrainz details
+            # return the result
             result = self.resolve_mbid(key)
-            if result:
-                self.return_resolved(result)
+            self.return_resolved(result)
         # search for artist name matches
         elif action == 'find':
             # try musicbrainz first
@@ -190,10 +189,9 @@ class Scraper():
             # check if there is a musicbrainz url in the nfo file
             mbartistid = nfo_geturl(nfo)
             if mbartistid:
-                # get the musicbrainz details
+                # return the result
                 result = self.resolve_mbid(mbartistid)
-                if result:
-                    self.return_nfourl(result)
+                self.return_nfourl(result)
         xbmcplugin.endOfDirectory(int(sys.argv[1]))
 
     def parse_settings(self, data):
@@ -424,6 +422,7 @@ class Scraper():
         return result
 
     def return_search(self, data):
+        items = []
         for item in data:
             listitem = xbmcgui.ListItem(item['artist'], offscreen=True)
             listitem.setArt({'thumb': item['thumb']})
@@ -441,7 +440,9 @@ class Scraper():
                 url['mbartistid'] = item['mbartistid']
             if 'dcid' in item:
                 url['dcid'] = item['dcid']
-            xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=json.dumps(url), listitem=listitem, isFolder=True)
+            items.append((json.dumps(url), listitem, True))
+        if items:
+            xbmcplugin.addDirectoryItems(handle=int(sys.argv[1]), items=items)
 
     def return_nfourl(self, item):
         listitem = xbmcgui.ListItem(offscreen=True)
@@ -485,16 +486,6 @@ class Scraper():
             listitem.setProperty('artist.died', item['died'])
         if 'disbanded' in item:
             listitem.setProperty('artist.disbanded', item['disbanded'])
-        art = {}
-        if 'clearlogo' in item:
-            art['clearlogo'] = item['clearlogo']
-        if 'banner' in item:
-            art['banner'] = item['banner']
-        if 'clearart' in item:
-            art['clearart'] = item['clearart']
-        if 'landscape' in item:
-            art['landscape'] = item['landscape']
-        listitem.setArt(art)
         if 'fanart' in item:
             listitem.setProperty('artist.fanarts', str(len(item['fanart'])))
             for count, fanart in enumerate(item['fanart']):
