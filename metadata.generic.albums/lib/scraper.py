@@ -124,11 +124,12 @@ class Scraper():
                 if not mbreleasegroupid:
                     result = self.get_details(mbalbumid, 'musicbrainz', details)
                     if not result:
-                        return
-                    mbreleasegroupid = details['musicbrainz']['mbreleasegroupid']
-                    artist = details['musicbrainz']['artist_description']
-                    album = details['musicbrainz']['album']
-                    scrapers = [[mbreleasegroupid, 'theaudiodb'], [mbreleasegroupid, 'fanarttv'], [mbreleasegroupid, 'coverarchive']]
+                        scrapers = [[mbalbumid, 'musicbrainz']]
+                    else:
+                        mbreleasegroupid = details['musicbrainz']['mbreleasegroupid']
+                        artist = details['musicbrainz']['artist_description']
+                        album = details['musicbrainz']['album']
+                        scrapers = [[mbreleasegroupid, 'theaudiodb'], [mbreleasegroupid, 'fanarttv'], [mbreleasegroupid, 'coverarchive']]
                 else:
                     scrapers = [[mbalbumid, 'musicbrainz'], [mbreleasegroupid, 'theaudiodb'], [mbreleasegroupid, 'fanarttv'], [mbreleasegroupid, 'coverarchive']]
                 # get musicbrainz links to other metadata sites
