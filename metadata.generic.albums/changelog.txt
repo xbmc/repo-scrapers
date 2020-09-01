@@ -1,3 +1,7 @@
+v1.0.13
+- fix missing endOfDirectory() call when returning 0 results
+- scrape using mbalbumid only if we don't have a mbreleasegroupid
+
 v1.0.12
 - don't populate the art table, this is handled by kodi now
 
