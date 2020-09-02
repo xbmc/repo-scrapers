@@ -46,9 +46,9 @@ class logger:
         xbmc.log(message, level)
 
     @staticmethod
-    def notice(message):
+    def info(message):
         # type: (Text) -> None
-        logger.log(message, xbmc.LOGNOTICE)
+        logger.log(message, xbmc.LOGINFO)
 
     @staticmethod
     def error(message):
