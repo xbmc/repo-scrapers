@@ -22,7 +22,7 @@ from __future__ import absolute_import, unicode_literals
 import os
 from datetime import datetime, timedelta
 
-from six import PY2
+from six import PY2, PY3
 from six.moves import cPickle as pickle
 import xbmc
 import xbmcvfs
@@ -77,7 +77,11 @@ def load_show_info_from_cache(show_id):
     file_name = str(show_id) + '.pickle'
     try:
         with open(os.path.join(CACHE_DIR, file_name), 'rb') as fo:
-            cache = pickle.load(fo)
+            load_kwargs = {}
+            if PY3:
+                # https://forum.kodi.tv/showthread.php?tid=349813&pid=2970989#pid2970989
+                load_kwargs['encoding'] = 'bytes'
+            cache = pickle.load(fo, **load_kwargs)
         if datetime.now() - cache['timestamp'] > CACHING_DURATION:
             return None
         return cache['show_info']
