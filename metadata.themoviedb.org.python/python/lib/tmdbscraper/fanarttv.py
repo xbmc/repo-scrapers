@@ -1,5 +1,4 @@
-import requests
-from requests.exceptions import ConnectionError as RequestsConnectionError, Timeout, RequestException
+from . import api_utils
 try:
     from urllib import quote
 except ImportError: # py2 / py3
@@ -52,22 +51,9 @@ def _get_data(media_id, clientkey):
     headers = {'api-key': API_KEY}
     if clientkey:
         headers['client-key'] = clientkey
-
-    try:
-        response = requests.get(API_URL.format(media_id), headers=headers)
-    except (Timeout, RequestsConnectionError, RequestException) as ex:
-        return _format_error_message(ex)
-
-    if not response or not response.status_code == 200:
-        return None
-
-    return response.json()
-
-def _format_error_message(ex):
-    message = type(ex).__name__
-    if hasattr(ex, 'message'):
-        message += ": {0}".format(ex.message)
-    return {'error': message}
+    api_utils.set_headers(headers)
+    fanarttv_url = API_URL.format(media_id)
+    return api_utils.load_info(fanarttv_url, default={})
 
 def _parse_data(data, language):
     result = {}
