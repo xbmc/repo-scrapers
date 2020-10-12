@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+	<category label="128">
+		<setting label="30000" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="language" default="en-US"/>
+		<setting label="30001" type="select" values="au|bg|br|by|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh" id="tmdbcertcountry" default="us"/>
+		<setting label="30002" type="bool" id="usecertprefix" default="true"/>
+		<setting label="30003" type="text" id="certprefix" enable="eq(-1,true)" default="Rated " />
+		<setting label="30004" type="bool" id="keeporiginaltitle" default="false"/>
+	</category>
+	<category label="30300">
+		<setting label="30301" type="labelenum" values="TMDb|IMDb|Trakt" id="ratings" default="TMDb"/>
+		<setting label="30302" type="bool" id="imdbanyway" enable="!eq(-1,1)" default="false"/>
+		<setting label="30303" type="bool" id="traktanyway" enable="!eq(-2,2)" default="false"/>
+		<setting label="30304" type="bool" id="tmdbanyway" enable="!eq(-3,0)" default="true"/>		
+	</category>
+	<category label="30100">
+		<setting label="30101" type="text" id="fanarttv_clientkey" default="" />
+		<setting label="30102" type="bool" id="enable_fanarttv_backdrops" default="false"/>
+		<setting label="30103" type="bool" id="enable_fanarttv_posters" default="false"/>
+		<setting label="30104" type="bool" id="enable_fanarttv_banner" default="false"/>
+		<setting label="30105" type="bool" id="enable_fanarttv_clearlogo" default="false"/>
+		<setting label="30106" type="bool" id="enable_fanarttv_clearart" default="false"/>
+		<setting label="30107" type="bool" id="enable_fanarttv_landscape" default="false"/>
+		<setting label="30108" type="bool" id="enable_fanarttv_characterart" default="false"/>
+		<setting label="30150" type="bool" id="enable_fanarttv_seasonposters" default="false"/>
+		<setting label="30151" type="bool" id="enable_fanarttv_seasonbanner" default="false"/>
+		<setting label="30152" type="bool" id="enable_fanarttv_seasonlandscape" default="false"/>
+	</category>
+	<category label="30200">
+		<setting label="30201" type="bool" id="verboselog" default="false"/>
+		<setting id="lastUpdated" type="text" default="0" visible="false" />
+		<setting id="originalUrl" type="text" default="" visible="false" />
+		<setting id="previewUrl" type="text" default="" visible="false" />
+	</category>
+</settings>
