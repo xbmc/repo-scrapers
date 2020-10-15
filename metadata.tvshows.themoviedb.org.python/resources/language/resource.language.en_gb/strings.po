@@ -74,7 +74,11 @@ msgctxt "#30108"
 msgid "Enable character art"
 msgstr ""
 
-# empty strings from 30109 to 30149
+msgctxt "#30109"
+msgid "Include art from fanart.tv"
+msgstr ""
+
+# empty strings from 30110 to 30149
 
 msgctxt "#30150"
 msgid "Enable season poster"
