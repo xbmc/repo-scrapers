@@ -40,9 +40,11 @@ class logger:
         # type: (Text, int) -> None
         if isinstance(message, str):
             message = message.decode('utf-8')
+            prefix = logger.log_message_prefix
         if isinstance(message, unicode):
             message = message.encode('utf-8')
-        message = logger.log_message_prefix + message
+            prefix = logger.log_message_prefix.encode('utf-8')
+        message = prefix + message
         xbmc.log(message, level)
 
     @staticmethod
