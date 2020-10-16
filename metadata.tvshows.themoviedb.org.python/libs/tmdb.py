@@ -59,7 +59,7 @@ def search_show(title, year=None):
     : param year: the year to search (optional)
     :return: a list with found TV shows
     """
-    params = TMDB_PARAMS
+    params = TMDB_PARAMS.copy()
     results = []
     ext_media_id = data_utils.parse_media_id(title)
     if ext_media_id:
@@ -144,10 +144,16 @@ def load_show_info(show_id, ep_grouping=None):
     if show_info is None:
         logger.debug('no cache file found, loading from scratch')
         show_url = SHOW_URL.format(show_id)
-        params = TMDB_PARAMS
+        params = TMDB_PARAMS.copy()
         params['append_to_response'] = 'credits,content_ratings,external_ids,images'
         params['include_image_language'] = '%s,en,null' % settings.LANG[0:2]
         show_info = api_utils.load_info(show_url, params=params, verboselog=settings.VERBOSELOG)
+        if show_info['overview'] == '' and settings.LANG != 'en-US':
+            params['language'] = 'en-US'
+            del params['append_to_response']
+            show_info_backup = api_utils.load_info(show_url, params=params, verboselog=settings.VERBOSELOG)
+            params['language'] = settings.LANG
+            show_info['overview'] = show_info_backup['overview']
         if show_info is None:
             return None
         season_map = {}
@@ -155,6 +161,14 @@ def load_show_info(show_id, ep_grouping=None):
         for season in show_info.get('seasons', []):
             season_url = SEASON_URL.format(show_id, season['season_number'])
             season_info = api_utils.load_info(season_url, params=params, default={}, verboselog=settings.VERBOSELOG)
+            if (season_info['overview'] == '' or season_info['name'].lower().startswith('season')) and settings.LANG != 'en-US':
+                params['language'] = 'en-US'
+                season_info_backup = api_utils.load_info(season_url, params=params, default={}, verboselog=settings.VERBOSELOG)
+                params['language'] = settings.LANG
+                if season_info['overview'] == '':
+                    season_info['overview'] = season_info_backup['overview']
+                if season_info['name'].lower().startswith('season'):
+                    season_info['name'] = season_info_backup['name']
             season_info['images'] = _sort_image_types(season_info.get('images', {}))
             season_map[str(season['season_number'])] = season_info
         show_info = load_episode_list(show_info, season_map, ep_grouping)
@@ -196,10 +210,18 @@ def load_episode_info(show_id, episode_id):
             return None
         # this ensures we are using the season/ep from the episode grouping if provided
         ep_url = EPISODE_URL.format(show_info['id'], episode_info['org_seasonnum'], episode_info['org_epnum'])
-        params = TMDB_PARAMS
+        params = TMDB_PARAMS.copy()
         params['append_to_response'] = 'credits,external_ids,images'
         params['include_image_language'] = '%s,en,null' % settings.LANG[0:2]
         ep_return = api_utils.load_info(ep_url, params=params, verboselog=settings.VERBOSELOG)
+        if (ep_return['overview'] == '' or ep_return['name'].lower().startswith('episode')) and settings.LANG != 'en-US':
+            params['language'] = 'en-US'
+            del params['append_to_response']
+            ep_return_backup = api_utils.load_info(ep_url, params=params, verboselog=settings.VERBOSELOG)
+            if ep_return['overview'] == '':
+                ep_return['overview'] = ep_return_backup['overview']
+            if ep_return['name'].lower().startswith('episode'):
+                ep_return['name'] = ep_return_backup['name']
         if ep_return is None:
             return None
         ep_return['images'] = _sort_image_types(ep_return.get('images', {}))

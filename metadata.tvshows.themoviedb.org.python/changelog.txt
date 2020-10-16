@@ -1,0 +1,47 @@
+1.1.17
+fix for crash if show had no network listed on TMDb
+
+1.1.16
+change so that scraper returns English data for a show if data is missing in selected language
+fixed order of certification preferences in setting
+fixed crash if logging data with extended characters
+
+1.1.15
+pull configuration for TMDb API from the API server and cache it
+delete expired cache files periodically
+first version available via the Kodi repo
+
+1.1.14
+removed external module dependencies
+version number change to reflect that Leia and Matrix code are no longer in sync (Leia will remain on 1.1.x, Matrix will be 1.2.x and higher)
+
+1.1.13
+added back Trakt ratings (different method to avoid crashes)
+changed how images are retrieved to ensure something is returned in most cases (see post below for more details)
+
+
+1.1.12
+fix for crash if scraping an episode with an nfo file that doesn't have the TMDb ID in it
+
+
+1.1.11
+fix for source settings being ignored
+
+
+1.1.10
+removed Trakt support due to periodic crashes
+
+
+1.1.9
+added option to get ratings from Trakt and IMDb
+added option to disable the text prepended to the content rating
+re-arranged settings
+since the code is shared between the two releases, synced version numbers
+
+
+0.5.8
+fix for crash if scraping a show with lots of artwork
+
+
+0.5.7
+added support for fanarttv client key
