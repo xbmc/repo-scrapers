@@ -79,7 +79,6 @@
 							<option>by</option>
 							<option>ca</option>
 							<option>cz</option>
-							<option>ge</option>
 							<option>de</option>
 							<option>dk</option>
 							<option>ee</option>
@@ -87,6 +86,7 @@
 							<option>fi</option>
 							<option>fr</option>
 							<option>gb</option>
+							<option>ge</option>
 							<option>gr</option>
 							<option>hr</option>
 							<option>hu</option>
@@ -191,65 +191,25 @@
 		</category>
 		<category id="fanart.tv" label="30100" help="">
 			<group id="1">
+				<setting id="enable_fanarttv" type="boolean" label="30109" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="fanarttv_clientkey" type="string" label="30101" help="">
 					<level>0</level>
 					<default/>
+					<dependencies>
+						<dependency type="enable">
+							<condition operator="is" setting="enable_fanarttv">true</condition>
+						</dependency>
+					</dependencies>
 					<constraints>
 						<allowempty>true</allowempty>
 					</constraints>
 					<control type="edit" format="string">
 						<heading>30101</heading>
 					</control>
-				</setting>
-				<setting id="enable_fanarttv_backdrops" type="boolean" label="30102" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_posters" type="boolean" label="30103" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_banner" type="boolean" label="30104" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_clearlogo" type="boolean" label="30105" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_clearart" type="boolean" label="30106" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_landscape" type="boolean" label="30107" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_characterart" type="boolean" label="30108" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_seasonposters" type="boolean" label="30150" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_seasonbanner" type="boolean" label="30151" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
-				</setting>
-				<setting id="enable_fanarttv_seasonlandscape" type="boolean" label="30152" help="">
-					<level>0</level>
-					<default>false</default>
-					<control type="toggle"/>
 				</setting>
 			</group>
 		</category>

@@ -219,8 +219,13 @@ def add_main_show_info(list_item, show_info, full_info=True):
         for genre in genre_list:
             genres.append(genre['name'])
         video['genre'] = genres
-        network = show_info.get('networks', [])[0]
-        country = network.get('origin_country', '')
+        networks = show_info.get('networks', [])
+        if networks:
+            network = networks[0]
+            country = network.get('origin_country', '')
+        else:
+            network = None
+            country = None
         if network and country:
             video['studio'] = '{0} ({1})'.format(network['name'], country)
             video['country'] = country
@@ -250,7 +255,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
         image = safe_get(show_info, 'poster_path', '')
         if image:
             theurl = settings.IMAGEROOTURL + image
-            previewurl = settings.PREVIEWROOTURL
+            previewurl = settings.PREVIEWROOTURL + image
             list_item.addAvailableArtwork(theurl, art_type='poster', preview=previewurl)
     list_item.setInfo('video', video)
     # This is needed for getting artwork

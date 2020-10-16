@@ -76,25 +76,23 @@ except IndexError:
 source_settings = json.loads(source_params.get('pathSettings', {}))
 logger.debug('the source settings are:\n{}'.format(pformat(source_settings)))
 
-KEEPTITLE =source_settings.get('keeporiginaltitle', False)
-VERBOSELOG =  source_settings.get('verboselog', False)
-LANG = source_settings.get('language', 'en-US')
-CERT_COUNTRY = source_settings.get('tmdbcertcountry', 'us').lower()
+KEEPTITLE =source_settings.get('keeporiginaltitle', ADDON.getSettingBool('keeporiginaltitle'))
+VERBOSELOG =  source_settings.get('verboselog', ADDON.getSettingBool('verboselog'))
+LANG = source_settings.get('language', ADDON.getSettingString('language'))
+CERT_COUNTRY = source_settings.get('tmdbcertcountry', ADDON.getSettingString('tmdbcertcountry')).lower()
 IMAGEROOTURL, PREVIEWROOTURL = _load_base_urls()
 
-if source_settings.get('usecertprefix', True):
-    CERT_PREFIX = source_settings.get('certprefix', 'Rated ')
+if source_settings.get('usecertprefix', ADDON.getSettingBool('usecertprefix')):
+    CERT_PREFIX = source_settings.get('certprefix', ADDON.getSettingString('certprefix'))
 else:
     CERT_PREFIX = ''
-primary_rating = source_settings.get('ratings', 'TMDb').lower()
+primary_rating = source_settings.get('ratings', ADDON.getSettingString('ratings')).lower()
 RATING_TYPES = [primary_rating]
-if source_settings.get('imdbanyway', False) and primary_rating != 'imdb':
+if source_settings.get('imdbanyway', ADDON.getSettingBool('imdbanyway')) and primary_rating != 'imdb':
     RATING_TYPES.append('imdb')
-if source_settings.get('traktanyway', False) and primary_rating != 'trakt':
+if source_settings.get('traktanyway', ADDON.getSettingBool('traktanyway')) and primary_rating != 'trakt':
     RATING_TYPES.append('trakt')
-if source_settings.get('tmdbanyway', False) and primary_rating != 'tmdb':
+if source_settings.get('tmdbanyway', ADDON.getSettingBool('tmdbanyway')) and primary_rating != 'tmdb':
     RATING_TYPES.append('tmdb')
-FANARTTV_CLIENTKEY = source_settings.get('fanarttv_clientkey', '')
-FANARTTV_ART = {}
-for fanarttv_type, tmdb_type in FANARTTV_MAPPING.items():
-    FANARTTV_ART[tmdb_type] = source_settings.get('enable_fanarttv_%s' % tmdb_type, False)
+FANARTTV_ENABLE = source_settings.get('enable_fanarttv', ADDON.getSettingBool('enable_fanarttv'))
+FANARTTV_CLIENTKEY = source_settings.get('fanarttv_clientkey', ADDON.getSettingString('fanarttv_clientkey'))
