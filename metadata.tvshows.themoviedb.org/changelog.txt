@@ -1,3 +1,6 @@
+[B]2.0.10[/B]
+- Fixed: change image URLs from http to https
+
 [B]2.0.9[/B]
 - Fixed: GetSearchResults after some changes on TMDb
 
