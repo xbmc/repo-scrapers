@@ -383,7 +383,7 @@
 	<ParseTMDBBaseImageURL clearbuffers="no" dest="4">
 		<RegExp input="$$5" output="&lt;details&gt;$$20&lt;/details&gt;" dest="4">
 			<RegExp input="$$1" output="\1" dest="20">
-				<expression>"images":\{"base_url":"([^"]*)"</expression>
+				<expression>&quot;images&quot;:\{.*?&quot;secure_base_url&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
