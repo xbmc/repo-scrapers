@@ -1,3 +1,6 @@
+[B]4.1.17[/B]
+- fixed: change remaining http calls to https
+
 [B]4.1.16[/B]
 - fixed: imdb host
 
