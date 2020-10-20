@@ -1,13 +1,6 @@
 from datetime import datetime, timedelta
-from requests.exceptions import ConnectionError as RequestsConnectionError, Timeout, RequestException
+from . import tmdbapi
 
-import tmdbsimple
-
-# These are the same possible exceptions received from any HTTP request with `requests`
-connection_exceptions = (Timeout, RequestsConnectionError, RequestException)
-
-# Same key as built-in XML scraper
-tmdbsimple.API_KEY = 'f090bb54758cabf231fb605d3e3e0468'
 
 class TMDBMovieScraper(object):
     def __init__(self, url_settings, language, certification_country):
@@ -25,15 +18,22 @@ class TMDBMovieScraper(object):
     def search(self, title, year=None):
         search_media_id = _parse_media_id(title)
         if search_media_id:
-            result = _get_movie(search_media_id, self.language, True)
+            if search_media_id['type'] == 'tmdb':
+                result = _get_movie(search_media_id['id'], self.language, True)
+                result = [result]
+            else:
+                response = tmdbapi.find_movie_by_external_id(search_media_id['id'], language=self.language)
+                theerror = response.get('error')
+                if theerror:
+                    return 'error: {}'.format(theerror)
+                result = response.get('movie_results')
             if 'error' in result:
                 return result
-            result = [result]
         else:
-            try:
-                response = tmdbsimple.Search().movie(query=title, year=year, language=self.language)
-            except connection_exceptions as ex:
-                return _format_error_message(ex)
+            response = tmdbapi.search_movie(query=title, year=year, language=self.language)
+            theerror = response.get('error')
+            if theerror:
+                return 'error: {}'.format(theerror)
             result = response['results']
         urls = self.urls
 
@@ -66,7 +66,7 @@ class TMDBMovieScraper(object):
         if not movie or movie.get('error'):
             return movie
 
-        # don't specify language to get all the artworks and English text for fallback
+        # don't specify language to get English text for fallback
         movie_fallback = _get_movie(media_id)
 
         collection = _get_moviecollection(movie['belongs_to_collection'].get('id'), self.language) if \
@@ -119,7 +119,7 @@ class TMDBMovieScraper(object):
             }
             for actor in movie['casts'].get('cast', [])
         ]
-        available_art = _parse_artwork(movie_fallback, collection_fallback, self.urls, self.language)
+        available_art = _parse_artwork(movie, collection, self.urls, self.language)
 
         _info = {'set_tmdbid': movie['belongs_to_collection'].get('id')
             if movie['belongs_to_collection'] else None}
@@ -129,33 +129,35 @@ class TMDBMovieScraper(object):
 
 def _parse_media_id(title):
     if title.startswith('tt') and title[2:].isdigit():
-        return title # IMDB ID works alone because it is clear
+        return {'type': 'imdb', 'id':title} # IMDB ID works alone because it is clear
     title = title.lower()
-    if (title.startswith('tmdb/') and title[5:].isdigit() or # TMDB ID
-            title.startswith('imdb/tt') and title[7:].isdigit()): # IMDB ID with prefix to match
-        return title[5:]
+    if title.startswith('tmdb/') and title[5:].isdigit(): # TMDB ID
+        return {'type': 'tmdb', 'id':title[5:]}
+    elif title.startswith('imdb/tt') and title[7:].isdigit(): # IMDB ID with prefix to match
+        return {'type': 'imdb', 'id':title[5:]}
     return None
 
 def _get_movie(mid, language=None, search=False):
     details = None if search else \
-        'trailers,releases,casts,keywords' if language is not None else \
-        'trailers,images'
-    movie = tmdbsimple.Movies(mid)
-    try:
-        return movie.info(language=language, append_to_response=details)
-    except connection_exceptions as ex:
-        return _format_error_message(ex)
+        'trailers,images,releases,casts,keywords' if language is not None else \
+        'trailers'
+    response = tmdbapi.get_movie(mid, language=language, append_to_response=details)
+    theerror = response.get('error')
+    if theerror:
+        return 'error: {}'.format(theerror)
+    else:
+        return response
 
 def _get_moviecollection(collection_id, language=None):
     if not collection_id:
         return None
-    details = '' if language is not None else 'images'
-    collection = tmdbsimple.Collections(collection_id)
-    try:
-        return collection.info(language=language, append_to_response=details)
-    except connection_exceptions as ex:
-        return _format_error_message(ex)
-
+    details = 'images'
+    response = tmdbapi.get_collection(collection_id, language=language, append_to_response=details)
+    theerror = response.get('error')
+    if theerror:
+        return 'error: {}'.format(theerror)
+    else:
+        return response
 
 def _parse_artwork(movie, collection, urlbases, language):
     posters = []
@@ -211,7 +213,7 @@ def _load_base_urls(url_settings):
     last_updated = url_settings.getSettingString('lastUpdated')
     if not urls['original'] or not urls['preview'] or not last_updated or \
             float(last_updated) < _get_date_numeric(datetime.now() - timedelta(days=30)):
-        conf = tmdbsimple.Configuration().info()
+        conf = tmdbapi.get_configuration()
         if conf:
             urls['original'] = conf['images']['secure_base_url'] + 'original'
             urls['preview'] = conf['images']['secure_base_url'] + 'w780'
@@ -237,7 +239,3 @@ def _get_cast_members(casts, casttype, department, jobs):
             if cast['department'] == department and cast['job'] in jobs and cast['name'] not in result:
                 result.append(cast['name'])
     return result
-
-def _format_error_message(ex):
-    message = ex.response.reason if getattr(ex, 'response', None) is not None else type(ex).__name__
-    return {'error': message}
