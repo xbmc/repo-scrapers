@@ -1,3 +1,6 @@
+[B]3.5.5[/B]
+- Fixed: Swapped actor name and role for actors without photo
+
 [B]3.5.4[/B]
 - Fixed: Change image URLs from http to https
 
