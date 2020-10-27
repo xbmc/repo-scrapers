@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- Translated using Transifex web application. For support, or if you would like to to help out, please visit your language team! -->
+<!-- Polish language-Team URL: http://www.transifex.com/projects/p/xbmc-addons/language/pl/ -->
+<!-- Report language file syntax bugs at: alanwww1@xbmc.org -->
+
+<strings>
+    <string id="30000">Ogólny</string>
+    <string id="30001">Ogolne opcje</string>
+    <string id="30002">Pokaż tytuły w jezyku oryginalnym</string>
+    <string id="30003">Kompatybilność z logami Studyjnymi</string>
+    <string id="30004">Wyszukiwanie zaawansowane</string>
+    <string id="30005">Użyj wyszukiwarki Google (przeczytaj dokumentację)</string>
+    <string id="30006">Dokumentacja</string>
+    <string id="30007">O zaawansowanym wyszukiwaniu google</string>
+    <string id="30008">Pokaż changelog</string>
+    <string id="30020">Plakaty</string>
+    <string id="30021">Źródła plakatów</string>
+    <string id="30022">Główny plakat Filmaffinity (szybkie pobieranie)</string>
+    <string id="30023">Plakaty TheMovieDB</string>
+    <string id="30024">-&gt; język plakatów TheMovieDB</string>
+    <string id="30025">Plakaty MoviePosterDB</string>
+    <string id="30026">Plakaty IMDB</string>
+    <string id="30027">Plakaty IMPAwards</string>
+    <string id="30028">Plakaty Trackt</string>
+    <string id="30029">Dodatkowe plakaty FilmAffinity</string>
+    <string id="30040">Fanarty</string>
+    <string id="30041">Źródła fanartów</string>
+    <string id="30042">Fanarty TheMovieDB</string>
+    <string id="30043">Fanarty Trackt</string>
+    <string id="30060">Trailery</string>
+    <string id="30061">Źródła trailerów</string>
+    <string id="30062">Trailery FilmAffinity</string>
+    <string id="30063">Trailery TheMovieDB</string>
+    <string id="30064">-&gt; Język trailerów TheMovieDB</string>
+    <string id="30065">Trailery HD</string>
+    <string id="30066">-&gt; Jakość trailerów HD</string>
+    <string id="30080">Dodatkowe</string>
+    <string id="30081">Tytuly kolekcji</string>
+    <string id="30082">Pobierz tytuły kolekcji (grupy) z TheMovieDB</string>
+    <string id="30083">-&gt; Preferuj oryginalne tytuły kolekcji (grup)</string>
+    <string id="30084">Źródła IMDB</string>
+    <string id="30085">Użyj pełnej obsady IMDB (aktor, rola i film)</string>
+    <string id="30086">Informacje dodatkowe (slogan, MPAA, Top 250)</string>
+    <string id="30087">Użyj oceny IMDB</string>
+    <string id="30100">(debuguj)Szukaj informacji tylko na Filmaffinity (szybsze)</string>
+</strings>
