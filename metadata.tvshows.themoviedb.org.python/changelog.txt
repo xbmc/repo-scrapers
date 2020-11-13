@@ -1,3 +1,7 @@
+1.3.1
+scraper returns primary poster as the first poster from TMDb if no posters for the chosen language are available
+updated debug logging
+
 1.3.0
 scraper now returns URL references for all possible art so Kodi can decide what to display based on system settings
 
