@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.1.17"
+  version="1.1.18"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="2.26.0" />
@@ -9,13 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.1.17
-fix for crash if show had no network listed on TMDb
-
-1.1.16
-change so that scraper returns English data for a show if data is missing in selected language
-fixed order of certification preferences in setting
-fixed crash if logging data with extended characters
+    <news>1.1.18
+scraper returns primary poster as the first poster from TMDb if no posters for the chosen language are available
 	</news>
     <summary lang="en_GB">Fetch TV Show metadata from themoviedb.org</summary>
     <description lang="en_GB">The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different.</description>

@@ -185,16 +185,22 @@ def router(paramstring):
     params = dict(urlparse.parse_qsl(paramstring))
     logger.debug('Called addon with params: {}'.format(sys.argv))
     if params['action'] == 'find':
+        logger.debug('performing find action')
         find_show(params['title'], params.get('year'))
     elif params['action'].lower() == 'nfourl':
+        logger.debug('performing nfourl action')
         get_show_id_from_nfo(params['nfo'])
     elif params['action'] == 'getdetails':
+        logger.debug('performing getdetails action')
         get_details(params['url'])
     elif params['action'] == 'getepisodelist':
+        logger.debug('performing getepisodelist action')
         get_episode_list(params['url'])
     elif params['action'] == 'getepisodedetails':
+        logger.debug('performing getepisodedetails action')
         get_episode_details(params['url'])
     elif params['action'] == 'getartwork':
+        logger.debug('performing getartwork action')
         get_artwork(params.get('id'))
     else:
         raise RuntimeError('Invalid addon call: {}'.format(sys.argv))

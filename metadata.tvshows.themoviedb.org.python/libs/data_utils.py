@@ -140,11 +140,8 @@ def _add_season_info(show_info, list_item):
     # type: (InfoType, ListItem) -> ListItem
     """Add info for show seasons"""
     for season in show_info['seasons']:
+        logger.debug('adding information for season %s to list item' % season['season_number'])
         list_item.addSeason(season['season_number'], safe_get(season, 'name', ''))
-#        image = season.get('poster_path', '')
-#        if image:
-#            url = settings.IMAGEROOTURL + image
-#            list_item.addAvailableArtwork(url, 'poster', season=season['season_number'])
         for image_type, image_list in season.get('images', {}).items():
             if image_type == 'posters':
                 destination = 'poster'
@@ -252,6 +249,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
         if image:
             theurl = settings.IMAGEROOTURL + image
             list_item.addAvailableArtwork(theurl, art_type='poster')
+    logger.debug('adding tv show information for %s to list item' % video['tvshowtitle'])
     list_item.setInfo('video', video)
     # This is needed for getting artwork
     list_item = _set_unique_ids(show_info, list_item)
@@ -287,6 +285,7 @@ def add_episode_info(list_item, episode_info, full_info=True):
                 list_item.addAvailableArtwork(theurl, art_type='thumb')
         video['credits'] = video['writer'] = _get_credits(episode_info)
         video['director'] = _get_directors(episode_info)
+    logger.debug('adding episode information for S%sE%s - %s to list item' % (video['season'], video['episode'], video['title']))
     list_item.setInfo('video', video)
     return list_item
 

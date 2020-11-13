@@ -270,12 +270,7 @@ def load_fanarttv_art(show_info):
     :return: show info
     """
     tvdb_id = show_info.get('external_ids', {}).get('tvdb_id')
-    artwork_enabled = False
-    for artcheck in settings.FANARTTV_ART:
-        artwork_enabled = artwork_enabled or artcheck
-        if artwork_enabled:
-            break
-    if tvdb_id and artwork_enabled:
+    if tvdb_id and settings.FANARTTV_ENABLE:
         fanarttv_url = FANARTTV_URL.format(tvdb_id)
         artwork = api_utils.load_info(fanarttv_url, params=FANARTTV_PARAMS, verboselog=settings.VERBOSELOG)
         if artwork is None:
@@ -370,11 +365,11 @@ def trim_artwork(show_info):
 
 def _sort_image_types(imagelist):
     for image_type, images in imagelist.iteritems():
-        imagelist[image_type] = _image_sort(images)
+        imagelist[image_type] = _image_sort(images, image_type)
     return imagelist
 
 
-def _image_sort(images):
+def _image_sort(images, image_type):
     lang_pref = []
     lang_null = []
     lang_en = []
@@ -382,7 +377,7 @@ def _image_sort(images):
     for image in images:
         image_lang = image.get('iso_639_1')
         if image_lang == settings.LANG[0:2]:
-           lang_pref.append(image)
+            lang_pref.append(image)
         elif image_lang == 'en':
             lang_en.append(image)
         else:
@@ -391,4 +386,7 @@ def _image_sort(images):
             else:
                 lang_null.append(image)
         firstimage = False
-    return lang_pref + lang_null + lang_en
+    if image_type == 'posters':
+        return lang_pref + lang_en + lang_null
+    else:
+        return lang_pref + lang_null + lang_en

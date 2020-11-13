@@ -1,3 +1,7 @@
+1.1.18
+scraper returns primary poster as the first poster from TMDb if no posters for the chosen language are available
+updated debug logging
+
 1.1.17
 fix for crash if show had no network listed on TMDb
 
@@ -19,18 +23,14 @@ version number change to reflect that Leia and Matrix code are no longer in sync
 added back Trakt ratings (different method to avoid crashes)
 changed how images are retrieved to ensure something is returned in most cases (see post below for more details)
 
-
 1.1.12
 fix for crash if scraping an episode with an nfo file that doesn't have the TMDb ID in it
-
 
 1.1.11
 fix for source settings being ignored
 
-
 1.1.10
 removed Trakt support due to periodic crashes
-
 
 1.1.9
 added option to get ratings from Trakt and IMDb
@@ -38,10 +38,8 @@ added option to disable the text prepended to the content rating
 re-arranged settings
 since the code is shared between the two releases, synced version numbers
 
-
-0.5.8
+1.1.8
 fix for crash if scraping a show with lots of artwork
 
-
-0.5.7
+1.1.7
 added support for fanarttv client key
