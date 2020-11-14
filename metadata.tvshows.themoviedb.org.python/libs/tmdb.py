@@ -270,7 +270,12 @@ def load_fanarttv_art(show_info):
     :return: show info
     """
     tvdb_id = show_info.get('external_ids', {}).get('tvdb_id')
-    if tvdb_id and settings.FANARTTV_ENABLE:
+    artwork_enabled = False
+    for artcheck in settings.FANARTTV_ART:
+        artwork_enabled = artwork_enabled or artcheck
+        if artwork_enabled:
+            break
+    if tvdb_id and artwork_enabled:
         fanarttv_url = FANARTTV_URL.format(tvdb_id)
         artwork = api_utils.load_info(fanarttv_url, params=FANARTTV_PARAMS, verboselog=settings.VERBOSELOG)
         if artwork is None:
