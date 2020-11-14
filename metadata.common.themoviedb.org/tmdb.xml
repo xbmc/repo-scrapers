@@ -291,11 +291,8 @@
 	</GetTMDBDirectorsByIdChain>
 	<ParseTMDBDirectors dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes" noclean="1">&quot;crew&quot;:\[([^\]]*)</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&quot;department&quot;:&quot;Directing&quot;,&quot;job&quot;:&quot;Director&quot;.*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="2">
+				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Director&quot;)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -311,11 +308,8 @@
 	</GetTMDBWitersByIdChain>
 	<ParseTMDBWriters dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="7">
-				<expression clear="yes" noclean="1">&quot;crew&quot;:\[([^\]]*)</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&quot;department&quot;:&quot;Writing&quot;,&quot;job&quot;:&quot;Screenplay&quot;.*?&quot;original_name&quot;:&quot;([^&quot;]*)&quot;</expression>
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
+				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Screenplay&quot;)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
