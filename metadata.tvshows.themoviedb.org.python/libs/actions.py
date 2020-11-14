@@ -122,7 +122,8 @@ def get_episode_list(show_id):  # pylint: disable=missing-docstring
     if show_info is not None:
         theindex = 0
         for episode in show_info['episodes']:
-            list_item = xbmcgui.ListItem(episode['name'], offscreen=True)
+            epname = episode.get('name', 'Episode ' + str(episode['episode_number']))
+            list_item = xbmcgui.ListItem(epname, offscreen=True)
             list_item = data_utils.add_episode_info(list_item, episode, full_info=False)
             encoded_ids = urlencode(
                 {'show_id': str(show_info['id']), 'episode_id': str(theindex)}
@@ -185,16 +186,22 @@ def router(paramstring):
     params = dict(urlparse.parse_qsl(paramstring))
     logger.debug('Called addon with params: {}'.format(sys.argv))
     if params['action'] == 'find':
+        logger.debug('performing find action')
         find_show(params['title'], params.get('year'))
     elif params['action'].lower() == 'nfourl':
+        logger.debug('performing nfourl action')
         get_show_id_from_nfo(params['nfo'])
     elif params['action'] == 'getdetails':
+        logger.debug('performing getdetails action')
         get_details(params['url'])
     elif params['action'] == 'getepisodelist':
+        logger.debug('performing getepisodelist action')
         get_episode_list(params['url'])
     elif params['action'] == 'getepisodedetails':
+        logger.debug('performing getepisodedetails action')
         get_episode_details(params['url'])
     elif params['action'] == 'getartwork':
+        logger.debug('performing getartwork action')
         get_artwork(params.get('id'))
     else:
         raise RuntimeError('Invalid addon call: {}'.format(sys.argv))
