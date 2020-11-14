@@ -74,7 +74,7 @@ def _set_cast(cast_info, list_item):
     for item in cast_info:
         data = {
             'name': item['name'],
-            'role': item['character'],
+            'role': item.get('character', item.get('character_name', '')),
             'order': item['order'],
         }
         thumb = None
@@ -265,7 +265,7 @@ def add_episode_info(list_item, episode_info, full_info=True):
     # type: (ListItem, InfoType, bool) -> ListItem
     """Add episode info to a list item"""
     video = {
-        'title': episode_info['name'],
+        'title': episode_info.get('name', 'Episode ' + str(episode_info['episode_number'])),
         'season': episode_info['season_number'],
         'episode': episode_info['episode_number'],
         'mediatype': 'episode',
