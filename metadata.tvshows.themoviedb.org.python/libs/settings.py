@@ -19,7 +19,6 @@
 import json, sys, urllib.parse
 from .utils import logger
 from . import api_utils, cache
-from pprint import pformat
 from xbmcaddon import Addon
 from datetime import datetime, timedelta
 
@@ -74,7 +73,6 @@ try:
 except IndexError:
     source_params = {}
 source_settings = json.loads(source_params.get('pathSettings', {}))
-logger.debug('the source settings are:\n{}'.format(pformat(source_settings)))
 
 KEEPTITLE =source_settings.get('keeporiginaltitle', ADDON.getSettingBool('keeporiginaltitle'))
 VERBOSELOG =  source_settings.get('verboselog', ADDON.getSettingBool('verboselog'))
