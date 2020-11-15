@@ -1,3 +1,6 @@
+[B]3.5.6[/B]
+- Fixed: Scraping following TMDB API layout changes
+
 [B]3.5.5[/B]
 - Fixed: Swapped actor name and role for actors without photo
 

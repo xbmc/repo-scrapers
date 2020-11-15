@@ -217,7 +217,7 @@
 				<expression clear="yes">"season_number":([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;$$6&lt;/season&gt;&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-$$6.json&quot;&gt;https://api.tmdb.org/3/tv/$$5/season/$$6?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;$$5|$$6|\3&lt;/id&gt;&lt;/episode&gt;" dest="4">
-				<expression repeat="yes" clear="yes">"air_date":("([^"]+)"|null),"episode_number":([0-9]+),"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",</expression>
+				<expression repeat="yes" clear="yes">"air_date":("([^"]+)"|null),.*?"episode_number":([0-9]+),.*?"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
@@ -245,7 +245,7 @@
 				<expression>"order":$$1,"episodes":(.*?)\](?:,"locked"|\})</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\7&lt;/epnum&gt;&lt;season&gt;$$1&lt;/season&gt;&lt;url cache=&quot;tmdb-\6-$INFO[language]-season-\5.json&quot;&gt;https://api.tmdb.org/3/tv/\6/season/\5?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\6|\5|\3&lt;/id&gt;&lt;/episode&gt;" dest="4+">
-				<expression repeat="yes">{"air_date":("([^"]+)"|null),"episode_number":([0-9]+),"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",[^}]+"season_number":([0-9]+),"show_id":([0-9]+),[^}]+"order":([0-9]+)</expression>
+				<expression repeat="yes">{"air_date":("([^"]+)"|null),.*?"episode_number":([0-9]+),.*?"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",[^}]+"season_number":([0-9]+),"show_id":([0-9]+),[^}]+"order":([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="" output="" dest="15">
 				<expression/>
@@ -278,7 +278,7 @@
 				<RegExp input="$$2" output="\1" dest="7">
 					<expression>^[0-9]+\|[0-9]+\|([0-9]+)</expression>
 				</RegExp>
-				<expression>({"air_date":(?:"[^"]*"|null),"episode_number":$$7,"id":\d+,.+)</expression>
+				<expression>({"air_date":(?:"[^"]*"|null),"episode_number":$$7,.*?vote_count":(?:[^\}]*|nul))</expression>
 			</RegExp>
 			<RegExp input="$$2" output="\1" dest="6">
 				<expression>^([0-9]+)\|</expression>
@@ -344,10 +344,10 @@
 				<expression clear="yes" noclean="1">"crew":\[([^\]]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1">"name":"([^"]*)","department":"Directing"</expression>
+				<expression repeat="yes" fixchars="1">"department":"Directing".*?"name":"([^"]*)"</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1">"name":"([^"]*)","department":"Writing"</expression>
+				<expression repeat="yes" fixchars="1">"department":"Writing".*?"name":"([^"]*)"</expression>
 			</RegExp>
 			<RegExp input="" output="&lt;chain function=&quot;GetCast&quot;&gt;$$6|$$10|$$11&lt;/chain&gt;" dest="5+">
 				<expression />
@@ -414,23 +414,20 @@
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">"cast":\[([^\]]+)\]</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
-				<expression clear="yes" repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","gender":[^,]*,"id":[0-9]*,"name":"([^"]*)","order":([0-9]*),"profile_path":"([^"]*)"</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\2&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","gender":[^,]*,"id":[0-9]*,"name":"([^"]*)","order":([0-9]*),"profile_path":null</expression>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;order&gt;\4&lt;/order&gt;&lt;thumb&gt;$$20original\2&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
+				<expression clear="yes" repeat="yes" fixchars="1,2">Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":"([^"]*)","character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","order":([0-9]*)}</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="1">
-				<expression clear="yes">({"air_date":"[^"]*","episode_number":$$11,"id":\d+,.+)</expression>
+				<expression clear="yes">({"air_date":(?:"[^"]*"|null),"episode_number":$$11,.*?vote_count":(?:[^\}]*|nul))</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="7">
 				<expression clear="yes" noclean="1">"guest_stars":\[([^\]]+)\]</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
-				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","order":([0-9]*),"gender":[0-9]*,"profile_path":"([^"]*)"</expression>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\1&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
+				<expression repeat="yes" fixchars="1,2">"credit_id":"[^"]*","order":([0-9]*),"character":"((?:[^"]|(?&lt;=\\)")*)","adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":"([^"]*)"</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\3&lt;/order&gt;&lt;/actor&gt;" dest="5+">
-				<expression repeat="yes" fixchars="1,2">"name":"([^"]*)","credit_id":"[^"]*","character":"((?:[^"]|(?&lt;=\\)")*)","order":([0-9]*),"gender":[0-9]*,"profile_path":null</expression>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\1&lt;/order&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes" fixchars="1,2">"credit_id":"[^"]*","order":([0-9]*),"character":"((?:[^"]|(?&lt;=\\)")*)","adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":null</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
