@@ -1,3 +1,6 @@
+[B]3.5.7[/B]
+- Fixed: Episode list for languages what are not available
+
 [B]3.5.6[/B]
 - Fixed: Scraping following TMDB API layout changes
 
