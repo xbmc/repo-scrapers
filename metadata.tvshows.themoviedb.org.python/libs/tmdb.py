@@ -20,6 +20,7 @@
 
 from __future__ import absolute_import, unicode_literals
 
+import unicodedata
 from math import floor
 from pprint import pformat
 from . import cache, data_utils, api_utils, settings, imdbratings, traktratings
@@ -72,7 +73,7 @@ def search_show(title, year=None):
     else:
         logger.debug('using title of %s to find show' % title)
         search_url = SEARCH_URL
-        params['query'] = title
+        params['query'] = unicodedata.normalize('NFKC', title)
         if year:
             params['first_air_date_year'] = str(year)
     resp = api_utils.load_info(search_url, params=params, verboselog=settings.VERBOSELOG)
@@ -100,24 +101,20 @@ def load_episode_list(show_info, season_map, ep_grouping):
         custom_order = api_utils.load_info(episode_group_url, params=TMDB_PARAMS, verboselog=settings.VERBOSELOG)
         if custom_order is not None:
             show_info['seasons'] = []
-            season_num = 1
             for custom_season in custom_order.get('groups', []):
-                ep_num = 1
                 season_episodes = []
                 current_season = season_map.get(str(custom_season['episodes'][0]['season_number']), {}).copy()
                 current_season['name'] = custom_season['name']
-                current_season['season_number'] = season_num
+                current_season['season_number'] = custom_season['order']
                 for episode in custom_season['episodes']:
                     episode['org_seasonnum'] = episode['season_number']
                     episode['org_epnum'] = episode['episode_number']
-                    episode['season_number'] = season_num
-                    episode['episode_number'] = ep_num
+                    episode['season_number'] = custom_season['order']
+                    episode['episode_number'] = episode['order'] + 1
                     season_episodes.append(episode)
                     episode_list.append(episode)
-                    ep_num = ep_num + 1
                 current_season['episodes'] = season_episodes
                 show_info['seasons'].append(current_season)
-                season_num = season_num + 1
     else:
         logger.debug('Getting episodes from standard season list')
         show_info['seasons'] = []
@@ -148,14 +145,15 @@ def load_show_info(show_id, ep_grouping=None):
         params['append_to_response'] = 'credits,content_ratings,external_ids,images'
         params['include_image_language'] = '%s,en,null' % settings.LANG[0:2]
         show_info = api_utils.load_info(show_url, params=params, verboselog=settings.VERBOSELOG)
+        if show_info is None:
+            return None
         if show_info['overview'] == '' and settings.LANG != 'en-US':
             params['language'] = 'en-US'
             del params['append_to_response']
             show_info_backup = api_utils.load_info(show_url, params=params, verboselog=settings.VERBOSELOG)
+            if show_info_backup is not None:
+                show_info['overview'] = show_info_backup.get('overview', '')            
             params['language'] = settings.LANG
-            show_info['overview'] = show_info_backup['overview']
-        if show_info is None:
-            return None
         season_map = {}
         params['append_to_response'] = 'credits,images'
         for season in show_info.get('seasons', []):
@@ -214,16 +212,27 @@ def load_episode_info(show_id, episode_id):
         params['append_to_response'] = 'credits,external_ids,images'
         params['include_image_language'] = '%s,en,null' % settings.LANG[0:2]
         ep_return = api_utils.load_info(ep_url, params=params, verboselog=settings.VERBOSELOG)
-        if (ep_return['overview'] == '' or ep_return['name'].lower().startswith('episode')) and settings.LANG != 'en-US':
+        if ep_return is None:
+            return None
+        bad_return_name = False
+        bad_return_overview = False
+        check_name = ep_return.get('name')
+        if check_name == None:
+            bad_return_name = True
+            ep_return['name'] = 'Episode ' + str(episode_info['episode_number'])
+        elif check_name.lower().startswith('episode') or check_name == '':
+            bad_return_name = True
+        if ep_return.get('overview', '') == '':
+            bad_return_overview = True
+        if (bad_return_overview or bad_return_name) and settings.LANG != 'en-US':
             params['language'] = 'en-US'
             del params['append_to_response']
             ep_return_backup = api_utils.load_info(ep_url, params=params, verboselog=settings.VERBOSELOG)
-            if ep_return['overview'] == '':
-                ep_return['overview'] = ep_return_backup['overview']
-            if ep_return['name'].lower().startswith('episode'):
-                ep_return['name'] = ep_return_backup['name']
-        if ep_return is None:
-            return None
+            if ep_return_backup is not None:
+                if bad_return_overview:
+                    ep_return['overview'] = ep_return_backup.get('overview', '')
+                if bad_return_name:
+                    ep_return['name'] = ep_return_backup.get('name', 'Episode ' + str(episode_info['episode_number']))
         ep_return['images'] = _sort_image_types(ep_return.get('images', {}))
         ep_return['season_number'] = episode_info['season_number']
         ep_return['episode_number'] = episode_info['episode_number']
