@@ -63,3 +63,11 @@ msgstr ""
 msgctxt "#30013"
 msgid "Get Wide Banners from thetvdb.com"
 msgstr ""
+
+msgctxt "#30014"
+msgid "Episode Title Prefix"
+msgstr ""
+
+msgctxt "#30015"
+msgid "Episode Title Suffix"
+msgstr ""

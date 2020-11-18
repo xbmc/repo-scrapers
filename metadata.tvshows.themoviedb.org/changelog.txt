@@ -1,3 +1,6 @@
+[B]3.5.8[/B]
+- Fixed: Some more fixes following tmdb layout changes
+
 [B]3.5.7[/B]
 - Fixed: Episode list for languages what are not available
 
