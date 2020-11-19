@@ -41,7 +41,9 @@ SHOW_ID_REGEXPS = (
     r'(thetvdb)\.com[\w=&\?/]+id=(\d+)',
     r'(imdb)\.com/[\w/\-]+/(tt\d+)',
     r'(themoviedb)\.org/tv/(\d+).*/episode_group/(.*)',
-    r'(themoviedb)\.org/tv/(\d+)'
+    r'(themoviedb)\.org/tv/(\d+)',
+    r'(themoviedb)\.org/./tv/(\d+)',
+    r'(tmdb)\.org/./tv/(\d+)'
 )
 SUPPORTED_ARTWORK_TYPES = {'poster', 'banner'}
 IMAGE_SIZES = ('large', 'original', 'medium')

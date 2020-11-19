@@ -113,7 +113,7 @@ def get_episode_list(show_id):  # pylint: disable=missing-docstring
         parse_result = data_utils.parse_nfo_url(show_id)
         if not parse_result:
             return
-        if parse_result.provider == 'themoviedb':
+        if parse_result.provider == 'themoviedb' or parse_result.provider == 'tmdb':
             show_info = tmdb.load_show_info(parse_result.show_id)
         else:
             return
