@@ -1,3 +1,7 @@
+[B]3.5.9[/B]
+- Fixed: Guest Stars were not scraped in some cases
+
+
 [B]3.5.8[/B]
 - Fixed: Some more fixes following tmdb layout changes
 

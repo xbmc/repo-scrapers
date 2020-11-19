@@ -429,8 +429,14 @@
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\1&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5">
 				<expression repeat="yes" fixchars="1,2">"credit_id":"[^"]*","order":([0-9]*),"character":"((?:[^"]|(?&lt;=\\)")*)","adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":"([^"]*)"</expression>
 			</RegExp>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\2&lt;/order&gt;&lt;thumb&gt;$$20original\4&lt;/thumb&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes" fixchars="1,2">"character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","order":([0-9]*),"adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":"([^"]*)"</expression>
+			</RegExp>
 			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\2&lt;/role&gt;&lt;order&gt;\1&lt;/order&gt;&lt;/actor&gt;" dest="5+">
 				<expression repeat="yes" fixchars="1,2">"credit_id":"[^"]*","order":([0-9]*),"character":"((?:[^"]|(?&lt;=\\)")*)","adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":null</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;actor&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\1&lt;/role&gt;&lt;order&gt;\2&lt;/order&gt;&lt;/actor&gt;" dest="5+">
+				<expression repeat="yes" fixchars="1,2">character":"((?:[^"]|(?&lt;=\\)")*)","credit_id":"[^"]*","order":([0-9]*),"adult"[^"]*"gender"[^"]*"id[^"]*"[^"]*"known_for_department"[^"]*"Acting","name":"([^"]*)","original_name":"[^"]*","popularity":[^"]*"profile_path":null</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
