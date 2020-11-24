@@ -58,11 +58,11 @@
 	<GetSearchResults dest="8">
 		<RegExp input="$INFO[searchservice]" output="$$17" dest="8">
 			<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="17">
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\4&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;/entity&gt;" dest="5">
-					<expression repeat="yes">&quot;id&quot;:([0-9]*).*?original_title&quot;:&quot;([^&quot;]*)&quot;.*?&quot;release_date&quot;:&quot;(([0-9]+)-)?</expression>
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\4&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\2.json&quot;&gt;https://api.tmdb.org/3/movie/\2?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;/entity&gt;" dest="5">
+					<expression repeat="yes">original_title&quot;:&quot;([^&quot;]*)&quot;.*?&quot;id&quot;:([0-9]*).*?release_date&quot;:&quot;(([0-9]+)-)?</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\4&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\1.json&quot;&gt;https://api.tmdb.org/3/movie/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
-					<expression repeat="yes">&quot;id&quot;:([0-9]*).*?&quot;title&quot;:&quot;([^&quot;]*)&quot;.*?&quot;release_date&quot;:&quot;(([0-9]+)-)?</expression>
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\4&lt;/year&gt;&lt;url cache=&quot;tmdb-$INFO[tmdbsearchlanguage]-\2.json&quot;&gt;https://api.tmdb.org/3/movie/\2?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$INFO[tmdbsearchlanguage]&lt;/url&gt;&lt;/entity&gt;" dest="5+">
+					<expression repeat="yes">&quot;title&quot;:&quot;([^&quot;]*)&quot;.*?&quot;id&quot;:([0-9]*).*?release_date&quot;:&quot;(([0-9]+)-)?</expression>
 				</RegExp>
 				<expression noclean="1" />
 				</RegExp>
