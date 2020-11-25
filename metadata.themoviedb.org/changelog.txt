@@ -1,3 +1,6 @@
+[B]5.2.4[/B]
+- fixed: trying to workaround the search results issue
+
 [B]5.2.3[/B]
 - fixed: search results
 
