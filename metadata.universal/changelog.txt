@@ -1,3 +1,6 @@
+[B]5.4.4[/B]
+- fixed: trying to fix tmdb search results once again
+
 [B]5.4.3[/B]
 - fixed: tmdb search results
 
