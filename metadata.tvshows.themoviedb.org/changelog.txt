@@ -1,3 +1,6 @@
+[B]3.5.10[/B]
+- Fixed: Try to workaround search results issue
+
 [B]3.5.9[/B]
 - Fixed: Guest Stars were not scraped in some cases
 
