@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.1" date="2013-10-26">
 	<CreateSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-search-\1$$6-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/search/tv?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;query=\1$$5&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-search-\1$$6-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/search/tv?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;query=\1$$5&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="3">
 			<RegExp input="$$2" output="&amp;amp;first_air_date_year=\1" dest="5">
 				<expression clear="yes">(.+)</expression>
 			</RegExp>
@@ -14,19 +14,19 @@
 
 	<NfoUrl dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.tmdb.org/3/find/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=imdb_id&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.themoviedb.org/3/find/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=imdb_id&lt;/url&gt;" dest="5">
 				<expression clear="yes" noclean="1">imdb....?/title/(tt[0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.tmdb.org/3/find/tt\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=imdb_id&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.themoviedb.org/3/find/tt\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=imdb_id&lt;/url&gt;" dest="5">
 				<expression noclean="1">imdb....?/Title\?([0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.tmdb.org/3/find/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=tvdb_id&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;GetTMDBId&quot;&gt;https://api.themoviedb.org/3/find/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;external_source=tvdb_id&lt;/url&gt;" dest="5">
 				<expression noclean="1">https?://(?:www\.)?thetvdb\.com/(?:index\.php)?\?tab=series&amp;id=([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<expression noclean="1">themoviedb\.org/tv/([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1|\2&lt;/id&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1|\2&lt;/id&gt;" dest="5">
 				<expression noclean="1">themoviedb\.org/tv/([0-9]+)[^\/]*/episode_group/([0-9a-f]+)</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -34,7 +34,7 @@
 	</NfoUrl>
 	<GetTMDBId dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$7" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="5">
+			<RegExp input="$$7" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="5">
 				<RegExp input="$$1" output="\1" dest="7">
 					<expression noclean="1">"tv_results":\[([^\]]+)\]</expression>
 				</RegExp>
@@ -46,28 +46,28 @@
 
 	<GetSearchResults dest="8">
 		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3">
 				<expression repeat="yes">{(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"original_name":"([^"]*)"[^}]*</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"original_name":"([^"]*)"[^}]*(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"(?:(?!}).)*"original_name":"([^"]*)"[^}]*</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"original_name":"([^"]*)"[^}]*(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"name":"([^"]*)"[^}]*</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"name":"([^"]*)"[^}]*(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"(?:(?!}).)*"name":"([^"]*)"[^}]*</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.tmdb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;id&gt;\2&lt;/id&gt;&lt;year&gt;\3&lt;/year&gt;&lt;url cache=&quot;tmdb-\2-$INFO[language].json&quot;&gt;https://api.themoviedb.org/3/tv/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;/entity&gt;" dest="3+">
 				<expression repeat="yes">{(?:(?!}).)*"name":"([^"]*)"[^}]*(?:(?!}).)*"id":([0-9]*)(?:(?!}).)*(?:(?!}).)*"first_air_date":"(?:|([0-9]+)[^"]*?)"</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -167,7 +167,7 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$8" dest="5+">
-				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$10-en.json&quot;&gt;https://api.tmdb.org/3/tv/$$10?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
+				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$10-en.json&quot;&gt;https://api.themoviedb.org/3/tv/$$10?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
 					<expression clear="yes">^(?!en).*</expression>
 				</RegExp>
 				<expression>^$</expression>
@@ -182,12 +182,12 @@
 				<RegExp input="$$1" output="&lt;namedseason number=&quot;\2&quot;&gt;\1&lt;/namedseason&gt;" dest="8">
 					<expression repeat="yes" fixchars="1">"id":[0-9]+,"name":"([^}]+)","overview":[^}]*?"season_number":(?!0})([0-9]+)}</expression>
 				</RegExp>
-				<RegExp input="$$2" output="&lt;url function=&quot;GetEpisodeGroupSeasonNames&quot; cache=&quot;tmdb-$$10-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.tmdb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="8">
+				<RegExp input="$$2" output="&lt;url function=&quot;GetEpisodeGroupSeasonNames&quot; cache=&quot;tmdb-$$10-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.themoviedb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="8">
 					<expression>\|([0-9a-f]+)$</expression>
 				</RegExp>
 				<expression noclean="1"/>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;tmdb-$$10-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.tmdb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="12">
+			<RegExp input="$$2" output="&lt;url cache=&quot;tmdb-$$10-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.themoviedb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="12">
 				<expression clear="yes">\|([0-9a-f]+)$</expression>
 			</RegExp>
 			<RegExp input="$$3" output="&lt;episodeguide&gt;&lt;url cache=&quot;tmdb-$$10-$INFO[language].json&quot;&gt;\1&lt;/url&gt;$$12&lt;/episodeguide&gt;" dest="5+">
@@ -211,14 +211,14 @@
 			<RegExp input="$$1" output="\1" dest="5">
 				<expression>"id":([0-9]+),"in_production"</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-\1.json&quot; function=&quot;GetSeasonEpisodeList&quot;&gt;https://api.tmdb.org/3/tv/$$5/season/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-\1.json&quot; function=&quot;GetSeasonEpisodeList&quot;&gt;https://api.themoviedb.org/3/tv/$$5/season/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="4">
 				<expression clear="yes">"season_number":(0)}</expression>
 			</RegExp>
 			<RegExp input="$$9" output="\1" dest="4+">
-				<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-\1.json&quot; function=&quot;GetSeasonEpisodeList&quot;&gt;https://api.tmdb.org/3/tv/$$5/season/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="9">
+				<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-\1.json&quot; function=&quot;GetSeasonEpisodeList&quot;&gt;https://api.themoviedb.org/3/tv/$$5/season/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="9">
 					<expression repeat="yes">"season_number":(?!0})([0-9]+)}</expression>
 				</RegExp>
-				<RegExp input="$$2" output="&lt;url function=&quot;GetEpisodeGroupList&quot; cache=&quot;tmdb-$$5-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.tmdb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="9">
+				<RegExp input="$$2" output="&lt;url function=&quot;GetEpisodeGroupList&quot; cache=&quot;tmdb-$$5-$INFO[language]-episode_group-\1.json&quot;&gt;https://api.themoviedb.org/3/tv/episode_group/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&lt;/url&gt;" dest="9">
 					<expression>"id":"([0-9a-f]+)","name":"[^}]*","network"</expression>
 				</RegExp>
 				<expression noclean="1"/>
@@ -231,7 +231,7 @@
 			<RegExp input="$$1" output="\1" dest="6">
 				<expression clear="yes">"season_number":([0-9]+)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;$$6&lt;/season&gt;&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-$$6.json&quot;&gt;https://api.tmdb.org/3/tv/$$5/season/$$6?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;$$5|$$6|\3&lt;/id&gt;&lt;/episode&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;$$6&lt;/season&gt;&lt;url cache=&quot;tmdb-$$5-$INFO[language]-season-$$6.json&quot;&gt;https://api.themoviedb.org/3/tv/$$5/season/$$6?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;$$5|$$6|\3&lt;/id&gt;&lt;/episode&gt;" dest="4">
 				<expression repeat="yes" clear="yes">"air_date":("([^"]*)"|null),"episode_number":([0-9]+)</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -259,7 +259,7 @@
 			<RegExp input="$$18" output="\1" dest="6">
 				<expression>"order":$$1,"episodes":(.*?)\](?:,"locked"|\})</expression>
 			</RegExp>
-			<RegExp input="$$6" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\7&lt;/epnum&gt;&lt;season&gt;$$1&lt;/season&gt;&lt;url cache=&quot;tmdb-\6-$INFO[language]-season-\5.json&quot;&gt;https://api.tmdb.org/3/tv/\6/season/\5?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\6|\5|\3&lt;/id&gt;&lt;/episode&gt;" dest="4+">
+			<RegExp input="$$6" output="&lt;episode&gt;&lt;title&gt;\4&lt;/title&gt;&lt;aired&gt;\2&lt;/aired&gt;&lt;epnum&gt;\7&lt;/epnum&gt;&lt;season&gt;$$1&lt;/season&gt;&lt;url cache=&quot;tmdb-\6-$INFO[language]-season-\5.json&quot;&gt;https://api.themoviedb.org/3/tv/\6/season/\5?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;&lt;id&gt;\6|\5|\3&lt;/id&gt;&lt;/episode&gt;" dest="4+">
 				<expression repeat="yes">{"air_date":("([^"]+)"|null),.*?"episode_number":([0-9]+),.*?"id":[0-9]+,"name":"((?:[^"]|(?&lt;=\\)")*)",[^}]+"season_number":([0-9]+),"show_id":([0-9]+),[^}]+"order":([0-9]+)</expression>
 			</RegExp>
 			<RegExp input="" output="" dest="15">
@@ -314,7 +314,7 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$8" dest="5+">
-				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBEpisodeTitle&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;https://api.tmdb.org/3/tv/$$6/season/$$10/episode/$$11?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
+				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBEpisodeTitle&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;https://api.themoviedb.org/3/tv/$$6/season/$$10/episode/$$11?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
 					<expression clear="yes">^(?!en).*</expression>
 				</RegExp>
 				<expression>^$</expression>
@@ -356,7 +356,7 @@
 				<expression>(.+)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$8" dest="5+">
-				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;https://api.tmdb.org/3/tv/$$6/season/$$10/episode/$$11?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
+				<RegExp input="$INFO[language]" output="&lt;url function=&quot;ParseFallbackTMDBPlot&quot; cache=&quot;tmdb-$$6-en-episode-s$$10e$$11.json&quot;&gt;https://api.themoviedb.org/3/tv/$$6/season/$$10/episode/$$11?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=en&lt;/url&gt;" dest="8">
 					<expression clear="yes">^(?!en).*</expression>
 				</RegExp>
 				<expression>^$</expression>
@@ -412,16 +412,16 @@
 
 	<GetCast dest="3" clearbuffers="no">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.tmdb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.themoviedb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
 				<expression />
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseCast&quot;&gt;https://api.tmdb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseCast&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
 				<RegExp input="-1" output="\1" dest="11">
 					<expression/>
 				</RegExp>
 				<expression>^([0-9]+)\|([0-9]+)$</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseCast&quot;&gt;https://api.tmdb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseCast&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
 				<RegExp input="$$1" output="\1" dest="11">
 					<expression>^[0-9]+\|[0-9]+\|([0-9]+)$</expression>
 				</RegExp>
@@ -462,7 +462,7 @@
 
 	<GetEpisodeExtraDetails dest="3" clearbuffers="no">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseEpisodeExtrasList&quot;&gt;https://api.tmdb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseEpisodeExtrasList&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5">
 				<RegExp input="$$1" output="\1" dest="11">
 					<expression>^[0-9]+\|[0-9]+\|([0-9]+)\|[^|]+$</expression>
 				</RegExp>
@@ -488,10 +488,10 @@
 			<RegExp input="$$1" output="episode/\1/images,episode/\1/external_ids," dest="7">
 				<expression repeat="yes" clear="yes">"episode_number":($$6\d),</expression>
 			</RegExp>
-			<RegExp input="$$14" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.tmdb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+			<RegExp input="$$14" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.themoviedb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
 				<expression clear="yes">ParseEpisodeArt</expression>
 			</RegExp>
-			<RegExp input="$$7" output="&lt;url cache=&quot;tmdb-$$13-$INFO[language]-season-$$12-extra-$$6.json&quot; function=&quot;$$14&quot;&gt;https://api.tmdb.org/3/tv/$$13/season/$$12?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=\1&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
+			<RegExp input="$$7" output="&lt;url cache=&quot;tmdb-$$13-$INFO[language]-season-$$12-extra-$$6.json&quot; function=&quot;$$14&quot;&gt;https://api.themoviedb.org/3/tv/$$13/season/$$12?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=\1&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
 				<expression>^(.+)$</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -533,10 +533,10 @@
 
 	<GetArt dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.tmdb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.themoviedb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
 				<expression />
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot; function=&quot;ParseArt&quot;&gt;https://api.tmdb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language].json&quot; function=&quot;ParseArt&quot;&gt;https://api.themoviedb.org/3/tv/\1?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=content_ratings,credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />
@@ -579,13 +579,13 @@
 	</ParseArt>
 	<GetSeasonArt clearbuffers="no" dest="3">
 		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
-			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.tmdb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
+			<RegExp input="$$1" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.themoviedb.org/3/configuration?api_key=6a5be4999abf74eba1f9a8311294c267&lt;/url&gt;" dest="5">
 				<expression>^([0-9]+)\|</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="10">
 				<expression>\|([0-9]+)$</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseSeasonArt&quot;&gt;https://api.tmdb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tmdb-\1-$INFO[language]-season-\2.json&quot; function=&quot;ParseSeasonArt&quot;&gt;https://api.themoviedb.org/3/tv/\1/season/\2?api_key=6a5be4999abf74eba1f9a8311294c267&amp;amp;language=$INFO[language]&amp;amp;append_to_response=credits,external_ids,images&amp;amp;include_image_language=$INFO[language],en,null&lt;/url&gt;" dest="5+">
 				<expression>^([0-9]+)\|([0-9]+)$</expression>
 			</RegExp>
 			<expression noclean="1" />
