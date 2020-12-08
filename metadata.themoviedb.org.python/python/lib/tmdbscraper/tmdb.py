@@ -40,10 +40,10 @@ class TMDBMovieScraper(object):
         def is_best(item):
             return item['title'].lower() == title and (
                 not year or item.get('release_date', '').startswith(year))
-        if result and not is_best(result[0]):
-            best_first = next((item for item in result if is_best(item)), None)
-            if best_first:
-                result = [best_first] + [item for item in result if item is not best_first]
+        if result:
+            # move all `is_best` results at the beginning of the list:
+            bests_first = [item for item in result if is_best(item)]
+            result = bests_first + [item for item in result if item not in bests_first]
 
         for item in result:
             if item.get('poster_path'):
