@@ -1,3 +1,6 @@
+[B]3.5.12[/B]
+- Changed: updated de and zh language codes to match tmdb - these codes needs to be reset by the users
+
 [B]3.5.10[/B]
 - Fixed: Try to workaround search results issue
 

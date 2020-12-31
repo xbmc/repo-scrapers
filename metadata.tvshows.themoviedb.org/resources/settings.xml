@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <settings>
 	<setting label="30005" type="bool" id="keeporiginaltitle" default="false"/>
-	<setting label="30002" type="select" values="ar-AE|ar-SA|bg|bn-BD|ca-ES|ch-GU|cs|da|de|el|en|eo-EO|es|es-MX|eu-ES|fa|fa-ir|fi|fr|fr-CA|gl|he|hi-IN|hr|hu|id-ID|it|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh|zh-tw|zh-hk" id="language" default="en"/>
+	<setting label="30002" type="select" values="ar-AE|ar-SA|be-BY|bg|bn-BD|ca-ES|ch-GU|cs|da|de-DE|el|en|eo-EO|es|es-MX|et-EE|eu-ES|fa|fa-ir|fi|fr-FR|fr-CA|gl|he|hi-IN|hr|hu|id-ID|it-IT|ja|ka-GE|ko|lt-LT|lv-LV|ml-IN|nb|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|ta-IN|th|tr|uk|vi-VN|zh-CN|zh-HK|zh-TW" id="language" default="en"/>
 	<setting label="30014" type="text" id="titleprefix" default="Episode "/>
 	<setting label="30015" type="text" id="titlesuffix" default=""/>
 	<setting type="sep" />
