@@ -311,6 +311,15 @@
 			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
 				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Screenplay&quot;)</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
+				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Writer&quot;)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
+				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Teleplay&quot;)</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
+				<expression repeat="yes" fixchars="1">&quot;name&quot;:&quot;([^&quot;]*)&quot;(?=[^\}]*?&quot;Novel&quot;)</expression>
+			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseTMDBWriters>
