@@ -18,7 +18,7 @@
 
 import json, sys, urlparse
 from .utils import logger
-from . import api_utils, cache
+from . import api_utils
 from xbmcaddon import Addon
 from datetime import datetime, timedelta
 
@@ -38,7 +38,6 @@ def _load_base_urls():
     last_updated = ADDON.getSettingString('lastUpdated')
     if not image_root_url or not preview_root_url or not last_updated or \
             float(last_updated) < _get_date_numeric(datetime.now() - timedelta(days=30)):
-        cache.clean_cache()
         conf = _get_configuration()
         if conf:
             image_root_url = conf['images']['secure_base_url'] + 'original'
