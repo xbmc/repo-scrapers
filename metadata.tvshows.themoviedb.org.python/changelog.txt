@@ -1,3 +1,11 @@
+1.3.13
+original title is now saved along with title in selected language
+added option (default to true) to separate fanart from landscape art
+
+1.3.12
+writer credits now include anyone with TMDb department of Writing
+changed location of cache files to special://temp/metadata.tvshows.themoviedb.org.python/cache
+
 1.3.10
 fix for issue with episode group seasons not being numbered correctly
 fix for incorrect parsing of episode guide URL from XML scraper
