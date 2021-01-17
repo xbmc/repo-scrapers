@@ -267,7 +267,6 @@ def load_ratings(the_info, show_imdb_id=''):
             trakt_rating = resp.get('ratings')
             if trakt_rating:
                 ratings.update(trakt_rating)
-        
     logger.debug('returning ratings of\n{}'.format(pformat(ratings)))
     return ratings
 
@@ -310,7 +309,7 @@ def load_fanarttv_art(show_info):
                                 if not show_info['seasons'][s].get('images'):
                                     show_info['seasons'][s]['images'] = {}
                                 if not show_info['seasons'][s]['images'].get(image_type):
-                                    show_info['seasons'][s]['images'][image_type] = []                                
+                                    show_info['seasons'][s]['images'][image_type] = []
                                 if artseason == '' or artseason == str(season_num):
                                     show_info['seasons'][s]['images'][image_type].append({'file_path':filepath, 'type':'fanarttv', 'iso_639_1': lang})
                         else:

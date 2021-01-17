@@ -92,13 +92,14 @@ def _set_cast(cast_info, list_item):
 def _get_credits(show_info):
     # type: (InfoType) -> List[Text]
     """Extract show creator(s) and writer(s) from show info"""
-    credits_ = []
+    credits = []
     for item in show_info.get('created_by', []):
-        credits_.append(item['name'])
+        credits.append(item['name'])
     for item in show_info.get('credits', {}).get('crew', []):
-        if item.get('job') == 'Writer' and item.get('name') not in credits_:
-            credits_.append(item['name'])
-    return credits_
+        isWriter = item.get('job', '').lower() == 'writer' or item.get('department', '').lower() == 'writing'
+        if isWriter and item.get('name') not in credits:
+            credits.append(item['name'])
+    return credits
 
 
 def _get_directors(episode_info):
@@ -169,7 +170,10 @@ def set_show_artwork(show_info, list_item):
                     theurl = image['file_path']
                 else:
                     theurl = settings.IMAGEROOTURL + image['file_path']
-                fanart_list.append({'image': theurl})
+                if image.get('iso_639_1') != None and settings.CATLANDSCAPE:
+                    list_item.addAvailableArtwork(theurl, art_type="landscape")
+                else:
+                    fanart_list.append({'image': theurl})
             if fanart_list:
                 list_item.setAvailableFanart(fanart_list)
         else:
@@ -199,6 +203,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
         'plot': plot,
         'plotoutline': plot,
         'title': showname,
+        'originaltitle': original_name,
         'tvshowtitle': showname,
         'mediatype': 'tvshow',
         # This property is passed as "url" parameter to getepisodelist call
