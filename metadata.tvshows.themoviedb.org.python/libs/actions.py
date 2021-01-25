@@ -71,10 +71,10 @@ def get_show_id_from_nfo(nfo):
     if isinstance(nfo, bytes):
         nfo = nfo.decode('utf-8', 'replace')
     logger.debug('Parsing NFO file:\n{}'.format(nfo))
-    parse_result = data_utils.parse_nfo_url(nfo)
+    parse_result, named_seasons = data_utils.parse_nfo_url(nfo)
     if parse_result:
         if parse_result.provider == 'themoviedb':
-            show_info = tmdb.load_show_info(parse_result.show_id, ep_grouping=parse_result.ep_grouping)
+            show_info = tmdb.load_show_info(parse_result.show_id, ep_grouping=parse_result.ep_grouping, named_seasons=named_seasons)
         else:
             show_info = None
         if show_info is not None:
@@ -109,7 +109,7 @@ def get_episode_list(show_id):  # pylint: disable=missing-docstring
         # Kodi has a bug: when a show directory contains an XML NFO file with
         # episodeguide URL, that URL is always passed here regardless of
         # the actual parsing result in get_show_from_nfo()
-        parse_result = data_utils.parse_nfo_url(show_id)
+        parse_result, named_seasons = data_utils.parse_nfo_url(show_id)
         if not parse_result:
             return
         if parse_result.provider == 'themoviedb' or parse_result.provider == 'tmdb':

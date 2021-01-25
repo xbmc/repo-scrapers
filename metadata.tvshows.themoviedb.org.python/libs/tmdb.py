@@ -129,7 +129,7 @@ def load_episode_list(show_info, season_map, ep_grouping):
     return show_info
 
 
-def load_show_info(show_id, ep_grouping=None):
+def load_show_info(show_id, ep_grouping=None, named_seasons=None):
     # type: (Text) -> Optional[InfoType]
     """
     Get full info for a single show
@@ -137,6 +137,8 @@ def load_show_info(show_id, ep_grouping=None):
     :param show_id: themoviedb.org show ID
     :return: show info or None
     """
+    if named_seasons == None:
+        named_seasons = []
     show_info = cache.load_show_info_from_cache(show_id)
     if show_info is None:
         logger.debug('no cache file found, loading from scratch')
@@ -167,6 +169,13 @@ def load_show_info(show_id, ep_grouping=None):
                     season_info['overview'] = season_info_backup['overview']
                 if season_info['name'].lower().startswith('season'):
                     season_info['name'] = season_info_backup['name']
+            # this is part of a work around for xbmcgui.ListItem.addSeasons() not respecting NFO file information
+            for named_season in named_seasons:
+                if str(named_season[0]) == str(season['season_number']):
+                    logger.debug('adding season name of %s from named seasons in NFO for season %s' % (named_season[1], season['season_number']))
+                    season_info['name'] = named_season[1]
+                    break
+            # end work around
             season_info['images'] = _sort_image_types(season_info.get('images', {}))
             season_map[str(season['season_number'])] = season_info
         show_info = load_episode_list(show_info, season_map, ep_grouping)
