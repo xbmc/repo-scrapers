@@ -299,7 +299,11 @@ def add_episode_info(list_item, episode_info, full_info=True):
 
 def parse_nfo_url(nfo):
     # type: (Text) -> Optional[UrlParseResult]
-    """Extract show ID from NFO file contents"""
+    """Extract show ID and named seasons from NFO file contents"""
+    # work around for xbmcgui.ListItem.addSeason overwriting named seasons from NFO files
+    ns_regex = r'<namedseason number="(.*)">(.*)</namedseason>'
+    ns_match = re.findall(ns_regex, nfo, re.I)
+    sid_match = None
     for regexp in SHOW_ID_REGEXPS:
         logger.debug('trying regex to match service from parsing nfo:')
         logger.debug(regexp)
@@ -315,8 +319,9 @@ def parse_nfo_url(nfo):
                 logger.debug('match group 3: ' + ep_grouping)
             else:
                 logger.debug('match group 3: None')
-            return UrlParseResult(show_id_match.group(1), show_id_match.group(2), ep_grouping)
-    return None
+            sid_match = UrlParseResult(show_id_match.group(1), show_id_match.group(2), ep_grouping)
+            break
+    return sid_match, ns_match
 
 
 def parse_media_id(title):

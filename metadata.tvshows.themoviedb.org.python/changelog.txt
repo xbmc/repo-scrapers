@@ -1,7 +1,9 @@
+1.1.31
+fix for named seasons in NFO files being ignored
+
 1.1.30
 original title is now saved along with title in selected language
 added option (default to true) to separate fanart from landscape art
-
 
 1.1.29
 writer credits now include anyone with TMDb department of Writing
