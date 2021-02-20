@@ -1,3 +1,9 @@
+1.1.32
+TV show trailers from YouTube now included in metadata (with option to turn it off)
+option to select which YouTube addon is used to play trailers
+scraper now parses IDs from TVDB and IMDB URLs for identifying shows
+(thanks to tielis for these contributions)
+
 1.1.31
 fix for named seasons in NFO files being ignored
 

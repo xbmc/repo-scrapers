@@ -124,3 +124,8 @@ msgctxt "#30304"
 msgid "Also add TMDb ratings"
 msgstr ""
 
+msgctxt "#30305"
+msgid "Enable Trailer"
+msgstr ""
+
+
