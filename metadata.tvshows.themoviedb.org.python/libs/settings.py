@@ -75,6 +75,8 @@ source_settings = json.loads(source_params.get('pathSettings', {}))
 
 KEEPTITLE =source_settings.get('keeporiginaltitle', ADDON.getSettingBool('keeporiginaltitle'))
 CATLANDSCAPE = source_settings.get('cat_landscape', True)
+ENABTRAILER = source_settings.get('enab_trailer', ADDON.getSettingBool('enab_trailer'))
+PLAYERSOPT = source_settings.get('players_opt', ADDON.getSettingString('players_opt')).lower()
 VERBOSELOG =  source_settings.get('verboselog', ADDON.getSettingBool('verboselog'))
 LANG = source_settings.get('language', ADDON.getSettingString('language'))
 CERT_COUNTRY = source_settings.get('tmdbcertcountry', ADDON.getSettingString('tmdbcertcountry')).lower()

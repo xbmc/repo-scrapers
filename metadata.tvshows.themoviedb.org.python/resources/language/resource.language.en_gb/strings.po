@@ -128,3 +128,19 @@ msgctxt "#30304"
 msgid "Also add TMDb ratings"
 msgstr ""
 
+msgctxt "#30305"
+msgid "Enable Trailer"
+msgstr ""
+
+msgctxt "#30306"
+msgid "Addon Player"
+msgstr ""
+
+msgctxt "#30307"
+msgid "YouTube"
+msgstr ""
+
+msgctxt "#30308"
+msgid "Tubed"
+msgstr ""
+
