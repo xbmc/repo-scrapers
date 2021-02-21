@@ -145,7 +145,7 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         logger.debug('no cache file found, loading from scratch')
         show_url = SHOW_URL.format(show_id)
         params = TMDB_PARAMS.copy()
-        params['append_to_response'] = 'credits,content_ratings,external_ids,images'
+        params['append_to_response'] = 'credits,content_ratings,external_ids,images,videos'
         params['include_image_language'] = '%s,en,null' % settings.LANG[0:2]
         show_info = api_utils.load_info(show_url, params=params, verboselog=settings.VERBOSELOG)
         if show_info is None:
@@ -413,3 +413,4 @@ def _image_sort(images, image_type):
         return lang_pref + lang_en + lang_null
     else:
         return lang_pref + lang_null + lang_en
+

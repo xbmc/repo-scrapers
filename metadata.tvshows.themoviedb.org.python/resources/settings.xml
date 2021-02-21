@@ -7,6 +7,7 @@
 		<setting label="30003" type="text" id="certprefix" enable="eq(-1,true)" default="Rated " />
 		<setting label="30004" type="bool" id="keeporiginaltitle" default="false" />
 		<setting label="30005" type="bool" id="cat_landscape" default="true" />
+    <setting label="30305" type="bool" id="enab_trailer" default="true" />    
 	</category>
 	<category label="30300">
 		<setting label="30301" type="labelenum" values="TMDb|IMDb|Trakt" id="ratings" default="TMDb" />
