@@ -26,7 +26,7 @@ import xbmcgui
 import xbmcplugin
 from six.moves import urllib_parse
 
-from . import tvmaze, data_utils
+from . import tvmaze_api, data_service
 from .utils import logger
 
 try:
@@ -43,16 +43,16 @@ def find_show(title, year=None):
     if not isinstance(title, six.text_type):
         title = title.decode('utf-8')
     logger.debug('Searching for TV show {} ({})'.format(title, year))
-    search_results = tvmaze.search_show(title)
+    search_results = tvmaze_api.search_show(title)
     if year is not None:
-        search_result = tvmaze.filter_by_year(search_results, year)
+        search_result = tvmaze_api.filter_by_year(search_results, year)
         search_results = (search_result,) if search_result else ()
     for search_result in search_results:
         show_name = search_result['show']['name']
         if search_result['show']['premiered']:
             show_name += ' ({})'.format(search_result['show']['premiered'][:4])
         list_item = xbmcgui.ListItem(show_name, offscreen=True)
-        list_item = data_utils.add_main_show_info(list_item, search_result['show'], False)
+        list_item = data_service.add_main_show_info(list_item, search_result['show'], False)
         # Below "url" is some unique ID string (may be an actual URL to a show page)
         # that is used to get information about a specific TV show.
         xbmcplugin.addDirectoryItem(
@@ -76,12 +76,12 @@ def get_show_id_from_nfo(nfo):
     if isinstance(nfo, bytes):
         nfo = nfo.decode('utf-8', 'replace')
     logger.debug('Parsing NFO file:\n{}'.format(nfo))
-    parse_result = data_utils.parse_nfo_url(nfo)
+    parse_result = data_service.parse_nfo_url(nfo)
     if parse_result:
         if parse_result.provider == 'tvmaze':
-            show_info = tvmaze.load_show_info(parse_result.show_id)
+            show_info = tvmaze_api.load_show_info(parse_result.show_id)
         else:
-            show_info = tvmaze.load_show_info_by_external_id(
+            show_info = tvmaze_api.load_show_info_by_external_id(
                 parse_result.provider,
                 parse_result.show_id
             )
@@ -101,10 +101,10 @@ def get_details(show_id):
     # type: (Text) -> None
     """Get details about a specific show"""
     logger.debug('Getting details for show id {}'.format(show_id))
-    show_info = tvmaze.load_show_info(show_id)
+    show_info = tvmaze_api.load_show_info(show_id)
     if show_info is not None:
         list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
-        list_item = data_utils.add_main_show_info(list_item, show_info)
+        list_item = data_service.add_main_show_info(list_item, show_info)
         xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
     else:
         xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
@@ -117,23 +117,23 @@ def get_episode_list(show_id):  # pylint: disable=missing-docstring
         # Kodi has a bug: when a show directory contains an XML NFO file with
         # episodeguide URL, that URL is always passed here regardless of
         # the actual parsing result in get_show_from_nfo()
-        parse_result = data_utils.parse_nfo_url(show_id)
+        parse_result = data_service.parse_nfo_url(show_id)
         if not parse_result:
             return
         if parse_result.provider == 'tvmaze':
-            show_info = tvmaze.load_show_info(parse_result.show_id)
+            show_info = tvmaze_api.load_show_info(parse_result.show_id)
         else:
-            brief_show_info = tvmaze.load_show_info_by_external_id(
+            brief_show_info = tvmaze_api.load_show_info_by_external_id(
                 parse_result.provider,
                 parse_result.show_id
             )
-            show_info = tvmaze.load_show_info(brief_show_info['id'])
+            show_info = tvmaze_api.load_show_info(brief_show_info['id'])
     else:
-        show_info = tvmaze.load_show_info(show_id)
+        show_info = tvmaze_api.load_show_info(show_id)
     if show_info is not None:
         for episode in six.itervalues(show_info['episodes']):
             list_item = xbmcgui.ListItem(episode['name'], offscreen=True)
-            list_item = data_utils.add_episode_info(list_item, episode, full_info=False)
+            list_item = data_service.add_episode_info(list_item, episode, full_info=False)
             encoded_ids = urllib_parse.urlencode(
                 {'show_id': str(show_info['id']), 'episode_id': str(episode['id'])}
             )
@@ -153,12 +153,12 @@ def get_episode_details(encoded_ids):  # pylint: disable=missing-docstring
     encoded_ids = urllib_parse.unquote(encoded_ids)
     decoded_ids = dict(urllib_parse.parse_qsl(encoded_ids))
     logger.debug('Getting episode details for {}'.format(decoded_ids))
-    episode_info = tvmaze.load_episode_info(
+    episode_info = tvmaze_api.load_episode_info(
         decoded_ids['show_id'], decoded_ids['episode_id']
     )
     if episode_info:
         list_item = xbmcgui.ListItem(episode_info['name'], offscreen=True)
-        list_item = data_utils.add_episode_info(list_item, episode_info, full_info=True)
+        list_item = data_service.add_episode_info(list_item, episode_info, full_info=True)
         xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
     else:
         xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
@@ -172,10 +172,10 @@ def get_artwork(show_id):
     :param show_id: default unique ID set by setUniqueIDs() method
     """
     logger.debug('Getting artwork for show ID {}'.format(show_id))
-    show_info = tvmaze.load_show_info(show_id)
+    show_info = tvmaze_api.load_show_info(show_id)
     if show_info is not None:
         list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
-        list_item = data_utils.set_show_artwork(show_info, list_item)
+        list_item = data_service.set_show_artwork(show_info, list_item)
         xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
     else:
         xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
