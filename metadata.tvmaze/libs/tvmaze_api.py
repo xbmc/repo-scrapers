@@ -24,8 +24,8 @@ from pprint import pformat
 import requests
 from requests.exceptions import HTTPError
 
-from . import cache
-from .data_utils import process_episode_list
+from . import cache_service
+from .data_service import process_episode_list
 from .utils import logger, safe_get
 
 try:
@@ -117,7 +117,7 @@ def load_show_info(show_id):
     :param show_id: TVmaze show ID
     :return: show info or None
     """
-    show_info = cache.load_show_info_from_cache(show_id)
+    show_info = cache_service.load_show_info_from_cache(show_id)
     if show_info is None:
         show_info_url = SHOW_INFO_URL.format(show_id)
         params = {'embed[]': ['cast', 'seasons', 'images', 'crew']}
@@ -131,7 +131,7 @@ def load_show_info(show_id):
             show_info['_embedded']['images'].sort(key=lambda img: img['main'],
                                                   reverse=True)
         process_episode_list(show_info, episode_list)
-        cache.cache_show_info(show_info)
+        cache_service.cache_show_info(show_info)
     return show_info
 
 
