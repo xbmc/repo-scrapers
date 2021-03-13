@@ -20,30 +20,28 @@ class TMDBMovieScraper(object):
         if search_media_id:
             if search_media_id['type'] == 'tmdb':
                 result = _get_movie(search_media_id['id'], self.language, True)
+                if 'error' in result:
+                    return result
                 result = [result]
             else:
-                response = tmdbapi.find_movie_by_external_id(search_media_id['id'], language=self.language)
-                theerror = response.get('error')
-                if theerror:
-                    return 'error: {}'.format(theerror)
-                result = response.get('movie_results')
-            if 'error' in result:
-                return result
+                result = tmdbapi.find_movie_by_external_id(search_media_id['id'], language=self.language)
+                if 'error' in result:
+                    return result
+                result = result.get('movie_results')
         else:
             response = tmdbapi.search_movie(query=title, year=year, language=self.language)
-            theerror = response.get('error')
-            if theerror:
-                return 'error: {}'.format(theerror)
+            if 'error' in response:
+                return response
             result = response['results']
         urls = self.urls
 
         def is_best(item):
             return item['title'].lower() == title and (
                 not year or item.get('release_date', '').startswith(year))
-        if result and not is_best(result[0]):
-            best_first = next((item for item in result if is_best(item)), None)
-            if best_first:
-                result = [best_first] + [item for item in result if item is not best_first]
+        if result:
+            # move all `is_best` results at the beginning of the list, sort them by popularity (if found):
+            bests_first = sorted([item for item in result if is_best(item)], key=lambda k: k.get('popularity',0), reverse=True)
+            result = bests_first + [item for item in result if item not in bests_first]
 
         for item in result:
             if item.get('poster_path'):
@@ -68,6 +66,7 @@ class TMDBMovieScraper(object):
 
         # don't specify language to get English text for fallback
         movie_fallback = _get_movie(media_id)
+        movie['images'] = movie_fallback['images']
 
         collection = _get_moviecollection(movie['belongs_to_collection'].get('id'), self.language) if \
             movie['belongs_to_collection'] else None
@@ -140,24 +139,14 @@ def _parse_media_id(title):
 def _get_movie(mid, language=None, search=False):
     details = None if search else \
         'trailers,images,releases,casts,keywords' if language is not None else \
-        'trailers'
-    response = tmdbapi.get_movie(mid, language=language, append_to_response=details)
-    theerror = response.get('error')
-    if theerror:
-        return 'error: {}'.format(theerror)
-    else:
-        return response
+        'trailers,images'
+    return tmdbapi.get_movie(mid, language=language, append_to_response=details)
 
 def _get_moviecollection(collection_id, language=None):
     if not collection_id:
         return None
     details = 'images'
-    response = tmdbapi.get_collection(collection_id, language=language, append_to_response=details)
-    theerror = response.get('error')
-    if theerror:
-        return 'error: {}'.format(theerror)
-    else:
-        return response
+    return tmdbapi.get_collection(collection_id, language=language, append_to_response=details)
 
 def _parse_artwork(movie, collection, urlbases, language):
     if language:

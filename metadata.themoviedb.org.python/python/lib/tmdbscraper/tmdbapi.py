@@ -121,12 +121,8 @@ def get_configuration():
 
 def _set_params(append_to_response, language):
     params = TMDB_PARAMS.copy()
-    img_lang = 'en,null'
     if language is not None:
         params['language'] = language
-        img_lang = '%s,en,null' % language[0:2]
     if append_to_response is not None:
         params['append_to_response'] = append_to_response
-        if 'images' in append_to_response:
-            params['include_image_language'] = img_lang
     return params
