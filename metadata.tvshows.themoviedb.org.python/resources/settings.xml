@@ -146,25 +146,30 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
-        <setting id="enab_trailer" type="boolean" label="30305" help="">
-          <level>0</level>
-          <default>true</default>
-          <control type="toggle"/>
-        </setting>
-        <setting id="players_opt" type="string" parent="enab_trailer" label="30306" help="">
-          <level>0</level>
-          <default>Tubed</default>
-          <constraints>
-            <options>
-              <option label="30307">YouTube</option>
-              <option label="30308">Tubed</option>              
-            </options>
-          </constraints>
-          <dependencies>
-            <dependency type="enable" setting="enab_trailer" operator="is">true</dependency>
-          </dependencies>
-          <control type="spinner" format="string"/>
-        </setting>
+				<setting id="studio_country" type="boolean" label="30006" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="enab_trailer" type="boolean" label="30305" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
+				<setting id="players_opt" type="string" parent="enab_trailer" label="30306" help="">
+					<level>0</level>
+					<default>Tubed</default>
+					<constraints>
+						<options>
+							<option label="30307">YouTube</option>
+							<option label="30308">Tubed</option>
+						</options>
+					</constraints>
+					<dependencies>
+						<dependency type="enable" setting="enab_trailer" operator="is">true</dependency>
+					</dependencies>
+					<control type="spinner" format="string"/>
+				</setting>
 			</group>
 		</category>
 		<category id="ratings" label="30300" help="">

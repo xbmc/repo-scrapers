@@ -159,25 +159,25 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         season_map = {}
         params['append_to_response'] = 'credits,images'
         for season in show_info.get('seasons', []):
-            season_url = SEASON_URL.format(show_id, season['season_number'])
+            season_url = SEASON_URL.format(show_id, season.get('season_number', 0))
             season_info = api_utils.load_info(season_url, params=params, default={}, verboselog=settings.VERBOSELOG)
-            if (season_info['overview'] == '' or season_info['name'].lower().startswith('season')) and settings.LANG != 'en-US':
+            if (season_info.get('overview', '') == '' or season_info.get('name', '').lower().startswith('season')) and settings.LANG != 'en-US':
                 params['language'] = 'en-US'
                 season_info_backup = api_utils.load_info(season_url, params=params, default={}, verboselog=settings.VERBOSELOG)
                 params['language'] = settings.LANG
-                if season_info['overview'] == '':
-                    season_info['overview'] = season_info_backup['overview']
-                if season_info['name'].lower().startswith('season'):
-                    season_info['name'] = season_info_backup['name']
+                if season_info.get('overview', '') == '':
+                    season_info['overview'] = season_info_backup.get('overview', '')
+                if season_info.get('name', '').lower().startswith('season'):
+                    season_info['name'] = season_info_backup.get('name', '')
             # this is part of a work around for xbmcgui.ListItem.addSeasons() not respecting NFO file information
             for named_season in named_seasons:
-                if str(named_season[0]) == str(season['season_number']):
+                if str(named_season[0]) == str(season.get('season_number')):
                     logger.debug('adding season name of %s from named seasons in NFO for season %s' % (named_season[1], season['season_number']))
                     season_info['name'] = named_season[1]
                     break
             # end work around
             season_info['images'] = _sort_image_types(season_info.get('images', {}))
-            season_map[str(season['season_number'])] = season_info
+            season_map[str(season.get('season_number', 0))] = season_info
         show_info = load_episode_list(show_info, season_map, ep_grouping)
         show_info['ratings'] = load_ratings(show_info)
         show_info = load_fanarttv_art(show_info)
@@ -187,9 +187,9 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         cast = []
         for season in reversed(show_info.get('seasons', [])):
             for cast_member in season.get('credits', {}).get('cast', []):
-                if cast_member['name'] not in cast_check:
+                if cast_member.get('name', '') not in cast_check:
                     cast.append(cast_member)
-                    cast_check.append(cast_member['name'])
+                    cast_check.append(cast_member.get('name', ''))
         show_info['credits']['cast'] = cast
         logger.debug('saving show info to the cache')
         if settings.VERBOSELOG:

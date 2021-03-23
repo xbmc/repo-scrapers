@@ -34,6 +34,9 @@ try:
 except ImportError:
     pass
 
+TMDB_PARAMS = {'api_key': settings.TMDB_CLOWNCAR, 'language': settings.LANG}
+BASE_URL = 'https://api.themoviedb.org/3/{}'
+FIND_URL = BASE_URL.format('find/{}')
 TAG_RE = re.compile(r'<[^>]+>')
 
 # Regular expressions are listed in order of priority.
@@ -47,6 +50,7 @@ SHOW_ID_REGEXPS = (
     r'(imdb)\.com/.+/(tt\d+)',                            # IMDB_http_link
     r'(thetvdb)\.com.+&id=(\d+)',                         # TheTVDB_http_link 
     r'(thetvdb)\.com/.*?series/(\d+)',                    # TheTVDB_http_link
+    r'(thetvdb)\.com/.*?"id":(\d+)',                      # TheTVDB_http_link
     )
 
 
@@ -241,9 +245,12 @@ def add_main_show_info(list_item, show_info, full_info=True):
         else:
             network = None
             country = None
-        if network and country:
+        if network and country and settings.STUDIOCOUNTRY:
             video['studio'] = '{0} ({1})'.format(network['name'], country)
             video['country'] = country
+        elif network and country:
+            video['studio'] = network['name']
+            video['country'] = country           
         content_ratings = show_info.get('content_ratings', {}).get('results', {})
         if content_ratings:
             mpaa = ''
@@ -349,10 +356,6 @@ def parse_nfo_url(nfo):
 
 
 def _convert_ext_id(ext_provider, ext_id):
-    TMDB_PARAMS = {'api_key': settings.TMDB_CLOWNCAR, 'language': settings.LANG}
-    BASE_URL = 'https://api.themoviedb.org/3/{}'
-    FIND_URL = BASE_URL.format('find/{}')
-
     providers_dict = {'imdb' : 'imdb_id',
                      'thetvdb' : 'tvdb_id',
                      'tvdb' : 'tvdb_id'}
@@ -361,7 +364,9 @@ def _convert_ext_id(ext_provider, ext_id):
     params['external_source'] = providers_dict[ext_provider]
     show_info = api_utils.load_info(show_url, params=params)
     if show_info:
-        return show_info.get('tv_results')[0].get('id')
+        tv_results = show_info.get('tv_results')
+        if tv_results:
+            return tv_results[0].get('id')
     return None
 
 
