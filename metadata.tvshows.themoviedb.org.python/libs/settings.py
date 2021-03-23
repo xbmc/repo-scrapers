@@ -71,7 +71,7 @@ try:
     source_params = dict(urlparse.parse_qsl(sys.argv[2]))
 except IndexError:
     source_params = {}
-source_settings = json.loads(source_params.get('pathSettings', {}))
+source_settings = json.loads(source_params.get('pathSettings', '{}'))
 
 KEEPTITLE =source_settings.get('keeporiginaltitle', False)
 CATLANDSCAPE = source_settings.get('cat_landscape', True)
