@@ -40,6 +40,10 @@ msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
 msgstr ""
 
+msgctxt "#30006"
+msgid "Include country code with studio"
+msgstr ""
+
 # empty strings from 30006 to 30099
 
 msgctxt "#30100"

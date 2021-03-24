@@ -71,10 +71,11 @@ try:
     source_params = dict(urllib.parse.parse_qsl(sys.argv[2]))
 except IndexError:
     source_params = {}
-source_settings = json.loads(source_params.get('pathSettings', {}))
+source_settings = json.loads(source_params.get('pathSettings', '{}'))
 
 KEEPTITLE =source_settings.get('keeporiginaltitle', ADDON.getSettingBool('keeporiginaltitle'))
 CATLANDSCAPE = source_settings.get('cat_landscape', True)
+STUDIOCOUNTRY = source_settings.get('studio_country', True)
 ENABTRAILER = source_settings.get('enab_trailer', ADDON.getSettingBool('enab_trailer'))
 PLAYERSOPT = source_settings.get('players_opt', ADDON.getSettingString('players_opt')).lower()
 VERBOSELOG =  source_settings.get('verboselog', ADDON.getSettingBool('verboselog'))
