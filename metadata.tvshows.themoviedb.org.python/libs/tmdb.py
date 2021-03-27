@@ -103,7 +103,10 @@ def load_episode_list(show_info, season_map, ep_grouping):
             show_info['seasons'] = []
             for custom_season in custom_order.get('groups', []):
                 season_episodes = []
-                current_season = season_map.get(str(custom_season['episodes'][0]['season_number']), {}).copy()
+                try:
+                  current_season = season_map.get(str(custom_season['episodes'][0]['season_number']), {}).copy()
+                except IndexError:
+                  continue
                 current_season['name'] = custom_season['name']
                 current_season['season_number'] = custom_season['order']
                 for episode in custom_season['episodes']:

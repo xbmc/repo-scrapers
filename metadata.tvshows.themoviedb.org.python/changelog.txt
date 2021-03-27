@@ -1,3 +1,6 @@
+1.4.3
+fix for crash if episode group has a season with no episodes
+
 1.4.2
 fix for crash if Kodi calls the scraper without passing the source settings
 change so that old TVDB XML scraper episodeguide URL will work to get new episodeguide from TMDb
