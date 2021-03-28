@@ -23,7 +23,7 @@ def search_series(title, settings, year=None) -> None:
     log(f'Search results {search_results}')
 
     possible_matches = _match_by_year(
-        search_results, year, title) if year is not None else _filter_exact_matches(search_results, title)
+        search_results, year, title) if year is not None and len(year) > 0 else _filter_exact_matches(search_results, title)
 
     search_results = possible_matches if len(
         possible_matches) > 0 else search_results

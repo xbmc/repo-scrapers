@@ -40,10 +40,6 @@ msgctxt "#30007"
 msgid "General"
 msgstr ""
 
-msgctxt "#30008"
-msgid "TheTVDB"
-msgstr ""
-
 msgctxt "#30009"
 msgid "IMDb"
 msgstr ""
