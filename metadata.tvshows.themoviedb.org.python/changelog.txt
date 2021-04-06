@@ -1,3 +1,7 @@
+1.4.4
+fix so studios get added even if there is no country
+change the default setting so that studio and country are stored separately
+
 1.4.3
 fix for crash if episode group has a season with no episodes
 
