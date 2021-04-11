@@ -23,7 +23,7 @@ def search_series(title, settings, year=None) -> None:
     log(f'Search results {search_results}')
 
     possible_matches = _match_by_year(
-        search_results, year, title) if year is not None and len(year) > 0 else _filter_exact_matches(search_results, title)
+        search_results, year, title) if year else _filter_exact_matches(search_results, title)
 
     search_results = possible_matches if len(
         possible_matches) > 0 else search_results
@@ -60,7 +60,7 @@ def _match_by_year(search_results: list, year: int, title: str) -> list:
         return exact_year_match
 
     nearest_year = _nearest(
-        [int(item['firstAired'][:4]) for item in search_results if 'firstAired' in item and item['firstAired'] is not None], int(year))
+        [int(item['firstAired'][:4]) for item in search_results if 'firstAired' in item and item['firstAired']], int(year))
     exact_match_nearest_year = tvdb.filter_by_year(
         _filter_exact_matches(search_results, title), nearest_year)
 
