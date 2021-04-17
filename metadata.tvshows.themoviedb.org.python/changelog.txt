@@ -1,3 +1,6 @@
+1.4.5
+fix settings file to show correct default for studio and country storage
+
 1.4.4
 fix so studios get added even if there is no country
 change the default setting so that studio and country are stored separately

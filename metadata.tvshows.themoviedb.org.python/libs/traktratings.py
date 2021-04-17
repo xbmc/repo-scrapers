@@ -50,8 +50,9 @@ def get_details(imdb_id, season=None, episode=None):
     else:
         url = SHOW_URL.format(imdb_id)
         params = {'extended': 'full'}
-    resp = api_utils.load_info(url, params=params, default={}, verboselog=settings.VERBOSELOG)
-    rating =resp.get('rating')
+    resp = api_utils.load_info(
+        url, params=params, default={}, verboselog=settings.VERBOSELOG)
+    rating = resp.get('rating')
     votes = resp.get('votes')
     if votes and rating:
         result['ratings'] = {'trakt': {'votes': votes, 'rating': rating}}
