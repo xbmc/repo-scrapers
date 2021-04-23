@@ -22,11 +22,12 @@ from __future__ import absolute_import, unicode_literals
 from pprint import pformat
 
 import requests
+import six
 from requests.exceptions import HTTPError
 
 from . import cache_service
 from .data_service import process_episode_list
-from .utils import logger, safe_get
+from .utils import logger
 
 try:
     from typing import Text, Optional, Union, List, Dict, Any  # pylint: disable=unused-import
@@ -39,6 +40,8 @@ SEARCH_BU_EXTERNAL_ID_URL = 'http://api.tvmaze.com/lookup/shows'
 SHOW_INFO_URL = 'http://api.tvmaze.com/shows/{}'
 EPISODE_LIST_URL = 'http://api.tvmaze.com/shows/{}/episodes'
 EPISODE_INFO_URL = 'http://api.tvmaze.com/episodes/{}'
+ALTERNATE_LISTS_URL = 'http://api.tvmaze.com/shows/{}/alternatelists'
+ALTERNATE_EPISODES_URL = 'http://api.tvmaze.com/alternatelists/{}/alternateepisodes'
 
 HEADERS = (
     ('User-Agent', 'Kodi scraper for tvmaze.com by Roman V.M.; roman1972@gmail.com'),
@@ -82,22 +85,6 @@ def search_show(title):
         return []
 
 
-def filter_by_year(shows, year):
-    # type: (List[InfoType], Text) -> Optional[InfoType]
-    """
-    Filter a show by year
-
-    :param shows: the list of shows from TVmaze
-    :param year: premiere year
-    :return: a found show or None
-    """
-    for show in shows:
-        premiered = safe_get(show['show'], 'premiered', '')
-        if premiered and premiered.startswith(str(year)):
-            return show
-    return None
-
-
 def load_episode_list(show_id):
     # type: (Text) -> List[InfoType]
     """Load episode list from TVmaze API"""
@@ -109,12 +96,13 @@ def load_episode_list(show_id):
         return []
 
 
-def load_show_info(show_id):
-    # type: (Text) -> Optional[InfoType]
+def load_show_info(show_id, episode_order):
+    # type: (Text, Text) -> Optional[InfoType]
     """
     Get full info for a single show
 
     :param show_id: TVmaze show ID
+    :param episode_order: preferred episode order
     :return: show info or None
     """
     show_info = cache_service.load_show_info_from_cache(show_id)
@@ -126,11 +114,19 @@ def load_show_info(show_id):
         except HTTPError as exc:
             logger.error('TVmaze returned an error: {}'.format(exc))
             return None
-        episode_list = load_episode_list(show_id)
         if isinstance(show_info['_embedded']['images'], list):
             show_info['_embedded']['images'].sort(key=lambda img: img['main'],
                                                   reverse=True)
-        process_episode_list(show_info, episode_list)
+        processed_episodes = None
+        if episode_order != 'default':
+            episode_list = load_alternate_episode_list(show_id, episode_order)
+            if episode_list:
+                processed_episodes = process_episode_list(episode_list)
+        if processed_episodes is None:
+            episode_list = load_episode_list(show_id)
+            if episode_list:
+                processed_episodes = process_episode_list(episode_list)
+        show_info['episodes'] = processed_episodes
         cache_service.cache_show_info(show_info)
     return show_info
 
@@ -152,25 +148,65 @@ def load_show_info_by_external_id(provider, show_id):
         return None
 
 
-def load_episode_info(show_id, episode_id):
-    # type: (Text, Text) -> Optional[InfoType]
+def load_episode_info(show_id, episode_id, episode_order):
+    # type: (Text, Text, Text) -> Optional[InfoType]
     """
     Load episode info
 
     :param show_id:
     :param episode_id:
+    :param episode_order:
     :return: episode info or None
     """
-    show_info = load_show_info(show_id)
+    episode_info = None
+    show_info = load_show_info(show_id, episode_order)
     if show_info is not None:
         try:
-            episode_info = show_info['episodes'][int(episode_id)]
+            episode_list = show_info['episodes']
+            episode_info = episode_list[six.text_type(episode_id)]
         except KeyError:
-            url = EPISODE_INFO_URL.format(episode_id)
-            try:
-                episode_info = _load_info(url)
-            except HTTPError as exc:
-                logger.error('TVmaze returned an error: {}'.format(exc))
-                return None
-        return episode_info
-    return None
+            logger.debug('Unable to retrieve cached episode info')
+    if episode_info is None:
+        url = EPISODE_INFO_URL.format(episode_id)
+        try:
+            episode_info = _load_info(url)
+        except HTTPError as exc:
+            logger.error('TVmaze returned an error: {}'.format(exc))
+    return episode_info
+
+
+def _get_alternate_episode_list_id(show_id, episode_order):
+    # type: (Text, Text) -> Optional[int]
+    alternate_order_id = None
+    url = ALTERNATE_LISTS_URL.format(show_id)
+    try:
+        alternate_lists = _load_info(url)
+    except HTTPError as exc:
+        logger.error('TVmaze returned an error: {}'.format(exc))
+    else:
+        for episode_list in alternate_lists:
+            if episode_list.get(episode_order):
+                alternate_order_id = episode_list['id']
+                break
+    return alternate_order_id
+
+
+def load_alternate_episode_list(show_id, episode_order):
+    # type: (Text, Text) -> List[InfoType]
+    alternate_episodes = []
+    alternate_order_id = _get_alternate_episode_list_id(show_id, episode_order)
+    if alternate_order_id is not None:
+        url = ALTERNATE_EPISODES_URL.format(alternate_order_id)
+        try:
+            raw_alternate_episodes = _load_info(url, {'embed': 'episodes'})
+        except HTTPError as exc:
+            logger.error('TVmaze returned an error: {}'.format(exc))
+        else:
+            for episode in raw_alternate_episodes:
+                episode_info = episode['_embedded']['episodes'][0]
+                episode_info['season'] = episode['season']
+                episode_info['number'] = episode['number']
+                alternate_episodes.append(episode_info)
+    if alternate_episodes:
+        alternate_episodes.sort(key=lambda ep: (ep['season'], ep['number']))
+    return alternate_episodes

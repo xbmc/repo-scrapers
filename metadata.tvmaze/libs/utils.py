@@ -31,6 +31,16 @@ except ImportError:
 ADDON_ID = 'metadata.tvmaze'
 ADDON = Addon()
 
+EPISODE_ORDER_MAP = {
+    0: 'default',
+    1: 'dvd_release',
+    2: 'verbatim_order',
+    3: 'country_premiere',
+    4: 'streaming_premiere',
+    5: 'broadcast_premiere',
+    6: 'language_premiere',
+}
+
 
 class logger:
     log_message_prefix = '[{} ({})]: '.format(ADDON_ID, ADDON.getAddonInfo('version'))
@@ -71,3 +81,12 @@ def safe_get(dct, key, default=None):
     if key in dct and dct[key] is not None:
         return dct[key]
     return default
+
+
+def get_episode_order(path_settings):
+    # type: (Dict[Text, Any]) -> Text
+    episode_order_enum = path_settings.get('episode_order')
+    if episode_order_enum is None:
+        episode_order_enum = int(ADDON.getSetting('episode_order'))
+    episode_order = EPISODE_ORDER_MAP.get(episode_order_enum, 'default')
+    return episode_order
