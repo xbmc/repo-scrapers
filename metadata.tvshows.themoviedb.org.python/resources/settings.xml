@@ -148,7 +148,7 @@
 				</setting>
 				<setting id="studio_country" type="boolean" label="30006" help="">
 					<level>0</level>
-					<default>true</default>
+					<default>false</default>
 					<control type="toggle"/>
 				</setting>
 				<setting id="enab_trailer" type="boolean" label="30305" help="">
