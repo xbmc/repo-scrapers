@@ -19,12 +19,16 @@
 
 from __future__ import absolute_import, unicode_literals
 
+import io
+import json
 import os
-from datetime import datetime, timedelta
+import sys
+import time
+from collections import OrderedDict
 
-from six import PY2, PY3
-from six.moves import cPickle as pickle
+import six
 import xbmcvfs
+
 try:
     from xbmcvfs import translatePath
 except ImportError:
@@ -38,15 +42,17 @@ except ImportError:
     pass
 
 
-CACHING_DURATION = timedelta(hours=1)  # type: timedelta
+CACHING_DURATION = 60 * 10
 
 
 def _get_cache_directory():  # pylint: disable=missing-docstring
     # type: () -> Text
     profile_dir = translatePath(ADDON.getAddonInfo('profile'))
-    if PY2:
+    if six.PY2:
         profile_dir = profile_dir.decode('utf-8')
     cache_dir = os.path.join(profile_dir, 'cache')
+    if not xbmcvfs.exists(profile_dir):
+        xbmcvfs.mkdir(profile_dir)
     if not xbmcvfs.exists(cache_dir):
         xbmcvfs.mkdir(cache_dir)
     return cache_dir
@@ -60,13 +66,16 @@ def cache_show_info(show_info):
     """
     Save show_info dict to cache
     """
-    file_name = str(show_info['id']) + '.pickle'
+    file_name = str(show_info['id']) + '.json'
     cache = {
         'show_info': show_info,
-        'timestamp': datetime.now(),
+        'timestamp': time.time(),
     }
+    cache_json = json.dumps(cache)
+    if isinstance(cache_json, six.text_type):
+        cache_json = cache_json.encode('utf-8')
     with open(os.path.join(CACHE_DIR, file_name), 'wb') as fo:
-        pickle.dump(cache, fo, protocol=2)
+        fo.write(cache_json)
 
 
 def load_show_info_from_cache(show_id):
@@ -77,17 +86,18 @@ def load_show_info_from_cache(show_id):
     :param show_id: show ID on TVmaze
     :return: show_info dict or None
     """
-    file_name = str(show_id) + '.pickle'
+    file_name = str(show_id) + '.json'
     try:
-        with open(os.path.join(CACHE_DIR, file_name), 'rb') as fo:
-            load_kwargs = {}
-            if PY3:
-                # https://forum.kodi.tv/showthread.php?tid=349813&pid=2970989#pid2970989
-                load_kwargs['encoding'] = 'bytes'
-            cache = pickle.load(fo, **load_kwargs)
-        if datetime.now() - cache['timestamp'] > CACHING_DURATION:
+        with io.open(os.path.join(CACHE_DIR, file_name), 'r',
+                     encoding='utf-8') as fo:
+            cache_json = fo.read()
+        loads_kwargs = {}
+        if sys.version_info < (3, 6):
+            loads_kwargs['object_pairs_hook'] = OrderedDict
+        cache = json.loads(cache_json, **loads_kwargs)
+        if time.time() - cache['timestamp'] > CACHING_DURATION:
             return None
         return cache['show_info']
-    except (IOError, EOFError, pickle.PickleError) as exc:
+    except (IOError, EOFError, ValueError) as exc:
         logger.debug('Cache error: {} {}'.format(type(exc), exc))
         return None

@@ -20,6 +20,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import re
+import sys
 from collections import OrderedDict, namedtuple
 
 import six
@@ -53,24 +54,28 @@ CLEAN_PLOT_REPLACEMENTS = (
 UrlParseResult = namedtuple('UrlParseResult', ['provider', 'show_id'])
 
 
-def process_episode_list(show_info, episode_list):
-    # type: (InfoType, List[InfoType]) -> None
+def process_episode_list(episode_list):
+    # type: (List[InfoType]) -> Dict[Text, InfoType]
     """Convert embedded episode list to a dict"""
-    episodes = OrderedDict()
+    if sys.version_info >= (3, 6):
+        ordered_dict_class = dict
+    else:
+        ordered_dict_class = OrderedDict
+    processed_episodes = ordered_dict_class()
     specials_list = []
     for episode in episode_list:
         # xbmc/video/VideoInfoScanner.cpp ~ line 1010
         # "episode 0 with non-zero season is valid! (e.g. prequel episode)"
         if episode['number'] is not None or episode.get('type') == 'significant_special':
-            episodes[episode['id']] = episode
+            processed_episodes[six.text_type(episode['id'])] = episode
         else:
             specials_list.append(episode)
     specials_list.sort(key=lambda ep: ep['airdate'])
     for ep_number, special in enumerate(specials_list, 1):
         special['season'] = 0
         special['number'] = ep_number
-        episodes[special['id']] = special
-    show_info['episodes'] = episodes
+        processed_episodes[six.text_type(special['id'])] = special
+    return processed_episodes
 
 
 def _clean_plot(plot):
@@ -193,16 +198,13 @@ def add_main_show_info(list_item, show_info, full_info=True):
         'episodeguide': str(show_info['id']),
     }
     if show_info['network'] is not None:
-        country = show_info['network']['country']
-        video['studio'] = '{} ({})'.format(show_info['network']['name'], country['code'])
-        video['country'] = country['name']
+        video['studio'] = show_info['network']['name']
+        video['country'] = show_info['network']['country']['name']
     elif show_info['webChannel'] is not None:
         video['studio'] = show_info['webChannel']['name']
         # Global Web Channels do not have a country specified
         if show_info['webChannel']['country'] is not None:
-            country = show_info['webChannel']['country']
-            video['country'] = country['name']
-            video['studio'] += ' ({})'.format(country['code'])
+            video['country'] = show_info['webChannel']['country']['name']
     if show_info['premiered'] is not None:
         video['year'] = int(show_info['premiered'][:4])
         video['premiered'] = show_info['premiered']
@@ -258,4 +260,20 @@ def parse_nfo_url(nfo):
         show_id_match = regexp.search(nfo)
         if show_id_match:
             return UrlParseResult(show_id_match.group(1), show_id_match.group(2))
+    return None
+
+
+def filter_by_year(shows, year):
+    # type: (List[InfoType], Text) -> Optional[InfoType]
+    """
+    Filter a show by year
+
+    :param shows: the list of shows from TVmaze
+    :param year: premiere year
+    :return: a found show or None
+    """
+    for show in shows:
+        premiered = safe_get(show['show'], 'premiered', '')
+        if premiered and premiered.startswith(str(year)):
+            return show
     return None
