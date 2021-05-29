@@ -72,6 +72,8 @@ class TMDBMovieScraper(object):
             movie['belongs_to_collection'] else None
         collection_fallback = _get_moviecollection(movie['belongs_to_collection'].get('id')) if \
             movie['belongs_to_collection'] else None
+        if collection and collection_fallback and 'images' in collection_fallback:
+            collection['images'] = collection_fallback['images']
 
         return {'movie': movie, 'movie_fallback': movie_fallback, 'collection': collection,
             'collection_fallback': collection_fallback}
