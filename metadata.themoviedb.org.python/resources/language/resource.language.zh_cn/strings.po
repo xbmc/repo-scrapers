@@ -17,8 +17,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgctxt "#30000"
-msgid "Enable Fanart"
-msgstr "启用同人画"
+msgid "Enable fanart from TMDb"
+msgstr "启用 TMDb 同人画"
 
 msgctxt "#30001"
 msgid "Prefer Trailer from HD-Trailers.net"
@@ -29,8 +29,8 @@ msgid "Preferred Language"
 msgstr "首选语言"
 
 msgctxt "#30003"
-msgid "Get Rating from"
-msgstr "获取评分于"
+msgid "Default Rating from"
+msgstr "默认评分获取于"
 
 msgctxt "#30004"
 msgid "Enable Trailer (YouTube)"
@@ -43,3 +43,39 @@ msgstr "使用未翻译片名"
 msgctxt "#30006"
 msgid "Preferred Certification Country"
 msgstr "首选电影分级国别"
+
+msgctxt "#30007"
+msgid "Add also IMDb ratings"
+msgstr "同时获取 IMDb 评分"
+
+msgctxt "#30008"
+msgid "Certification Prefix"
+msgstr "证书前缀"
+
+msgctxt "#30009"
+msgid "Add multiple studios"
+msgstr "获取多个制片公司"
+
+msgctxt "#30010"
+msgid "Add also Trakt.tv ratings"
+msgstr "同时获取 Trakt.tv 评分"
+
+msgctxt "#30011"
+msgid "Add keywords as tags"
+msgstr "关键字添加为标签"
+
+msgctxt "#30012"
+msgid "Separate TMDb fanart with title to landscape"
+msgstr "将含片名的 TMDb 同人画归入场景贴画"
+
+msgctxt "#30100"
+msgid "Language for Fanart.tv artwork"
+msgstr "Fanart.tv 艺术图片的语言"
+
+msgctxt "#30101"
+msgid "Fanart.tv personal API key (optional)"
+msgstr "Fanart.tv 个人 API 密钥（可选）"
+
+msgctxt "#30102"
+msgid "Enable artwork from Fanart.tv"
+msgstr "启用 Fanart.tv 艺术图片"
