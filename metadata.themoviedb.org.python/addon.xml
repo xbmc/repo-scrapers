@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org.python"
        name="The Movie Database Python"
-       version="1.3.2"
+       version="1.3.3"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -11,12 +11,11 @@
              library="python/scraper.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>v1.3.2 (2021-03-13)
-- Change: improve best match selection
-- Change: poster language fallback to highest rated
-- Fix: handle errors when connecting to TMDB
+    <news>v1.3.3 (2021-05-16)
+- Fix: fix collection image fallback from TMDB
 
-v1.3.0 - v1.3.1
+v1.3.0 - v1.3.2
+- Change: improve best match selection
 - Change: removed dependencies on requests, tmdbsimple, and trakt modules
 - Change: simplify artwork selection options</news>
     <summary lang="af_ZA">TMDB Fliek Skraper</summary>
