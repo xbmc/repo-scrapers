@@ -28,8 +28,8 @@ try:
 except ImportError:
     pass
 
-ADDON_ID = 'metadata.tvmaze'
 ADDON = Addon()
+ADDON_ID = ADDON.getAddonInfo('id')
 
 EPISODE_ORDER_MAP = {
     0: 'default',
