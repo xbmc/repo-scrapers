@@ -32,7 +32,7 @@
 
   <category label="30200">
     <setting type="sep"/>
-    <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="IMDb"/>
+    <setting label="30015" type="labelenum" values="IMDbFull|themoviedb.org" id="creditssource" default="IMDbFull"/>
     <setting type="sep"/>
     <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="themoviedb.org"/>
     <setting type="sep"/>
@@ -48,8 +48,6 @@
     <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
     <setting label="30034" subsetting="true" type="select" values="ar|bg|bn|ca|ch|cs|da|de|el|en|eo|es|eu|fa|fi|fr|he|hi|hr|hu|id|it|ja|ka|ko|lt|lv|ml|nb|nl|no|pl|pt|ro|ru|sk|sl|sr|sv|ta|th|tr|uk|vi|zh" id="tmdbthumblanguage" default="en" enable="eq(-1,true)"/>
-    <setting type="sep"/>
-    <setting label="30504" type="bool" id="imdbthumbs" default="false"/>
     <setting type="sep"/>
     <setting type="lsep" label="30501"/>
     <setting type="sep"/>

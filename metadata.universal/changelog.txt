@@ -1,3 +1,6 @@
+[B]5.5.0[/B]
+- fixed: IMDb scraping after site layout changes
+
 [B]5.4.6[/B]
 - changed: udated language codes - languages will need to be re-selected
 
