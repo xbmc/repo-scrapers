@@ -1,3 +1,6 @@
+[B]3.2.2[/B]
+- fixed: further fixes to IMDb
+
 [B]3.2.1[/B]
 - fixed: support both previous and new IMDb layout to secure scraping
 
