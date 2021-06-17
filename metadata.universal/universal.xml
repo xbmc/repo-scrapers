@@ -14,10 +14,10 @@
 			<expression>themoviedb.org</expression>
 		</RegExp>
 		<RegExp input="$INFO[searchservice]" output="$$16" dest="3">
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1/|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16">
 				<expression clear="yes" noclean="1">imdb....?/Title\?([0-9]*)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1/|accept-language=en-us/&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16+">
+			<RegExp input="$$1" output="&lt;url cache=&quot;tt\1-main.html&quot;&gt;https://www.imdb.com/title/tt\1/|accept-language=en-us&lt;/url&gt;&lt;id&gt;tt\1&lt;/id&gt;" dest="16+">
 				<expression noclean="1">imdb....?/title/tt([0-9]*)</expression>
 			</RegExp>
 			<expression>IMDb</expression>
@@ -91,10 +91,10 @@
 				<RegExp input="$$1" output="\1" dest="7">
 					<expression clear="yes">/title/([t0-9]*)/(combined|faq|releaseinfo|vote)</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7/|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\1&lt;/title&gt;&lt;year&gt;\2&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7/|accept-language=en-us&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5">
 					<expression clear="yes" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?([^&quot;]*?)(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\)</expression>
 				</RegExp>
-				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7/|accept-language=en-us/&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5+">
+				<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;year&gt;\1&lt;/year&gt;&lt;url cache=&quot;$$7-main.html&quot;&gt;https://www.imdb.com/title/$$7/|accept-language=en-us&lt;/url&gt;&lt;id&gt;$$7&lt;/id&gt;&lt;/entity&gt;" dest="5+">
 					<expression fixchars="2" noclean="1">&lt;meta name=&quot;title&quot; content=&quot;(?:&amp;#x22;)?[^&quot;]*?(?:&amp;#x22;)? \([^\(]*?([0-9]{4})(?:–\s)?\).*?Also Known As:&lt;/h4&gt;([^\n]*)</expression>
 				</RegExp>
 				<RegExp input="$$1" output="\1" dest="4">
