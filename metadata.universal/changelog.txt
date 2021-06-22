@@ -1,3 +1,6 @@
+[B]5.5.3[/B]
+- fixed: added back scraping of runtime from IMDb
+
 [B]5.5.2[/B]
 - fixed: further fixes to IMDb scraping after site layout changes
 

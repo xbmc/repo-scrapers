@@ -193,6 +193,9 @@
 			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
 				<expression noclean="1">&quot;runtime&quot;:([0-9]+)</expression>
 			</RegExp>
+			<RegExp input="$$1" output="&lt;runtime&gt;\1&lt;/runtime&gt;" dest="5+">
+				<expression trim="1">&lt;h4[^&gt;]*?&gt;Runtime:&lt;/h4&gt;[^0-9]*([0-9]+)</expression>
+			</RegExp>
 			<RegExp input="$INFO[mratingsource]|default|$INFO[alsoimdb]" output="&lt;chain function=&quot;GetIMDBRatingsById&quot;&gt;$$2\1&lt;/chain&gt;" dest="5+">
 				<expression>IMDb(\|default)|true</expression>
 			</RegExp>
