@@ -521,6 +521,9 @@
 			<RegExp input="$$7" output="&lt;thumb preview=&quot;$$20w780\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="2">
 				<expression clear="yes" repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:(&quot;xx&quot;|null)</expression>
 			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb preview=&quot;$$20w780\2&quot;&gt;$$20original\2&lt;/thumb&gt;" dest="2+">
+				<expression clear="yes" repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:(&quot;xx&quot;|null),&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
 			<expression noclean="1">(.+)</expression>
 		</RegExp>
 	</ParseTMDBFanart>
@@ -551,7 +554,13 @@
 				<expression clear="yes" repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:&quot;$$11</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;landscape&quot; preview=&quot;$$20w780\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
+				<expression clear="yes" repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;$$11&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;landscape&quot; preview=&quot;$$20w780\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
 				<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)&quot;,&quot;height&quot;:[^&quot;]*&quot;[^&quot;]*&quot;:&quot;en</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;landscape&quot; preview=&quot;$$20w780\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
+				<expression clear="yes" repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;en&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$9" dest="2">
 				<expression>(.+)</expression>
@@ -586,10 +595,19 @@
 				<expression repeat="yes" clear="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;$$11</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
+				<expression repeat="yes" clear="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;$$11&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
 				<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;en</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="9+">
+				<expression repeat="yes" clear="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;en&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="10">
 				<expression repeat="yes" clear="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:null</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="10+">
+				<expression repeat="yes" clear="yes" noclean="1">&quot;iso[^&quot;]*&quot;:null,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="$$9" dest="2">
 				<expression>(.+)</expression>
@@ -611,6 +629,9 @@
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="2">
 				<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;[^&quot;]*</expression>
+			</RegExp>
+			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="2">
+				<expression repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;[^&quot;]*&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
