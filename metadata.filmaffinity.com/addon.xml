@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.filmaffinity.com"
-	name="FilmAffinity"
-	version="1.9.5"
-	provider-name="hectorZiN,agjacome,xbmcero,pancheto,MaDDoGo">
+			 name="FilmAffinity"
+			 version="1.9.7"
+			 provider-name="hectorZiN, agjacome, xbmcero, pancheto, MaDDoGo">
 	<requires>
 		<import addon="xbmc.metadata" version="2.1.0"/>
 		<import addon="metadata.common.themoviedb.org" version="2.9.2"/>
@@ -33,11 +33,11 @@
 		<description lang="sv">Ladda ner filminformation från www.filmaffinity.com</description>
 		<disclaimer lang="es">Se recomienda configurar antes de usar.</disclaimer>
 		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+		<license>GPL v2.0</license>
 		<language>es</language>
-		<forum></forum>
-		<website></website>
-		<email></email>
 		<source>https://github.com/MaDDoGo/metadata.filmaffinity.com</source>
+		<assets>
+			<icon>icon.png</icon>
+		</assets>
 	</extension>
 </addon>
