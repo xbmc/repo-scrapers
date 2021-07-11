@@ -18,14 +18,19 @@
 # IMDb ratings based on code in metadata.themoviedb.org.python by Team Kodi
 # pylint: disable=missing-docstring
 
+import json
 import re
 from . import api_utils
 from . import get_imdb_id
 
 IMDB_RATINGS_URL = 'https://www.imdb.com/title/{}/'
-IMDB_RATING_REGEX = re.compile(r'itemprop="ratingValue".*?>.*?([\d.]+).*?<')
-IMDB_VOTES_REGEX = re.compile(r'itemprop="ratingCount".*?>.*?([\d,]+).*?<')
-IMDB_TOP250_REGEX = re.compile(r'Top Rated Movies #(\d+)')
+IMDB_LDJSON_REGEX = re.compile(r'<script type="application/ld\+json">(.*?)</script>', re.DOTALL)
+IMDB_TOP250_REGEX = re.compile(r'Top rated movie #(\d+)')
+
+# previous IMDB page design before June 2021
+IMDB_RATING_REGEX_PREVIOUS = re.compile(r'itemprop="ratingValue".*?>.*?([\d.]+).*?<')
+IMDB_VOTES_REGEX_PREVIOUS = re.compile(r'itemprop="ratingCount".*?>.*?([\d,]+).*?<')
+IMDB_TOP250_REGEX_PREVIOUS = re.compile(r'Top Rated Movies #(\d+)')
 
 def get_details(uniqueids):
     imdb_id = get_imdb_id(uniqueids)
@@ -47,26 +52,53 @@ def _assemble_imdb_result(votes, rating, top250):
     return result
 
 def _parse_imdb_result(input_html):
-    rating = _parse_imdb_rating(input_html)
-    votes = _parse_imdb_votes(input_html)
-    top250 = _parse_imdb_top250(input_html)
+    if 'TitleBlock__Container-' in input_html:
+        rating, votes = _parse_imdb_rating_and_votes(input_html)
+        top250 = _parse_imdb_top250(input_html)
+    else:
+        # try previous parsers
+        rating = _parse_imdb_rating_previous(input_html)
+        votes = _parse_imdb_votes_previous(input_html)
+        top250 = _parse_imdb_top250_previous(input_html)
 
     return votes, rating, top250
 
-def _parse_imdb_rating(input_html):
-    match = re.search(IMDB_RATING_REGEX, input_html)
+def _parse_imdb_rating_and_votes(input_html):
+    match = re.search(IMDB_LDJSON_REGEX, input_html)
+    if not match:
+        return None, None
+
+    try:
+        ldjson = json.loads(match.group(1).replace('\n', ''))
+    except json.decoder.JSONDecodeError:
+        return None, None
+
+    try:
+        aggregateRating = ldjson.get('aggregateRating', {})
+        return aggregateRating.get('ratingValue'), aggregateRating.get('ratingCount')
+    except AttributeError:
+        return None, None
+
+def _parse_imdb_top250(input_html):
+    match = re.search(IMDB_TOP250_REGEX, input_html)
+    if match:
+        return int(match.group(1))
+    return None
+
+def _parse_imdb_rating_previous(input_html):
+    match = re.search(IMDB_RATING_REGEX_PREVIOUS, input_html)
     if (match):
         return float(match.group(1))
     return None
 
-def _parse_imdb_votes(input_html):
-    match = re.search(IMDB_VOTES_REGEX, input_html)
+def _parse_imdb_votes_previous(input_html):
+    match = re.search(IMDB_VOTES_REGEX_PREVIOUS, input_html)
     if (match):
         return int(match.group(1).replace(',', ''))
     return None
 
-def _parse_imdb_top250(input_html):
-    match = re.search(IMDB_TOP250_REGEX, input_html)
+def _parse_imdb_top250_previous(input_html):
+    match = re.search(IMDB_TOP250_REGEX_PREVIOUS, input_html)
     if (match):
         return int(match.group(1))
     return None
