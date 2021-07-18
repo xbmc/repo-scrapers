@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"PO-Revision-Date: 2021-04-05 16:07+0000\n"
+"Last-Translator: Edson Armando <edsonarmando78@outlook.com>\n"
+"Language-Team: Spanish (Mexico) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/es_mx/>\n"
+"Language: es_mx\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5.3\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
@@ -26,133 +27,128 @@ msgstr ""
 
 msgctxt "#30000"
 msgid "Preferred language"
-msgstr ""
+msgstr "Idioma preferido"
 
 msgctxt "#30001"
 msgid "Preferred certification country"
-msgstr ""
+msgstr "País de certificación preferido"
 
 msgctxt "#30002"
 msgid "Include certification prefix"
-msgstr ""
+msgstr "Incluir prefijo de certificación"
 
 msgctxt "#30003"
 msgid "Prefix"
-msgstr ""
+msgstr "Prefijo"
 
 msgctxt "#30004"
 msgid "Keep original title"
-msgstr ""
+msgstr "Mantener título original"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
-msgstr ""
+msgstr "Categorizar fanart con texto como arte panorámico"
 
 msgctxt "#30006"
 msgid "Include country code with studio"
-msgstr ""
+msgstr "Incluir código de país con estudio"
 
-# empty strings from 30006 to 30099
-
+# empty strings from 30007 to 30099
 msgctxt "#30100"
 msgid "Fanart.tv"
-msgstr ""
+msgstr "Fanart.tv"
 
 msgctxt "#30101"
 msgid "Client key (optional)"
-msgstr ""
+msgstr "Clave de cliente (opcional)"
 
 msgctxt "#30102"
 msgid "Enable fanart"
-msgstr ""
+msgstr "Activar fanart"
 
 msgctxt "#30103"
 msgid "Enable poster"
-msgstr ""
+msgstr "Activar póster"
 
 msgctxt "#30104"
 msgid "Enable banner"
-msgstr ""
+msgstr "Activar banner"
 
 msgctxt "#30105"
 msgid "Enable clearlogo"
-msgstr ""
+msgstr "Activar clearlogo"
 
 msgctxt "#30106"
 msgid "Enable clearart"
-msgstr ""
+msgstr "Activar clearart"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr ""
+msgstr "Activar panorámica"
 
 msgctxt "#30108"
 msgid "Enable character art"
-msgstr ""
+msgstr "Activar character art"
 
 msgctxt "#30109"
 msgid "Include art from fanart.tv"
-msgstr ""
+msgstr "Incluir arte de fanart.tv"
 
 # empty strings from 30110 to 30149
-
 msgctxt "#30150"
 msgid "Enable season poster"
-msgstr ""
+msgstr "Activar póster de temporada"
 
 msgctxt "#30151"
 msgid "Enable season banner"
-msgstr ""
+msgstr "Activar banner de temporada"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr ""
+msgstr "Activar panorámica de temporada"
 
 # empty strings from 30153 to 30200
-
 msgctxt "#30200"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 msgctxt "#30201"
 msgid "Verbose debug logging"
-msgstr ""
+msgstr "Registro de depuración detallado"
 
 # emptry strings from 30202 to 30299
-
 msgctxt "#30300"
 msgid "Ratings"
-msgstr ""
+msgstr "Calificaciones"
 
 msgctxt "#30301"
 msgid "Default rating from"
-msgstr ""
+msgstr "Calificación por defecto de"
 
 msgctxt "#30302"
 msgid "Also add IMDb ratings"
-msgstr ""
+msgstr "Agregar calificaciones de IMDb"
 
 msgctxt "#30303"
 msgid "Also add Trakt.tv ratings"
-msgstr ""
+msgstr "Agregar también calificaciones de Trakt.tv"
 
 msgctxt "#30304"
 msgid "Also add TMDb ratings"
-msgstr ""
+msgstr "Agregar también calificaciones de TMDb"
 
 msgctxt "#30305"
 msgid "Enable Trailer"
-msgstr ""
+msgstr "Activar avance"
 
 msgctxt "#30306"
 msgid "Addon Player"
-msgstr ""
+msgstr "Complemento de reproducción"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
-msgstr ""
-
+msgstr "Tubed"

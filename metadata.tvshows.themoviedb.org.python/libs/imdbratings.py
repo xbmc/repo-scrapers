@@ -24,8 +24,8 @@ from . import api_utils
 from . import settings
 
 IMDB_RATINGS_URL = 'https://www.imdb.com/title/{}/'
-IMDB_RATING_REGEX = re.compile(r'itemprop="ratingValue".*?>.*?([\d.]+).*?<')
-IMDB_VOTES_REGEX = re.compile(r'itemprop="ratingCount".*?>.*?([\d,]+).*?<')
+IMDB_RATING_REGEX = re.compile(r'"AggregateRating".*?"ratingValue".*?([\d.]+).*?<')
+IMDB_VOTES_REGEX = re.compile(r'"AggregateRating".*?"ratingCount".*?([\d]+).*?<')
 
 
 def get_details(imdb_id):
