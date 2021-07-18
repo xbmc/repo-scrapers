@@ -1,3 +1,7 @@
+1.4.6
+fix IMDB HTML scrape to work with new IMDB site
+language updates
+
 1.4.5
 fix settings file to show correct default for studio and country storage
 

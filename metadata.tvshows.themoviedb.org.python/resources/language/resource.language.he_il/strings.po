@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"PO-Revision-Date: 2021-07-17 07:29+0000\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Hebrew (Israel) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/he_il/>\n"
+"Language: he_il\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 4.7.1\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
@@ -26,23 +27,23 @@ msgstr ""
 
 msgctxt "#30000"
 msgid "Preferred language"
-msgstr ""
+msgstr "שפה מועדפת"
 
 msgctxt "#30001"
 msgid "Preferred certification country"
-msgstr ""
+msgstr "מדינת הסמכה מועדפת"
 
 msgctxt "#30002"
 msgid "Include certification prefix"
-msgstr ""
+msgstr "הוספת קידומת הסמכה"
 
 msgctxt "#30003"
 msgid "Prefix"
-msgstr ""
+msgstr "קידומת"
 
 msgctxt "#30004"
 msgid "Keep original title"
-msgstr ""
+msgstr "להשאיר את הכותרת המקורית"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
@@ -50,17 +51,16 @@ msgstr ""
 
 msgctxt "#30006"
 msgid "Include country code with studio"
-msgstr ""
+msgstr "לכלול את קוד המדינה עם הסטודיו"
 
-# empty strings from 30006 to 30099
-
+# empty strings from 30007 to 30099
 msgctxt "#30100"
 msgid "Fanart.tv"
-msgstr ""
+msgstr "Fanart.tv"
 
 msgctxt "#30101"
 msgid "Client key (optional)"
-msgstr ""
+msgstr "מפתח לקוח (רשות)"
 
 msgctxt "#30102"
 msgid "Enable fanart"
@@ -95,7 +95,6 @@ msgid "Include art from fanart.tv"
 msgstr ""
 
 # empty strings from 30110 to 30149
-
 msgctxt "#30150"
 msgid "Enable season poster"
 msgstr ""
@@ -109,50 +108,47 @@ msgid "Enable season landscape"
 msgstr ""
 
 # empty strings from 30153 to 30200
-
 msgctxt "#30200"
 msgid "Advanced"
-msgstr ""
+msgstr "מתקדם"
 
 msgctxt "#30201"
 msgid "Verbose debug logging"
 msgstr ""
 
 # emptry strings from 30202 to 30299
-
 msgctxt "#30300"
 msgid "Ratings"
-msgstr ""
+msgstr "דירוגים"
 
 msgctxt "#30301"
 msgid "Default rating from"
-msgstr ""
+msgstr "דירוגי בררת מחדל מ־"
 
 msgctxt "#30302"
 msgid "Also add IMDb ratings"
-msgstr ""
+msgstr "הוספת דירוגים גם מ־IMDb"
 
 msgctxt "#30303"
 msgid "Also add Trakt.tv ratings"
-msgstr ""
+msgstr "הוספת דירוגים גם מ־Trakt.tv"
 
 msgctxt "#30304"
 msgid "Also add TMDb ratings"
-msgstr ""
+msgstr "הוספת דירוגים גם מ־TMDb"
 
 msgctxt "#30305"
 msgid "Enable Trailer"
-msgstr ""
+msgstr "הפעלת קדימון"
 
 msgctxt "#30306"
 msgid "Addon Player"
-msgstr ""
+msgstr "נגן כתוסף"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
-msgstr ""
-
+msgstr "Tubed"
