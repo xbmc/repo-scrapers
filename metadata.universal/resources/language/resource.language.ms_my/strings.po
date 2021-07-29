@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Pengikis Cakera Universal"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Pengikis Universal buat masa ini merupakan pengikis paling boleh disuai dengan mengutip maklumat dari laman tersokong berikut: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Pengikis ini buat masa ini merupakan pengikis lalai Pasukan-Kodi. Gelintar awalan boleh dibuat sama ada pada TMDb atau IMDb (berdasarkan pada tetapan), tetapi yang berikut boleh ditetapkan mengikut medan yang mana anda boleh tentukan maklumat secara khusus."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Benarkan Seni Peminat Artis dari themovie.org"

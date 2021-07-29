@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "通用电影刮削器"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "通用刮削器是当前定制功能最强的刮削器，它支持从以下站点获取信息：IMDb、TMDb、Rotten Tomatoes、Trakt.tv、OFDb.de、port.hu。此刮削器目前是 Kodi 开发团队的旗舰级刮削器。初始结果总是先从 TMDb 或 IMDb（根据设置）获取，然后可以针对不同项目分别设置从不同站点获取信息。"
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "启用 themoviedb.org 同人画"

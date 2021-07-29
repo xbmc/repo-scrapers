@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "ஒட்டு மொத்தமான நிகழ்படம் சுரண்டி"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "உலகளாவிய சுரண்டி தற்போது பின்வரும் ஆதரவு தளங்களில் இருந்து தகவல்களை சேகரித்து உள்ளது: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. ஆரம்ப தேடலானது, TMDb அல்லது IMDb (அமைப்புகளை பொறுத்து) செய்யலாம், அதன் பின்னர் உங்களுக்கு தேவையான குறிப்பிட்ட தகவல்களை அமைப்பு செய்து கொள்ள முடியும்."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "themoviedb.org இருந்து கலைஞர் விசிறிபடங்களை செயல்படுத்து"

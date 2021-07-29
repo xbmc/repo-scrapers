@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Universal sakupljač za filmove"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Univerzalni sakupljač je trenutno najprilagodljiviji sakupljač koji nabavlja informacije sa sljedećih stranica: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Ovaj sakupljač je trenutno vodeći među Team-Kodi sakupljačima. Početna pretraga može biti s TMDb ili IMDb (ovisno o postavkama), ali nadalje se može podesiti polje po polje s koje stranice želite određenu informaciju."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Omogući slike omota s themoviedb.org"
