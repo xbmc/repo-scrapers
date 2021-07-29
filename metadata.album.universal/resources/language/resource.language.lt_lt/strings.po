@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 4.7.2\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Albums"
+msgstr "Universalus albumų skreperis"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
+msgstr "Šis skreperis surenka informaciją iš šių palaikomų puslapių: MusicBrainz, last.fm, allmusic.com ir amazon.de bei atsiunčia iliustracijas iš: fanart.tv, last.fm ir allmusic.com. Jis gali būti nustatytas laukas po laiko, kad nurodyti iš kokio puslapio paimti konkrečią informaciją.&#10;&#10;Pradinė paieška visada atliekama MusicBrainz puslapyje. Jei kartais allmusic ir/raba amazon.de nuorodos nepridėtos į MusicBrainz puslapį, laukai iš allmusic.com ir/arba amazon.de negalės būti gauti (tačiau labai lengva pridėti tas trūkstamas nuorodas)."
+
 msgctxt "#30000"
 msgid "Grab Album Thumbs from fanart.tv"
 msgstr "Paimti albumų miniatiūras iš fanart.tv"

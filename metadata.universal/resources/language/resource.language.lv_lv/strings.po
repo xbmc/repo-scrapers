@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Universālais filmu skrāpis"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Universālais skrāpis pašlaik ir vispielāgojamākais skrāpis, kas atbalsta informācijas savākšanu no šādām vietnēm: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Šis skrāpis pašreiz ir Team-Kodi skrāpju flagmanis. Sākotnējā meklēšana var notikt vai nu TMDb vai arī IMDb (atbilstoši iestatījumiem), bet visu pārējo informāciju var iestatīt lauciņu pa lauciņam, no kuras lapas iegūst specifisko informāciju."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Ieslēgt fanumākslu no themoviedb.org"

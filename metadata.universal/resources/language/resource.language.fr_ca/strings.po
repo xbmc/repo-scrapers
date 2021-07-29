@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Extracteur universel pour les films"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "L'extracteur universel est présentement l'extracteur le plus personnalisable en collectant des informations depuis les sites suivants pris en charge : IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Cet extracteur est présentement le vaisseau amiral des extracteurs de l'équipe Kodi. La recherche initiale peut être faite soit sur TMDb ou IMDb (d'après les paramètres), mais il est ensuite possible de configurer champ par champ sur quel site aller chercher chaque information spécifique."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Activer le fanart de themoviedb.org"

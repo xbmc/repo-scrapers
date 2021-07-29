@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Artists"
+msgstr "Univerzálny zdroj získavania dát pre umelcov"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
+msgstr "Tento zdroj získavania dát zbiera infomácie z nasledujúcich podporovaných stránok: TheAudioDb.com, MusicBrainz, last.fm a allmusic.com. Grafiku získava zo stránok: fanart.tv, htbackdrops.com, last.fm a allmusic.com. Je možné podrobne nastaviť, z ktorej stránky chcete získať konkrétne informácie.&#10;&#10;Počiatočné hľadanie je vždy na stránke MusicBrainz. V prípade, že odkaz pre allmusic nie je pridaný na stránku MusicBrainz, nie je možné získať údaje zo stránky allmusic.com (je ale veľmi jednoduché tieto chýbajúce odkazy pridať)."
+
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"
 msgstr "Povoliť Fanart interpretov zo stránky HTBackdrops.com"

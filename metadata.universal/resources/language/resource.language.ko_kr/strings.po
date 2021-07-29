@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Universal 영화 정보수집기"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Universal Scraper는 항목별 사용자 설정이 가능한 정보수집기이며 다음 사이트를 지원합니다: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. 이 정보수집기는 Team-Kodi의 주력 수집기입니다. 초기 검색은 (설정에 따라) TMDb 또는 IMDB에서 수행하지만 특정 정보를 지정한 사이트에서 가져오도록 필드별 설정이 가능합니다."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "themoviedb.org 에서 팬아트 가져오기"

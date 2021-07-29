@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2;\n"
 "X-Generator: Weblate 4.7.2\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Catalog de filme universal"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Acest catalog este completat cu informații de la următoarele siteuri: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Căutarea inițială se face întotdeauna pe TMDb, dar după aceasta fiecare câmp poate fi setat să ia informația de pe un site specific."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Activează ecranul media de la themoviedb.org"

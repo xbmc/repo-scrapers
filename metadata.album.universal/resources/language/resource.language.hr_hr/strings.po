@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.7.2\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Albums"
+msgstr "Univerzalni sakupljač informacija albuma"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
+msgstr "Ovaj sakupljač prikuplja informacije sa sljedećih podržanih stranica: MusicBrainz, last.fm, allmusic.com i amazon.de, dok preuzima omote filmova sa: fanart.tv, last.fm i allmusic.com. Može poredati popis stranica iz kojih želite sakupiti informacije jednu iza druge.&#10;&#10;Pretraga uvijek započinje na MusicBrainzu. U slučaju da allmusic i/ili amazon.de poveznice nisu dodane na MusicBrainz stranicu, polja sa allmusic.com i/ili amazon.de ne mogu se nabaviti (ali je vrlo jednostavno moguće dodati te nedostajuće poveznice)."
+
 msgctxt "#30000"
 msgid "Grab Album Thumbs from fanart.tv"
 msgstr "Nabavi minijature omota s fanart.tv"

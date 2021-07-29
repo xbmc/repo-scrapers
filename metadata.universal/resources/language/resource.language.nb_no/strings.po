@@ -17,6 +17,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.7.2\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Universal Film Scraper"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Denne scraper samler inn informasjon fra følgende støttede steder:  IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. På nåværende tidspunkt er denne scraperen flaggskipet blant Team-Kodi scrapere. Første søk skjer alltid i TMDb eller IMDb (avhengig av innstillinger). I etterfølgende søk kan det derimot velges felt for felt hvilken side den spesifikke informasjonen ønskes fra."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Hent fanart fra themoviedb.org"

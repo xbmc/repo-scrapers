@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Movie Scraper"
+msgstr "Univerzális film adat leolvasó"
+
+msgctxt "Addon Description"
+msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
+msgstr "Ez a leolvasó a következő helyekről gyűjt információkat: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. A kezdő keresést beállítástől függően az IMDb-n vagy a themoviedb.oeg-on végzi, de utána mezőnként beállítható, hogy melyik forrást használja az adott információ lekérésére."
+
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
 msgstr "Fanartképek letöltése a themoviedb.org-ról"

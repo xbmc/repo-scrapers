@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Artists"
+msgstr "Universiell artistskrapa"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
+msgstr "Denna skrapa samlar information från följande sajter: TheAudioDb.com, MusicBrainz, last.fm och allmusic.com, medans den samlar konstverk från: fanart.tv, htbackdrops.com, last.fm och allmusic.com. Du kan ange fält för fält från vilken sajt du vill ha den specifika inforamtionen från. Den initiala sökningen är alltid gjord på MusicBrainz. Om inte allmusic.com länken läggs till på MusicBrainz sajten, kan inte fält från allmusic.com hämtas (väldigt enkelt att lägga till dom saknade länkarna dock)."
+
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"
 msgstr "Aktivera artistfanart från HTBackdrops.com"

@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Artists"
+msgstr "Collecteur universel d'artistes"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
+msgstr "Ce collecteur répertorie les informations des sites suivants : TheAudioDb.com, MusicBrainz, Last.fm et allmusic.com tout en assemblant les illustrations depuis : fanart.tv, htbackdrops.com, last.fm et allmusic.com. Vous pouvez définir la source d'information pour chaque champ.&#10;&#10;La recherche initiale est toujours faite à partir de MusicBrainz. xxxxxxxx (en attente du retour de l'équipe Kodi) xxxxxxxxxxx"
+
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"
 msgstr "Activer les fanarts d'artiste de HTBackdrops.com"

@@ -16,6 +16,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgctxt "Addon Summary"
+msgid "Universal Scraper for Artists"
+msgstr "Universal Scraper for Artists"
+
+msgctxt "Addon Description"
+msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
+msgstr "이 자료수집기는 다음의 사이트에서 정보를 가져옵니다: TheAudioDb.com, MusicBrainz, last.fm, allmusic.com.아트워크는 다음의 사이트에서 가져옵니다: fanart.tv, htbackdrops.com, last.fm, allmusic.com. 특정 정보를 지정한 사이트에서 가져오도록 필드별로 설정할 수 있습니다.&#10;&#10;초기 검색은 항상 MusicBrainz에서 수행합니다. allmusic 링크가 MusicBrainz 사이트의 필드에 추가되어 있지 않은 경우 정보를 가져올 수 없습니다(누락된 링크는 쉽게 추가할 수 있습니다)."
+
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"
 msgstr "HTBackdrops.com 에서 아티스트 팬아트 가져오기"
