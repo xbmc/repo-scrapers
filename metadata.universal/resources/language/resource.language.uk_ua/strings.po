@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kodi Translation Team\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/xbmc-addons/language/uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 msgctxt "#30001"
@@ -24,10 +24,6 @@ msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
 msgstr "Включити постери з themoviedb.org"
 
-msgctxt "#30003"
-msgid "Enable posters from IMPAwards"
-msgstr "Включити постери з IMPAwards"
-
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
 msgstr "Включити постери з MoviePosterDB"
@@ -36,13 +32,11 @@ msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
 msgstr "Отримати трейлери безпосередньо з YouTube"
 
-msgctxt "#30006"
-msgid "Enable trailers from HD-Trailers.net"
-msgstr "Включити трейлери з HD-Trailers.net"
-
+# empty string with id 30006
+# empty string with id 30007
 msgctxt "#30008"
-msgid "     Preferred Title Language from"
-msgstr "     Бажана мова назв з"
+msgid "Preferred Title Language from"
+msgstr ""
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -56,21 +50,30 @@ msgctxt "#30012"
 msgid "Trailers"
 msgstr "Трейлери"
 
+msgctxt "#30013"
+msgid "Get Set (Collection) Name from themoviedb.org"
+msgstr ""
+
 msgctxt "#30014"
 msgid "Get Plot from"
 msgstr "Отримати сюжет з"
+
+msgctxt "#30015"
+msgid "Get Cast / Directors / Writers From"
+msgstr ""
 
 msgctxt "#30016"
 msgid "Plot Sources"
 msgstr "Джерела сюжетів"
 
+# empty strings from id 30017 to 30019
 msgctxt "#30020"
-msgid "     Preferred Plot Language"
-msgstr "Бажана мова сюжету"
+msgid "Preferred Plot Language"
+msgstr ""
 
 msgctxt "#30021"
-msgid "Get Ratings from"
-msgstr "Отримати рейтинги з"
+msgid "Get Default Ratings from"
+msgstr ""
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -84,25 +87,49 @@ msgctxt "#30024"
 msgid "Title Sources"
 msgstr "Джерело назв"
 
+msgctxt "#30025"
+msgid "Cast & Credits Sources"
+msgstr ""
+
 msgctxt "#30026"
 msgid "Genres Sources"
 msgstr "Джерело жанрів"
 
 msgctxt "#30027"
-msgid "     Preferred Title Language"
-msgstr "Бажана мова назв"
+msgid "Preferred Title Language"
+msgstr ""
 
 msgctxt "#30028"
 msgid "Trailer Sources"
 msgstr "Джерела трейлерів"
 
+msgctxt "#30029"
+msgid "Movie Collections"
+msgstr ""
+
 msgctxt "#30030"
 msgid "Rating Sources"
 msgstr "Джерела рейтингів"
 
-msgctxt "#30036"
-msgid "Enable posters from IMDb"
-msgstr "Включити постери з IMDb"
+msgctxt "#30031"
+msgid "Certification Settings"
+msgstr ""
+
+msgctxt "#30032"
+msgid "Get Certification From"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Preferred Certification Country"
+msgstr ""
+
+msgctxt "#30034"
+msgid "Preferred Poster Language"
+msgstr ""
+
+msgctxt "#30035"
+msgid "Certification Prefix"
+msgstr ""
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
@@ -116,21 +143,94 @@ msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
 msgstr "Включити трейлери з trakt.tv"
 
+msgctxt "#30040"
+msgid "Genre Language"
+msgstr ""
+
 msgctxt "#30041"
-msgid "     Preferred Trailer Language"
-msgstr "Бажана мова трейлерів"
+msgid "Preferred Trailer Language"
+msgstr ""
+
+msgctxt "#30042"
+msgid "Get Tagline From"
+msgstr ""
+
+msgctxt "#30043"
+msgid "Preferred Tagline Language"
+msgstr ""
+
+msgctxt "#30044"
+msgid "Get IMDb TOP250 Ranking"
+msgstr ""
+
+msgctxt "#30045"
+msgid "Get Outline From"
+msgstr ""
+
+msgctxt "#30046"
+msgid "Preferred Set (Collection) Name Language"
+msgstr ""
 
 msgctxt "#30047"
 msgid "Poster Sources"
 msgstr "Джерела постерів"
 
+msgctxt "#30048"
+msgid "Get Keywords and Save as Tags from"
+msgstr ""
+
 msgctxt "#30100"
 msgid "Rating"
 msgstr "Рейтинг"
 
+# empty strings from id 30101 to 30109
+msgctxt "#30110"
+msgid "Rating Generated Using"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Also get ratings from IMDb"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Also get ratings from Rotten Tomatoes"
+msgstr ""
+
+msgctxt "#30113"
+msgid "Also get ratings from MetaCritic"
+msgstr ""
+
+msgctxt "#30114"
+msgid "Also get ratings from themoviedb.org"
+msgstr ""
+
+msgctxt "#30115"
+msgid "Use the Score Aggregated from"
+msgstr ""
+
+msgctxt "#30116"
+msgid "OMDB Api Key"
+msgstr ""
+
+msgctxt "#30117"
+msgid "Please Register Api Key on omdbapi.com and Add it Above"
+msgstr ""
+
+msgctxt "#30118"
+msgid "Also get non-default Rotten Tomatoes ratings"
+msgstr ""
+
 msgctxt "#30200"
 msgid "Credits"
 msgstr "Автори"
+
+msgctxt "#30201"
+msgid "Get Studio from"
+msgstr ""
+
+msgctxt "#30202"
+msgid "Get Country from"
+msgstr ""
 
 msgctxt "#30300"
 msgid "Search"
@@ -149,16 +249,32 @@ msgid "Search Engine to Use"
 msgstr "Використовувана пошукова система"
 
 msgctxt "#30304"
-msgid "     Secondary Search Language (In Addition to en-us)"
-msgstr "Додаткова мова для пошуку (окрім en-us)"
+msgid "Secondary Search Language (In Addition to en-us)"
+msgstr ""
+
+msgctxt "#30305"
+msgid "Include All Movie Categories"
+msgstr ""
 
 msgctxt "#30306"
 msgid "Warning:"
 msgstr "Застереження:"
 
+msgctxt "#30307"
+msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
+msgstr ""
+
+msgctxt "#30308"
+msgid "Preferred Search Language"
+msgstr ""
+
 msgctxt "#30400"
 msgid "Plot"
 msgstr "Сюжет"
+
+msgctxt "#30401"
+msgid "Plot / Tagline / Outline"
+msgstr ""
 
 msgctxt "#30500"
 msgid "Fanart"
@@ -167,3 +283,115 @@ msgstr "Фанарт"
 msgctxt "#30501"
 msgid "Fanart Sources"
 msgstr "Джерела обкладинок"
+
+msgctxt "#30502"
+msgid "Enable posters from fanart.tv"
+msgstr ""
+
+msgctxt "#30503"
+msgid "Enable fanart from fanart.tv"
+msgstr ""
+
+msgctxt "#30504"
+msgid "Enable posters from IMDb"
+msgstr ""
+
+msgctxt "#30700"
+msgid "Artwork"
+msgstr ""
+
+msgctxt "#30701"
+msgid "Extra Artwork"
+msgstr ""
+
+msgctxt "#30702"
+msgid "Enable clearlogo from fanart.tv"
+msgstr ""
+
+msgctxt "#30703"
+msgid "Enable clearart from fanart.tv"
+msgstr ""
+
+msgctxt "#30704"
+msgid "Enable movie banner from fanart.tv"
+msgstr ""
+
+msgctxt "#30705"
+msgid "Enable movie landscape from fanart.tv"
+msgstr ""
+
+msgctxt "#30707"
+msgid "Enable movie landscape from themoviedb.org"
+msgstr ""
+
+msgctxt "#30706"
+msgid "Enable discart from fanart.tv"
+msgstr ""
+
+msgctxt "#30801"
+msgid "Collection Artwork"
+msgstr ""
+
+msgctxt "#30802"
+msgid "Enable set poster from fanart.tv"
+msgstr ""
+
+msgctxt "#30803"
+msgid "Enable set fanart from fanart.tv"
+msgstr ""
+
+msgctxt "#30804"
+msgid "Enable set clearlogo from fanart.tv"
+msgstr ""
+
+msgctxt "#30805"
+msgid "Enable set clearart from fanart.tv"
+msgstr ""
+
+msgctxt "#30806"
+msgid "Enable set banner from fanart.tv"
+msgstr ""
+
+msgctxt "#30807"
+msgid "Enable set landscape from fanart.tv"
+msgstr ""
+
+msgctxt "#30808"
+msgid "Enable set discart from fanart.tv"
+msgstr ""
+
+#~ msgctxt "#30003"
+#~ msgid "Enable posters from IMPAwards"
+#~ msgstr "Включити постери з IMPAwards"
+
+#~ msgctxt "#30006"
+#~ msgid "Enable trailers from HD-Trailers.net"
+#~ msgstr "Включити трейлери з HD-Trailers.net"
+
+#~ msgctxt "#30008"
+#~ msgid "     Preferred Title Language from"
+#~ msgstr "     Бажана мова назв з"
+
+#~ msgctxt "#30020"
+#~ msgid "     Preferred Plot Language"
+#~ msgstr "Бажана мова сюжету"
+
+#~ msgctxt "#30021"
+#~ msgid "Get Ratings from"
+#~ msgstr "Отримати рейтинги з"
+
+#~ msgctxt "#30027"
+#~ msgid "     Preferred Title Language"
+#~ msgstr "Бажана мова назв"
+
+#~ msgctxt "#30036"
+#~ msgid "Enable posters from IMDb"
+#~ msgstr "Включити постери з IMDb"
+
+#~ msgctxt "#30041"
+#~ msgid "     Preferred Trailer Language"
+#~ msgstr "Бажана мова трейлерів"
+
+#~ msgctxt "#30304"
+#~ msgid "     Secondary Search Language (In Addition to en-us)"
+#~ msgstr "Додаткова мова для пошуку (окрім en-us)"

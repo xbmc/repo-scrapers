@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Kodi Translation Team\n"
 "Language-Team: Macedonian (http://www.transifex.com/projects/p/xbmc-addons/language/mk/)\n"
+"Language: mk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: mk\n"
 "Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
 
 msgctxt "#30001"
@@ -24,10 +24,6 @@ msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
 msgstr "Овозможи постери од themoviedb.org"
 
-msgctxt "#30003"
-msgid "Enable posters from IMPAwards"
-msgstr "Овозможи постери од IMPAwards"
-
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
 msgstr "Овозможи постери од MoviePosterDB"
@@ -36,13 +32,11 @@ msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
 msgstr "Превземај трејлери директно од YouTube"
 
-msgctxt "#30006"
-msgid "Enable trailers from HD-Trailers.net"
-msgstr "Овозможи трејлери од HD-Trailers.net"
-
+# empty string with id 30006
+# empty string with id 30007
 msgctxt "#30008"
-msgid "     Preferred Title Language from"
-msgstr "Префериран јазик на превод од"
+msgid "Preferred Title Language from"
+msgstr ""
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -72,13 +66,14 @@ msgctxt "#30016"
 msgid "Plot Sources"
 msgstr "Извори за кратка содржина"
 
+# empty strings from id 30017 to 30019
 msgctxt "#30020"
-msgid "     Preferred Plot Language"
-msgstr "     Јазик за превземање на кратка содржина"
+msgid "Preferred Plot Language"
+msgstr ""
 
 msgctxt "#30021"
-msgid "Get Ratings from"
-msgstr "Превземи рејтинзи од"
+msgid "Get Default Ratings from"
+msgstr ""
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -101,8 +96,8 @@ msgid "Genres Sources"
 msgstr "Извори за жанрови"
 
 msgctxt "#30027"
-msgid "     Preferred Title Language"
-msgstr "Префериран јазик за превод"
+msgid "Preferred Title Language"
+msgstr ""
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -125,20 +120,16 @@ msgid "Get Certification From"
 msgstr "Превземи сертификати од"
 
 msgctxt "#30033"
-msgid "     Preferred Certification Country"
-msgstr "Преферирана држава за сертификати"
+msgid "Preferred Certification Country"
+msgstr ""
 
 msgctxt "#30034"
-msgid "     Preferred Thumb Language"
-msgstr "Префериран јазик за сликичка"
+msgid "Preferred Poster Language"
+msgstr ""
 
 msgctxt "#30035"
 msgid "Certification Prefix"
 msgstr "Префикс на сертификација"
-
-msgctxt "#30036"
-msgid "Enable posters from IMDb"
-msgstr "Овозможи постери од IMDb"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
@@ -153,20 +144,20 @@ msgid "Enable trailers from trakt.tv"
 msgstr "Овозможи трејлери од trakt.tv"
 
 msgctxt "#30040"
-msgid "     Genre Language"
-msgstr "Јазик на жанр"
+msgid "Genre Language"
+msgstr ""
 
 msgctxt "#30041"
-msgid "     Preferred Trailer Language"
-msgstr "Префериран јазик на трејлер"
+msgid "Preferred Trailer Language"
+msgstr ""
 
 msgctxt "#30042"
 msgid "Get Tagline From"
 msgstr "Превземи Tagline од"
 
 msgctxt "#30043"
-msgid "     Preferred Tagline Language"
-msgstr "     Префериран јазик за Tagline"
+msgid "Preferred Tagline Language"
+msgstr ""
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -177,24 +168,57 @@ msgid "Get Outline From"
 msgstr "Превземи општи информации од"
 
 msgctxt "#30046"
-msgid "     Preferred Set (Collection) Name Language"
-msgstr "    Претпочитан јазик за групата (колекцијата)"
+msgid "Preferred Set (Collection) Name Language"
+msgstr ""
 
 msgctxt "#30047"
 msgid "Poster Sources"
 msgstr "Извори за постери"
 
+msgctxt "#30048"
+msgid "Get Keywords and Save as Tags from"
+msgstr ""
+
 msgctxt "#30100"
 msgid "Rating"
 msgstr "Оценка"
 
+# empty strings from id 30101 to 30109
 msgctxt "#30110"
-msgid "     Rating Generated Using"
-msgstr "     Оценката се генерира од "
+msgid "Rating Generated Using"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Also get ratings from IMDb"
+msgstr ""
+
+msgctxt "#30112"
+msgid "Also get ratings from Rotten Tomatoes"
+msgstr ""
+
+msgctxt "#30113"
+msgid "Also get ratings from MetaCritic"
+msgstr ""
+
+msgctxt "#30114"
+msgid "Also get ratings from themoviedb.org"
+msgstr ""
 
 msgctxt "#30115"
-msgid "     Use the Score Aggregated from"
-msgstr "     Користи средна оценка од "
+msgid "Use the Score Aggregated from"
+msgstr ""
+
+msgctxt "#30116"
+msgid "OMDB Api Key"
+msgstr ""
+
+msgctxt "#30117"
+msgid "Please Register Api Key on omdbapi.com and Add it Above"
+msgstr ""
+
+msgctxt "#30118"
+msgid "Also get non-default Rotten Tomatoes ratings"
+msgstr ""
 
 msgctxt "#30200"
 msgid "Credits"
@@ -225,12 +249,12 @@ msgid "Search Engine to Use"
 msgstr "Кој сервер за пребарување да се користи"
 
 msgctxt "#30304"
-msgid "     Secondary Search Language (In Addition to en-us)"
-msgstr "Втор јазик за пребарување (освен en-us)"
+msgid "Secondary Search Language (In Addition to en-us)"
+msgstr ""
 
 msgctxt "#30305"
-msgid "     Include All Movie Categories"
-msgstr "Вклучи ги сите категории на филмови"
+msgid "Include All Movie Categories"
+msgstr ""
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -239,6 +263,10 @@ msgstr "Предупредување:"
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
 msgstr "Вклучувањето на сите категорри на филмови, во голема мера ќе ја намали точноста на пребарувањето !!!"
+
+msgctxt "#30308"
+msgid "Preferred Search Language"
+msgstr ""
 
 msgctxt "#30400"
 msgid "Plot"
@@ -255,3 +283,147 @@ msgstr "Зан. слика"
 msgctxt "#30501"
 msgid "Fanart Sources"
 msgstr "Извори на други слики"
+
+msgctxt "#30502"
+msgid "Enable posters from fanart.tv"
+msgstr ""
+
+msgctxt "#30503"
+msgid "Enable fanart from fanart.tv"
+msgstr ""
+
+msgctxt "#30504"
+msgid "Enable posters from IMDb"
+msgstr ""
+
+msgctxt "#30700"
+msgid "Artwork"
+msgstr ""
+
+msgctxt "#30701"
+msgid "Extra Artwork"
+msgstr ""
+
+msgctxt "#30702"
+msgid "Enable clearlogo from fanart.tv"
+msgstr ""
+
+msgctxt "#30703"
+msgid "Enable clearart from fanart.tv"
+msgstr ""
+
+msgctxt "#30704"
+msgid "Enable movie banner from fanart.tv"
+msgstr ""
+
+msgctxt "#30705"
+msgid "Enable movie landscape from fanart.tv"
+msgstr ""
+
+msgctxt "#30707"
+msgid "Enable movie landscape from themoviedb.org"
+msgstr ""
+
+msgctxt "#30706"
+msgid "Enable discart from fanart.tv"
+msgstr ""
+
+msgctxt "#30801"
+msgid "Collection Artwork"
+msgstr ""
+
+msgctxt "#30802"
+msgid "Enable set poster from fanart.tv"
+msgstr ""
+
+msgctxt "#30803"
+msgid "Enable set fanart from fanart.tv"
+msgstr ""
+
+msgctxt "#30804"
+msgid "Enable set clearlogo from fanart.tv"
+msgstr ""
+
+msgctxt "#30805"
+msgid "Enable set clearart from fanart.tv"
+msgstr ""
+
+msgctxt "#30806"
+msgid "Enable set banner from fanart.tv"
+msgstr ""
+
+msgctxt "#30807"
+msgid "Enable set landscape from fanart.tv"
+msgstr ""
+
+msgctxt "#30808"
+msgid "Enable set discart from fanart.tv"
+msgstr ""
+
+#~ msgctxt "#30003"
+#~ msgid "Enable posters from IMPAwards"
+#~ msgstr "Овозможи постери од IMPAwards"
+
+#~ msgctxt "#30006"
+#~ msgid "Enable trailers from HD-Trailers.net"
+#~ msgstr "Овозможи трејлери од HD-Trailers.net"
+
+#~ msgctxt "#30008"
+#~ msgid "     Preferred Title Language from"
+#~ msgstr "Префериран јазик на превод од"
+
+#~ msgctxt "#30020"
+#~ msgid "     Preferred Plot Language"
+#~ msgstr "     Јазик за превземање на кратка содржина"
+
+#~ msgctxt "#30021"
+#~ msgid "Get Ratings from"
+#~ msgstr "Превземи рејтинзи од"
+
+#~ msgctxt "#30027"
+#~ msgid "     Preferred Title Language"
+#~ msgstr "Префериран јазик за превод"
+
+#~ msgctxt "#30033"
+#~ msgid "     Preferred Certification Country"
+#~ msgstr "Преферирана држава за сертификати"
+
+#~ msgctxt "#30034"
+#~ msgid "     Preferred Thumb Language"
+#~ msgstr "Префериран јазик за сликичка"
+
+#~ msgctxt "#30036"
+#~ msgid "Enable posters from IMDb"
+#~ msgstr "Овозможи постери од IMDb"
+
+#~ msgctxt "#30040"
+#~ msgid "     Genre Language"
+#~ msgstr "Јазик на жанр"
+
+#~ msgctxt "#30041"
+#~ msgid "     Preferred Trailer Language"
+#~ msgstr "Префериран јазик на трејлер"
+
+#~ msgctxt "#30043"
+#~ msgid "     Preferred Tagline Language"
+#~ msgstr "     Префериран јазик за Tagline"
+
+#~ msgctxt "#30046"
+#~ msgid "     Preferred Set (Collection) Name Language"
+#~ msgstr "    Претпочитан јазик за групата (колекцијата)"
+
+#~ msgctxt "#30110"
+#~ msgid "     Rating Generated Using"
+#~ msgstr "     Оценката се генерира од "
+
+#~ msgctxt "#30115"
+#~ msgid "     Use the Score Aggregated from"
+#~ msgstr "     Користи средна оценка од "
+
+#~ msgctxt "#30304"
+#~ msgid "     Secondary Search Language (In Addition to en-us)"
+#~ msgstr "Втор јазик за пребарување (освен en-us)"
+
+#~ msgctxt "#30305"
+#~ msgid "     Include All Movie Categories"
+#~ msgstr "Вклучи ги сите категории на филмови"
