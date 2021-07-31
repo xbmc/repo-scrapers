@@ -39,7 +39,7 @@ jobs:
 
       - name: Increment version of updated languages
         run: |
-          python3 ../scripts/repo-resources/increment_version.py $HOME/files.json
+          python3 ../scripts/repo-resources/increment_version.py $HOME/files.json -bv -c
         working-directory: ${{ github.event.repository.name }}
 
       - name: Create PR for incremented versions
