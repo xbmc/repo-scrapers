@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.6"
+  version="1.4.7"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,9 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.4.6
-fix IMDB HTML scrape to work with new IMDB site
-language updates
+    <news>1.4.7
+fix for shows with large number of images causing SQL error when using mySQL/MariaDB
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
@@ -21,8 +20,14 @@ language updates
 	<forum>https://forum.kodi.tv/showthread.php?tid=357232</forum>
     <website>https://www.themoviedb.org</website>
     <source>https://github.com/xbmc/metadata.tvshows.themoviedb.org.python</source>
+    <summary lang="de_DE">TV-Show-Metadaten von themoviedb.org abrufen</summary>
     <summary lang="en_GB">Fetch TV Show metadata from themoviedb.org</summary>
+    <summary lang="pl_PL">Pobieraj metadane programów telewizyjnch z themoviedb.org</summary>
+    <summary lang="ru_RU">Получение метаданных о сериалах с сайта themoviedb.org</summary>
+    <description lang="de_DE">The Movie Database (TMDb) ist eine Film- und TV-Datenbank. Seit 2008 wurde jeder einzelne Datensatz von einer tollen Community beigesteuert. TMDb's starker internationaler Fokus und die Vielfalt der Daten ist weitgehend unübertroffen. Die Betreiber von TMDb sind darauf sehr stolz. Vereinfacht gesagt, lebt und atmet TMDb den Community-Gedanken und das genau macht den Unterschied.</description>
     <description lang="en_GB">The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different.</description>
+    <description lang="pl_PL">The Movie Database (TMDb) to baza filmów i programów telewizyjnych zbudowana przez społeczność. Każdy element danych został dodany przez naszą niesamowitą społeczność od 2008 roku. Silna międzynarodowa koncentracja TMDb i zakres danych są w dużej mierze niezrównane i jesteśmy z tego niesamowicie dumni. Mówiąc prościej, żyjemy i oddychamy wspólnotą i właśnie to nas wyróżnia.</description>
+    <description lang="ru_RU">The Movie Database (TMDb) - это база данных фильмов и сериалов, созданная сообществом. Все данные были добавлены нашим замечательным сообществом, начиная с 2008 года. Международная направленность и широта данных TMDb во многом не имеют себе равных, и это то, чем мы невероятно гордимся. Проще говоря, мы живём и дышим сообществом, и именно это отличает нас от других.</description>
   </extension>
 </addon>
 

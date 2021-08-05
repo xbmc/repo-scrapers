@@ -1,3 +1,6 @@
+1.4.7
+fix for shows with large number of images causing SQL error when using mySQL/MariaDB
+
 1.4.6
 fix IMDB HTML scrape to work with new IMDB site
 language updates
