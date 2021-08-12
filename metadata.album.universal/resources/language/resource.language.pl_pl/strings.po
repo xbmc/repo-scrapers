@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-30 18:31+0000\n"
+"PO-Revision-Date: 2021-08-12 09:29+0000\n"
 "Last-Translator: Marek Adamski <fevbew@wp.pl>\n"
 "Language-Team: Polish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-album-universal/pl_pl/>\n"
 "Language: pl_pl\n"
@@ -27,11 +27,11 @@ msgstr "Ten scraper zbiera informacje z następujących stron: MusicBrainz, last
 
 msgctxt "#30000"
 msgid "Grab Album Thumbs from fanart.tv"
-msgstr "Pobieraj miniatury albumów z fanart.tv"
+msgstr "Pobierz miniatury albumów z fanart.tv"
 
 msgctxt "#30001"
 msgid "Grab Album Thumbs from Last.fm"
-msgstr "Pobieraj miniatury albumu z Last.fm"
+msgstr "Pobierz miniatury albumu z Last.fm"
 
 msgctxt "#30002"
 msgid "Get Album Review from"
@@ -55,11 +55,11 @@ msgstr "Pobierz nastroje albumu z"
 
 msgctxt "#30007"
 msgid "Get Album Themes from"
-msgstr "Pobieraj motywy albumu z"
+msgstr "Pobierz motywy albumu z"
 
 msgctxt "#30008"
 msgid "Grab Album Thumbs from allmusic.com"
-msgstr "Pobieraj miniatury albumu z allmusic.com"
+msgstr "Pobierz miniatury albumu z allmusic.com"
 
 msgctxt "#30009"
 msgid "Artwork"
@@ -67,7 +67,7 @@ msgstr "Grafika"
 
 msgctxt "#30010"
 msgid "Grab Album Thumbs from theaudiodb.com"
-msgstr "Pobieraj miniatury albumu theaudiodb.com"
+msgstr "Pobierz miniatury albumu theaudiodb.com"
 
 msgctxt "#30011"
 msgid "MB Mirror"
