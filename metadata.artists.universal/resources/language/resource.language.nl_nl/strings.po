@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-29 19:41+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2021-08-12 09:29+0000\n"
+"Last-Translator: Klojum <klojum@kodi.tv>\n"
 "Language-Team: Dutch <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-artists-universal/nl_nl/>\n"
 "Language: nl_nl\n"
 "MIME-Version: 1.0\n"
@@ -27,31 +27,31 @@ msgstr "Deze scraper verzamelt informatie van de volgende ondersteunde websites:
 
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"
-msgstr "Gebruik Artiesten Fanart van HTBackdrops.com"
+msgstr "Gebruik artiesten-fanart van HTBackdrops.com"
 
 msgctxt "#30001"
 msgid "Enable Artist Thumbs from allmusic.com"
-msgstr "Gebruik Artiesten Miniaturen van AllMusic.com"
+msgstr "Gebruik artiestenminiaturen van AllMusic.com"
 
 msgctxt "#30002"
 msgid "Enable Artist Thumbs from last.fm"
-msgstr "Gebruik Artiesten Miniaturen van Last.fm"
+msgstr "Gebruik artiestenminiaturen van Last.fm"
 
 msgctxt "#30003"
 msgid "Enable Artist Thumbs from HTBackdrops.com"
-msgstr "Gebruik Artiesten Miniaturen van HTBackdrops.com"
+msgstr "Gebruik artiestenminiaturen van HTBackdrops.com"
 
 msgctxt "#30004"
 msgid "Enable Artist Fanarts from fanart.tv"
-msgstr "Gebruik Artiesten Fanart van Fanart.tv"
+msgstr "Gebruik artiestenfanart van Fanart.tv"
 
 msgctxt "#30005"
 msgid "Enable Artist Thumbs from fanart.tv"
-msgstr "Gebruik Artiesten Miniaturen van Fanart.tv"
+msgstr "Gebruik artiestenminiaturen van Fanart.tv"
 
 msgctxt "#30006"
 msgid "Get Artist Biography from"
-msgstr "Haal Artiesten Biografie van"
+msgstr "Haal artiestenbiografie van"
 
 msgctxt "#30007"
 msgid "Artwork"
@@ -59,51 +59,51 @@ msgstr "Afbeeldingen"
 
 msgctxt "#30008"
 msgid "Get Artist Discography from"
-msgstr "Haal Artiesten Discografie van"
+msgstr "Haal artiestendiscografie van"
 
 msgctxt "#30009"
 msgid "Get Artist Genres from"
-msgstr "Haal Artiesten Genre van"
+msgstr "Haal artiestengenre van"
 
 msgctxt "#30010"
 msgid "Get Artist Styles from"
-msgstr "Haal Artiest Stijlen van"
+msgstr "Haal artieststijlen van"
 
 msgctxt "#30011"
 msgid "Get Artist Life-Span from"
-msgstr "Haal Artiesten Levensduur van"
+msgstr "Haal artiestenlevensduur van"
 
 msgctxt "#30012"
 msgid "Get Artist Moods from"
-msgstr "Haal Artiesten Stemmingen van"
+msgstr "Haal artiestenstemmingen van"
 
 msgctxt "#30014"
 msgid "Get Artist Years Active from"
-msgstr "Haal Artiesten Jaren Actief van"
+msgstr "Haal artiestenjaren actief van"
 
 msgctxt "#30015"
 msgid "     Preferred Language"
-msgstr "Voorkeurstaal"
+msgstr "     Voorkeurstaal"
 
 msgctxt "#30016"
 msgid "Fallback to Artist Biography from"
-msgstr "Val terug op Artiesten Biografie van"
+msgstr "Val terug op artiestenbiografie van"
 
 msgctxt "#30017"
 msgid "Fallback to Artist Discography from"
-msgstr "Val terug op Artiesten Discografie van"
+msgstr "Val terug op artiestendiscografie van"
 
 msgctxt "#30018"
 msgid "Fallback to Artist Genres from"
-msgstr "Val terug op Artiesten Genre van"
+msgstr "Val terug op artiestengenre van"
 
 msgctxt "#30019"
 msgid "Fallback to Artist Styles from"
-msgstr "Val terug op Artiesten Stijl van"
+msgstr "Val terug op artiestenstijl van"
 
 msgctxt "#30020"
 msgid "Fallback to Artist Life-Span from"
-msgstr "Val terug op Artiesten Levensduur van"
+msgstr "Val terug op artiestenlevensduur van"
 
 msgctxt "#30021"
 msgid "Fallbacks"
@@ -111,44 +111,44 @@ msgstr "Terugvallen"
 
 msgctxt "#30022"
 msgid "Enable Artist Thumbs from theaudiodb.com"
-msgstr "Gebruik Artiesten Miniaturen van theAudioDB.com"
+msgstr "Gebruik artiestenminiaturen van theAudioDB.com"
 
 msgctxt "#30023"
 msgid "Enable Artist Fanarts from theaudiodb.com"
-msgstr "Gebruik Artiesten Fanart van theAudioDB.com"
+msgstr "Gebruik artiestenfanart van theAudioDB.com"
 
 msgctxt "#30024"
 msgid "Fallback to Artist Moods from"
-msgstr ""
+msgstr "Val terug op artieststemmingen van"
 
 msgctxt "#30025"
 msgid "MB Mirror"
-msgstr ""
+msgstr "MB spiegel"
 
 msgctxt "#30026"
 msgid "MusicBrainz Mirror"
-msgstr ""
+msgstr "MusicBrainz Mirror"
 
 msgctxt "#30027"
 msgid "Enable Artist Clearlogo from fanart.tv"
-msgstr ""
+msgstr "Gebruik artiesten clearlogo van Fanart.tv"
 
 msgctxt "#30028"
 msgid "Enable Artist Banner from fanart.tv"
-msgstr ""
+msgstr "Gebruik artiestenbanner van Fanart.tv"
 
 msgctxt "#30029"
 msgid "Enable Artist Clearlogo from theaudiodb.com"
-msgstr ""
+msgstr "Gebruik artiesten clearlogo van TheAudioDB.com"
 
 msgctxt "#30030"
 msgid "Enable Artist Clearart from theaudiodb.com"
-msgstr ""
+msgstr "Gebruik artiestclearlart van TheAudioDB.com"
 
 msgctxt "#30031"
 msgid "Enable Artist Landscape from theaudiodb.com"
-msgstr ""
+msgstr "Gebruik artiestenachtergrond van TheAudioDB.com"
 
 msgctxt "#30032"
 msgid "Enable Artist Banner from theaudiodb.com"
-msgstr ""
+msgstr "Gebruik artiestenbanner van TheAudioDB.com"

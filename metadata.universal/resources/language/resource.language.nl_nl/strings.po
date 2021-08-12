@@ -5,16 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Dutch (http://www.transifex.com/projects/p/xbmc-addons/language/nl/)\n"
-"Language: nl\n"
+"PO-Revision-Date: 2021-08-12 09:29+0000\n"
+"Last-Translator: Klojum <klojum@kodi.tv>\n"
+"Language-Team: Dutch <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/nl_nl/>\n"
+"Language: nl_nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -22,7 +23,7 @@ msgstr "Universele filmscraper"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Deze scraper verzamelt informatie van de volgende ondersteunde sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Het start altijd de eerste zoektocht op TMDb, maar vervolgens kan veld voor veld informatie gekozen worden van de site waar jij de specifieke informatie van wilt."
+msgstr "Deze scraper verzamelt informatie van de volgende ondersteunde sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Het start altijd de eerste zoektocht op TMDb, maar kan vervolgens veld voor veld informatie kiezen van de site waar jij specifieke informatie van wilt."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
@@ -44,7 +45,7 @@ msgstr "Haal trailers direct van YouTube"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Voorkeurstaal titel van"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -60,7 +61,7 @@ msgstr "Trailers"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Verkrijg Set (Collectie) Naam van themoviedb.org"
+msgstr "Verkrijg setnaam (collectie) van themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
@@ -68,7 +69,7 @@ msgstr "Haal verhaallijn van"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr "Haal Cast / Regisseurs / Auteurs van"
+msgstr "Haal cast / regisseurs / auteurs van"
 
 msgctxt "#30016"
 msgid "Plot Sources"
@@ -77,11 +78,11 @@ msgstr "Plotbronnen"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Voorkeurstaal plot"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Verkrijg standaardwaarderingen van"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -105,7 +106,7 @@ msgstr "Genres bronnen"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Voorkeurstaal titel"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -125,15 +126,15 @@ msgstr "Certificeringsinstellingen"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr "Haal Certificering bij"
+msgstr "Haal certificering bij"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Voorkeursland certificering"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Voorkeurstaal poster"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -149,15 +150,15 @@ msgstr "Gebruik fanart van trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Gabruik trailers van trakt.tv"
+msgstr "Gebruik trailers van trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Genretaal"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Voorkeurstaal trailer"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -165,11 +166,11 @@ msgstr "Haal motto van"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Voorkeurstaal tagline"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Haal IMDb TOP250 plaatsing"
+msgstr "Ophalen IMDb Top250-plaatsing"
 
 msgctxt "#30045"
 msgid "Get Outline From"
@@ -177,11 +178,11 @@ msgstr "Verkrijg een beschrijving van"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Voorkeurstaal setnaam (collectie)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr "Poster Bronnen"
+msgstr "Posterbronnen"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
@@ -194,39 +195,39 @@ msgstr "Waardering"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Waardering gegenereerd met"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Verkrijg ook waarderingen van IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Verkrijg ook waarderingen van Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Verkrijg ook waarderingen van MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Verkrijg ook waarderingen van themovie.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Gebruik de samengevoegde score van"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB Api-sleutel"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Registreer de API-sleutel op omdbapi.com en voeg 'm boven toe."
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Verkrijg ook niet-standaard Rotten Tomatoes-waarderingen"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -254,15 +255,15 @@ msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr "Te gebruiken Zoekmachine"
+msgstr "Te gebruiken zoekmachine"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Tweede zoektaal (naast en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Inclusief alle filmcategorieën"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -270,11 +271,11 @@ msgstr "Waarschuwing:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Het Selecteren van alle Film Categorieën zal de accuraatheid van zoekacties verminderen!!!"
+msgstr "Het selecteren van alle filmcategorieën zal de accuraatheid van zoekacties verminderen!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Voorkeurstaal zoeken"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -302,71 +303,71 @@ msgstr "Gebruik fanart van fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Gebruik posters van IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr ""
+msgstr "Artwork"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Extra artwork"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Gebruik clearlogo van fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Gebruik clearart van fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Gebruik filmbanner van fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Gebruik filmachtergrond van fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Gebruik filmachtergrond van themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Gebruik discart van fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Collectie-artwork"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Gebruik setposter van fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Gebruik setfanart van fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Gebruik set clearlogo van fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Gebruik set clearart van fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Gebruik setbanner van fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Gebruik setachtergrond van fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Gebruik set discart van fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
