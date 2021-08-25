@@ -1,4 +1,4 @@
-name: Increment version of updated languages
+name: Increment version of updated scrapers
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
   default:
     if: github.repository == 'xbmc/repo-scrapers'
     runs-on: ubuntu-latest
-    name: Increment version of updated languages
+    name: Increment version of updated scrapers
 
     steps:
 
@@ -37,7 +37,7 @@ jobs:
       - name: Get changed files
         uses: trilom/file-changes-action@v1.2.4
 
-      - name: Increment version of updated languages
+      - name: Increment version of updated scrapers
         run: |
           python3 ../scripts/repo-resources/increment_version.py $HOME/files.json -bv -c
         working-directory: ${{ github.event.repository.name }}
@@ -45,9 +45,9 @@ jobs:
       - name: Create PR for incremented versions
         uses: peter-evans/create-pull-request@v3.10.0
         with:
-          commit-message: Language add-on versions incremented
-          title: Language add-on versions incremented
-          body: Language add-on versions incrementing triggered by ${{ github.sha }}
+          commit-message: Scraper add-on versions incremented
+          title: Scraper add-on versions incremented
+          body: Scraper add-on versions incrementing triggered by ${{ github.sha }}
           branch: inc-ver
           delete-branch: true
           path: ./${{ github.event.repository.name }}
