@@ -165,16 +165,7 @@
 	<ParseIMDBOutline dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;div\sclass</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;(.+?)=tt_ov_pl&quot;</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;[^&quot;]*&quot;\s*&gt;Add\sa\sPlot</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&quot;plot&quot;:{&quot;plotText&quot;:{&quot;plainText&quot;:&quot;(.*?)&quot;,&quot;</expression>
+				<expression fixchars="1" trim="1">data-testid=&quot;plot-xl&quot;[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
@@ -187,17 +178,8 @@
 	</GetIMDBOutlineToPlotById>
 	<ParseIMDBOutlineToPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;div\sclass</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;(.+?)=tt_ov_pl&quot;</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;div class=&quot;summary_text&quot;&gt;(.+?)&lt;a\shref=&quot;[^&quot;]*&quot;\s*&gt;Add\sa\sPlot</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&quot;plot&quot;:{&quot;plotText&quot;:{&quot;plainText&quot;:&quot;(.*?)&quot;,&quot;</expression>
+			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
+				<expression fixchars="1" trim="1">data-testid=&quot;plot-xl&quot;[^&gt;]*&gt;([^&lt;]*)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
