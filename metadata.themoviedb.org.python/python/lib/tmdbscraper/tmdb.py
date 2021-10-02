@@ -156,10 +156,13 @@ def _parse_artwork(movie, collection, urlbases, language):
         language = language.split('-')[0]
     posters = []
     landscape = []
+    logos = []
     fanart = []
+
     if 'images' in movie:
         posters = _get_images_with_fallback(movie['images']['posters'], urlbases, language)
         landscape = _get_images(movie['images']['backdrops'], urlbases, language)
+        logos = _get_images(movie['images']['logos'], urlbases, language)
         fanart = _get_images(movie['images']['backdrops'], urlbases, None)
 
     setposters = []
@@ -171,7 +174,7 @@ def _parse_artwork(movie, collection, urlbases, language):
         setfanart = _get_images(collection['images']['backdrops'], urlbases, None)
 
     return {'poster': posters, 'landscape': landscape, 'fanart': fanart,
-        'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart}
+        'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart, 'clearlogo': logos}
 
 def _get_images_with_fallback(imagelist, urlbases, language, language_fallback='en'):
     images = _get_images(imagelist, urlbases, language)
