@@ -1,11 +1,13 @@
 from datetime import datetime, timedelta
 from . import tmdbapi
+import xbmc
 
 
 class TMDBMovieScraper(object):
-    def __init__(self, url_settings, language, certification_country):
+    def __init__(self, url_settings, language, search_language, certification_country):
         self.url_settings = url_settings
         self.language = language
+        self.search_language = search_language
         self.certification_country = certification_country
         self._urls = None
 
@@ -19,17 +21,17 @@ class TMDBMovieScraper(object):
         search_media_id = _parse_media_id(title)
         if search_media_id:
             if search_media_id['type'] == 'tmdb':
-                result = _get_movie(search_media_id['id'], self.language, True)
+                result = _get_movie(search_media_id['id'], None, True)
                 if 'error' in result:
                     return result
                 result = [result]
             else:
-                result = tmdbapi.find_movie_by_external_id(search_media_id['id'], language=self.language)
+                result = tmdbapi.find_movie_by_external_id(search_media_id['id'], language=self.search_language)
                 if 'error' in result:
                     return result
                 result = result.get('movie_results')
         else:
-            response = tmdbapi.search_movie(query=title, year=year, language=self.language)
+            response = tmdbapi.search_movie(query=title, year=year, language=self.search_language)
             if 'error' in response:
                 return response
             result = response['results']
@@ -158,11 +160,15 @@ def _parse_artwork(movie, collection, urlbases, language):
     landscape = []
     logos = []
     fanart = []
-
+    
     if 'images' in movie:
         posters = _get_images_with_fallback(movie['images']['posters'], urlbases, language)
         landscape = _get_images(movie['images']['backdrops'], urlbases, language)
         logos = _get_images(movie['images']['logos'], urlbases, language)
+        if not logos:
+            logos = _get_images(movie['images']['logos'], urlbases, None)
+        if not logos:
+            logos = _get_images(movie['images']['logos'], urlbases, "en")
         fanart = _get_images(movie['images']['backdrops'], urlbases, None)
 
     setposters = []
