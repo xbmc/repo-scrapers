@@ -1,3 +1,9 @@
+v1.4.3 (2021-10-02)
+- Feature: downloading logos from tmdb:
+- Feature: search language option added
+- Change: searching movies from differnt years if not found
+
+
 v1.4.0 (2021-07-10)
 - Feature: update to new IMDB page layout
 - Feature: update language files and translation system
