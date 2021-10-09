@@ -80,6 +80,10 @@ msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
 msgstr ""
 
+msgctxt "#30013"
+msgid "Search language"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Fanart.tv personal API key (optional)"
 msgstr ""
