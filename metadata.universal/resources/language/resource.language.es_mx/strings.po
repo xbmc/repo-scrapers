@@ -5,51 +5,52 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/xbmc-addons/language/es_MX/)\n"
-"Language: es_MX\n"
+"PO-Revision-Date: 2021-10-09 23:30+0000\n"
+"Last-Translator: Edson Armando <edsonarmando78@outlook.com>\n"
+"Language-Team: Spanish (Mexico) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/es_mx/>\n"
+"Language: es_mx\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr ""
+msgstr "Scraper Universal de Películas"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr ""
+msgstr "Unversal Scraper es actualmente el scraper más personalizable al recolectar información de los siguientes sitios soportados: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Este scraper es actualmente el preferido de la familia de scrapers de Team-Kodi. La búsqueda inicial puede realizarse ya sea en TMDb o IMDb (ajustable en la configuración), pero posteriormente puede establecerse campo por campo de qué sitio en específico se quiere obtener la información."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr ""
+msgstr "Activar fanart de themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr ""
+msgstr "Activar pósteres de themoviedb.org"
 
 # empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr ""
+msgstr "Activar pósteres de MoviePosterDB"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr ""
+msgstr "Obtener avances directamente de YouTube"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Idioma de título preferido de"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr ""
+msgstr "Activar avances de themoviedb.org"
 
 msgctxt "#30011"
 msgid "Poster"
@@ -61,116 +62,116 @@ msgstr "Trailers"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr ""
+msgstr "Obtener el nombre de la saga (colección) de themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr ""
+msgstr "Obtener reseña de"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr ""
+msgstr "Obtener reparto / directores / escritores de"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr ""
+msgstr "Orígenes de reseña"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Idioma de reseña preferido"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Obtener calificaciones por defecto de"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr ""
+msgstr "Obtener géneros de"
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr ""
+msgstr "Obtener título de"
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr ""
+msgstr "Orígenes de título"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr ""
+msgstr "Orígenes de reparto y créditos"
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr ""
+msgstr "Orígenes de géneros"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Idioma de título preferido"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr ""
+msgstr "Orígenes de avances"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr ""
+msgstr "Colecciones de películas"
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr ""
+msgstr "Orígenes de calificaciones"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr ""
+msgstr "Ajustes de certificación"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr ""
+msgstr "Obtener certificación de"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "País de certificación preferido"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Idioma de póster preferido"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Prefijo de certificación"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr ""
+msgstr "Activar pósteres de trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr ""
+msgstr "Activar fanart de trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr ""
+msgstr "Activar avances de trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Idioma de género"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Idioma de avances preferido"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr ""
+msgstr "Obtener lema de"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Idioma de lema preferido"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr ""
+msgstr "Obtener ranking IMDb TOP250"
 
 msgctxt "#30045"
 msgid "Get Outline From"
