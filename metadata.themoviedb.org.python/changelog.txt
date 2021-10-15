@@ -1,3 +1,6 @@
+v1.4.3 (2021-10-15)
+- Fix: Refactoring and optimization
+
 v1.4.2 (2021-10-02)
 - Feature: downloading logos from tmdb
 - Feature: search language option added
