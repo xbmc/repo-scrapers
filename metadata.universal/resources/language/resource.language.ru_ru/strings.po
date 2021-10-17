@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-10-09 23:30+0000\n"
+"PO-Revision-Date: 2021-10-16 19:30+0000\n"
 "Last-Translator: Dmitry Petrov <dimakrm361@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/ru_ru/>\n"
 "Language: ru_ru\n"
@@ -154,7 +154,7 @@ msgstr "Включить трейлеры с trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Язык жанров"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
@@ -199,19 +199,19 @@ msgstr "Рейтинг создан с помощью"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Также получать оценки из IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Также получать оценки из Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Также получать оценки из MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Также получать оценки из themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
@@ -259,7 +259,7 @@ msgstr "Использовать систему поиска"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Дополнительный язык поиска (в дополнение к en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
@@ -275,7 +275,7 @@ msgstr "Точность поиска значительно снизится, �
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Предпочитаемый язык поиска"
 
 msgctxt "#30400"
 msgid "Plot"
