@@ -24,21 +24,21 @@ def get_tmdb_scraper(settings):
     language = settings.getSettingString('language')
     certcountry = settings.getSettingString('tmdbcertcountry')
     search_language = settings.getSettingString('searchlanguage')
-    return TMDBMovieScraper(ADDON_SETTINGS, language, search_language, certcountry)
+    return TMDBMovieScraper(ADDON_SETTINGS, language, certcountry, search_language)
 
 def search_for_movie(title, year, handle, settings):
     log("Find movie with title '{title}' from year '{year}'".format(title=title, year=year), xbmc.LOGINFO)
     title = _strip_trailing_article(title)
-    search_results = get_tmdb_scraper(settings).search(title, year)
+    scraper = get_tmdb_scraper(settings)
 
+    if year is not None:
+        search_results = scraper.search(title, year)
+        if not search_results:
+            search_results = scraper.search(title,str(int(year)-1))
+        if not search_results:
+            search_results = scraper.search(title,str(int(year)+1))
     if not search_results:
-        if year is not None:
-            search_results = get_tmdb_scraper(settings).search(title,str(int(year)-1))
-    if not search_results:
-        if year is not None:
-            search_results = get_tmdb_scraper(settings).search(title,str(int(year)+1))
-    if not search_results:
-        search_results = get_tmdb_scraper(settings).search(title)
+        search_results = scraper.search(title)
     if not search_results:
         return
     if 'error' in search_results:
@@ -91,7 +91,7 @@ def add_artworks(listitem, artworks):
             listitem.addAvailableArtwork(image['url'], arttype)
 
     fanart_to_set = [{'image': image['url'], 'preview': image['preview']}
-        for image in artworks['fanart'][:IMAGE_LIMIT]]
+        for image in artworks.get('fanart', ())[:IMAGE_LIMIT]]
     listitem.setAvailableFanart(fanart_to_set)
 
 def get_details(input_uniqueids, handle, settings):

@@ -1,7 +1,10 @@
-v1.4.2 (2021-10-02)
+v1.5.0 (2021-10-16)
 - Feature: downloading logos from tmdb
 - Feature: search language option added
-- Change: searching movies from differnt years if not found
+- Change: searching movies from different years if not found
+- Fix: don't error when all fanart disabled
+- Fix: don't try to fetch movie set artwork from Fanart.TV if movie is not part of set
+- skip IMDB rating tests
 
 v1.4.0 (2021-07-10)
 - Feature: update to new IMDB page layout

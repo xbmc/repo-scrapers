@@ -6,8 +6,8 @@
 		<setting label="30012" type="bool" id="landscape" default="true"/>
 		<setting label="30004" type="bool" id="trailer" default="true"/>
 		<setting label="30002" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="language" default="en-US"/>
-		<setting label="30013" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="searchlanguage" default="en-US"/>
 		<setting label="30006" type="select" values="au|bg|br|by|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh" id="tmdbcertcountry" default="us"/>
+		<setting label="30013" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="searchlanguage" default="en-US"/>
 		<setting label="30008" type="text" id="certprefix" default="Rated " />
 		<setting label="30003" type="labelenum" values="TMDb|IMDb|Trakt" id="RatingS" default="TMDb"/>
 		<setting label="30007" type="bool" id="imdbanyway" visible="!eq(-1,1)" default="false"/>
