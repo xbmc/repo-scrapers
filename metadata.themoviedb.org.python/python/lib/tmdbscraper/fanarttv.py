@@ -25,7 +25,7 @@ def get_details(uniqueids, clientkey, language, set_tmdbid):
         return {}
 
     movie_data = _get_data(media_id, clientkey)
-    movieset_data = _get_data(set_tmdbid, clientkey)
+    movieset_data = _get_data(set_tmdbid, clientkey) if set_tmdbid else None
     if not movie_data and not movieset_data:
         return {}
 
