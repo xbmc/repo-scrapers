@@ -76,6 +76,10 @@ msgctxt "#30012"
 msgid "Separate TMDb fanart with title to landscape"
 msgstr "将含片名的 TMDb 同人画归入场景贴画"
 
+msgctxt "#30013"
+msgid "Search language"
+msgstr ""
+
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
 msgstr "Fanart.tv 艺术图片的语言"
