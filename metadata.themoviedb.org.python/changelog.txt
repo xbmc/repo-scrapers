@@ -1,3 +1,6 @@
+v1.5.1 (2021-10-19)
+- Fix: search error when no year
+
 v1.5.0 (2021-10-16)
 - Feature: downloading logos from tmdb
 - Feature: search language option added

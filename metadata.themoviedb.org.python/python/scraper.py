@@ -31,16 +31,17 @@ def search_for_movie(title, year, handle, settings):
     title = _strip_trailing_article(title)
     scraper = get_tmdb_scraper(settings)
 
+    search_results = scraper.search(title, year)
     if year is not None:
-        search_results = scraper.search(title, year)
         if not search_results:
             search_results = scraper.search(title,str(int(year)-1))
         if not search_results:
             search_results = scraper.search(title,str(int(year)+1))
-    if not search_results:
-        search_results = scraper.search(title)
+        if not search_results:
+            search_results = scraper.search(title)
     if not search_results:
         return
+
     if 'error' in search_results:
         header = "The Movie Database Python error searching with web service TMDB"
         xbmcgui.Dialog().notification(header, search_results['error'], xbmcgui.NOTIFICATION_WARNING)
