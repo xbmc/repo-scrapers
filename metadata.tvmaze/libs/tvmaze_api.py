@@ -26,7 +26,8 @@ from requests.exceptions import HTTPError
 
 from . import cache_service as cache
 from .data_service import process_episode_list
-from .utils import logger
+from .imdb_rating import get_imdb_rating
+from .utils import logger, safe_get
 
 try:
     from typing import Text, Optional, Union, List, Dict, Any  # pylint: disable=unused-import
@@ -104,6 +105,12 @@ def load_show_info(show_id):
         if isinstance(show_info['_embedded']['images'], list):
             show_info['_embedded']['images'].sort(key=lambda img: img['main'],
                                                   reverse=True)
+        external_ids = safe_get(show_info, 'externals', {})
+        imdb_id = external_ids.get('imdb')
+        if imdb_id is not None:
+            show_info['imdb_rating'] = get_imdb_rating(imdb_id)
+        else:
+            show_info['imdb_rating'] = None
         cache.cache_show_info(show_info)
     return show_info
 

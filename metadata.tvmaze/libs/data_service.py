@@ -124,18 +124,23 @@ def _set_unique_ids(show_info, list_item):
     unique_ids = {'tvmaze': str(show_info['id'])}
     for key, value in six.iteritems(safe_get(show_info, 'externals', {})):
         if key == 'thetvdb':
-            key = key[3:]
+            key = 'tvdb'
         unique_ids[key] = str(value)
     list_item.setUniqueIDs(unique_ids, 'tvmaze')
     return list_item
 
 
-def _set_rating(show_info, list_item):
-    # type: (InfoType, ListItem) -> ListItem
+def _set_rating(show_info, list_item, default_rating):
+    # type: (InfoType, ListItem, Text) -> ListItem
     """Set show rating"""
+    imdb_rating = show_info.get('imdb_rating')
+    is_imdb_default = default_rating == 'IMDB' and imdb_rating is not None
     if show_info['rating'] is not None and show_info['rating']['average'] is not None:
         rating = float(show_info['rating']['average'])
-        list_item.setRating('tvmaze', rating, defaultt=True)
+        list_item.setRating('tvmaze', rating, defaultt=not is_imdb_default)
+    if imdb_rating is not None:
+        list_item.setRating('imdb', imdb_rating['rating'], imdb_rating['votes'],
+                            defaultt=is_imdb_default)
     return list_item
 
 
@@ -181,8 +186,8 @@ def set_show_artwork(show_info, list_item):
     return list_item
 
 
-def add_main_show_info(list_item, show_info, full_info=True):
-    # type: (ListItem, InfoType, bool) -> ListItem
+def add_main_show_info(list_item, show_info, full_info=True, default_rating='TVmaze'):
+    # type: (ListItem, InfoType, bool, Text) -> ListItem
     """Add main show info to a list item"""
     plot = _clean_plot(safe_get(show_info, 'summary', ''))
     video = {
@@ -218,7 +223,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
         if image_url:
             list_item.addAvailableArtwork(image_url, 'poster')
     list_item.setInfo('video', video)
-    list_item = _set_rating(show_info, list_item)
+    list_item = _set_rating(show_info, list_item, default_rating)
     # This is needed for getting artwork
     list_item = _set_unique_ids(show_info, list_item)
     return list_item
