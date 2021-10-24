@@ -28,7 +28,7 @@ import xbmcplugin
 from six.moves import urllib_parse
 
 from . import tvmaze_api, data_service
-from .utils import logger, get_episode_order
+from .utils import logger, get_episode_order, ADDON
 
 try:
     from typing import Optional, Text, Union, ByteString  # pylint: disable=unused-import
@@ -98,14 +98,15 @@ def get_show_id_from_nfo(nfo):
             )
 
 
-def get_details(show_id):
-    # type: (Text) -> None
+def get_details(show_id, default_rating):
+    # type: (Text, Text) -> None
     """Get details about a specific show"""
     logger.debug('Getting details for show id {}'.format(show_id))
     show_info = tvmaze_api.load_show_info(show_id)
     if show_info is not None:
         list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
-        list_item = data_service.add_main_show_info(list_item, show_info)
+        list_item = data_service.add_main_show_info(list_item, show_info,
+                                                    default_rating=default_rating)
         xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
     else:
         xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
@@ -200,12 +201,15 @@ def router(paramstring):
     logger.debug('Called addon with params: {}'.format(sys.argv))
     path_settings = json.loads(params['pathSettings'])
     episode_order = get_episode_order(path_settings)
+    default_rating = path_settings.get('default_rating')
+    if default_rating is None:
+        default_rating = ADDON.getSetting('default_rating')
     if params['action'] == 'find':
         find_show(params['title'], params.get('year'))
     elif params['action'].lower() == 'nfourl':
         get_show_id_from_nfo(params['nfo'])
     elif params['action'] == 'getdetails':
-        get_details(params['url'])
+        get_details(params['url'], default_rating)
     elif params['action'] == 'getepisodelist':
         get_episode_list(params['url'], episode_order)
     elif params['action'] == 'getepisodedetails':
