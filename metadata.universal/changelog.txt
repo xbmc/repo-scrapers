@@ -1,3 +1,6 @@
+[B]v5.5.6[/B]
+- Translations updates from Weblate
+
 [B]5.5.4[/B]
 - fixed: search results for short titles
 
