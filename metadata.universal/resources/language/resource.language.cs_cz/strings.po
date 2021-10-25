@@ -5,16 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Czech (http://www.transifex.com/projects/p/xbmc-addons/language/cs/)\n"
-"Language: cs\n"
+"PO-Revision-Date: 2021-10-25 21:39+0000\n"
+"Last-Translator: HansCR <h.vanek@gmail.com>\n"
+"Language-Team: Czech <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/cs_cz/>\n"
+"Language: cs_cz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.8\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -44,7 +45,7 @@ msgstr "Získat upoutávky přímo z YouTube"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Upřednostňovaný jazyk názvu z"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -77,11 +78,11 @@ msgstr "Zdroje děje"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Preferovaný jazyk děje"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Získat výchozí hodnocení z"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -105,7 +106,7 @@ msgstr "Zdroje žánrů"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Upřednostňovaný jazyk názvů"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -129,11 +130,11 @@ msgstr "Získat certifikace z"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Upřednostňovaný stát poskytující certifikaci"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Preferovaný jazyk plakátů"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -153,11 +154,11 @@ msgstr "Povolit upoutávky z trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Jazyk žánrů"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Upřednostňovaný jazyk upoutávky"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -165,7 +166,7 @@ msgstr "Získat hlášku z"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Upřednostňovaný jazyk hlášek"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -177,7 +178,7 @@ msgstr "Získat přehled z"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Preferovaný jazyk názvu sady (kolekce)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -194,39 +195,39 @@ msgstr "Hodnocení"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Generovat hodnocení pomocí"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Získat hodnocení také z IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Získat hodnocení také z Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Získat hodnocení také z MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Získat hodnocení také z themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Použít skóre agregované z"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB Api klíč"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Prosím registrujte Api klíč na omdb.com a přidejte jej výše"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Přidat také nevýchozí hodnocení z Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -258,11 +259,11 @@ msgstr "Používaný stroj vyhledávání"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Druhý vyhledávací jazyk (k en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Použít všechny kategorie filmů"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -274,7 +275,7 @@ msgstr "Povolení všech kategorií filmů velmi znepřesní výsledky hledání
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Upřednostňovaný jazyk vyhledávání"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -302,71 +303,71 @@ msgstr "Povolit fanart z trakt.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Povolit plagáty z IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr ""
+msgstr "Grafika"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Extra grafika"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Povolit clearlogo z fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Povolit cleanart z fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Povolit filmový banner z fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Povolit filmové na šířku z fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Povolit filmové na šířku z themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Povolit grafiku disku z fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Povolit grafiku kolekcí"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci plakátu z fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci fanartu z fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci clearlogo z fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci clearart z fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci banneru z fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci na šířku z fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Povolit kolekci grafiky disku z fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"

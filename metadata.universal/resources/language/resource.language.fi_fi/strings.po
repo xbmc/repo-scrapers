@@ -5,51 +5,52 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Finnish (http://www.transifex.com/projects/p/xbmc-addons/language/fi/)\n"
-"Language: fi\n"
+"PO-Revision-Date: 2021-10-25 21:39+0000\n"
+"Last-Translator: G0mez82 <jalehto_99@hotmail.com>\n"
+"Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/fi_fi/>\n"
+"Language: fi_fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr ""
+msgstr "Universal Movie Scraper"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr ""
+msgstr "Universal Scraper on tällä hetkellä muokattavin skreipperi keräämällä tietoja seuraavilta tuetuilta sivustoilta: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Tämä skreipperi on tällä hetkellä Kodi tiimin skreippereiden lippulaiva. Alkuhaku voidaan tehdä joko TMDb:llä tai IMDb:llä (asetusten mukaan), mutta sen jälkeen se voidaan asettaa kenttä kerrallaan, miltä sivustolta haluat tietyt tiedot."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr ""
+msgstr "Ota themoviedb.org fanitaide käyttöön"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr ""
+msgstr "Ota themoviedb.org julisteet käyttöön"
 
 # empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr ""
+msgstr "Ota MoviePosterDB julisteet käyttöön"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr ""
+msgstr "Hae trailereita suoraan YouTubesta"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Ensisijainen otsikkokieli lähteestä"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr ""
+msgstr "Ota trailerit käyttöön kohteesta themoviedb.org"
 
 msgctxt "#30011"
 msgid "Poster"
@@ -61,132 +62,132 @@ msgstr "Esittelyt"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr ""
+msgstr "Hae sarjan (kokoelman) nimi kohteesta themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr ""
+msgstr "Hae juoni kohteesta"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr ""
+msgstr "Hae näyttelijät / ohjaajat / käsikirjoittajat kohteesta"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr ""
+msgstr "Juonen lähteet"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Ensisijainen juonen kieli"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Hae oletus arvosanat kohteesta"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr ""
+msgstr "Hae lajityypit kohteesta"
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr ""
+msgstr "Hae nimi kohteesta"
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr ""
+msgstr "Nimen lähteet"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr ""
+msgstr "Näyttelijöiden ja tekijöiden lähteet"
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr ""
+msgstr "Lajityyppien lähteet"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Ensisijainen nimen kieli"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr ""
+msgstr "Trailerin lähteet"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr ""
+msgstr "Elokuvakokoelmat"
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr ""
+msgstr "Arvosanalähteet"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr ""
+msgstr "Sertifiointiasetukset"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr ""
+msgstr "Hae sertifiointi kohteesta"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Ensisijainen sertifiointimaa"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Ensisijainen julisteen kieli"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Sertifikaation etuliite"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr ""
+msgstr "Ota trakt.tv julisteet käyttöön"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr ""
+msgstr "Ota trakt.tv fanitaide käyttöön"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr ""
+msgstr "Ota trailerit käyttöön kohteesta trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Lajityypin kieli"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Ensisijainen trailerin kieli"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr ""
+msgstr "Hae iskulause kohteesta"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Ensisijainen iskulauseen kieli"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr ""
+msgstr "Hae IMDb TOP250 sijoitukset"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr ""
+msgstr "Hae kuvaus kohteesta"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Ensisijainen sarjan (kokoelman) nimen kieli"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr ""
+msgstr "Julisteiden lähteet"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr ""
+msgstr "Hae avainsanoja ja tallenna tunnisteina kohteesta"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -195,39 +196,39 @@ msgstr "Arvosana"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Arvosana luotu käyttämällä"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Hae arvosanoja myös kohteesta IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Hae myös arvosanoja kohteesta Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Hae arvosanoja myös kohteesta MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Hae arvosanoja myös kohteesta themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Käytä pisteitä, jotka on koottu kohteesta"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB Api-avain"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Rekisteröi Api-avain osoitteessa omdbapi.com ja lisää se yläpuolelle"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Hae myös ei-oletusarvoisia Rotten Tomatoes arvosanoja"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -235,11 +236,11 @@ msgstr "Tekijät"
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr ""
+msgstr "Hae studio kohteesta"
 
 msgctxt "#30202"
 msgid "Get Country from"
-msgstr ""
+msgstr "Hae maa kohteesta"
 
 msgctxt "#30300"
 msgid "Search"
@@ -247,7 +248,7 @@ msgstr "Etsi"
 
 msgctxt "#30301"
 msgid "themoviedb.org"
-msgstr ""
+msgstr "themoviedb.org"
 
 msgctxt "#30302"
 msgid "IMDb"
@@ -255,27 +256,27 @@ msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr ""
+msgstr "Käytä hakukonetta"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Toissijainen hakukieli (en-us lisäksi)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Sisällytä kaikki elokuvaluokat"
 
 msgctxt "#30306"
 msgid "Warning:"
-msgstr ""
+msgstr "Varoitus:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr ""
+msgstr "Kaikkien elokuvakategorioiden ottaminen käyttöön heikentää haun tarkkuutta huomattavasti !!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Ensisijainen hakukieli"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -283,7 +284,7 @@ msgstr "Juoni"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr ""
+msgstr "Juoni / Iskulause / Tiivistelmä"
 
 msgctxt "#30500"
 msgid "Fanart"
@@ -291,80 +292,80 @@ msgstr "Fanitaide"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr ""
+msgstr "Fanitaiteen lähteet"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv julisteet käyttöön"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv fanitaide käyttöön"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Ota IMDb julisteet käyttöön"
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr ""
+msgstr "Kuvataide"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Lisäkuvataide"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv clearlogo käyttöön"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv clearart käyttöön"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv elokuvabanneri käyttöön"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv vaakakuva käyttöön"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Ota themoviedb.org vaakakuva käyttöön"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv levytaide käyttöön"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Kokoelman kuvataide"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv juliste käyttöön kokoelmalle"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv fanitaide käyttöön kokoelmalle"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv clearlogo käyttöön kokoelmalle"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv clearart käyttöön kokoelmalle"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv banneri käyttöön kokoelmalle"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv vaakakuva käyttöön kokoelmalle"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Ota fanart.tv levytaide käyttöön kokoelmalle"
