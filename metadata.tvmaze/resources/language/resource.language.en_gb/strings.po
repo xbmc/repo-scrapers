@@ -42,3 +42,7 @@ msgstr ""
 msgctxt "#32008"
 msgid "English Language Premiere"
 msgstr ""
+
+msgctxt "#32009"
+msgid "Default Rating"
+msgstr ""
