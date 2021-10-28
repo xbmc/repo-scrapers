@@ -20,12 +20,13 @@
 
 
 import re
+import json
 from . import api_utils
 from . import settings
 
 IMDB_RATINGS_URL = 'https://www.imdb.com/title/{}/'
-IMDB_RATING_REGEX = re.compile(r'"AggregateRating".*?"ratingValue".*?([\d.]+).*?<')
-IMDB_VOTES_REGEX = re.compile(r'"AggregateRating".*?"ratingCount".*?([\d]+).*?<')
+IMDB_JSON_REGEX = re.compile(
+    r'<script type="application\/ld\+json">(.*?)<\/script>')
 
 
 def get_details(imdb_id):
@@ -49,20 +50,11 @@ def _assemble_imdb_result(votes, rating):
 
 
 def _parse_imdb_result(input_html):
-    rating = _parse_imdb_rating(input_html)
-    votes = _parse_imdb_votes(input_html)
+    match = re.search(IMDB_JSON_REGEX, input_html)
+    if not match:
+        return None, None
+    imdb_json = json.loads(match.group(1))
+    imdb_ratings = imdb_json.get("aggregateRating", {})
+    rating = imdb_ratings.get("ratingValue", None)
+    votes = imdb_ratings.get("ratingCount", None)
     return votes, rating
-
-
-def _parse_imdb_rating(input_html):
-    match = re.search(IMDB_RATING_REGEX, input_html)
-    if (match):
-        return float(match.group(1))
-    return None
-
-
-def _parse_imdb_votes(input_html):
-    match = re.search(IMDB_VOTES_REGEX, input_html)
-    if (match):
-        return int(match.group(1).replace(',', ''))
-    return None
