@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-05-02 18:29+0000\n"
+"PO-Revision-Date: 2021-08-07 12:29+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
 "Language-Team: Danish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/da_dk/>\n"
 "Language: da_dk\n"
@@ -15,15 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6.1\n"
+"X-Generator: Weblate 4.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
-msgstr ""
+msgstr "Hent metadata til tv-shows fra themoviedb.org"
 
 msgctxt "Addon Description"
 msgid "The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different."
-msgstr ""
+msgstr "The Movie Database (TMDb) er en community-bygget film- og tv-database. Hvert stykke data er blevet tilføjet af vores fantastiske community, der går tilbage til 2008. TMDbs stærke internationale fokus og bredde af data er stort set uovertruffen, og noget vi er utroligt stolte af. Enkelt sagt, vi lever og ånder community, og det er netop det, der gør os forskellige."
 
 msgctxt "#30000"
 msgid "Preferred language"
@@ -35,11 +35,11 @@ msgstr "Foretrukket land til aldersvejledninger"
 
 msgctxt "#30002"
 msgid "Include certification prefix"
-msgstr ""
+msgstr "Inkluder præfiks til aldersbegrænsning"
 
 msgctxt "#30003"
 msgid "Prefix"
-msgstr ""
+msgstr "Præfiks"
 
 msgctxt "#30004"
 msgid "Keep original title"
@@ -47,11 +47,11 @@ msgstr "Behold original titel"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
-msgstr ""
+msgstr "Kategoriser fankunst med tekst som landskabsillustrationer"
 
 msgctxt "#30006"
 msgid "Include country code with studio"
-msgstr ""
+msgstr "Inkluder landekode med studio"
 
 # empty strings from 30007 to 30099
 msgctxt "#30100"
@@ -60,7 +60,7 @@ msgstr "Fanart.tv"
 
 msgctxt "#30101"
 msgid "Client key (optional)"
-msgstr ""
+msgstr "Klientnøgle (valgfri)"
 
 msgctxt "#30102"
 msgid "Enable fanart"
@@ -76,79 +76,79 @@ msgstr "Aktiver banner"
 
 msgctxt "#30105"
 msgid "Enable clearlogo"
-msgstr ""
+msgstr "Aktiver clearlogo"
 
 msgctxt "#30106"
 msgid "Enable clearart"
-msgstr ""
+msgstr "Aktiver clearart"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr ""
+msgstr "Aktiver landskab"
 
 msgctxt "#30108"
 msgid "Enable character art"
-msgstr ""
+msgstr "Aktiver karakterkunst"
 
 msgctxt "#30109"
 msgid "Include art from fanart.tv"
-msgstr ""
+msgstr "Inkluder illustrationer fra fanart.tv"
 
 # empty strings from 30110 to 30149
 msgctxt "#30150"
 msgid "Enable season poster"
-msgstr ""
+msgstr "Aktiver sæsonplakater"
 
 msgctxt "#30151"
 msgid "Enable season banner"
-msgstr ""
+msgstr "Aktiver sæsonbannere"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr ""
+msgstr "Aktiver sæson-landskabsillustrationer"
 
 # empty strings from 30153 to 30200
 msgctxt "#30200"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanceret"
 
 msgctxt "#30201"
 msgid "Verbose debug logging"
-msgstr ""
+msgstr "Omfattende fejlfindingslogføring"
 
 # emptry strings from 30202 to 30299
 msgctxt "#30300"
 msgid "Ratings"
-msgstr ""
+msgstr "Bedømmelser"
 
 msgctxt "#30301"
 msgid "Default rating from"
-msgstr ""
+msgstr "Standard-bedømmelse fra"
 
 msgctxt "#30302"
 msgid "Also add IMDb ratings"
-msgstr ""
+msgstr "Tilføj også IMDb-bedømmelser"
 
 msgctxt "#30303"
 msgid "Also add Trakt.tv ratings"
-msgstr ""
+msgstr "Tilføj også Trakt.tv-bedømmelser"
 
 msgctxt "#30304"
 msgid "Also add TMDb ratings"
-msgstr ""
+msgstr "Tilføj også TMDb-bedømmelser"
 
 msgctxt "#30305"
 msgid "Enable Trailer"
-msgstr ""
+msgstr "Aktiver trailer"
 
 msgctxt "#30306"
 msgid "Addon Player"
-msgstr ""
+msgstr "Addon-afspiller"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
-msgstr ""
+msgstr "Tubed"

@@ -52,7 +52,6 @@ if settings.FANARTTV_CLIENTKEY:
 
 
 def search_show(title, year=None):
-    # type: (Text) -> List[InfoType]
     """
     Search for a single TV show
 
@@ -94,7 +93,6 @@ def search_show(title, year=None):
 
 
 def load_episode_list(show_info, season_map, ep_grouping):
-    # type: (Text) -> List[InfoType]
     """Load episode list from themoviedb.org API"""
     episode_list = []
     if ep_grouping is not None:
@@ -138,7 +136,6 @@ def load_episode_list(show_info, season_map, ep_grouping):
 
 
 def load_show_info(show_id, ep_grouping=None, named_seasons=None):
-    # type: (Text) -> Optional[InfoType]
     """
     Get full info for a single show
 

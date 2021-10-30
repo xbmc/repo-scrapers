@@ -1,3 +1,7 @@
+1.4.8
+changed IMDB parsing to use JSON from application/ld+json section instead of HTML
+updated language files
+
 1.4.7
 fix for shows with large number of images causing SQL error when using mySQL/MariaDB
 
