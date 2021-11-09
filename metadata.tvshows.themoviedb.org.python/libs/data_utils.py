@@ -414,19 +414,20 @@ def _parse_trailer(results):
         elif settings.PLAYERSOPT == 'youtube':
             addon_player = 'plugin://plugin.video.youtube/?action=play_video&videoid='
         backup_keys = []
-        for result in results:
-            if result.get('site') == 'YouTube':
-                key = result.get('key')
-                if result.get('type') == 'Trailer':
-                    if _check_youtube(key):
-                        # video is available and is defined as "Trailer" by TMDB. Perfect link!
-                        return addon_player+key
-                else:
-                    # video is available, but NOT defined as "Trailer" by TMDB. Saving it as backup in case it doesn't find any perfect link.
-                    backup_keys.append(key)
-        for keybackup in backup_keys:
-            if _check_youtube(keybackup):
-                return addon_player+keybackup
+        for video_lang in [settings.LANG[0:2], 'en']:
+            for result in results:
+                if result.get('site') == 'YouTube' and result.get('iso_639_1') == video_lang:
+                    key = result.get('key')
+                    if result.get('type') == 'Trailer':
+                        if _check_youtube(key):
+                            # video is available and is defined as "Trailer" by TMDB. Perfect link!
+                            return addon_player+key
+                    else:
+                        # video is available, but NOT defined as "Trailer" by TMDB. Saving it as backup in case it doesn't find any perfect link.
+                        backup_keys.append(key)
+            for keybackup in backup_keys:
+                if _check_youtube(keybackup):
+                    return addon_player+keybackup
     return None
 
 
