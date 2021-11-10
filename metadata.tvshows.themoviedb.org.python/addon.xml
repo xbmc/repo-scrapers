@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.8"
+  version="1.4.9"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,9 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.4.8
-udpated IMDB parsing to be more tolerant of HTML changes at IMDB
-updated language files
+    <news>1.4.9
+fix to fallback to English trailer if no trailer found in selected language
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
