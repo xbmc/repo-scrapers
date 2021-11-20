@@ -5,56 +5,57 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/xbmc-addons/language/id/)\n"
-"Language: id\n"
+"PO-Revision-Date: 2021-11-20 17:11+0000\n"
+"Last-Translator: Nao3Line Prez <n.yazawa6932@gmail.com>\n"
+"Language-Team: Indonesian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/id_id/>\n"
+"Language: id_id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.9\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr ""
+msgstr "Pengikis Film Universal"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr ""
+msgstr "Universal Scraper saat ini merupakan scraper yang paling dapat disesuaikan dengan mengumpulkan informasi dari situs yang didukung berikut: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Scraper ini saat ini menjadi unggulan dari scraper Team-Kodi. Pencarian awal dapat dilakukan baik di TMDb atau IMDb (sesuai pengaturan), tetapi setelah itu dapat diatur bidang demi bidang dari situs mana Anda menginginkan informasi spesifik itu."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr ""
+msgstr "Aktifkan fanart dari themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr ""
+msgstr "Aktifkan poster dari themoviedb.org"
 
 # empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr ""
+msgstr "Aktifkan poster dari MoviePosterDB"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr ""
+msgstr "Ambil Trailer dari YouTube"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Judul bahasa pilihan dari"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr ""
+msgstr "Aktifkan trailer dari themoviedb.org"
 
 # empty string with id 30010
 msgctxt "#30011"
 msgid "Poster"
-msgstr ""
+msgstr "Poster"
 
 msgctxt "#30012"
 msgid "Trailers"
@@ -62,173 +63,173 @@ msgstr "Trailer"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr ""
+msgstr "Dapatkan Nama Set (Koleksi) dari themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr ""
+msgstr "Dapatkan Alur dari"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr ""
+msgstr "Dapatkan Pemeran/Sutradara/Penulis Dari"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr ""
+msgstr "Sumber Alur"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Bahasa Alur Pilihan"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Dapatkan Penilaian Default dari"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr ""
+msgstr "Dapatkan Genre dari"
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr ""
+msgstr "Dapatkan Judul dari"
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr ""
+msgstr "Sumber Judul"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr ""
+msgstr "Sumber Pemeran dan Kredit"
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr ""
+msgstr "Sumber Genre"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Bahasa Judul Pilihan"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr ""
+msgstr "Sumber Trailer"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr ""
+msgstr "Koleksi Film"
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr ""
+msgstr "Sumber Penilaian"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr ""
+msgstr "Pengaturan Sertifikasi"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr ""
+msgstr "Dapatkan Sertifikasi dari"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Serifikasi Negara Pilihan"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Bahasa Poster Pilihan"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Awalan Sertifikasi"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr ""
+msgstr "Aktifkan poster dari trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr ""
+msgstr "Aktifkan fanart dari trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr ""
+msgstr "Aktifkan trailer dari trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Bahasa Genre"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Bahasa Trailer Pilihan"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr ""
+msgstr "Dapatkan Tagline dari"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Bahasa Tagline Pilihan"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr ""
+msgstr "Dapatkan Penilaian Top250 IMDb"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr ""
+msgstr "Dapatkan Garis Besar dari"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Bahasa Nama Set (Koleksi) Pilihan"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr ""
+msgstr "Sumber Poster"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr ""
+msgstr "Dapatkan Katakunci dan Simpan sebagai Tag dari"
 
 msgctxt "#30100"
 msgid "Rating"
-msgstr "Rating"
+msgstr "Penilaian"
 
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Penilaian yang Dihasilkan Menggunakan"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Juga dapatkan penilaian dari IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Juga dapatkan penilaian dari Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Juga dapatkan penilaian dari MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Juga dapatkan penilaian dari TMDb"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Gunakan Skor Agregat dari"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB kunci Api"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Silakan Daftarkan kunci Api di omdbapi.com dan Tambahkan di Atas"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Juga dapatkan peringkat Rotten Tomatoes non-default"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -236,11 +237,11 @@ msgstr "Kredit"
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr ""
+msgstr "Dapatkan Studio dari"
 
 msgctxt "#30202"
 msgid "Get Country from"
-msgstr ""
+msgstr "Dapatkan Negara dari"
 
 msgctxt "#30300"
 msgid "Search"
@@ -248,35 +249,35 @@ msgstr "Cari"
 
 msgctxt "#30301"
 msgid "themoviedb.org"
-msgstr ""
+msgstr "TMDb"
 
 msgctxt "#30302"
 msgid "IMDb"
-msgstr "IMDB"
+msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr ""
+msgstr "Mesin Pencari untuk Digunakan"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Bahasa Pencarian Sekunder (Selain en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Termasuk Semua Kategori Film"
 
 msgctxt "#30306"
 msgid "Warning:"
-msgstr ""
+msgstr "Peringatan:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr ""
+msgstr "Mengaktifkan Semua Kategori Film akan sangat mengurangi akurasi pencarian!!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Bahasa Pencarian Pilihan"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -284,7 +285,7 @@ msgstr "Alur"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr ""
+msgstr "Alur / Tagline / GarisBesar"
 
 msgctxt "#30500"
 msgid "Fanart"
@@ -292,80 +293,80 @@ msgstr "Fanart"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr ""
+msgstr "Sumber Fanart"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "Aktifkan poster dari fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan fanart dari fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Aktifkan poster dari IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr ""
+msgstr "Karya Seni"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Karya Seni Ekstra"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Aktifkan logo dari fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan Seni bersih dari fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Aktifkan spanduk film dari fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Aktifkan lanskap film dari fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Aktifkan lanskap film dari themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan discart dari fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Koleksi Karya Seni"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Aktifkan poster set dari fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan fanart set dari fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Aktifkan logo set dari fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan Seni bersih set dari fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Aktifkan spanduk set dari fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Aktifkan laskap set dari fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Aktifkan set discart dari fanart.tv"
