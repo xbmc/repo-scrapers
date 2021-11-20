@@ -1,3 +1,6 @@
+[B]v3.1.6[/B]
+- Translations updates from Weblate
+
 [B]3.1.4[/B]
 Fixed: search results again
 
