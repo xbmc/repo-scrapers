@@ -1,3 +1,6 @@
+1.4.10
+updates to image reduction algorithm to better deal with shows with lots of seasons
+
 1.4.9
 fix to fallback to English trailer if no trailer found in selected language
 
