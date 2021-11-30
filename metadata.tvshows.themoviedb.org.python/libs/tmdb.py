@@ -384,14 +384,8 @@ def trim_artwork(show_info):
         logger.error('that is more than the max of %s, image results will be trimmed by %s' % (
             str(settings.MAXIMAGES), str(reduction)))
         for key, value in image_counts.items():
-            total = value['total']
-            reduce = int(floor(total * reduction))
-            target = total - reduce
-            if target < 5:
-                reduce = 0
-            else:
-                reduce = -1 * reduce
-            image_counts[key]['reduce'] = reduce
+            image_counts[key]['reduce'] = -1 * \
+                int(floor(value['total'] * reduction))
             logger.debug('%s: %s' % (key, pformat(image_counts[key])))
         for image_type, image_list in show_info.get('images', {}).items():
             if image_type == 'backdrops':

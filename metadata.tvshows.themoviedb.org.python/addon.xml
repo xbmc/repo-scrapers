@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.9"
+  version="1.4.10"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,8 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.4.9
-fix to fallback to English trailer if no trailer found in selected language
+    <news>1.4.10
+updates to image reduction algorithm to better deal with shows with lots of seasons
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
@@ -27,6 +27,7 @@ fix to fallback to English trailer if no trailer found in selected language
     <summary lang="es_MX">Obtener metadatos de series de themoviedb.org</summary>
     <summary lang="et_EE">Hangi seriaali metaandmed saidilt themoviedb.org</summary>
     <summary lang="fi_FI">Hae TV-sarjan metatiedot osoitteesta themoviedb.org</summary>
+    <summary lang="id_ID">Ambil metadata Acara TV dari themoviedb.org</summary>
     <summary lang="ko_KR">themoviedb.org에서 TV쇼 메타데이터를 가져옵니다</summary>
     <summary lang="pl_PL">Pobieraj metadane programów telewizyjnch z themoviedb.org</summary>
     <summary lang="ru_RU">Получение метаданных о сериалах с сайта themoviedb.org</summary>
@@ -38,6 +39,7 @@ fix to fallback to English trailer if no trailer found in selected language
     <description lang="en_GB">The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different.</description>
     <description lang="es_MX">The Movie Database (TMDb) es una base de datos de películas y series creada por la comunidad. Cada pedazo de información ha sido agregada por nuestra increíble comunidad desde 2008. El fuerte enfoque internacional de TMDb y la variedad de información son en gran medida incomparables y algo de lo que estamos increíblemente orgullosos. En pocas palabras, vivimos y respiramos comunidad y eso es precisamente lo que nos hace diferentes.</description>
     <description lang="fi_FI">The Movie Database (TMDb) on yhteisön rakentama elokuva- ja TV-tietokanta. Kaikki lisätyt tiedot ovat lisänneet suurenmoinen yhteisömme vuodesta 2008. TMDb:n vahva kansainvälinen painopiste ja laaja data on suurelta osin vertaansa vailla josta me olemme uskomattoman ylpeitä. Yksinkertaisesti sanottuna elämme ja hengitämme yhteisönä ja juuri se tekee meistä erilaisia.</description>
+    <description lang="id_ID">The Movie Database (TMDb) adalah database film dan TV yang dibangun oleh komunitas. Setiap bagian data telah ditambahkan oleh komunitas kami yang luar biasa sejak tahun 2008. Fokus internasional TMDb yang kuat dan luasnya data sebagian besar tak tertandingi dan sesuatu yang sangat kami banggakan. Sederhananya, kita hidup dan bernafas dalam komunitas dan justru itulah yang membuat kita berbeda.</description>
     <description lang="ko_KR">The Movie Database (TMDb)는 영화와 TV 데이터베이스를 구축한 커뮤니티입니다. 모든 자료들은 우리 놀라운 커뮤니티에서 2008년부터 추가돼 온 것들입니다. TMDb의 강력한 국제적 초점과 광범위한 데이터는 타의 추종을 불허하며 우리가 자랑스러워하는 점입니다. 간단히 말해, 우리는 커뮤니티와 살고 호흡하며 그것이 우리가 다른 점입니다.</description>
     <description lang="pl_PL">The Movie Database (TMDb) to baza filmów i programów telewizyjnych zbudowana przez społeczność. Każdy element danych został dodany przez naszą niesamowitą społeczność od 2008 roku. Silna międzynarodowa koncentracja TMDb i zakres danych są w dużej mierze niezrównane i jesteśmy z tego niesamowicie dumni. Mówiąc prościej, żyjemy i oddychamy wspólnotą i właśnie to nas wyróżnia.</description>
     <description lang="ru_RU">The Movie Database (TMDb) - это база данных фильмов и сериалов, созданная сообществом. Все данные были добавлены нашим замечательным сообществом, начиная с 2008 года. Международная направленность и широта данных TMDb во многом не имеют себе равных, и это то, чем мы невероятно гордимся. Проще говоря, мы живём и дышим сообществом, и именно это отличает нас от других.</description>
