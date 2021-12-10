@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvmaze"
   name="TVmaze"
-  version="1.2.0+matrix.1"
+  version="1.2.1+matrix.1"
   provider-name="Roman V.M.">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -22,7 +22,11 @@ We provide an API that can be used by anyone or service like Kodi to retrieve TV
     </assets>
     <website>https://www.tvmaze.com</website>
     <source>https://github.com/romanvm/kodi.tvmaze</source>
-    <news>1.2.0:
+    <news>1.2.1:
+- Added parsing of uniqueid NFO tag.
+- Limit the number of saved artwork.
+
+1.2.0:
 - Added IMDB ratings.</news>
     <reuselanguageinvoker>true</reuselanguageinvoker>
   </extension>
