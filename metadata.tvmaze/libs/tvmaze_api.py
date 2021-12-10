@@ -27,7 +27,7 @@ from requests.exceptions import HTTPError
 from . import cache_service as cache
 from .data_service import process_episode_list
 from .imdb_rating import get_imdb_rating
-from .utils import logger, safe_get
+from .utils import logger
 
 try:
     from typing import Text, Optional, Union, List, Dict, Any  # pylint: disable=unused-import
@@ -44,7 +44,7 @@ ALTERNATE_LISTS_URL = 'http://api.tvmaze.com/shows/{}/alternatelists'
 ALTERNATE_EPISODES_URL = 'http://api.tvmaze.com/alternatelists/{}/alternateepisodes'
 
 HEADERS = (
-    ('User-Agent', 'Kodi scraper for tvmaze.com by Roman V.M.; roman1972@gmail.com'),
+    ('User-Agent', 'Kodi scraper for tvmaze.com by Roman V.M.'),
     ('Accept', 'application/json'),
 )
 SESSION = requests.Session()
@@ -105,7 +105,7 @@ def load_show_info(show_id):
         if isinstance(show_info['_embedded']['images'], list):
             show_info['_embedded']['images'].sort(key=lambda img: img['main'],
                                                   reverse=True)
-        external_ids = safe_get(show_info, 'externals', {})
+        external_ids = show_info.get('externals') or {}
         imdb_id = external_ids.get('imdb')
         if imdb_id is not None:
             show_info['imdb_rating'] = get_imdb_rating(imdb_id)
