@@ -39,6 +39,7 @@ SHOW_ID_REGEXPS = (
     re.compile(r'(thetvdb)\.com/.*?series/(\d+)', re.I),
     re.compile(r'(thetvdb)\.com[\w=&\?/]+id=(\d+)', re.I),
     re.compile(r'(imdb)\.com/[\w/\-]+/(tt\d+)', re.I),
+    re.compile(r'<uniqueid.+?type="(tvdb|imdb)".*?>([t\d]+?)</uniqueid>', re.I | re.DOTALL),
 )
 SUPPORTED_ARTWORK_TYPES = ('poster', 'banner')
 IMAGE_SIZES = ('large', 'original', 'medium')
@@ -124,23 +125,18 @@ def _set_unique_ids(show_info, list_item):
     unique_ids = {'tvmaze': str(show_info['id'])}
     for key, value in six.iteritems(safe_get(show_info, 'externals', {})):
         if key == 'thetvdb':
-            key = 'tvdb'
+            key = key[3:]
         unique_ids[key] = str(value)
     list_item.setUniqueIDs(unique_ids, 'tvmaze')
     return list_item
 
 
-def _set_rating(show_info, list_item, default_rating):
-    # type: (InfoType, ListItem, Text) -> ListItem
+def _set_rating(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Set show rating"""
-    imdb_rating = show_info.get('imdb_rating')
-    is_imdb_default = default_rating == 'IMDB' and imdb_rating is not None
     if show_info['rating'] is not None and show_info['rating']['average'] is not None:
         rating = float(show_info['rating']['average'])
-        list_item.setRating('tvmaze', rating, defaultt=not is_imdb_default)
-    if imdb_rating is not None:
-        list_item.setRating('imdb', imdb_rating['rating'], imdb_rating['votes'],
-                            defaultt=is_imdb_default)
+        list_item.setRating('tvmaze', rating, defaultt=True)
     return list_item
 
 
@@ -186,8 +182,8 @@ def set_show_artwork(show_info, list_item):
     return list_item
 
 
-def add_main_show_info(list_item, show_info, full_info=True, default_rating='TVmaze'):
-    # type: (ListItem, InfoType, bool, Text) -> ListItem
+def add_main_show_info(list_item, show_info, full_info=True):
+    # type: (ListItem, InfoType, bool) -> ListItem
     """Add main show info to a list item"""
     plot = _clean_plot(safe_get(show_info, 'summary', ''))
     video = {
@@ -223,7 +219,7 @@ def add_main_show_info(list_item, show_info, full_info=True, default_rating='TVm
         if image_url:
             list_item.addAvailableArtwork(image_url, 'poster')
     list_item.setInfo('video', video)
-    list_item = _set_rating(show_info, list_item, default_rating)
+    list_item = _set_rating(show_info, list_item)
     # This is needed for getting artwork
     list_item = _set_unique_ids(show_info, list_item)
     return list_item
@@ -262,8 +258,12 @@ def parse_nfo_url(nfo):
     """Extract show ID from NFO file contents"""
     for regexp in SHOW_ID_REGEXPS:
         show_id_match = regexp.search(nfo)
-        if show_id_match:
-            return UrlParseResult(show_id_match.group(1), show_id_match.group(2))
+        if show_id_match is not None:
+            provider = show_id_match.group(1)
+            show_id = show_id_match.group(2)
+            if provider == 'tvdb':
+                provider = 'thetvdb'
+            return UrlParseResult(provider, show_id)
     return None
 
 
