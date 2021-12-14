@@ -42,23 +42,19 @@ def find_show(title, year=None):
     # type: (Union[Text, ByteString], Optional[Text]) -> None
     """Find a show by title"""
     if isinstance(title, bytes):
-        title = title.decode('utf-8')
-    logger.debug('Searching for TV show {} ({})'.format(title, year))
-    search_results = tvmaze_api.search_show(title)
-    if year is not None:
-        search_result = data_service.filter_by_year(search_results, year)
-        search_results = (search_result,) if search_result else ()
+        title = title.decode('utf-8', 'replace')
+    search_results = data_service.search_show(title, year)
     for search_result in search_results:
-        show_name = search_result['show']['name']
-        if search_result['show']['premiered']:
-            show_name += ' ({})'.format(search_result['show']['premiered'][:4])
+        show_name = search_result['name']
+        if search_result.get('premiered'):
+            show_name += ' ({})'.format(search_result['premiered'][:4])
         list_item = xbmcgui.ListItem(show_name, offscreen=True)
-        list_item = data_service.add_main_show_info(list_item, search_result['show'], False)
+        list_item = data_service.add_main_show_info(list_item, search_result, False)
         # Below "url" is some unique ID string (may be an actual URL to a show page)
         # that is used to get information about a specific TV show.
         xbmcplugin.addDirectoryItem(
             HANDLE,
-            url=str(search_result['show']['id']),
+            url=str(search_result['id']),
             listitem=list_item,
             isFolder=True
         )
@@ -76,8 +72,11 @@ def get_show_id_from_nfo(nfo):
     """
     if isinstance(nfo, bytes):
         nfo = nfo.decode('utf-8', 'replace')
+    if '<episodedetails>' in nfo:
+        return  # Skip episode NFOs
     logger.debug('Parsing NFO file:\n{}'.format(nfo))
     parse_result = data_service.parse_nfo_url(nfo)
+    show_info = None
     if parse_result:
         if parse_result.provider == 'tvmaze':
             show_info = tvmaze_api.load_show_info(parse_result.show_id)
@@ -86,16 +85,22 @@ def get_show_id_from_nfo(nfo):
                 parse_result.provider,
                 parse_result.show_id
             )
-        if show_info is not None:
-            list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
-            # "url" is some string that unique identifies a show.
-            # It may be an actual URL of a TV show page.
-            xbmcplugin.addDirectoryItem(
-                HANDLE,
-                url=str(show_info['id']),
-                listitem=list_item,
-                isFolder=True
-            )
+    if show_info is None:
+        title, year = data_service.parse_nfo_title_and_year(nfo)
+        if title is not None:
+            search_results = data_service.search_show(title, year)
+            if search_results and len(search_results) == 1:
+                show_info = search_results[0]
+    if show_info is not None:
+        list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
+        # "url" is some string that unique identifies a show.
+        # It may be an actual URL of a TV show page.
+        xbmcplugin.addDirectoryItem(
+            HANDLE,
+            url=str(show_info['id']),
+            listitem=list_item,
+            isFolder=True
+        )
 
 
 def get_details(show_id, default_rating):
@@ -180,13 +185,14 @@ def get_artwork(show_id):
     :param show_id: default unique ID set by setUniqueIDs() method
     """
     logger.debug('Getting artwork for show ID {}'.format(show_id))
-    show_info = tvmaze_api.load_show_info(show_id)
-    if show_info is not None:
-        list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
-        list_item = data_service.set_show_artwork(show_info, list_item)
-        xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
-    else:
-        xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
+    if show_id:
+        show_info = tvmaze_api.load_show_info(show_id)
+        if show_info is not None:
+            list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
+            list_item = data_service.set_show_artwork(show_info, list_item)
+            xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
+        else:
+            xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
 
 
 def router(paramstring):
@@ -215,7 +221,7 @@ def router(paramstring):
     elif params['action'] == 'getepisodedetails':
         get_episode_details(params['url'], episode_order)
     elif params['action'] == 'getartwork':
-        get_artwork(params['id'])
+        get_artwork(params.get('id'))
     else:
         raise RuntimeError('Invalid addon call: {}'.format(sys.argv))
     xbmcplugin.endOfDirectory(HANDLE)

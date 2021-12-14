@@ -24,8 +24,11 @@ from collections import namedtuple, defaultdict
 
 import six
 
+from . import tvmaze_api
+from .utils import logger
+
 try:
-    from typing import Optional, Text, Dict, List, Any  # pylint: disable=unused-import
+    from typing import Optional, Text, Dict, List, Any, Tuple  # pylint: disable=unused-import
     from xbmcgui import ListItem  # pylint: disable=unused-import
     InfoType = Dict[Text, Any]  # pylint: disable=invalid-name
 except ImportError:
@@ -39,6 +42,9 @@ SHOW_ID_REGEXPS = (
     re.compile(r'(imdb)\.com/[\w/\-]+/(tt\d+)', re.I),
     re.compile(r'<uniqueid.+?type="(tvdb|imdb)".*?>([t\d]+?)</uniqueid>', re.I | re.DOTALL),
 )
+TITLE_RE = re.compile(r'<title>([^<]+?)</title>', re.I)
+YEAR_RE = re.compile(r'<year>(\d+?)</year>', re.I)
+PREMIERED_RE = re.compile(r'<premiered>([^<]+?)</premiered>', re.I)
 SUPPORTED_ARTWORK_TYPES = ('poster', 'banner')
 IMAGE_SIZES = ('large', 'original', 'medium')
 MAX_ARTWORK_NUMBER = 10
@@ -278,11 +284,33 @@ def parse_nfo_url(nfo):
             show_id = show_id_match.group(2)
             if provider == 'tvdb':
                 provider = 'thetvdb'
+            logger.debug('Matched show ID {} by regexp {}'.format(show_id, regexp))
             return UrlParseResult(provider, show_id)
+    logger.debug('Unable to find show ID in an NFO file')
     return None
 
 
-def filter_by_year(shows, year):
+def parse_nfo_title_and_year(nfo):
+    # type: (Text) -> [Optional[Text], Optional[Text]]
+    title_match = TITLE_RE.search(nfo)
+    if title_match is None:
+        logger.debug('Unable to find show title in an NFO file')
+        return None, None
+    title = title_match.group(1)
+    year = None
+    year_match = YEAR_RE.search(nfo)
+    if year_match is not None:
+        year = year_match.group(1)
+    if year is None:
+        premiered_match = PREMIERED_RE.search(nfo)
+        if premiered_match is not None:
+            premiered = premiered_match.group(1)
+            year = premiered[:4]
+    logger.debug('Matched title "{}" and year {}'.format(title, year))
+    return title, year
+
+
+def _filter_by_year(shows, year):
     # type: (List[InfoType], Text) -> Optional[InfoType]
     """
     Filter a show by year
@@ -292,7 +320,18 @@ def filter_by_year(shows, year):
     :return: a found show or None
     """
     for show in shows:
-        premiered = show['show'].get('premiered') or ''
+        premiered = show.get('premiered') or ''
         if premiered and premiered.startswith(str(year)):
             return show
     return None
+
+
+def search_show(title, year):
+    # type: (Text, Text) -> List[InfoType]
+    logger.debug('Searching for TV show {} ({})'.format(title, year))
+    raw_search_results = tvmaze_api.search_show(title)
+    search_results = [res['show'] for res in raw_search_results]
+    if len(search_results) > 1 and year:
+        search_result = _filter_by_year(search_results, year)
+        search_results = (search_result,) if search_result else ()
+    return search_results
