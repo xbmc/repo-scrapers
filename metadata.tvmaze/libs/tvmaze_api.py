@@ -187,7 +187,7 @@ def load_episodes_map(show_id, episode_order):
         if episode_list:
             processed_episodes = process_episode_list(episode_list)
             cache.cache_episodes_map(show_id, processed_episodes)
-    return processed_episodes
+    return processed_episodes or {}
 
 
 def load_episode_info(show_id, episode_id, season, episode, episode_order):
