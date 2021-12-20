@@ -139,11 +139,11 @@
 				<expression />
 			</RegExp>
 			<!--thumbs from TMDB-->
-			<RegExp conditional="tmdbthumbs" input="" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$7&lt;/chain&gt;" dest="4+">
+			<RegExp conditional="tmdbthumbs" input="" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$7::ro&lt;/chain&gt;" dest="4+">
 				<expression />
 			</RegExp>
 			<!--fanart from TMDB-->
-			<RegExp input="" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$7&lt;/chain&gt;" dest="4+">
+			<RegExp input="" output="&lt;chain function=&quot;GetTMDBFanartByIdChain&quot;&gt;$$7::ro&lt;/chain&gt;" dest="4+">
 				<expression />
 			</RegExp>
 			<expression noclean="1" />

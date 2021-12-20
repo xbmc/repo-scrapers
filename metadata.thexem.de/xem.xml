@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <scraper framework="1.1" date="2012-06-17">
 	<NfoUrl dest="3">
-		<RegExp input="$$1" output="&lt;url cache=&quot;\1-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/$INFO[language].zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url cache=&quot;\1-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/$INFO[language].zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;" dest="3">
 			<expression>http://(?:www\.)?thetvdb.com/(?:index\.php)?\?tab=series&amp;id=([0-9]+)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;tt\1.xml&quot; function=&quot;GetTVDBId&quot;&gt;http://www.thetvdb.com/api/GetSeriesByRemoteID.php?imdbid=tt\1&amp;amp;language=$INFO[language]&lt;/url&gt;&lt;/details&gt;" dest="3+">
@@ -13,7 +13,7 @@
 	</NfoUrl>
 
 	<GetTVDBId dest="3">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/$INFO[language].zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/details&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/$INFO[language].zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/details&gt;" dest="3">
 			<expression>&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;</expression>
 		</RegExp>
 	</GetTVDBId>
@@ -38,7 +38,7 @@
 
 	<GetSearchResults dest="1">
 		<RegExp input="$$4" output="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;yes&quot;?&gt;&lt;results&gt;\1&lt;/results&gt;" dest="1">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;language&gt;\2&lt;/language&gt;&lt;url cache=&quot;\1-\2.xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/\2.zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="4">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;language&gt;\2&lt;/language&gt;&lt;url cache=&quot;\1-\2.xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/\2.zip&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;/entity&gt;" dest="4">
 				<expression repeat="yes">&lt;seriesid&gt;([0-9]*)&lt;/seriesid&gt;[^&lt;]*&lt;language&gt;([^&lt;]*)&lt;/language&gt;[^&lt;]*&lt;SeriesName&gt;([^&lt;]*)&lt;/SeriesName&gt;</expression>
 			</RegExp>
 			<expression noclean="1"/>
@@ -60,20 +60,20 @@
 			<RegExp input="$$2" output="\1|" dest="2">
 				<expression repeat="yes" clear="yes">(\{.*?\})\}</expression>
 			</RegExp>
-			<RegExp conditional="!absolutenumber" input="$$2" output="&lt;episode&gt;&lt;url&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$10/default/\4/\5/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\2&lt;/epnum&gt;&lt;season&gt;\1&lt;/season&gt;&lt;/episode&gt;" dest="4">
+			<RegExp conditional="!absolutenumber" input="$$2" output="&lt;episode&gt;&lt;url&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$10/default/\4/\5/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\2&lt;/epnum&gt;&lt;season&gt;\1&lt;/season&gt;&lt;/episode&gt;" dest="4">
 				<expression repeat="yes" clear="no">&quot;$INFO[listing]&quot;:{&quot;season&quot;:([0-9]+),&quot;episode&quot;:([0-9]+),&quot;absolute&quot;:([0-9]+)[^|]*?&quot;tvdb&quot;:{&quot;season&quot;:([0-9]+),&quot;episode&quot;:([0-9]+),&quot;absolute&quot;:([0-9]+)</expression>
 			</RegExp>
-			<RegExp conditional="absolutenumber" input="$$2" output="&lt;episode&gt;&lt;url&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$10/absolute/\6/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;/episode&gt;" dest="4">
+			<RegExp conditional="absolutenumber" input="$$2" output="&lt;episode&gt;&lt;url&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$10/absolute/\6/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;/episode&gt;" dest="4">
 				<expression repeat="yes" clear="no">&quot;$INFO[listing]&quot;:{&quot;season&quot;:([0-9]+),&quot;episode&quot;:([0-9]+),&quot;absolute&quot;:([0-9]+)[^|]*?&quot;tvdb&quot;:{&quot;season&quot;:([0-9]+),&quot;episode&quot;:([0-9]+),&quot;absolute&quot;:([0-9]+)</expression>
 			</RegExp>
 			<!-- insert tvdb listing -->
-			<RegExp conditional="!absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$10/default/\5/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;\5&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
+			<RegExp conditional="!absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$10/default/\5/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;\5&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
 				<expression repeat="yes">&lt;Episode&gt;.*?&lt;id&gt;([0-9]+).*?&lt;EpisodeName&gt;([^&lt;]*).*?&lt;EpisodeNumber&gt;([0-9]+)[^&lt;]*.*?&lt;FirstAired&gt;([^&lt;]*)&lt;/FirstAired&gt;.*?&lt;SeasonNumber&gt;([0-9]+)[^&lt;]*.*?&lt;/Episode&gt;</expression>
 			</RegExp>
-			<RegExp conditional="absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$10/absolute/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
+			<RegExp conditional="absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$10/absolute/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;1&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
 					<expression repeat="yes">&lt;Episode&gt;.*?&lt;id&gt;([0-9]*).*?&lt;EpisodeName&gt;([^&lt;]*).*?&lt;FirstAired&gt;([^&lt;]*).*?&lt;absolute_number&gt;([0-9]*).*?&lt;/Episode&gt;</expression>
 			</RegExp>
-			<RegExp conditional="absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/$$10/absolute/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;0&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
+			<RegExp conditional="absolutenumber" input="$$1" output="&lt;episode&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/$$10/absolute/\3/$INFO[language].xml&lt;/url&gt;&lt;epnum&gt;\3&lt;/epnum&gt;&lt;season&gt;0&lt;/season&gt;&lt;id&gt;\1&lt;/id&gt;&lt;aired&gt;\4&lt;/aired&gt;&lt;/episode&gt;" dest="4+">
 				<expression repeat="yes">&lt;Episode&gt;.*?&lt;id&gt;([0-9]*).*?&lt;EpisodeName&gt;([^&lt;]*).*?&lt;EpisodeNumber&gt;([0-9]*).*?&lt;FirstAired&gt;([^&lt;]*).*?&lt;SeasonNumber&gt;0&lt;/SeasonNumber&gt;.*?&lt;/Episode&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -169,7 +169,7 @@
 				<expression noclean="1"/>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;episodeguide&gt;\1&lt;/episodeguide&gt;" dest="4+">
-				<RegExp input="$$2" output="&lt;url cache=&quot;$$2-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/1D62F2F90030C444/series/\1/all/$INFO[language].zip&lt;/url&gt;" dest="7">
+				<RegExp input="$$2" output="&lt;url cache=&quot;$$2-$INFO[language].xml&quot;&gt;http://www.thetvdb.com/api/439DFEBA9D3059C6/series/\1/all/$INFO[language].zip&lt;/url&gt;" dest="7">
 					<expression/>
 				</RegExp>
 				<RegExp input="$$2" output="&lt;url cache=&quot;$$2-xem.xml&quot;&gt;http://thexem.de/map/all?id=\1&amp;origin=tvdb&lt;/url&gt;" dest="7+">

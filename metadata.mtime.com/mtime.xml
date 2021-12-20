@@ -48,12 +48,12 @@
 				<expression>发行公司：&lt;/strong&gt;(.*?)&lt;/a&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;outline&gt;\1&lt;/outline&gt;&lt;plot&gt;\1&lt;/plot&gt;" dest="5+">
-				<expression>剧情：(.*?)更多剧情</expression>
+				<expression fixchars="1">剧情：(.*?)更多剧情</expression>
 			</RegExp>
 			<RegExp conditional="trailer" input="$$1" output="&lt;url function=&quot;GetTrailer&quot;&gt;http://api.mtime.com/trailer/getvideo.aspx?vid=\1&lt;/url&gt;" dest="5+">
 				<expression>&quot;url&quot;:&quot;http://video.mtime.com/(\d+)/\?mid=</expression>
 			</RegExp>
-			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;http://m.mtime.cn/Service/callback.mi?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Mobile.Pages.CallbackService&Ajax_CallBackMethod=RemoteCallbackSameDomain&Ajax_CallBackArgument0=%2Fmovie%2FDetail.api%3FmovieId%3D$$2&lt;/url&gt;" dest="5+">
+			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-plot.html&quot; function=&quot;GetPlot&quot;&gt;$$3plots.html&lt;/url&gt;" dest="5+">
 				<expression/>
 			</RegExp>
 			<RegExp input="$$2" output="&lt;url cache=&quot;$$2-fullcredits.html&quot; function=&quot;GetFullcredits&quot;&gt;$$3fullcredits.html&lt;/url&gt;" dest="5+">
@@ -75,7 +75,7 @@
 	</GetTrailer>
 	<GetPlot clearbuffers="no" dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
-			<expression>&quot;content&quot;:&quot;(.*?)&quot;,&quot;</expression>
+			<expression fixchars="1">&lt;div class=&quot;plots_box&quot;&gt;.*?&lt;span class=&quot;first_letter&quot;&gt;(.*?)&lt;/div&gt;</expression>
 		</RegExp>
 	</GetPlot>
 	<GetDetailsPage clearbuffers="no" dest="5">
@@ -100,26 +100,26 @@
 				<expression clear="yes" noclean="1">演员 Actor(.*?)&lt;/dl&gt;\s*&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\2.jpg&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="2">
-				<expression repeat="yes">&lt;div class=&quot;actor_tit&quot;&gt;\s*(&lt;div class=&quot;pic_58&quot;&gt;.*?src=&quot;([^_]*)_58X58.jpg&quot; /&gt;\s*&lt;/a&gt;\s*|)&lt;h3&gt;(.*?)&lt;/h3&gt;.*?&lt;h3&gt;(.*?)&lt;/h3&gt;</expression>
+				<expression repeat="yes" fixchars="3">&lt;div class=&quot;actor_tit&quot;&gt;\s*(&lt;div class=&quot;pic_58&quot;&gt;.*?src=&quot;([^_]*)_58X58.jpg&quot; /&gt;\s*&lt;/a&gt;\s*|)&lt;h3&gt;(.*?)&lt;/h3&gt;.*?&lt;h3&gt;(.*?)&lt;/h3&gt;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="8">
 				<expression clear="yes" noclean="1">导演 Director(.*?)&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp input="$$8" output="&lt;director&gt;\1&lt;/director&gt;" dest="2+">
-				<expression repeat="yes">&lt;h3 [^&gt;]*&gt;&lt;a [^&gt;]*&gt;(.*?)( |&lt;)</expression>
+				<expression repeat="yes" fixchars="1">&lt;a [^&gt;]*&gt;(.*?)( |&lt;)</expression>
 			</RegExp>
 			<RegExp input="$$1" output="\1" dest="9">
 				<expression clear="yes" noclean="1">编剧 Writer(.*?)&lt;/div&gt;</expression>
 			</RegExp>
 			<RegExp input="$$9" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2+">
-				<expression repeat="yes">&lt;a [^&gt;]*&gt;(.*?)( |&lt;)</expression>
+				<expression repeat="yes" fixchars="1">&lt;a [^&gt;]*&gt;(.*?)( |&lt;)</expression>
 			</RegExp>
 			<expression noclean="1"/>
 		</RegExp>
 	</GetFullcredits>
 	<GetMtimePoster dest="5">
 		<RegExp input="$$6" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;thumb preview=&quot;\2_170X250.jpg&quot;&gt;\2_680X1000.jpg&lt;/thumb&gt;" dest="6">
+			<RegExp input="$$1" output="&lt;thumb aspect=&quot;poster&quot; preview=&quot;\2_170X250.jpg&quot;&gt;\2_680X1000.jpg&lt;/thumb&gt;" dest="6">
 				<expression clear="yes" repeat="yes" noclean="1">&quot;title&quot;:&quot;(正式海报|海报|预告海报|角色海报).*?&quot;img_220&quot;:&quot;(http://img[^_]*)_[0-9X]+.jpg&quot;</expression>
 			</RegExp>
 			<expression noclean="1"/>

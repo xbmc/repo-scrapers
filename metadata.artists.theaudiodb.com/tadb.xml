@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scraper framework="1.1" date="2012-07-10">
 	<CreateArtistSearchUrl dest="3">
-		<RegExp input="$$1" output="&lt;url&gt;http://www.theaudiodb.com/api/v1/json/58424d43204d6564696120/search.php?s=$$4&lt;/url&gt;" dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;https://www.theaudiodb.com/api/v1/json/58424d43204d6564696120/search.php?s=$$4&lt;/url&gt;" dest="3">
 			<RegExp input="$$1" output="\1" dest="4">
 				<expression noclean="1">(.+)</expression>
 			</RegExp>
@@ -16,7 +16,7 @@
 	</CreateArtistSearchUrl>
 	<GetArtistSearchResults dest="8">
 		<RegExp input="$$5" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
-			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url cache=&quot;tadb-\1-artist.json&quot;&gt;http://www.theaudiodb.com/api/v1/json/58424d43204d6564696120/artist.php?i=\1&lt;/url&gt;&lt;/entity&gt;" dest="9">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\2&lt;/title&gt;&lt;url cache=&quot;tadb-\1-artist.json&quot;&gt;https://www.theaudiodb.com/api/v1/json/58424d43204d6564696120/artist.php?i=\1&lt;/url&gt;&lt;/entity&gt;" dest="9">
 				<expression repeat="yes" noclean="1">idArtist&quot;:&quot;([^&quot;]*)&quot;,&quot;strArtist&quot;:&quot;([^&quot;]*)</expression>
 			</RegExp>
 			<RegExp input="$$9" output="\1" dest="5">

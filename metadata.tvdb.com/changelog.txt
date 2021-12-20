@@ -1,3 +1,91 @@
+[B]2.1.8[/B]
+- Added: Bulgarian, Belarusian and Estonian language option
+
+[B]2.1.7[/B]
+- Fixed episode title and plot not scraping
+
+[B]2.1.5[/B]
+- Fixed title and plot
+
+[B]2.1.4[/B]
+- Fixed: search results following yet another change in tvdb API response
+- Fixed: search results 
+- Fixed: Another patch in order to fix TVDB inconsistency (trying to find series without overview)
+
+[B]2.1.1[/B]
+- Fixed: artwork preview (Scudlee rocks! Thank you!)
+
+[B]2.1.0[/B]
+- Fixes after thetvdb API changes
+
+[B]2.0.19[/B]
+- Fix crash for empty artwork
+
+[B]2.0.18[/B]
+- Fixed: Ratings for episodes not getting scraped
+
+[B]2.0.17[/B]
+- Added: Support slug URLs in nfo files
+
+[B]2.0.16[/B]
+- Fixed: DVD and Absolute episode ordering fixes
+
+[B]2.0.15[/B]
+- Fixed: Use first aired episode date when firstAired field is missing (thx to Smeulf)
+
+[B]2.0.14[/B]
+- Fixed: Use the year in the title as fallback when no firstAired field, to reduce mismatches
+
+[B]2.0.13[/B]
+- Fixed: Character encoding fixes (part 2)
+
+[B]2.0.12[/B]
+- Fixed: Character encoding fixes
+
+[B]2.0.11[/B]
+- Fixed: Episode List changes
+
+[B]2.0.10[/B]
+- Fixed: artwork won't be scraped (again)
+- Fixed: Episode director/guest star mix-ups
+
+[B]2.0.9[/B]
+- Fixed: fanart preview
+
+[B]2.0.8[/B]
+- Fixed: artwork won't be scraped
+
+[B]2.0.7[/B]
+- Fixed: Spaces fix 2
+
+[B]2.0.6[/B]
+- Fixed: Spaces removed from json regexes
+
+[B]2.0.5[/B]
+- Fixed: Prevent language choices from interfering with IMDb ratings
+
+[B]2.0.4[/B]
+- Fixed: Moved IMDb ratings to prevent clearing buffers before GetActors
+
+[B]2.0.3[/B]
+- Fixed: IMDb series ratings
+- Changed: Added the www back to the artwork URLs
+- Changed: Turn fallback language on by default
+
+[B]2.0.2[/B]
+- Fixed: Special episode placement
+- Fixed: Episode thumbnails only when available
+- Added: Use fallback language for artwork lookup
+
+[B]2.0.1[/B]
+- Fixed: Backwards-compatibility code
+
+[B]2.0.0[/B]
+- Updated: Complete rewrite for TVDB API 2.0
+- Added: Language fallback options
+- Added: Merged DVD order split-episodes
+- Added: Pseudo-absolute order for when not specified by TVDB
+
 [B]1.8.4[/B]
 - Added: Runtime for tvshows - needs Krypton or newer
 
