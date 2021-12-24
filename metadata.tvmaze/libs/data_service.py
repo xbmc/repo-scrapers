@@ -24,7 +24,7 @@ from collections import namedtuple, defaultdict
 
 import six
 
-from . import tvmaze_api
+from . import tvmaze_api, cache_service as cache
 from .utils import logger
 
 try:
@@ -59,7 +59,7 @@ CLEAN_PLOT_REPLACEMENTS = (
 UrlParseResult = namedtuple('UrlParseResult', ['provider', 'show_id'])
 
 
-def process_episode_list(episode_list):
+def _process_episode_list(episode_list):
     # type: (List[InfoType]) -> Dict[Text, InfoType]
     """Convert embedded episode list to a dict"""
     processed_episodes = {}
@@ -81,6 +81,42 @@ def process_episode_list(episode_list):
         key = '{}_{}_{}'.format(special['id'], special['season'], special['number'])
         processed_episodes[key] = special
     return processed_episodes
+
+
+def get_episodes_map(show_id, episode_order):
+    # type: (Text, Text) -> Optional[Dict[Text, InfoType]]
+    processed_episodes = cache.load_episodes_map_from_cache(show_id)
+    if not processed_episodes:
+        episode_list = tvmaze_api.load_episode_list(show_id, episode_order)
+        if episode_list:
+            processed_episodes = _process_episode_list(episode_list)
+            cache.cache_episodes_map(show_id, processed_episodes)
+    return processed_episodes or {}
+
+
+def get_episode_info(show_id, episode_id, season, episode, episode_order):
+    # type: (Text, Text, Text, Text, Text) -> Optional[InfoType]
+    """
+    Load episode info
+
+    :param show_id:
+    :param episode_id:
+    :param season:
+    :param episode:
+    :param episode_order:
+    :return: episode info or None
+    """
+    episode_info = None
+    episodes_map = get_episodes_map(show_id, episode_order)
+    if episodes_map is not None:
+        try:
+            key = '{}_{}_{}'.format(episode_id, season, episode)
+            episode_info = episodes_map[key]
+        except KeyError as exc:
+            logger.error('Unable to retrieve episode info: {}'.format(exc))
+    if episode_info is None:
+        episode_info = tvmaze_api.load_episode_info(episode_id)
+    return episode_info
 
 
 def _clean_plot(plot):
