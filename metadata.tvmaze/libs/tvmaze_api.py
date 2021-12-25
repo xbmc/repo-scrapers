@@ -25,7 +25,6 @@ import requests
 from requests.exceptions import HTTPError
 
 from . import cache_service as cache
-from .data_service import process_episode_list
 from .imdb_rating import get_imdb_rating
 from .utils import logger
 
@@ -170,50 +169,26 @@ def load_alternate_episode_list(show_id, episode_order):
     return alternate_episodes
 
 
-def load_episodes_map(show_id, episode_order):
-    # type: (Text, Text) -> Optional[Dict[Text, InfoType]]
+def load_episode_list(show_id, episode_order):
+    # type: (Text, Text) -> Optional[List[InfoType]]
     """Load episode list from TVmaze API"""
-    processed_episodes = cache.load_episodes_map_from_cache(show_id)
-    if not processed_episodes:
-        episode_list = None
-        if episode_order != 'default':
-            episode_list = load_alternate_episode_list(show_id, episode_order)
-        if not episode_list:
-            episode_list_url = EPISODE_LIST_URL.format(show_id)
-            try:
-                episode_list = _load_info(episode_list_url, {'specials': '1'})
-            except HTTPError as exc:
-                logger.error('TVmaze returned an error: {}'.format(exc))
-        if episode_list:
-            processed_episodes = process_episode_list(episode_list)
-            cache.cache_episodes_map(show_id, processed_episodes)
-    return processed_episodes or {}
-
-
-def load_episode_info(show_id, episode_id, season, episode, episode_order):
-    # type: (Text, Text, Text, Text, Text) -> Optional[InfoType]
-    """
-    Load episode info
-
-    :param show_id:
-    :param episode_id:
-    :param season:
-    :param episode:
-    :param episode_order:
-    :return: episode info or None
-    """
-    episode_info = None
-    episodes_map = load_episodes_map(show_id, episode_order)
-    if episodes_map is not None:
+    episode_list = None
+    if episode_order != 'default':
+        episode_list = load_alternate_episode_list(show_id, episode_order)
+    if not episode_list:
+        episode_list_url = EPISODE_LIST_URL.format(show_id)
         try:
-            key = '{}_{}_{}'.format(episode_id, season, episode)
-            episode_info = episodes_map[key]
-        except KeyError as exc:
-            logger.error('Unable to retrieve episode info: {}'.format(exc))
-    if episode_info is None:
-        url = EPISODE_INFO_URL.format(episode_id)
-        try:
-            episode_info = _load_info(url)
+            episode_list = _load_info(episode_list_url, {'specials': '1'})
         except HTTPError as exc:
             logger.error('TVmaze returned an error: {}'.format(exc))
-    return episode_info
+    return episode_list
+
+
+def load_episode_info(episode_id):
+    # type: (Union[Text, int]) -> Optional[InfoType]
+    url = EPISODE_INFO_URL.format(episode_id)
+    try:
+        return _load_info(url)
+    except HTTPError as exc:
+        logger.error('TVmaze returned an error: {}'.format(exc))
+        return None
