@@ -138,7 +138,7 @@ def get_episode_list(show_id, episode_order):  # pylint: disable=missing-docstri
         if show_info:
             show_id = str(show_info['id'])
     if show_id.isdigit():
-        episodes_map = tvmaze_api.load_episodes_map(show_id, episode_order)
+        episodes_map = data_service.get_episodes_map(show_id, episode_order)
         for episode in six.itervalues(episodes_map):
             list_item = xbmcgui.ListItem(episode['name'], offscreen=True)
             list_item = data_service.add_episode_info(list_item, episode, full_info=False)
@@ -164,11 +164,11 @@ def get_episode_details(encoded_ids, episode_order):  # pylint: disable=missing-
     encoded_ids = urllib_parse.unquote(encoded_ids)
     decoded_ids = dict(urllib_parse.parse_qsl(encoded_ids))
     logger.debug('Getting episode details for {}'.format(decoded_ids))
-    episode_info = tvmaze_api.load_episode_info(decoded_ids['show_id'],
-                                                decoded_ids['episode_id'],
-                                                decoded_ids['season'],
-                                                decoded_ids['episode'],
-                                                episode_order)
+    episode_info = data_service.get_episode_info(decoded_ids['show_id'],
+                                                 decoded_ids['episode_id'],
+                                                 decoded_ids['season'],
+                                                 decoded_ids['episode'],
+                                                 episode_order)
     if episode_info:
         list_item = xbmcgui.ListItem(episode_info['name'], offscreen=True)
         list_item = data_service.add_episode_info(list_item, episode_info, full_info=True)
