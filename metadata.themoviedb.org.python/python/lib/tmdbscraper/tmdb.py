@@ -200,6 +200,7 @@ def _get_images(imagelist, urlbases, language='_any'):
         result.append({
             'url': urlbases['original'] + img['file_path'],
             'preview': urlbases['preview'] + img['file_path'],
+            'lang': img['iso_639_1']
         })
     return result
 

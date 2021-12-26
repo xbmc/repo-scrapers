@@ -126,7 +126,9 @@ def get_details(input_uniqueids, handle, settings):
             settings.getSettingString('fanarttv_clientkey'),
             settings.getSettingString('fanarttv_language'),
             details['_info']['set_tmdbid'])
-        details = combine_scraped_details_available_artwork(details, fanarttv_info)
+        details = combine_scraped_details_available_artwork(details,
+            fanarttv_info,
+            settings.getSettingString('language'))
 
     details = configure_scraped_details(details, settings)
 
