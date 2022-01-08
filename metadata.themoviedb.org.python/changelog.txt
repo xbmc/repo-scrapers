@@ -1,3 +1,6 @@
+v1.6.0 (2021-12-24)
+- Feature: fallback to English language for Fanart.tv artwork
+
 v1.5.1 (2021-10-19)
 - Fix: search error when no year
 
