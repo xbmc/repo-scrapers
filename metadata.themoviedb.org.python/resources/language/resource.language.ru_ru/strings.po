@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2021-10-25 09:44+0000\n"
 "Last-Translator: vdkbsd <valexgus@gmail.com>\n"
@@ -92,6 +92,10 @@ msgstr "Персональный API-ключ Fanart.tv (необязатель�
 msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
 msgstr "Разрешить иллюстрации с Fanart.tv"
+
+msgctxt "#30103"
+msgid "Prioritize Fanart.TV artworks over preferred language"
+msgstr ""
 
 #~ msgctxt "#30000"
 #~ msgid "Enable Fanart"
