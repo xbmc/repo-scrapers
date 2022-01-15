@@ -21,6 +21,7 @@
 	</category>
 	<category label="Fanart.tv">
 		<setting label="30102" type="bool" id="enable_fanarttv_artwork" default="true"/>
+		<setting label="30103" type="bool" id="prioritize_fanarttv_artwork" default="false"/>
         <setting id="fanarttv_language" label="30100" type="select" default="en" values="en|fr|de|ja|zh|es|it|pt|sv|ru|nl|ar|ko|no|hu|da|hi|is|pl|he|bg|fi|ml" />
 		<setting label="30101" type="text" id="fanarttv_clientkey" default="" />
 	</category>

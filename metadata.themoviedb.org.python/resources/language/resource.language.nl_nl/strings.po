@@ -93,6 +93,10 @@ msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
 msgstr "Gebruik artwork van Fanart.tv"
 
+msgctxt "#30103"
+msgid "Prioritize Fanart.TV artworks over preferred language"
+msgstr ""
+
 #~ msgctxt "#30000"
 #~ msgid "Enable Fanart"
 #~ msgstr "Fanart inschakelen"
