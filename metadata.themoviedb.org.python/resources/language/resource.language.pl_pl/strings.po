@@ -93,6 +93,14 @@ msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
 msgstr "Włącz grafikę z Fanart.tv"
 
+msgctxt "#30103"
+msgid "Prioritize Fanart.TV artworks over preferred language"
+msgstr ""
+
+#~ msgctxt "#30103"
+#~ msgid "Prioritize fanart artworks over preferred language"
+#~ msgstr "Preferuj grafiki z Fanart.tv ponad preferowany język"
+
 #~ msgctxt "#30000"
 #~ msgid "Enable Fanart"
 #~ msgstr "Używaj tapet"

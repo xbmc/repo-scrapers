@@ -7,14 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Indonesian (http://www.transifex.com/projects/p/xbmc-addons/language/id/)\n"
-"Language: id\n"
+"PO-Revision-Date: 2021-11-23 14:49+0000\n"
+"Last-Translator: Nao3Line Prez <n.yazawa6932@gmail.com>\n"
+"Language-Team: Indonesian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-themoviedb-org-python/id_id/>\n"
+"Language: id_id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.9\n"
 
 msgctxt "Addon Summary"
 msgid "Python TMDB Movie Scraper"
@@ -26,7 +27,7 @@ msgstr "themoviedb.org adalah database film yang gratis dan terbuka. Ini benar-b
 
 msgctxt "#30000"
 msgid "Enable fanart from TMDb"
-msgstr ""
+msgstr "Aktifkan fanart dari TMDb"
 
 msgctxt "#30001"
 msgid "Prefer Trailer from HD-Trailers.net"
@@ -38,7 +39,7 @@ msgstr "Bahasa terutama"
 
 msgctxt "#30003"
 msgid "Default Rating from"
-msgstr ""
+msgstr "Penilaian default dari"
 
 msgctxt "#30004"
 msgid "Enable Trailer (YouTube)"
@@ -54,42 +55,46 @@ msgstr "Negara pemberi sertifikasi yang diutamakan"
 
 msgctxt "#30007"
 msgid "Add also IMDb ratings"
-msgstr ""
+msgstr "Juga tambahkan penilaian IMDb"
 
 msgctxt "#30008"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Awalan Sertifikasi"
 
 msgctxt "#30009"
 msgid "Add multiple studios"
-msgstr ""
+msgstr "Tambahkan studio ganda"
 
 msgctxt "#30010"
 msgid "Add also Trakt.tv ratings"
-msgstr ""
+msgstr "Juga tambahkan penilaian trakt.tv"
 
 msgctxt "#30011"
 msgid "Add keywords as tags"
-msgstr ""
+msgstr "Tambahkan katakunci sebagai tag"
 
 msgctxt "#30012"
 msgid "Separate TMDb fanart with title to landscape"
-msgstr ""
+msgstr "Pisahkan fanart TMDb dengan judul ke lanskap"
 
 msgctxt "#30013"
 msgid "Search language"
-msgstr ""
+msgstr "Bahasa pencarian"
 
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
-msgstr ""
+msgstr "Bahasa untuk karya seni Fanart.tv"
 
 msgctxt "#30101"
 msgid "Fanart.tv personal API key (optional)"
-msgstr ""
+msgstr "Kunci API pribadi Fanart.tv (opsional)"
 
 msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
+msgstr "Aktifkan karya seni dari Fanart.tv"
+
+msgctxt "#30103"
+msgid "Prioritize Fanart.TV artworks over preferred language"
 msgstr ""
 
 #~ msgctxt "#30000"
