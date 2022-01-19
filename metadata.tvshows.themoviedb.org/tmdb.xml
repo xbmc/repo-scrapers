@@ -548,17 +548,17 @@
 				<expression>"posters":\[([^\]]*)\]</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="5">
-				<expression clear="yes" repeat="yes">"file_path":"([^"]*)","height":[0-9]+,"iso_639_1":"$INFO[language]"</expression>
+				<expression clear="yes" repeat="yes">"height":[0-9]+,"iso_639_1":"$INFO[language]","file_path":"([^"]*)"</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="5+">
-				<expression repeat="yes">"file_path":"([^"]*)","height":[0-9]+,"iso_639_1":(?!"$INFO[language]")</expression>
+				<expression repeat="yes">"height":[0-9]+,"iso_639_1":(?!"$INFO[language]"),"file_path":"([^"]*)"</expression>
 			</RegExp>
 			<RegExp conditional="tmdbart" input="$$8" output="&lt;fanart url=&quot;$$20&quot; &gt;\1&lt;/fanart&gt;" dest="5+">
 				<RegExp input="$$7" output="&lt;thumb dim=&quot;\3x\2&quot; preview=&quot;w780\1&quot;&gt;original\1&lt;/thumb&gt;" dest="8">
 					<RegExp input="$$1" output="\1" dest="7">
 						<expression>"backdrops":\[([^\]]*)\]</expression>
 					</RegExp>
-					<expression repeat="yes">"file_path":"([^"]*)","height":([0-9]+),"[^"]*":null[^\}]*"width":([0-9]+)</expression>
+					<expression repeat="yes">"height":([0-9]+),"[^"]*":null[^\}]*"width":([0-9]+),"file_path":"([^"]*)"</expression>
 				</RegExp>
 				<expression noclean="1" />
 			</RegExp>
@@ -597,10 +597,10 @@
 				<expression clear="yes">"posters":\[([^\]]*)\]</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; type=&quot;season&quot; season=&quot;$$10&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="5">
-				<expression clear="yes" repeat="yes">"file_path":"([^"]*)","height":[0-9]+,"iso_639_1":"$INFO[language]"</expression>
+				<expression clear="yes" repeat="yes">"height":[0-9]+,"iso_639_1":"$INFO[language]","file_path":"([^"]*)"</expression>
 			</RegExp>
 			<RegExp input="$$7" output="&lt;thumb aspect=&quot;poster&quot; type=&quot;season&quot; season=&quot;$$10&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="5+">
-				<expression repeat="yes">"file_path":"([^"]*)","height":[0-9]+,"iso_639_1":(?!"$INFO[language]")</expression>
+				<expression repeat="yes">"height":[0-9]+,"iso_639_1":(?!"$INFO[language]"),"file_path":"([^"]*)"</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>

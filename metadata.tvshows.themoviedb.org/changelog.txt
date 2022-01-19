@@ -1,3 +1,6 @@
+[B]3.5.14[/B]
+- Fixed: scraping of images
+
 [B]3.5.13[/B]
 - Fixed: re-release the scraper in order to feed Kodi with appropriate Language folder
 
