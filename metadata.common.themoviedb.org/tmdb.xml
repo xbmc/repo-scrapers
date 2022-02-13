@@ -155,6 +155,9 @@
 			<RegExp input="$$1" output="\2" dest="10">
 				<expression>(.+)::(.+)</expression>
 			</RegExp>
+			<RegExp input="$$1" output="\2" dest="19">
+				<expression>(.+)::(..)</expression>
+			</RegExp>
 			<RegExp input="$$8" output="&lt;url function=&quot;GetTMDBSetID&quot; cache=&quot;tmdb-$$10-\1.json&quot;&gt;https://api.themoviedb.org/3/movie/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$$10&lt;/url&gt;" dest="5">
 				<expression />
 			</RegExp>
@@ -169,7 +172,7 @@
 			<RegExp input="$$9" output="&lt;url function=&quot;ParseTMDBBaseImageURL&quot; cache=&quot;tmdb-config.json&quot;&gt;https://api.themoviedb.org/3/configuration?api_key=f090bb54758cabf231fb605d3e3e0468&lt;/url&gt;" dest="2">
 				<expression>(.+)</expression>
 			</RegExp>
-			<RegExp input="$$9" output="&lt;url function=&quot;ParseTMDBSetOutline&quot; cache=&quot;tmdbset-$$10-\1.json&quot;&gt;https://api.themoviedb.org/3/collection/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$$10&amp;amp;append_to_response=images&amp;amp;include_image_language=$$10,en,null&lt;/url&gt;" dest="2+">
+			<RegExp input="$$9" output="&lt;url function=&quot;ParseTMDBSetOutline&quot; cache=&quot;tmdbset-$$10-\1.json&quot;&gt;https://api.themoviedb.org/3/collection/\1?api_key=f090bb54758cabf231fb605d3e3e0468&amp;amp;language=$$10&amp;amp;append_to_response=images&amp;amp;include_image_language=$$19,en,null&lt;/url&gt;" dest="2+">
 				<expression>(.+)</expression>
 			</RegExp>
 			<expression noclean="1" />
@@ -200,7 +203,7 @@
 					<expression repeat="yes" clear="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;$$10</expression>
 				</RegExp>
 				<RegExp input="$$7" output="&lt;thumb aspect=&quot;set.poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="13+">
-					<expression repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;$$10&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
+					<expression repeat="yes" noclean="1">&quot;iso[^&quot;]*&quot;:&quot;$$19&quot;,&quot;file_path&quot;:&quot;([^&quot;]*)</expression>
 				</RegExp>
 				<RegExp input="$$7" output="&lt;thumb aspect=&quot;set.poster&quot; preview=&quot;$$20w500\1&quot;&gt;$$20original\1&lt;/thumb&gt;" dest="13+">
 					<expression repeat="yes" noclean="1">&quot;file_path&quot;:&quot;([^&quot;]*)[^:]*:[^:]*:&quot;en</expression>
