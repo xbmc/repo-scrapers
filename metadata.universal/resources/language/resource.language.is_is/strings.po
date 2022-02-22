@@ -5,28 +5,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Icelandic (http://www.transifex.com/projects/p/xbmc-addons/language/is/)\n"
-"Language: is\n"
+"PO-Revision-Date: 2022-02-21 13:13+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/is_is/>\n"
+"Language: is_is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Universal Movie Scraper"
+msgstr "Almenn kvikmyndaskafa"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Universal Scraper (Almenn Skafa) er eins og er mest aðlaganleg skafa til að safna upplýsingum frá eftirfarandi studdum stöðum: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Þessi skafa er eins og er flaggskip Team-Kodi skafna. Upphaflega leit er hægt að gera annaðhvort á TMDb eða IMDb (fer eftir stillingum), en þar á eftir er hægt að skilgreina eftir hverjum færslureit hvaða veitur þú vilt nota fyrir sértækar upplýsingar."
+msgstr "Universal Scraper (Almenn skafa) er í augnablikinu mest sérsníðanlega skafan til að safna upplýsingum frá eftirfarandi studdum vefsvæðum: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Þessi skafa er flaggskipið í hópi Team-Kodi skafna. Upphaflega leit er hægt að gera annaðhvort á TMDb eða IMDb (fer eftir stillingum), en þar á eftir er hægt að skilgreina fyrir hvern færslureit hvaða veitur þú vilt nota fyrir sértækar upplýsingar."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "Virkja aðdáendamyndverk frá themoviedb.org"
+msgstr "Virkja aðdáendamyndir frá themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
@@ -38,17 +39,17 @@ msgstr "Virkja veggspjöld frá MoviePosterDB"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr "Fá kynningarmyndband beint frá YouTube"
+msgstr "Fá kynningarstiklur beint frá YouTube"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Umbeðið tungumál titils frá"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr "Virkja kynningarmyndbönd frá themoviedb.org"
+msgstr "Virkja kynningarstiklur frá themoviedb.org"
 
 msgctxt "#30011"
 msgid "Poster"
@@ -56,40 +57,40 @@ msgstr "Veggspjald"
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Kynningarmyndband"
+msgstr "Kynningarstiklur"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Fá nafn á setti (samsafni) frá themoviedb.org"
+msgstr "Fá nafn á kvikmyndasetti (röð) frá themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr "Fá Söguþráð frá"
+msgstr "Fá söguþráð frá"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr "Fá Leikara / Leikstjóra / Handritahöfunda frá"
+msgstr "Fá leikara / leikstjóra / handritshöfunda frá"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr "Veitur söguþráða"
+msgstr "Söguþráðaveitur"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Umbeðið tungumál söguþráðar"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Fá sjálfgefnar einkunnir frá"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr "Fá Flokkun frá"
+msgstr "Fá flokkun frá"
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr "Fá Titil frá"
+msgstr "Fá titla frá"
 
 msgctxt "#30024"
 msgid "Title Sources"
@@ -97,47 +98,47 @@ msgstr "Veitur titla"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr "Veitur fyrir Leikara og Kredit"
+msgstr "Veitur fyrir leikara og kreditlista"
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr "Veitur Flokkunar"
+msgstr "Flokkunarveitur"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Umbeðið tungumál titils"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr "Veitur Kynningarmyndbands"
+msgstr "Kynningarstikluveitur"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Kvikmyndasamsöfn"
+msgstr "Kvikmyndasöfn"
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr "Veitur Stjörnugjafar"
+msgstr "Einkunnaveitur"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr "Stillingar Aldursvottunar"
+msgstr "Stillingar aldursvottunar"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr "Fá Aldursvottun frá"
+msgstr "Fá aldursvottun frá"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Umbeðið land aldursvottunar"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Umbeðið tungumál veggspjalda"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr "Forskeyti Aldursvottunar"
+msgstr "Forskeyti aldursvottunar"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
@@ -145,88 +146,88 @@ msgstr "Virkja veggspjöld frá trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "Virkja aðdáendamyndverk frá trakt.tv"
+msgstr "Virkja aðdáendamyndir frá trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Virkja kynningarmyndbönd frá trakt.tv"
+msgstr "Virkja kynningarstiklur frá trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Tungumál flokks"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Umbeðið tungumál kynningarstiklu"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr "Fá Merkilínu frá"
+msgstr "Fá kjörorð frá"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Umbeðið tungumál kjörorða"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Ná í IMDb TOP250 Stjörnugjöf"
+msgstr "Ná í IMDb TOP250 stjörnugjöf"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Fá Yfirlit frá"
+msgstr "Fá yfirlit frá"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Umbeðið tungumál á nöfnum kvikmyndasetta (raðir)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr "Veitur Veggspjalda"
+msgstr "Veggspjaldaveitur"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Fá Leitarorð og vista sem Merkimiða frá"
+msgstr "Fá stikkorð og vista sem merkingar frá"
 
 msgctxt "#30100"
 msgid "Rating"
-msgstr "Stjörnugjöf"
+msgstr "Einkunn"
 
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Einkunn útbúin með"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Ná einnig í einkunnir frá IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Ná einnig í einkunnir frá Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Ná einnig í einkunnir frá MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Ná einnig í einkunnir frá themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Nota stig samsöfnuð frá"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "API-lykill OMDB"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Skráðu Api-lykil á omdbapi.com og bættu honum við hér að ofan"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Ná einnig í ekki-sjálfgefnar einkunnir frá Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -234,11 +235,11 @@ msgstr "Þakkir"
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr "Fá Myndver frá"
+msgstr "Fá myndver frá"
 
 msgctxt "#30202"
 msgid "Get Country from"
-msgstr "Fá Land frá"
+msgstr "Fá land frá"
 
 msgctxt "#30300"
 msgid "Search"
@@ -254,15 +255,15 @@ msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr "Leitarvél sem er notuð"
+msgstr "Leitarvél sem a að nota"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Aukatungumál við leit (til viðbótar við en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Hafa með alla flokka kvikmynda"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -270,11 +271,11 @@ msgstr "Aðvörun:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Að virkja alla Kvikmyndaflokkun mun hafa mjög neikvæð áhrif á nákvæmni leitar !!!"
+msgstr "Að virkja alla kvikmyndaflokka mun minnka verulega nákvæmni leitar !!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Umbeðið tungumál leitar"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -282,19 +283,19 @@ msgstr "Söguþráður"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr "Söguþráður / Merkilína / Yfirlit"
+msgstr "Söguþráður / Kjörorð / Yfirlit"
 
 msgctxt "#30500"
 msgid "Fanart"
-msgstr "Aðdáendamyndverk"
+msgstr "Aðdáendamyndir"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "Veitur aðdáendamyndverka"
+msgstr "Veitur aðdáendamynda"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr "Virkja plaggöt frá fanart.tv"
+msgstr "Virkja veggspjöld frá fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
@@ -302,71 +303,71 @@ msgstr "Virkja aðdáendamyndir frá fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Virkja veggspjöld frá IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr ""
+msgstr "Myndskreytingar"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Viðbótarmyndefni"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Virkja Clearlogo-myndir frá fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Virkja Clearart-myndir frá fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Virkja kvikmyndaborða frá fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Virkja kvikmyndalandslag frá fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Virkja kvikmyndalandslag frá themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Virkja umslagsmyndir frá fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Myndefni safns"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Virkja veggspjöld kvikmyndasetta frá fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Virkja aðdáendamyndir kvikmyndasetta frá fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Virkja Clearlogo-myndir kvikmyndasetta frá fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Virkja Clearart-myndir kvikmyndasetta frá fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Virkja kvikmyndasettaborða frá fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Virkja kvikmyndasettalandslag frá fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Virkja umslagsmyndir kvikmyndasetta frá fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
