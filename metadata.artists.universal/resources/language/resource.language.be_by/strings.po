@@ -22,8 +22,8 @@ msgid "Universal Scraper for Artists"
 msgstr "Універсальны сканер для выканаўцаў"
 
 msgctxt "Addon Description"
-msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
-msgstr "Гэты сканер збірае інфармацыю з наступных сайтаў: TheAudioDb.com, MusicBrainz, last.fm, allmusic.com, і бярэ вокладкі з: fanart.tv, htbackdrops.com, last.fm і allmusic.com. Кожнае поле можна наладзіць, каб атрымліваць інфармацыю з патрэбных вам крыніц.&#10;&#10;Спачатку пошук выконваецца на MusicBrainz. Калі на сайце MusicBrainz не дададзеная спасылка на allmusic, то палі з allmusic.com не будуць запаўняцца (спасылку вельмі лёгка дадаць)."
+msgid "This scraper collects information from the following supported sites: TheAudioDb.com, MusicBrainz, last.fm, and allmusic.com, while grabs artwork from: fanart.tv, htbackdrops.com, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.[CR][CR]The initial search is always done on MusicBrainz. In case allmusic link is not added on the MusicBrainz site fields from allmusic.com cannot be fetched (very easy to add those missing links though)."
+msgstr "Гэты сканер збірае інфармацыю з наступных сайтаў: TheAudioDb.com, MusicBrainz, last.fm, allmusic.com, і бярэ вокладкі з: fanart.tv, htbackdrops.com, last.fm і allmusic.com. Кожнае поле можна наладзіць, каб атрымліваць інфармацыю з патрэбных вам крыніц.[CR][CR]Спачатку пошук выконваецца на MusicBrainz. Калі на сайце MusicBrainz не дададзеная спасылка на allmusic, то палі з allmusic.com не будуць запаўняцца (спасылку вельмі лёгка дадаць)."
 
 msgctxt "#30000"
 msgid "Enable Artist Fanarts from HTBackdrops.com"

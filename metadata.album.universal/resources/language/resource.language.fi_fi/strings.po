@@ -22,8 +22,8 @@ msgid "Universal Scraper for Albums"
 msgstr "Universaali tietolähde albumeille"
 
 msgctxt "Addon Description"
-msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
-msgstr "Mahdollistaa tietojen noudon TheAudioDB.com, MusicBrainz, Last.fm, AllMusic ja Amazon.de -verkkopalveluista ja mediakuvitusten noudon Fanart.tv, Last.fm ja AllMusic -palveluista. Voit määrittää, miltä sivustoilta mitäkin tietoja noudetaan.&#10;&#10;Ensimmäinen nouto tehdään aina MusicBrainz-palvelusta. Jollei MusicBrainz tarjoa AllMusic- ja/tai Amazon.de-linkkiä, ei niiden tukemien kenttien nouto onnistu (joskin puuttuvien linkkien lisääminen on varsin helppoa)."
+msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.[CR][CR]The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
+msgstr "Mahdollistaa tietojen noudon TheAudioDB.com, MusicBrainz, Last.fm, AllMusic ja Amazon.de -verkkopalveluista ja mediakuvitusten noudon Fanart.tv, Last.fm ja AllMusic -palveluista. Voit määrittää, miltä sivustoilta mitäkin tietoja noudetaan.[CR][CR]Ensimmäinen nouto tehdään aina MusicBrainz-palvelusta. Jollei MusicBrainz tarjoa AllMusic- ja/tai Amazon.de-linkkiä, ei niiden tukemien kenttien nouto onnistu (joskin puuttuvien linkkien lisääminen on varsin helppoa)."
 
 msgctxt "#30000"
 msgid "Grab Album Thumbs from fanart.tv"
