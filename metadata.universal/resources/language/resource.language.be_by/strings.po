@@ -7,247 +7,247 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-21 13:13+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2022-03-19 00:23+0000\n"
+"Last-Translator: Antikruk <zmicerturok@gmail.com>\n"
 "Language-Team: Belarusian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/be_by/>\n"
 "Language: be_by\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Universal Movie Scraper"
+msgstr "Універсальны сродак атрымання звестак пра фільмы"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "This scraper collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information."
+msgstr "Гэты сродак збірае звесткі з наступных сайтаў: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. На дадзены момант гэта найлепшы інструмент сярод даступных. Першасны пошук адбываецца на TMDb, але можна вызначыць паслядоўнасць сайтаў, з якіх будуць брацца звесткі."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr ""
+msgstr "Дазволіць аматарскія ілюстрацыі з themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr ""
+msgstr "Дазволіць постары з themoviedb.org"
 
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr ""
+msgstr "Дазволіць постары з MoviePosterDB"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr ""
+msgstr "Атрымліваць трэйлеры непасрэдна з YouTube"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Пераважная мова назваў з"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr ""
+msgstr "Дазволіць трэйлеры з themoviedb.org"
 
 msgctxt "#30011"
 msgid "Poster"
-msgstr "Poster"
+msgstr "Постар"
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Trailers"
+msgstr "Трэйлеры"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr ""
+msgstr "Атрымліваць назвы набораў (калекцый) з themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr ""
+msgstr "Атрымліваць сюжэт з"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr ""
+msgstr "Атрымліваць акцёраў, рэжысёраў, сцэнарыстаў з"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr ""
+msgstr "Крыніцы сюжэту"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Пераважная мова сюжэту"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Атрымліваць рэйтынг з"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr ""
+msgstr "Атрымліваць жанры з"
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr ""
+msgstr "Атрымліваць назвы з"
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr ""
+msgstr "Крыніцы назваў"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr ""
+msgstr "Крыніцы роляў і аўтараў"
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr ""
+msgstr "Крыніцы жанраў"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Пераважная мова назваў"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr ""
+msgstr "Крыніцы трэйлераў"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr ""
+msgstr "Калекцыі фільмаў"
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr ""
+msgstr "Крыніцы рэйтынгу"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr ""
+msgstr "Налады сертыфікацыі"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr ""
+msgstr "Атрымліваць сертыфікацыю з"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr ""
+msgstr "Пераважная краіна сертыфікацыі"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Пераважная мова постараў"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Прэфікс сертыфікацыі"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr ""
+msgstr "Дазволіць постары з trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr ""
+msgstr "Дазволіць аматарскія ілюстрацыі з trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr ""
+msgstr "Дазволіць трэйлеры з trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Мова жанраў"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Пераважная мова трэйлераў"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr ""
+msgstr "Атрымліваць слоганы з"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Пераважная мова слоганаў"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr ""
+msgstr "Атрымліваць рэйтынг IMDb TOP250"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr ""
+msgstr "Атрымліваць анатацыі з"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Пераважная мова назваў набораў (калекцый)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr ""
+msgstr "Крыніцы постараў"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr ""
+msgstr "Атрымліваць ключавыя словы як пазнакі з"
 
 msgctxt "#30100"
 msgid "Rating"
-msgstr ""
+msgstr "Рэйтынг"
 
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Рэйтынг створаны з дапамогай"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Таксама атрымліваць рэйтынг з IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Таксама атрымліваць рэйтынг з Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Таксама атрымліваць рэйтынг з MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Таксама атрымліваць рэйтынг з themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Выкарыстоўваць сярэднюю ацэнку з"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "Ключ API OMDB"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Зарэгіструйце на omdbapi.com ключ API і дадайце яго ніжэй"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Таксама атрымліваць дадатковы рэйтынг з Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
-msgstr ""
+msgstr "Аўтары"
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr ""
+msgstr "Атрымліваць студыю з"
 
 msgctxt "#30202"
 msgid "Get Country from"
-msgstr ""
+msgstr "Атрымліваць краіну з"
 
 msgctxt "#30300"
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 msgctxt "#30301"
 msgid "themoviedb.org"
-msgstr ""
+msgstr "themoviedb.org"
 
 msgctxt "#30302"
 msgid "IMDb"
@@ -255,55 +255,55 @@ msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr ""
+msgstr "Сістэма пошуку"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Дадатковая мова пошуку (у дадатак да en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Улічваць усе катэгорыі фільмаў"
 
 msgctxt "#30306"
 msgid "Warning:"
-msgstr ""
+msgstr "Увага:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr ""
+msgstr "Калі ўлічваць усе катэгорыі, то дакладнасць пошуку пагоршыцца !!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Пераважная мова пошуку"
 
 msgctxt "#30400"
 msgid "Plot"
-msgstr ""
+msgstr "Сюжэт"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr ""
+msgstr "Сюжэт / Слоган / Анатацыя"
 
 msgctxt "#30500"
 msgid "Fanart"
-msgstr "Fanart"
+msgstr "Аматарскія ілюстрацыі"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr ""
+msgstr "Крыніцы аматарскіх ілюстрацый"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "Дазволіць постары з fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць аматарскія ілюстрацыі з fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Дазволіць постары з IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -311,63 +311,63 @@ msgstr "Вокладка"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Дадатковыя вокладкі"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Дазволіць лагатыпы з fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць ілюстрацыі з fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Дазволіць банеры фільмаў з fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Дазволіць пейзажы для фільмаў з fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Дазволіць пейзажы для фільмаў з themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць ілюстрацыі дыскаў з fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Калекцыя ілюстрацый"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы постараў з fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы аматарскіх ілюстрацый з fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы лагатыпаў з fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы ілюстрацый з fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы банераў з fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы пейзажаў з fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Дазволіць наборы ілюстрацый дыскаў з fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2021-08-12 09:29+0000\n"
 "Last-Translator: Christian Gade <gade@kodi.tv>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 msgctxt "Addon Summary"
 msgid "Universal Scraper for Albums"
-msgstr ""
+msgstr "Універсальны сродак атрымання звестак пра альбомы"
 
 msgctxt "Addon Description"
 msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.[CR][CR]The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
@@ -27,15 +27,15 @@ msgstr ""
 
 msgctxt "#30000"
 msgid "Grab Album Thumbs from fanart.tv"
-msgstr "захапіць альбом з fanart.tv"
+msgstr "Атрымліваць мініяцюры альбомаў з fanart.tv"
 
 msgctxt "#30001"
 msgid "Grab Album Thumbs from Last.fm"
-msgstr ""
+msgstr "Атрымліваць мініяцюры альбомаў з Last.fm"
 
 msgctxt "#30002"
 msgid "Get Album Review from"
-msgstr ""
+msgstr "Атрымліваць агляды альбомаў з"
 
 msgctxt "#30003"
 msgid "     Preferred Language"
@@ -43,52 +43,56 @@ msgstr "     Пераважная мова"
 
 msgctxt "#30004"
 msgid "Get Album Rating from"
-msgstr ""
+msgstr "Атрымліваць рэйтынг альбомаў з"
 
 msgctxt "#30005"
 msgid "Get Album Styles from"
-msgstr ""
+msgstr "Атрымліваць стылі альбомаў з"
 
 msgctxt "#30006"
 msgid "Get Album Moods from"
-msgstr ""
+msgstr "Атрымліваць настроі альбомаў з"
 
 msgctxt "#30007"
 msgid "Get Album Themes from"
-msgstr ""
+msgstr "Атрымліваць тэмы альбомаў з"
 
 msgctxt "#30008"
 msgid "Grab Album Thumbs from allmusic.com"
-msgstr ""
+msgstr "Атрымліваць мініяцюры альбомаў з allmusic.com"
 
 msgctxt "#30009"
 msgid "Artwork"
-msgstr "Artwork"
+msgstr "Вокладка"
 
 msgctxt "#30010"
 msgid "Grab Album Thumbs from theaudiodb.com"
-msgstr ""
+msgstr "Атрымліваць мініяцюры альбомаў з theaudiodb.com"
 
 msgctxt "#30011"
 msgid "MB Mirror"
-msgstr ""
+msgstr "Люстэрка MB"
 
 msgctxt "#30012"
 msgid "MusicBrainz Mirror"
-msgstr ""
+msgstr "Люстэрка MusicBrainz"
 
 msgctxt "#30013"
 msgid "Grab Album Discart from fanart.tv"
-msgstr ""
+msgstr "Атрымліваць ілюстрацыі дыскаў з fanart.tv"
 
 msgctxt "#30014"
 msgid "Grab Album Back Cover from theaudiodb.com"
-msgstr ""
+msgstr "Атрымліваць заднія вокладкі альбомаў з theaudiodb.com"
 
 msgctxt "#30015"
 msgid "Grab Album Discart from theaudiodb.com"
-msgstr ""
+msgstr "Атрымліваць ілюстрацыі дыскаў альбомаў з theaudiodb.com"
 
 msgctxt "#30016"
 msgid "Grab Album Spine from theaudiodb.com"
-msgstr ""
+msgstr "Атрымліваць хрыбты альбомаў з theaudiodb.com"
+
+#~ msgctxt "Addon Description"
+#~ msgid "This scraper collects information from the following supported sites: MusicBrainz, last.fm, allmusic.com and amazon.de, while grabs artwork from: fanart.tv, last.fm and allmusic.com. It can be set field by field that from which site you want that specific information.&#10;&#10;The initial search is always done on MusicBrainz. In case allmusic and/or amazon.de links are not added on the MusicBrainz site, fields from allmusic.com and/or amazon.de cannot be fetched (very easy to add those missing links though)."
+#~ msgstr "Гэты сродак збірае інфармацыю з наступных сайтаў: MusicBrainz, last.fm, allmusic.com, amazon.de і атрымлівае вокладкі з: fanart.tv, last.fm і allmusic.com. Кожнае поле можна наладзіць так, каб атрымліваць звесткі з сайта, які вы вызначыце.&#10;&#10;Спачатку пошук выконваецца на MusicBrainz. Для allmusic і amazon.de адсутнічаюць спасылкі на сайт MusicBrainz, палі з allmusic.com і amazon.de немагчыма атрымаць (прапушчаныя спасылкі дадаць вельмі проста)."
