@@ -22,7 +22,7 @@
         <icon>icon.png</icon>
     </assets>
     <summary lang="af_ZA">Universele Fliek Skraper</summary>
-    <summary lang="be_BY">Universal Movie Scraper</summary>
+    <summary lang="be_BY">Універсальны сродак атрымання звестак пра фільмы</summary>
     <summary lang="bg_BG">Универсален източник на инф. за филми</summary>
     <summary lang="ca_ES">Buscador Universal de Pel·licules</summary>
     <summary lang="cs_CZ">Univerzální zdroj dat k filmům</summary>
@@ -72,7 +72,7 @@
     <summary lang="zh_CN">通用电影刮削器</summary>
     <summary lang="zh_TW">通用的電影資訊搜括器</summary>
     <description lang="af_ZA">Hierdie skraper kollekteer inligting van die volgende ondersteunde werwe: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Dit doen altyd die aanvanklike soektog op TMDb, maar daarna kan dit veld vir veld gestel word vanaf watter werf jy die spesifieke inligting wil hê.</description>
-    <description lang="be_BY">This scraper collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. It always does the initial search on TMDb, but following that it can be set field by field that from which site you want that specific information.</description>
+    <description lang="be_BY">Гэты сродак збірае звесткі з наступных сайтаў: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. На дадзены момант гэта найлепшы інструмент сярод даступных. Першасны пошук адбываецца на TMDb, але можна вызначыць паслядоўнасць сайтаў, з якіх будуць брацца звесткі.</description>
     <description lang="bg_BG">Сваля информация от следните сайтове: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Можете да определите от кой сайт каква информация да се сваля.[CR][CR]Първоначалното търсене винаги се прави в TMDb.</description>
     <description lang="ca_ES">Rascador universal és actualment el rascador més personalitzable mitjançant la recopilació d&apos;informació dels següents llocs suportats: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Aquest rascador és actualment el vaixell insígnia de l&apos;equip-Kodi raspadors. La recerca inicial es pot fer en TMDB o IMDb (segons la configuració), però després que es pot configurar camp a camp que des del lloc que voleu que la informació específica.</description>
     <description lang="cs_CZ">Univerzální zdroj dat, který získává informace z následujících podporovaných stránek: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Vždy provádí základní hledání na TMDb či IMDb (podle nastavení), ale pro následující hledání může být upraveno pro každou hodnotu, ze které stránky chcete specifickou informaci získat.</description>
