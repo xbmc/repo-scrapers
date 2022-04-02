@@ -1,0 +1,253 @@
+<?xml version="1.0" ?>
+<settings version="1">
+	<section id="metadata.tvshows.thetvdb.com.v4.python">
+		<category id="general" label="128" help="">
+			<group id="1">
+				<setting id="language" type="string" label="30000" help="">
+					<level>0</level>
+					<default>English</default>
+					<constraints>
+						<options>
+							<option>Abkhaz</option>
+							<option>Afar</option>
+							<option>Afrikaans</option>
+							<option>Akan</option>
+							<option>Albanian</option>
+							<option>Amharic</option>
+							<option>Arabic</option>
+							<option>Aragonese</option>
+							<option>Armenian</option>
+							<option>Assamese</option>
+							<option>Avaric</option>
+							<option>Avestan</option>
+							<option>Aymara</option>
+							<option>Azerbaijani</option>
+							<option>Bambara</option>
+							<option>Bashkir</option>
+							<option>Basque</option>
+							<option>Belarusian</option>
+							<option>Bengali</option>
+							<option>Bihari</option>
+							<option>Bislama</option>
+							<option>Bosnian</option>
+							<option>Breton</option>
+							<option>Bulgarian</option>
+							<option>Burmese</option>
+							<option>Catalan</option>
+							<option>Chamorro</option>
+							<option>Chechen</option>
+							<option>Chichewa</option>
+							<option>Chinese - Cantonese</option>
+							<option>Chinese - China</option>
+							<option>Chinese - Taiwan</option>
+							<option>Chuvash</option>
+							<option>Cornish</option>
+							<option>Corsican</option>
+							<option>Cree</option>
+							<option>Croatian</option>
+							<option>Czech</option>
+							<option>Danish</option>
+							<option>Divehi</option>
+							<option>Dutch</option>
+							<option>Dzongkha</option>
+							<option>English</option>
+							<option>Esperanto</option>
+							<option>Estonian</option>
+							<option>Ewe</option>
+							<option>Faroese</option>
+							<option>Fijian</option>
+							<option>Finnish</option>
+							<option>French</option>
+							<option>Fula</option>
+							<option>Galician</option>
+							<option>Georgian</option>
+							<option>German</option>
+							<option>Greek</option>
+							<option>Guaraní</option>
+							<option>Gujarati</option>
+							<option>Haitian</option>
+							<option>Hausa</option>
+							<option>Hebrew</option>
+							<option>Herero</option>
+							<option>Hindi</option>
+							<option>Hiri Motu</option>
+							<option>Hungarian</option>
+							<option>Icelandic</option>
+							<option>Ido</option>
+							<option>Igbo</option>
+							<option>Indonesian</option>
+							<option>Interlingua</option>
+							<option>Interlingue</option>
+							<option>Inuktitut</option>
+							<option>Inupiaq</option>
+							<option>Irish</option>
+							<option>Italian</option>
+							<option>Japanese</option>
+							<option>Javanese</option>
+							<option>Kalaallisut</option>
+							<option>Kannada</option>
+							<option>Kanuri</option>
+							<option>Kashmiri</option>
+							<option>Kazakh</option>
+							<option>Khmer</option>
+							<option>Kikuyu</option>
+							<option>Kinyarwanda</option>
+							<option>Kirghiz</option>
+							<option>Kirundi</option>
+							<option>Komi</option>
+							<option>Kongo</option>
+							<option>Korean</option>
+							<option>Kurdish</option>
+							<option>Kwanyama</option>
+							<option>Lao</option>
+							<option>Latin</option>
+							<option>Latvian</option>
+							<option>Limburgish</option>
+							<option>Lingala</option>
+							<option>Lithuanian</option>
+							<option>Luba-Katanga</option>
+							<option>Luganda</option>
+							<option>Luxembourgish</option>
+							<option>Macedonian</option>
+							<option>Malagasy</option>
+							<option>Malay</option>
+							<option>Malayalam</option>
+							<option>Maltese</option>
+							<option>Manx</option>
+							<option>Marathi</option>
+							<option>Marshallese</option>
+							<option>Mongolian</option>
+							<option>Māori</option>
+							<option>Nauru</option>
+							<option>Navajo</option>
+							<option>Ndonga</option>
+							<option>Nepali</option>
+							<option>North Ndebele</option>
+							<option>Northern Sami</option>
+							<option>Norwegian</option>
+							<option>Nuosu</option>
+							<option>Occitan</option>
+							<option>Ojibwe</option>
+							<option>Old Church Slavonic</option>
+							<option>Oriya</option>
+							<option>Oromo</option>
+							<option>Ossetian</option>
+							<option>Panjabi</option>
+							<option>Pashto</option>
+							<option>Persian</option>
+							<option>Polish</option>
+							<option>Portuguese - Brazil</option>
+							<option>Portuguese - Portugal</option>
+							<option>Pāli</option>
+							<option>Quechua</option>
+							<option>Romanian</option>
+							<option>Romansh</option>
+							<option>Russian</option>
+							<option>Samoan</option>
+							<option>Sango</option>
+							<option>Sanskrit</option>
+							<option>Sardinian</option>
+							<option>Scottish Gaelic</option>
+							<option>Serbian</option>
+							<option>Shona</option>
+							<option>Sindhi</option>
+							<option>Sinhala</option>
+							<option>Slovak</option>
+							<option>Slovene</option>
+							<option>Somali</option>
+							<option>South Ndebele</option>
+							<option>Southern Sotho</option>
+							<option>Spanish</option>
+							<option>Sundanese</option>
+							<option>Swahili</option>
+							<option>Swati</option>
+							<option>Swedish</option>
+							<option>Tagalog</option>
+							<option>Tahitian</option>
+							<option>Tajik</option>
+							<option>Tamil</option>
+							<option>Tatar</option>
+							<option>Telugu</option>
+							<option>Thai</option>
+							<option>Tibetan Standard</option>
+							<option>Tigrinya</option>
+							<option>Tonga</option>
+							<option>Tsonga</option>
+							<option>Tswana</option>
+							<option>Turkish</option>
+							<option>Turkmen</option>
+							<option>Twi</option>
+							<option>Uighur</option>
+							<option>Ukrainian</option>
+							<option>Urdu</option>
+							<option>Uzbek</option>
+							<option>Venda</option>
+							<option>Vietnamese</option>
+							<option>Volapük</option>
+							<option>Walloon</option>
+							<option>Welsh</option>
+							<option>Western Frisian</option>
+							<option>Wolof</option>
+							<option>Xhosa</option>
+							<option>Yiddish</option>
+							<option>Yoruba</option>
+							<option>Zhuang</option>
+							<option>Zulu</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30000</heading>
+					</control>
+				</setting>
+				<setting id="season_type" type="string" label="30001" help="">
+					<level>0</level>
+					<default>1</default>
+					<constraints>
+					<options>
+						<option label="30002">1</option>
+						<option label="30003">2</option>
+						<option label="30004">3</option>
+						<option label="30005">4</option>
+						<option label="30012">5</option>
+						<option label="30013">6</option>
+					</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30001</heading>
+					</control>
+				</setting>
+				<setting id="gender" type="string" label="30006" help="">
+					<level>0</level>
+					<default>Other</default>
+					<constraints>
+						<options>
+							<option label="30007">Male</option>
+							<option label="30008">Female</option>
+							<option label="30009">Other</option>
+						</options>
+					</constraints>
+					<control type="list" format="string">
+						<heading>30003</heading>
+					</control>
+				</setting>
+				<setting id="year" type="integer" label="30010" help="">
+					<level>0</level>
+					<default>1900</default>
+					<control type="edit" format="integer">
+						<heading>30010</heading>
+					</control>
+				</setting>
+				<setting id="pin" type="string" label="30011" help="">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control type="edit" format="string">
+						<heading>30011</heading>
+					</control>
+				</setting>
+			</group>
+		</category>
+	</section>
+</settings>
