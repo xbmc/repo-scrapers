@@ -1,0 +1,73 @@
+# Kodi Media Center language file
+# Addon Name: The TVDB
+# Addon id: metadata.tvdb.com
+# Addon Provider: XBMC Foundation
+msgid ""
+msgstr ""
+"Project-Id-Version: XBMC Addons\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#30000"
+msgid "Language"
+msgstr "Language"
+
+msgctxt "#30001"
+msgid "Season Type"
+msgstr "Season Type"
+
+msgctxt "#30002"
+msgid "Default"
+msgstr "Default"
+
+msgctxt "#30003"
+msgid "Absolute (Single Season)"
+msgstr "Absolute (Single Season)"
+
+msgctxt "#30004"
+msgid "DVD"
+msgstr "DVD"
+
+msgctxt "#30005"
+msgid "Alternate (Requires PIN)"
+msgstr "Alternate (Requires PIN)"
+
+msgctxt "#30006"
+msgid "Gender"
+msgstr "Gender"
+
+msgctxt "#30007"
+msgid "Male"
+msgstr "Male"
+
+msgctxt "#30008"
+msgid "Female"
+msgstr "Female"
+
+msgctxt "#30009"
+msgid "Other"
+msgstr "Other"
+
+msgctxt "#30010"
+msgid "Birth Year"
+msgstr "Birth Year"
+
+msgctxt "#30011"
+msgid "PIN"
+msgstr "PIN"
+
+msgctxt "#30012"
+msgid "Get tags"
+msgstr ""
+
+msgctxt "#30013"
+msgid "Preferred content rating country"
+msgstr ""
