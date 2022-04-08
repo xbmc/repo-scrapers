@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-21 13:13+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2022-04-08 14:13+0000\n"
+"Last-Translator: AlekSS Lab <alekss881980@gmail.com>\n"
 "Language-Team: Russian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/ru_ru/>\n"
 "Language: ru_ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -45,7 +45,7 @@ msgstr "Получать трейлеры прямо с YouTube"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Предпочитаемый язык названия из"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -78,11 +78,11 @@ msgstr "Источники сюжета"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Предпочитаемый язык сюжета"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Получить рейтинг по умолчанию от"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -134,7 +134,7 @@ msgstr "Страна сертификации"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Предпочитаемый язык постера"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -227,7 +227,7 @@ msgstr "Пожалуйста получите ключ в omdbapi.com и доб�
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Также получать нестандартные рейтинги Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -315,15 +315,15 @@ msgstr ""
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Получать clearlogo с fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Получать clearart с fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Получать баннер фильма с fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
@@ -335,7 +335,7 @@ msgstr ""
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Получать обложку диска с fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
@@ -343,11 +343,11 @@ msgstr ""
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Включить набор постеров с fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Включить набор фанартов с fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
