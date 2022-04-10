@@ -52,13 +52,13 @@ def _assemble_imdb_result(votes, rating, top250):
     return result
 
 def _parse_imdb_result(input_html):
-    if 'TitleBlock__Container-' in input_html:
-        rating, votes = _parse_imdb_rating_and_votes(input_html)
-        top250 = _parse_imdb_top250(input_html)
-    else:
+    rating, votes = _parse_imdb_rating_and_votes(input_html)
+    if rating is None or votes is None:
         # try previous parsers
         rating = _parse_imdb_rating_previous(input_html)
         votes = _parse_imdb_votes_previous(input_html)
+    top250 = _parse_imdb_top250(input_html)
+    if top250 is None:
         top250 = _parse_imdb_top250_previous(input_html)
 
     return votes, rating, top250
@@ -75,7 +75,8 @@ def _parse_imdb_rating_and_votes(input_html):
 
     try:
         aggregateRating = ldjson.get('aggregateRating', {})
-        return aggregateRating.get('ratingValue'), aggregateRating.get('ratingCount')
+        rating_value = aggregateRating.get('ratingValue')
+        return rating_value, aggregateRating.get('ratingCount')
     except AttributeError:
         return None, None
 

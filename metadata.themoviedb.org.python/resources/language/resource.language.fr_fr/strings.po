@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-12-14 15:13+0000\n"
+"PO-Revision-Date: 2022-03-27 01:16+0000\n"
 "Last-Translator: Édouard Duliège <edouard@duliege.com>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-themoviedb-org-python/fr_fr/>\n"
 "Language: fr_fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 4.11.2\n"
 
 msgctxt "Addon Summary"
 msgid "Python TMDB Movie Scraper"
@@ -27,7 +27,7 @@ msgstr "themoviedb.org est une base de données gratuite et libre d'accès de fi
 
 msgctxt "#30000"
 msgid "Enable fanart from TMDb"
-msgstr ""
+msgstr "Activer les fanarts de TMDb"
 
 msgctxt "#30001"
 msgid "Prefer Trailer from HD-Trailers.net"
@@ -39,7 +39,7 @@ msgstr "Langue préférée"
 
 msgctxt "#30003"
 msgid "Default Rating from"
-msgstr ""
+msgstr "Notes par défaut de"
 
 msgctxt "#30004"
 msgid "Enable Trailer (YouTube)"
@@ -83,7 +83,7 @@ msgstr "Langue de recherche"
 
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
-msgstr ""
+msgstr "Langue pour les illustrations Fanart.tv"
 
 msgctxt "#30101"
 msgid "Fanart.tv personal API key (optional)"
@@ -91,11 +91,11 @@ msgstr "Clé API personnelle pour Fanart.tv (optionnel)"
 
 msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
-msgstr ""
+msgstr "Activer les illustrations de Fanart.tv"
 
 msgctxt "#30103"
 msgid "Prioritize Fanart.TV artworks over preferred language"
-msgstr ""
+msgstr "Prioriser les illustrations de Fanart.TV à la langue préférée"
 
 #~ msgctxt "#30000"
 #~ msgid "Enable Fanart"

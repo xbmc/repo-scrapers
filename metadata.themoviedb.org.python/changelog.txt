@@ -1,5 +1,8 @@
+v1.6.2 (2022-04-10)
+- Fix: IMDB ratings
+
 v1.6.1 (2022-01-09)
-- Feature: fanart prioritization option 
+- Feature: fanart prioritization option
 
 v1.6.0 (2021-12-24)
 - Feature: fallback to English language for Fanart.tv artwork
