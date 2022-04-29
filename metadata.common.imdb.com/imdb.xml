@@ -131,7 +131,7 @@
 	<ParseIMDBPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
-				<expression fixchars="1" trim="1">storyline-plot-summary&quot;&gt;&lt;div\sclass=&quot;ipc-html-content\sipc-html-content--base&quot;&gt;&lt;div&gt;(.*?)(&lt;span style|&lt;/div)</expression>
+				<expression fixchars="1" trim="1">storyline-plot-summary&quot;&gt;&lt;div\sclass=&quot;ipc-html-content\sipc-html-content--base&quot;&gt;&lt;div\sclass=&quot;ipc-html-content-inner-div&quot;&gt;(.*?)(?:&lt;span.*?)?&lt;/div&gt;&lt;/div&gt;&lt;div\sclass=&quot;ipc-overflowText-overlay&quot;</expression>
 			</RegExp>
 			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
 				<expression fixchars="1" trim="1">&lt;h2&gt;Storyline&lt;/h2&gt;\s+&lt;div\sclass=&quot;inline\scanwrap&quot;&gt;\s+&lt;p&gt;\s+&lt;span&gt;(.*?)&lt;/span&gt;</expression>
