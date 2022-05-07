@@ -1,3 +1,7 @@
+1.4.11
+added two languages to settings file (kn-IN and te-IN)
+updated language files
+
 1.4.10
 updates to image reduction algorithm to better deal with shows with lots of seasons
 
