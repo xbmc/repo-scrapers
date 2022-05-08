@@ -23,6 +23,10 @@ import re
 import json
 from . import api_utils
 from . import settings
+try:
+    from typing import Optional, Tuple, Text, Dict, List, Any  # pylint: disable=unused-import
+except ImportError:
+    pass
 
 IMDB_RATINGS_URL = 'https://www.imdb.com/title/{}/'
 IMDB_JSON_REGEX = re.compile(
@@ -30,6 +34,8 @@ IMDB_JSON_REGEX = re.compile(
 
 
 def get_details(imdb_id):
+    # type: (Text) -> Dict
+    """get the IMDB ratings details"""
     if not imdb_id:
         return {}
     votes, rating = _get_ratinginfo(imdb_id)
@@ -37,12 +43,16 @@ def get_details(imdb_id):
 
 
 def _get_ratinginfo(imdb_id):
+    # type: (Text) -> Tuple[Text, Text]
+    """get the IMDB ratings details"""
     response = api_utils.load_info(IMDB_RATINGS_URL.format(
         imdb_id), default='', resp_type='text', verboselog=settings.VERBOSELOG)
     return _parse_imdb_result(response)
 
 
 def _assemble_imdb_result(votes, rating):
+    # type: (Text, Text) -> Dict
+    """assemble to IMDB ratings into a Dict"""
     result = {}
     if votes and rating:
         result['ratings'] = {'imdb': {'votes': votes, 'rating': rating}}
@@ -50,6 +60,8 @@ def _assemble_imdb_result(votes, rating):
 
 
 def _parse_imdb_result(input_html):
+    # type: (Text) -> Tuple[Text, Text]
+    """parse the IMDB ratings from the JSON in the raw HTML"""
     match = re.search(IMDB_JSON_REGEX, input_html)
     if not match:
         return None, None

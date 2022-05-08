@@ -52,6 +52,7 @@ if settings.FANARTTV_CLIENTKEY:
 
 
 def search_show(title, year=None):
+    # type: (Text, Text) -> List
     """
     Search for a single TV show
 
@@ -93,6 +94,8 @@ def search_show(title, year=None):
 
 
 def load_episode_list(show_info, season_map, ep_grouping):
+    # type: (InfoType, Dict, Text) -> Optional[InfoType]
+    """get the IMDB ratings details"""
     """Load episode list from themoviedb.org API"""
     episode_list = []
     if ep_grouping is not None:
@@ -136,10 +139,13 @@ def load_episode_list(show_info, season_map, ep_grouping):
 
 
 def load_show_info(show_id, ep_grouping=None, named_seasons=None):
+    # type: (Text, Text, Dict) -> Optional[InfoType]
     """
     Get full info for a single show
 
     :param show_id: themoviedb.org show ID
+    :param ep_grouping: the episode group from TMDb
+    :param named_seasons: the named seasons from the NFO file
     :return: show info or None
     """
     if named_seasons == None:
@@ -276,6 +282,14 @@ def load_episode_info(show_id, episode_id):
 
 
 def load_ratings(the_info, show_imdb_id=''):
+    # type: (InfoType, Text) -> Dict
+    """
+    Load the ratings for the show/episode
+
+    :param the_info: show or episode info
+    :param show_imdb_id: show IMDB
+    :return: ratings or empty dict
+    """
     ratings = {}
     imdb_id = the_info.get('external_ids', {}).get('imdb_id')
     for rating_type in settings.RATING_TYPES:
@@ -303,7 +317,7 @@ def load_ratings(the_info, show_imdb_id=''):
 
 
 def load_fanarttv_art(show_info):
-    # type: (Text) -> Optional[InfoType]
+    # type: (InfoType) -> Optional[InfoType]
     """
     Add fanart.tv images for a show
 
@@ -347,7 +361,7 @@ def load_fanarttv_art(show_info):
 
 
 def trim_artwork(show_info):
-    # type: (Text) -> Optional[InfoType]
+    # type: (InfoType) -> Optional[InfoType]
     """
     Trim artwork to keep the text blob below 65K characters
 
@@ -404,12 +418,27 @@ def trim_artwork(show_info):
 
 
 def _sort_image_types(imagelist):
+    # type: (Dict) -> Dict
+    """
+    sort the images by language
+
+    :param imagelist:
+    :return: imagelist
+    """
     for image_type, images in imagelist.items():
         imagelist[image_type] = _image_sort(images, image_type)
     return imagelist
 
 
 def _image_sort(images, image_type):
+    # type: (List, Text) -> List
+    """
+    sort the images by language
+
+    :param images:
+    :param image_type:
+    :return: list of images
+    """
     lang_pref = []
     lang_null = []
     lang_en = []

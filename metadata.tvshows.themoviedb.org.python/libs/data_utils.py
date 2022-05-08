@@ -29,7 +29,7 @@ from .utils import safe_get, logger
 from . import settings, api_utils
 
 try:
-    from typing import Optional, Text, Dict, List, Any  # pylint: disable=unused-import
+    from typing import Optional, Tuple, Text, Dict, List, Any  # pylint: disable=unused-import
     from xbmcgui import ListItem  # pylint: disable=unused-import
     InfoType = Dict[Text, Any]  # pylint: disable=invalid-name
 except ImportError:
@@ -121,6 +121,7 @@ def _get_directors(episode_info):
 
 
 def _set_unique_ids(ext_ids, vtag):
+    # type: (Dict, ListItem) -> ListItem
     """Extract unique ID in various online databases"""
     for key, value in ext_ids.items():
         if key in VALIDEXTIDS and value:
@@ -131,7 +132,8 @@ def _set_unique_ids(ext_ids, vtag):
             vtag.setUniqueID(str(value), type=key[:4], isDefault=isTMDB)
 
 
-def _set_rating(the_info, vtag, episode=False):
+def _set_rating(the_info, vtag):
+    # type: (InfoType, ListItem) -> None
     """Set show/episode rating"""
     first = True
     for rating_type in settings.RATING_TYPES:
@@ -149,6 +151,7 @@ def _set_rating(the_info, vtag, episode=False):
 
 
 def _add_season_info(show_info, vtag):
+    # type: (InfoType, ListItem) -> None
     """Add info for show seasons"""
     for season in show_info['seasons']:
         logger.debug('adding information for season %s to list item' %
@@ -173,6 +176,8 @@ def _add_season_info(show_info, vtag):
 
 
 def get_image_urls(image):
+    # type: (Dict) -> Tuple[Text, Text]
+    """Save cast info to list item"""
     if image.get('type') == 'fanarttv':
         theurl = image['file_path']
         previewurl = theurl.replace(
@@ -184,6 +189,7 @@ def get_image_urls(image):
 
 
 def set_show_artwork(show_info, list_item):
+    # type: (InfoType, ListItem) -> ListItem
     """Set available images for a show"""
     vtag = list_item.getVideoInfoTag()
     for image_type, image_list in show_info.get('images', {}).items():
@@ -318,7 +324,7 @@ def add_episode_info(list_item, episode_info, full_info=True):
         ext_ids = {'tmdb_id': episode_info['id']}
         ext_ids.update(episode_info.get('external_ids', {}))
         _set_unique_ids(ext_ids, vtag)
-        _set_rating(episode_info, vtag, episode=True)
+        _set_rating(episode_info, vtag)
         for image in episode_info.get('images', {}).get('stills', []):
             img_path = image.get('file_path')
             if img_path:
@@ -365,6 +371,8 @@ def parse_nfo_url(nfo):
 
 
 def _convert_ext_id(ext_provider, ext_id):
+    # type: (Text, Text) -> Text
+    """get a TMDb ID from an external ID"""
     providers_dict = {'imdb': 'imdb_id',
                       'thetvdb': 'tvdb_id',
                       'tvdb': 'tvdb_id'}
@@ -380,6 +388,8 @@ def _convert_ext_id(ext_provider, ext_id):
 
 
 def parse_media_id(title):
+    # type: (Text) -> Dict
+    """get the ID from a title and return with the type"""
     title = title.lower()
     if title.startswith('tt') and title[2:].isdigit():
         # IMDB ID works alone because it is clear
@@ -396,6 +406,8 @@ def parse_media_id(title):
 
 
 def _parse_trailer(results):
+    # type: (Text) -> Text
+    """create a valid Tubed or YouTube plugin trailer URL"""
     if results:
         if settings.PLAYERSOPT == 'tubed':
             addon_player = 'plugin://plugin.video.tubed/?mode=play&video_id='
@@ -420,6 +432,8 @@ def _parse_trailer(results):
 
 
 def _check_youtube(key):
+    # type: (Text) -> bool
+    """check to see if the YouTube key returns a valid link"""
     chk_link = "https://www.youtube.com/watch?v="+key
     check = api_utils.load_info(chk_link, resp_type='not_json')
     if not check or "Video unavailable" in check:       # video not available
