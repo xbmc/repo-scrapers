@@ -208,6 +208,8 @@
 						<option label="30003">2</option>
 						<option label="30004">3</option>
 						<option label="30005">4</option>
+						<option label="30012">5</option>
+						<option label="30013">6</option>
 					</options>
 					</constraints>
 					<control type="list" format="string">
