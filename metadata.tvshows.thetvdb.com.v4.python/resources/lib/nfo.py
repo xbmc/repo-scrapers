@@ -20,7 +20,7 @@ SHOW_ID_REGEXPS = (
     r'(thetvdb)\.com[\w=&\?/]+id=(\d+)',
 )
 
-SERIES_URL_REGEX = re.compile(r'https?://thetvdb.com/series/([\w-]+)', re.I)
+SERIES_URL_REGEX = re.compile(r'https?://[w.]*?thetvdb.com/series/([\w-]+)', re.I)
 TVDB_ID_REGEX = re.compile(r'<strong>TheTVDB\.com Series ID</strong>\s+?<span>(\d+?)</span>', re.I)
 
 UrlParseResult = namedtuple('UrlParseResult', ['provider', 'show_id'])

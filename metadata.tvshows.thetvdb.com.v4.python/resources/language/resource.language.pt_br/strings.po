@@ -64,3 +64,10 @@ msgctxt "#30011"
 msgid "PIN"
 msgstr "PIN"
 
+msgctxt "#30012"
+msgid "Regional"
+msgstr "Regional"
+
+msgctxt "#30013"
+msgid "Alternate DVD"
+msgstr "Alternativo DVD"
