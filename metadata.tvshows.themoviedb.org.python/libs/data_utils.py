@@ -23,7 +23,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import re
-from xbmc import Actor
+from xbmc import Actor, VideoStreamDetail
 from collections import namedtuple
 from .utils import safe_get, logger
 from . import settings, api_utils
@@ -319,6 +319,10 @@ def add_episode_info(list_item, episode_info, full_info=True):
             vtag.setPlotOutline(plot)
         if safe_get(episode_info, 'air_date') is not None:
             vtag.setPremiered(episode_info['air_date'])
+        duration = episode_info.get('runtime')
+        if duration:
+            videostream = VideoStreamDetail(duration=int(duration))
+            vtag.addVideoStream(videostream)
         _set_cast(
             episode_info['credits']['guest_stars'], vtag)
         ext_ids = {'tmdb_id': episode_info['id']}
