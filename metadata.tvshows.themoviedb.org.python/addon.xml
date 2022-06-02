@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.5.1"
+  version="1.5.2"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,8 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.5.1
-added two language options to the settings (kn-IN and te-IN)
+    <news>1.5.2
+added episode runtime from TMDb API
 updated language files
 	</news>
     <platform>all</platform>
