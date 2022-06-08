@@ -1,3 +1,7 @@
+1.5.2
+added episode runtime from TMDb API
+updated language files
+
 1.5.1
 added two language options to the settings (kn-IN and te-IN)
 updated language files
