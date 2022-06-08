@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-05-27 09:13+0000\n"
-"Last-Translator: Christophe JOLY <skypichat@hotmail.fr>\n"
+"PO-Revision-Date: 2022-06-08 17:31+0000\n"
+"Last-Translator: skypichat <skypichat@hotmail.fr>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/fr_fr/>\n"
 "Language: fr_fr\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Activer les fanarts de themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr "Activer les affiches themoviedb.org"
+msgstr "Activer les posters depuis themoviedb.org"
 
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
@@ -69,7 +69,7 @@ msgstr "Récupérer le synopsis depuis"
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr "Récupérer la distribution, les réalisateurs et les scénaristes depuis"
+msgstr "Récupérer distribution, réalisateurs et scénaristes depuis"
 
 msgctxt "#30016"
 msgid "Plot Sources"
@@ -142,7 +142,7 @@ msgstr "Préfixe de classification"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr "Activer les affiches de trakt.tv"
+msgstr "Activer les posters de trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
@@ -154,7 +154,7 @@ msgstr "Activer les bandes-annonces de trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr "Langue des genre"
+msgstr "Langue des genres"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
@@ -166,7 +166,7 @@ msgstr "Récupérer le slogan depuis"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr "Langue préférée pour le Slogan"
+msgstr "Langue préférée pour le slogan"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -174,7 +174,7 @@ msgstr "Récupérer le TOP250 IMDb"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Récupérer les grandes lignes depuis"
+msgstr "Récupérer les Outlines depuis"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
@@ -182,11 +182,11 @@ msgstr "Langue préférée des nom de sagas (Collections)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr "Source de posters"
+msgstr "Source des posters"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Récupère les mots-clés et sauvegarde comme tags depuis"
+msgstr "Récupère les mots-clés et les sauvegarde comme tags depuis"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -211,7 +211,7 @@ msgstr "Obtenir les notes depuis MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr "Obtenir les notes deuis themoviedb.org"
+msgstr "Obtenir les notes depuis themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
@@ -223,11 +223,11 @@ msgstr "Clé API OMDB"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr "Enregistrez s'il vous plaît votre clé API sur omdbapi.com et ajoutez la ci-dessus"
+msgstr "Veuillez enregistrer votre clé API sur omdbapi.com et ajoutez la ci-dessus"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr "Obtenir aussi les notes pas par défaut de Rotten Tomatoes"
+msgstr "Obtenir aussi les notes par défaut de Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -291,7 +291,7 @@ msgstr "Fanart"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "Sources de fanart"
+msgstr "Sources des fanarts"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
@@ -299,7 +299,7 @@ msgstr "Activer les posters depuis fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "Activer les fond d'écran depuis fanart.tv"
+msgstr "Activer les fanarts depuis fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
@@ -343,7 +343,7 @@ msgstr "Collection d'Artwork"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr "Activer l'affiche de saga de fanart.tv"
+msgstr "Activer le poster de saga de fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
