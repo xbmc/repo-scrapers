@@ -1,0 +1,42 @@
+1.0.11
+added option to select language for league and game summaries
+
+1.0.10
+added YouTube game trailers, but disabled because episodes do not support trailers
+
+1.0.9
+removed team list as show cast (the artwork is not a good fit)
+
+1.0.8
+added team list for a league as cast for the show
+fix to catch bad response from API
+moved URL globals from settings to tsdb module
+
+1.0.7
+moved all API calls to tsdb library
+
+1.0.6
+optimized API usage with additional local caching
+updated show and episode artwork routines to use common code
+
+1.0.5
+for team sports team members are now included as actors
+
+1.0.4
+added fanart to espisodes
+fixed fanart parsing for leagues
+fixed parsing of TV Rights to list as studios
+code cleanup
+
+1.0.3
+fix for crashing when using parsing nfo file
+
+1.0.2
+fix for crash on second scan of folder
+fix for episodes not loading after initial scan of folder
+
+1.0.1
+fix for multiple league games on same day (requires file name change)
+
+1.0.0
+first Python version of the scraper

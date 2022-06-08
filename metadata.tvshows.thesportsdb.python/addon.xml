@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="metadata.tvshows.thesportsdb.python"
+  name="The SportsDB TV Shows"
+  version="1.0.11"
+  provider-name="pkscout">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="xbmc.metadata" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <license>GPL-3.0-or-later</license>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <screenshot>resources/screenshot-01.jpg</screenshot>
+      <screenshot>resources/screenshot-02.jpg</screenshot>
+      <screenshot>resources/screenshot-03.jpg</screenshot>
+      <screenshot>resources/screenshot-04.jpg</screenshot>
+      <screenshot>resources/screenshot-05.jpg</screenshot>
+      <screenshot>resources/screenshot-06.jpg</screenshot>
+    </assets>
+    <forum>https://forum.kodi.tv/showthread.php?tid=368208</forum>
+    <website>https://www.thesportsdb.com</website>
+    <source>https://github.com/pkscout/metadata.tvshows.thesportsdb.python</source>
+    <summary lang="en_GB">Fetch sports event metadata from thesportsdb.com</summary>
+    <description lang="en_GB">The Sports Database is an open, crowd-sourced database of sports artwork and metadata.</description>
+  </extension>
+</addon>
+
