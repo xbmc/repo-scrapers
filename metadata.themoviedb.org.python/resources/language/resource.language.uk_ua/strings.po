@@ -5,16 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
-"Language-Team: Ukrainian (http://www.transifex.com/projects/p/xbmc-addons/language/uk/)\n"
-"Language: uk\n"
+"PO-Revision-Date: 2022-05-15 14:14+0000\n"
+"Last-Translator: A. <artem+weblate@molotov.work>\n"
+"Language-Team: Ukrainian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-themoviedb-org-python/uk_ua/>\n"
+"Language: uk_ua\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.12.2\n"
 
 msgctxt "Addon Summary"
 msgid "Python TMDB Movie Scraper"
@@ -24,9 +25,10 @@ msgctxt "Addon Description"
 msgid "themoviedb.org is a free and open movie database. It's completely user driven by people like you. TMDb is currently used by millions of people every month and with their powerful API, it is also used by many popular media centers like Kodi to retrieve Movie Metadata, Posters and Fanart to enrich the user's experience."
 msgstr "themoviedb.org - це безкоштовна і відкрита база даних фільмів. Вона повністю підтримується звичайними людьми. В даний момент сайт TMDb використовують мільйони людей кожен місяць, і завдяки потужному API, його можуть використовувати різні популярні медіацентри, такі як Kodi, щоб отримувати метадані, постери і фанарт для фільмів з метою оформлення інтерфейсу."
 
+#, fuzzy
 msgctxt "#30000"
 msgid "Enable fanart from TMDb"
-msgstr ""
+msgstr "Увімкнути фанарт з TMDb"
 
 msgctxt "#30001"
 msgid "Prefer Trailer from HD-Trailers.net"
@@ -38,7 +40,7 @@ msgstr "Бажана мова"
 
 msgctxt "#30003"
 msgid "Default Rating from"
-msgstr ""
+msgstr "Типовий рейтинг від"
 
 msgctxt "#30004"
 msgid "Enable Trailer (YouTube)"
@@ -54,47 +56,49 @@ msgstr "Бажана країна сертифікації"
 
 msgctxt "#30007"
 msgid "Add also IMDb ratings"
-msgstr ""
+msgstr "Також додавати рейтинги з IMDb"
 
 msgctxt "#30008"
 msgid "Certification Prefix"
-msgstr ""
+msgstr "Префікс сертифікації"
 
 msgctxt "#30009"
 msgid "Add multiple studios"
-msgstr ""
+msgstr "Додавати декілька студій"
 
 msgctxt "#30010"
 msgid "Add also Trakt.tv ratings"
-msgstr ""
+msgstr "Також додавати рейтинги з Trakt.tv"
 
 msgctxt "#30011"
 msgid "Add keywords as tags"
-msgstr ""
+msgstr "Додавати ключові слова як теги"
 
+#, fuzzy
 msgctxt "#30012"
 msgid "Separate TMDb fanart with title to landscape"
-msgstr ""
+msgstr "Відділяти TMDb фанарт з назвою до landscape"
 
 msgctxt "#30013"
 msgid "Search language"
-msgstr ""
+msgstr "Мова пошуку"
 
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
-msgstr ""
+msgstr "Мова ілюстрацій з Fanart.tv"
 
 msgctxt "#30101"
 msgid "Fanart.tv personal API key (optional)"
-msgstr ""
+msgstr "персональний API-ключ в Fanart.tv (необов'язково)"
 
 msgctxt "#30102"
 msgid "Enable artwork from Fanart.tv"
-msgstr ""
+msgstr "Увімкнути ілюстрації з Fanart.tv"
 
+#, fuzzy
 msgctxt "#30103"
 msgid "Prioritize Fanart.TV artworks over preferred language"
-msgstr ""
+msgstr "Більший пріоритет ілюстраціям з Fanart.TV, ніж бажаної мови"
 
 #~ msgctxt "#30000"
 #~ msgid "Enable Fanart"
