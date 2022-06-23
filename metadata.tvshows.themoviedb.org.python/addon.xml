@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.12"
+  version="1.4.13"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,9 +9,8 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.4.12
-added episode duration from TMDb API
-updated language files
+    <news>1.4.13
+fix to properly parse show ID from NFO file
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
