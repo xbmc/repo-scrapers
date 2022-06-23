@@ -1,3 +1,6 @@
+1.5.3
+fix to properly parse NFO file for show ID
+
 1.5.2
 added episode runtime from TMDb API
 updated language files

@@ -52,6 +52,7 @@ SHOW_ID_REGEXPS = (
     r'(thetvdb)\.com.+&id=(\d+)',                         # TheTVDB_http_link
     r'(thetvdb)\.com/.*?series/(\d+)',                    # TheTVDB_http_link
     r'(thetvdb)\.com/.*?"id":(\d+)',                      # TheTVDB_http_link
+    r'<uniqueid.+?type="(tvdb|imdb)".*?>([t\d]+?)</uniqueid>'
 )
 
 
@@ -402,7 +403,7 @@ def parse_media_id(title):
     elif title.startswith('imdb/tt') and title[7:].isdigit():
         # IMDB ID works alone because it is clear
         return {'type': 'imdb_id', 'title': title[5:]}
-    elif title.startswith('tmdb/') and title[5:].isdigit():  # TVDB ID
+    elif title.startswith('tmdb/') and title[5:].isdigit():  # TMDB ID
         return {'type': 'tmdb_id', 'title': title[5:]}
     elif title.startswith('tvdb/') and title[5:].isdigit():  # TVDB ID
         return {'type': 'tvdb_id', 'title': title[5:]}
