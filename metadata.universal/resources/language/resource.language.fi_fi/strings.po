@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-19 00:23+0000\n"
+"PO-Revision-Date: 2022-06-30 11:14+0000\n"
 "Last-Translator: Oskari Lavinto <olavinto@protonmail.com>\n"
 "Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/fi_fi/>\n"
 "Language: fi_fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 4.13\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -27,16 +27,16 @@ msgstr "Mahdollistaa metatietojen ja mediakuvitusten noudon IMDb, TMDB, Rotten T
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "Käytä fanart-kuvia The Movie Database -palvelusta"
+msgstr "Nouda fanart-kuvia The Movie Database -palvelusta"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr "Käytä poster-kuvia The Movie Database -palvelusta"
+msgstr "Nouda julisteita The Movie Database -palvelusta"
 
 # empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr "Käytä poater-kuvia MoviePosterDB-palvelusta"
+msgstr "Nouda julisteita MoviePosterDB-palvelusta"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
@@ -50,7 +50,7 @@ msgstr "Ensisijainen nimikeen kieli lähteestä"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr "Käytä trailereita The Movie Database -palvelusta"
+msgstr "Nouda trailereita The Movie Database -palvelusta"
 
 msgctxt "#30011"
 msgid "Poster"
@@ -143,15 +143,15 @@ msgstr "Luokitusten etuliite"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr "Käytä julisteita Trakt.tv-palvelusta"
+msgstr "Nouda julisteita Trakt.tv-palvelusta"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "Käytä fanitaiteita Trakt.tv-palvelusta"
+msgstr "Nouda fanart-kuvia Trakt.tv-palvelusta"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Käytä trailereita Trakt.tv-palvelusta"
+msgstr "Nouda trailereita Trakt.tv-palvelusta"
 
 msgctxt "#30040"
 msgid "Genre Language"
@@ -171,7 +171,7 @@ msgstr "Ensisijainen iskulauseen kieli"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Nouda IMDb 250 parasta sijoutukset"
+msgstr "Nouda IMDb 250 parasta -sijoitus"
 
 msgctxt "#30045"
 msgid "Get Outline From"
@@ -187,7 +187,7 @@ msgstr "Julisteiden lähteet"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Nouda avainsanat ja tallenna ne tunnisteina lähteestä"
+msgstr "Nouda ja tallenna avainsanat tunnisteina lähteestä"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -216,7 +216,7 @@ msgstr "Nouda arviot myös The Movie Database -palvelusta"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr "Käytä arvioita, jotka on koostettu lähteistä"
+msgstr "Nouda arvioita, jotka on koostettu lähteistä"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
@@ -228,7 +228,7 @@ msgstr "Rekisteröi API-avain osoitteessa omdbapi.com ja lisää se ylle"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr "Nouda myös ei-oletusarvoiset Rotten Tomatoes -arviot"
+msgstr "Nouda myös oletuksesta poikkeavat Rotten Tomatoes -arviot"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -296,15 +296,15 @@ msgstr "Fanitaiteiden lähteet"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr "Käytä julisteita Fanart.tv-palvelusta"
+msgstr "Nouda julisteita Fanart.tv-palvelusta"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "Käytä fanitaiteita Fanart.tv-palvelusta"
+msgstr "Nouda fanart-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr "Käytä julisteita IMDb-palvelusta"
+msgstr "Nouda julisteita IMDb-palvelusta"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -316,27 +316,27 @@ msgstr "Lisämediakuvitukset"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr "Käytä clearlogo-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda clearlogo-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr "Käytä clearart-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda clearart-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr "Käytä banner-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda bannereita Fanart.tv-palvelusta"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "Käytä lanscape-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda lanscape-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr "Käytä landscape-kuvia The Movie Database -palvelusta"
+msgstr "Nouda landscape-kuvia The Movie Database -palvelusta"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr "Käytä discart-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda levyetikettejä Fanart.tv-palvelusta"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
@@ -344,28 +344,28 @@ msgstr "Kokoelmien mediakuvitukset"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr "Käytä kokoelmille poster-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien julisteita Fanart.tv-palvelusta"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr "Käytä kokoelmille fanart-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien fanart-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr "Käytä kokoelmille clearlogo-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien clearlogo-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr "Käytä kokoelmille clearart-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien clearart-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr "Käytä kokoelmille banner-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien bannereita Fanart.tv-palvelusta"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr "Käytä kokoelmille landscape-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien landscape-kuvia Fanart.tv-palvelusta"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr "Käytä kokoelmille discart-kuvia Fanart.tv-palvelusta"
+msgstr "Nouda kokoelmien levyetikettejä Fanart.tv-palvelusta"
