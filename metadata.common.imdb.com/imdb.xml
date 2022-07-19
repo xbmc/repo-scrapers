@@ -124,34 +124,31 @@
 	</ParseMetaCriticRatings>
 
 	<GetIMDBPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBPlotById>
 	<ParseIMDBPlot dest="5">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
-				<expression fixchars="1" trim="1">storyline-plot-summary&quot;&gt;&lt;div\sclass=&quot;ipc-html-content\sipc-html-content--base&quot;&gt;&lt;div\sclass=&quot;ipc-html-content-inner-div&quot;&gt;(.*?)(?:&lt;span.*?)?&lt;/div&gt;&lt;/div&gt;&lt;div\sclass=&quot;ipc-overflowText-overlay&quot;</expression>
+		<RegExp input="$$2" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
+			<RegExp input="$$1" output="\1" dest="2">
+				<expression fixchars="1" trim="1">label&quot;&gt;Plot Summary&lt;\/td&gt;.*?&lt;td&gt;.*?(?:&lt;p&gt;)?(.*?)(?:&lt;ul cl|&lt;em cl|&lt;\/p&gt;|&lt;\/td&gt;)</expression>
 			</RegExp>
-			<RegExp input="$$1" output="&lt;plot&gt;\1&lt;/plot&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;h2&gt;Storyline&lt;/h2&gt;\s+&lt;div\sclass=&quot;inline\scanwrap&quot;&gt;\s+&lt;p&gt;\s+&lt;span&gt;(.*?)&lt;/span&gt;</expression>
+			<RegExp input="$$1" output="qxq\1" dest="2+">
+				<expression fixchars="1" trim="1">section class=&quot;titlereference-section-overview&quot;&gt;.*?&lt;div&gt;.*?(\w.*?)&lt;\/div&gt;</expression>				
 			</RegExp>
-			<expression noclean="1" />
+			<expression noclean="1">(.+(?=qxq)|(?&lt;=qxq).+)</expression>
 		</RegExp>
 	</ParseIMDBPlot>
 
 	<GetIMDBTaglineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTaglineById>
 	<ParseIMDBTagline dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&quot;taglines&quot;:{&quot;edges&quot;:\[{&quot;node&quot;:{&quot;text&quot;:&quot;(.*?)&quot;,&quot;</expression>
-			</RegExp>
-			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="2">
-				<expression fixchars="1" trim="1">&lt;h4[^&gt;]*?&gt;Taglines:&lt;/h4&gt;\n?([^&lt;]*)</expression>
+				<expression fixchars="1" trim="1">label&quot;&gt;Taglines&lt;\/td&gt;.*?&lt;td&gt;.*?(\w.*?)(?:&lt;a .*?&lt;\/a&gt;|&lt;\/td&gt;)</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>

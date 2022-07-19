@@ -1,4 +1,7 @@
 [B]3.2.5[/B]
+- fixed: GetIMDBPlotById, ParseIMDBPlot, GetIMDBTaglineById, ParseIMDBTagline to use xx-reference.html
+
+[B]3.2.5[/B]
 - fixed: Genres from IMDb were not getting scraped in some cases
 
 [B]3.2.4[/B]
