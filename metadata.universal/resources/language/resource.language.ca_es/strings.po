@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-21 13:13+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2022-08-12 17:14+0000\n"
+"Last-Translator: Xean <xeanhort007@gmail.com>\n"
 "Language-Team: Catalan (Spain) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/ca_es/>\n"
 "Language: ca_es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.13\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -45,7 +45,7 @@ msgstr "Obté els tràilers directament des de YouTube"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Idioma del títol preferit de"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -73,16 +73,16 @@ msgstr "Obté el repartiment / directors / escriptors de"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr ""
+msgstr "Fonts de la trama"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Llenguatge de la trama preferit"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Agafa les valoracions per defecte de"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,7 +106,7 @@ msgstr "Fonts dels gèneres"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Idioma del títol preferit"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -134,7 +134,7 @@ msgstr "Païs de certificació preferit"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Idioma del cartell preferit"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -154,11 +154,11 @@ msgstr "Habilita els tràilers de trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Llenguatge del gènere"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Idioma del tràiler preferit"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -166,7 +166,7 @@ msgstr "Obté el lema de"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Idioma de l'eslògan preferit"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -178,7 +178,7 @@ msgstr "Obté la sinopsi de"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Idioma preferit del nom de la saga"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -186,7 +186,7 @@ msgstr "Font dels cartellsº"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr ""
+msgstr "Agafa les paraules clau i deseu-les com a etiquetes de"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -195,39 +195,39 @@ msgstr "Valoració"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Valoració Generada Utilitzant"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Agafa també puntuacions d'IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Agafa també puntuacions de Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Agafa també puntuacions de MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Agafa també puntuacions de themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Utilitzeu la puntuació agregada de"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "Clau de l'API de OMDB"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Si us plau, registreu la clau API a omdbapi.com i afegiu-la a dalt"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Agafa també les puntuacions alternatives de Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -259,11 +259,11 @@ msgstr "Motor de cerca a utilitzar"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Idioma de cerca secundària (A més de l'anglès, en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Inclou Totes Les Categories De Pel·lícules"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -275,7 +275,7 @@ msgstr "Habilitant totes les categories de pel·lícules reduirà en gran mesura
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Idioma De Cerca Preferit"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -295,15 +295,15 @@ msgstr "Fonts del fanart"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "Habilita els cartells de fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "Habilita el fanart de fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Habilita els cartells d'IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -311,63 +311,63 @@ msgstr "Il·lustracions"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Obra d'art addicional"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Habilita el clearlogo de fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Habilita el clearart de fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Habilita el baner de pel·lícula de fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Habilita l'art apaïsat de pel·lícula de fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Habilita l'art apaïsat de pel·lícula de themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Habilita el discart de fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Obra d'art de la col·lecció"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Habilita el cartell de la saga de fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Habilita el fanart de la saga de fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Habilita el clearlogo de la saga de fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Habilita el clearart de la saga de fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Habilita el baner de la saga de fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Habilita l'art apaïsat de la saga de fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Habilita el discart de la saga de fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
