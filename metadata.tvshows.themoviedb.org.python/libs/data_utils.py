@@ -137,7 +137,7 @@ def _set_unique_ids(ext_ids, list_item):
 
 
 def _set_rating(the_info, list_item, episode=False):
-    # type: (InfoType, ListItem) -> ListItem
+    # type: (InfoType, ListItem, bool) -> ListItem
     """Set show/episode rating"""
     first = True
     for rating_type in settings.RATING_TYPES:
@@ -182,6 +182,10 @@ def _add_season_info(show_info, list_item):
 
 
 def get_image_urls(image):
+    # type: (Dict) -> Tuple[Text, Text]
+    """Get image URLs from image information"""
+    if image.get('file_path', '').endswith('.svg'):
+        return None, None
     if image.get('type') == 'fanarttv':
         theurl = image['file_path']
         previewurl = theurl.replace(
@@ -199,27 +203,26 @@ def set_show_artwork(show_info, list_item):
         if image_type == 'backdrops':
             fanart_list = []
             for image in image_list:
-                if image.get('type') == 'fanarttv':
-                    theurl = image['file_path']
-                else:
-                    theurl = settings.IMAGEROOTURL + image['file_path']
-                if image.get('iso_639_1') != None and settings.CATLANDSCAPE:
-                    theurl, previewurl = get_image_urls(image)
+                theurl, previewurl = get_image_urls(image)
+                if image.get('iso_639_1') != None and settings.CATLANDSCAPE and theurl:
                     list_item.addAvailableArtwork(
                         theurl, art_type="landscape", preview=previewurl)
-                else:
+                elif theurl:
                     fanart_list.append({'image': theurl})
             if fanart_list:
                 list_item.setAvailableFanart(fanart_list)
         else:
             if image_type == 'posters':
                 destination = 'poster'
+            elif image_type == 'logos':
+                destination = 'clearlogo'
             else:
                 destination = image_type
             for image in image_list:
                 theurl, previewurl = get_image_urls(image)
-                list_item.addAvailableArtwork(
-                    theurl, art_type=destination, preview=previewurl)
+                if theurl:
+                    list_item.addAvailableArtwork(
+                        theurl, art_type=destination, preview=previewurl)
     return list_item
 
 
