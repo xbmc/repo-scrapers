@@ -1,5 +1,3 @@
-# coding: utf-8
-#
 # Copyright (C) 2019, Roman Miroshnychenko aka Roman V.M. <roman1972@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -17,14 +15,11 @@
 
 """Cache-related functionality"""
 
-from __future__ import absolute_import, unicode_literals
-
-import io
 import json
 import os
 import time
+from typing import Optional, Text, Dict, Any, Union
 
-import six
 import xbmcgui
 import xbmcvfs
 
@@ -35,23 +30,22 @@ except ImportError:
 
 from .utils import ADDON_ID, logger
 
-try:
-    from typing import Optional, Text, Dict, Any, Union  # pylint: disable=unused-import
-except ImportError:
-    pass
-
-
 EPISODES_CACHE_TTL = 60 * 10  # 10 minutes
 
 
-class MemoryCache(object):  # pylint: disable=useless-object-inheritance
+class MemoryCache:
+    _instance = None
     CACHE_KEY = '__tvmaze_scraper__'
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
 
     def __init__(self):
         self._window = xbmcgui.Window(10000)
 
-    def set(self, obj_id, obj):
-        # type: (Union[int, Text], Any) -> None
+    def set(self, obj_id: Union[int, str], obj: Any) -> None:
         cache = {
             'id': obj_id,
             'timestamp': time.time(),
@@ -60,8 +54,7 @@ class MemoryCache(object):  # pylint: disable=useless-object-inheritance
         cache_json = json.dumps(cache)
         self._window.setProperty(self.CACHE_KEY, cache_json)
 
-    def get(self, obj_id):
-        # type: (Union[int, Text]) -> Optional[Any]
+    def get(self, obj_id: Union[int, str]) -> Optional[Any]:
         cache_json = self._window.getProperty(self.CACHE_KEY)
         if not cache_json:
             logger.debug('Memory cache empty')
@@ -69,7 +62,7 @@ class MemoryCache(object):  # pylint: disable=useless-object-inheritance
         try:
             cache = json.loads(cache_json)
         except ValueError as exc:
-            logger.debug('Memory cache error: {}'.format(exc))
+            logger.debug(f'Memory cache error: {exc}')
             return None
         if cache['id'] != obj_id or time.time() - cache['timestamp'] > EPISODES_CACHE_TTL:
             logger.debug('Memory cache miss')
@@ -78,22 +71,16 @@ class MemoryCache(object):  # pylint: disable=useless-object-inheritance
         return cache['object']
 
 
-MEMORY_CACHE = MemoryCache()
+def cache_episodes_map(show_id: Union[int, str], episodes_map: Dict[Text, Any]) -> None:
+    MemoryCache().set(int(show_id), episodes_map)
 
 
-def cache_episodes_map(show_id, episodes_map):
-    # type: (Union[int, Text], Dict[Text, Any]) -> None
-    MEMORY_CACHE.set(int(show_id), episodes_map)
-
-
-def load_episodes_map_from_cache(show_id):
-    # type: (Union[int, Text]) -> Optional[Dict[Text, Any]]
-    episodes_map = MEMORY_CACHE.get(int(show_id))
+def load_episodes_map_from_cache(show_id: Union[int, str]) -> Optional[Dict[str, Any]]:
+    episodes_map = MemoryCache().get(int(show_id))
     return episodes_map
 
 
-def _get_cache_directory():  # pylint: disable=missing-docstring
-    # type: () -> Text
+def _get_cache_directory() -> str:  # pylint: disable=missing-docstring
     temp_dir = translatePath('special://temp')
     if isinstance(temp_dir, bytes):
         temp_dir = temp_dir.decode('utf-8')
@@ -103,24 +90,20 @@ def _get_cache_directory():  # pylint: disable=missing-docstring
     return cache_dir
 
 
-CACHE_DIR = _get_cache_directory()  # type: Text
+CACHE_DIR = _get_cache_directory()
 
 
-def cache_show_info(show_info):
-    # type: (Dict[Text, Any]) -> None
+def cache_show_info(show_info: Dict[str, Any]) -> None:
     """
     Save show_info dict to cache
     """
     file_name = str(show_info['id']) + '.json'
     cache_json = json.dumps(show_info)
-    if isinstance(cache_json, six.text_type):
-        cache_json = cache_json.encode('utf-8')
-    with open(os.path.join(CACHE_DIR, file_name), 'wb') as fo:
+    with open(os.path.join(CACHE_DIR, file_name), 'w', encoding='utf-8') as fo:
         fo.write(cache_json)
 
 
-def load_show_info_from_cache(show_id):
-    # type: (Text) -> Optional[Dict[Text, Any]]
+def load_show_info_from_cache(show_id: Union[int, str]) -> Optional[Dict[str, Any]]:
     """
     Load show info from a local cache
 
@@ -129,12 +112,11 @@ def load_show_info_from_cache(show_id):
     """
     file_name = str(show_id) + '.json'
     try:
-        with io.open(os.path.join(CACHE_DIR, file_name), 'r',
-                     encoding='utf-8') as fo:
+        with open(os.path.join(CACHE_DIR, file_name), 'r', encoding='utf-8') as fo:
             cache_json = fo.read()
         show_info = json.loads(cache_json)
         logger.debug('Show info cache hit')
         return show_info
     except (IOError, EOFError, ValueError) as exc:
-        logger.debug('Cache error: {} {}'.format(type(exc), exc))
+        logger.debug(f'Cache error: {type(exc)} {exc}')
         return None

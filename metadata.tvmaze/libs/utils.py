@@ -1,5 +1,3 @@
-# coding: utf-8
-#
 # Copyright (C) 2019, Roman Miroshnychenko aka Roman V.M. <roman1972@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
@@ -16,20 +14,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """Misc utils"""
-
-from __future__ import absolute_import, unicode_literals
+from typing import Text, Any, Dict
 
 import xbmc
-from six import PY2, text_type, binary_type
 from xbmcaddon import Addon
-
-try:
-    from typing import Text, Optional, Any, Dict  # pylint: disable=unused-import
-except ImportError:
-    pass
 
 ADDON = Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
+VERSION = ADDON.getAddonInfo('version')
 
 EPISODE_ORDER_MAP = {
     0: 'default',
@@ -43,38 +35,33 @@ EPISODE_ORDER_MAP = {
 
 
 class logger:
-    log_message_prefix = '[{} ({})]: '.format(ADDON_ID, ADDON.getAddonInfo('version'))
+    log_message_prefix = f'[{ADDON_ID} ({VERSION})]: '
 
     @staticmethod
-    def log(message, level=xbmc.LOGDEBUG):
-        # type: (Text, int) -> None
-        if isinstance(message, binary_type):
-            message = message.decode('utf-8')
+    def log(message: str, level: int = xbmc.LOGDEBUG) -> None:
         message = logger.log_message_prefix + message
-        if PY2 and isinstance(message, text_type):
-            message = message.encode('utf-8')
         xbmc.log(message, level)
 
-    @staticmethod
-    def info(message):
-        # type: (Text) -> None
-        logger.log(message, xbmc.LOGINFO)
+    @classmethod
+    def info(cls, message: str) -> None:
+        cls.log(message, xbmc.LOGINFO)
 
-    @staticmethod
-    def error(message):
-        # type: (Text) -> None
-        logger.log(message, xbmc.LOGERROR)
+    @classmethod
+    def error(cls, message: str) -> None:
+        cls.log(message, xbmc.LOGERROR)
 
-    @staticmethod
-    def debug(message):
-        # type: (Text) -> None
+    @classmethod
+    def debug(cls, message: str) -> None:
         logger.log(message, xbmc.LOGDEBUG)
 
+    @classmethod
+    def warning(cls, message: str) -> None:
+        logger.log(message, xbmc.LOGWARNING)
 
-def get_episode_order(path_settings):
-    # type: (Dict[Text, Any]) -> Text
+
+def get_episode_order(path_settings: Dict[Text, Any]) -> str:
     episode_order_enum = path_settings.get('episode_order')
     if episode_order_enum is None:
-        episode_order_enum = int(ADDON.getSetting('episode_order'))
+        episode_order_enum = ADDON.getSettingInt('episode_order')
     episode_order = EPISODE_ORDER_MAP.get(episode_order_enum, 'default')
     return episode_order

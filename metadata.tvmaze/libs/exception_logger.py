@@ -1,4 +1,3 @@
-# coding: utf-8
 # (c) Roman Miroshnychenko <roman1972@gmail.com> 2020
 #
 # This program is free software: you can redistribute it and/or modify
@@ -14,51 +13,42 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """Exception logger with extended diagnostic info"""
-from __future__ import absolute_import, unicode_literals
-
 import inspect
 import sys
 from contextlib import contextmanager
 from platform import uname
 from pprint import pformat
+from typing import List, Dict, Callable, Generator, Any
 
-import six
 import xbmc
 
 from .utils import logger
 
-try:
-    from typing import Text, Dict, List, Callable, Generator  # pylint: disable=unused-import
-except ImportError:
-    pass
 
-
-def _format_vars(variables):
-    # type: (dict) -> Text
+def _format_vars(variables: Dict[str, Any]) -> str:
     """
     Format variables dictionary
 
     :param variables: variables dict
     :return: formatted string with sorted ``var = val`` pairs
     """
-    var_list = [(var, val) for var, val in six.iteritems(variables)
+    var_list = [(var, val) for var, val in variables.items()
                 if not (var.startswith('__') or var.endswith('__'))]
     var_list.sort(key=lambda i: i[0])
     lines = []
     for var, val in var_list:
-        lines.append('{} = {}'.format(var, pformat(val, indent=4)))
+        lines.append(f'{var} = {pformat(val, indent=4)}')
     return '\n'.join(lines)
 
 
-def _format_code_context(code_context, lineno, index):
-    # type: (List[Text], int, int) -> Text
+def _format_code_context(code_context: List[str], lineno: int, index: int) -> str:
     context = ''
     if code_context is not None:
         for i, line in enumerate(code_context, lineno - index):
             if i == lineno:
-                context += '{}:>{}'.format(six.text_type(i).rjust(5), line)
+                context += f'{str(i).rjust(5)}:>{line}'
             else:
-                context += '{}: {}'.format(six.text_type(i).rjust(5), line)
+                context += f'{str(i).rjust(5)}: {line}'
     return context
 
 
@@ -74,8 +64,7 @@ Local variables:
 """
 
 
-def _format_frame_info(frame_info):
-    # type: (tuple) -> Text
+def _format_frame_info(frame_info: tuple) -> str:
     return FRAME_INFO_TEMPLATE.format(
         file_path=frame_info[1],
         lineno=frame_info[2],
@@ -108,8 +97,7 @@ sys.path:
 
 
 @contextmanager
-def log_exception(logger_func=logger.error):
-    # type: (Callable[[Text], None]) -> Generator[None, None, None]
+def log_exception(logger_func: Callable[[str], None] = logger.error) -> Generator[None, None, None]:
     """
     Diagnostic helper context manager
 
@@ -149,7 +137,7 @@ def log_exception(logger_func=logger.error):
             system_info=uname(),
             python_version=sys.version.replace('\n', ' '),
             kodi_version=xbmc.getInfoLabel('System.BuildVersion'),
-            sys_argv=six.text_type(sys.argv),
+            sys_argv=str(sys.argv),
             sys_path=pformat(sys.path),
             stack_trace=stack_trace
         )
