@@ -1,3 +1,8 @@
+1.5.4
+remove use of depreciated logos categorization
+filter out SVG artwork
+updated language files
+
 1.5.3
 fix to properly parse NFO file for show ID
 
