@@ -14,7 +14,9 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 A simple library for making HTTP requests with API similar to the popular "requests" library
+
 It depends only on the Python standard library.
+
 Supported:
 * HTTP methods: GET, POST
 * HTTP and HTTPS.
@@ -161,8 +163,10 @@ def post(url: str,
          json: Optional[Dict[str, Any]] = None) -> Response:
     """
     POST request
+
     This function assumes that a request body should be encoded with UTF-8
     and by default sends Accept-Encoding: gzip header to receive response content compressed.
+
     :param url: URL
     :param params: URL query params
     :param data: request payload as form data. If "data" or "json" are passed
@@ -216,8 +220,10 @@ def get(url: str,
         verify: bool = True) -> Response:
     """
     GET request
+
     This function by default sends Accept-Encoding: gzip header
     to receive response content compressed.
+
     :param url: URL
     :param params: URL query params
     :param headers: additional headers

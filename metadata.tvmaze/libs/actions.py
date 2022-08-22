@@ -18,10 +18,10 @@
 import json
 import sys
 from typing import Optional
+from urllib import parse as urllib_parse
 
 import xbmcgui
 import xbmcplugin
-from six.moves import urllib_parse
 
 from . import tvmaze_api, data_service
 from .utils import logger, get_episode_order, ADDON
