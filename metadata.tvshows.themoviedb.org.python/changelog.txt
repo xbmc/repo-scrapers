@@ -1,3 +1,12 @@
+1.4.15
+fix for cast list in episodes
+properly classify TMDb logos as clearlogos
+filter out SVG files
+updated language files
+
+1.4.14
+unreleased
+
 1.4.13
 fix to properly parse show ID from NFO file
 
