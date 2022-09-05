@@ -1,3 +1,15 @@
+1.5.6
+fix for scraper ignoring NFO files with TVDB artwork URL
+
+1.5.5
+fix for cast order in episode lists
+remove use of depreciated logos categorization
+filter out SVG artwork
+updated language files
+
+1.5.4
+unreleased
+
 1.5.3
 fix to properly parse NFO file for show ID
 
