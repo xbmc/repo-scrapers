@@ -275,6 +275,11 @@ def load_episode_info(show_id, episode_id):
         ep_return['org_epnum'] = episode_info['org_epnum']
         ep_return['ratings'] = load_ratings(
             ep_return, show_imdb_id=show_info.get('external_ids', {}).get('imdb_id'))
+        for season in show_info.get('seasons', []):
+            if season.get('season_number') == episode_info['season_number']:
+                ep_return['season_cast'] = season.get(
+                    'credits', {}).get('cast', [])
+                break
         show_info['episodes'][int(episode_id)] = ep_return
         cache.cache_show_info(show_info)
         return ep_return
