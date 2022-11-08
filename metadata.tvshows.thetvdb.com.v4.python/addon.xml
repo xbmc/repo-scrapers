@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.thetvdb.com.v4.python" name="The TVDB v4"
-       version="1.1.0" provider-name="TVDB Team">
+       version="1.1.2" provider-name="TVDB Team">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0" />
     <import addon="xbmc.python" version="3.0.0" />
@@ -121,6 +121,6 @@
       <screenshot>media/screenshot-2.jpg</screenshot>
       <screenshot>media/screenshot-3.jpg</screenshot>
     </assets>
-    <news>- 1.1.0: Added more episode orders.</news>
+    <news>- 1.1.2: New version of the tvdb plugin.</news>
   </extension>
 </addon>

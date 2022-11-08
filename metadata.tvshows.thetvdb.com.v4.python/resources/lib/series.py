@@ -18,16 +18,20 @@ ARTWORK_URL_PREFIX = 'https://artworks.thetvdb.com'
 
 def search_series(title, settings, handle, year=None) -> None:
     # add the found shows to the list
-    logger.debug(f'Searching for TV show "{title}"')
+    logger.debug(f'Searching for TV show "{title}", year="{year}"')
 
     tvdb_client = tvdb.Client(settings)
     if year is None:
         search_results = tvdb_client.search(title, type="series", limit=10)
     else:
         search_results = tvdb_client.search(title, year=year, type="series", limit=10)
+        if not search_results:
+            logger.debug(f"No results found for '{title}' where year='{year}'. Falling back to search without year criteria.")
+            search_results = tvdb_client.search(title, type="series", limit=10)
+
     logger.debug(f'Search results {search_results}')
 
-    if search_results is None:
+    if not search_results:
         return
 
     language = get_language(settings)

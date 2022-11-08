@@ -45,6 +45,7 @@ def get_series_episodes(id, settings, handle):
             year = int(date_string.split("-")[0])
             details['premiered'] = details['date'] = date_string
             details['year'] = year
+            details['aired'] = ep['aired']
         logger.debug("details in episodes.py")
         logger.debug(details)
         liz.setInfo('video', details)
