@@ -11,13 +11,13 @@ from .utils import logger
 SHOW_ID_FROM_EPISODE_GUIDE_REGEXPS = (
     r'(thetvdb)\.com[\w=&\?/{}\":,]+\"id\":(\d+)',
     r'(thetvdb)\.com/.*?series/(\d+)',
-    r'(thetvdb)\.com[\w=&\?/]+id=(\d+)',
+    r'(thetvdb)\.com[\w=&\?/]*[&\?]+id=(\d+)',
 )
 
 SHOW_ID_REGEXPS = (
     r'<uniqueid type=\"(tvdb)\".*>(\d+)</uniqueid>',
     r'(thetvdb)\.com/.*?series/([\w\s\d()-]+)',
-    r'(thetvdb)\.com[\w=&\?/]+id=(\d+)',
+    r'(thetvdb)\.com[\w=&\?/]*[&\?]+id=(\d+)',
 )
 
 SERIES_URL_REGEX = re.compile(r'https?://[w.]*?thetvdb.com/series/([\w-]+)', re.I)

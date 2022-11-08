@@ -178,9 +178,10 @@ class Url:
             url = "{}/extended".format(url)
         return url
 
-    def episode_translation_url(self, id:int, language:str="eng"):
-        url = "{}/episodes/{}/translations/{}".format(self.base_url, id, language)
-        return url 
+    def episode_translation_url(self, id: int, language: str = "eng"):
+        url = "{}/episodes/{}/translations/{}".format(
+            self.base_url, id, language)
+        return url
 
     def person_url(self, id, extended=False):
         url = "{}/people/{}".format(self.base_url, id)
@@ -461,16 +462,34 @@ class TVDB:
         result = self.get_series_season_episodes(id, season_type)
         if not result:
             season_type_name = SeasonType(season_type).name.lower()
-            logger.warning(f'No episodes returned for show {id}, season type "{season_type_name}"')
+            logger.warning(
+                f'No episodes returned for show {id}, season type "{season_type_name}"')
         return result
 
     def get_episode_details_api(self, id, settings):
-        ep = self.get_episode_extended(id)
-        language = get_language(settings)
         try:
-            trans = self.get_episode_translation(id, language)
-        except requests.HTTPError:
-            trans = self.get_episode_translation(id, "eng")
+            ep = self.get_episode_extended(id)
+        except requests.HTTPError as e:
+            logger.warning(f'No episode found with id={id}. [error: {e}]')
+            return None
+
+        trans = None
+
+        primary_language = get_language(settings)
+        language_attempties = [primary_language] if primary_language == "eng" else [
+            primary_language, "eng"]
+
+        for language in language_attempties:
+            try:
+                trans = self.get_episode_translation(id, language)
+                break
+            except requests.HTTPError as e:
+                logger.warning(
+                    f'No episode found with id={id} and language={language}. [error: {e}]')
+
+        if not trans:
+            return None
+
         overview = trans.get("overview") or ''
         name = trans.get("name") or ''
         if not (overview and name) and trans['language'] != 'eng':
@@ -507,7 +526,8 @@ class Client(object):
             gender = settings.get("gender", "Other")
             uuid = settings.get("uuid", "")
             birth_year = settings.get("year", "")
-            cls._instance = TVDB(apikey, pin=pin, gender=gender, birthYear=birth_year, uuid=uuid)
+            cls._instance = TVDB(apikey, pin=pin, gender=gender,
+                                 birthYear=birth_year, uuid=uuid)
         return cls._instance
 
 
