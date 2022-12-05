@@ -478,7 +478,6 @@ class TVDB:
         primary_language = get_language(settings)
         language_attempties = [primary_language] if primary_language == "eng" else [
             primary_language, "eng"]
-
         for language in language_attempties:
             try:
                 trans = self.get_episode_translation(id, language)
@@ -486,18 +485,22 @@ class TVDB:
             except requests.HTTPError as e:
                 logger.warning(
                     f'No episode found with id={id} and language={language}. [error: {e}]')
-
+        
         if not trans:
             return None
 
         overview = trans.get("overview") or ''
         name = trans.get("name") or ''
         if not (overview and name) and trans['language'] != 'eng':
-            english_info = self.get_episode_translation(id, 'eng')
-            if not overview:
-                overview = english_info.get('overview') or ''
-            if not name:
-                name = english_info.get('name') or ''
+            try:
+                english_info = self.get_episode_translation(id, 'eng')
+                if not overview:
+                    overview = english_info.get('overview') or ''
+                if not name:
+                    name = english_info.get('name') or ''
+            except requests.HTTPError as e:
+                logger.warning(
+                    f'No episode found with id={id} and language=eng . [error: {e}]')
         ep["overview"] = overview
         ep["name"] = name
         return ep

@@ -86,6 +86,13 @@ def get_episode_details(id, settings, handle):
         'duration': duration_minutes * 60,
     }
 
+    if ep.get("airsAfterSeason"):
+        details['sortseason'] = ep.get("airsAfterSeason") + 1
+    if ep.get("airsBeforeSeason"):
+        details['sortseason'] = ep.get("airsBeforeSeason") - 1
+    if ep.get("airsBeforeEpisode"):
+        details['sortepisode'] = ep.get("airsBeforeEpisode") - 1
+
     if tags:
         details["tag"] = tags
 
