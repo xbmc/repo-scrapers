@@ -1,3 +1,7 @@
+1.6.0
+change to use new JSON based episodeguide format to handle multiple providers
+fixes for last minute changes to new Nexus Python bindings
+
 1.5.6
 fix for scraper ignoring NFO files with TVDB artwork URL
 
