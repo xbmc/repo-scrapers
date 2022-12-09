@@ -1,3 +1,7 @@
+1.1.0
+change to use new JSON based episodeguide format to handle multiple providers
+fixes for last minute changes to the Nexus Python bindings
+
 1.0.11
 added option to select language for league and game summaries
 

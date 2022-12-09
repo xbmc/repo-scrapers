@@ -6,6 +6,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import re
+import json
 from xbmc import Actor
 from collections import namedtuple
 from .utils import url_fix, logger
@@ -131,7 +132,7 @@ def _set_artwork(images, list_item):
             else:
                 previewurl = theurl + '/preview'
                 vtag.addAvailableArtwork(
-                    theurl, art_type=image_type, preview=previewurl)
+                    theurl, arttype=image_type, preview=previewurl)
     if fanart_list:
         list_item.setAvailableFanart(fanart_list)
     return list_item
@@ -169,13 +170,14 @@ def add_main_show_info(list_item, show_info, full_info=True):
     vtag.setOriginalTitle(showname)
     vtag.setTvShowTitle(showname)
     vtag.setMediaType('tvshow')
-    vtag.setEpisodeGuide(str(show_info['idLeague']))
+    epguide = {'tsdb': str(show_info['idLeague'])}
+    vtag.setEpisodeGuide(json.dumps(epguide))
     vtag.setYear(int(show_info.get('intFormedYear', '')[:4]))
     vtag.setPremiered(show_info.get('dateFirstEvent', ''))
     if full_info:
         _set_plot(show_info, vtag)
         vtag.setUniqueID(show_info.get('idLeague'),
-                         type='tsdb', isDefault=True)
+                         type='tsdb', isdefault=True)
         vtag.setGenres([show_info.get('strSport', '')])
         tvrights = show_info.get('strTvRights', '')
         if tvrights:
@@ -193,7 +195,7 @@ def add_main_show_info(list_item, show_info, full_info=True):
             theurl = url_fix(image)
             previewurl = theurl + '/preview'
             vtag.addAvailableArtwork(
-                theurl, art_type='poster', preview=previewurl)
+                theurl, arttype='poster', preview=previewurl)
     logger.debug(
         'adding sports league information for %s to list item' % showname)
     return list_item
