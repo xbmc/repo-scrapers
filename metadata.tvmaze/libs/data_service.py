@@ -14,7 +14,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """Functions to process data"""
-
+import json
 import re
 from collections import defaultdict
 from typing import Optional, Dict, List, Any, Sequence, NamedTuple
@@ -159,7 +159,7 @@ def _get_credits(show_info: InfoType) -> List[str]:
     return credits_
 
 
-def _set_unique_ids(show_info: InfoType, list_item: ListItem) -> ListItem:
+def _get_unique_ids(show_info: InfoType) -> Dict[str, str]:
     """Extract unique ID in various online databases"""
     unique_ids = {'tvmaze': str(show_info['id'])}
     externals = show_info.get('externals') or {}
@@ -167,8 +167,7 @@ def _set_unique_ids(show_info: InfoType, list_item: ListItem) -> ListItem:
         if key == 'thetvdb':
             key = 'tvdb'
         unique_ids[key] = str(value)
-    list_item.setUniqueIDs(unique_ids, 'tvmaze')
-    return list_item
+    return unique_ids
 
 
 def _set_rating(show_info: InfoType, list_item: ListItem, default_rating: str) -> ListItem:
@@ -239,6 +238,7 @@ def add_main_show_info(list_item: ListItem,
                        default_rating: str = 'TVmaze') -> ListItem:
     """Add main show info to a list item"""
     plot = _clean_plot(show_info.get('summary') or '')
+    unique_ids = _get_unique_ids(show_info)
     video = {
         'plot': plot,
         'plotoutline': plot,
@@ -248,8 +248,10 @@ def add_main_show_info(list_item: ListItem,
         'status': show_info.get('status') or '',
         'mediatype': 'tvshow',
         # This property is passed as "url" parameter to getepisodelist call
-        'episodeguide': str(show_info['id']),
+        'episodeguide': json.dumps(unique_ids),
     }
+    # This is needed for getting artwork
+    list_item.setUniqueIDs(unique_ids, 'tvmaze')
     if show_info['network'] is not None:
         video['studio'] = show_info['network']['name']
         video['country'] = show_info['network']['country']['name']
@@ -273,8 +275,6 @@ def add_main_show_info(list_item: ListItem,
             list_item.addAvailableArtwork(image_url, 'poster')
     list_item.setInfo('video', video)
     list_item = _set_rating(show_info, list_item, default_rating)
-    # This is needed for getting artwork
-    list_item = _set_unique_ids(show_info, list_item)
     return list_item
 
 
@@ -370,7 +370,7 @@ def parse_tvshow_xml_nfo(nfo: str) -> Optional[InfoType]:
         )
     elif 'thetvdb' in xml_parse_result.uniqueids:
         show_info = tvmaze_api.load_show_info_by_external_id(
-            'thetvdb',
+            'tvdb',
             xml_parse_result.uniqueids['thetvdb']
         )
     if show_info is None and xml_parse_result.title:
@@ -411,3 +411,42 @@ def search_show(title: str, year: str) -> Sequence[InfoType]:
         search_result = _filter_by_year(search_results, year)
         search_results = (search_result,) if search_result else ()
     return search_results
+
+
+def parse_json_episogeguide(episodeguide: str) -> Optional[str]:
+    try:
+        uniqueids = json.loads(episodeguide)
+    except ValueError:
+        return None
+    show_id = uniqueids.get('tvmaze')
+    if show_id is None:
+        for external_id_type in ('tvdb', 'imdb'):
+            external_id = uniqueids.get(external_id_type)
+            if external_id is not None:
+                if external_id == 'tvdb':
+                    external_id = 'thetvdb'
+                show_info = tvmaze_api.load_show_info_by_external_id(
+                    external_id_type,
+                    external_id
+                )
+                if show_info:
+                    show_id = str(show_info['id'])
+                    break
+    return show_id
+
+
+def parse_url_episodeguide(episodeguide: str) -> Optional[str]:
+    show_id = None
+    parse_result = parse_url_nfo_contents(episodeguide)
+    if not parse_result:
+        return None
+    if parse_result.provider == 'tvmaze':
+        show_info = tvmaze_api.load_show_info(parse_result.show_id)
+    else:
+        show_info = tvmaze_api.load_show_info_by_external_id(
+            parse_result.provider,
+            parse_result.show_id
+        )
+    if show_info:
+        show_id = str(show_info['id'])
+    return show_id

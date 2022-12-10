@@ -79,9 +79,11 @@ def parse_nfo_file(nfo: str, full_nfo: bool):
     if info is not None:
         list_item = xbmcgui.ListItem(offscreen=True)
         id_string = str(info['id'])
-        list_item.setUniqueIDs({'tvmaze': id_string}, 'tvmaze')
+        uniqueids = {'tvmaze': id_string}
+        list_item.setUniqueIDs(uniqueids, 'tvmaze')
         if is_tvshow_nfo:
-            list_item.setInfo('video', {'episodeguide': id_string})
+            episodeguide = json.dumps(uniqueids)
+            list_item.setInfo('video', {'episodeguide': episodeguide})
         # "url" is some string that unique identifies a show.
         # It may be an actual URL of a TV show page.
         xbmcplugin.addDirectoryItem(
@@ -105,25 +107,25 @@ def get_details(show_id: str, default_rating: str) -> None:
         xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
 
 
-def get_episode_list(show_id: str, episode_order: str) -> None:  # pylint: disable=missing-docstring
-    logger.debug(f'Getting episode list for show id {show_id}, order: {episode_order}')
-    if not show_id.isdigit():
+def get_episode_list(episodeguide: str, episode_order: str) -> None:  # pylint: disable=missing-docstring
+    logger.debug(f'Getting episode list for show id {episodeguide}, order: {episode_order}')
+    show_id = None
+    if episodeguide.startswith('{'):
+        show_id = data_service.parse_json_episogeguide(episodeguide)
+        if show_id is None:
+            logger.error(f'Unable to determine TVmaze show ID from episodeguide: {episodeguide}')
+            return
+    if show_id is None and not episodeguide.isdigit():
         # Kodi has a bug: when a show directory contains an XML NFO file with
         # episodeguide URL, that URL is always passed here regardless of
         # the actual parsing result in get_show_from_nfo()
-        parse_result = data_service.parse_url_nfo_contents(show_id)
-        if not parse_result:
-            return
-        if parse_result.provider == 'tvmaze':
-            show_info = tvmaze_api.load_show_info(parse_result.show_id)
-        else:
-            show_info = tvmaze_api.load_show_info_by_external_id(
-                parse_result.provider,
-                parse_result.show_id
-            )
-        if show_info:
-            show_id = str(show_info['id'])
-    if show_id.isdigit():
+        logger.warning(f'Invalid episodeguide format: {episodeguide} (probably URL).')
+        show_id = data_service.parse_url_episodeguide(episodeguide)
+    if show_id is None and episodeguide.isdigit():
+        logger.warning(f'Invalid episodeguide format: {episodeguide} (a numeric string). '
+                       f'Please consider re-scanning the show to update episodeguide record.')
+        show_id = episodeguide
+    if show_id is not None:
         episodes_map = data_service.get_episodes_map(show_id, episode_order)
         for episode in episodes_map.values():
             list_item = xbmcgui.ListItem(episode['name'], offscreen=True)
@@ -188,8 +190,6 @@ def router(paramstring: str) -> None:
     """
     params = dict(urllib_parse.parse_qsl(paramstring))
     logger.debug(f'Called addon with params: {sys.argv}')
-    if 'pathSettings' not in params:
-        logger.warning('Path-specific settings are not supported, please upgrade your Kodi version')
     path_settings = json.loads(params.get('pathSettings') or '{}')
     logger.debug(f'Path settings: {path_settings}')
     episode_order = get_episode_order(path_settings)
