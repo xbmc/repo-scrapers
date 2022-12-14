@@ -23,11 +23,6 @@ from typing import Optional, Text, Dict, Any, Union
 import xbmcgui
 import xbmcvfs
 
-try:
-    from xbmcvfs import translatePath
-except ImportError:
-    from xbmc import translatePath
-
 from .utils import ADDON_ID, logger
 
 EPISODES_CACHE_TTL = 60 * 10  # 10 minutes
@@ -81,7 +76,7 @@ def load_episodes_map_from_cache(show_id: Union[int, str]) -> Optional[Dict[str,
 
 
 def _get_cache_directory() -> str:  # pylint: disable=missing-docstring
-    temp_dir = translatePath('special://temp')
+    temp_dir = xbmcvfs.translatePath('special://temp')
     if isinstance(temp_dir, bytes):
         temp_dir = temp_dir.decode('utf-8')
     cache_dir = os.path.join(temp_dir, 'scrapers', ADDON_ID)
