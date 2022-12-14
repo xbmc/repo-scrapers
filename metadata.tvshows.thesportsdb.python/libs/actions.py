@@ -6,6 +6,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import sys
+import json
 import urllib.parse
 import xbmcgui
 import xbmcplugin
@@ -88,23 +89,36 @@ def get_details(show_id):
             HANDLE, False, xbmcgui.ListItem(offscreen=True))
 
 
-def get_episode_list(show_id):
+def get_episode_list(show_ids):
     # type: (Text) -> None
     """Get games in a league"""
-    logger.debug('Getting event list for sports show id {}'.format(show_id))
-    if not show_id.isdigit():
-        # Kodi has a bug: when a show directory contains an XML NFO file with
-        # episodeguide URL, that URL is always passed here regardless of
-        # the actual parsing result in get_show_from_nfo()
+    # Kodi has a bug: when a show directory contains an XML NFO file with
+    # episodeguide URL, that URL is always passed here regardless of
+    # the actual parsing result in get_show_from_nfo()
+    # so much of this weird logic is to deal with that
+    try:
+        all_ids = json.loads(show_ids)
+        show_id = all_ids.get('tsdb')
+    except (ValueError, AttributeError):
+        show_id = str(show_ids)
+        if show_id.isdigit():
+            logger.error(
+                'using deprecated episodeguide format, this league should be refreshed or rescraped')
+    if not show_id:
+        raise RuntimeError(
+            'No The SportsDB league id found in episode guide, this league should be refreshed or rescraped')
+    elif not show_id.isdigit():
+        parsed = False
         parse_result = data_utils.parse_nfo_url(show_id)
-        if not parse_result:
-            return
-        if parse_result.provider == 'thesportsdb':
-            show_info = tsdb.load_show_info(parse_result.show_id)
-        else:
-            return
-    else:
-        show_info = tsdb.load_show_info(show_id)
+        if parse_result:
+            if parse_result.provider == 'thesportsdb':
+                show_info = tsdb.load_show_info(parse_result.show_id)
+                parsed = True
+        if not parsed:
+            raise RuntimeError(
+                'No SportsDB league id found in episode guide, this league should be refreshed or rescraped')
+    logger.debug('Getting event list for sports show id {}'.format(show_id))
+    show_info = tsdb.load_show_info(show_id)
     if show_info is not None:
         idLeague = show_info.get('idLeague', 0)
         seasons = show_info.get('seasons')
