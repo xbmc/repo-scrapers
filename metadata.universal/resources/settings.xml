@@ -122,7 +122,7 @@
 
   <category label="30300">
     <setting type="sep"/>
-    <setting label="30303" type="labelenum" values="themoviedb.org" id="searchservice" default="themoviedb.org"/>
+    <setting label="30303" type="labelenum" values="IMDb|themoviedb.org" id="searchservice" default="themoviedb.org"/>
     <setting label="30308" subsetting="true" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="tmdbsearchlanguage" default="en-US" visible="eq(-1,1)"/>
     <setting label="30304" subsetting="true" type="select" values="bg-bg|cs-cz|el-gr|es-ar|da-dk|de-at|de-de|fi-fi|fr-fr|hr-hr|he-il|hu-hu|it-it|ja-jp|nb-no|nl-nl|pl-pl|pt-pt|ro-ro|ru-ru|se-se|sl-si|sr-rs|th-th|tr-tr|None" id="imdbsearchlanguage" default="None" visible="eq(-2,0)"/>
     <setting label="30305" subsetting="true" type="bool" id="fullimdbsearch" default="false" visible="eq(-3,0)"/>
