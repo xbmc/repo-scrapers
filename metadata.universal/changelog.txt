@@ -1,3 +1,6 @@
+[B]v5.5.11[/B]
+- Remove Broken IMDb Search (for now) and make TMDB as default search engine
+
 [B]v5.5.10[/B]
 - Translations updates from Weblate
 
