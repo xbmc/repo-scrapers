@@ -125,16 +125,15 @@ def _get_directors(episode_info):
     return directors_
 
 
-def _set_unique_ids(ext_ids, list_item):
-    # type: (InfoType, ListItem) -> ListItem
+def _set_unique_ids(ext_ids):
+    # type: (InfoType) -> ListItem
     """Extract unique ID in various online databases"""
     unique_ids = {}
     for key, value in ext_ids.items():
         if key in VALIDEXTIDS and value:
             key = key[:-3]
             unique_ids[key] = str(value)
-    list_item.setUniqueIDs(unique_ids, 'tmdb')
-    return list_item
+    return unique_ids
 
 
 def _set_rating(the_info, list_item, episode=False):
@@ -242,10 +241,13 @@ def add_main_show_info(list_item, show_info, full_info=True):
         'title': showname,
         'originaltitle': original_name,
         'tvshowtitle': showname,
-        'mediatype': 'tvshow',
-        # This property is passed as "url" parameter to getepisodelist call
-        'episodeguide': str(show_info['id']),
+        'mediatype': 'tvshow'
     }
+    ext_ids = {'tmdb_id': show_info['id']}
+    ext_ids.update(show_info.get('external_ids', {}))
+    unique_ids = _set_unique_ids(ext_ids)
+    list_item.setUniqueIDs(unique_ids, 'tmdb')
+    video['episodeguide'] = json.dumps(unique_ids)
     if show_info.get('first_air_date'):
         video['year'] = int(show_info['first_air_date'][:4])
         video['premiered'] = show_info['first_air_date']
@@ -294,9 +296,6 @@ def add_main_show_info(list_item, show_info, full_info=True):
         list_item = _add_season_info(show_info, list_item)
         list_item = _set_cast(show_info['credits']['cast'], list_item)
         list_item = _set_rating(show_info, list_item)
-        ext_ids = {'tmdb_id': show_info['id']}
-        ext_ids.update(show_info.get('external_ids', {}))
-        list_item = _set_unique_ids(ext_ids, list_item)
     else:
         image = safe_get(show_info, 'poster_path', '')
         if image:
@@ -307,8 +306,6 @@ def add_main_show_info(list_item, show_info, full_info=True):
     logger.debug('adding tv show information for %s to list item' %
                  video['tvshowtitle'])
     list_item.setInfo('video', video)
-    # This is needed for getting artwork
-    list_item = _set_unique_ids(show_info, list_item)
     return list_item
 
 
@@ -336,7 +333,8 @@ def add_episode_info(list_item, episode_info, full_info=True):
             episode_info['season_cast'] + episode_info['credits']['guest_stars'], list_item)
         ext_ids = {'tmdb_id': episode_info['id']}
         ext_ids.update(episode_info.get('external_ids', {}))
-        list_item = _set_unique_ids(ext_ids, list_item)
+        unique_ids = _set_unique_ids(ext_ids)
+        list_item.setUniqueIDs(unique_ids, 'tmdb')
         list_item = _set_rating(episode_info, list_item, episode=True)
         for image in episode_info.get('images', {}).get('stills', []):
             img_path = image.get('file_path')
@@ -385,13 +383,19 @@ def parse_nfo_url(nfo):
 
 
 def _convert_ext_id(ext_provider, ext_id):
+    # type: (Text, Text) -> Text
+    """get a TMDb ID from an external ID"""
     providers_dict = {'imdb': 'imdb_id',
                       'thetvdb': 'tvdb_id',
                       'tvdb': 'tvdb_id'}
     show_url = FIND_URL.format(ext_id)
     params = TMDB_PARAMS.copy()
-    params['external_source'] = providers_dict[ext_provider]
-    show_info = api_utils.load_info(show_url, params=params)
+    provider = providers_dict.get(ext_provider)
+    if provider:
+        params['external_source'] = provider
+        show_info = api_utils.load_info(show_url, params=params)
+    else:
+        show_info = None
     if show_info:
         tv_results = show_info.get('tv_results')
         if tv_results:

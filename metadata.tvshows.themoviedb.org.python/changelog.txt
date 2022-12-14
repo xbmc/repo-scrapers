@@ -1,3 +1,6 @@
+1.4.17
+update to support new episode guide JSON format
+
 1.4.16
 fix for scraper ignoring NFO files with TVDB artwork URL
 
