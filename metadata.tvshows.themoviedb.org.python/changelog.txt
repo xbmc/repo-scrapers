@@ -1,3 +1,6 @@
+1.6.2
+fix for episode groupings being ignored
+
 1.6.1
 fix for logic error when looking for episodeguide using external ID
 
