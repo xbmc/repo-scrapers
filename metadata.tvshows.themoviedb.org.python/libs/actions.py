@@ -77,7 +77,7 @@ def get_show_id_from_nfo(nfo):
     logger.debug('Parsing NFO file:\n{}'.format(nfo))
     parse_result, named_seasons = data_utils.parse_nfo_url(nfo)
     if parse_result:
-        if parse_result.provider == 'themoviedb':
+        if parse_result.provider == 'tmdb':
             show_info = tmdb.load_show_info(
                 parse_result.show_id, ep_grouping=parse_result.ep_grouping, named_seasons=named_seasons)
         else:
