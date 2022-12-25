@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-06-08 17:31+0000\n"
+"PO-Revision-Date: 2022-12-25 20:15+0000\n"
 "Last-Translator: skypichat <skypichat@hotmail.fr>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/fr_fr/>\n"
 "Language: fr_fr\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.12.2\n"
+"X-Generator: Weblate 4.15\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Collecteur de films universel"
+msgstr "Collecteur universel d'informations de films"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
@@ -57,7 +57,7 @@ msgstr "Poster"
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Bande-annonce"
+msgstr "Bande-annonces"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
@@ -73,7 +73,7 @@ msgstr "Récupérer distribution, réalisateurs et scénaristes depuis"
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr "Sources des synopsis"
+msgstr "Sources des intrigues"
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
@@ -82,7 +82,7 @@ msgstr "Langue de l'intrigue préférée"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr "Récupérer les Notes par Défaut depuis"
+msgstr "Récupérer les notes par défaut depuis"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,7 +106,7 @@ msgstr "Sources des genres"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr "Langue préférée pour le Titre"
+msgstr "Langue préférée pour le titre"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -114,7 +114,7 @@ msgstr "Sources des bandes-annonces"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Collections de films"
+msgstr "Collections de films (Sagas)"
 
 msgctxt "#30030"
 msgid "Rating Sources"
@@ -158,7 +158,7 @@ msgstr "Langue des genres"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr "Langue préférée pour la Bande Annonce"
+msgstr "Langue préférée pour la bande-annonce"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -174,11 +174,11 @@ msgstr "Récupérer le TOP250 IMDb"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Récupérer les Outlines depuis"
+msgstr "Récupérer les outlines depuis"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr "Langue préférée des nom de sagas (Collections)"
+msgstr "Langue préférée des noms de sagas (Collections)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -186,11 +186,11 @@ msgstr "Source des posters"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Récupère les mots-clés et les sauvegarde comme tags depuis"
+msgstr "Récupérer les mots-clés et les sauvegarde comme tags depuis"
 
 msgctxt "#30100"
 msgid "Rating"
-msgstr "Note"
+msgstr "Évaluation"
 
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
@@ -199,19 +199,19 @@ msgstr "Évaluation générée à l'aide de"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr "Obtenir les notes depuis IMDb"
+msgstr "Obtenir les évaluations depuis IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr "Obtenir les notes depuis Rotten Tomatoes"
+msgstr "Obtenir les évaluations depuis Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr "Obtenir les notes depuis MetaCritic"
+msgstr "Obtenir les évaluations depuis MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr "Obtenir les notes depuis themoviedb.org"
+msgstr "Obtenir les évaluations depuis themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
@@ -227,7 +227,7 @@ msgstr "Veuillez enregistrer votre clé API sur omdbapi.com et ajoutez la ci-des
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr "Obtenir aussi les notes par défaut de Rotten Tomatoes"
+msgstr "Obtenir aussi les évaluations par défaut de Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -267,11 +267,11 @@ msgstr "Inclure toutes les catégories de films"
 
 msgctxt "#30306"
 msgid "Warning:"
-msgstr "Attention :"
+msgstr "Attention:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Inclure toutes les catégories de films va considérablement diminuer l'efficacité de la recherche ! ! !"
+msgstr "Inclure toutes les catégories de films va considérablement diminuer l'efficacité de la recherche!!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
@@ -279,7 +279,7 @@ msgstr "Langue préférée pour la recherche"
 
 msgctxt "#30400"
 msgid "Plot"
-msgstr "Résumé"
+msgstr "Intrigue"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
@@ -303,7 +303,7 @@ msgstr "Activer les fanarts depuis fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr "Activer les affiches d'IMDb"
+msgstr "Activer les posters d'IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -327,7 +327,7 @@ msgstr "Activer la bannière de film de fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "Activer le landscape du film à partir de fanart.tv"
+msgstr "Activer le landscape de film à partir de fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
@@ -339,7 +339,7 @@ msgstr "Activer le discart de fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr "Collection d'Artwork"
+msgstr "Collection d'artwork"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
