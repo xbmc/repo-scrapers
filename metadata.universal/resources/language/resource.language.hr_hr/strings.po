@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-22 08:48+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2023-01-03 11:15+0000\n"
+"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/hr_hr/>\n"
 "Language: hr_hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.15\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -45,7 +45,7 @@ msgstr "Nabavi najave izravno s YouTuba"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Željeni jezik naslova"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -78,11 +78,11 @@ msgstr "Izvori kratkog sadržaja"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Željeni jezik kratkog sadržaja"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Nabavi zadane ocijene s"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,7 +106,7 @@ msgstr "Izvor žanrova"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Željeni jezik naslova"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -134,7 +134,7 @@ msgstr "Željena država ovjere"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Željeni jezik plakata"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -154,11 +154,11 @@ msgstr "Omogući najave s trakt.tv"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Jezik žanra"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Željeni jezik najave"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -166,7 +166,7 @@ msgstr "Nabavi oznaku s"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Željeni jezik oznake"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -174,11 +174,11 @@ msgstr "Preuzmi IMDb TOP 250 rangiranih"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Pribavi kratak sadržaj sa"
+msgstr "Nabavi kratak sadržaj sa"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Željeni jezik naziva kolekcije"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -195,39 +195,39 @@ msgstr "Ocjena"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Stvaranje ocjena koristeći"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Dodatno nabavi ocjene s IMDb-a"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Dodatno nabavi ocjene s Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Dodatno nabavi ocjene s MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Dodatno nabavi ocjene s themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Koristi rezultate prikupljene iz"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB Api ključ"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Registrirajte Api ključ na omdbapi.com i dodajte ga iznad"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Dodatno preuzmi ne-zadane Rotten Tomatoes ocjene"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -243,7 +243,7 @@ msgstr "Nabavi zemlju s"
 
 msgctxt "#30300"
 msgid "Search"
-msgstr "Pretraživanje"
+msgstr "Pretraga"
 
 msgctxt "#30301"
 msgid "themoviedb.org"
@@ -259,11 +259,11 @@ msgstr "Pretraživač koji se koristi"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Drugi jezik pretrage (Kao dodatak za en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Obuhvati sve kategorije filmova"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -275,7 +275,7 @@ msgstr "Omogućavanje svih filmskih kategorija će uvelike smanjiti točnost pre
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Željeni jezik pretrage"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -303,7 +303,7 @@ msgstr "Omogući slike omota s trakt.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Omogući plakate s IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -311,63 +311,63 @@ msgstr "Slika omota"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Dodatna slika omota"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Omogući clearlogo s fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Omogući clearart s fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Omogući transparent filma s fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Omogući pejzaž filma s fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Omogući pejzaž filma s themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Omogući discart s fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Kolekcija omota filma"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Omogući skup plakata s fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Omogući skup slika omota s fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Omogući skup clearlogoa s fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Omogući skup cleararta s fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Omogući skup transparenta s fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Omogući skup pejzaža s fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Omogući skup discarta s fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
