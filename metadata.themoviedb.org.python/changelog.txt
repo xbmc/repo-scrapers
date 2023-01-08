@@ -1,3 +1,7 @@
+v2.0.0 (2023-01-01)
+- version 2 for Kodi 19 Matrix and above
+- TMDB search second page if no best match on first page
+
 v1.6.2 (2022-04-10)
 - Fix: IMDB ratings
 

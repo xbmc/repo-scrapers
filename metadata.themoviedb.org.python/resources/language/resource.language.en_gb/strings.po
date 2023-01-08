@@ -95,3 +95,7 @@ msgstr ""
 msgctxt "#30103"
 msgid "Prioritize Fanart.TV artworks over preferred language"
 msgstr ""
+
+msgctxt "#30999"
+msgid "Fanart.tv"
+msgstr "Fanart.tv"
