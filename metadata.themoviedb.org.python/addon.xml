@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org.python"
        name="The Movie Database Python"
-       version="1.6.2"
+       version="1.6.3"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -11,12 +11,14 @@
              library="python/scraper.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>v1.6.2 (2022-04-10)
-- Fix: IMDB ratings
+    <news>v1.6.3 (2023-01-01)
+- version 1 for Kodi 18 Leia only
+- TMDB search second page if no best match on first page
 
-v1.6.0 (2021-12-24) - v1.6.1 (2022-01-09)
+v1.6.0 (2021-12-24) - v1.6.2 (2022-04-10)
 - Feature: fallback to English language for Fanart.tv artwork
-- Feature: fanart prioritization option</news>
+- Feature: fanart prioritization option
+- Fix: IMDB ratings</news>
     <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <forum>https://forum.kodi.tv/showthread.php?tid=344580</forum>
@@ -50,7 +52,7 @@ v1.6.0 (2021-12-24) - v1.6.1 (2022-01-09)
     <summary lang="hu_HU">TMDB filmadat leolvasó</summary>
     <summary lang="id_ID">Pengais Film TMDB</summary>
     <summary lang="is_IS">Python-TMDB kvikmyndaskafa</summary>
-    <summary lang="it_IT">Ricercatore per TMDB Movie</summary>
+    <summary lang="it_IT">Scraper per Python TMDB Movie</summary>
     <summary lang="ja_JP">TMDB映画のスクレーパー</summary>
     <summary lang="ko_KR">TMDB 영화 정보수집기</summary>
     <summary lang="lt_LT">TMDB filmų skreperis</summary>
@@ -94,13 +96,13 @@ v1.6.0 (2021-12-24) - v1.6.1 (2022-01-09)
     <description lang="et_EE">themoviedb.org on tasuta ja avatud filmide andmebaas. See on täielikult kasutajate poolt hooldatud. TMDb-d kasutavad igal kuul miljonid inimesed. Seda kasutatakse kasutajakogemuse rikastamiseks paljudes teistes populaarsetes programmides, nagu Kodi, laadides alla filmiteavet, plakateid ja fännikunsti.</description>
     <description lang="fi_FI">The Movie Database (TMDB) on yhteisön ylläpitämä, ilmainen ja avoin tietokanta elokuville ja televisiosarjoille. Palvelulla on miljoonia kuukausittaisia käyttäjiä ja sen tehokkaan rajapinnan avulla Kodi ja monet muut mediasovellukset voivat hyödyntää palvelun metatietoja ja mediakuvituksia käyttökokemuksen parantamiseen. Tietokannan vahva painotus kansaivälisyyteen ja kattava tietomäärä on suurelta osin ylivertainen ja olemme tästä erittäin ylpeitä. Yksinkertaisesti sanoen, elämme ja hengitämme yhteisönä ja juuri se tekee meistä erilaisia.</description>
     <description lang="fr_CA">themoviedb.org est une base de données libre et ouverte. Elle est complètement gérée par des gens comme vous. TMDb est actuellement utilisée par des millions de personnes chaque mois et avec son API puissante, elle est également utilisée par de nombreux centres multimédias populaires comme Kodi pour récupérer les métadonnées des films, les affiches et le fanart afin d&apos;enrichir l&apos;expérience de l&apos;utilisateur.</description>
-    <description lang="fr_FR">themoviedb.org est une base de données gratuite et libre d&apos;accès de films. Elle est totalement gérée par les utilisateurs. TMDb est actuellement utilisée par des millions de personnes chaque mois et, grâce à ses puissantes fonctions et routines, elle est également utilisée par de nombreux Media Centers populaires comme Kodi aux fins de récupération des Métadonnées, Posters et Fanarts des films en vue d&apos;améliorer l&apos;expérience de l&apos;utilisateur.</description>
+    <description lang="fr_FR">themoviedb.org est une base de données de films gratuite et libre d&apos;accès. Elle est totalement gérée par les utilisateurs. TMDb est actuellement utilisée par des millions de personnes chaque mois et, grâce à ses puissantes fonctions et routines, elle est également utilisée par de nombreux Media Centers populaires comme Kodi afin de récupérer les Métadonnées, Posters et Fanarts des films en vue d&apos;améliorer l&apos;expérience de l&apos;utilisateur.</description>
     <description lang="gl_ES">themoviedb.org é una base de datos sobre filmes libre e aberta, impulsada por xente coma ti. Na actualidade TMDb é usada por millóns de persoas todos os meses, e grazas ó seu potente API, usado por algúns dos centros multimedia máis populares como Kodi para obter a información dos filmes, Posters e Fanart e así mellorar a experiencia do usuario.</description>
     <description lang="hr_HR">themoviedb.org je besplatna i otvorena baza filmskih podataka. TMDb trenutno koriste milijuni ljudi svaki mjesec uz pomoću njegovog snažnog API-ja, isto tako se koristi u mnogim popularnim medijskim centrima poput Kodi-a, kako bi mogli sakupljati informacije o filmovima, filmske postere, omote filmova i na kraju obogatili korisničko iskustvo.</description>
     <description lang="hu_HU">A themoviedb.org egy ingyenes és nyílt filmadatbázis. Teljes egészében olyan felhasználók töltik fel, mint például Te. A TMDb-t havonta emberek milliói használják és a hatékony API-n keresztül számos népszerű média center is, mint például az Kodi a filmadatok, poszterek, fanartképek letöltésére.</description>
     <description lang="id_ID">themoviedb.org adalah database film yang gratis dan terbuka. Ini benar-benar digerakkan oleh orang-orang seperti Anda. TMDb saat ini digunakan oleh jutaan orang setiap bulannya dan dengan APInya yang digdaya, juga digunakan oleh beberapa pusat media seperti Kodi untuk mengambil Metadata Film, Poster dan Fanart untuk menperkaya pengalaman penggunanya.</description>
     <description lang="is_IS">themoviedb.org er ókeypis og opinn gagnagrunnur. Hann er algjörlega rekinn af fólki eins og þér. TMBd er notaður af milljónum manns í hverjum mánuði og með öflugum forritaskilum þeirra (API), er hann líka notaður af mörgum vinsælum heimabíókerfum eins og Kodi til að ná í ítarupplýsingar um kvikmyndir, veggspjöld og aðdáendamyndir til að lífga upplifun notandans.</description>
-    <description lang="it_IT">themoviedb.org è un database libero e aperto. E&apos; gestito da utenti e persone come te. Viene usato correntemente da millioni di persone ogni mese e con le sue potenti API, è anche utilizzato da molti popolari media centers come Kodi per ottenere Metadati, Posters e Fanart di film per arricchire la loro esperienza utente.</description>
+    <description lang="it_IT">themovedb.org è un database di film gratuito e aperto. È completamente creato da persone come te. TMDb è attualmente utilizzato da milioni di persone ogni mese e con la loro potente API, è utilizzato anche da molti centri multimediali popolari come Kodi per recuperare metadati di film, poster e fanart per arricchire l&apos;esperienza dell&apos;utente.</description>
     <description lang="ja_JP">themoviedb.org は自由でオープンな映画データベースです。その運営は、完全にユーザ主導で行われています。TMDb は現在毎月何百万人もの人に利用されているほか、Kodi のようなメディアセンターも、TMDb のパワフルな API を介して映画メタデータ、ポスター、ファンアートを取得し、使い勝手を向上させるなどして使っています。</description>
     <description lang="ko_KR">themoviedb.org 는 전적으로 여러분 같은 이용자가 주도하는 무료 공개 영화 데이터베이스입니다. TMDb 는 현재 매월 수백만의 사람들이 강력한 API와 함께 사용하고 있을 뿐만 아니라 Kodi 같은 많은 미디어 센터가 영화 정보, 포스터, 팬아트를 가져와 풍성한 사용자 경험을 제공하는데 이용되고 있습니다.</description>
     <description lang="lt_LT">themoviedb.org yra nemokama ir atvira filmų duomenų bazė. Ji palaikoma tokių pat vartotojų kaip ir jūs. TMDb šiuo metu naudojama milijonų žmonių kiekvieną mėnesį ir turi galingą API, o taip pat naudojama daugelio populiarių media centrų, tokių kaip Kodi, kad gautų filmų metaduomenis, plakatus ir Fanart, siekiant praturtinti vartotojo patirtį.</description>
