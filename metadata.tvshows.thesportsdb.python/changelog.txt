@@ -1,3 +1,6 @@
+1.1.1
+reuse Python interpreter to speed up scraping time
+
 1.1.0
 change to use new JSON based episodeguide format to handle multiple providers
 fixes for last minute changes to the Nexus Python bindings
