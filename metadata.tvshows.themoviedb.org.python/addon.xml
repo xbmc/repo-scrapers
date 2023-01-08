@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.17"
+  version="1.4.18"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -9,8 +9,9 @@
   </requires>
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
-    <news>1.4.17
-update to support new episode guide JSON format
+    <reuselanguageinvoker>true</reuselanguageinvoker>
+    <news>1.4.18
+set scraper to resue Python interpreter to increase speed of scraping
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
@@ -52,7 +53,7 @@ update to support new episode guide JSON format
     <description lang="es_MX">The Movie Database (TMDb) es una base de datos de películas y series creada por la comunidad. Cada pedazo de información ha sido agregada por nuestra increíble comunidad desde 2008. El fuerte enfoque internacional de TMDb y la variedad de información son en gran medida incomparables y algo de lo que estamos increíblemente orgullosos. En pocas palabras, vivimos y respiramos comunidad y eso es precisamente lo que nos hace diferentes.</description>
     <description lang="et_EE">The Movie Database (TMDb) on kogukonna loodud filmide ja sarjade andmebaas. Meie imeline kogukond on lisanud kõik need andmed alates aastast 2008. TMDb tugev rahvusvaheline fookus ja andmete laius on suures osas võrreldamatud ja selle üle oleme ääretult uhked. Lihtsamalt öeldes elame ja hingame kogukonnas ning just see teebki meid erinevaks.</description>
     <description lang="fi_FI">The Movie Database (TMDB) on yhteisön ylläpitämä, ilmainen ja avoin tietokanta elokuville ja televisiosarjoille. Palvelulla on miljoonia kuukausittaisia käyttäjiä ja sen tehokkaan rajapinnan avulla Kodi ja monet muut mediasovellukset voivat hyödyntää palvelun metatietoja ja mediakuvituksia käyttökokemuksen parantamiseen. Tietokannan vahva painotus kansaivälisyyteen ja kattava tietomäärä on suurelta osin ylivertainen ja olemme tästä erittäin ylpeitä. Yksinkertaisesti sanoen, elämme ja hengitämme yhteisönä ja juuri se tekee meistä erilaisia.</description>
-    <description lang="fr_FR">La base de données The Movie Database (TMDb) est un projet communautaire visant à référencer les informations de films et séries télé. Chaque information a été ajoutée par notre incroyable communauté, et ce depuis 2008. La force internationale du projet TMBd, ainsi que la diversité et l&apos;étendue de ces données l&apos;ont rendu leader dans ce domaine et nous en sommes extrêmement fière. Décrit simplement, nous vivons et respirons communauté et c&apos;est précisément ce qui nous rend différent.</description>
+    <description lang="fr_FR">La base de données The Movie Database (TMDb) est un projet communautaire visant à référencer les informations de films et séries TV. Chaque information a été ajoutée par notre incroyable communauté, et ce depuis 2008. La force internationale du projet TMBd, ainsi que la diversité et l&apos;étendue de ces données l&apos;ont rendu leader dans ce domaine et nous en sommes extrêmement fière. Décrit simplement, nous vivons et respirons communauté et c&apos;est précisément ce qui nous rend différent.</description>
     <description lang="id_ID">The Movie Database (TMDb) adalah database film dan TV yang dibangun oleh komunitas. Setiap bagian data telah ditambahkan oleh komunitas kami yang luar biasa sejak tahun 2008. Fokus internasional TMDb yang kuat dan luasnya data sebagian besar tak tertandingi dan sesuatu yang sangat kami banggakan. Sederhananya, kita hidup dan bernafas dalam komunitas dan justru itulah yang membuat kita berbeda.</description>
     <description lang="is_IS">The Movie Database (TMDb) er samfélagslegur gagnagrunnur kvikmynda- og sjónvarpsefnis. Hver einasti gagnabútur hefur verið settur inn af frábærum liðsmönnum okkar allar götur síðan 2008. Mikil alþjóðleg áhersla TMDb ásamt breiðu sviði gagna sést óvíða og er eitthvað sem við erum ótrúlega stolt af. Sett fram á einfaldan máta, við lifum og hrærumst í þessu samfélagi og það er nákvæmlega þess vegna sem við erum öðruvísi.</description>
     <description lang="it_IT">Il Movie Database (TMDb) è un database di film e TV creato dalla comunità. Ogni dato è stato aggiunto dalla nostra straordinaria comunità che risale al 2008. La forte attenzione internazionale e l&apos;ampiezza dei dati di TMDb sono in gran parte impareggiabili e qualcosa di cui siamo incredibilmente orgogliosi. In parole povere, viviamo e respiriamo in comunità ed è proprio questo che ci rende diversi.</description>
