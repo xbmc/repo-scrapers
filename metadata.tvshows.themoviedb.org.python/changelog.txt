@@ -1,3 +1,6 @@
+1.6.3
+set scraper to resue Python interpreter to increase speed of scraping
+
 1.6.2
 fix for episode groupings being ignored
 
