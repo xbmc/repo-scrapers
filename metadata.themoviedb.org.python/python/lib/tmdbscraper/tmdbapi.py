@@ -42,7 +42,7 @@ COLLECTION_URL = BASE_URL.format('collection/{}')
 CONFIG_URL = BASE_URL.format('configuration')
 
 
-def search_movie(query, year=None, language=None):
+def search_movie(query, year=None, language=None, page=None):
     # type: (Text) -> List[InfoType]
     """
     Search for a movie
@@ -50,12 +50,15 @@ def search_movie(query, year=None, language=None):
     :param title: movie title to search
     :param year: the year to search (optional)
     :param language: the language filter for TMDb (optional)
+    :param page: the results page to return (optional)
     :return: a list with found movies
     """
     xbmc.log('using title of %s to find movie' % query, xbmc.LOGDEBUG)
     theurl = SEARCH_URL
     params = _set_params(None, language)
     params['query'] = query
+    if page is not None:
+        params['page'] = page
     if year is not None:
         params['year'] = str(year)
     return api_utils.load_info(theurl, params=params)

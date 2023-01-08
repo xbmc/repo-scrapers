@@ -19,6 +19,10 @@ class TMDBMovieScraper(object):
         return self._urls
 
     def search(self, title, year=None):
+        def is_best(item):
+            return item['title'].lower().encode('utf-8') == title and (
+                not year or item.get('release_date', '').startswith(year))
+
         search_media_id = _parse_media_id(title)
         if search_media_id:
             if search_media_id['type'] == 'tmdb':
@@ -36,11 +40,15 @@ class TMDBMovieScraper(object):
             if 'error' in response:
                 return response
             result = response['results']
+            # get second page if available and if first page doesn't contain an `is_best` result with popularity > 5
+            if response['total_pages'] > 1:
+                bests = [item for item in result if is_best(item) and item.get('popularity',0) > 5]
+                if not bests:
+                    response = tmdbapi.search_movie(query=title, year=year, language=self.language, page=2)
+                    if not 'error' in response:
+                        result += response['results']
         urls = self.urls
 
-        def is_best(item):
-            return item['title'].lower() == title and (
-                not year or item.get('release_date', '').startswith(year))
         if result:
             # move all `is_best` results at the beginning of the list, sort them by popularity (if found):
             bests_first = sorted([item for item in result if is_best(item)], key=lambda k: k.get('popularity',0), reverse=True)
