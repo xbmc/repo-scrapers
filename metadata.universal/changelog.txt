@@ -1,3 +1,6 @@
+[B]v5.5.13[/B]
+- changed: all default to tmdb
+
 [B]v5.5.12[/B]
 - fixed: added back IMDb Search
 

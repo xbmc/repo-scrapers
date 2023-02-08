@@ -2,11 +2,11 @@
 <settings>
   <category label="128">
     <setting type="sep"/>
-    <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="IMDb"/>
+    <setting label="30023" type="labelenum" values="IMDb|themoviedb.org" id="titlesource" default="themoviedb.org"/>
     <setting label="30008" subsetting="true" type="select" values="Keep Original|United States / International|Argentina|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|Uruguay|Venezuela" id="imdbakatitles" default="Keep Original" visible="eq(-1,0)"/>
     <setting label="30027" subsetting="true" type="select" values="Keep Original|ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="tmdbtitlelanguage" default="en-US" visible="eq(-2,1)"/>
     <setting type="sep"/>
-    <setting label="30022" type="labelenum" values="IMDb|themoviedb.org" id="genressource" default="IMDb"/>
+    <setting label="30022" type="labelenum" values="IMDb|themoviedb.org" id="genressource" default="themoviedb.org"/>
     <setting label="30040" subsetting="true" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="tmdbgenreslanguage" default="en-US" visible="eq(-1,1)"/>
     <setting type="sep"/>
     <setting label="30013" type="bool" id="tmdbset" default="true"/>
@@ -19,10 +19,10 @@
   <category label="30400">
     <setting type="lsep" label="30401"/>
     <setting type="sep"/>
-    <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|OFDb.de|Rotten Tomatoes / Critics' Consensus|IMDb Outline" id="plotsource" default="IMDb"/>
+    <setting label="30014" type="labelenum" values="IMDb|themoviedb.org|OFDb.de|Rotten Tomatoes / Critics' Consensus|IMDb Outline" id="plotsource" default="themoviedb.org"/>
     <setting label="30020" subsetting="true" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="tmdbplotlanguage" default="en-US" visible="eq(-1,1)"/>
     <setting type="sep"/>
-    <setting label="30042" type="labelenum" values="IMDb|themoviedb.org|None" id="taglinesource" default="IMDb"/>
+    <setting label="30042" type="labelenum" values="IMDb|themoviedb.org|None" id="taglinesource" default="themoviedb.org"/>
     <setting label="30043" subsetting="true" type="select" values="ar-AE|ar-SA|be-BY|bg-BG|bn-BD|ca-ES|ch-GU|cs-CZ|da-DK|de-DE|el-GR|en-US|eo-EO|es-ES|es-MX|et-EE|eu-ES|fa-IR|fi-FI|fr-CA|fr-FR|gl-ES|he-IL|hi-IN|hr-HR|hu-HU|id-ID|it-IT|ja-JP|ka-GE|ko-KR|lt-LT|lv-LV|ml-IN|nb-NO|nl-NL|no-NO|pl-PL|pt-BR|pt-PT|ro-RO|ru-RU|sk-SK|sl-SI|sr-RS|sv-SE|ta-IN|th-TH|tr-TR|uk-UA|vi-VN|zh-CN|zh-HK|zh-TW" id="tmdbtaglinelanguage" default="en-US" visible="eq(-1,1)"/>
     <setting type="sep"/>
     <setting label="30045" type="labelenum" values="IMDb|Rotten Tomatoes / Critics' Consensus|None" id="outlinesource" default="IMDb"/>
@@ -32,18 +32,18 @@
 
   <category label="30200">
     <setting type="sep"/>
-    <setting label="30015" type="labelenum" values="IMDbFull|themoviedb.org" id="creditssource" default="IMDbFull"/>
+    <setting label="30015" type="labelenum" values="IMDbFull|themoviedb.org" id="creditssource" default="themoviedb.org"/>
     <setting type="sep"/>
     <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="themoviedb.org"/>
     <setting type="sep"/>
-    <setting label="30202" type="labelenum" values="IMDb|themoviedb.org" id="countrysource" default="IMDb"/>
+    <setting label="30202" type="labelenum" values="IMDb|themoviedb.org" id="countrysource" default="themoviedb.org"/>
     <setting type="sep"/>
   </category>
 
   <category label="30700">
     <setting type="lsep" label="30047"/>
     <setting type="sep"/>
-    <setting label="30502" type="bool" id="fanarttvposter" default="false"/>
+    <setting label="30502" type="bool" id="fanarttvposter" default="true"/>
     <setting label="30034" subsetting="true" type="select" values="ar|bg|bn|ca|ch|cs|da|de|el|en|eo|es|eu|fa|fi|fr|he|hi|hr|hu|id|it|ja|ka|ko|lt|lv|ml|nb|nl|no|pl|pt|ro|ru|sk|sl|sr|sv|ta|th|tr|uk|vi|zh" id="fanarttvposterlanguage" default="en" visible="eq(-1,true)"/>
     <setting type="sep"/>
     <setting label="30002" type="bool" id="tmdbthumbs" default="true"/>
@@ -51,40 +51,40 @@
     <setting type="sep"/>
     <setting type="lsep" label="30501"/>
     <setting type="sep"/>
-    <setting label="30503" type="bool" id="fanarttvfanart" default="false"/>
+    <setting label="30503" type="bool" id="fanarttvfanart" default="true"/>
     <setting type="sep"/>
     <setting label="30001" type="bool" id="fanart" default="true"/>
   </category>
 
   <category label="30701">
-    <setting label="30702" type="bool" id="fanarttvclearlogo" default="false"/>
+    <setting label="30702" type="bool" id="fanarttvclearlogo" default="true"/>
     <setting type="sep"/>
-    <setting label="30703" type="bool" id="fanarttvclearart" default="false"/>
+    <setting label="30703" type="bool" id="fanarttvclearart" default="true"/>
     <setting type="sep"/>
-    <setting label="30704" type="bool" id="fanarttvmoviebanner" default="false"/>
+    <setting label="30704" type="bool" id="fanarttvmoviebanner" default="true"/>
     <setting type="sep"/>
-    <setting label="30705" type="bool" id="fanarttvmovielandscape" default="false"/>
+    <setting label="30705" type="bool" id="fanarttvmovielandscape" default="true"/>
     <setting type="sep"/>
-    <setting label="30707" type="bool" id="tmdbmovielandscape" default="false"/>
+    <setting label="30707" type="bool" id="tmdbmovielandscape" default="true"/>
     <setting type="sep"/>
-    <setting label="30706" type="bool" id="fanarttvmoviediscart" default="false"/>
+    <setting label="30706" type="bool" id="fanarttvmoviediscart" default="true"/>
     <setting type="sep"/>
   </category>
 
   <category label="30801">
-    <setting label="30802" type="bool" id="fanarttvsetposter" default="false"/>
+    <setting label="30802" type="bool" id="fanarttvsetposter" default="true"/>
     <setting type="sep"/>
-    <setting label="30803" type="bool" id="fanarttvsetfanart" default="false"/>
+    <setting label="30803" type="bool" id="fanarttvsetfanart" default="true"/>
     <setting type="sep"/>
-    <setting label="30804" type="bool" id="fanarttvsetclearlogo" default="false"/>
+    <setting label="30804" type="bool" id="fanarttvsetclearlogo" default="true"/>
     <setting type="sep"/>
-    <setting label="30805" type="bool" id="fanarttvsetclearart" default="false"/>
+    <setting label="30805" type="bool" id="fanarttvsetclearart" default="true"/>
     <setting type="sep"/>
-    <setting label="30806" type="bool" id="fanarttvsetmoviebanner" default="false"/>
+    <setting label="30806" type="bool" id="fanarttvsetmoviebanner" default="true"/>
     <setting type="sep"/>
-    <setting label="30807" type="bool" id="fanarttvsetmovielandscape" default="false"/>
+    <setting label="30807" type="bool" id="fanarttvsetmovielandscape" default="true"/>
     <setting type="sep"/>
-    <setting label="30808" type="bool" id="fanarttvsetmoviediscart" default="false"/>
+    <setting label="30808" type="bool" id="fanarttvsetmoviediscart" default="true"/>
     <setting type="sep"/>
   </category>
 
@@ -112,7 +112,7 @@
     <setting label="30044" type="bool" id="imdbtop250" default="true"/>
     <setting type="sep"/>
     <setting type="lsep" label="30031"/>
-    <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="IMDb"/>
+    <setting label="30032" type="labelenum" values="IMDb|themoviedb.org" id="certificationssource" default="themoviedb.org"/>
     <setting label="30033" subsetting="true" type="select" values="Argentina|Australia|Austria|Belgium|Brazil|Bulgaria|Canada|China|Colombia|Chile|Croatia|Czech Republic|Denmark|Finland|France|Germany|Greece|Hong Kong|Hungary|Iceland|India|Israel|Italy|Japan|Mexico|Netherlands|Norway|Pakistan|Poland|Portugal|Romania|Russia|Serbia|Singapore|Slovenia|Spain|Sweden|Switzerland|Thailand|Turkey|United Kingdom|Uruguay|United States|Venezuela" id="imdbcertcountry" default="United States" visible="eq(-1,0)"/>
     <setting label="30033" subsetting="true" type="select" values="au|bg|br|ca|cz|ge|de|dk|ee|es|fi|fr|gb|gr|hr|hu|id|il|in|it|ir|jp|kr|lt|lv|mx|nl|no|pl|pt|ru|si|sv|th|tr|ua|us|vn|zh" id="tmdbcertcountry" default="us" visible="eq(-2,1)"/>
     <setting type="sep"/>
