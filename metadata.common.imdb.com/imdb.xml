@@ -124,7 +124,7 @@
 	</ParseMetaCriticRatings>
 
 	<GetIMDBPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBPlotById>
@@ -141,7 +141,7 @@
 	</ParseIMDBPlot>
 
 	<GetIMDBTaglineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTaglineById>
