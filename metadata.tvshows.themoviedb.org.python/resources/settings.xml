@@ -143,6 +143,11 @@
 					<default>false</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="keywordsastags" type="boolean" label="30007" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="cat_landscape" type="boolean" label="30005" help="">
 					<level>0</level>
 					<default>true</default>

@@ -1,3 +1,7 @@
+1.6.4
+added TMDb keywords as tag with option to disable function
+updated translations
+
 1.6.3
 set scraper to resue Python interpreter to increase speed of scraping
 

@@ -178,6 +178,15 @@ def _add_season_info(show_info, vtag):
                         theurl, arttype=destination, preview=previewurl, season=season['season_number'])
 
 
+def _get_names(item_list):
+    # type: (List) -> None
+    """Get names from a list of dicts"""
+    items = []
+    for item in item_list:
+        items.append(item['name'])
+    return items
+
+
 def get_image_urls(image):
     # type: (Dict) -> Tuple[Text, Text]
     """Get image URLs from image information"""
@@ -249,11 +258,10 @@ def add_main_show_info(list_item, show_info, full_info=True):
         vtag.setPremiered(show_info['first_air_date'])
     if full_info:
         vtag.setTvShowStatus(safe_get(show_info, 'status', ''))
-        genre_list = safe_get(show_info, 'genres', {})
-        genres = []
-        for genre in genre_list:
-            genres.append(genre['name'])
-        vtag.setGenres(genres)
+        vtag.setGenres(_get_names(show_info.get('genres', [])))
+        if settings.SAVETAGS:
+            vtag.setTags(_get_names(show_info.get(
+                'keywords', {}).get('results', [])))
         networks = show_info.get('networks', [])
         if networks:
             network = networks[0]

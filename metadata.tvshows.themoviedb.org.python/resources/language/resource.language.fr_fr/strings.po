@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-05-27 09:14+0000\n"
-"Last-Translator: Christophe JOLY <skypichat@hotmail.fr>\n"
+"PO-Revision-Date: 2022-12-25 20:15+0000\n"
+"Last-Translator: skypichat <skypichat@hotmail.fr>\n"
 "Language-Team: French (France) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/fr_fr/>\n"
 "Language: fr_fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.12.2\n"
+"X-Generator: Weblate 4.15\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
@@ -23,7 +23,7 @@ msgstr "Récupérer les métadonnées d'une série depuis themoviedb.org"
 
 msgctxt "Addon Description"
 msgid "The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different."
-msgstr "La base de données The Movie Database (TMDb) est un projet communautaire visant à référencer les informations de films et séries télé. Chaque information a été ajoutée par notre incroyable communauté, et ce depuis 2008. La force internationale du projet TMBd, ainsi que la diversité et l'étendue de ces données l'ont rendu leader dans ce domaine et nous en sommes extrêmement fière. Décrit simplement, nous vivons et respirons communauté et c'est précisément ce qui nous rend différent."
+msgstr "La base de données The Movie Database (TMDb) est un projet communautaire visant à référencer les informations de films et séries TV. Chaque information a été ajoutée par notre incroyable communauté, et ce depuis 2008. La force internationale du projet TMBd, ainsi que la diversité et l'étendue de ces données l'ont rendu leader dans ce domaine et nous en sommes extrêmement fière. Décrit simplement, nous vivons et respirons communauté et c'est précisément ce qui nous rend différent."
 
 msgctxt "#30000"
 msgid "Preferred language"
@@ -84,7 +84,7 @@ msgstr "Activer clearart"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr "Activer le paysage"
+msgstr "Activer le Landscape"
 
 msgctxt "#30108"
 msgid "Enable character art"
@@ -97,7 +97,7 @@ msgstr "Inclure l'art de fanart.tv"
 # empty strings from 30110 to 30149
 msgctxt "#30150"
 msgid "Enable season poster"
-msgstr "Activer l'affiche de la saison"
+msgstr "Activer le poster de la saison"
 
 msgctxt "#30151"
 msgid "Enable season banner"
@@ -105,7 +105,7 @@ msgstr "Activer la bannière de saison"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr "Activer le paysage saisonnier"
+msgstr "Activer le Landscape saisonnier"
 
 # empty strings from 30153 to 30200
 msgctxt "#30200"
@@ -147,7 +147,7 @@ msgstr "Lecteur complémentaire"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr "Youtube"
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
