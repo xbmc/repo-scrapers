@@ -169,7 +169,7 @@ class Url:
     def season_url(self, id, extended=False):
         url = "{}/seasons/{}".format(self.base_url, id)
         if extended:
-            url = "{}/extended".format(url)
+            url = "{}/extended?meta=episodes".format(url)
         return url
 
     def episode_url(self, id, extended=False):
