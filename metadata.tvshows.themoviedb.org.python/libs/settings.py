@@ -89,6 +89,8 @@ VERBOSELOG = source_settings.get(
 LANG = source_settings.get('language', ADDON.getSettingString('language'))
 CERT_COUNTRY = source_settings.get(
     'tmdbcertcountry', ADDON.getSettingString('tmdbcertcountry')).lower()
+SAVETAGS = source_settings.get(
+    'keywordsastags', ADDON.getSettingBool('keywordsastags'))
 IMAGEROOTURL, PREVIEWROOTURL = _load_base_urls()
 
 if source_settings.get('usecertprefix', ADDON.getSettingBool('usecertprefix')):
