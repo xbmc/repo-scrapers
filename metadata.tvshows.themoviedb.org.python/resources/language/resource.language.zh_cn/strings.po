@@ -53,6 +53,10 @@ msgctxt "#30006"
 msgid "Include country code with studio"
 msgstr "制片公司包含国别码"
 
+msgctxt "#30007"
+msgid "Add keywords as tags"
+msgstr ""
+
 # empty strings from 30007 to 30099
 msgctxt "#30100"
 msgid "Fanart.tv"
