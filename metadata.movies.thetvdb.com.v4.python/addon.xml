@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.movies.thetvdb.com.v4.python" name="The TVDB v4 (Movies)"
-       version="1.0.10" provider-name="TVDB Team">
+       version="1.0.11" provider-name="TVDB Team">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0" />
     <import addon="xbmc.python" version="3.0.0" />
@@ -114,12 +114,13 @@
     <description lang="zh_TW">TheTVDB.com是一個電視節目。該網站是一個龐大並可以由任何人修改的開放性資料庫，並包含可以以多國語言顯示的完整的數據資料。所有內容和圖片都是經由用戶提供使用，有一定的標準或質量。數據庫架構和網站是在GPL下的開放性源碼。</description>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
-    <reuselanguageinvoker>false</reuselanguageinvoker>
+    <reuselanguageinvoker>true</reuselanguageinvoker>
     <assets>
       <icon>media/icon.png</icon>
       <screenshot>media/screenshot-1.jpg</screenshot>
       <screenshot>media/screenshot-2.jpg</screenshot>
       <screenshot>media/screenshot-3.jpg</screenshot>
     </assets>
+    <news>- 1.0.11: Turn on reuselanguageinvoker</news>
   </extension>
 </addon>
