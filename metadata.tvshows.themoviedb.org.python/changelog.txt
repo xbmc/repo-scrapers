@@ -1,3 +1,7 @@
+1.4.19
+made search of NFO file for a UniqueID less aggressive
+updated language files
+
 1.4.18
 set scraper to resue Python interpreter to increase speed of scraping
 

@@ -7,147 +7,152 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-01-15 08:15+0000\n"
+"Last-Translator: gogogogi <trebelnik2@gmail.com>\n"
+"Language-Team: Croatian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/hr_hr/>\n"
 "Language: hr_hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.15\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
-msgstr ""
+msgstr "Preuzmite metapodatke TV serija s themoviedb.org"
 
 msgctxt "Addon Description"
 msgid "The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different."
-msgstr ""
+msgstr "The Movie Database (TMDb) je izgrađena od strane zajednice filmska i TV baza podataka. Svaki djelić podataka je dodan od strane naše izvanredne zajednice sve od 2008. TMDb snažan međunarodni fokus i širina podataka uglavnom su bez premca i nešto na što smo nevjerojatno ponosni. Jednostavno rečeno, mi živimo i dišemo za zajednicu i upravo to nas čini drugačijima."
 
 msgctxt "#30000"
 msgid "Preferred language"
-msgstr ""
+msgstr "Željeni jezik"
 
 msgctxt "#30001"
 msgid "Preferred certification country"
-msgstr ""
+msgstr "Željena država certifikacije"
 
 msgctxt "#30002"
 msgid "Include certification prefix"
-msgstr ""
+msgstr "Uključi prefiks certifikacije"
 
 msgctxt "#30003"
 msgid "Prefix"
-msgstr ""
+msgstr "Prefiks"
 
 msgctxt "#30004"
 msgid "Keep original title"
-msgstr ""
+msgstr "Zadrži izvorni naslov"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
-msgstr ""
+msgstr "Kategoriziraj sliku omota s tekstom kao pejzažnu sliku"
 
 msgctxt "#30006"
 msgid "Include country code with studio"
+msgstr "Uključi kôd zemlje sa studijem"
+
+msgctxt "#30007"
+msgid "Add keywords as tags"
 msgstr ""
 
 # empty strings from 30007 to 30099
 msgctxt "#30100"
 msgid "Fanart.tv"
-msgstr ""
+msgstr "Fanart.tv"
 
 msgctxt "#30101"
 msgid "Client key (optional)"
-msgstr ""
+msgstr "Ključ klijenta (neobavezno)"
 
 msgctxt "#30102"
 msgid "Enable fanart"
-msgstr ""
+msgstr "Omogući sliku omota"
 
 msgctxt "#30103"
 msgid "Enable poster"
-msgstr ""
+msgstr "Omogući plakat"
 
 msgctxt "#30104"
 msgid "Enable banner"
-msgstr ""
+msgstr "Omogući transparent"
 
 msgctxt "#30105"
 msgid "Enable clearlogo"
-msgstr ""
+msgstr "Omogući clearlogo"
 
 msgctxt "#30106"
 msgid "Enable clearart"
-msgstr ""
+msgstr "Omogući clearart"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr ""
+msgstr "Omogući landscape"
 
 msgctxt "#30108"
 msgid "Enable character art"
-msgstr ""
+msgstr "Omogući character art"
 
 msgctxt "#30109"
 msgid "Include art from fanart.tv"
-msgstr ""
+msgstr "Uključi slike s fanart.tv"
 
 # empty strings from 30110 to 30149
 msgctxt "#30150"
 msgid "Enable season poster"
-msgstr ""
+msgstr "Omogući plakat sezone"
 
 msgctxt "#30151"
 msgid "Enable season banner"
-msgstr ""
+msgstr "Omogući transparent sezone"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr ""
+msgstr "Omogući landscape sezone"
 
 # empty strings from 30153 to 30200
 msgctxt "#30200"
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 msgctxt "#30201"
 msgid "Verbose debug logging"
-msgstr ""
+msgstr "Opširnije zapisivanje otklanjanja grešaka"
 
 # emptry strings from 30202 to 30299
 msgctxt "#30300"
 msgid "Ratings"
-msgstr ""
+msgstr "Ocjene"
 
 msgctxt "#30301"
 msgid "Default rating from"
-msgstr ""
+msgstr "Zadane ocjene s"
 
 msgctxt "#30302"
 msgid "Also add IMDb ratings"
-msgstr ""
+msgstr "Još dodaj IMDb ocjene"
 
 msgctxt "#30303"
 msgid "Also add Trakt.tv ratings"
-msgstr ""
+msgstr "Još dodaj Trakt.tv ocjene"
 
 msgctxt "#30304"
 msgid "Also add TMDb ratings"
-msgstr ""
+msgstr "Još dodaj TMDb ocjene"
 
 msgctxt "#30305"
 msgid "Enable Trailer"
-msgstr ""
+msgstr "Omogući najavu"
 
 msgctxt "#30306"
 msgid "Addon Player"
-msgstr ""
+msgstr "Reproduktor dodatka"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
-msgstr ""
+msgstr "Tubed"
