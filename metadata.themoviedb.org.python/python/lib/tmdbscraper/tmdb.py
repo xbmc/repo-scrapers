@@ -170,10 +170,10 @@ def _parse_artwork(movie, collection, urlbases, language):
     landscape = []
     logos = []
     fanart = []
-    
+
     if 'images' in movie:
         posters = _get_images_with_fallback(movie['images']['posters'], urlbases, language)
-        landscape = _get_images(movie['images']['backdrops'], urlbases, language)
+        landscape = _get_images_with_fallback(movie['images']['backdrops'], urlbases, language)
         logos = _get_images_with_fallback(movie['images']['logos'], urlbases, language)
         fanart = _get_images(movie['images']['backdrops'], urlbases, None)
 
@@ -182,7 +182,7 @@ def _parse_artwork(movie, collection, urlbases, language):
     setfanart = []
     if collection and 'images' in collection:
         setposters = _get_images_with_fallback(collection['images']['posters'], urlbases, language)
-        setlandscape = _get_images(collection['images']['backdrops'], urlbases, language)
+        setlandscape = _get_images_with_fallback(collection['images']['backdrops'], urlbases, language)
         setfanart = _get_images(collection['images']['backdrops'], urlbases, None)
 
     return {'poster': posters, 'landscape': landscape, 'fanart': fanart,
@@ -205,6 +205,8 @@ def _get_images(imagelist, urlbases, language='_any'):
     result = []
     for img in imagelist:
         if language != '_any' and img['iso_639_1'] != language:
+            continue
+        if img['file_path'].endswith('.svg'):
             continue
         result.append({
             'url': urlbases['original'] + img['file_path'],

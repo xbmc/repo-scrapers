@@ -138,6 +138,11 @@
 						<heading>30013</heading>
 					</control>
 				</setting>
+				<setting id="fetch_posters" type="boolean" label="30014" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="fanart" type="boolean" label="30000" help="">
 					<level>0</level>
 					<default>true</default>

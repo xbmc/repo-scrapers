@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org.python"
        name="The Movie Database Python"
-       version="2.0.0"
+       version="2.1.0"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -11,14 +11,14 @@
              library="python/scraper.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>v2.0.0 (2023-01-01)
-- version 2 for Kodi 19 Matrix and above
-- TMDB search second page if no best match on first page
+    <news>v2.1.0 (2023-03-18)
+- Add option to disable posters
+- Fix fallback language for landscape images
+- Don't add SVG image artwork
 
-v1.6.0 (2021-12-24) - v1.6.2 (2022-04-10)
-- Feature: fallback to English language for Fanart.tv artwork
-- Feature: fanart prioritization option
-- Fix: IMDB ratings</news>
+v2.0.0 (2023-01-01)
+- version 2 for Kodi 19 Matrix and above
+- TMDB search second page if no best match on first page</news>
     <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <forum>https://forum.kodi.tv/showthread.php?tid=344580</forum>
@@ -56,6 +56,7 @@ v1.6.0 (2021-12-24) - v1.6.2 (2022-04-10)
     <summary lang="ja_JP">TMDB映画のスクレーパー</summary>
     <summary lang="ko_KR">TMDB 영화 정보수집기</summary>
     <summary lang="lt_LT">TMDB filmų skreperis</summary>
+    <summary lang="lv_LV">Python The Movie Database (TMDb) filmu skrāpis</summary>
     <summary lang="mk_MK">TMDB инфо за филмови</summary>
     <summary lang="ml_IN">മൂവി ഡി ബി, വിവരശേഖരം</summary>
     <summary lang="ms_MY">Pengikis Cakera TMDB</summary>
@@ -98,7 +99,7 @@ v1.6.0 (2021-12-24) - v1.6.2 (2022-04-10)
     <description lang="fr_CA">themoviedb.org est une base de données libre et ouverte. Elle est complètement gérée par des gens comme vous. TMDb est actuellement utilisée par des millions de personnes chaque mois et avec son API puissante, elle est également utilisée par de nombreux centres multimédias populaires comme Kodi pour récupérer les métadonnées des films, les affiches et le fanart afin d&apos;enrichir l&apos;expérience de l&apos;utilisateur.</description>
     <description lang="fr_FR">themoviedb.org est une base de données de films gratuite et libre d&apos;accès. Elle est totalement gérée par les utilisateurs. TMDb est actuellement utilisée par des millions de personnes chaque mois et, grâce à ses puissantes fonctions et routines, elle est également utilisée par de nombreux Media Centers populaires comme Kodi afin de récupérer les Métadonnées, Posters et Fanarts des films en vue d&apos;améliorer l&apos;expérience de l&apos;utilisateur.</description>
     <description lang="gl_ES">themoviedb.org é una base de datos sobre filmes libre e aberta, impulsada por xente coma ti. Na actualidade TMDb é usada por millóns de persoas todos os meses, e grazas ó seu potente API, usado por algúns dos centros multimedia máis populares como Kodi para obter a información dos filmes, Posters e Fanart e así mellorar a experiencia do usuario.</description>
-    <description lang="hr_HR">themoviedb.org je besplatna i otvorena baza filmskih podataka. TMDb trenutno koriste milijuni ljudi svaki mjesec uz pomoću njegovog snažnog API-ja, isto tako se koristi u mnogim popularnim medijskim centrima poput Kodi-a, kako bi mogli sakupljati informacije o filmovima, filmske postere, omote filmova i na kraju obogatili korisničko iskustvo.</description>
+    <description lang="hr_HR">themoviedb.org je besplatna i otvorena baza filmskih podataka. TMDb trenutno koriste milijuni ljudi svaki mjesec uz pomoću njegovog snažnog API-ja, isto tako se koristi u mnogim popularnim medijskim centrima poput Kodija, kako bi mogli prikupljati informacije o filmovima, filmske plakate, omote filmova i na kraju obogatiti korisničko iskustvo.</description>
     <description lang="hu_HU">A themoviedb.org egy ingyenes és nyílt filmadatbázis. Teljes egészében olyan felhasználók töltik fel, mint például Te. A TMDb-t havonta emberek milliói használják és a hatékony API-n keresztül számos népszerű média center is, mint például az Kodi a filmadatok, poszterek, fanartképek letöltésére.</description>
     <description lang="id_ID">themoviedb.org adalah database film yang gratis dan terbuka. Ini benar-benar digerakkan oleh orang-orang seperti Anda. TMDb saat ini digunakan oleh jutaan orang setiap bulannya dan dengan APInya yang digdaya, juga digunakan oleh beberapa pusat media seperti Kodi untuk mengambil Metadata Film, Poster dan Fanart untuk menperkaya pengalaman penggunanya.</description>
     <description lang="is_IS">themoviedb.org er ókeypis og opinn gagnagrunnur. Hann er algjörlega rekinn af fólki eins og þér. TMBd er notaður af milljónum manns í hverjum mánuði og með öflugum forritaskilum þeirra (API), er hann líka notaður af mörgum vinsælum heimabíókerfum eins og Kodi til að ná í ítarupplýsingar um kvikmyndir, veggspjöld og aðdáendamyndir til að lífga upplifun notandans.</description>
@@ -106,8 +107,10 @@ v1.6.0 (2021-12-24) - v1.6.2 (2022-04-10)
     <description lang="ja_JP">themoviedb.org は自由でオープンな映画データベースです。その運営は、完全にユーザ主導で行われています。TMDb は現在毎月何百万人もの人に利用されているほか、Kodi のようなメディアセンターも、TMDb のパワフルな API を介して映画メタデータ、ポスター、ファンアートを取得し、使い勝手を向上させるなどして使っています。</description>
     <description lang="ko_KR">themoviedb.org 는 전적으로 여러분 같은 이용자가 주도하는 무료 공개 영화 데이터베이스입니다. TMDb 는 현재 매월 수백만의 사람들이 강력한 API와 함께 사용하고 있을 뿐만 아니라 Kodi 같은 많은 미디어 센터가 영화 정보, 포스터, 팬아트를 가져와 풍성한 사용자 경험을 제공하는데 이용되고 있습니다.</description>
     <description lang="lt_LT">themoviedb.org yra nemokama ir atvira filmų duomenų bazė. Ji palaikoma tokių pat vartotojų kaip ir jūs. TMDb šiuo metu naudojama milijonų žmonių kiekvieną mėnesį ir turi galingą API, o taip pat naudojama daugelio populiarių media centrų, tokių kaip Kodi, kad gautų filmų metaduomenis, plakatus ir Fanart, siekiant praturtinti vartotojo patirtį.</description>
+    <description lang="lv_LV">themoviedb.org ir bezmaksas un publiski pieejama filmu datubāze. To to uztur tādi cilvēki kā jūs. Pašlaik TMDb izmanto miljoniem cilvēku katru mēnesi, un, pateicoties tā jaudīgajam API, tas tiek izmantots daudzos populāros multimedijas centros. Piemēram, Kodi, lai iegūtu filmu datus, vāka plakātus un fanu veidotos attēlus, lai bagātinātu Kodi lietotāja pieredzi.</description>
     <description lang="ml_IN">മൂവി ഡി ബി, എല്ലാവർക്കും കൈവക്കാവുന്ന ഒരു സൗജന്യ വിവരശേഖരമാണ്. ഇതുമൂലം ലോകം മുഴുവനും സിനിമാ പോസ്റ്ററുകൾ എല്ലവരും കാണുന്നു</description>
     <description lang="ms_MY">themoviedb.org adalah pangkalan data cakera terbuka. Ia sepenuhnya dipacu oleh individu seperti anda. TMDb buat masa ini diguna oleh berjuta-juta individu setiap bulan dan dengan API hebat mereka, ia juga digunakan oleh banyak pusat media popular seperti Kodi untuk mendapatkan Data Meta, Poster, Seni Peminat Cereka untuk memperkayakan pengalaman pengguna.</description>
+    <description lang="my_MM">themoviedb.org သည် အခမဲ့ဖြစ်ပြီး ပွင့်လင်းသော ရုပ်ရှင်ဒေတာဘေ့စ်တစ်ခုဖြစ်သည်။ TMDb ကို ၎င်း၏အားကောင်းသော API ဖြင့် လစဉ်လတိုင်း လူသန်းပေါင်းများစွာက အသုံးပြုလျက်ရှိပြီး Kodi ကဲ့သို့ နာမည်ကြီး မီဒီယာစင်တာများတွင်လည်း ရုပ်ရှင်အချက်အလက်၊ ရုပ်ရှင်ပိုစတာများ၊ ရုပ်ရှင်ကာဗာများကို စုဆောင်းကာ နောက်ဆုံးတွင် သုံးစွဲသူအတွေ့အကြုံကို ကြွယ်ဝစေပါသည်။</description>
     <description lang="nb_NO">themoviedb.org er en fir og åpen filmdatabase. Den drives helt og fullt av mennesker som deg. TMDB brukes av millioner av mennesker hver måned og med sitt gode API, brukes den også av mange popluære mediasenterløsninger som Kodi for å hente metadata for filmer, plakater og fanart for å gi en bedre brukeropplevelse.</description>
     <description lang="nl_NL">Themoviedb.org is een vrije en open filmdatabank. Gebruikers zoals jij vormen de motor van deze site. Op dit moment gebruiken elke maand miljoenen mensen TMDb. De krachtige API van de site laat mediacenters zoals Kodi toe om metadata, posters en fanart op te halen en zo de gebruikerservaring te verrijken.</description>
     <description lang="pl_PL">themoviedb.org jest wolną i otwartą filmową bazą danych. Jest ona całkowicie zarządzana przez osoby takie jak Ty. Obecnie odwiedzają ją miliony osób miesięcznie, a dzięki dostępności interfejsu programistycznego jest używana przez wiele centrów multimedialnych, takich jak Kodi, do pobierania informacji o filmach, plakatów i fototapet.</description>
