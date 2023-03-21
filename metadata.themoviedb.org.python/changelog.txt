@@ -1,3 +1,8 @@
+v2.1.0 (2023-03-18)
+- Add option to disable posters
+- Fix fallback language for landscape images
+- Don't add SVG image artwork
+
 v2.0.0 (2023-01-01)
 - version 2 for Kodi 19 Matrix and above
 - TMDB search second page if no best match on first page
