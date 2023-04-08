@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-03-26 20:16+0000\n"
+"PO-Revision-Date: 2023-04-08 17:16+0000\n"
 "Last-Translator: Massimo Pissarello <mapi68@gmail.com>\n"
 "Language-Team: Italian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/it_it/>\n"
 "Language: it_it\n"
@@ -174,7 +174,7 @@ msgstr "Ottieni classifica TOP250 di IMDb"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Ottieni progetto da"
+msgstr "Ottieni sinossi da"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
@@ -231,7 +231,7 @@ msgstr "Ottieni anche valutazioni non predefinite di Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
-msgstr "Riconoscimenti"
+msgstr "Titoli di coda"
 
 msgctxt "#30201"
 msgid "Get Studio from"
@@ -271,7 +271,7 @@ msgstr "Avvertimento:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Abilitando la categoria 'Tutti i film' si ridurrà di molto l'accuratezza della ricerca !!!"
+msgstr "L'abilitazione di tutte le categorie di film ridurrà notevolmente la precisione della ricerca !!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
@@ -283,7 +283,7 @@ msgstr "Trama"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr "Trama / Slogan/ Riepilogo"
+msgstr "Trama / Slogan/ Sinossi"
 
 msgctxt "#30500"
 msgid "Fanart"
@@ -339,7 +339,7 @@ msgstr "Abilita discart da fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr "Raccolta artwork"
+msgstr "Collezione artwork"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
