@@ -16,6 +16,7 @@ class ArtworkType(enum.IntEnum):
     POSTER = 2
     BACKGROUND = 3
     ICON = 5
+    SEASONPOSTER = 7
     CLEARART = 22
     CLEARLOGO = 23
 
@@ -548,12 +549,14 @@ def get_artworks_from_show(show: dict, language: str = 'eng'):
         return 0, score
 
     artworks = show.get("artworks", [{}])
+    seasons = show.get("seasons", [{}])
     banners = []
     posters = []
     fanarts = []
     icons = []
     cleararts = []
     clearlogos = []
+    season_posters = []
     for art in artworks:
         art_type = art.get('type')
         if art_type == ArtworkType.BANNER:
@@ -568,11 +571,15 @@ def get_artworks_from_show(show: dict, language: str = 'eng'):
             cleararts.append(art)
         elif art_type == ArtworkType.CLEARLOGO:
             clearlogos.append(art)
+        elif art_type == ArtworkType.SEASONPOSTER:
+            season_id = art.get("seasonId", -1)
+            season = next((season for season in seasons if season.get("id", -2) == season_id), None)
+            if season:
+                season_posters.append( (art.get("image", ""), season.get("number", 0) ) )
+
     banners.sort(key=sorter, reverse=True)
     posters.sort(key=sorter, reverse=True)
     fanarts.sort(key=sorter, reverse=True)
-    season_posters = [(season.get("image", ""), season.get("number", 0))
-                      for season in show.get("seasons", [])]
     artwork_dict = {
         'banner': banners,
         'poster': posters,
