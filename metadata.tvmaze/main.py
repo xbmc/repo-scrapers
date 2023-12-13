@@ -13,11 +13,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 # pylint: disable=missing-docstring
+import logging
 import sys
 
 from libs.actions import router
-from libs.exception_logger import log_exception
+from libs.exception_logger import catch_exception
+from libs.utils import initialize_logging
 
 if __name__ == '__main__':
-    with log_exception():
+    initialize_logging()
+    with catch_exception(logger_func=logging.error):
         router(sys.argv[2][1:])
