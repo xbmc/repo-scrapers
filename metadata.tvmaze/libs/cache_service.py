@@ -16,6 +16,7 @@
 """Cache-related functionality"""
 
 import json
+import logging
 import os
 import time
 from typing import Optional, Text, Dict, Any, Union
@@ -23,14 +24,14 @@ from typing import Optional, Text, Dict, Any, Union
 import xbmcgui
 import xbmcvfs
 
-from .utils import ADDON_ID, logger
+from .utils import ADDON_ID
 
 EPISODES_CACHE_TTL = 60 * 10  # 10 minutes
 
 
 class MemoryCache:
     _instance = None
-    CACHE_KEY = '__tvmaze_scraper__'
+    CACHE_KEY = f'__{ADDON_ID}_cache__'
 
     def __new__(cls):
         if cls._instance is None:
@@ -52,17 +53,17 @@ class MemoryCache:
     def get(self, obj_id: Union[int, str]) -> Optional[Any]:
         cache_json = self._window.getProperty(self.CACHE_KEY)
         if not cache_json:
-            logger.debug('Memory cache empty')
+            logging.debug('Memory cache empty')
             return None
         try:
             cache = json.loads(cache_json)
         except ValueError as exc:
-            logger.debug(f'Memory cache error: {exc}')
+            logging.debug(f'Memory cache error: {exc}')
             return None
         if cache['id'] != obj_id or time.time() - cache['timestamp'] > EPISODES_CACHE_TTL:
-            logger.debug('Memory cache miss')
+            logging.debug('Memory cache miss')
             return None
-        logger.debug('Memory cache hit')
+        logging.debug('Memory cache hit')
         return cache['object']
 
 
@@ -110,8 +111,8 @@ def load_show_info_from_cache(show_id: Union[int, str]) -> Optional[Dict[str, An
         with open(os.path.join(CACHE_DIR, file_name), 'r', encoding='utf-8') as fo:
             cache_json = fo.read()
         show_info = json.loads(cache_json)
-        logger.debug('Show info cache hit')
+        logging.debug('Show info cache hit')
         return show_info
     except (IOError, EOFError, ValueError) as exc:
-        logger.debug(f'Cache error: {type(exc)} {exc}')
+        logging.debug('Cache error: %s %s', type(exc), exc)
         return None

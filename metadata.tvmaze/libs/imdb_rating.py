@@ -14,11 +14,11 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import json
+import logging
 import re
 from typing import Dict, Union, Optional
 
 from . import simple_requests as requests
-from .utils import logger
 
 IMDB_TITLE_URL = 'https://www.imdb.com/title/{}/'
 
@@ -36,6 +36,6 @@ def get_imdb_rating(imdb_id: str) -> Optional[Dict[str, Union[int, float]]]:
                 rating = aggregate_rating['ratingValue']
                 votes = aggregate_rating['ratingCount']
                 return {'rating': rating, 'votes': votes}
-    logger.debug(f'Unable to get IMDB rating for ID {imdb_id}. '
-                 f'Status: {response.status_code}, response: {response.text}')
+    logging.debug('Unable to get IMDB rating for ID %s. Status: %s, response: %s',
+                  imdb_id, response.status_code, response.text)
     return None
