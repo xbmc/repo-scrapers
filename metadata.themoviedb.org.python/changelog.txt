@@ -1,3 +1,6 @@
+v2.2.0 (2024-01-10)
+- Support IMDB/TMDB IDs in filename for Kodi 21 Omega (uniqueIDs directly from Kodi)
+
 v2.1.0 (2023-03-18)
 - Add option to disable posters
 - Fix fallback language for landscape images
