@@ -1,3 +1,20 @@
+v1.0.18
+- language updates
+
+v1.0.17
+- add album 3dthumb image support
+
+v1.0.16
+- fix extra art sorting
+- language updates
+
+v1.0.15
+- sort extra art
+- language updates
+
+v1.0.14
+- add translations
+
 v1.0.13
 - fix missing endOfDirectory() call when returning 0 results
 - scrape using mbalbumid only if we don't have a mbreleasegroupid
