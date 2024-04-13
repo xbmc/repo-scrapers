@@ -1,3 +1,6 @@
+v2.2.1 (2024-04-12)
+- Update YouTube plugin URL for trailers
+
 v2.2.0 (2024-01-10)
 - Support IMDB/TMDB IDs in filename for Kodi 21 Omega (uniqueIDs directly from Kodi)
 
