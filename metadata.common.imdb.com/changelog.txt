@@ -1,3 +1,6 @@
+[B]3.2.9[/B]
+- fixed: metacritics scraping
+
 [B]3.2.8[/B]
 - fixed: scraping from xx-reference.html
 
