@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.7.1"
+  version="1.7.2"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -10,9 +10,8 @@
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>1.7.1
-fix for crash when getting config from TMDb website
-fix for TMDb config never getting updated from website without restart
+    <news>1.7.2
+fix for inability to scrape IMDB ratings
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>

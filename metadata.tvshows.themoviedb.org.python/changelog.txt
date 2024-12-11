@@ -1,3 +1,6 @@
+1.7.2
+fix for inability to scrape IMDB ratings
+
 1.7.1
 fix for crash when getting config from TMDb website
 fix for TMDb config never getting updated from website without restart

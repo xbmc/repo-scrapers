@@ -33,7 +33,6 @@ HEADERS = (
     ('trakt-api-version', '2'),
     ('Content-Type', 'application/json'),
 )
-api_utils.set_headers(dict(HEADERS))
 
 SHOW_URL = 'https://api.trakt.tv/shows/{}'
 EP_URL = SHOW_URL + '/seasons/{}/episodes/{}/ratings'
@@ -50,6 +49,7 @@ def get_details(imdb_id, season=None, episode=None):
     :return: trackt ratings
     """
     source_settings = settings.getSourceSettings()
+    api_utils.set_headers(dict(HEADERS))
     result = {}
     if season and episode:
         url = EP_URL.format(imdb_id, season, episode)
@@ -63,4 +63,5 @@ def get_details(imdb_id, season=None, episode=None):
     votes = resp.get('votes')
     if votes and rating:
         result['ratings'] = {'trakt': {'votes': votes, 'rating': rating}}
+    api_utils.set_headers({})
     return result
