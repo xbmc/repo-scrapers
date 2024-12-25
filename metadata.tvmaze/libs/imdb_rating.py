@@ -18,14 +18,20 @@ import logging
 import re
 from typing import Dict, Union, Optional
 
-from . import simple_requests as requests
+import simple_requests as requests
 
 IMDB_TITLE_URL = 'https://www.imdb.com/title/{}/'
+
+HEADERS = (
+    ('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
+                   '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'),
+    ('Accept', 'text/html'),
+)
 
 
 def get_imdb_rating(imdb_id: str) -> Optional[Dict[str, Union[int, float]]]:
     url = IMDB_TITLE_URL.format(imdb_id)
-    response = requests.get(url)
+    response = requests.get(url, headers=dict(HEADERS))
     if response.ok:
         ld_json_match = re.search(r'<script type="application/ld\+json">([^<]+?)</script>',
                                   response.text)

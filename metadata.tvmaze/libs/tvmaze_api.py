@@ -19,8 +19,9 @@ import logging
 from pprint import pformat
 from typing import Text, Optional, Union, List, Dict, Any
 
+import simple_requests as requests
+
 from . import cache_service as cache
-from . import simple_requests as requests
 from .imdb_rating import get_imdb_rating
 
 InfoType = Dict[str, Any]  # pylint: disable=invalid-name
