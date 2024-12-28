@@ -291,6 +291,16 @@
 						<heading/>
 					</control>
 				</setting>
+				<setting id="maxartwork" type="integer" label="30015" help="">
+					<level>2</level>
+					<default>10</default>
+					<constraints>
+						<minimum>10</minimum>
+						<step>10</step>
+						<maximum>100</maximum>
+					</constraints>
+					<control type="slider" format="integer" />
+				</setting>
 			</group>
 		</category>
 		<category id="fanarttv" label="30999" help="">

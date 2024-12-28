@@ -19,6 +19,12 @@ ARTMAP = {
     'movieposter': 'poster'
 }
 
+HEADERS = (
+    ('User-Agent', 'Kodi Movie scraper by Team Kodi'),
+    ('api-key', API_KEY),
+)
+
+
 def get_details(uniqueids, clientkey, language, set_tmdbid):
     media_id = _get_mediaid(uniqueids)
     if not media_id:
@@ -48,7 +54,7 @@ def _get_mediaid(uniqueids):
             return uniqueids[source]
 
 def _get_data(media_id, clientkey):
-    headers = {'api-key': API_KEY}
+    headers = dict(HEADERS)
     if clientkey:
         headers['client-key'] = clientkey
     api_utils.set_headers(headers)

@@ -85,6 +85,10 @@ msgctxt "#30014"
 msgid "Enable posters from TMDb"
 msgstr ""
 
+msgctxt "#30015"
+msgid "Maximum number of each artwork type - many artwork can cause an error scraping to MySQL database"
+msgstr ""
+
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
 msgstr "Izmantot fanu veidotiem attēliem no Fanart.tv vietnes sekojošo valodu"
