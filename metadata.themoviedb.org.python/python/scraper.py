@@ -81,12 +81,10 @@ def _searchresult_to_listitem(movie):
 
     return listitem
 
-# Low limit because a big list of artwork can cause trouble in some cases
+# Default limit of 10 because a big list of artwork can cause trouble in some cases
 # (a column can be too large for the MySQL integration),
 # and how useful is a big list anyway? Not exactly rhetorical, this is an experiment.
-IMAGE_LIMIT = 10
-
-def add_artworks(listitem, artworks):
+def add_artworks(listitem, artworks, IMAGE_LIMIT):
     infotag = listitem.getVideoInfoTag()
     for arttype, artlist in artworks.items():
         if arttype == 'fanart':
@@ -144,7 +142,8 @@ def get_details(input_uniqueids, handle, settings, fail_silently=False):
     infotag.setCast(build_cast(details['cast']))
     infotag.setUniqueIDs(details['uniqueids'], 'tmdb')
     infotag.setRatings(build_ratings(details['ratings']), find_defaultrating(details['ratings']))
-    add_artworks(listitem, details['available_art'])
+    IMAGE_LIMIT = settings.getSettingInt('maxartwork')
+    add_artworks(listitem, details['available_art'], IMAGE_LIMIT)
 
     xbmcplugin.setResolvedUrl(handle=handle, succeeded=True, listitem=listitem)
     return True

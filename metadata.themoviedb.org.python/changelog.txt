@@ -1,3 +1,7 @@
+v3.1.0 (2024-12-28)
+- add option to increase available artwork per art type
+- fix for inability to scrape IMDB ratings
+
 v3.0.1 (2024-04-22)
 - fix scraper error when tags are disabled
 
