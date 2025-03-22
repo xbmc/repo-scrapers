@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.themoviedb.org.python"
        name="The Movie Database Python"
-       version="3.1.0"
+       version="3.1.1"
        provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.metadata" version="2.1.0"/>
@@ -11,7 +11,11 @@
              library="python/scraper.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>v3.1.0 (2024-12-28)
+    <news>v3.1.1 (2025-03-21)
+- fix search for titles with accented characters
+- fix rare failure to find by IMDB number
+
+v3.1.0 (2024-12-28)
 - add option to increase available artwork per art type
 - fix for inability to scrape IMDB ratings
 

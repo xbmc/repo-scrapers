@@ -18,6 +18,7 @@
 
 """Functions to interact with TMDb API."""
 
+import unicodedata
 from . import api_utils
 import xbmc
 try:
@@ -52,6 +53,7 @@ def search_movie(query, year=None, language=None, page=None):
     :param page: the results page to return (optional)
     :return: a list with found movies
     """
+    query = unicodedata.normalize('NFC', query)
     xbmc.log('using title of %s to find movie' % query, xbmc.LOGDEBUG)
     theurl = SEARCH_URL
     params = _set_params(None, language)

@@ -63,7 +63,21 @@ class TMDBMovieScraper(object):
         return result
 
     def get_details(self, uniqueids):
-        media_id = uniqueids.get('tmdb') or uniqueids.get('imdb')
+        media_id = uniqueids.get('tmdb')
+        if not media_id:
+            imdb_id = uniqueids.get('imdb')
+            if not imdb_id:
+                return None
+
+            find_results = tmdbapi.find_movie_by_external_id(imdb_id)
+            if 'error' in find_results:
+                return find_results
+            if find_results.get('movie_results'):
+                movie = find_results['movie_results'][0]
+                media_id = movie['id']
+            if not media_id:
+                return None
+
         details = self._gather_details(media_id)
         if not details:
             return None
