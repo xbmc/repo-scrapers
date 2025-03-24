@@ -193,6 +193,7 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         params = _get_params()
         params['append_to_response'] = 'credits,content_ratings,external_ids,images,videos,keywords'
         params['include_image_language'] = '%s,en,null' % source_settings["LANG_IMAGES"][0:2]
+        params['include_video_language'] = '%s,en,null' % source_settings["LANG_IMAGES"][0:2]
         show_info = api_utils.load_info(
             show_url, params=params, verboselog=source_settings["VERBOSELOG"])
         if show_info is None:

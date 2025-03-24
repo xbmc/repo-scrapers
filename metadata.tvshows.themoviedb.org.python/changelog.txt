@@ -1,3 +1,6 @@
+1.7.3
+fix to properly using English videos as fallback
+
 1.7.2
 fix for inability to scrape IMDB ratings
 
