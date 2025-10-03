@@ -213,7 +213,7 @@ def set_show_artwork(show_info, list_item):
             fanart_list = []
             for image in image_list:
                 theurl, previewurl = get_image_urls(image)
-                if image.get('iso_639_1') != None and SOURCE_SETTINGS["CATLANDSCAPE"] and theurl:
+                if (image.get('iso_639_1') != None and image.get('iso_639_1').lower() != 'xx') and SOURCE_SETTINGS["CATLANDSCAPE"] and theurl:
                     vtag.addAvailableArtwork(
                         theurl, arttype="landscape", preview=previewurl)
                 elif theurl:
