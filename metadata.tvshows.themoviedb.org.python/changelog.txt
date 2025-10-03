@@ -1,3 +1,6 @@
+1.4.20
+fix for breaking change to TMDB API for fanart
+
 1.4.19
 made search of NFO file for a UniqueID less aggressive
 updated language files
