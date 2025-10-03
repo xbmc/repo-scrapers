@@ -14,18 +14,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import json
+import logging
 import re
 from typing import Dict, Union, Optional
 
-from . import simple_requests as requests
-from .utils import logger
+import simple_requests as requests
 
 IMDB_TITLE_URL = 'https://www.imdb.com/title/{}/'
+
+HEADERS = (
+    ('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
+                   '(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'),
+    ('Accept', 'text/html'),
+)
 
 
 def get_imdb_rating(imdb_id: str) -> Optional[Dict[str, Union[int, float]]]:
     url = IMDB_TITLE_URL.format(imdb_id)
-    response = requests.get(url)
+    response = requests.get(url, headers=dict(HEADERS))
     if response.ok:
         ld_json_match = re.search(r'<script type="application/ld\+json">([^<]+?)</script>',
                                   response.text)
@@ -36,6 +42,6 @@ def get_imdb_rating(imdb_id: str) -> Optional[Dict[str, Union[int, float]]]:
                 rating = aggregate_rating['ratingValue']
                 votes = aggregate_rating['ratingCount']
                 return {'rating': rating, 'votes': votes}
-    logger.debug(f'Unable to get IMDB rating for ID {imdb_id}. '
-                 f'Status: {response.status_code}, response: {response.text}')
+    logging.debug('Unable to get IMDB rating for ID %s. Status: %s, response: %s',
+                  imdb_id, response.status_code, response.text)
     return None

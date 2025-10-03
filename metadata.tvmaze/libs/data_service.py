@@ -15,6 +15,7 @@
 
 """Functions to process data"""
 import json
+import logging
 import re
 from collections import defaultdict
 from typing import Optional, Dict, List, Any, Sequence, NamedTuple
@@ -26,7 +27,6 @@ except ImportError:
 from xbmcgui import ListItem
 
 from . import tvmaze_api, cache_service as cache
-from .utils import logger
 
 InfoType = Dict[str, Any]  # pylint: disable=invalid-name
 
@@ -47,7 +47,7 @@ CLEAN_PLOT_REPLACEMENTS = (
     ('</i>', '[/I]'),
     ('</p><p>', '[CR]'),
 )
-SUPPORTED_EXTERNAL_IDS = ('tvdb', 'imdb')
+SUPPORTED_EXTERNAL_IDS = ('tvdb', 'thetvdb', 'imdb')
 
 
 class UrlParseResult(NamedTuple):
@@ -116,7 +116,7 @@ def get_episode_info(show_id: str,
             key = f'{episode_id}_{season}_{episode}'
             episode_info = episodes_map[key]
         except KeyError as exc:
-            logger.error(f'Unable to retrieve episode info: {exc}')
+            logging.error('Unable to retrieve episode info: %s', exc)
     if episode_info is None:
         episode_info = tvmaze_api.load_episode_info(episode_id)
     return episode_info
@@ -313,9 +313,9 @@ def parse_url_nfo_contents(nfo: str) -> Optional[UrlParseResult]:
         if show_id_match is not None:
             provider = show_id_match.group(1)
             show_id = show_id_match.group(2)
-            logger.debug(f'Matched show ID {show_id} by regexp "{regexp}"')
+            logging.debug('Matched show ID %s by regexp "%s"', show_id, regexp)
             return UrlParseResult(provider, show_id)
-    logger.debug('Unable to find show ID in an NFO file')
+    logging.debug('Unable to find show ID in an NFO file')
     return None
 
 
@@ -403,7 +403,7 @@ def _filter_by_year(shows: List[InfoType], year: str) -> Optional[InfoType]:
 
 
 def search_show(title: str, year: str) -> Sequence[InfoType]:
-    logger.debug(f'Searching for TV show {title} ({year})')
+    logging.debug(f'Searching for TV show %s (%s)', title, year)
     raw_search_results = tvmaze_api.search_show(title)
     search_results = [res['show'] for res in raw_search_results]
     if len(search_results) > 1 and year:

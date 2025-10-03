@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2022-08-12 22:37+0000\n"
 "Last-Translator: Xean <xeanhort007@gmail.com>\n"
@@ -52,6 +52,10 @@ msgstr "Classifica el fanart amb text com a art panoràmic"
 msgctxt "#30006"
 msgid "Include country code with studio"
 msgstr "Inclou el codi de país amb l'estudi"
+
+msgctxt "#30007"
+msgid "Add keywords as tags"
+msgstr ""
 
 # empty strings from 30007 to 30099
 msgctxt "#30100"

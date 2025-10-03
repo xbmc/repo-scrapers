@@ -95,13 +95,15 @@ def add_artworks(listitem, artworks):
         for image in artworks.get('fanart', ())[:IMAGE_LIMIT]]
     listitem.setAvailableFanart(fanart_to_set)
 
-def get_details(input_uniqueids, handle, settings):
+def get_details(input_uniqueids, handle, settings, fail_silently=False):
     if not input_uniqueids:
         return False
     details = get_tmdb_scraper(settings).get_details(input_uniqueids)
     if not details:
         return False
     if 'error' in details:
+        if fail_silently:
+            return False
         header = "The Movie Database Python error with web service TMDB"
         xbmcgui.Dialog().notification(header, details['error'], xbmcgui.NOTIFICATION_WARNING)
         log(header + ': ' + details['error'], xbmc.LOGWARNING)
@@ -174,8 +176,9 @@ def run():
         action = params["action"]
         if action == 'find' and 'title' in params:
             search_for_movie(params["title"], params.get("year"), params['handle'], settings)
-        elif action == 'getdetails' and 'url' in params:
-            enddir = not get_details(parse_lookup_string(params["url"]), params['handle'], settings)
+        elif action == 'getdetails' and ('url' in params or 'uniqueIDs' in params):
+            unique_ids = parse_lookup_string(params.get('uniqueIDs') or params.get('url'))
+            enddir = not get_details(unique_ids, params['handle'], settings, fail_silently='uniqueIDs' in params)
         elif action == 'NfoUrl' and 'nfo' in params:
             find_uniqueids_in_nfo(params["nfo"], params['handle'])
         else:

@@ -16,6 +16,7 @@
 """Plugin route actions"""
 
 import json
+import logging
 import sys
 from typing import Optional
 from urllib import parse as urllib_parse
@@ -24,7 +25,7 @@ import xbmcgui
 import xbmcplugin
 
 from . import tvmaze_api, data_service
-from .utils import logger, get_episode_order, ADDON
+from .utils import get_episode_order, ADDON
 
 HANDLE = int(sys.argv[1])
 
@@ -60,7 +61,7 @@ def parse_nfo_file(nfo: str, full_nfo: bool):
     :param full_nfo: use the info from an NFO and not to try to get the info by the scraper
     """
     is_tvshow_nfo = True
-    logger.debug(f'Trying to parse NFO file:\n{nfo}')
+    logging.debug('Trying to parse NFO file:\n%s', nfo)
     info = None
     if '<episodedetails>' in nfo:
         if full_nfo:
@@ -94,33 +95,40 @@ def parse_nfo_file(nfo: str, full_nfo: bool):
         )
 
 
-def get_details(show_id: str, default_rating: str) -> None:
+def get_details(show_id: Optional[str], default_rating: str, unique_ids: Optional[str] = None) -> None:
     """Get details about a specific show"""
-    logger.debug(f'Getting details for show id {show_id}')
+    logging.debug('Getting details for show id %s', show_id)
+    if not show_id and unique_ids is not None:
+        show_id = data_service.parse_json_episogeguide(unique_ids)
+        if not show_id:
+            xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
+            return
     show_info = tvmaze_api.load_show_info(show_id)
     if show_info is not None:
         list_item = xbmcgui.ListItem(show_info['name'], offscreen=True)
         list_item = data_service.add_main_show_info(list_item, show_info,
                                                     default_rating=default_rating)
         xbmcplugin.setResolvedUrl(HANDLE, True, list_item)
-    else:
-        xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
+        return
+    xbmcplugin.setResolvedUrl(HANDLE, False, xbmcgui.ListItem(offscreen=True))
 
 
 def get_episode_list(episodeguide: str, episode_order: str) -> None:  # pylint: disable=missing-docstring
-    logger.debug(f'Getting episode list for episodeguide {episodeguide}, order: {episode_order}')
+    logging.debug('Getting episode list for episodeguide %s, order: %s',
+                  episodeguide, episode_order)
     show_id = None
     if episodeguide.startswith('{'):
         show_id = data_service.parse_json_episogeguide(episodeguide)
         if show_id is None:
-            logger.error(f'Unable to determine TVmaze show ID from episodeguide: {episodeguide}')
+            logging.error(f'Unable to determine TVmaze show ID from episodeguide: %s', episodeguide)
             return
     if show_id is None and not episodeguide.isdigit():
-        logger.warning(f'Invalid episodeguide format: {episodeguide} (probably URL).')
+        logging.warning('Invalid episodeguide format: %s (probably URL).', episodeguide)
         show_id = data_service.parse_url_episodeguide(episodeguide)
     if show_id is None and episodeguide.isdigit():
-        logger.warning(f'Invalid episodeguide format: {episodeguide} (a numeric string). '
-                       f'Please consider re-scanning the show to update episodeguide record.')
+        logging.warning('Invalid episodeguide format: %s (a numeric string). '
+                        'Please consider re-scanning the show to update episodeguide record.',
+                        episodeguide)
         show_id = episodeguide
     if show_id is not None:
         episodes_map = data_service.get_episodes_map(show_id, episode_order)
@@ -147,7 +155,7 @@ def get_episode_list(episodeguide: str, episode_order: str) -> None:  # pylint: 
 def get_episode_details(encoded_ids: str, episode_order: str) -> None:  # pylint: disable=missing-docstring
     encoded_ids = urllib_parse.unquote(encoded_ids)
     decoded_ids = dict(urllib_parse.parse_qsl(encoded_ids))
-    logger.debug(f'Getting episode details for {decoded_ids}')
+    logging.debug('Getting episode details for %s', decoded_ids)
     episode_info = data_service.get_episode_info(decoded_ids['show_id'],
                                                  decoded_ids['episode_id'],
                                                  decoded_ids['season'],
@@ -167,7 +175,7 @@ def get_artwork(show_id: str) -> None:
 
     :param show_id: default unique ID set by setUniqueIDs() method
     """
-    logger.debug(f'Getting artwork for show ID {show_id}')
+    logging.debug('Getting artwork for show ID %s', show_id)
     if show_id:
         show_info = tvmaze_api.load_show_info(show_id)
         if show_info is not None:
@@ -186,9 +194,9 @@ def router(paramstring: str) -> None:
     :raises RuntimeError: on unknown call action
     """
     params = dict(urllib_parse.parse_qsl(paramstring))
-    logger.debug(f'Called addon with params: {sys.argv}')
+    logging.debug('Called addon with params: %s', str(sys.argv))
     path_settings = json.loads(params.get('pathSettings') or '{}')
-    logger.debug(f'Path settings: {path_settings}')
+    logging.debug('Path settings: %s', path_settings)
     episode_order = get_episode_order(path_settings)
     default_rating = path_settings.get('default_rating')
     if default_rating is None:
@@ -201,7 +209,9 @@ def router(paramstring: str) -> None:
     elif params['action'].lower() == 'nfourl':
         parse_nfo_file(params['nfo'], full_nfo)
     elif params['action'] == 'getdetails':
-        get_details(params['url'], default_rating)
+        url = params.get('url')
+        unique_ids = params.get('uniqueIDs')
+        get_details(url, default_rating, unique_ids)
     elif params['action'] == 'getepisodelist':
         get_episode_list(params['url'], episode_order)
     elif params['action'] == 'getepisodedetails':

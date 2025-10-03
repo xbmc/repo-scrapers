@@ -14,6 +14,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 """Misc utils"""
+import logging
 from typing import Text, Any, Dict
 
 import xbmc
@@ -22,6 +23,8 @@ from xbmcaddon import Addon
 ADDON = Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 VERSION = ADDON.getAddonInfo('version')
+
+LOG_FORMAT = '[{addon_id} v.{addon_version}] {filename}:{lineno} - {message}'
 
 EPISODE_ORDER_MAP = {
     0: 'default',
@@ -34,29 +37,43 @@ EPISODE_ORDER_MAP = {
 }
 
 
-class logger:
-    log_message_prefix = f'[{ADDON_ID} ({VERSION})]: '
+class KodiLogHandler(logging.Handler):
+    """
+    Logging handler that writes to the Kodi log with correct levels
 
-    @staticmethod
-    def log(message: str, level: int = xbmc.LOGDEBUG) -> None:
-        message = logger.log_message_prefix + message
-        xbmc.log(message, level)
+    It also adds {addon_id} and {addon_version} variables available to log format.
+    """
+    LEVEL_MAP = {
+        logging.NOTSET: xbmc.LOGNONE,
+        logging.DEBUG: xbmc.LOGDEBUG,
+        logging.INFO: xbmc.LOGINFO,
+        logging.WARN: xbmc.LOGWARNING,
+        logging.WARNING: xbmc.LOGWARNING,
+        logging.ERROR: xbmc.LOGERROR,
+        logging.CRITICAL: xbmc.LOGFATAL,
+    }
 
-    @classmethod
-    def info(cls, message: str) -> None:
-        cls.log(message, xbmc.LOGINFO)
+    def emit(self, record):
+        record.addon_id = ADDON_ID
+        record.addon_version = VERSION
+        message = self.format(record)
+        kodi_log_level = self.LEVEL_MAP.get(record.levelno, xbmc.LOGDEBUG)
+        xbmc.log(message, level=kodi_log_level)
 
-    @classmethod
-    def error(cls, message: str) -> None:
-        cls.log(message, xbmc.LOGERROR)
 
-    @classmethod
-    def debug(cls, message: str) -> None:
-        logger.log(message, xbmc.LOGDEBUG)
+def initialize_logging():
+    """
+    Initialize the root logger that writes to the Kodi log
 
-    @classmethod
-    def warning(cls, message: str) -> None:
-        logger.log(message, xbmc.LOGWARNING)
+    After initialization, you can use Python logging facilities as usual.
+    """
+    logging.basicConfig(
+        format=LOG_FORMAT,
+        style='{',
+        level=logging.DEBUG,
+        handlers=[KodiLogHandler()],
+        force=True
+    )
 
 
 def get_episode_order(path_settings: Dict[Text, Any]) -> str:
