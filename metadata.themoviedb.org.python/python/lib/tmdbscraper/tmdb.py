@@ -189,7 +189,7 @@ def _parse_artwork(movie, collection, urlbases, language):
         posters = _get_images_with_fallback(movie['images']['posters'], urlbases, language)
         landscape = _get_images_with_fallback(movie['images']['backdrops'], urlbases, language)
         logos = _get_images_with_fallback(movie['images']['logos'], urlbases, language)
-        fanart = _get_images(movie['images']['backdrops'], urlbases, None)
+        fanart = _get_images(movie['images']['backdrops'], urlbases, 'xx')
 
     setposters = []
     setlandscape = []
@@ -197,7 +197,7 @@ def _parse_artwork(movie, collection, urlbases, language):
     if collection and 'images' in collection:
         setposters = _get_images_with_fallback(collection['images']['posters'], urlbases, language)
         setlandscape = _get_images_with_fallback(collection['images']['backdrops'], urlbases, language)
-        setfanart = _get_images(collection['images']['backdrops'], urlbases, None)
+        setfanart = _get_images(collection['images']['backdrops'], urlbases, 'xx')
 
     return {'poster': posters, 'landscape': landscape, 'fanart': fanart,
         'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart, 'clearlogo': logos}
