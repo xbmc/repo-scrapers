@@ -1,0 +1,45 @@
+# Copyright (C) 2019, Roman Miroshnychenko aka Roman V.M.
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+import json
+import logging
+import re
+from typing import Dict, Union, Optional
+
+import simple_requests as requests
+
+IMDB_TITLE_URL = 'https://www.imdb.com/title/{}/'
+
+HEADERS = (
+    ('User-Agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 '
+                   '(KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'),
+    ('Accept', 'text/html'),
+)
+
+
+def get_imdb_rating(imdb_id: str) -> Optional[Dict[str, Union[int, float]]]:
+    url = IMDB_TITLE_URL.format(imdb_id)
+    response = requests.get(url, headers=dict(HEADERS))
+    if (response.ok
+            and (ld_json_match := re.search(
+                r'<script type="application/ld\+json">([^<]+?)</script>', response.text))):
+        ld_json = json.loads(ld_json_match.group(1))
+        if aggregate_rating := ld_json.get('aggregateRating'):
+            rating = aggregate_rating['ratingValue']
+            votes = aggregate_rating['ratingCount']
+            return {'rating': rating, 'votes': votes}
+    logging.debug('Unable to get IMDB rating for ID %s. Status: %s, response: %s',
+                  imdb_id, response.status_code, response.text)
+    return None
