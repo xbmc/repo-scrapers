@@ -1,3 +1,6 @@
+[B]v5.5.24[/B]
+- Translations updates from Weblate
+
 [B]v5.5.23[/B]
 - Translations updates from Weblate
 
