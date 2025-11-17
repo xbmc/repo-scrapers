@@ -31,7 +31,7 @@
 
   <category label="30200">
     <setting type="sep"/>
-    <setting label="30015" type="labelenum" values="IMDbFull|themoviedb.org" id="creditssource" default="themoviedb.org"/>
+    <setting label="30015" type="labelenum" values="IMDb|IMDbFull|themoviedb.org" id="creditssource" default="themoviedb.org"/>
     <setting type="sep"/>
     <setting label="30201" type="labelenum" values="IMDb|themoviedb.org" id="studiosource" default="themoviedb.org"/>
     <setting type="sep"/>
