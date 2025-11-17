@@ -1,3 +1,6 @@
+[B]v5.6.1[/B]
+- Remove option to use IMDb as search engine
+
 [B]v5.6.0[/B]
 - Fixed: IMDb scraping
 
