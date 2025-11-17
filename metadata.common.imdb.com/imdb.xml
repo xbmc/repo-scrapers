@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scraperfunctions>
 	<GetIMDBGenresById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBGenres&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBGenres&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBGenresById>
@@ -27,7 +27,7 @@
 	</ParseIMDBGenres>
 
 	<GetIMDBRatingsById dest="5" clearbuffers="no">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-main.html&quot; function=&quot;ParseIMDBRatings&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-main.html&quot; function=&quot;ParseIMDBRatings&quot;&gt;https://www.imdb.com/title/\1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1">^(tt\d+)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="default=&quot;true&quot;" dest="3">
@@ -47,7 +47,7 @@
 	</ParseIMDBRatings>
 
 	<GetIMDBTOP250ById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTOP250&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBTOP250&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTOP250ById>
@@ -64,7 +64,7 @@
 	</ParseIMDBTOP250>
 
 	<GetIMDBStudioById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBStudio&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBStudio&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBStudioById>
@@ -78,7 +78,7 @@
 	</ParseIMDBStudio>
 
 	<GetIMDBCountryById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCountry&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCountry&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCountryById>
@@ -98,7 +98,7 @@
 	</ParseIMDBCountry>
 
 	<GetMetaCriticRatingsById dest="5" clearbuffers="no">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-criticreviews.html&quot; function=&quot;ParseMetaCriticRatings&quot;&gt;https://www.imdb.com/title/\1/criticreviews/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;\1-criticreviews.html&quot; function=&quot;ParseMetaCriticRatings&quot;&gt;https://www.imdb.com/title/\1/criticreviews/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1">(tt\d+)</expression>
 		</RegExp>
 		<RegExp input="$$1" output="default=&quot;true&quot;" dest="3">
@@ -121,38 +121,35 @@
 	</ParseMetaCriticRatings>
 
 	<GetIMDBPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBPlot&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBPlotById>
 	<ParseIMDBPlot dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;&lt;plot&gt;\1&lt;/plot&gt;&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="2">
-				<expression fixchars="1" trim="1">label&quot;&gt;Plot Summary&lt;\/td&gt;.*?&lt;td&gt;.*?(?:&lt;p&gt;)?(.*?)(?:&lt;ul cl|&lt;em cl|&lt;\/p&gt;|&lt;\/td&gt;)</expression>
+				<expression fixchars="1" trim="1" clear="yes">&quot;summaries&quot;:.*?&quot;plaidHtml&quot;:&quot;([^&quot;]*)&quot;</expression>
 			</RegExp>
-			<RegExp input="$$1" output="qxq\1" dest="2+">
-				<expression fixchars="1" trim="1">section class=&quot;titlereference-section-overview&quot;&gt;.*?&lt;div&gt;.*?(\w.*?)&lt;\/div&gt;</expression>				
-			</RegExp>
-			<expression noclean="1">(.+(?=qxq)|(?&lt;=qxq).+)</expression>
+			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBPlot>
 
 	<GetIMDBTaglineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBTagline&quot;&gt;https://www.imdb.com/title/$$1/reference|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBTaglineById>
 	<ParseIMDBTagline dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="&lt;tagline&gt;\1&lt;/tagline&gt;" dest="2">
-				<expression fixchars="1" trim="1">label&quot;&gt;Taglines&lt;\/td&gt;.*?&lt;td&gt;.*?(\w.*?)(?:&lt;a .*?&lt;\/a&gt;|&lt;\/td&gt;)</expression>
+				<expression fixchars="1" trim="1">&quot;taglines&quot;:\{&quot;edges&quot;:\[\{&quot;node&quot;:\{&quot;text&quot;:&quot;([^&quot;]+)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBTagline>
 
 	<GetIMDBOutlineById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutline&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutline&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBOutlineById>
@@ -166,7 +163,7 @@
 	</ParseIMDBOutline>
 
 	<GetIMDBOutlineToPlotById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutlineToPlot&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBOutlineToPlot&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBOutlineToPlotById>
@@ -179,122 +176,96 @@
 		</RegExp>
 	</ParseIMDBOutlineToPlot>
 
-	<GetIMDBCastById dest="5"> <!-- Broken -->
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCast&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+	<GetIMDBCastById dest="5"> <!-- Only Topcast -->
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCast&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBCastById>
 	<ParseIMDBCast dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">&lt;table\sclass=&quot;cast_list&quot;&gt;(.*?)&lt;/table&gt;</expression>
-			</RegExp>
-			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\2\3SX1024_SY1024_.jpg&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\5&lt;/role&gt;&lt;/actor&gt;" dest="7">
-				<expression repeat="yes" clear="yes" trim="3,4" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*&quot;\sclass=&quot;loadlate\shidden\s&quot;\sloadlate=&quot;([^&quot;]*)(_V..?_))[^&gt;]*.*?ter&quot;&gt;[^&gt;]*&gt;(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
-			</RegExp>
-			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="7+">
-				<expression repeat="yes" trim="1,2,3" fixchars="3" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*\.png)&quot;\sclass=&quot;.*?&quot;\s/&gt;*.*?ter&quot;&gt;[^&gt;]*&gt;(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;thumb&gt;\1&lt;/thumb&gt;\2&lt;/actor&gt;" dest="2+">
-				<expression repeat="yes" clear="yes" noclean="1,2,3">&lt;actor&gt;&lt;thumb&gt;(?:(http.*?)|_SX[0-9]+_SY[0-9]+_)?&lt;/thumb&gt;(.*?)&lt;/actor&gt;</expression>
+			<RegExp input="$$1" output="&lt;actor&gt;&lt;thumb&gt;\1\2&lt;/thumb&gt;&lt;name&gt;\3&lt;/name&gt;&lt;role&gt;\4&lt;/role&gt;&lt;/actor&gt;" dest="2">
+				<expression repeat="yes" fixchars="1" noclean="1">data-testid=&quot;title-cast-item&quot;.*?(?:src=&quot;([^&quot;]*)&quot;.*?data-testid=&quot;title-cast-item__actor&quot;|data-testid=&quot;title-cast-item__actor&quot;.*?src=&quot;([^&quot;]*)&quot;) href=&quot;[^&quot;]*&quot;[^&gt;]*&gt;([^&lt;]+)&lt;/a&gt;.*?/characters/[^&quot;]*&quot;.*?&gt;&lt;span[^&gt;]*&gt;([^&lt;]+)&lt;/span&gt;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBCast>
 
 	<GetIMDBDirectorsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBDirectors&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBDirectors&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBDirectorsById>
 	<ParseIMDBDirectors dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression clear="yes" noclean="1">&quot;director&quot;(.*?)]</expression>
+				<expression clear="yes" noclean="1">&quot;grouping&quot;:\{&quot;text&quot;:&quot;Director&quot;.*?&quot;credits&quot;:\[(.*?)\]</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="2">
-				<expression repeat="yes" fixchars="yes" clear="yes">&quot;name&quot;:&quot;([^&quot;]*)</expression>
+				<expression repeat="yes" fixchars="yes" clear="yes">&quot;nameText&quot;:\{&quot;text&quot;:&quot;([^&quot;]+)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBDirectors>
 
 	<GetIMDBWritersById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBWriters&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBWriters&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBWritersById>
 	<ParseIMDBWriters dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression clear="yes" noclean="1">&quot;creator&quot;(.*?)]</expression>
+				<expression clear="yes" noclean="1">&quot;grouping&quot;:\{&quot;text&quot;:&quot;Writers&quot;.*?&quot;credits&quot;:\[(.*?)\]</expression>
 			</RegExp>
-			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
-				<expression repeat="yes" fixchars="yes" clear="yes">&quot;name&quot;:&quot;([^&quot;]*)</expression>
-			</RegExp>
-			<expression noclean="1" />
+		<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
+			<expression repeat="yes" fixchars="yes" clear="yes">&quot;nameText&quot;:\{&quot;text&quot;:&quot;([^&quot;]+)&quot;</expression>
+		</RegExp>
+		<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBWriters>
 
 	<GetIMDBFullCastById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBFullCast&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBCast&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullCastById>
-	<ParseIMDBFullCast dest="5">
-		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
-			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">&lt;table\sclass=&quot;cast_list&quot;&gt;(.*?)&lt;/table&gt;</expression>
-			</RegExp>
-			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;\2\3SX1024_SY1024_.jpg&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\5&lt;/role&gt;&lt;/actor&gt;" dest="7">
-				<expression repeat="yes" clear="yes" trim="3,4" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*&quot;\sclass=&quot;loadlate\shidden\s&quot;\sloadlate=&quot;([^&quot;]*)(_V..?_))[^&gt;]*.*?ter&quot;&gt;[^&gt;]*&gt;\n\s*(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
-			</RegExp>
-			<RegExp input="$$6" output="&lt;actor&gt;&lt;thumb&gt;&lt;/thumb&gt;&lt;name&gt;\1&lt;/name&gt;&lt;role&gt;\3&lt;/role&gt;&lt;/actor&gt;" dest="7+">
-				<expression repeat="yes" trim="1,2,3" fixchars="3" noclean="1,2">&lt;img[^a]*alt=&quot;([^&quot;]*)&quot;[^&quot;]*&quot;[^&quot;]*&quot;[^s]*src=&quot;(?:[^&quot;]*\.[^&quot;]*\.png)&quot;\sclass=&quot;.*?&quot;\s/&gt;*.*?ter&quot;&gt;[^&gt;]*&gt;\n\s*(&lt;[^&gt;]*&gt;)?([^&lt;\(]*)?</expression>
-			</RegExp>
-			<RegExp input="$$7" output="&lt;actor&gt;&lt;thumb&gt;\1&lt;/thumb&gt;\2&lt;/actor&gt;" dest="2+">
-				<expression repeat="yes" clear="yes" noclean="1,2,3">&lt;actor&gt;&lt;thumb&gt;(?:(http.*?)|_SX[0-9]+_SY[0-9]+_)?&lt;/thumb&gt;(.*?)&lt;/actor&gt;</expression>
-			</RegExp>
-			<expression noclean="1" />
-		</RegExp>
-	</ParseIMDBFullCast>
 
 	<GetIMDBFullDirectorsById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBFullDirectors&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-fullcredits.html&quot; function=&quot;ParseIMDBFullDirectors&quot;&gt;https://www.imdb.com/title/$$1/fullcredits/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=text/html&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullDirectorsById>
 	<ParseIMDBFullDirectors dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression clear="yes" noclean="1">Director(?:s)?:.*?ipl-inline-list[^&gt;]*&gt;(.*?)&lt;/div</expression>
+				<expression clear="yes" noclean="1">&quot;directorsPageTitle&quot;:\[\{&quot;credits&quot;:\[(.*?)\]\}</expression>
 			</RegExp>
 			<RegExp input="$$6" output="&lt;director&gt;\1&lt;/director&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&lt;a href=&quot;/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
+				<expression repeat="yes" fixchars="1" clear="yes">&quot;nameText&quot;:\{&quot;text&quot;:&quot;([^&quot;]+)&quot;</expression>
 			</RegExp>
 			<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBFullDirectors>
 
 	<GetIMDBFullWritersById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBFullWriters&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-fullcredits.html&quot; function=&quot;ParseIMDBFullWriters&quot;&gt;https://www.imdb.com/title/$$1/fullcredits/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=text/html&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBFullWritersById>
 	<ParseIMDBFullWriters dest="5">
 		<RegExp input="$$2" output="&lt;details&gt;\1&lt;/details&gt;" dest="5">
 			<RegExp input="$$1" output="\1" dest="6">
-				<expression noclean="1">Writer(?:s)?:.*?ipl-inline-list[^&gt;]*&gt;(.*?)&lt;/div</expression>
+				<expression clear="yes" noclean="1">&quot;Writers&quot;(.+?)&quot;Cast&quot;</expression>
 			</RegExp>
-			<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
-				<expression repeat="yes" fixchars="1">&lt;a href=&quot;/name/[^&gt;]*&gt;([^&lt;]*)&lt;</expression>
-			</RegExp>
-			<expression noclean="1" />
+		<RegExp input="$$6" output="&lt;credits&gt;\1&lt;/credits&gt;" dest="2">
+			<expression repeat="yes" fixchars="yes" clear="yes">&quot;nameText&quot;:\{&quot;text&quot;:&quot;([^&quot;]+)&quot;</expression>
+		</RegExp>
+		<expression noclean="1" />
 		</RegExp>
 	</ParseIMDBFullWriters>
 
 	<GetIMDBThumbsById dest="5"> <!-- Broken -->
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBThumbs&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-main.html&quot; function=&quot;ParseIMDBThumbs&quot;&gt;https://www.imdb.com/title/$$1/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBThumbsById>
@@ -308,28 +279,22 @@
 	</ParseIMDBThumbs>
 
 	<GetIMDBUSACert dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBUSACert>
 	<ParseIMDBUSACert dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>&gt;\s*United\sStates:(TV-(Y7?|P?G|14|MA))&lt;/a&gt;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>&gt;\s*United\sStates:(P?G|PG-13|R|NC-17)&lt;/a&gt;</expression>
-		</RegExp>
-		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>MPAA&lt;/a&gt;:&lt;/h5&gt;&lt;div\sclass=&quot;info-content&quot;&gt;Rated\s(P?G|PG-13|R|NC-17)</expression>
+			<expression>&quot;rating&quot;:&quot;([^&quot;]+)&quot;,[^}]*?&quot;ratingsBody&quot;:\{&quot;id&quot;:&quot;MPAA&quot;[^\}]*\},&quot;country&quot;:\{&quot;id&quot;:&quot;US&quot;</expression>
 		</RegExp>
 	</ParseIMDBUSACert>
 
 	<GetIMDBCountryCert dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBCountryCert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBCountryCert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 		<RegExp input="$INFO[imdbcertcountry]" output="$$2" dest="5">
-			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="2">
+			<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-reference.html&quot; function=&quot;ParseIMDBUSACert&quot;&gt;https://www.imdb.com/title/$$1/reference/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="2">
 				<expression noclean="1"/>
 			</RegExp>
 			<expression>United States</expression>
@@ -337,12 +302,12 @@
 	</GetIMDBCountryCert>
 	<ParseIMDBCountryCert dest="5">
 		<RegExp input="$$1" output="&lt;details&gt;&lt;mpaa&gt;$INFO[certprefix]\1&lt;/mpaa&gt;&lt;/details&gt;" dest="5">
-			<expression>&gt;\s*$INFO[imdbcertcountry]:([^&lt;]+)&lt;/a&gt;</expression>
+			<expression>&quot;rating&quot;:&quot;([^&quot;]+)&quot;.*?&quot;country&quot;:\{&quot;id&quot;:&quot;[A-Z]+&quot;,&quot;text&quot;:&quot;$INFO[imdbcertcountry]&quot;</expression>
 		</RegExp>
 	</ParseIMDBCountryCert>
 
 	<GetIMDBAKATitlesById dest="5">
-		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-releaseinfo.html&quot; function=&quot;ParseIMDBAKATitles&quot;&gt;https://www.imdb.com/title/$$1/releaseinfo/|accept-language=en-us&lt;/url&gt;&lt;/details&gt;" dest="5">
+		<RegExp input="$$1" output="&lt;details&gt;&lt;url cache=&quot;$$1-releaseinfo.html&quot; function=&quot;ParseIMDBAKATitles&quot;&gt;https://www.imdb.com/title/$$1/releaseinfo/|accept-language=en-us&amp;User-Agent=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/87.0.4280.88%20Safari/537.36&amp;Accept=application/json&lt;/url&gt;&lt;/details&gt;" dest="5">
 			<expression noclean="1" />
 		</RegExp>
 	</GetIMDBAKATitlesById>
