@@ -7,27 +7,27 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-06-30 11:14+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2025-07-17 13:29+0000\n"
+"Last-Translator: Pavlo Marianov <acid@jack.kyiv.ua>\n"
 "Language-Team: Ukrainian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/uk_ua/>\n"
 "Language: uk_ua\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.13\n"
+"X-Generator: Weblate 5.12.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Універсальний шукач інформації про фільми"
+msgstr "Універсальний екстрактор для фільмів"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Universal Scraper зараз є найбільш настроювальним збирачем інформації з наступних підтримуваних сайтів: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Він є флагманом з усіх збирачів команди Kodi. Початковий пошук може бути завершений з TMDb або IMDb (згідно налаштувань), але разом з цим він може \"поле за полем\" встановити з якого сайту ви хочете отримувати специфічну інформацію."
+msgstr "Universal Scraper наразі є найбільш настроюваним екстрактором даних з наступних веб-сайтів: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Він є флагманом з усіх екстраторів від команди Kodi. Початковий пошук можна виконувати на TMDb або IMDb (згідно налаштувань), але разом з цим для кожного поля можна вказати окремий веб-сайт, звідки буде збиратись інформація."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "Включити малюнки з themoviedb.org"
+msgstr "Включити фанарт з themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
@@ -61,7 +61,7 @@ msgstr "Трейлери"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Отримувати ім'я набору (колекції) з themoviedb.org"
+msgstr "Отримувати ім'я набору (кіноциклу) з themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
@@ -82,7 +82,7 @@ msgstr "Бажана мова сюжету"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr "Отримувати типові рейтинги з"
+msgstr "Отримувати рейтинги за замовчуванням з"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,7 +106,7 @@ msgstr "Джерело жанрів"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr "Бажана мова заголовку"
+msgstr "Бажана мова назви"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -114,7 +114,7 @@ msgstr "Джерела трейлерів"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Колекції фільмів"
+msgstr "Кіноцикли"
 
 msgctxt "#30030"
 msgid "Rating Sources"
@@ -146,7 +146,7 @@ msgstr "Включити постери з trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "Включити обкладинки з trakt.tv"
+msgstr "Включити фанарт з trakt.tv"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
@@ -170,7 +170,7 @@ msgstr "Бажана мова гасла"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Отримувати IMDB TOP250 рейтинг"
+msgstr "Отримувати рейтинг IMDb TOP250"
 
 msgctxt "#30045"
 msgid "Get Outline From"
@@ -178,7 +178,7 @@ msgstr "Отримувати анотації з"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr "Бажана мова імені набору (колекції)"
+msgstr "Бажана мова набору (кіноциклу)"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -195,23 +195,23 @@ msgstr "Рейтинг"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr "Рейтинг створено за допомогою"
+msgstr "Рейтинг створено з допомогою"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr "Також отримувати оцінки з IMDb"
+msgstr "Також отримувати рейтинги з IMDb"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr "Також отримувати оцінки з Rotten Tomatoes"
+msgstr "Також отримувати рейтинги з Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr "Також отримувати оцінки з MetaCritic"
+msgstr "Також отримувати рейтинги з MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr "Також отримувати оцінки з themoviedb.org"
+msgstr "Також отримувати рейтинги з themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
@@ -219,15 +219,15 @@ msgstr "Використовувати середню оцінку з"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr "Ключ OMDB API"
+msgstr "Ключ API з OMDB"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr "Будь ласка, зареєструйте API-ключ в omdbapi.com і додайте його нижче"
+msgstr "Зареєструйте ключ API на omdbapi.com і додайте його нижче"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr "Також отримувати нетипові рейтинги Rotten Tomatoes"
+msgstr "Також отримувати нестандартні рейтинги Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -235,7 +235,7 @@ msgstr "Автори"
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr "Отримувати видавництво з"
+msgstr "Отримувати студію з"
 
 msgctxt "#30202"
 msgid "Get Country from"
@@ -259,7 +259,7 @@ msgstr "Використовувана пошукова система"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr "Додаткова мова пошуку (в доповнення до en-us)"
+msgstr "Додаткова мова пошуку (на додаток до en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
@@ -271,7 +271,7 @@ msgstr "Застереження:"
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Включення усіх категорій фільмів зменшить точність пошуку !!!"
+msgstr "Якщо включити усі категорії фільмів, це значно зменшить точність пошуку!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
@@ -291,7 +291,7 @@ msgstr "Фанарт"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "Джерела обкладинок"
+msgstr "Джерела фанарту"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
@@ -299,7 +299,7 @@ msgstr "Увімкнути постери з fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "Увімкнути обкладинки з fanart.tv"
+msgstr "Увімкнути фанарт з fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
@@ -311,15 +311,15 @@ msgstr "Обкладинка"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr "Дод. твори мистецтва"
+msgstr "Додаткові обкладинки"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr "Увімкнути clearlogo з fanart.tv"
+msgstr "Увімкнути чистий логотип з fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr "Увімкнути clearart з fanart.tv"
+msgstr "Увімкнути чисті зображення з fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
@@ -327,11 +327,11 @@ msgstr "Увімкнути банер фільму з fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "Увімкнути landscape фільму з fanart.tv"
+msgstr "Увімкнути пейзаж фільму з fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr "Увімкнути landscape фільму з themoviedb.org"
+msgstr "Увімкнути пейзаж фільму з themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
@@ -339,7 +339,7 @@ msgstr "Увімкнути обкладинку диска з fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr "Колекції мистецьких творів"
+msgstr "Обкладинка кіноциклу"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
@@ -351,11 +351,11 @@ msgstr "Увімкнути набір фанартів з fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr "Увімкнути набір clearlogo з fanart.tv"
+msgstr "Увімкнути набір чистих логотипів з fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr "Увімкнути набір clearart з fanart.tv"
+msgstr "Увімкнути набір чистих зображень з fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
@@ -363,7 +363,7 @@ msgstr "Увімкнути набір банерів з fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr "Увімкнути набір landscape з fanart.tv"
+msgstr "Увімкнути набір пейзажів з fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"

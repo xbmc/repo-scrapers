@@ -5,174 +5,173 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-10-07 16:49+0000\n"
-"Last-Translator: Jakub Fabijan <animatorzpolski@gmail.com>\n"
-"Language-Team: Esperanto <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/eo/>\n"
-"Language: eo\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: prs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Universala filma skrapilo"
+msgstr ""
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Universala filma skrapilo estas aktuale la plej tajlorebla skrapilo kolektanta informojn de la sekvantaj retejoj: IMDb, themoviedb.org, Rotten Tomatoes, OFDB.de, fanart.tv, port.hu. Tiu skrapilo estas aktuale la ĉefa el skrapiloj de Team-Kodi. La komenca serĉo povas esti farita aŭ sur TMDb aŭ IMDb (laŭ la agordoj), sed por ĉiu kampo vi povas elekti de kiu retejo vi volas specifan informon."
+msgstr ""
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "Ŝalti fanarton de themoviedb.org"
+msgstr ""
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr "Ŝalti afiŝojn de themoviedb.org"
+msgstr ""
 
 # empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr "Ŝalti afiŝojn de MoviePosterDB"
+msgstr ""
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr "Akiri antaŭprezentaĵojn rekte de YouTube"
+msgstr ""
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr "Preferata titola lingvo de"
+msgstr ""
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr "Ŝalti antaŭprezentaĵojn de themoviedb.org"
+msgstr ""
 
 # empty string with id 30010
 msgctxt "#30011"
 msgid "Poster"
-msgstr "Afiŝoj"
+msgstr ""
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Antaŭprezentaĵoj"
+msgstr ""
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Akiri nomo de serio (kolekto) de themoviedb.org"
+msgstr ""
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr "Akiri intrigon de"
+msgstr ""
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr "Akiri aktoraron / reĝisorojn / verkistojn de"
+msgstr ""
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr "Fontoj de intrigo"
+msgstr ""
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr "Preferata lingvo de intrigo"
+msgstr ""
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr "Akiri defaŭltajn pritaksojn de"
+msgstr ""
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr "Akiri ĝenrojn de"
+msgstr ""
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr "Akiri titolon de"
+msgstr ""
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr "Fontoj de titolo"
+msgstr ""
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr "Fontoj de aktoraro kaj dankoj"
+msgstr ""
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr "Fontoj de ĝenroj"
+msgstr ""
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr "Preferata titola lingvo"
+msgstr ""
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr "Fontoj de antaŭprezentaĵoj"
+msgstr ""
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Filmaj kolektoj"
+msgstr ""
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr "Fontoj de pritaksoj"
+msgstr ""
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr "Agordoj de aĝaj kategorioj"
+msgstr ""
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr "Akiri aĝan kategorion de"
+msgstr ""
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr "Preferata lando de aĝaj kategorioj"
+msgstr ""
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr "Preferata lingvo de afiŝo"
+msgstr ""
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr "Prefikso de aĝaj kategorioj"
+msgstr ""
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr "Ŝalti afiŝojn de trakt.tv"
+msgstr ""
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "Ŝalti fanartojn de trakt.tv"
+msgstr ""
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Ŝalti antaŭprezentaĵojn de trakt.tv"
+msgstr ""
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr "Lingvo de ĝenro"
+msgstr ""
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr "Preferata lingvo de antaŭprezentaĵo"
+msgstr ""
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr "Akiri sloganon de"
+msgstr ""
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr "Preferata lingvo de slogano"
+msgstr ""
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Akiri pritakson de IMDb TOP250"
+msgstr ""
 
 msgctxt "#30045"
 msgid "Get Outline From"
@@ -232,9 +231,10 @@ msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
 msgstr ""
 
+# empty strings from id 30119 to 30199
 msgctxt "#30200"
 msgid "Credits"
-msgstr "CrEditiis"
+msgstr ""
 
 msgctxt "#30201"
 msgid "Get Studio from"
@@ -244,9 +244,10 @@ msgctxt "#30202"
 msgid "Get Country from"
 msgstr ""
 
+# empty strings from id 30203 to 30299
 msgctxt "#30300"
 msgid "Search"
-msgstr "Serĉi"
+msgstr ""
 
 msgctxt "#30301"
 msgid "themoviedb.org"
@@ -254,7 +255,7 @@ msgstr ""
 
 msgctxt "#30302"
 msgid "IMDb"
-msgstr "IMDB"
+msgstr ""
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
@@ -280,9 +281,10 @@ msgctxt "#30308"
 msgid "Preferred Search Language"
 msgstr ""
 
+# empty strings from id 30309 to 30399
 msgctxt "#30400"
 msgid "Plot"
-msgstr "Intrigo"
+msgstr ""
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"

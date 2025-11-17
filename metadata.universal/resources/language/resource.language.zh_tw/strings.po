@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-22 08:48+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
-"Language-Team: Chinese (Taiwan) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/zh_tw/>\n"
+"PO-Revision-Date: 2025-09-23 09:29+0000\n"
+"Last-Translator: Jeremy Chen <jeremy@naviart.idv.tw>\n"
+"Language-Team: Chinese (Traditional Han script) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/zh_Hant/>\n"
 "Language: zh_tw\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 5.13.3\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -45,7 +45,7 @@ msgstr "直接從 YouTube 取得電影預告片"
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "偏好片名語言來自"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
@@ -78,11 +78,11 @@ msgstr "劇情大綱來源"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "偏好劇情大綱語言"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "取得預設評分資料從"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,7 +106,7 @@ msgstr "分類資訊來源"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "偏好片名語言"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
@@ -134,7 +134,7 @@ msgstr "偏好的認證國家"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "偏好海報語言"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -154,11 +154,11 @@ msgstr "從trakt.tv啟用預告片"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "類型語言"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "偏好預告片語言"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -166,7 +166,7 @@ msgstr "取得標語從"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "偏好標籤語言"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -178,7 +178,7 @@ msgstr "取得大綱從"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "偏好片集 (系列片) 名語言"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -186,7 +186,7 @@ msgstr "海報來源"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr ""
+msgstr "取得關鍵字並儲存為標籤從"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -195,39 +195,39 @@ msgstr "評分"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "產生評分從"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "同時取得 IMDb 評分"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "同時取得爛番茄評分"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "同時取得 MetaCritic 評分"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "同時取得 themoviedb.org 評分"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "使用分數聚合從"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB Api 金鑰"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "請至 omdbapi.com 註冊 Api 金鑰並將其加到上方"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "同時取得非預設爛番茄評分"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -259,11 +259,11 @@ msgstr "要使用的搜尋引擎"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "第二搜尋語言 (除 en-us 外)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "包括所有電影類別"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -275,7 +275,7 @@ msgstr "啟用所有電影類別將會降低搜尋的準確度 !!!"
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "偏好搜尋語言"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -295,15 +295,15 @@ msgstr "電影資訊來源"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 海報"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 美術圖"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "啟用 IMDb 海報"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -311,63 +311,63 @@ msgstr "圖片"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "額外的美術圖"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 透明底圖標"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 透明底美術圖"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影橫幅"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影橫幅大圖"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "啟用 themoviedb.org 電影橫幅大圖"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 光碟印刷圖"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "系列片美術圖"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集海報"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集美術圖"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集透明底圖標"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集透明底美術圖"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集橫幅"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集橫幅大圖"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "啟用 fanart.tv 電影集光碟印刷圖"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"

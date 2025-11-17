@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-02-21 13:13+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2025-01-24 16:09+0000\n"
+"Last-Translator: Heiko Berner <berner.h@gmail.com>\n"
 "Language-Team: Afrikaans (South Africa) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/af_za/>\n"
 "Language: af_za\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -24,6 +24,8 @@ msgstr "Universele Fliek Skraper"
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
 msgstr "Hierdie skraper kollekteer inligting van die volgende ondersteunde werwe: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv. Dit doen altyd die aanvanklike soektog op TMDb, maar daarna kan dit veld vir veld gestel word vanaf watter werf jy die spesifieke inligting wil hê."
+
+#, fuzzy
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
@@ -39,17 +41,17 @@ msgstr "Stel plakkate vanaf MoviePosterDB in staat"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr "Kry Voorskoue direk vanaf YouTube"
+msgstr "Kry Lokprente direk vanaf YouTube"
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr ""
+msgstr "Verkose Titel Taal vanaf"
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr "Stel voorskoue vanaf themoviedb.org in staat"
+msgstr "Stel lokprente vanaf themoviedb.org in staat"
 
 msgctxt "#30011"
 msgid "Poster"
@@ -57,7 +59,7 @@ msgstr "Plakkaat"
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Voorskoue"
+msgstr "Lokprente"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
@@ -78,11 +80,11 @@ msgstr "Plot Bronne"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr ""
+msgstr "Verkose Plot Taal"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr ""
+msgstr "Kry Verstek Graderings vanaf"
 
 msgctxt "#30022"
 msgid "Get Genres From"
@@ -106,11 +108,11 @@ msgstr "Genres Bronne"
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr ""
+msgstr "Verkose Titel Taal"
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr "Voorskou Bronne"
+msgstr "Lokprent Bronne"
 
 msgctxt "#30029"
 msgid "Movie Collections"
@@ -122,7 +124,7 @@ msgstr "Gradering Bronne"
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr "Sertifikasie Verstellings"
+msgstr "Sertifikasie Instellings"
 
 msgctxt "#30032"
 msgid "Get Certification From"
@@ -134,7 +136,7 @@ msgstr "Verkose Sertifiserings Land"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr ""
+msgstr "Verkose Plakkaat Taal"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -150,15 +152,15 @@ msgstr "Stel ondersteunerkuns vanaf trakt.tv in staat"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Stel voorskoue vanaf trakt.tv in staat"
+msgstr "Stel lokprente vanaf trakt.tv in staat"
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr ""
+msgstr "Genre Taal"
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr ""
+msgstr "Verkose Lokprent Taal"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
@@ -166,7 +168,7 @@ msgstr "Kry Etiketlyn vanaf"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr ""
+msgstr "Verkose Etiketlyn Taal"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -178,7 +180,7 @@ msgstr "Verkry Uiteensetting vanaf"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr ""
+msgstr "Verkose Stel (Versameling) Naam Taal"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -195,39 +197,39 @@ msgstr "Gradering"
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr ""
+msgstr "Gradering Gegenereer Met"
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr ""
+msgstr "Kry ook graderings vanaf IMDB"
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr ""
+msgstr "Kry ook graderings vanaf Rotten Tomatoes"
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr ""
+msgstr "Kry ook graderings vanaf MetaCritic"
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr ""
+msgstr "Kry ook graderings vanaf themoviedb.org"
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr ""
+msgstr "Gebruik die Telling saamgestel vanaf"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr ""
+msgstr "OMDB API Sleutel"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr ""
+msgstr "Registreer asseblief API Sleutel op omdbapi.com en Voeg dit by Bo"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr ""
+msgstr "Kry ook nie-verstek Rotten Tomatoes graderings"
 
 msgctxt "#30200"
 msgid "Credits"
@@ -259,11 +261,11 @@ msgstr "Soekenjin om te Gebruik"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr ""
+msgstr "Sekondêre Soek Taal (Bykomend tot en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr ""
+msgstr "Sluit Alle Fliek Kategorieë in"
 
 msgctxt "#30306"
 msgid "Warning:"
@@ -275,7 +277,7 @@ msgstr "In Staat Stel van Alle Fliek Kategorieë sal die soek akkuraatheid groot
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr ""
+msgstr "Verkose Soek Taal"
 
 msgctxt "#30400"
 msgid "Plot"
@@ -295,15 +297,15 @@ msgstr "Ondersteunerkuns Bronne"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr ""
+msgstr "Stel plakkate vanaf fanart.tv in staat"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr ""
+msgstr "Stel ondersteunerkuns vanaf fanart.tv in staat"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr ""
+msgstr "Stel plakkate vanaf IMDb in staat"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -311,63 +313,63 @@ msgstr "Kunswerk"
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr ""
+msgstr "Ekstra Kunswerke"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr ""
+msgstr "Stel clearlogo vanaf fanart.tv in staat"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr ""
+msgstr "Stel clearart vanaf fanart.tv in staat"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr ""
+msgstr "Stel fliek banier vanaf fanart.tv in staat"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr ""
+msgstr "Stel fliek landskap vanaf fanart.tv in staat"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr ""
+msgstr "Stel fliek landskap vanaf themoviedb.org in staat"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr ""
+msgstr "Stel skyfkuns vanaf fanart.tv in staat"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr ""
+msgstr "Versameling Kunswerke"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr ""
+msgstr "Stel stel plakkaat vanaf fanart.tv in staat"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr ""
+msgstr "Stel stel ondersteunerkuns vanaf fanart.tv in staat"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr ""
+msgstr "Stel stel clearlogo vanaf fanart.tv in staat"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr ""
+msgstr "Stel stel clearart vanaf fanart.tv in staat"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr ""
+msgstr "Stel stel banier vanaf fanart.tv in staat"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr ""
+msgstr "Stel stel landskap vanaf fanart.tv in staat"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr ""
+msgstr "Stel stel skyfkuns vanaf fanart.tv in staat"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
