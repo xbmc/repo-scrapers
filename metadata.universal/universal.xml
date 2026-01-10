@@ -292,6 +292,9 @@
 			<RegExp conditional="fanarttvposter" input="$$2" output="&lt;chain function=&quot;GetFanartTvThumbsByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
+			<RegExp conditional="fanarttvposter" input="$$2" output="&lt;chain function=&quot;GetFanartTvKeyartsByIdChain&quot;&gt;$$2::$INFO[fanarttvposterlanguage]&lt;/chain&gt;" dest="5+">
+				<expression/>
+			</RegExp>
 			<RegExp conditional="tmdbthumbs" input="$$2" output="&lt;chain function=&quot;GetTMDBThumbsByIdChain&quot;&gt;$$2::$INFO[tmdbthumblanguage]&lt;/chain&gt;" dest="5+">
 				<expression/>
 			</RegExp>
