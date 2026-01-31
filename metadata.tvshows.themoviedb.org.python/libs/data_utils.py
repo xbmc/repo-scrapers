@@ -24,7 +24,7 @@ from __future__ import absolute_import, unicode_literals
 
 import re
 import json
-from xbmc import Actor, VideoStreamDetail
+from xbmc import Actor
 from collections import namedtuple
 from .utils import safe_get, logger
 from . import settings, api_utils
@@ -348,8 +348,7 @@ def add_episode_info(list_item, episode_info, full_info=True):
             vtag.setPremiered(episode_info['air_date'])
         duration = episode_info.get('runtime')
         if duration:
-            videostream = VideoStreamDetail(duration=int(duration)*60)
-            vtag.addVideoStream(videostream)
+            vtag.setDuration(int(duration)*60)
         _set_cast(
             episode_info['season_cast'] + episode_info['credits']['guest_stars'], vtag)
         ext_ids = {'tmdb_id': episode_info['id']}
