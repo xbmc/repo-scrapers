@@ -230,6 +230,11 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="cat_keyart" type="boolean" label="30010" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="studio_country" type="boolean" label="30006" help="">
 					<level>0</level>
 					<default>false</default>
@@ -243,7 +248,7 @@
 				<setting id="players_opt" type="string" parent="enab_trailer" label="30306" help="">
 					<level>0</level>
 					<default>Tubed</default>
-					<constraints>
+					<constraints> 
 						<options>
 							<option label="30307">YouTube</option>
 							<option label="30308">Tubed</option>

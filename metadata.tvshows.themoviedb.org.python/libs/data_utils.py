@@ -214,18 +214,16 @@ def set_show_artwork(show_info, list_item):
             fanart_list = []
             for image in image_list:
                 theurl, previewurl = get_image_urls(image)
-                if (image.get('iso_639_1') != None and image.get('iso_639_1').lower() != 'xx') and SOURCE_SETTINGS["CATLANDSCAPE"] and theurl:
-                    vtag.addAvailableArtwork(
-                        theurl, arttype="landscape", preview=previewurl)
-                elif theurl:
+                theurl, previewurl = get_image_urls(image)
+                if theurl:
                     fanart_list.append({'image': theurl})
             if fanart_list:
                 vtag.setAvailableFanart(fanart_list)
         else:
-            if image_type == 'posters':
-                destination = 'poster'
-            elif image_type == 'logos':
+            if image_type == 'logos':
                 destination = 'clearlogo'
+            elif image_type == 'posters':
+                destination = 'poster'
             else:
                 destination = image_type
             for image in image_list:

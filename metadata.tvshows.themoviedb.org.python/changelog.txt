@@ -1,3 +1,8 @@
+1.8.2
+added option to separate posters and keyart
+updated process for separating certain artwork types for better trimming
+updated language files
+
 1.8.1
 refactored duration storage to use VideoInfoTag instead of stream details
 updated language files
