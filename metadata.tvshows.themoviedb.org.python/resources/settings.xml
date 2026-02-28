@@ -230,6 +230,11 @@
 					<default>true</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="cat_keyart" type="boolean" label="30010" help="">
+					<level>0</level>
+					<default>true</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="studio_country" type="boolean" label="30006" help="">
 					<level>0</level>
 					<default>false</default>
