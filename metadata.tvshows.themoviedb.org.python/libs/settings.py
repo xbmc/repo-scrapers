@@ -84,6 +84,7 @@ def getSourceSettings():
     settings["KEEPTITLE"] = source_settings.get(
         'keeporiginaltitle', addon.getSettingBool('keeporiginaltitle'))
     settings["CATLANDSCAPE"] = source_settings.get('cat_landscape', True)
+    settings["CATKEYART"] = source_settings.get('cat_keyart', True)
     settings["STUDIOCOUNTRY"] = source_settings.get('studio_country', False)
     settings["ENABTRAILER"] = source_settings.get(
         'enab_trailer', addon.getSettingBool('enab_trailer'))

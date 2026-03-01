@@ -5,10 +5,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-01-19 01:20+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2026-01-19 22:45+0000\n"
+"Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
 "Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/sv_se/>\n"
 "Language: sv_se\n"
 "MIME-Version: 1.0\n"
@@ -59,10 +59,14 @@ msgstr "Lägg till nyckelord som taggar"
 
 msgctxt "#30008"
 msgid "Preferred language (Images)"
-msgstr ""
+msgstr "Föredraget språk (Bilder)"
 
 msgctxt "#30009"
 msgid "Use different language for images"
+msgstr "Använd annat språk för bilder"
+
+msgctxt "#30010"
+msgid "Categorize posters without text as key art"
 msgstr ""
 
 # empty strings from 30007 to 30099

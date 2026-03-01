@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-01-19 01:19+0000\n"
-"Last-Translator: Christian Gade <gade@kodi.tv>\n"
+"PO-Revision-Date: 2026-02-19 07:13+0000\n"
+"Last-Translator: rimasx <riks_12@hot.ee>\n"
 "Language-Team: Estonian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/et_ee/>\n"
 "Language: et_ee\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
@@ -47,7 +47,7 @@ msgstr "Säilita algne pealkiri"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
-msgstr "Määratle tekstiga fännipildid horisontaalpiltideks"
+msgstr "Määratle tekstiga fännipildid rõhtpiltideks"
 
 msgctxt "#30006"
 msgid "Include country code with studio"
@@ -59,10 +59,14 @@ msgstr "Lisa märksõnad siltidena"
 
 msgctxt "#30008"
 msgid "Preferred language (Images)"
-msgstr ""
+msgstr "Eelistatud keel (pildid)"
 
 msgctxt "#30009"
 msgid "Use different language for images"
+msgstr "Kasuta piltide jaoks erinevat keelt"
+
+msgctxt "#30010"
+msgid "Categorize posters without text as key art"
 msgstr ""
 
 # empty strings from 30007 to 30099
@@ -96,7 +100,7 @@ msgstr "Luba clearart"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr "Luba landscape"
+msgstr "Luba rõhtpildid"
 
 msgctxt "#30108"
 msgid "Enable character art"
@@ -117,7 +121,7 @@ msgstr "Luba hooaja bänner"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr "Luba hooaja landscape"
+msgstr "Luba hooaja rõhtpildid"
 
 # empty strings from 30153 to 30200
 msgctxt "#30200"

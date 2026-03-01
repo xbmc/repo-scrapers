@@ -64,7 +64,11 @@ msgctxt "#30009"
 msgid "Use different language for images"
 msgstr ""
 
-# empty strings from 30009 to 30099
+msgctxt "#30010"
+msgid "Categorize posters without text as key art"
+msgstr ""
+
+# empty strings from 30011 to 30099
 
 msgctxt "#30100"
 msgid "Fanart.tv"

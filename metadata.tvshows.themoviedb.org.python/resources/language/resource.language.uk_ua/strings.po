@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-01-19 01:20+0000\n"
+"PO-Revision-Date: 2026-02-19 07:13+0000\n"
 "Last-Translator: Pavlo Marianov <acid@jack.kyiv.ua>\n"
 "Language-Team: Ukrainian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/uk_ua/>\n"
 "Language: uk_ua\n"
@@ -15,43 +15,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.15.2\n"
+"X-Generator: Weblate 5.16\n"
 
 msgctxt "Addon Summary"
 msgid "Fetch TV Show metadata from themoviedb.org"
-msgstr ""
+msgstr "Збір метаданих про серіали з themoviedb.org"
 
 msgctxt "Addon Description"
 msgid "The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by our amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different."
-msgstr ""
+msgstr "Movie Database (TMDb) — це база даних фільмів і серіалів, створена спільнотою. Кожен елемент був доданий нашою дивовижною спільнотою, починаючи з 2008 року. Рівень міжнародної орієнтованості та обсяг даних TMDb значною мірою не мають собі рівних, чим ми неймовірно пишаємося. Простіше кажучи, ми живемо та дихаємо спільнотою, і саме це відрізняє нас від інших."
 
 msgctxt "#30000"
 msgid "Preferred language"
-msgstr ""
+msgstr "Бажана мова"
 
 msgctxt "#30001"
 msgid "Preferred certification country"
-msgstr ""
+msgstr "Бажана країна сертифікації"
 
 msgctxt "#30002"
 msgid "Include certification prefix"
-msgstr ""
+msgstr "Додати префікс сертифікації"
 
 msgctxt "#30003"
 msgid "Prefix"
-msgstr ""
+msgstr "Префікс"
 
 msgctxt "#30004"
 msgid "Keep original title"
-msgstr ""
+msgstr "Використовувати оригінальні назви"
 
 msgctxt "#30005"
 msgid "Categorize fanart with text as landscape art"
-msgstr ""
+msgstr "Використовувати фанарт з текстом як пейзаж"
 
 msgctxt "#30006"
 msgid "Include country code with studio"
-msgstr ""
+msgstr "Додати код країни разом зі студією"
 
 msgctxt "#30007"
 msgid "Add keywords as tags"
@@ -59,10 +59,14 @@ msgstr "Додавати ключові слова як теги"
 
 msgctxt "#30008"
 msgid "Preferred language (Images)"
-msgstr ""
+msgstr "Бажана мова (зображення)"
 
 msgctxt "#30009"
 msgid "Use different language for images"
+msgstr "Використовувати різні мови для зображень"
+
+msgctxt "#30010"
+msgid "Categorize posters without text as key art"
 msgstr ""
 
 # empty strings from 30007 to 30099
@@ -72,95 +76,95 @@ msgstr "Fanart.tv"
 
 msgctxt "#30101"
 msgid "Client key (optional)"
-msgstr ""
+msgstr "Ключ клієнта (необов’язково)"
 
 msgctxt "#30102"
 msgid "Enable fanart"
-msgstr ""
+msgstr "Увімкнути фанарт"
 
 msgctxt "#30103"
 msgid "Enable poster"
-msgstr ""
+msgstr "Увімкнути постер"
 
 msgctxt "#30104"
 msgid "Enable banner"
-msgstr ""
+msgstr "Увімкнути банер"
 
 msgctxt "#30105"
 msgid "Enable clearlogo"
-msgstr ""
+msgstr "Увімкнути чистий логотип"
 
 msgctxt "#30106"
 msgid "Enable clearart"
-msgstr ""
+msgstr "Увімкнути чисте зображення"
 
 msgctxt "#30107"
 msgid "Enable landscape"
-msgstr ""
+msgstr "Увімкнути пейзаж"
 
 msgctxt "#30108"
 msgid "Enable character art"
-msgstr ""
+msgstr "Увімкнути зображення персонажів"
 
 msgctxt "#30109"
 msgid "Include art from fanart.tv"
-msgstr ""
+msgstr "Увімкнути зображення з fanart.tv"
 
 # empty strings from 30110 to 30149
 msgctxt "#30150"
 msgid "Enable season poster"
-msgstr ""
+msgstr "Увімкнути постер для сезону"
 
 msgctxt "#30151"
 msgid "Enable season banner"
-msgstr ""
+msgstr "Увімкнути банер для сезону"
 
 msgctxt "#30152"
 msgid "Enable season landscape"
-msgstr ""
+msgstr "Увімкнути пейзаж для сезону"
 
 # empty strings from 30153 to 30200
 msgctxt "#30200"
 msgid "Advanced"
-msgstr ""
+msgstr "Додатково"
 
 msgctxt "#30201"
 msgid "Verbose debug logging"
-msgstr ""
+msgstr "Детальний журнал налагодження"
 
 # emptry strings from 30202 to 30299
 msgctxt "#30300"
 msgid "Ratings"
-msgstr ""
+msgstr "Рейтинги"
 
 msgctxt "#30301"
 msgid "Default rating from"
-msgstr ""
+msgstr "Рейтинг за замовчуванням з"
 
 msgctxt "#30302"
 msgid "Also add IMDb ratings"
-msgstr ""
+msgstr "Також додати рейтинги IMDb"
 
 msgctxt "#30303"
 msgid "Also add Trakt.tv ratings"
-msgstr ""
+msgstr "Також додати рейтинги з Trakt.tv"
 
 msgctxt "#30304"
 msgid "Also add TMDb ratings"
-msgstr ""
+msgstr "Також додати рейтинги TMDb"
 
 msgctxt "#30305"
 msgid "Enable Trailer"
-msgstr ""
+msgstr "Увімкнути трейлер"
 
 msgctxt "#30306"
 msgid "Addon Player"
-msgstr ""
+msgstr "Програвач з додатку"
 
 msgctxt "#30307"
 msgid "YouTube"
-msgstr ""
+msgstr "YouTube"
 
 msgctxt "#30308"
 msgid "Tubed"
-msgstr ""
+msgstr "Tubed"
