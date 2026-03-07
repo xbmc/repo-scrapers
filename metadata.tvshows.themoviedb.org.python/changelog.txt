@@ -1,3 +1,7 @@
+1.7.6
+fix for image sort not using separate image language setting
+fix for fanarttv landscape art overwriting TMDb landscape art
+
 1.7.5
 added option to split keyart from posters
 fixed sorting and trimming so that landscape and keyart aren't deleted
