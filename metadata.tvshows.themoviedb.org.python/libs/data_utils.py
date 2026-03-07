@@ -214,7 +214,6 @@ def set_show_artwork(show_info, list_item):
             fanart_list = []
             for image in image_list:
                 theurl, previewurl = get_image_urls(image)
-                theurl, previewurl = get_image_urls(image)
                 if theurl:
                     fanart_list.append({'image': theurl})
             if fanart_list:
