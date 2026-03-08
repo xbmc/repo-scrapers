@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-03-26 20:16+0000\n"
+"PO-Revision-Date: 2025-12-11 16:13+0000\n"
 "Last-Translator: Oskari Lavinto <olavinto@protonmail.com>\n"
 "Language-Team: Finnish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-themoviedb-org-python/fi_fi/>\n"
 "Language: fi_fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.2\n"
+"X-Generator: Weblate 5.14.3\n"
 
 msgctxt "Addon Summary"
 msgid "Python TMDB Movie Scraper"
@@ -27,7 +27,7 @@ msgstr "The Movie Database (TMDB) on yhteisön ylläpitämä, ilmainen ja avoin 
 
 msgctxt "#30000"
 msgid "Enable fanart from TMDb"
-msgstr "Käytä fanart-kuvia TMDB-palvelusta"
+msgstr "Nouda fanart-kuvia TMDB-palvelusta"
 
 msgctxt "#30001"
 msgid "Prefer Trailer from HD-Trailers.net"
@@ -87,6 +87,14 @@ msgstr "Käytä julisteita TMDB-palvelusta"
 
 msgctxt "#30015"
 msgid "Maximum number of each artwork type - many artwork can cause an error scraping to MySQL database"
+msgstr ""
+
+msgctxt "#30016"
+msgid "Only add whitelisted keywords as tags"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Tag whitelist"
 msgstr ""
 
 msgctxt "#30100"

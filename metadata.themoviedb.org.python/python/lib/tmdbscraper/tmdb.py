@@ -136,7 +136,7 @@ class TMDBMovieScraper(object):
             info['duration'] = movie['runtime'] * 60
 
         ratings = {'themoviedb': {'rating': float(movie['vote_average']), 'votes': int(movie['vote_count'])}}
-        uniqueids = {'tmdb': str(movie['id']), 'imdb': movie['imdb_id']}
+        uniqueids = _parse_uniqueids(movie)
         cast = [{
                 'name': actor['name'],
                 'role': actor['character'],
@@ -164,6 +164,12 @@ def _parse_media_id(title):
         return {'type': 'imdb', 'id':title[5:]}
     return None
 
+def _parse_uniqueids(movie):
+    uniqueids = {'tmdb': str(movie['id'])}
+    if movie.get('imdb_id'):
+        uniqueids['imdb'] = movie['imdb_id']
+    return uniqueids
+
 def _get_movie(mid, language=None, search=False):
     details = None if search else \
         'trailers,images,releases,casts,keywords' if language is not None else \
@@ -184,23 +190,28 @@ def _parse_artwork(movie, collection, urlbases, language):
     landscape = []
     logos = []
     fanart = []
+    keyart = []
 
     if 'images' in movie:
         posters = _build_image_list_with_fallback(movie['images']['posters'], urlbases, language)
         landscape = _build_image_list_with_fallback(movie['images']['backdrops'], urlbases, language)
         logos = _build_image_list_with_fallback(movie['images']['logos'], urlbases, language)
-        fanart = _build_fanart_list(movie['images']['backdrops'], urlbases)
+        fanart = _build_list_without_titles(movie['images']['backdrops'], urlbases)
+        keyart = _build_list_without_titles(movie['images']['posters'], urlbases)
 
     setposters = []
     setlandscape = []
     setfanart = []
+    setkeyart = []
     if collection and 'images' in collection:
         setposters = _build_image_list_with_fallback(collection['images']['posters'], urlbases, language)
         setlandscape = _build_image_list_with_fallback(collection['images']['backdrops'], urlbases, language)
-        setfanart = _build_fanart_list(collection['images']['backdrops'], urlbases)
+        setfanart = _build_list_without_titles(collection['images']['backdrops'], urlbases)
+        setkeyart = _build_list_without_titles(collection['images']['posters'], urlbases)
 
     return {'poster': posters, 'landscape': landscape, 'fanart': fanart,
-        'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart, 'clearlogo': logos}
+        'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart,
+        'clearlogo': logos, 'keyart': keyart, 'set.keyart': setkeyart}
 
 def _build_image_list_with_fallback(imagelist, urlbases, language, language_fallback='en'):
     images = _build_image_list(imagelist, urlbases, [language])
@@ -215,7 +226,7 @@ def _build_image_list_with_fallback(imagelist, urlbases, language, language_fall
 
     return images
 
-def _build_fanart_list(imagelist, urlbases):
+def _build_list_without_titles(imagelist, urlbases):
     return _build_image_list(imagelist, urlbases, ['xx', None])
 
 def _build_image_list(imagelist, urlbases, languages=[]):

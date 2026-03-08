@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2025-01-07 23:55+0000\n"
 "Last-Translator: vgbsd <vg72i@protonmail.com>\n"
@@ -88,6 +88,14 @@ msgstr "Разрешить постеры с TMDb"
 msgctxt "#30015"
 msgid "Maximum number of each artwork type - many artwork can cause an error scraping to MySQL database"
 msgstr "Максимальное количество каждого типа изображений (большое количество изображений может привести к ошибке при скраппинге в базу данных MySQL)"
+
+msgctxt "#30016"
+msgid "Only add whitelisted keywords as tags"
+msgstr ""
+
+msgctxt "#30017"
+msgid "Tag whitelist"
+msgstr ""
 
 msgctxt "#30100"
 msgid "Language for Fanart.tv artwork"
