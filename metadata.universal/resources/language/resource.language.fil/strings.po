@@ -5,386 +5,372 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Addons\n"
-"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-01-19 22:45+0000\n"
-"Last-Translator: rimasx <riks_12@hot.ee>\n"
-"Language-Team: Estonian <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/et_ee/>\n"
-"Language: et_ee\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1 && n != 2 && n != 3 && (n % 10 == 4 || n % 10 == 6 || n % 10 == 9);\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Universaalne filmide kaabits"
+msgstr ""
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Universal Scraper on praegu kõige kohandatavam kaabits, kogudes teavet järgmistelt toetatud saitidelt: IMDb, themosoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. See kaabits on praegu Team-Kodi kaabitsate lipulaev. Algse otsingu saab teha kas TMDb või IMDb allikatest (vastavalt seadetele), kuid pärast seda saab määrata väljade kaupa, millisest allikast seda konkreetset teavet soovid."
+msgstr ""
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "Võimalda themoviedb.org fännikunst"
+msgstr ""
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr "Võimalda themoviedb.org postrid"
+msgstr ""
 
+# empty string with id 30003
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr "Võimalda MoviePosterDB postrid"
+msgstr ""
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
-msgstr "Hangi treilerid otse YouTubest"
+msgstr ""
 
 # empty string with id 30006
 # empty string with id 30007
 msgctxt "#30008"
 msgid "Preferred Title Language from"
-msgstr "Eelistatud pealkirja keel allikast"
+msgstr ""
 
 msgctxt "#30009"
 msgid "Enable trailers from themoviedb.org"
-msgstr "Võimalda themoviedb.org treilerid"
+msgstr ""
 
+# empty string with id 30010
 msgctxt "#30011"
 msgid "Poster"
-msgstr "Poster"
+msgstr ""
 
 msgctxt "#30012"
 msgid "Trailers"
-msgstr "Treilerid"
+msgstr ""
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Hangi seti (kogumik) nimi allikast themovieedb.org"
+msgstr ""
 
 msgctxt "#30014"
 msgid "Get Plot from"
-msgstr "Hangi sisu allikast"
+msgstr ""
 
 msgctxt "#30015"
 msgid "Get Cast / Directors / Writers From"
-msgstr "Hangi näitlejad/lavastajad/stsenaristid allikast"
+msgstr ""
 
 msgctxt "#30016"
 msgid "Plot Sources"
-msgstr "Sisu allikad"
+msgstr ""
 
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr "Sisu eelistatud keel"
+msgstr ""
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
-msgstr "Hangi vaikehinded allikast"
+msgstr ""
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr "Hangi žanrid allikast"
+msgstr ""
 
 msgctxt "#30023"
 msgid "Get Title From"
-msgstr "Hangi pealkiri allikast"
+msgstr ""
 
 msgctxt "#30024"
 msgid "Title Sources"
-msgstr "Pealkirja allikad"
+msgstr ""
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr "Osatäitjate ja autorite allikad"
+msgstr ""
 
 msgctxt "#30026"
 msgid "Genres Sources"
-msgstr "Žanrite allikad"
+msgstr ""
 
 msgctxt "#30027"
 msgid "Preferred Title Language"
-msgstr "Pealkirja eelistatud keel"
+msgstr ""
 
 msgctxt "#30028"
 msgid "Trailer Sources"
-msgstr "Treilerite allikad"
+msgstr ""
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Filmikogumikud"
+msgstr ""
 
 msgctxt "#30030"
 msgid "Rating Sources"
-msgstr "Hinnete allikad"
+msgstr ""
 
 msgctxt "#30031"
 msgid "Certification Settings"
-msgstr "Sertifitseerimise seaded"
+msgstr ""
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr "Hangi sertifikaat allikast"
+msgstr ""
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr "Eelistatud sisu reitingute riik"
+msgstr ""
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr "Posteri eelistatud keel"
+msgstr ""
 
 msgctxt "#30035"
 msgid "Certification Prefix"
-msgstr "Sertifikaadi prefiks"
+msgstr ""
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr "Võimalda trakt.tv postrid"
+msgstr ""
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "Võimalda trakt.tv fännikunst"
+msgstr ""
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
-msgstr "Võimalda trakt.tv treilerid"
+msgstr ""
 
 msgctxt "#30040"
 msgid "Genre Language"
-msgstr "Žanri keel"
+msgstr ""
 
 msgctxt "#30041"
 msgid "Preferred Trailer Language"
-msgstr "Treileri eelistatud keel"
+msgstr ""
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr "Hangi tunnuslause allikast"
+msgstr ""
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr "Tunnuslause eelistatud keel"
+msgstr ""
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
-msgstr "Hangi IMDb TOP250 edetabel"
+msgstr ""
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Hangi ülevaade allikast"
+msgstr ""
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr "Seti (kogumiku) nime eelistatud keel"
+msgstr ""
 
 msgctxt "#30047"
 msgid "Poster Sources"
-msgstr "Postrite allikad"
+msgstr ""
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Hangi märksõnu ja salvesta siltidena allikast"
+msgstr ""
 
+# empty strings from id 30049 to 30099
 msgctxt "#30100"
 msgid "Rating"
-msgstr "Hinne"
+msgstr ""
 
 # empty strings from id 30101 to 30109
 msgctxt "#30110"
 msgid "Rating Generated Using"
-msgstr "Hinne loodi kasutades"
+msgstr ""
 
 msgctxt "#30111"
 msgid "Also get ratings from IMDb"
-msgstr "Hangi ka IMDb hinded"
+msgstr ""
 
 msgctxt "#30112"
 msgid "Also get ratings from Rotten Tomatoes"
-msgstr "Hangi ka Rotten Tomatoes hinded"
+msgstr ""
 
 msgctxt "#30113"
 msgid "Also get ratings from MetaCritic"
-msgstr "Hangi ka MetaCritic hinded"
+msgstr ""
 
 msgctxt "#30114"
 msgid "Also get ratings from themoviedb.org"
-msgstr "Hangi ka themoviedb.org hinded"
+msgstr ""
 
 msgctxt "#30115"
 msgid "Use the Score Aggregated from"
-msgstr "Kasuta koondhinnet allikast"
+msgstr ""
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr "OMDB Api võti"
+msgstr ""
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr "Registreeri Api võti saidil omdbapi.com ja lisa see ülal"
+msgstr ""
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
-msgstr "Hangi ka Rotten Tomatoes vaikeväärtuseta hinded"
+msgstr ""
 
+# empty strings from id 30119 to 30199
 msgctxt "#30200"
 msgid "Credits"
-msgstr "Autorid"
+msgstr ""
 
 msgctxt "#30201"
 msgid "Get Studio from"
-msgstr "Hangi stuudio allikast"
+msgstr ""
 
 msgctxt "#30202"
 msgid "Get Country from"
-msgstr "Hangi riik allikast"
+msgstr ""
 
+# empty strings from id 30203 to 30299
 msgctxt "#30300"
 msgid "Search"
-msgstr "Otsi"
+msgstr ""
 
 msgctxt "#30301"
 msgid "themoviedb.org"
-msgstr "themoviedb.org"
+msgstr ""
 
 msgctxt "#30302"
 msgid "IMDb"
-msgstr "IMDb"
+msgstr ""
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr "Otsingumootor"
+msgstr ""
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr "Teine otsingu keel (peale en-us)"
+msgstr ""
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
-msgstr "Kaasa kõik filmikategooriad"
+msgstr ""
 
 msgctxt "#30306"
 msgid "Warning:"
-msgstr "Hoiatus:"
+msgstr ""
 
 msgctxt "#30307"
 msgid "Enabling All Movie Categories will greatly reduce the search accuracy !!!"
-msgstr "Kõigi filmikategooriate lubamine vähendab oluliselt otsingu täpsust !!!"
+msgstr ""
 
 msgctxt "#30308"
 msgid "Preferred Search Language"
-msgstr "Otsingu eelistatud keel"
+msgstr ""
 
+# empty strings from id 30309 to 30399
 msgctxt "#30400"
 msgid "Plot"
-msgstr "Sisu"
+msgstr ""
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr "Sisu / tunnuslause / ülevaade"
+msgstr ""
 
+# empty strings from id 30402 to 30499
 msgctxt "#30500"
 msgid "Fanart"
-msgstr "Fännipildid"
+msgstr ""
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "Fännipiltide allikad"
+msgstr ""
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr "Luba postrid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "Luba fännipildid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr "Luba postrid allikast IMDb"
+msgstr ""
 
 msgctxt "#30700"
 msgid "Artwork"
-msgstr "Taustapildid"
+msgstr ""
 
 msgctxt "#30701"
 msgid "Extra Artwork"
-msgstr "Lisapildid"
+msgstr ""
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr "Luba clearlogo allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr "Luba clearart allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr "Luba bännerid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "Luba filmi rõhtpildid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr "Luba filmi rõhtpildid allikast themoviedb.org"
+msgstr ""
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr "Luba discart plaadipildid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr "Kogumiku kunst"
+msgstr ""
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr "Luba kogumiku poster allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr "Luba kogumiku fännipildid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr "Luba kogumiku clearlogo allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr "Luba kogumiku clearart allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr "Luba kogumiku banner allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr "Luba kogumiku rõhtpildid allikast fanart.tv"
+msgstr ""
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr "Luba kogumiku discart plaadipildid allikast fanart.tv"
-
-#~ msgctxt "#30003"
-#~ msgid "Enable posters from IMPAwards"
-#~ msgstr "Võimalda IMPAwards postrid"
-
-#~ msgctxt "#30006"
-#~ msgid "Enable trailers from HD-Trailers.net"
-#~ msgstr "Võimalda HD-Trailers.net treilerid"
-
-#~ msgctxt "#30036"
-#~ msgid "Enable posters from IMDb"
-#~ msgstr "Võimalda IMDB postrid"
-
-#~ msgctxt "#30040"
-#~ msgid "     Genre Language"
-#~ msgstr "Žanri keel"
-
-#~ msgctxt "#30041"
-#~ msgid "     Preferred Trailer Language"
-#~ msgstr "Eelistatud traileri keel"
+msgstr ""
