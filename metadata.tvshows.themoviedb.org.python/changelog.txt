@@ -1,3 +1,14 @@
+2.0.0
+ground up rewrite by MikeSiLVO
+Season-aware artwork selection
+Better artwork distribution across all art types
+fix Fanart.tv URLs with special characters
+Tier-based artwork scoring, prefer highest resolution setting
+Fix Fanart.tv season art with no number getting assigned to all seasons instead of specials
+artwork scoring for trimming: language + pixels + vote tiebreaker
+Prioritize user-language clearart from Fanart.tv
+Punctuation agnostic title matching, year filter fallback
+
 1.8.3
 fix for image sort not using separate image language setting
 fix for fanarttv landscape art overwriting TMDb landscape art
