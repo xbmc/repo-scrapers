@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-09-11 13:46+0000\n"
-"Last-Translator: taxigps <taxigps@sina.com>\n"
-"Language-Team: Chinese (China) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/zh_cn/>\n"
+"PO-Revision-Date: 2026-03-30 09:13+0000\n"
+"Last-Translator: wabisabi926 <wabisabi926@foxmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/zh_Hans/>\n"
 "Language: zh_cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.8\n"
+"X-Generator: Weblate 5.16.2\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
@@ -27,7 +27,7 @@ msgstr "通用刮削器是当前定制功能最强的刮削器，它支持从以
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
-msgstr "启用 themoviedb.org 同人画"
+msgstr "启用 themoviedb.org 背景图"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
@@ -146,7 +146,7 @@ msgstr "启用 trakt.tv 海报"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
-msgstr "启用 trakt.tv 同人画"
+msgstr "启用 trakt.tv 背景图"
 
 msgctxt "#30039"
 msgid "Enable trailers from trakt.tv"
@@ -287,11 +287,11 @@ msgstr "剧情/标语/简介"
 
 msgctxt "#30500"
 msgid "Fanart"
-msgstr "同人画"
+msgstr "背景图"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "同人画来源"
+msgstr "背景图来源"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
@@ -299,7 +299,7 @@ msgstr "启用 fanart.tv 海报"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "启用 fanart.tv 同人画"
+msgstr "启用 fanart.tv 背景图"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
@@ -315,11 +315,11 @@ msgstr "扩展艺术图片"
 
 msgctxt "#30702"
 msgid "Enable clearlogo from fanart.tv"
-msgstr "启用 fanart.tv 徽标贴画"
+msgstr "启用 fanart.tv 透明徽标"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr "启用 fanart.tv 剪贴画"
+msgstr "启用 fanart.tv 透明艺术图片"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
@@ -327,7 +327,7 @@ msgstr "启用 fanart.tv 电影横幅"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "启用 fanart.tv 电影场景贴画"
+msgstr "启用 fanart.tv 电影横版图"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
@@ -335,7 +335,7 @@ msgstr "启用 themoviedb.org 电影场景贴画"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
-msgstr "启用 fanart.tv 光盘贴画"
+msgstr "启用 fanart.tv 光盘封面"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
@@ -347,15 +347,15 @@ msgstr "启用 fanart.tv 电影集海报"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr "启用 fanart.tv 电影集同人画"
+msgstr "启用 fanart.tv 电影集背景图"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr "启用 fanart.tv 电影集徽标贴画"
+msgstr "启用 fanart.tv 电影集透明徽标"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr "启用 fanart.tv 电影集剪贴画"
+msgstr "启用 fanart.tv 电影集透明艺术图片"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
@@ -363,11 +363,11 @@ msgstr "启用 fanart.tv 电影集横幅"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr "启用 fanart.tv 电影集场景贴画"
+msgstr "启用 fanart.tv 电影集横版图"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr "启用 fanart.tv 电影集光盘贴画"
+msgstr "启用 fanart.tv 电影集光盘封面"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
