@@ -18,6 +18,8 @@ LASTFM_KEY = 'f9743d7a24d6168ba96c83639a037fca'
 FANARTTV_BASE = 'https://webservice.fanart.tv/v3.2'
 FANARTTV_KEY = 'c1c5f2c2e9335b26983120d177828066'
 
+CACHE_LIMIT = 500
+
 WIKI_LANG_MAP = {
     'pt-br': 'pt',
     'zh-cn': 'zh',

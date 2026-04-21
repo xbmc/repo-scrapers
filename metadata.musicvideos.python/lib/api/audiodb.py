@@ -3,15 +3,25 @@
 """TheAudioDB API client."""
 
 import json
+from collections import OrderedDict
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from urllib.parse import quote
 
 from lib import log
-from lib.config import AUDIODB_BASE
+from lib.config import AUDIODB_BASE, CACHE_LIMIT
 
-_track_cache = {}
-_artist_cache = {}
-_album_cache = {}
+_track_cache = OrderedDict()
+_artist_cache = OrderedDict()
+_album_cache = OrderedDict()
+
+_MISSING = object()
+
+
+def _lru_set(cache, key, value):
+    while len(cache) >= CACHE_LIMIT:
+        cache.popitem(last=False)
+    cache[key] = value
 
 
 def normalize_url(url):
@@ -43,7 +53,7 @@ def search_tracks(artist, track):
     for t in tracks:
         tid = t.get('idTrack')
         if tid:
-            _track_cache[str(tid)] = t
+            _lru_set(_track_cache, str(tid), t)
     return tracks
 
 
@@ -56,7 +66,7 @@ def get_track_by_id(track_id):
     """Fetch a single track by its ID."""
     track_id = str(track_id)
     cached = _track_cache.get(track_id)
-    if cached:
+    if cached is not None:
         return cached
     data = _get('/track.php?h={}'.format(track_id))
     if not data:
@@ -65,52 +75,52 @@ def get_track_by_id(track_id):
     if not tracks or not isinstance(tracks, list):
         return None
     t = tracks[0]
-    _track_cache[track_id] = t
+    _lru_set(_track_cache, track_id, t)
     return t
 
 
 def search_artist(artist_name):
     """Search for an artist by name."""
     key = artist_name.lower()
-    cached = _artist_cache.get(key)
-    if cached is not None:
+    cached = _artist_cache.get(key, _MISSING)
+    if cached is not _MISSING:
         return cached or None
 
     name = normalize_quotes(artist_name)
     data = _get('/search.php?s={}'.format(quote(name, safe='')))
     if not data:
-        _artist_cache[key] = {}
+        _lru_set(_artist_cache, key, {})
         return None
     artists = data.get('artists')
     if not artists or not isinstance(artists, list):
-        _artist_cache[key] = {}
+        _lru_set(_artist_cache, key, {})
         return None
 
     for a in artists:
         if a.get('strArtist', '').lower() == key:
-            _artist_cache[key] = a
+            _lru_set(_artist_cache, key, a)
             return a
 
-    _artist_cache[key] = artists[0]
+    _lru_set(_artist_cache, key, artists[0])
     return artists[0]
 
 
 def get_album(album_id):
     """Fetch an album by its ID."""
     album_id = str(album_id)
-    cached = _album_cache.get(album_id)
-    if cached is not None:
+    cached = _album_cache.get(album_id, _MISSING)
+    if cached is not _MISSING:
         return cached or None
     data = _get('/album.php?m={}'.format(album_id))
     if not data:
-        _album_cache[album_id] = {}
+        _lru_set(_album_cache, album_id, {})
         return None
     albums = data.get('album')
     if not albums or not isinstance(albums, list):
-        _album_cache[album_id] = {}
+        _lru_set(_album_cache, album_id, {})
         return None
     a = albums[0]
-    _album_cache[album_id] = a
+    _lru_set(_album_cache, album_id, a)
     return a
 
 
@@ -161,10 +171,16 @@ def _get(path):
     try:
         req = Request(url, headers={
             'Accept': 'application/json',
-            'User-Agent': 'metadata.musicvideos.python3',
+            'User-Agent': 'metadata.musicvideos.python',
         })
         with urlopen(req, timeout=15) as resp:
             return json.loads(resp.read().decode('utf-8'))
+    except HTTPError as exc:
+        if exc.code == 404:
+            log.debug('AudioDB GET {}: not found'.format(path))
+        else:
+            log.error('AudioDB GET {} failed: {}'.format(path, exc))
+        return None
     except Exception as exc:
-        log.error('AudioDB GET failed: {}'.format(exc))
+        log.error('AudioDB GET {} failed: {}'.format(path, exc))
         return None

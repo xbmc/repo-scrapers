@@ -4,11 +4,13 @@
 
 import json
 import re
+from collections import OrderedDict
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 
 from lib import log
-from lib.config import LASTFM_BASE, LASTFM_KEY
+from lib.config import CACHE_LIMIT, LASTFM_BASE, LASTFM_KEY
 
 _RE_HTML = re.compile(r'<[^>]+>')
 _RE_LASTFM_LINK = re.compile(
@@ -19,14 +21,22 @@ _RE_LASTFM_LINK = re.compile(
 _RETRYABLE_ERRORS = {2, 8, 11, 16}
 _NOT_FOUND_ERRORS = {6, 7, 17}
 
-_track_cache = {}
+_track_cache = OrderedDict()
+
+_MISSING = object()
+
+
+def _lru_set(key, value):
+    while len(_track_cache) >= CACHE_LIMIT:
+        _track_cache.popitem(last=False)
+    _track_cache[key] = value
 
 
 def get_track_info(artist, track, lang='en'):
     """Fetch track info including wiki, tags, and album."""
     key = (artist.lower(), track.lower())
-    cached = _track_cache.get(key)
-    if cached is not None:
+    cached = _track_cache.get(key, _MISSING)
+    if cached is not _MISSING:
         return cached or None
 
     data = _request('track.getInfo', {
@@ -35,16 +45,16 @@ def get_track_info(artist, track, lang='en'):
         'lang': lang,
     })
     if not data:
-        _track_cache[key] = {}
+        _lru_set(key, {})
         return None
 
     track_data = data.get('track')
     if not isinstance(track_data, dict):
-        _track_cache[key] = {}
+        _lru_set(key, {})
         return None
 
     result = _parse_track(track_data)
-    _track_cache[key] = result
+    _lru_set(key, result)
     return result
 
 
@@ -117,10 +127,16 @@ def _request(method, params):
     try:
         req = Request(url, headers={
             'Accept': 'application/json',
-            'User-Agent': 'metadata.musicvideos.python3',
+            'User-Agent': 'metadata.musicvideos.python',
         })
         with urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode('utf-8'))
+    except HTTPError as exc:
+        if exc.code == 404:
+            log.debug('Last.fm {}: not found'.format(method))
+        else:
+            log.error('Last.fm {} failed: {}'.format(method, exc))
+        return None
     except Exception as exc:
         log.error('Last.fm {} failed: {}'.format(method, exc))
         return None

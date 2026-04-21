@@ -3,10 +3,12 @@
 """Fanart.tv API client."""
 
 import json
+from collections import OrderedDict
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 from lib import log
-from lib.config import FANARTTV_BASE, FANARTTV_KEY
+from lib.config import CACHE_LIMIT, FANARTTV_BASE, FANARTTV_KEY
 
 _ARTIST_MAPPING = {
     'artistbackground': 'fanart',
@@ -17,7 +19,15 @@ _ARTIST_MAPPING = {
     'musicbanner': 'banner',
 }
 
-_cache = {}
+_cache = OrderedDict()
+
+_MISSING = object()
+
+
+def _lru_set(key, value):
+    while len(_cache) >= CACHE_LIMIT:
+        _cache.popitem(last=False)
+    _cache[key] = value
 
 
 def get_artist_artwork(mbid, settings):
@@ -25,13 +35,13 @@ def get_artist_artwork(mbid, settings):
     if not settings.get('enable_fanarttv') or not mbid:
         return {}
 
-    cached = _cache.get(mbid)
-    if cached is not None:
+    cached = _cache.get(mbid, _MISSING)
+    if cached is not _MISSING:
         return cached
 
     data = _fetch(mbid, settings.get('fanarttv_clientkey', ''))
     if not data:
-        _cache[mbid] = {}
+        _lru_set(mbid, {})
         return {}
 
     result = {}
@@ -50,7 +60,7 @@ def get_artist_artwork(mbid, settings):
                 likes = 0
             result.setdefault(art_type, []).append((url, preview, likes))
 
-    _cache[mbid] = result
+    _lru_set(mbid, result)
     return result
 
 
@@ -61,7 +71,7 @@ def _fetch(mbid, client_key):
     headers = {
         'api-key': FANARTTV_KEY,
         'Accept': 'application/json',
-        'User-Agent': 'metadata.musicvideos.python3',
+        'User-Agent': 'metadata.musicvideos.python',
     }
     if client_key:
         headers['client-key'] = client_key
@@ -69,6 +79,12 @@ def _fetch(mbid, client_key):
         req = Request(url, headers=headers)
         with urlopen(req, timeout=10) as resp:
             return json.loads(resp.read().decode('utf-8'))
+    except HTTPError as exc:
+        if exc.code == 404:
+            log.debug('Fanart.tv GET /music/{}: not found'.format(mbid))
+        else:
+            log.error('Fanart.tv GET /music/{} failed: {}'.format(mbid, exc))
+        return None
     except Exception as exc:
         log.error('Fanart.tv GET /music/{} failed: {}'.format(mbid, exc))
         return None
