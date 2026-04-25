@@ -4,6 +4,7 @@
 
 import json
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import quote, unquote
 
@@ -14,6 +15,20 @@ from lib import log
 from lib.artwork import set_artwork
 from lib.api import audiodb, lastfm, wikipedia, fanarttv
 from lib.config import get_settings
+
+_CACHE_TTL = 15 * 60
+_last_activity = 0
+
+
+def _clear_all_caches():
+    audiodb._track_cache.clear()
+    audiodb._artist_cache.clear()
+    audiodb._album_cache.clear()
+    lastfm._track_cache.clear()
+    wikipedia._cache.clear()
+    fanarttv._cache.clear()
+    log.debug('caches cleared (idle > {}s)'.format(_CACHE_TTL))
+
 
 _RE_SEPARATOR = re.compile(r'\s+[-\u2013\u2014]\s+')
 _RE_NOISE = re.compile(
@@ -36,6 +51,12 @@ _NFO_AUDIODB_ID = re.compile(r'theaudiodb://(\d+)', re.IGNORECASE)
 
 def run_action(handle, action, params):
     """Dispatch a scraper action from Kodi."""
+    global _last_activity
+    now = time.time()
+    if _last_activity and now - _last_activity > _CACHE_TTL:
+        _clear_all_caches()
+    _last_activity = now
+
     if action == 'NfoUrl':
         _nfo_url(handle, params)
         return

@@ -35,7 +35,12 @@ def set_artwork(vtag, track_data, artist_artwork, fanarttv_artwork):
 
     # Fanart has no column storage for musicvideos, no limit needed
     if fanart:
-        vtag.setAvailableFanart([{'image': url} for url in fanart])
+        # setAvailableFanart is Piers (v22) only; fall back on Omega/Nexus
+        if hasattr(vtag, 'setAvailableFanart'):
+            vtag.setAvailableFanart([{'image': url} for url in fanart])
+        else:
+            for url in fanart:
+                vtag.addAvailableArtwork(url, arttype='fanart')
 
     used = 0
     for art_type, url, preview in c01:

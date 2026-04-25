@@ -4,10 +4,13 @@
 
 import json
 import re
+from collections import OrderedDict
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
 
 from lib import log
+from lib.config import CACHE_LIMIT
 
 _RE_SMART_QUOTES = re.compile(r'[\u201c\u201d\u2018\u2019\u00ab\u00bb]')
 _RE_HTML = re.compile(r'<[^>]+>')
@@ -23,14 +26,22 @@ _SONG_HINTS = re.compile(
     re.IGNORECASE,
 )
 
-_cache = {}
+_cache = OrderedDict()
+
+_MISSING = object()
+
+
+def _lru_set(key, value):
+    while len(_cache) >= CACHE_LIMIT:
+        _cache.popitem(last=False)
+    _cache[key] = value
 
 
 def get_track_summary(artist, track, lang='en'):
     """Search for a track's Wikipedia article and return the intro."""
     key = (artist.lower(), track.lower())
-    cached = _cache.get(key)
-    if cached is not None:
+    cached = _cache.get(key, _MISSING)
+    if cached is not _MISSING:
         return cached or None
 
     base = 'https://{}.wikipedia.org'.format(lang)
@@ -38,7 +49,7 @@ def get_track_summary(artist, track, lang='en'):
     query = '"{}" "{}" song'.format(track, artist)
     pages = _search(base, query)
     if not pages:
-        _cache[key] = ''
+        _lru_set(key, '')
         return None
 
     for page in pages:
@@ -46,10 +57,10 @@ def get_track_summary(artist, track, lang='en'):
             title = page.get('title', '')
             extract = _get_extract(base, title)
             if extract:
-                _cache[key] = extract
+                _lru_set(key, extract)
                 return extract
 
-    _cache[key] = ''
+    _lru_set(key, '')
     return None
 
 
@@ -62,12 +73,18 @@ def _search(base_url, query, limit=5):
     try:
         req = Request(url, headers={
             'Accept': 'application/json',
-            'User-Agent': 'metadata.musicvideos.python3',
+            'User-Agent': 'metadata.musicvideos.python',
         })
         with urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode('utf-8'))
         pages = data.get('pages')
         return pages if isinstance(pages, list) else None
+    except HTTPError as exc:
+        if exc.code == 404:
+            log.debug('Wikipedia search: not found')
+        else:
+            log.error('Wikipedia search failed: {}'.format(exc))
+        return None
     except Exception as exc:
         log.error('Wikipedia search failed: {}'.format(exc))
         return None
@@ -87,10 +104,16 @@ def _get_extract(base_url, title):
     try:
         req = Request(url, headers={
             'Accept': 'application/json',
-            'User-Agent': 'metadata.musicvideos.python3',
+            'User-Agent': 'metadata.musicvideos.python',
         })
         with urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode('utf-8'))
+    except HTTPError as exc:
+        if exc.code == 404:
+            log.debug('Wikipedia extract: not found')
+        else:
+            log.error('Wikipedia extract failed: {}'.format(exc))
+        return None
     except Exception as exc:
         log.error('Wikipedia extract failed: {}'.format(exc))
         return None
