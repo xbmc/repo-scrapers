@@ -105,5 +105,9 @@ def _fetch(tvdb_id, client_key):
         with urlopen(req, timeout=10) as resp:
             return json.loads(resp.read().decode('utf-8'))
     except Exception as exc:
-        log.error('Fanart.tv GET /tv/{} failed: {}'.format(tvdb_id, exc))
+        from urllib.error import HTTPError
+        if isinstance(exc, HTTPError) and exc.code == 404:
+            log.info('Fanart.tv GET /tv/{}: not found'.format(tvdb_id))
+        else:
+            log.error('Fanart.tv GET /tv/{} failed: {}'.format(tvdb_id, exc))
         return None

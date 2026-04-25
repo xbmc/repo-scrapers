@@ -103,5 +103,9 @@ def _get(path, params=None):
         with urlopen(req, timeout=10) as resp:
             return json.loads(resp.read().decode('utf-8'))
     except Exception as exc:
-        log.error('Trakt GET {} failed: {}'.format(path, exc))
+        from urllib.error import HTTPError
+        if isinstance(exc, HTTPError) and exc.code == 404:
+            log.info('Trakt GET {}: not found'.format(path))
+        else:
+            log.error('Trakt GET {} failed: {}'.format(path, exc))
         return None
