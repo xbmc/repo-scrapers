@@ -1,3 +1,8 @@
+2.0.2
+Log Fanart.tv and Trakt 404s as info instead of error
+Wipe in-memory caches after 15 min idle
+updated Trackt access
+
 2.0.1
 ground up rewrite by MikeSiLVO
 Season-aware artwork selection

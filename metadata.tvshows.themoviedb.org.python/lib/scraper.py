@@ -4,6 +4,7 @@
 
 import json
 import re
+import time
 
 import xbmc
 import xbmcgui
@@ -11,6 +12,7 @@ import xbmcplugin
 
 from lib import art_cache, log
 from lib.artwork import set_artwork
+from lib.api import trakt
 from lib.api.fanarttv import merge_fanarttv_artwork
 from lib.api.tmdb import TmdbApi, get_image_base, _cache
 from lib.api.imdb import get_rating as imdb_rating, check_update as imdb_check
@@ -51,9 +53,25 @@ _FIND_SOURCES = ['imdb', 'tvdb']
 
 _active_show = ''
 
+_IDLE_TTL = 15 * 60
+_last_activity = 0
+
+
+def _clear_in_memory_caches():
+    _cache.clear()
+    trakt._cached_shows.clear()
+    trakt._episode_cache.clear()
+
 
 def run_action(handle, action, params):
     """Dispatch a Kodi scraper action."""
+    global _last_activity
+    now = time.time()
+    if _last_activity and now - _last_activity > _IDLE_TTL:
+        log.debug('idle > {}s, wiping in-memory caches'.format(_IDLE_TTL))
+        _clear_in_memory_caches()
+    _last_activity = now
+
     settings = get_settings()
     log.init(settings.get('verbose_log', False))
 
