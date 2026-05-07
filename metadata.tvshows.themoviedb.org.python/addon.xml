@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="2.0.2"
+  version="2.0.3"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -10,10 +10,9 @@
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>2.0.2
-- Log Fanart.tv and Trakt 404s as info instead of error
-- Wipe in-memory caches after 15 min idle
-- updated Trakt access
+    <news>2.0.3
+- Fix crash on legacy episodeguide format
+- Log info of deprecated episodeguide to refresh instead of erroring
     </news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
