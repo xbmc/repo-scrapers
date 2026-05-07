@@ -511,6 +511,10 @@ def _resolve_episode_guide(api, params):
 
     try:
         ids = json.loads(url)
+    except (ValueError, TypeError):
+        ids = None
+    # numeric urls parse as int, not dict
+    if isinstance(ids, dict):
         tmdb_val = ids.get('tmdb', '')
         show_id = str(tmdb_val) if tmdb_val else ''
         if not show_id:
@@ -523,12 +527,12 @@ def _resolve_episode_guide(api, params):
                         break
         ep_group = ids.get('ep_group', '')
         return show_id, ep_group
-    except (ValueError, TypeError):
-        pass
 
     parts = url.split('|')
     base = parts[0]
     if base.isdigit():
+        log.info('deprecated episodeguide format for show id {}, '
+                 'refresh the show to update'.format(base))
         ep_group = parts[1] if len(parts) > 1 else ''
         return base, ep_group
     return '', ''
