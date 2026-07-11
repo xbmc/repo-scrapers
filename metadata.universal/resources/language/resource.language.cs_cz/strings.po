@@ -7,23 +7,23 @@ msgstr ""
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-29 12:18+0000\n"
-"Last-Translator: Kryštof Černý <cleverline1mc@gmail.com>\n"
+"PO-Revision-Date: 2026-07-06 11:10+0000\n"
+"Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-universal/cs_cz/>\n"
 "Language: cs_cz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.11.2\n"
+"X-Generator: Weblate 2026.7\n"
 
 msgctxt "Addon Summary"
 msgid "Universal Movie Scraper"
-msgstr "Univerzální zdroj dat k filmům"
+msgstr "Univerzální zdroj informací o filmech"
 
 msgctxt "Addon Description"
 msgid "Universal Scraper is currently the most customizable scraper by collecting information from the following supported sites: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. This scraper is currently the flagship of the Team-Kodi scrapers. The initial search can be done either on TMDb or IMDb (according to the settings), but following that it can be set field by field that from which site you want that specific information."
-msgstr "Univerzální zdroj dat, který získává informace z následujících podporovaných stránek: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv, port.hu. Vždy provádí základní hledání na TMDb či IMDb (podle nastavení), ale pro následující hledání může být upraveno pro každou hodnotu, ze které stránky chcete specifickou informaci získat."
+msgstr "Univerzální filmový zdroj informací je v současnosti nejlépe přizpůsobitelný: získává údaje z následujících podporovaných stránek: IMDb, themoviedb.org, Rotten Tomatoes, OFDb.de, fanart.tv a port.hu. Mezi zdroji informací Team Kodi je v současnosti vlajkovou lodí. Úvodní vyhledávání lze provést buď na TMDb, nebo na IMDb (podle nastavení) a poté lze u jednotlivých polí nastavit, z které stránky se mají konkrétní údaje získávat."
 
 msgctxt "#30001"
 msgid "Enable fanart from themoviedb.org"
@@ -31,11 +31,11 @@ msgstr "Povolit fanart z themoviedb.org"
 
 msgctxt "#30002"
 msgid "Enable posters from themoviedb.org"
-msgstr "Povolit plagáty z themoviedb.org"
+msgstr "Povolit plakáty z themoviedb.org"
 
 msgctxt "#30004"
 msgid "Enable posters from MoviePosterDB"
-msgstr "Povolit plagáty z MoviePosterDB"
+msgstr "Povolit plakáty z MoviePosterDB"
 
 msgctxt "#30005"
 msgid "Get Trailers directly from YouTube"
@@ -53,7 +53,7 @@ msgstr "Povolit upoutávky z themoviedb.org"
 
 msgctxt "#30011"
 msgid "Poster"
-msgstr "Plagát"
+msgstr "Plakát"
 
 msgctxt "#30012"
 msgid "Trailers"
@@ -61,7 +61,7 @@ msgstr "Upoutávky"
 
 msgctxt "#30013"
 msgid "Get Set (Collection) Name from themoviedb.org"
-msgstr "Získat název sady (kolekce) z themoviedb.org"
+msgstr "Získat název sbírky filmů z themoviedb.org"
 
 msgctxt "#30014"
 msgid "Get Plot from"
@@ -78,7 +78,7 @@ msgstr "Zdroje děje"
 # empty strings from id 30017 to 30019
 msgctxt "#30020"
 msgid "Preferred Plot Language"
-msgstr "Preferovaný jazyk děje"
+msgstr "Upřednostňovaný jazyk děje"
 
 msgctxt "#30021"
 msgid "Get Default Ratings from"
@@ -86,7 +86,7 @@ msgstr "Získat výchozí hodnocení z"
 
 msgctxt "#30022"
 msgid "Get Genres From"
-msgstr "Získat žánr z"
+msgstr "Získat žánry z"
 
 msgctxt "#30023"
 msgid "Get Title From"
@@ -98,7 +98,7 @@ msgstr "Zdroje názvu"
 
 msgctxt "#30025"
 msgid "Cast & Credits Sources"
-msgstr "Zdroje štábu a zásluh"
+msgstr "Zdroje obsazení a tvůrců"
 
 msgctxt "#30026"
 msgid "Genres Sources"
@@ -114,7 +114,7 @@ msgstr "Zdroje upoutávek"
 
 msgctxt "#30029"
 msgid "Movie Collections"
-msgstr "Filmové kolekce"
+msgstr "Sbírky filmů"
 
 msgctxt "#30030"
 msgid "Rating Sources"
@@ -126,15 +126,15 @@ msgstr "Nastavení certifikace"
 
 msgctxt "#30032"
 msgid "Get Certification From"
-msgstr "Získat certifikace z"
+msgstr "Získat certifikaci z"
 
 msgctxt "#30033"
 msgid "Preferred Certification Country"
-msgstr "Upřednostňovaný stát poskytující certifikaci"
+msgstr "Upřednostňovaná země certifikace"
 
 msgctxt "#30034"
 msgid "Preferred Poster Language"
-msgstr "Preferovaný jazyk plakátů"
+msgstr "Upřednostňovaný jazyk plakátů"
 
 msgctxt "#30035"
 msgid "Certification Prefix"
@@ -142,7 +142,7 @@ msgstr "Prefix certifikace"
 
 msgctxt "#30037"
 msgid "Enable posters from trakt.tv"
-msgstr "Povolit plagáty z trakt.tv"
+msgstr "Povolit plakáty z trakt.tv"
 
 msgctxt "#30038"
 msgid "Enable fanart from trakt.tv"
@@ -162,11 +162,11 @@ msgstr "Upřednostňovaný jazyk upoutávky"
 
 msgctxt "#30042"
 msgid "Get Tagline From"
-msgstr "Získat hlášku z"
+msgstr "Získat slogan z"
 
 msgctxt "#30043"
 msgid "Preferred Tagline Language"
-msgstr "Upřednostňovaný jazyk hlášek"
+msgstr "Upřednostňovaný jazyk sloganu"
 
 msgctxt "#30044"
 msgid "Get IMDb TOP250 Ranking"
@@ -174,11 +174,11 @@ msgstr "Získat 250 nejlépe hodnocených IMDb"
 
 msgctxt "#30045"
 msgid "Get Outline From"
-msgstr "Získat přehled z"
+msgstr "Získat nástin děje z"
 
 msgctxt "#30046"
 msgid "Preferred Set (Collection) Name Language"
-msgstr "Preferovaný jazyk názvu sady (kolekce)"
+msgstr "Upřednostňovaný jazyk názvu sbírky filmů"
 
 msgctxt "#30047"
 msgid "Poster Sources"
@@ -186,7 +186,7 @@ msgstr "Zdroje plakátů"
 
 msgctxt "#30048"
 msgid "Get Keywords and Save as Tags from"
-msgstr "Stáhni klíčová slova a ulož je jako tagy z"
+msgstr "Získat klíčová slova a uložit je jako štítky z"
 
 msgctxt "#30100"
 msgid "Rating"
@@ -219,11 +219,11 @@ msgstr "Použít skóre agregované z"
 
 msgctxt "#30116"
 msgid "OMDB Api Key"
-msgstr "OMDB Api klíč"
+msgstr "Klíč API OMDb"
 
 msgctxt "#30117"
 msgid "Please Register Api Key on omdbapi.com and Add it Above"
-msgstr "Prosím registrujte Api klíč na omdb.com a přidejte jej výše"
+msgstr "Zaregistrujte si klíč API na omdbapi.com a zadejte ho výše"
 
 msgctxt "#30118"
 msgid "Also get non-default Rotten Tomatoes ratings"
@@ -231,7 +231,7 @@ msgstr "Přidat také nevýchozí hodnocení z Rotten Tomatoes"
 
 msgctxt "#30200"
 msgid "Credits"
-msgstr "Zásluhy"
+msgstr "Produkční údaje"
 
 msgctxt "#30201"
 msgid "Get Studio from"
@@ -255,11 +255,11 @@ msgstr "IMDb"
 
 msgctxt "#30303"
 msgid "Search Engine to Use"
-msgstr "Používaný stroj vyhledávání"
+msgstr "Používaný vyhledávač"
 
 msgctxt "#30304"
 msgid "Secondary Search Language (In Addition to en-us)"
-msgstr "Druhý vyhledávací jazyk (k en-us)"
+msgstr "Sekundární jazyk vyhledávání (kromě en-us)"
 
 msgctxt "#30305"
 msgid "Include All Movie Categories"
@@ -283,7 +283,7 @@ msgstr "Děj"
 
 msgctxt "#30401"
 msgid "Plot / Tagline / Outline"
-msgstr "Děj / Slogan / Souhrn"
+msgstr "Děj / Slogan / Nástin děje"
 
 msgctxt "#30500"
 msgid "Fanart"
@@ -291,19 +291,19 @@ msgstr "Fanart"
 
 msgctxt "#30501"
 msgid "Fanart Sources"
-msgstr "Zdroje Fanart"
+msgstr "Zdroje fanartu"
 
 msgctxt "#30502"
 msgid "Enable posters from fanart.tv"
-msgstr "Povolit plagáty z trakt.tv"
+msgstr "Povolit plakáty z fanart.tv"
 
 msgctxt "#30503"
 msgid "Enable fanart from fanart.tv"
-msgstr "Povolit fanart z trakt.tv"
+msgstr "Povolit fanart z fanart.tv"
 
 msgctxt "#30504"
 msgid "Enable posters from IMDb"
-msgstr "Povolit plagáty z IMDb"
+msgstr "Povolit plakáty z IMDb"
 
 msgctxt "#30700"
 msgid "Artwork"
@@ -319,19 +319,19 @@ msgstr "Povolit clearlogo z fanart.tv"
 
 msgctxt "#30703"
 msgid "Enable clearart from fanart.tv"
-msgstr "Povolit cleanart z fanart.tv"
+msgstr "Povolit clearart z fanart.tv"
 
 msgctxt "#30704"
 msgid "Enable movie banner from fanart.tv"
-msgstr "Povolit filmový banner z fanart.tv"
+msgstr "Povolit banner filmu z fanart.tv"
 
 msgctxt "#30705"
 msgid "Enable movie landscape from fanart.tv"
-msgstr "Povolit filmové na šířku z fanart.tv"
+msgstr "Povolit landscape filmu z fanart.tv"
 
 msgctxt "#30707"
 msgid "Enable movie landscape from themoviedb.org"
-msgstr "Povolit filmové na šířku z themoviedb.org"
+msgstr "Povolit landscape filmu z themoviedb.org"
 
 msgctxt "#30706"
 msgid "Enable discart from fanart.tv"
@@ -339,35 +339,35 @@ msgstr "Povolit grafiku disku z fanart.tv"
 
 msgctxt "#30801"
 msgid "Collection Artwork"
-msgstr "Povolit grafiku kolekcí"
+msgstr "Grafika sbírek filmů"
 
 msgctxt "#30802"
 msgid "Enable set poster from fanart.tv"
-msgstr "Povolit kolekci plakátu z fanart.tv"
+msgstr "Povolit plakát sbírky filmů z fanart.tv"
 
 msgctxt "#30803"
 msgid "Enable set fanart from fanart.tv"
-msgstr "Povolit kolekci fanartu z fanart.tv"
+msgstr "Povolit fanart sbírky filmů z fanart.tv"
 
 msgctxt "#30804"
 msgid "Enable set clearlogo from fanart.tv"
-msgstr "Povolit kolekci clearlogo z fanart.tv"
+msgstr "Povolit clearlogo sbírky filmů z fanart.tv"
 
 msgctxt "#30805"
 msgid "Enable set clearart from fanart.tv"
-msgstr "Povolit kolekci clearart z fanart.tv"
+msgstr "Povolit clearart sbírky filmů z fanart.tv"
 
 msgctxt "#30806"
 msgid "Enable set banner from fanart.tv"
-msgstr "Povolit kolekci banneru z fanart.tv"
+msgstr "Povolit banner sbírky filmů z fanart.tv"
 
 msgctxt "#30807"
 msgid "Enable set landscape from fanart.tv"
-msgstr "Povolit kolekci na šířku z fanart.tv"
+msgstr "Povolit landscape sbírky filmů z fanart.tv"
 
 msgctxt "#30808"
 msgid "Enable set discart from fanart.tv"
-msgstr "Povolit kolekci grafiky disku z fanart.tv"
+msgstr "Povolit grafiku disku sbírky filmů z fanart.tv"
 
 #~ msgctxt "#30003"
 #~ msgid "Enable posters from IMPAwards"
