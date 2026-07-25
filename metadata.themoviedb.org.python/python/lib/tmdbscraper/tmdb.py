@@ -92,7 +92,9 @@ class TMDBMovieScraper(object):
 
         # don't specify language to get English text for fallback
         movie_fallback = _get_movie(media_id)
-        movie['images'] = movie_fallback['images']
+        fallback_images = movie_fallback.get('images')
+        if fallback_images:
+            movie['images'] = fallback_images
 
         collection = _get_moviecollection(movie['belongs_to_collection'].get('id'), self.language) if \
             movie['belongs_to_collection'] else None
@@ -113,15 +115,15 @@ class TMDBMovieScraper(object):
             'studio': _get_names(movie['production_companies']),
             'genre': _get_names(movie['genres']),
             'country': _get_names(movie['production_countries']),
-            'credits': _get_cast_members(movie['casts'], 'crew', 'Writing', ['Screenplay', 'Writer', 'Author']),
-            'director': _get_cast_members(movie['casts'], 'crew', 'Directing', ['Director']),
+            'credits': _get_cast_members(movie.get('credits', movie.get('casts', {})), 'crew', 'Writing', ['Screenplay', 'Writer', 'Author']),
+            'director': _get_cast_members(movie.get('credits', movie.get('casts', {})), 'crew', 'Directing', ['Director']),
             'premiered': movie['release_date'],
-            'tag': _get_names(movie['keywords']['keywords'])
+            'tag': _get_names(movie.get('keywords', {}).get('keywords', []))
         }
 
-        if 'countries' in movie['releases']:
+        if 'countries' in movie.get('releases', {}):
             certcountry = self.certification_country.upper()
-            for country in movie['releases']['countries']:
+            for country in movie.get('releases', {}).get('countries', []):
                 if country['iso_3166_1'] == certcountry and country['certification']:
                     info['mpaa'] = country['certification']
                     break
@@ -144,7 +146,7 @@ class TMDBMovieScraper(object):
                     if actor['profile_path'] else "",
                 'order': actor['order']
             }
-            for actor in movie['casts'].get('cast', [])
+            for actor in movie.get('credits', movie.get('casts', {})).get('cast', [])
         ]
         available_art = _parse_artwork(movie, collection, self.urls, self.language)
 
@@ -172,7 +174,7 @@ def _parse_uniqueids(movie):
 
 def _get_movie(mid, language=None, search=False):
     details = None if search else \
-        'trailers,images,releases,casts,keywords' if language is not None else \
+        'trailers,images,releases,credits,keywords' if language is not None else \
         'trailers,images'
     return tmdbapi.get_movie(mid, language=language, append_to_response=details)
 
@@ -193,21 +195,21 @@ def _parse_artwork(movie, collection, urlbases, language):
     keyart = []
 
     if 'images' in movie:
-        posters = _build_image_list_with_fallback(movie['images']['posters'], urlbases, language)
-        landscape = _build_image_list_with_fallback(movie['images']['backdrops'], urlbases, language)
-        logos = _build_image_list_with_fallback(movie['images']['logos'], urlbases, language)
-        fanart = _build_list_without_titles(movie['images']['backdrops'], urlbases)
-        keyart = _build_list_without_titles(movie['images']['posters'], urlbases)
+        posters = _build_image_list_with_fallback(movie['images'].get('posters', []), urlbases, language)
+        landscape = _build_image_list_with_fallback(movie['images'].get('backdrops', []), urlbases, language)
+        logos = _build_image_list_with_fallback(movie['images'].get('logos', []), urlbases, language)
+        fanart = _build_list_without_titles(movie['images'].get('backdrops', []), urlbases)
+        keyart = _build_list_without_titles(movie['images'].get('posters', []), urlbases)
 
     setposters = []
     setlandscape = []
     setfanart = []
     setkeyart = []
     if collection and 'images' in collection:
-        setposters = _build_image_list_with_fallback(collection['images']['posters'], urlbases, language)
-        setlandscape = _build_image_list_with_fallback(collection['images']['backdrops'], urlbases, language)
-        setfanart = _build_list_without_titles(collection['images']['backdrops'], urlbases)
-        setkeyart = _build_list_without_titles(collection['images']['posters'], urlbases)
+        setposters = _build_image_list_with_fallback(collection['images'].get('posters', []), urlbases, language)
+        setlandscape = _build_image_list_with_fallback(collection['images'].get('backdrops', []), urlbases, language)
+        setfanart = _build_list_without_titles(collection['images'].get('backdrops', []), urlbases)
+        setkeyart = _build_list_without_titles(collection['images'].get('posters', []), urlbases)
 
     return {'poster': posters, 'landscape': landscape, 'fanart': fanart,
         'set.poster': setposters, 'set.landscape': setlandscape, 'set.fanart': setfanart,

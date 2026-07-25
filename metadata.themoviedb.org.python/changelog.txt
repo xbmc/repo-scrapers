@@ -1,3 +1,6 @@
+v3.2.1 (2026-06-28)
+- fix scraper error for deprecated TMDB fields and other response changes
+
 v3.2.0 (2026-03-08)
 - add option for keyart from TMDB
 - add whitelist option for "keywords as tags"
