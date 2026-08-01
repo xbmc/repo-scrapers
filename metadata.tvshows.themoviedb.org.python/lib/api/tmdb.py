@@ -16,6 +16,8 @@ from lib.config import API_HEADERS, CACHE_LIMIT, TMDB_API_KEY
 
 _BASE = 'https://api.themoviedb.org/3'
 _MAX_APPENDS = 20
+# aggregate credits can reach thousands on long-running shows
+_MAX_CAST = 200
 # {show_id: {'show': dict, 'episodes': {(s,e): dict}, 'season_cast': {s: list}}}
 _cache = OrderedDict()
 _img_base = ''
@@ -88,6 +90,9 @@ class TmdbApi:
         if not show:
             return None
 
+        if not show.get('credits', {}).get('cast'):
+            self._aggregate_cast_fallback(show_id, show)
+
         if not self._is_english and not show.get('overview'):
             en = self._get('/tv/{}'.format(show_id), {'language': 'en-US'})
             if en and en.get('overview'):
@@ -96,6 +101,28 @@ class TmdbApi:
         self._attach_season_images(show)
         _cache.setdefault(show_id, {})['show'] = show
         return show
+
+    def _aggregate_cast_fallback(self, show_id, show):
+        """Cast for shows credited per episode only."""
+        data = self._get('/tv/{}/aggregate_credits'.format(show_id), {
+            'language': self._lang,
+        })
+        if not data:
+            return
+        cast = []
+        # sorted by episode count, so the cut keeps the most recurring actors
+        for i, member in enumerate(data.get('cast', [])[:_MAX_CAST]):
+            top = max(member.get('roles') or [], default={},
+                      key=lambda r: r.get('episode_count') or 0)
+            cast.append({
+                'name': member.get('name', ''),
+                'character': top.get('character') or '',
+                'order': i,
+                'profile_path': member.get('profile_path'),
+            })
+        if cast:
+            show.setdefault('credits', {})['cast'] = cast
+            log.debug('aggregate cast: {}'.format(len(cast)))
 
     def _attach_season_images(self, show):
         """Batch-fetch and attach per-season images."""
