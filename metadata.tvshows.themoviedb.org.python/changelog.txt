@@ -1,3 +1,8 @@
+2.0.5
+Show the full series cast in themoviedb.org order, limited to 200
+Request compressed responses from TMDb for faster scraping
+Restore Trakt ratings after their API access change
+
 2.0.4
 Fix missing show cast when TMDb has no series regulars
 

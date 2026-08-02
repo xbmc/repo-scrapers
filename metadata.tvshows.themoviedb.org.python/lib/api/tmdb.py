@@ -6,6 +6,7 @@ Uses append_to_response to minimize API calls. Module-level cache
 survives between Kodi plugin calls via reuselanguageinvoker=true.
 """
 
+import gzip
 import json
 from collections import OrderedDict
 from urllib.request import Request, urlopen
@@ -15,12 +16,22 @@ from lib import log
 from lib.config import API_HEADERS, CACHE_LIMIT, TMDB_API_KEY
 
 _BASE = 'https://api.themoviedb.org/3'
+# aggregate credits push show responses past 2MB uncompressed
+_HEADERS = dict(API_HEADERS, **{'Accept-Encoding': 'gzip'})
 _MAX_APPENDS = 20
 # aggregate credits can reach thousands on long-running shows
 _MAX_CAST = 200
 # {show_id: {'show': dict, 'episodes': {(s,e): dict}, 'season_cast': {s: list}}}
 _cache = OrderedDict()
 _img_base = ''
+
+
+def _read_json(resp):
+    """Decode a response body, ungzipping it when TMDB compressed it."""
+    raw = resp.read()
+    if resp.headers.get('Content-Encoding') == 'gzip':
+        raw = gzip.decompress(raw)
+    return json.loads(raw.decode('utf-8'))
 
 
 def get_image_base():
@@ -30,9 +41,9 @@ def get_image_base():
         url = '{}{}?{}'.format(_BASE, '/configuration',
                                urlencode({'api_key': TMDB_API_KEY}))
         try:
-            req = Request(url, headers=API_HEADERS)
+            req = Request(url, headers=_HEADERS)
             with urlopen(req, timeout=10) as resp:
-                data = json.loads(resp.read().decode('utf-8'))
+                data = _read_json(resp)
             _img_base = data['images']['secure_base_url']
             log.debug('TMDB image base: {}'.format(_img_base))
         except Exception:
@@ -40,7 +51,29 @@ def get_image_base():
     return _img_base
 
 
+def _top_role(member):
+    """Character the actor played most, which TMDB lists first."""
+    roles = member.get('roles') or []
+    return (roles[0].get('character') or '') if roles else ''
+
+
+def _set_series_cast(show):
+    """Whole-series cast, trimmed, in the order themoviedb.org lists it."""
+    cast = (show.pop('aggregate_credits', None) or {}).get('cast') or []
+    if not cast:
+        return
+    show.setdefault('credits', {})['cast'] = [{
+        'name': member.get('name', ''),
+        'character': _top_role(member),
+        'order': i,
+        'profile_path': member.get('profile_path'),
+    } for i, member in enumerate(cast[:_MAX_CAST])]
+    log.debug('series cast: {}'.format(len(show['credits']['cast'])))
+
+
 class TmdbApi:
+    """TMDB client for one scrape, holding the language preferences."""
+
     def __init__(self, settings):
         self._lang = settings['lang_details']
         img_lang = settings['lang_images'][:2]
@@ -49,6 +82,7 @@ class TmdbApi:
         self._is_english = self._lang.startswith('en')
 
     def search_shows(self, title, year=''):
+        """Search results for a title, narrowed by first-air year if given."""
         params = {'query': title, 'language': self._lang}
         if year:
             params['first_air_date_year'] = year
@@ -81,8 +115,8 @@ class TmdbApi:
         show = self._get('/tv/{}'.format(show_id), {
             'language': self._lang,
             'append_to_response': ','.join([
-                'credits', 'content_ratings', 'external_ids',
-                'images', 'videos', 'keywords',
+                'credits', 'aggregate_credits', 'content_ratings',
+                'external_ids', 'images', 'videos', 'keywords',
             ]),
             'include_image_language': self._img_lang,
             'include_video_language': self._img_lang,
@@ -90,8 +124,7 @@ class TmdbApi:
         if not show:
             return None
 
-        if not show.get('credits', {}).get('cast'):
-            self._aggregate_cast_fallback(show_id, show)
+        _set_series_cast(show)
 
         if not self._is_english and not show.get('overview'):
             en = self._get('/tv/{}'.format(show_id), {'language': 'en-US'})
@@ -101,28 +134,6 @@ class TmdbApi:
         self._attach_season_images(show)
         _cache.setdefault(show_id, {})['show'] = show
         return show
-
-    def _aggregate_cast_fallback(self, show_id, show):
-        """Cast for shows credited per episode only."""
-        data = self._get('/tv/{}/aggregate_credits'.format(show_id), {
-            'language': self._lang,
-        })
-        if not data:
-            return
-        cast = []
-        # sorted by episode count, so the cut keeps the most recurring actors
-        for i, member in enumerate(data.get('cast', [])[:_MAX_CAST]):
-            top = max(member.get('roles') or [], default={},
-                      key=lambda r: r.get('episode_count') or 0)
-            cast.append({
-                'name': member.get('name', ''),
-                'character': top.get('character') or '',
-                'order': i,
-                'profile_path': member.get('profile_path'),
-            })
-        if cast:
-            show.setdefault('credits', {})['cast'] = cast
-            log.debug('aggregate cast: {}'.format(len(cast)))
 
     def _attach_season_images(self, show):
         """Batch-fetch and attach per-season images."""
@@ -324,13 +335,14 @@ class TmdbApi:
         return self._get('/tv/episode_group/{}'.format(group_id), {})
 
     def _get(self, path, params):
+        """GET a TMDB endpoint, returning parsed JSON or None if it failed."""
         query = dict(params, api_key=TMDB_API_KEY)
         url = '{}{}?{}'.format(_BASE, path, urlencode(query))
         log.debug('TMDB GET {}'.format(path))
         try:
-            req = Request(url, headers=API_HEADERS)
+            req = Request(url, headers=_HEADERS)
             with urlopen(req, timeout=15) as resp:
-                return json.loads(resp.read().decode('utf-8'))
+                return _read_json(resp)
         except Exception as exc:
             from urllib.error import HTTPError
             if isinstance(exc, HTTPError) and exc.code == 404:
