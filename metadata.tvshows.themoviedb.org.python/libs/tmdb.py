@@ -191,7 +191,7 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         logger.debug('no cache file found, loading from scratch')
         show_url = SHOW_URL.format(show_id)
         params = _get_params()
-        params['append_to_response'] = 'credits,content_ratings,external_ids,images,videos,keywords'
+        params['append_to_response'] = 'credits,aggregate_credits,content_ratings,external_ids,images,videos,keywords'
         params['include_image_language'] = '%s,en,null' % source_settings["LANG_IMAGES"][0:2]
         params['include_video_language'] = '%s,en,null' % source_settings["LANG_IMAGES"][0:2]
         show_info = api_utils.load_info(
@@ -239,14 +239,6 @@ def load_show_info(show_id, ep_grouping=None, named_seasons=None):
         show_info = load_fanarttv_art(show_info)
         show_info['images'] = _sort_image_types(show_info.get('images', {}))
         show_info = trim_artwork(show_info)
-        cast_check = []
-        cast = []
-        for season in reversed(show_info.get('seasons', [])):
-            for cast_member in season.get('credits', {}).get('cast', []):
-                if cast_member.get('name', '') not in cast_check:
-                    cast.append(cast_member)
-                    cast_check.append(cast_member.get('name', ''))
-        show_info['credits']['cast'] = cast
         logger.debug('saving show info to the cache')
         if source_settings["VERBOSELOG"]:
             logger.debug(format(pformat(show_info)))
