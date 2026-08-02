@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.7.6"
+  version="1.7.7"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -10,9 +10,8 @@
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>1.7.6
-fix for image sort not using separate image language setting
-fix for fanarttv landscape art overwriting TMDb landscape art
+    <news>1.7.7
+use aggregate_cast from TMDB so series cast matches website
 	</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>

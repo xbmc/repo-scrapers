@@ -1,3 +1,6 @@
+1.7.7
+use aggregate_cast from TMDB so series cast matches website
+
 1.7.6
 fix for image sort not using separate image language setting
 fix for fanarttv landscape art overwriting TMDb landscape art
