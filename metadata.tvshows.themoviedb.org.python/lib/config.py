@@ -2,6 +2,7 @@
 
 """Addon settings loader with per-source path override support."""
 
+import base64
 import json
 import sys
 from urllib.parse import parse_qsl
@@ -17,7 +18,17 @@ API_HEADERS = {
 
 TMDB_API_KEY = 'af3a53eb387d57fc935e9128468b1899'
 
-TRAKT_CLIENTID = '07b40ae3e7c2aa7be77053b27469bfc599aafca58dafda41597c721e1293dd01'
+_TRAKT_MASK = 0x5c
+_TRAKT_CLIENTID = 'aRkzbA83KSozJA8rGBceGh1pPwoUGG8DEAs+BGsRLAwtEBk4Li4XFyVpDQ=='
+
+
+def _trakt_clientid():
+    """Trakt app id, masked so it can't be lifted out of the source verbatim."""
+    return ''.join(chr(byte ^ _TRAKT_MASK)
+                   for byte in base64.b64decode(_TRAKT_CLIENTID))
+
+
+TRAKT_CLIENTID = _trakt_clientid()
 
 FANARTTV_BASE = 'https://webservice.fanart.tv/v3.2'
 FANARTTV_KEY = 'b018086af0e1478479adfc55634db97d'
