@@ -89,7 +89,8 @@ def _set_cast(cast_info, vtag):
     cast = []
     for order, item in enumerate(cast_info[:200], start=1):
         roles = item.get('roles', [])
-        role = roles[0].get('character', '') if roles else ''
+        role = roles[0].get('character', '') if roles else item.get(
+            'character', item.get('character_name', ''))
         thumb = None
         if safe_get(item, 'profile_path') is not None:
             thumb = imagerooturl + item['profile_path']
@@ -295,7 +296,12 @@ def add_main_show_info(list_item, show_info, full_info=True):
                 vtag.setTrailer(trailer)
         list_item = set_show_artwork(show_info, list_item)
         _add_season_info(show_info, vtag)
-        _set_cast(show_info['aggregate_credits']['cast'], vtag)
+        cast = show_info.get('credits', {}).get('cast', [])
+        if cast:
+            _set_cast(cast, vtag)
+        else:
+            _set_cast(show_info.get(
+                'aggregate_credits', {}).get('cast', []), vtag)
         _set_rating(show_info, vtag)
     else:
         image = show_info.get('poster_path', '')
