@@ -16,12 +16,13 @@ from lib import log
 from lib.config import API_HEADERS, CACHE_LIMIT, TMDB_API_KEY
 
 _BASE = 'https://api.themoviedb.org/3'
-# aggregate credits push show responses past 2MB uncompressed
+# season appends repeat the whole show payload
 _HEADERS = dict(API_HEADERS, **{'Accept-Encoding': 'gzip'})
+# TMDB rejects more than 20 appends
 _MAX_APPENDS = 20
-# aggregate credits can reach thousands on long-running shows
+# soaps credit hundreds, aggregate fallback thousands
 _MAX_CAST = 200
-# {show_id: {'show': dict, 'episodes': {(s,e): dict}, 'season_cast': {s: list}}}
+# {show_id: {'show': dict, 'episodes': {(s,e): dict}}}
 _cache = OrderedDict()
 _img_base = ''
 
@@ -57,18 +58,26 @@ def _top_role(member):
     return (roles[0].get('character') or '') if roles else ''
 
 
-def _set_series_cast(show):
-    """Whole-series cast, trimmed, in the order themoviedb.org lists it."""
-    cast = (show.pop('aggregate_credits', None) or {}).get('cast') or []
-    if not cast:
-        return
-    show.setdefault('credits', {})['cast'] = [{
+def _season_regulars(show):
+    """Regulars across every season, deduped, in TMDB's billing order."""
+    found = OrderedDict()
+    for season in show.get('seasons', []):
+        for member in season.get('credits', {}).get('cast', []):
+            name = member.get('name', '')
+            if not name:
+                continue
+            billing = member.get('order')
+            billing = _MAX_CAST if billing is None else billing
+            # billing is show-wide, so keep the season they ranked highest in
+            if name not in found or billing < found[name][0]:
+                found[name] = [billing, member]
+    ranked = sorted(found.values(), key=lambda e: e[0])
+    return [{
         'name': member.get('name', ''),
-        'character': _top_role(member),
+        'character': member.get('character', ''),
         'order': i,
         'profile_path': member.get('profile_path'),
-    } for i, member in enumerate(cast[:_MAX_CAST])]
-    log.debug('series cast: {}'.format(len(show['credits']['cast'])))
+    } for i, (_, member) in enumerate(ranked[:_MAX_CAST])]
 
 
 class TmdbApi:
@@ -100,7 +109,7 @@ class TmdbApi:
         return str(results[0]['id']) if results else None
 
     def get_show_details(self, show_id):
-        """Show metadata + per-season images, batched and cached."""
+        """Show metadata, per-season images and cast, batched and cached."""
         show_id = str(show_id)
         cached = _cache.get(show_id, {}).get('show')
         if cached:
@@ -115,8 +124,8 @@ class TmdbApi:
         show = self._get('/tv/{}'.format(show_id), {
             'language': self._lang,
             'append_to_response': ','.join([
-                'credits', 'aggregate_credits', 'content_ratings',
-                'external_ids', 'images', 'videos', 'keywords',
+                'credits', 'content_ratings', 'external_ids',
+                'images', 'videos', 'keywords',
             ]),
             'include_image_language': self._img_lang,
             'include_video_language': self._img_lang,
@@ -124,30 +133,56 @@ class TmdbApi:
         if not show:
             return None
 
-        _set_series_cast(show)
-
         if not self._is_english and not show.get('overview'):
             en = self._get('/tv/{}'.format(show_id), {'language': 'en-US'})
             if en and en.get('overview'):
                 show['overview'] = en['overview']
 
-        self._attach_season_images(show)
+        self._attach_season_data(show)
+        self._set_series_cast(show_id, show)
         _cache.setdefault(show_id, {})['show'] = show
         return show
 
-    def _attach_season_images(self, show):
-        """Batch-fetch and attach per-season images."""
+    def _set_series_cast(self, show_id, show):
+        """Show cast from the season regulars, or the whole run if none exist."""
+        cast = _season_regulars(show)
+        if not cast:
+            cast = self._aggregate_cast(show_id)
+        if cast:
+            show.setdefault('credits', {})['cast'] = cast
+            log.debug('series cast: {}'.format(len(cast)))
+
+    def _aggregate_cast(self, show_id):
+        """Fallback for shows credited per episode with no season regulars."""
+        data = self._get('/tv/{}/aggregate_credits'.format(show_id), {
+            'language': self._lang,
+        })
+        if not data:
+            return []
+        return [{
+            'name': member.get('name', ''),
+            'character': _top_role(member),
+            'order': i,
+            'profile_path': member.get('profile_path'),
+        } for i, member in enumerate(data.get('cast', [])[:_MAX_CAST])]
+
+    def _attach_season_data(self, show):
+        """Batch-fetch and attach per-season images and regular cast."""
         seasons = show.get('seasons', [])
         season_map = {s.get('season_number', 0): s for s in seasons}
         show_id = show['id']
 
         season_keys = list(season_map.keys())
-        for i in range(0, len(season_keys), _MAX_APPENDS):
-            batch = season_keys[i:i + _MAX_APPENDS]
+        per_call = _MAX_APPENDS // 2
+        for i in range(0, len(season_keys), per_call):
+            batch = season_keys[i:i + per_call]
+            appends = []
+            for n in batch:
+                appends.append('season/{}/images'.format(n))
+                appends.append('season/{}/credits'.format(n))
             data = self._get('/tv/{}'.format(show_id), {
-                'append_to_response': ','.join(
-                    'season/{}/images'.format(n) for n in batch
-                ),
+                'language': self._lang,
+                'append_to_response': ','.join(appends),
                 'include_image_language': self._img_lang,
             })
             if not data:
@@ -156,6 +191,9 @@ class TmdbApi:
                 images = data.get('season/{}/images'.format(snum))
                 if images:
                     season_map[snum]['images'] = images
+                credits = data.get('season/{}/credits'.format(snum))
+                if credits:
+                    season_map[snum]['credits'] = credits
 
     def prefetch_episodes(self, show_id):
         """Pre-fetch all episode data for the entire show."""
@@ -175,7 +213,7 @@ class TmdbApi:
         ]
 
         all_seasons = self._fetch_all_seasons(show_id, season_nums)
-        episodes, season_cast = self._fetch_episode_extras(
+        episodes = self._fetch_episode_extras(
             show_id, season_nums, all_seasons
         )
 
@@ -183,7 +221,6 @@ class TmdbApi:
             self._episode_lang_fallback(show_id, episodes)
 
         entry['episodes'] = episodes
-        entry['season_cast'] = season_cast
 
     def _fetch_all_seasons(self, show_id, season_nums):
         """Phase 1: Fetch full season data via show endpoint appends."""
@@ -205,9 +242,9 @@ class TmdbApi:
         return result
 
     def _fetch_episode_extras(self, show_id, season_nums, all_seasons):
-        """Phase 2: Episode images + external_ids + season credits."""
+        """Phase 2: Episode images and external_ids, two appends per episode."""
         episodes = {}
-        season_cast = {}
+        per_call = _MAX_APPENDS // 2
 
         for snum in season_nums:
             sd = all_seasons.get(snum)
@@ -220,16 +257,12 @@ class TmdbApi:
             eps = [e for e in eps if 'episode_number' in e]
             ep_nums = [e['episode_number'] for e in eps]
             ep_by_num = {e['episode_number']: e for e in eps}
-            need_credits = True
             i = 0
 
             while i < len(ep_nums):
-                limit = 9 if need_credits else 10
-                batch = ep_nums[i:i + limit]
+                batch = ep_nums[i:i + per_call]
 
                 appends = []
-                if need_credits:
-                    appends.append('credits')
                 for en in batch:
                     appends.extend([
                         'episode/{}/images'.format(en),
@@ -243,10 +276,6 @@ class TmdbApi:
                         'include_image_language': self._img_lang,
                     }
                 )
-
-                if data and need_credits and 'credits' in data:
-                    season_cast[snum] = data['credits'].get('cast', [])
-                need_credits = False
 
                 if not data:
                     i += len(batch)
@@ -267,7 +296,7 @@ class TmdbApi:
 
                 i += len(batch)
 
-        return episodes, season_cast
+        return episodes
 
     def _episode_lang_fallback(self, show_id, episodes):
         """Fill missing episode names/overviews from English."""
@@ -319,12 +348,6 @@ class TmdbApi:
             entry = _cache.setdefault(show_id, {})
             entry.setdefault('episodes', {})[(season_num, episode_num)] = data
         return data
-
-    def get_season_cast(self, show_id, season_num):
-        """Season regular cast from cache."""
-        return _cache.get(str(show_id), {}).get('season_cast', {}).get(
-            season_num, []
-        )
 
     def get_cached_episodes(self, show_id):
         """All cached episodes for iteration. Empty dict if not prefetched."""

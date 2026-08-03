@@ -289,8 +289,6 @@ def _getepisodedetails(handle, api, params, settings):
         _fail(handle)
         return
 
-    season_cast = api.get_season_cast(show_id, season_num)
-
     # Show's IMDB ID needed for Trakt episode ratings
     show = api.get_show_details(show_id)
     show_imdb_id = ''
@@ -299,8 +297,7 @@ def _getepisodedetails(handle, api, params, settings):
 
     li = xbmcgui.ListItem(ep.get('name', ''), offscreen=True)
     _populate_episode(
-        li, ep, season_num, episode_num,
-        season_cast, settings, show_imdb_id
+        li, ep, season_num, episode_num, settings, show_imdb_id
     )
     xbmcplugin.setResolvedUrl(handle, True, li)
 
@@ -787,7 +784,7 @@ def _populate_show(li, show, settings, ep_grouping='', named_seasons=None,
 
 
 def _populate_episode(li, ep, season_num, episode_num,
-                      season_cast=None, settings=None, show_imdb_id=''):
+                      settings=None, show_imdb_id=''):
     vtag = li.getVideoInfoTag()
 
     title = ep.get('name') or 'Episode {}'.format(episode_num)
@@ -875,19 +872,8 @@ def _populate_episode(li, ep, season_num, episode_num,
     if runtime:
         vtag.setDuration(runtime * 60)
 
-    # Cast: season regulars + guest stars (deduplicated)
-    cast = []
-    seen = set()
-    for member in (season_cast or []):
-        name = member.get('name', '')
-        if name and name not in seen:
-            seen.add(name)
-            cast.append(_make_actor(member))
-    for g in ep.get('guest_stars', []):
-        name = g.get('name', '')
-        if name and name not in seen:
-            seen.add(name)
-            cast.append(_make_actor(g))
+    # Kodi merges show cast into every episode, regulars already there
+    cast = [_make_actor(g) for g in ep.get('guest_stars', []) if g.get('name')]
     if cast:
         vtag.setCast(cast)
 
