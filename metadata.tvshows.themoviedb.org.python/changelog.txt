@@ -1,3 +1,8 @@
+2.0.6
+Show the season regular cast instead of everyone who ever appeared
+Fix episodes listing the whole series cast
+Fewer API calls when scraping a show
+
 2.0.5
 Show the full series cast in themoviedb.org order, limited to 200
 Request compressed responses from TMDb for faster scraping
