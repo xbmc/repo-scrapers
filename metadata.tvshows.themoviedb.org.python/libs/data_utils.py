@@ -89,12 +89,16 @@ def _set_cast(cast_info, vtag):
     cast = []
     for order, item in enumerate(cast_info[:200], start=1):
         roles = item.get('roles', [])
-        role = roles[0].get('character', '') if roles else item.get(
-            'character', item.get('character_name', ''))
+        if roles:
+            role = roles[0].get('character', '')
+            actual_order = order
+        else:
+            role = item.get('character', '')
+            actual_order = item.get('order', order)
         thumb = None
         if safe_get(item, 'profile_path') is not None:
             thumb = imagerooturl + item['profile_path']
-        cast.append(Actor(item['name'], role, order, thumb))
+        cast.append(Actor(item['name'], role, actual_order, thumb))
     vtag.setCast(cast)
 
 
