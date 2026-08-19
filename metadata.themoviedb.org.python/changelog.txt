@@ -1,3 +1,6 @@
+v3.2.2 (2026-08-19)
+- Updated Czech and Chinese translations
+
 v3.2.1 (2026-06-28)
 - fix scraper error for deprecated TMDB fields and other response changes
 
