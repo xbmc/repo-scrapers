@@ -9,6 +9,7 @@ def fanarttv_artistart(data):
             fanartdata = {}
             fanartdata['image'] = item['url']
             fanartdata['preview'] = item['url'].replace('/fanart/', '/preview/')
+            fanartdata['aspect'] = 'fanart'
             fanart.append(fanartdata)
         artistdata['fanart'] = fanart
     if 'artistthumb' in data:

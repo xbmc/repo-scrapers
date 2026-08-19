@@ -60,16 +60,19 @@ def theaudiodb_artistdetails(data):
             fanartdata = {}
             fanartdata['image'] = item['strArtistFanart']
             fanartdata['preview'] = item['strArtistFanart'] + '/preview'
+            fanartdata['aspect'] = 'fanart'
             fanart.append(fanartdata)
             if item['strArtistFanart2']:
                 fanartdata = {}
                 fanartdata['image'] = item['strArtistFanart2']
                 fanartdata['preview'] = item['strArtistFanart2'] + '/preview'
+                fanartdata['aspect'] = 'fanart'
                 fanart.append(fanartdata)
                 if item['strArtistFanart3']:
                     fanartdata = {}
                     fanartdata['image'] = item['strArtistFanart3']
                     fanartdata['preview'] = item['strArtistFanart3'] + '/preview'
+                    fanartdata['aspect'] = 'fanart'
                     fanart.append(fanartdata)
             artistdata['fanart'] = fanart
         if item.get('strArtistThumb',''):
@@ -104,6 +107,12 @@ def theaudiodb_artistdetails(data):
             extradata['preview'] = item['strArtistBanner'] + '/preview'
             extradata['aspect'] = 'banner'
             extras.append(extradata)
+        if item.get('strArtistCutout',''):
+            extradata = {}
+            extradata['image'] = item['strArtistCutout']
+            extradata['preview'] = item['strArtistCutout'] + '/preview'
+            extradata['aspect'] = 'cutout'
+            extras.append(extradata)
         if extras:
             artistdata['extras'] = extras
         return artistdata
@@ -118,3 +127,27 @@ def theaudiodb_artistalbums(data):
             albumdata['year'] = item.get('intYearReleased', '')
             albums.append(albumdata)
     return albums
+
+def theaudiodb_mvids(data):
+    mvids = []
+    mvidlist = data.get('mvids', [])
+    if mvidlist:
+        for item in mvidlist:
+            mviddata = {}
+            mviddata['title'] = item['strTrack']
+            mviddata['mbtrackid'] = item.get('strMusicBrainzID')
+            tempurl = item.get('strMusicVid', '')
+            # Find and remove extraneous data in the URL leaving just the video ID
+            index = tempurl.find('=')
+            vid_id = tempurl[index+1:]
+            http_index = vid_id.find('//youtu.be/')
+            if http_index != -1:
+                vid_id = vid_id[http_index+11:]
+            check1 = vid_id.find('/www.youtube.com/embed/')
+            if check1 != -1:
+                vid_id = vid_id[check1 + 23:check1 + 34]
+            mviddata['url'] = \
+                'plugin://plugin.video.youtube/play/?video_id=%s' % vid_id
+            mviddata['thumb'] = item.get('strTrackThumb', '')
+            mvids.append(mviddata)
+    return mvids
