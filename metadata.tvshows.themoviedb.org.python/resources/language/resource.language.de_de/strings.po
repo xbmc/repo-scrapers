@@ -1,0 +1,159 @@
+# Kodi Media Center language file
+# Addon Name: TMDb TV Shows python3
+# Addon id: metadata.tvshows.tmdb.python3
+# Addon Provider: MikeSiLVO
+msgid ""
+msgstr ""
+"Project-Id-Version: metadata.tvshows.tmdb.python3\n"
+"Report-Msgid-Bugs-To: translations@kodi.tv\n"
+"PO-Revision-Date: 2026-08-19 09:23+0000\n"
+"Last-Translator: Kai Sommerfeld <ksooo@users.noreply.kodi.weblate.cloud>\n"
+"Language-Team: German <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-tvshows-themoviedb-org-python/de_de/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_de\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
+
+# General settings
+msgctxt "#32000"
+msgid "Metadata language"
+msgstr "Sprache für Metadaten"
+
+msgctxt "#32001"
+msgid "Separate language for images"
+msgstr "Getrennte Sprache für Bilder"
+
+msgctxt "#32002"
+msgid "Image language"
+msgstr "Sprache für Bilder"
+
+msgctxt "#32003"
+msgid "Certification country"
+msgstr "Land für Zertifizierungen"
+
+msgctxt "#32004"
+msgid "Certification prefix"
+msgstr "Präfix für Zertifizierungen"
+
+msgctxt "#32005"
+msgid "Prefix text"
+msgstr "Präfixtext"
+
+msgctxt "#32006"
+msgid "Use original title"
+msgstr "Originaltitel verwenden"
+
+msgctxt "#32007"
+msgid "Keywords as tags"
+msgstr "Schlüsselworte als Tags"
+
+msgctxt "#32008"
+msgid "Categorize backdrops with text as landscape"
+msgstr "Hintergründe mit Text als Landschaft kategorisieren"
+
+msgctxt "#32009"
+msgid "Categorize textless posters as key art"
+msgstr "Poster ohne Text als Hauptgrafik kategorisieren"
+
+msgctxt "#32010"
+msgid "Country of origin in studio name"
+msgstr "Herkunftsland im Studionamen"
+
+msgctxt "#32011"
+msgid "Trailers"
+msgstr "Trailer"
+
+msgctxt "#32016"
+msgid "Enable trailers"
+msgstr "Trailer aktivieren"
+
+msgctxt "#32012"
+msgid "Trailer player"
+msgstr "Player für Trailer"
+
+msgctxt "#32013"
+msgid "YouTube"
+msgstr "YouTube"
+
+msgctxt "#32014"
+msgid "Tubed"
+msgstr "Tubed"
+
+msgctxt "#32015"
+msgid "Prefer highest resolution"
+msgstr "Höchste Auflösung bevorzugen"
+
+# General group headers
+msgctxt "#32020"
+msgid "Language"
+msgstr "Sprache"
+
+msgctxt "#32021"
+msgid "Certification"
+msgstr "Zertifizierung"
+
+msgctxt "#32022"
+msgid "Content"
+msgstr "Inhalt"
+
+# Artwork category
+msgctxt "#32050"
+msgid "Artwork"
+msgstr "Artwork"
+
+msgctxt "#32051"
+msgid "Preferences"
+msgstr "Einstellungen"
+
+# Ratings settings
+msgctxt "#32100"
+msgid "Ratings"
+msgstr "Bewertungen"
+
+msgctxt "#32101"
+msgid "Primary rating source"
+msgstr "Primäre Quelle für Bewertungen"
+
+msgctxt "#32102"
+msgid "Also fetch IMDb rating"
+msgstr "IMDB-Bewertungen ebenfalls laden"
+
+msgctxt "#32103"
+msgid "Also fetch Trakt rating"
+msgstr "Trakt-Bewertungen ebenfalls laden"
+
+msgctxt "#32104"
+msgid "Also fetch TMDb rating"
+msgstr "TMDb-Bewertungen ebenfalls laden"
+
+# Fanart.tv settings
+msgctxt "#32200"
+msgid "fanart.tv"
+msgstr "fanart.tv"
+
+msgctxt "#32201"
+msgid "Fetch art from fanart.tv"
+msgstr "Grafiken von fanart.tv laden"
+
+msgctxt "#32202"
+msgid "Personal client key"
+msgstr "Persönlicher Client-Key"
+
+msgctxt "#32204"
+msgid "Prefer fanart.tv logos"
+msgstr "Logos von fanart.tv bevorzugen"
+
+msgctxt "#32205"
+msgid "Prefer fanart.tv artwork"
+msgstr "Grafiken von fanart.tv bevorzugen"
+
+# Advanced settings
+msgctxt "#32300"
+msgid "Advanced"
+msgstr "Erweitert"
+
+msgctxt "#32301"
+msgid "Verbose logging"
+msgstr "Erweiterte Protokollierung"
