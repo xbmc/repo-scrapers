@@ -42,6 +42,7 @@ FANARTTV_MAPPING = {'showbackground': 'backdrops',
                     'seasonbanner': 'seasonbanner',
                     'seasonthumb': 'seasonlandscape'
                     }
+TMDB_ARTWORK_TYPES = ('backdrops', 'posters', 'stills', 'logos', 'profiles')
 
 
 def _get_date_numeric(datetime_):

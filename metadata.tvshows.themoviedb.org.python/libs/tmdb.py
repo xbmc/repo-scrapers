@@ -473,6 +473,8 @@ def _sort_image_types(imagelist):
     source_settings = settings.getSourceSettings()
     new_imagelist = {}
     for image_type, images in imagelist.items():
+        if image_type not in settings.TMDB_ARTWORK_TYPES:
+            continue
         if image_type == "backdrops":
             backdrops = []
             landscape = []
