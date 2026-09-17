@@ -1,3 +1,6 @@
+1.7.13
+ignore image list when API returns anything other than a list for images
+
 1.7.9
 fix to make cast order more like TMDb web site
 
