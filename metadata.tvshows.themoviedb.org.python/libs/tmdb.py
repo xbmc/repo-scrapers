@@ -512,18 +512,21 @@ def _image_sort(images, image_type):
     lang_null = []
     lang_en = []
     firstimage = True
-    for image in images:
-        image_lang = image.get('iso_639_1')
-        if image_lang == source_settings["LANG_IMAGES"][0:2]:
-            lang_pref.append(image)
-        elif image_lang == 'en':
-            lang_en.append(image)
-        else:
-            if firstimage:
+    try:
+        for image in images:
+            image_lang = image.get('iso_639_1')
+            if image_lang == source_settings["LANG_IMAGES"][0:2]:
                 lang_pref.append(image)
+            elif image_lang == 'en':
+                lang_en.append(image)
             else:
-                lang_null.append(image)
-        firstimage = False
+                if firstimage:
+                    lang_pref.append(image)
+                else:
+                    lang_null.append(image)
+            firstimage = False
+    except TypeError:
+        pass
     if image_type == 'posters':
         return lang_pref + lang_en + lang_null
     else:
