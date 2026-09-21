@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="2.0.7"
+  version="2.0.8"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
@@ -10,10 +10,8 @@
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>2.0.6
-- Show the season regular cast instead of everyone who ever appeared
-- Fix episodes listing the whole series cast
-- Fewer API calls when scraping a show
+    <news>2.0.8
+- Fix missing episode thumbs and IMDb episode ratings after a TMDb API change
     </news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
