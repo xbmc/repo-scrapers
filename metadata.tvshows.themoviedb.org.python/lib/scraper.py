@@ -37,6 +37,7 @@ _NFO_IMDB = re.compile(r'imdb\.com/title/(tt\d+)')
 _NFO_NAMED_SEASON = re.compile(
     r'<namedseason\s+number="(\d+)">([^<]+)</namedseason>'
 )
+_NFO_ROOT_END = re.compile(r'</(?:tvshow|episodedetails)\s*>')
 
 _RE_PARAGRAPH = re.compile(r'</p>\s*<p>')
 _RE_HTML_TAG = re.compile(r'<[^>]+>')
@@ -128,17 +129,18 @@ def _find(handle, api, params, _settings):
         elif len(inner) == 4 and inner.isdigit() and not year:
             year = inner
 
+    query_lower = clean_title.lower()
+
     # Search by external ID if title looks like one
     results = _search_by_external_id(api, clean_title)
     if results is None:
         results = api.search_shows(clean_title, year)
-        # Year might be off-by-one in folder name, retry unfiltered
-        if not results and year:
+        # a wrong year returns nothing, or only alternative-title matches
+        if year and not any(_named_like(query_lower, s) for s in results):
             results = api.search_shows(clean_title)
 
     # Sort by title similarity + year proximity so Kodi auto-selects best match
     query_year = int(year) if year and year.isdigit() else 0
-    query_lower = clean_title.lower()
     for show in results:
         show['_relevance'] = _search_relevance(
             show.get('name', ''), show.get('original_name', ''),
@@ -332,12 +334,6 @@ def _getartwork(handle, api, params, settings):
 
 def _nfo_url(handle, params):
     nfo = params.get('nfo', '')
-
-    # Kodi handles complete NFOs (with <uniqueid>) itself, skip
-    if '<uniqueid' in nfo:
-        xbmcplugin.endOfDirectory(handle)
-        return
-
     show_id, provider, ep_grouping, named_seasons = _parse_nfo(nfo)
     log.debug('NfoUrl: id={}, provider={}, ep_group={}'.format(
         show_id, provider, ep_grouping or 'none'))
@@ -405,9 +401,15 @@ def _title_match(q, t):
     return 0.0
 
 
+def _named_like(query_lower, show):
+    """Whether a search hit is called what the query asked for, in either name."""
+    return bool(_title_relevance(query_lower, show.get('name', ''))
+                or _title_relevance(query_lower, show.get('original_name', '')))
+
+
 def _search_relevance(name, original_name, first_air_date, query_lower,
                       query_year, origin_country=None, country_hint=''):
-    """Score title + year + country match. Range roughly -0.6 to 3.0."""
+    """Score title + year + country match. Range roughly -0.6 to 2.5."""
     title_score = _title_relevance(query_lower, name)
     if original_name:
         alt = _title_relevance(query_lower, original_name)
@@ -418,7 +420,8 @@ def _search_relevance(name, original_name, first_air_date, query_lower,
     if query_year and has_date:
         try:
             result_year = int(first_air_date[:4])
-            year_score = max(0.0, 1.0 - 0.5 * abs(query_year - result_year))
+            # never reaches the weakest title tier
+            year_score = max(0.0, 0.5 - 0.25 * abs(query_year - result_year))
         except ValueError:
             pass
     # Stub entries with no air date rank below complete entries
@@ -532,6 +535,7 @@ def _resolve_episode_guide(api, params):
                  'refresh the show to update'.format(base))
         ep_group = parts[1] if len(parts) > 1 else ''
         return base, ep_group
+    log.info('episodeguide is not a TMDb guide, update tvshow.nfo: {}'.format(base[:80]))
     return '', ''
 
 
@@ -540,6 +544,11 @@ def _parse_nfo(nfo):
     named_seasons = {}
     for match in _NFO_NAMED_SEASON.finditer(nfo):
         named_seasons[int(match.group(1))] = match.group(2)
+
+    # URLs inside the XML are data (episodeguide, thumbs); a scrape URL follows the root
+    ends = list(_NFO_ROOT_END.finditer(nfo))
+    if ends:
+        nfo = nfo[ends[-1].end():]
 
     match = _NFO_TMDB.search(nfo)
     if match:

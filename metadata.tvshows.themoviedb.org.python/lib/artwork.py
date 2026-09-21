@@ -183,9 +183,10 @@ def _byte_cost(entry):
         # <thumb colors="" preview="">URL</thumb>\n
         # setAvailableFanart only receives {'image': url}, Kodi stores preview=""
         return 36 + len(entry['url'])
-    # <thumb spoof="" cache="" [season="N" type="season" ]aspect="TYPE" preview="PREVIEW">URL</thumb>
+    # <thumb spoof="" cache="" aspect="TYPE" preview="PREVIEW">URL</thumb>
     cost = 54 + len(entry['art_type']) + len(entry['preview']) + len(entry['url'])
     if entry['season'] is not None:
+        # plus season="N" type="season"
         cost += 24 + len(str(entry['season']))
     return cost
 
