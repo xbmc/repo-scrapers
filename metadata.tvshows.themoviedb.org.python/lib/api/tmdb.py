@@ -244,57 +244,39 @@ class TmdbApi:
     def _fetch_episode_extras(self, show_id, season_nums, all_seasons):
         """Phase 2: Episode images and external_ids, two appends per episode."""
         episodes = {}
-        per_call = _MAX_APPENDS // 2
-
+        pending = []
         for snum in season_nums:
             sd = all_seasons.get(snum)
             if not sd:
                 continue
-            eps = sd.get('episodes', [])
-            if not eps:
-                continue
+            for e in sd.get('episodes', []):
+                if 'episode_number' in e:
+                    pending.append((snum, e['episode_number'], e))
 
-            eps = [e for e in eps if 'episode_number' in e]
-            ep_nums = [e['episode_number'] for e in eps]
-            ep_by_num = {e['episode_number']: e for e in eps}
-            i = 0
+        per_call = _MAX_APPENDS // 2
+        for i in range(0, len(pending), per_call):
+            batch = pending[i:i + per_call]
+            appends = []
+            for snum, en, _ in batch:
+                prefix = 'season/{}/episode/{}'.format(snum, en)
+                appends.extend([prefix + '/images', prefix + '/external_ids'])
 
-            while i < len(ep_nums):
-                batch = ep_nums[i:i + per_call]
+            data = self._get('/tv/{}'.format(show_id), {
+                'language': self._lang,
+                'append_to_response': ','.join(appends),
+                'include_image_language': self._img_lang,
+            }) or {}
 
-                appends = []
-                for en in batch:
-                    appends.extend([
-                        'episode/{}/images'.format(en),
-                        'episode/{}/external_ids'.format(en),
-                    ])
-
-                data = self._get(
-                    '/tv/{}/season/{}'.format(show_id, snum), {
-                        'language': self._lang,
-                        'append_to_response': ','.join(appends),
-                        'include_image_language': self._img_lang,
-                    }
-                )
-
-                if not data:
-                    i += len(batch)
-                    continue
-
-                for en in batch:
-                    base = ep_by_num.get(en)
-                    if not base:
-                        continue
-                    ep = dict(base)
-                    img = data.get('episode/{}/images'.format(en))
-                    ext = data.get('episode/{}/external_ids'.format(en))
-                    if img:
-                        ep['images'] = img
-                    if ext:
-                        ep['external_ids'] = ext
-                    episodes[(snum, en)] = ep
-
-                i += len(batch)
+            for snum, en, base in batch:
+                prefix = 'season/{}/episode/{}'.format(snum, en)
+                ep = dict(base)
+                img = data.get(prefix + '/images')
+                ext = data.get(prefix + '/external_ids')
+                if img:
+                    ep['images'] = img
+                if ext:
+                    ep['external_ids'] = ext
+                episodes[(snum, en)] = ep
 
         return episodes
 
