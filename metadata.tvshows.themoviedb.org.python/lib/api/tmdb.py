@@ -261,21 +261,27 @@ class TmdbApi:
                 prefix = 'season/{}/episode/{}'.format(snum, en)
                 appends.extend([prefix + '/images', prefix + '/external_ids'])
 
-            data = self._get('/tv/{}'.format(show_id), {
+            params = {
                 'language': self._lang,
                 'append_to_response': ','.join(appends),
                 'include_image_language': self._img_lang,
-            }) or {}
+            }
+            data = self._get('/tv/{}'.format(show_id), params)
+            if data is None:
+                data = self._get('/tv/{}'.format(show_id), params)
 
             for snum, en, base in batch:
-                prefix = 'season/{}/episode/{}'.format(snum, en)
                 ep = dict(base)
-                img = data.get(prefix + '/images')
-                ext = data.get(prefix + '/external_ids')
-                if img:
-                    ep['images'] = img
-                if ext:
-                    ep['external_ids'] = ext
+                if data is None:
+                    ep['_retry'] = True
+                else:
+                    prefix = 'season/{}/episode/{}'.format(snum, en)
+                    img = data.get(prefix + '/images')
+                    ext = data.get(prefix + '/external_ids')
+                    if img:
+                        ep['images'] = img
+                    if ext:
+                        ep['external_ids'] = ext
                 episodes[(snum, en)] = ep
 
         return episodes
@@ -309,12 +315,12 @@ class TmdbApi:
                     ep['overview'] = en_ep['overview']
 
     def get_episode(self, show_id, season_num, episode_num):
-        """Cache-first episode read. Single API call on cache miss."""
+        """Cache-first episode read, one API call on a miss or a failed prefetch batch."""
         show_id = str(show_id)
         cached = _cache.get(show_id, {}).get('episodes', {}).get(
             (season_num, episode_num)
         )
-        if cached:
+        if cached and not cached.get('_retry'):
             return cached
 
         data = self._get(
@@ -326,9 +332,15 @@ class TmdbApi:
                 'include_image_language': self._img_lang,
             }
         )
-        if data:
-            entry = _cache.setdefault(show_id, {})
-            entry.setdefault('episodes', {})[(season_num, episode_num)] = data
+        if not data:
+            return cached
+        if cached:
+            del cached['_retry']
+            cached['images'] = data.get('images', {})
+            cached['external_ids'] = data.get('external_ids', {})
+            return cached
+        entry = _cache.setdefault(show_id, {})
+        entry.setdefault('episodes', {})[(season_num, episode_num)] = data
         return data
 
     def get_cached_episodes(self, show_id):

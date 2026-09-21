@@ -1,3 +1,8 @@
+2.0.9
+Fix search matching a spin-off when the folder year is wrong
+Retry episode thumbs and IDs when a request fails
+Fix combination NFOs with unique IDs being treated as complete
+
 2.0.8
 Fix missing episode thumbs and IMDb episode ratings after a TMDb API change
 
