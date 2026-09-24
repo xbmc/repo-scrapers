@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="metadata.tvshows.themoviedb.org.python"
   name="TMDb TV Shows"
-  version="1.4.20"
+  version="1.4.21"
   provider-name="Team Kodi">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -10,9 +10,15 @@
   <extension point="xbmc.metadata.scraper.tvshows" library="main.py" cachepersistence="00:15"/>
   <extension point="xbmc.addon.metadata">
     <reuselanguageinvoker>true</reuselanguageinvoker>
-    <news>1.4.20
+    <news>1.4.21
+Matrix compatibility fix for current TMDb image responses
+- ignore non-list/scalar values during artwork processing and trimming
+- prevent artwork trimming errors when scalar metadata is returned inside image objects
+- preserve existing episodeguide, IDs, NFO, cache and episode retrieval behavior
+
+1.4.20
 fix for breaking change to TMDB API for fanart
-	</news>
+</news>
     <platform>all</platform>
     <license>GPL-3.0-or-later</license>
     <assets>

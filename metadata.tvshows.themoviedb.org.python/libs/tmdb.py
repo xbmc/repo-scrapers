@@ -363,6 +363,8 @@ def trim_artwork(show_info):
     image_total = 0
     backdrops_total = 0
     for image_type, image_list in show_info.get('images', {}).items():
+        if not isinstance(image_list, (list, tuple)):
+            continue
         total = len(image_list)
         if image_type == 'backdrops':
             backdrops_total = backdrops_total + total
@@ -371,6 +373,8 @@ def trim_artwork(show_info):
             image_total = image_total + total
     for season in show_info.get('seasons', []):
         for image_type, image_list in season.get('images', {}).items():
+            if not isinstance(image_list, (list, tuple)):
+                continue
             total = len(image_list)
             thetype = '%s_%s' % (str(season['season_number']), image_type)
             image_counts[thetype] = {'total': total}
@@ -395,13 +399,25 @@ def trim_artwork(show_info):
         for image_type, image_list in show_info.get('images', {}).items():
             if image_type == 'backdrops':
                 continue  # already handled backdrops above
+            # TMDb may return scalar metadata inside an images object.
+            # Only image lists were counted above, so ignore anything else here too.
+            if not isinstance(image_list, (list, tuple)):
+                continue
+            if image_type not in image_counts:
+                continue
             reduce = image_counts[image_type]['reduce']
             if reduce != 0:
                 del show_info['images'][image_type][reduce:]
         for s in range(len(show_info.get('seasons', []))):
             for image_type, image_list in show_info['seasons'][s].get('images', {}).items():
+                # Keep trimming consistent with the counting pass above: scalar
+                # metadata (for example an 'id' value) is not artwork.
+                if not isinstance(image_list, (list, tuple)):
+                    continue
                 thetype = '%s_%s' % (
                     str(show_info['seasons'][s]['season_number']), image_type)
+                if thetype not in image_counts:
+                    continue
                 reduce = image_counts[thetype]['reduce']
                 if reduce != 0:
                     del show_info['seasons'][s]['images'][image_type][reduce:]
@@ -409,8 +425,13 @@ def trim_artwork(show_info):
 
 
 def _sort_image_types(imagelist):
-    for image_type, images in imagelist.items():
-        imagelist[image_type] = _image_sort(images, image_type)
+    if not isinstance(imagelist, dict):
+        return {}
+    for image_type, images in list(imagelist.items()):
+        if isinstance(images, (list, tuple)):
+            imagelist[image_type] = _image_sort(images, image_type)
+        else:
+            del imagelist[image_type]
     return imagelist
 
 
@@ -420,6 +441,8 @@ def _image_sort(images, image_type):
     lang_en = []
     firstimage = True
     for image in images:
+        if not isinstance(image, dict):
+            continue
         image_lang = image.get('iso_639_1')
         if image_lang == settings.LANG[0:2]:
             lang_pref.append(image)
