@@ -1,3 +1,9 @@
+1.4.21
+Matrix compatibility fix for current TMDb image responses
+- ignore non-list/scalar values during artwork processing and trimming
+- prevent artwork trimming errors when scalar metadata is returned inside image objects
+- preserve existing episodeguide, IDs, NFO, cache and episode retrieval behavior
+
 1.4.20
 fix for breaking change to TMDB API for fanart
 
