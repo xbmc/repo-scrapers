@@ -138,6 +138,20 @@ class NfoParser:
             except ValueError:
                 votes = 0
 
+            max_attr = rating_elem.get("max", "")
+            try:
+                max_val = float(max_attr) if max_attr else 0.0
+            except ValueError:
+                max_val = 0.0
+
+            if source in (DataSource.ROTTEN_TOMATOES, DataSource.METACRITIC):
+                target_max = 100.0
+            else:
+                target_max = 10.0
+
+            if max_val > 0 and max_val != target_max and value > 0:
+                value = value * target_max / max_val
+
             if value > 0:
                 ratings.append(Rating(source=source, value=value, votes=votes))
 
