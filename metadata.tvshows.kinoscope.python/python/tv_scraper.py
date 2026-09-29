@@ -817,6 +817,7 @@ def _handle_getepisodelist(
         if cached_raw is not None:
             seasons = kp_client.parse_seasons(cached_raw)
             if seasons:
+                _cache_put(kp_id, seasons, logger)
                 logger.info(f"_handle_getepisodelist: loaded seasons from file cache for kp_id={kp_id}")
             else:
                 cache.delete(file_cache_key)
@@ -950,6 +951,7 @@ def _handle_getepisodedetails(
         if cached_raw is not None:
             seasons = kp_client.parse_seasons(cached_raw)
             if seasons:
+                _cache_put(kp_id, seasons, logger)
                 logger.info(f"_handle_getepisodedetails: loaded seasons from file cache for kp_id={kp_id}")
             else:
                 cache.delete(file_cache_key)
