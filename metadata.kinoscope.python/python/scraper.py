@@ -321,17 +321,19 @@ def _handle_find(
                         )
                         break
 
-    if (
-        settings.auto_select_exact_match
-        and len(results) == 1
-        and search_year is not None
-        and successful_candidate is not None
-        and results[0].title_ru is not None
-        and results[0].title_ru.lower() == successful_candidate.lower()
-        and results[0].year is not None
-        and str(results[0].year) == str(search_year)
-    ):
-        logger.info(f"_handle_find: auto-selected exact match: kp_id={results[0].kinopoisk_id}")
+    if settings.auto_select_exact_match and search_year is not None and successful_candidate is not None:
+        exact = [
+            r for r in results
+            if r.title_ru
+            and r.title_ru.lower() == successful_candidate.lower()
+            and r.year is not None
+            and str(r.year) == str(search_year)
+        ]
+        if len(exact) == 1:
+            results = exact
+            logger.info(f"_handle_find: auto-selected exact match: kp_id={results[0].kinopoisk_id}")
+        elif len(exact) > 1:
+            logger.info(f"_handle_find: auto-select: {len(exact)} exact matches, showing all")
 
     if not results and _kp_unavailable:
         logger.error(
