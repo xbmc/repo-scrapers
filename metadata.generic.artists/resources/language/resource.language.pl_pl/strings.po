@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Main\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-07-31 13:29+0000\n"
+"PO-Revision-Date: 2026-10-26 18:32+0000\n"
 "Last-Translator: Marek Adamski <fevbew@wp.pl>\n"
 "Language-Team: Polish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-generic-artists/pl_pl/>\n"
 "Language: pl_pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-"X-Generator: Weblate 4.7.2\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 msgctxt "Addon Summary"
 msgid "Generic music scraper for artists"
@@ -53,6 +53,30 @@ msgctxt "#30006"
 msgid "Prefer moods from"
 msgstr "Preferuj nastroje z"
 
+msgctxt "#30007"
+msgid "Preferred MusicBrainz artist name locale"
+msgstr "Preferowane ustawienie regionalne nazwy wykonawcy w serwisie MusicBrainz"
+
+msgctxt "#30008"
+msgid "Custom locale"
+msgstr "Niestandardowe ustawienia regionalne"
+
+msgctxt "#30009"
+msgid "Default locale"
+msgstr "Domyślne ustawienia regionalne"
+
+msgctxt "#30010"
+msgid "Current Kodi locale"
+msgstr "Bieżące ustawienia regionalne Kodi"
+
+msgctxt "#30011"
+msgid "Custom locale"
+msgstr "Niestandardowe ustawienia regionalne"
+
+msgctxt "#30012"
+msgid "Discogs access token"
+msgstr "Token dostępu Discogs"
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Zezwalaj na mniej dokładne wyniki wyszukiwania"
@@ -80,6 +104,18 @@ msgstr "Spróbuj uzyskać informacje o stylu za pomocą wybranego ekstraktora. I
 msgctxt "#30206"
 msgid "Try to get mood info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Spróbuj uzyskać informacje o nastroju za pomocą wybranego ekstraktora. Inne ekstraktory zostaną użyte, jeśli preferowany ekstraktor nie poda rezultatów."
+
+msgctxt "#30207"
+msgid "Choose whether to use the default MusicBrainz artist name, your current Kodi locale, or a custom locale for MusicBrainz artist names."
+msgstr "Wybierz, czy chcesz używać domyślnej nazwy wykonawcy z MusicBrainz, bieżących ustawień regionalnych programu Kodi, czy też własnych ustawień regionalnych dla nazw wykonawców z MusicBrainz."
+
+msgctxt "#30208"
+msgid "Choose a custom locale, e.g. pt-PT or pt-BR, or language: pt"
+msgstr "Wybierz niestandardowe ustawienia regionalne, np. pt-PT lub pt-BR, albo język: pt"
+
+msgctxt "#30209"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr "Aby korzystać ze skrapera Discogs, musisz założyć konto w serwisie discogs.com i wygenerować osobisty token dostępu"
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname. Since artist names are not unique, this could potentially result in a mixture of metadata from multiple artists by the same name."

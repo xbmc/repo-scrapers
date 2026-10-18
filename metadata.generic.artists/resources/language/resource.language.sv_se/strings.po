@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Main\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-09-16 14:54+0000\n"
+"PO-Revision-Date: 2026-10-18 19:35+0000\n"
 "Last-Translator: Daniel Nylander <daniel@danielnylander.se>\n"
 "Language-Team: Swedish <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-generic-artists/sv_se/>\n"
 "Language: sv_se\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1\n"
+"X-Generator: Weblate 2026.10.1\n"
 
 msgctxt "Addon Summary"
 msgid "Generic music scraper for artists"
@@ -53,6 +53,30 @@ msgctxt "#30006"
 msgid "Prefer moods from"
 msgstr "Föredra stämning från"
 
+msgctxt "#30007"
+msgid "Preferred MusicBrainz artist name locale"
+msgstr "Föredragen språkvariant för MusicBrainz artistname"
+
+msgctxt "#30008"
+msgid "Custom locale"
+msgstr "Anpassad språkvariant"
+
+msgctxt "#30009"
+msgid "Default locale"
+msgstr "Språkvariant som standard"
+
+msgctxt "#30010"
+msgid "Current Kodi locale"
+msgstr "Aktuell Kodi-språkvariant"
+
+msgctxt "#30011"
+msgid "Custom locale"
+msgstr "Anpassad språkvariant"
+
+msgctxt "#30012"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Tillåt mindre träffsäkra sökresultat"
@@ -80,6 +104,18 @@ msgstr "Försök att få formatinformation med den valda skraparen. Andra skrapa
 msgctxt "#30206"
 msgid "Try to get mood info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Försök få information om stämning med den valda skraparen. Andra skrapare används om den föredragna skraparen inte ger några resultat."
+
+msgctxt "#30207"
+msgid "Choose whether to use the default MusicBrainz artist name, your current Kodi locale, or a custom locale for MusicBrainz artist names."
+msgstr "Välj om du vill använda det förvalda artistnamnet från MusicBrainz, din nuvarande språkinställning i Kodi, eller en anpassad språkinställning för artistnamn från MusicBrainz."
+
+msgctxt "#30208"
+msgid "Choose a custom locale, e.g. pt-PT or pt-BR, or language: pt"
+msgstr "Välj en specifik språkvariant, t.ex. pt-PT eller pt-BR, eller språk: pt"
+
+msgctxt "#30209"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname. Since artist names are not unique, this could potentially result in a mixture of metadata from multiple artists by the same name."

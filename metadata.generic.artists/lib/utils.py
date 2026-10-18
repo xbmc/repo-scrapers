@@ -9,14 +9,12 @@ AUDIODBMVIDS = 'mvid-mb.php?i=%s'
 
 MUSICBRAINZURL = 'https://musicbrainz.org/ws/2/artist/%s'
 MUSICBRAINZSEARCH = '?query="%s"&fmt=json'
-MUSICBRAINZDETAILS = '%s?inc=url-rels+release-groups&type=album&fmt=json'
+MUSICBRAINZDETAILS = '%s?inc=url-rels+release-groups+aliases&type=album&fmt=json'
 
-DISCOGSKEY = 'zACPgktOmNegwbwKWMaC'
-DISCOGSSECRET = 'wGuSOeMtfdkQxtERKQKPquyBwExSHdQq'
 DISCOGSURL = 'https://api.discogs.com/%s'
-DISCOGSSEARCH = 'database/search?q=%s&type=artist&key=%s&secret=%s'
-DISCOGSDETAILS = 'artists/%s?key=%s&secret=%s'
-DISCOGSDISCOGRAPHY = 'artists/%s/releases?sort=format&page=1&per_page=100&key=%s&secret=%s'
+DISCOGSSEARCH = 'database/search?q=%s&type=artist&token=%s'
+DISCOGSDETAILS = 'artists/%s?token=%s'
+DISCOGSDISCOGRAPHY = 'artists/%s/releases?sort=format&page=1&per_page=100&token=%s'
 
 ALLMUSICURL = 'https://www.allmusic.com/search/artists/%s'
 

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KODI Main\n"
 "Report-Msgid-Bugs-To: translations@kodi.tv\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2026-07-06 11:10+0000\n"
+"PO-Revision-Date: 2026-10-08 07:21+0000\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech <https://kodi.weblate.cloud/projects/kodi-add-ons-information-providers/metadata-generic-artists/cs_cz/>\n"
 "Language: cs_cz\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
-"X-Generator: Weblate 2026.7\n"
+"X-Generator: Weblate 2026.10\n"
 
 msgctxt "Addon Summary"
 msgid "Generic music scraper for artists"
@@ -53,6 +53,30 @@ msgctxt "#30006"
 msgid "Prefer moods from"
 msgstr "Upřednostňovat nálady z"
 
+msgctxt "#30007"
+msgid "Preferred MusicBrainz artist name locale"
+msgstr "Upřednostňované jazykové a regionální nastavení jména interpreta v MusicBrainz"
+
+msgctxt "#30008"
+msgid "Custom locale"
+msgstr "Vlastní jazykové a regionální nastavení"
+
+msgctxt "#30009"
+msgid "Default locale"
+msgstr "Výchozí jazykové a regionální nastavení"
+
+msgctxt "#30010"
+msgid "Current Kodi locale"
+msgstr "Aktuální jazykové a regionální nastavení Kodi"
+
+msgctxt "#30011"
+msgid "Custom locale"
+msgstr "Vlastní jazykové a regionální nastavení"
+
+msgctxt "#30012"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Povolit méně přesné výsledky vyhledávání"
@@ -80,6 +104,18 @@ msgstr "Pokusí se získat informace o stylech interpreta pomocí vybraného zdr
 msgctxt "#30206"
 msgid "Try to get mood info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Pokusí se získat informace o náladách interpreta pomocí vybraného zdroje. Pokud upřednostňovaný zdroj nevrátí žádné výsledky, použijí se jiné zdroje."
+
+msgctxt "#30207"
+msgid "Choose whether to use the default MusicBrainz artist name, your current Kodi locale, or a custom locale for MusicBrainz artist names."
+msgstr "Zvolte, zda chcete používat výchozí jméno interpreta z MusicBrainz, aktuální jazykové a regionální nastavení Kodi, nebo vlastní jazykové a regionální nastavení pro jména interpretů z MusicBrainz."
+
+msgctxt "#30208"
+msgid "Choose a custom locale, e.g. pt-PT or pt-BR, or language: pt"
+msgstr "Zvolte vlastní jazykové a regionální nastavení, např. pt-PT nebo pt-BR, nebo jazyk: pt"
+
+msgctxt "#30209"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname. Since artist names are not unique, this could potentially result in a mixture of metadata from multiple artists by the same name."
