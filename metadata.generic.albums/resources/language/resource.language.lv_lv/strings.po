@@ -57,6 +57,10 @@ msgctxt "#30007"
 msgid "Prefer review from"
 msgstr ""
 
+msgctxt "#30008"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Pieļaut mazāk precīza datu iegūšanu"
@@ -87,6 +91,10 @@ msgstr ""
 
 msgctxt "#30207"
 msgid "Try to get the album review using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
+msgstr ""
+
+msgctxt "#30208"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
 msgstr ""
 
 msgctxt "#30301"

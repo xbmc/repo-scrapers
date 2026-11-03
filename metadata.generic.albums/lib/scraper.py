@@ -40,40 +40,52 @@ def log(txt):
 
 def get_data(url, jsonformat, retry=True):
     try:
+        if url.startswith('https://api.discogs.com/') and url.endswith('='):
+            return
         if url.startswith('https://musicbrainz.org/'):
             api_timeout('musicbrainztime')
         elif url.startswith('https://api.discogs.com/'):
             api_timeout('discogstime')
         headers = {}
+        if url.startswith('https://www.allmusic.com/'):
+            headers['Upgrade-Insecure-Requests'] = '1'
         headers['User-Agent'] = '%s/%s ( http://kodi.tv )' % (ADDONNAME, ADDONVERSION)
         req = urllib.request.Request(url, headers=headers)
-        resp = urllib.request.urlopen(req, timeout=5)
-        respdata = resp.read()
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            respdata = resp.read()
+    except HTTPError as e:
+        log('HTTPError: %s:%s - %s' % (e.code, e.reason, url))
+        if url.startswith('https://musicbrainz.org/') and e.code == 503:
+            log('exceeding musicbrainz api limit')
+            xbmc.sleep(1000)
+            if retry:
+                return get_data(url, jsonformat, retry=False)
+            else:
+                return
+        elif url.startswith('https://api.discogs.com/') and e.code == 429:
+            log('exceeding discogs api limit')
+            xbmc.sleep(1000)
+            if retry:
+                return get_data(url, jsonformat, retry=False)
+            else:
+                return
+        else:
+            return
     except URLError as e:
         log('URLError: %s - %s' % (e.reason, url))
-        return
-    except HTTPError as e:
-        log('HTTPError: %s - %s' % (e.reason, url))
         return
     except socket.timeout as e:
         log('socket: %s - %s' % (e, url))
         return
-    if resp.getcode() == 503:
-        log('exceeding musicbrainz api limit')
-        if retry:
-            xbmc.sleep(1000)
-            get_data(url, jsonformat, retry=False)
-        else:
-            return
-    elif resp.getcode() == 429:
-        log('exceeding discogs api limit')
-        if retry:
-            xbmc.sleep(1000)
-            get_data(url, jsonformat, retry=False)
-        else:
-            return
+    except:
+        log('unknown error')
+        return
     if jsonformat:
-        respdata = json.loads(respdata)
+        try:
+            respdata = json.loads(respdata)
+        except:
+            log('json error')
+            return
     return respdata
 
 def api_timeout(scraper):
@@ -194,6 +206,7 @@ class Scraper():
         self.style = settings['style']
         self.theme = settings['theme']
         self.inaccurate = settings['inaccurate']
+        self.discogstoken = settings['discogstoken']
 
     def resolve_mbid(self, mbalbumid):
         item = {}
@@ -211,7 +224,7 @@ class Scraper():
             scraper = musicbrainz_albumfind
         # discogs
         elif site == 'discogs':
-            url = DISCOGSURL % (DISCOGSSEARCH % (urllib.parse.quote_plus(album), urllib.parse.quote_plus(artist), DISCOGSKEY , DISCOGSSECRET))
+            url = DISCOGSURL % (DISCOGSSEARCH % (urllib.parse.quote_plus(album), urllib.parse.quote_plus(artist), self.discogstoken))
             scraper = discogs_albumfind
         result = get_data(url, json)
         if not result:
@@ -250,7 +263,7 @@ class Scraper():
         elif site == 'discogs':
             # musicbrainz provides a link to the master release, but we need the main release
             if 'masterurl' in param:
-                masterdata = get_data(DISCOGSURL % (DISCOGSMASTER % (param['masterurl'], DISCOGSKEY , DISCOGSSECRET)), True)
+                masterdata = get_data(DISCOGSURL % (DISCOGSMASTER % (param['masterurl'], self.discogstoken)), True)
                 if masterdata:
                     url = discogs_albummain(masterdata)
                     if url:
@@ -261,7 +274,7 @@ class Scraper():
                     return
             # search by artistname and albumtitle if we do not have an url
             if not 'url' in param:
-                url = DISCOGSURL % (DISCOGSSEARCH % (urllib.parse.quote_plus(param['album']), urllib.parse.quote_plus(param['artist']), DISCOGSKEY , DISCOGSSECRET))
+                url = DISCOGSURL % (DISCOGSSEARCH % (urllib.parse.quote_plus(param['album']), urllib.parse.quote_plus(param['artist']), self.discogstoken))
                 albumresult = get_data(url, json)
                 if albumresult:
                     albums = discogs_albumfind(albumresult, param['artist'], param['album'])
@@ -272,7 +285,7 @@ class Scraper():
                         return
                 else:
                     return
-            url = DISCOGSURL % (DISCOGSDETAILS % (param['url'], DISCOGSKEY, DISCOGSSECRET))
+            url = DISCOGSURL % (DISCOGSDETAILS % (param['url'], self.discogstoken))
             albumscraper = discogs_albumdetails
         # wikipedia
         elif site == 'wikipedia':

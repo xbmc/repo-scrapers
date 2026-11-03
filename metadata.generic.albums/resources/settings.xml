@@ -27,6 +27,16 @@
 						</options>
 					</constraints>
 				</setting>
+				<setting help="30208" id="discogstoken" label="30008" type="string">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>30008</heading>
+					</control>
+				</setting>
 				<setting help="30207" id="review" label="30007" type="string">
 					<level>0</level>
 					<default>theaudiodb</default>
