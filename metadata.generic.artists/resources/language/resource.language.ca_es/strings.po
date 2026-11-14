@@ -53,6 +53,30 @@ msgctxt "#30006"
 msgid "Prefer moods from"
 msgstr "Prefereix els estats d'ànim de"
 
+msgctxt "#30007"
+msgid "Preferred MusicBrainz artist name locale"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Custom locale"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Default locale"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Current Kodi locale"
+msgstr ""
+
+msgctxt "#30011"
+msgid "Custom locale"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Permet resultats de cerca menys precisos"
@@ -80,6 +104,18 @@ msgstr "Intenta obtenir la informació d'estil utilitzant el raspador selecciona
 msgctxt "#30206"
 msgid "Try to get mood info using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Intenta obtenir la informació de l'estat d'ànim utilitzant el raspador seleccionat. S'utilitzaran altres raspadors si el preferit no aconsegueix cap resultat."
+
+msgctxt "#30207"
+msgid "Choose whether to use the default MusicBrainz artist name, your current Kodi locale, or a custom locale for MusicBrainz artist names."
+msgstr ""
+
+msgctxt "#30208"
+msgid "Choose a custom locale, e.g. pt-PT or pt-BR, or language: pt"
+msgstr ""
+
+msgctxt "#30209"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname. Since artist names are not unique, this could potentially result in a mixture of metadata from multiple artists by the same name."

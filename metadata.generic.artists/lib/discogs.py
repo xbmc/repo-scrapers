@@ -22,7 +22,8 @@ def discogs_artistfind(data, artist):
 def discogs_artistdetails(data):
     artistdata = {}
     artistdata['artist'] = data['name']
-    artistdata['biography'] = data['profile']
+    artistdata['biography'] = data['profile_plaintext']
+
     if 'images' in data:
         thumbs = []
         for item in data['images']:

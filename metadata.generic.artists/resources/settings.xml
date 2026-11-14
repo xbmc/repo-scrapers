@@ -27,6 +27,38 @@
 						</options>
 					</constraints>
 				</setting>
+				<setting help="30207" id="artistlang" label="30007" type="string">
+					<level>0</level>
+					<default>original</default>
+					<control format="string" type="spinner"/>
+					<constraints>
+						<options>
+							<option label="30009">original</option>
+							<option label="30010">current</option>
+							<option label="30011">custom</option>
+						</options>
+					</constraints>
+				</setting>
+				<setting help="30208" id="artistlangcustom" label="30008" type="string">
+					<level>0</level>
+					<default>en-gb</default>
+					<dependencies>
+						<dependency type="enable" setting="artistlang" operator="is">custom</dependency>
+					</dependencies>
+					<control format="string" type="edit"> 
+						<heading>30008</heading>
+					</control>
+				</setting>
+				<setting help="30209" id="discogstoken" label="30012" type="string">
+					<level>0</level>
+					<default/>
+					<constraints>
+						<allowempty>true</allowempty>
+					</constraints>
+					<control format="string" type="edit">
+						<heading>30012</heading>
+					</control>
+				</setting>
 				<setting help="30202" id="bio" label="30002" type="string">
 					<level>0</level>
 					<default>theaudiodb</default>

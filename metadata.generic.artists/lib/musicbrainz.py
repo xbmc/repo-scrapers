@@ -20,10 +20,33 @@ def musicbrainz_artistfind(data, artist):
         artists.append(artistdata)
     return artists
 
-def musicbrainz_artistdetails(data):
+def musicbrainz_artistdetails(data, locale=None):
     artistdata = {}
     artistdata['artist'] = data['name']
+    artistdata['primary'] = data['name']
+
+    if locale:
+        requested = locale.replace('-', '_').lower()
+        language = requested.split('_', 1)[0]
+        aliases = [a for a in data.get('aliases', []) if a.get('type') == 'Artist name']
+
+        candidates = []
+        # prefer exact locale, then language, then regional variant
+        for match in (lambda v: v == requested, lambda v: v == language, lambda v: v.startswith(language + '_')):
+            candidates = [a for a in aliases if a.get('locale') and match(a['locale'].replace('-', '_').lower())]
+            if candidates:
+                break
+        if candidates:
+            candidates.sort(key=lambda a: (not bool(a.get('sort-name')), not bool(a.get('primary')), -len(a['name'])))
+            alias = candidates[0]
+            # prefer the primary MusicBrainz alias if none other found
+            artistdata['artist'] = alias['name']
+            if alias.get('sort-name'):
+                artistdata['sortname'] = alias['sort-name']
+
     artistdata['mbartistid'] = data['id']
+    if 'sort-name' in data:
+        artistdata['sortname'] = data['sort-name']
     artistdata['type'] = data['type']
     artistdata['gender'] = data['gender']
     artistdata['disambiguation'] = data['disambiguation']
