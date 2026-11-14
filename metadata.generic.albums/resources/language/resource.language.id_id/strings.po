@@ -57,6 +57,10 @@ msgctxt "#30007"
 msgid "Prefer review from"
 msgstr "Lebih suka ulasan dari"
 
+msgctxt "#30008"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Ijinkan hasil pencarian keakurasi rendah"
@@ -88,6 +92,10 @@ msgstr "Cobalah untuk mendapatkan info penilaian menggunakan scraper yang dipili
 msgctxt "#30207"
 msgid "Try to get the album review using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Cobalah untuk mendapatkan tinjauan album menggunakan scraper yang dipilih. Scraper lain akan digunakan jika scraper pilihan tidak memberikan hasil."
+
+msgctxt "#30208"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname & albumname. In circumstances where an artist has released multiple albums by the same name, this could potentially result in a mixture of metadata from those albums."

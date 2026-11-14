@@ -57,6 +57,10 @@ msgctxt "#30007"
 msgid "Prefer review from"
 msgstr "선호 리뷰"
 
+msgctxt "#30008"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "약간 느슨한 검색 결과 허용"
@@ -88,6 +92,10 @@ msgstr "선택된 스크레이퍼로 평점 정보를 내려받습니다. 선호
 msgctxt "#30207"
 msgid "Try to get the album review using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "선택된 스크레이퍼로 앨범 정보를 내려받습니다. 선호하는 스크레이퍼의 결과가 없으면 다른 것이 쓰입니다."
+
+msgctxt "#30208"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname & albumname. In circumstances where an artist has released multiple albums by the same name, this could potentially result in a mixture of metadata from those albums."

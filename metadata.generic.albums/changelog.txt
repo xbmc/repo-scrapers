@@ -1,3 +1,13 @@
+v1.0.21
+- discogs scraper changed their api rate limiting from 60 requests/min per IP to 60 request/min per application (using a key/secret).
+  ref: https://www.discogs.com/forum/thread/1188759
+  the combined users of metadata.generic.scraper will make much more requests than 60 per minute,
+  so switch to individual user provided tokens to maintain the 60 requests minute capability.
+- fix rate limit implementation and improve exception handling
+
+v1.0.20
+- fix allmusic scraper
+
 v1.0.19
 - language updates
 

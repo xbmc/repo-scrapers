@@ -57,6 +57,10 @@ msgctxt "#30007"
 msgid "Prefer review from"
 msgstr "Upřednostňovat recenzi z"
 
+msgctxt "#30008"
+msgid "Discogs access token"
+msgstr ""
+
 msgctxt "#30101"
 msgid "Allow less accurate search results"
 msgstr "Povolit méně přesné výsledky vyhledávání"
@@ -88,6 +92,10 @@ msgstr "Pokusí se získat informace o hodnocení pomocí vybraného zdroje. Pok
 msgctxt "#30207"
 msgid "Try to get the album review using the selected scraper. Other scrapers will be used if the preferred scraper returns no results."
 msgstr "Pokusí se získat recenzi alba pomocí vybraného zdroje. Pokud upřednostňovaný zdroj nevrátí žádné výsledky, použijí se jiné zdroje."
+
+msgctxt "#30208"
+msgid "In order to use the discogs scraper, you need to create an account at discogs.com and generate a personal access token"
+msgstr ""
 
 msgctxt "#30301"
 msgid "If Musicbrainz does not provide a link to allmusic and/or discogs, we can search those sites based on artistname & albumname. In circumstances where an artist has released multiple albums by the same name, this could potentially result in a mixture of metadata from those albums."
