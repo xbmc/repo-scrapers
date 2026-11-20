@@ -145,6 +145,9 @@ def get_details(input_uniqueids, handle, settings, fail_silently=False):
     IMAGE_LIMIT = settings.getSettingInt('maxartwork')
     add_artworks(listitem, details['available_art'], IMAGE_LIMIT)
 
+    if hasattr(infotag, 'setOriginalLanguage') and details['original_language']:
+        infotag.setOriginalLanguage(details['original_language'])
+
     xbmcplugin.setResolvedUrl(handle=handle, succeeded=True, listitem=listitem)
     return True
 

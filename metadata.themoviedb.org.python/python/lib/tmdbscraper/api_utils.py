@@ -20,6 +20,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import json
+import socket
 
 try:
     import xbmc
@@ -43,6 +44,7 @@ except ImportError:
     pass
 
 HEADERS = {}
+TIMEOUT = 15
 
 
 def set_headers(headers):
@@ -70,7 +72,8 @@ def load_info(url, params=None, default=None, resp_type = 'json'):
             xbmc.log(str(HEADERS), xbmc.LOGDEBUG)
     req = Request(url, headers=HEADERS)
     try:
-        response = urlopen(req)
+        response = urlopen(req, timeout=TIMEOUT)
+        body = response.read().decode('utf-8')
     except URLError as e:
         if hasattr(e, 'reason'):
             theerror = {'error': 'failed to reach the remote site\nReason: {}'.format(e.reason)}
@@ -80,9 +83,15 @@ def load_info(url, params=None, default=None, resp_type = 'json'):
             return default
         else:
             return theerror
+    except (socket.timeout, socket.error) as e:
+        theerror = {'error': 'failed to read from the remote site\nReason: {}'.format(e)}
+        if default is not None:
+            return default
+        else:
+            return theerror
     if resp_type.lower() == 'json':
-        resp = json.loads(response.read().decode('utf-8'))
+        resp = json.loads(body)
     else:
-        resp = response.read().decode('utf-8')
+        resp = body
     # xbmc.log('the api response:\n{}'.format(pformat(resp)), xbmc.LOGDEBUG)
     return resp

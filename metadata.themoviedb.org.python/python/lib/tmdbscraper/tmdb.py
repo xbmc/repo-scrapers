@@ -149,12 +149,17 @@ class TMDBMovieScraper(object):
             for actor in movie.get('credits', movie.get('casts', {})).get('cast', [])
         ]
         available_art = _parse_artwork(movie, collection, self.urls, self.language)
+        original_language = _parse_original_language(movie)
 
         _info = {'set_tmdbid': movie['belongs_to_collection'].get('id')
             if movie['belongs_to_collection'] else None}
 
         return {'info': info, 'ratings': ratings, 'uniqueids': uniqueids, 'cast': cast,
-            'available_art': available_art, '_info': _info}
+            'available_art': available_art, '_info': _info, 'original_language': original_language}
+
+def _parse_original_language(movie):
+    first_spoken_language = next(iter(movie.get('spoken_languages', [])), {}).get('iso_639_1')
+    return first_spoken_language or movie.get('original_language')
 
 def _parse_media_id(title):
     if title.startswith('tt') and title[2:].isdigit():
